@@ -1,6 +1,7 @@
 // import React from "react";
 import React, { Component } from "react";
 import Typical from "react-typical";
+import { BsSearch } from 'react-icons/bs';
 
 const Banner = () => {
 
@@ -36,22 +37,19 @@ const Banner = () => {
               and English versions. We are providing the best teachers & tuition in the whole of Dhaka city.
             </p>
             <div className="flex gap-4">
-              <div className="mt-3">
-                <p>Teacher</p>
-              </div>
-              <div className="mt-3">
-                <p>Students</p>
-              </div>
-              <div>
+             
+              <form className="flex border border-gray-400 rounded-lg">
                 <input
                   type="text"
-                  placeholder="Type here"
-                  className="input w-full max-w-xs focus:outline-0 text-blue-600"
+                  placeholder="Search your teacher"
+                  className="input w-full max-w-xs bg-slate-100 focus:outline-0 text-blue-600"
                 />
-              </div>
-              <div>
-                <button className="btn btn-primary">Search</button>
-              </div>
+              
+                <button className=""><BsSearch className="text-2xl mx-2" /></button>
+              </form>
+
+
+
             </div>
             {/* <button className="btn btn-primary">Get Started</button> */}
             <div className="mt-10">
