@@ -39,10 +39,10 @@ const AddTeacher = () => {
 						// role: logUser.role,
 						// author: user.displayName,
 						// email: user.email,
-						title: data.title,
+						name: data.name,
 						category: data.category,
-						price: data.price,
-						description: data.description,
+						fee: data.fee,
+						location: data.location,
 						image: imgData.data.url,
 						time,
 					};
@@ -73,7 +73,7 @@ const AddTeacher = () => {
 	return (
 		<div className='bg-base-200'>
 			<br />
-			<h1 className='mb-5 text-2xl'>Add Your Product</h1>
+			<h1 className='mb-5 text-2xl'>Add Your Information</h1>
 			<div className='hero min-h-screen bg-base-200'>
 				<div className='hero-content grid grid-cols-1 lg:grid-cols-2-col'>
 					<div className='card grid grid-cols-1 lg:grid-cols-2-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
@@ -83,46 +83,53 @@ const AddTeacher = () => {
 						>
 							    <div className='form-control w-full max-w-xs'>
 									<label className='label'>
-										<span className='label-text'>Product Title</span>
+										<span className='label-text'>Name</span>
 									</label>
 									<input
 										type='text'
-										{...register('title', {
-											required: 'Title is Required',
+										{...register('name', {
+											required: 'name is Required',
 										})}
 										className='input input-bordered w-full max-w-xs'
 									/>
-									{errors.title && (
-										<p className='text-red-500'>{errors.title?.message}</p>
+									{errors.name && (
+										<p className='text-red-500'>{errors.name?.message}</p>
+									)}
+								</div>
+
+							    <div className='form-control w-full max-w-xs'>
+									<label className='label'>
+										<span className='label-text'>Email</span>
+									</label>
+									<input
+										type='text'
+										{...register('email', {
+											required: 'email is Required',
+										})}
+										className='input input-bordered w-full max-w-xs'
+									/>
+									{errors.email && (
+										<p className='text-red-500'>{errors.email?.message}</p>
 									)}
 								</div>
 
 
 							    <div className='form-control w-full max-w-xs'>
 									<label className='label'>
-										<span className='label-text'>Categories</span>
+										<span className='label-text'>Background</span>
 									</label>
 									<select
-										{...register('category', {
+										{...register('background', {
 											required: true,
 										})}
 										className='select input-bordered w-full max-w-xs'
 									>
-										<option>Ferrari</option>
-										<option>Audi</option>
-										<option>BMW</option>
-										<option>Lamborghini</option>
-										<option>Tesla</option>
-										<option>Mercedes_Benz</option>
-										<option>Rolls_Royce</option>
-										<option disabled>**** (comming soon)</option>
-										<option disabled>**** (comming soon)</option>
-										<option disabled>**** (comming soon)</option>
-										<option disabled>**** (comming soon)</option>
-										<option disabled>**** (comming soon)</option>
+										<option>Science</option>
+										<option>Commerce</option>
+										<option>Humanity</option>
 									</select>
-									{errors.category && (
-										<p className='text-red-500'>{errors.category.message}</p>
+									{errors.background && (
+										<p className='text-red-500'>{errors.background.message}</p>
 									)}
 								</div>
 
@@ -131,18 +138,18 @@ const AddTeacher = () => {
 
 								<div className='form-control w-full max-w-xs'>
 									<label className='label'>
-										<span className='label-text'> Price :</span>
+										<span className='label-text'> Fee :</span>
 									</label>
 									<input
 										type='number'
-										{...register('price', {
+										{...register('fee', {
 											required: true,
 										})}
 										className='input input-bordered w-full max-w-xs'
 									/>
-									{errors.price && (
+									{errors.fee && (
 										<p className='text-red-500'>
-											{errors.price.message}
+											{errors.fee.message}
 										</p>
 									)}
 								</div>
@@ -152,17 +159,17 @@ const AddTeacher = () => {
 							
 								<div className='form-control w-full max-w-xs'>
 									<label className='label'>
-										<span className='label-text'>Description</span>
+										<span className='label-text'>Location</span>
 									</label>
 									<input
 										type='text'
-										{...register('description', {
+										{...register('location', {
 											required: true,
 										})}
 										className='input input-bordered w-full max-w-xs'
 									/>
-									{errors.description && (
-										<p className='text-red-500'>{errors.description.message}</p>
+									{errors.location && (
+										<p className='text-red-500'>{errors.location.message}</p>
 									)}
 								</div>
 
@@ -186,7 +193,7 @@ const AddTeacher = () => {
 
 							<input
 								className='btn bg-green-500 hover:bg-green-600 border-0 text-white w-full mt-4'
-								value='Add product'
+								value='Submit'
 								type='submit'
 							/>
 						</form>

@@ -64,12 +64,12 @@ const DashBoard = () => {
 							</span>
 						</Link>
 						<li className=' '>
-							<Link to='/dashboard/myprofile'>My Profile</Link>
+							<Link to='/dashboard/My-Profile'>My Profile</Link>
 						</li>
 						
 							<>
 								<li className=''>
-									<Link to='/dashboard/addTeacher'>Add Teacher</Link>
+									<Link to='/dashboard/add-Teacher'>Add Teacher</Link>
 								</li>
 							</>
 						

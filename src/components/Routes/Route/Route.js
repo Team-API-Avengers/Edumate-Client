@@ -10,6 +10,7 @@ import WelcomeDashboard from "../../Pages/WelcomeDashboard/WelcomeDashboard";
 import Signup from "../../Pages/Authentication/Signup/Signup";
 import BackgroundWiseTeacher from "../../Pages/BackgroundWiseTeacher/BackgroundWiseTeacher";
 import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
+import MyProfile from "../../Pages/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -53,8 +54,12 @@ const router = createBrowserRouter([
         element: <WelcomeDashboard />,
       },
       {
-        path: "/dashboard/addTeacher",
+        path: "/dashboard/add-Teacher",
         element: <AddTeacher />,
+      },
+      {
+        path: "/dashboard/My-Profile",
+        element: <MyProfile />,
       },
     ],
   },
