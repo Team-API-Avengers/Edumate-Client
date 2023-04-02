@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProfileEditModal from './ProfileEditModal';
 // import { BsFillBookmarkStarFill } from 'react-icons/bs';
 // import { AuthContext } from '../../../Context/AuthProvider';
 // import MyAccess from './MyProfileTable';
-// import ProfileEditModal from './ProfileEditModal';
 
 const MyProfile = () => {
 	// const { user, logUser } = useContext(AuthContext);
 
 
+    const [editName, setEditName] = useState()
+    const [editEmail, setEditEmail] = useState()
 
 	// console.log(logUser);
 	return (
@@ -20,31 +22,35 @@ const MyProfile = () => {
 						alt='Album'
 					/>
 				</div>
+
 				<div className='card-body'>
 					<h2 className='card-title lg:flex hidden text-start '>
 						Hey <h2 className=' font-serif font-bold'>User</h2> !
 						Here's your details
 					</h2>
+
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
 							Full Name : 
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
-							<label htmlFor='profileEdit' className='cursor-pointer'>
+							<label onClick={()=> setEditName('Name')} htmlFor='profileEdit' className='cursor-pointer'>
 								Edit
 							</label>
 						</p>
 					</div>
+
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
 							Email Address : 
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
-							<label htmlFor='profileEdit' className='cursor-pointer'>
+							<label onClick={()=> setEditEmail('Email')} htmlFor='profileEdit' className='cursor-pointer'>
 								Edit
 							</label>
 						</p>
 					</div>
+
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
 							Phone :
@@ -90,7 +96,10 @@ const MyProfile = () => {
 				</div>
 			</div>
 			{/* <MyAccess></MyAccess> */}
-			{/* <ProfileEditModal></ProfileEditModal> */}
+			<ProfileEditModal
+             editName = {editName}
+             editEmail = {editEmail}
+             ></ProfileEditModal>
 		</div>
 	);
 };
