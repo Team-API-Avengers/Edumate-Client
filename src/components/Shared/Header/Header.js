@@ -38,9 +38,9 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
+        <NavLink to={'/dashboard'} className="flex items-center">
+          Dashboard
+        </NavLink>
       </Typography>
     </ul>
   );
@@ -84,11 +84,6 @@ const Header = () => {
                   <a>Logout</a>
                 </li>
 
-                {/* The button to open modal */}
-                {/* <li>
-                  <a href="#my-modal-2">Signup</a>
-                </li> */}
-
                 <li>
                   <Link to="/login">Login</Link>
                 </li>
@@ -98,7 +93,7 @@ const Header = () => {
               </ul>
             </div>
 
-            <FormModal />
+            
           </div>
         </div>
       </Navbar>
