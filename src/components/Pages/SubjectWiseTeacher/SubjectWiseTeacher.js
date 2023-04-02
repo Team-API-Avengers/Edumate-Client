@@ -6,16 +6,18 @@ const SubjectWiseTeacher = ({ teacher }) => {
   return (
     <div>
       <section class="text-gray-600 body-font">
-        <div class="container border px-5 py-1 rounded-lg mx-auto">
+        <div class="container  px-5 py-1  mx-auto">
           <Link to={`/background/${background}`}>
-            <div class="flex flex-col items-center justify-center text-center w-full mb-20">
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-                {background}
-              </h1>
-              <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-                5 teachers available
+            <a
+              class="block rounded-lg border border-gray-500 p-4 shadow-xl hover:border-blue-500 transition transform hover:scale-90"
+              href="/accountant"
+            >
+              <h2 class="mt-2 text-xl font-bold">{background}</h2>
+
+              <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
+                Lorem ipsum dolor sit amet consectetur.
               </p>
-            </div>
+            </a>
           </Link>
         </div>
       </section>
