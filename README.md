@@ -1,3 +1,21 @@
+
+
+
+## Installation: 
+1. React router dom
+2. Tailwind
+3. Daisy UI
+4. React Icons
+5. react-typical --force
+6. npm i @material-tailwind/react --force
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
