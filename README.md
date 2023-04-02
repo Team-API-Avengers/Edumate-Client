@@ -8,6 +8,7 @@
 4. React Icons
 5. react-typical --force
 6. npm i @material-tailwind/react --force
+7. npm install react-hook-form --force
 
 
 
