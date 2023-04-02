@@ -7,8 +7,9 @@ import About from "../../Pages/About/About";
 import Blog from "../../Pages/Blog/Blog";
 import Dashboard from "../../Layouts/Dashboard/Dashboard";
 import WelcomeDashboard from "../../Pages/WelcomeDashboard/WelcomeDashboard";
-import TeacherSignup from "../../Pages/Authentication/TeacherSignup/TeacherSignup";
-import StudentSignup from "../../Pages/Authentication/StudentSignup/StudentSignup";
+// import TeacherSignup from "../../Pages/Authentication/TeacherSignup/TeacherSignup";
+// import StudentSignup from "../../Pages/Authentication/StudentSignup/StudentSignup";
+import Signup from "../../Pages/Authentication/Signup/Signup";
 
 const router = createBrowserRouter([
           {
@@ -21,11 +22,14 @@ const router = createBrowserRouter([
                 path: "/login", element: <Login />,
               },
               {
-                path: "/signup-teacher", element: <TeacherSignup />,
+                path: "/login", element: <Signup />,
               },
-              {
-                path: "/signup-student", element: <StudentSignup />,
-              },
+              // {
+              //   path: "/signup-teacher", element: <TeacherSignup />,
+              // },
+              // {
+              //   path: "/signup-student", element: <StudentSignup />,
+              // },
               {
                 path: "/about-us", element: <About />,
               },
