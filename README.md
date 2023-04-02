@@ -9,6 +9,8 @@
 5. react-typical --force
 6. npm i @material-tailwind/react --force
 7. npm install react-hook-form --force
+8.  npm i @tanstack/react-query --force
+9. npm i react-toastify --force
 
 
 
