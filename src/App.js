@@ -1,12 +1,11 @@
 import './App.css';
-import Header from './components/Shared/Header/Header';
-import Banner from './components/Pages/Home/Banner/Banner';
+import { RouterProvider } from 'react-router-dom';
+import router from './components/Routes/Route/Route';
 
 function App() {
   return (
     <div className="App bg-slate-100">
-     <Header />
-     <Banner />
+     <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
