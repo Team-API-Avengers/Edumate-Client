@@ -85,12 +85,15 @@ const Header = () => {
                 </li>
 
                 {/* The button to open modal */}
-                <li>
+                {/* <li>
                   <a href="#my-modal-2">Signup</a>
-                </li>
+                </li> */}
 
                 <li>
                   <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/signup">Signup</Link>
                 </li>
               </ul>
             </div>
