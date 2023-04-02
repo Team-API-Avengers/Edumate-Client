@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs';
 const Banner = () => {
 
   return (
-    <section className="mt-20">
+    <section className="mt-10">
       <div className="hero min-h-screen bg-transparent">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div>
@@ -41,11 +41,11 @@ const Banner = () => {
               <form className="flex border border-gray-400 rounded-lg">
                 <input
                   type="text"
-                  placeholder="Search your teacher"
+                  placeholder="Search your subject"
                   className="input w-full max-w-xs bg-slate-100 focus:outline-0 text-blue-600"
                 />
               
-                <button className=""><BsSearch className="text-2xl mx-2" /></button>
+                <button className=""><BsSearch className="text-2xl mx-2 hover:text-blue-700" /></button>
               </form>
 
 

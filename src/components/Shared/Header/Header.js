@@ -1,17 +1,12 @@
 import React from 'react';
-import { Navbar, MobileNav, Typography, Button, IconButton, Card,} from "@material-tailwind/react";
+import { Navbar, Typography} from "@material-tailwind/react";
+import { Link, NavLink } from 'react-router-dom';
+import FormModal from '../FormModal/FormModal';
 
 const Header = () => {
 
 
-    const [openNav, setOpenNav] = React.useState(false);
- 
-    React.useEffect(() => {
-      window.addEventListener(
-        "resize",
-        () => window.innerWidth >= 960 && setOpenNav(false)
-      );
-    }, []);
+  
    
     const navList = (
       <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -21,9 +16,9 @@ const Header = () => {
           color="blue-gray"
           className="p-1 font-normal"
         >
-          <a href="#" className="flex items-center">
-            Pages
-          </a>
+          <NavLink to={'/'} className="flex items-center">
+            Home
+          </NavLink>
         </Typography>
         <Typography
           as="li"
@@ -31,9 +26,9 @@ const Header = () => {
           color="blue-gray"
           className="p-1 font-normal"
         >
-          <a href="#" className="flex items-center">
-            Account
-          </a>
+          <NavLink className="flex items-center">
+            Blog
+          </NavLink>
         </Typography>
         <Typography
           as="li"
@@ -41,9 +36,9 @@ const Header = () => {
           color="blue-gray"
           className="p-1 font-normal"
         >
-          <a href="#" className="flex items-center">
-            Blocks
-          </a>
+          <NavLink className="flex items-center">
+            About
+          </NavLink>
         </Typography>
         <Typography
           as="li"
@@ -72,58 +67,42 @@ const Header = () => {
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
-            <Button
-              variant="gradient"
-              size="sm"
-              className="hidden lg:inline-block"
-            >
-              <span>Buy Now</span>
-            </Button>
-            <IconButton
-              variant="text"
-              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-              ripple={false}
-              onClick={() => setOpenNav(!openNav)}
-            >
-              {openNav ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </IconButton>
+
+
+            <div className="dropdown dropdown-end">
+            <label tabIndex={0} className='cursor-pointer'>
+            <div className="avatar online">
+                    <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
+                    </div>
+                    </div>
+            </label>
+            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                <li>
+                <a className="justify-between">
+                    Profile
+                    <span className="badge">New</span>
+                </a>
+                </li>
+                <li><Link to='/'>Settings</Link></li>
+                <li><a>Logout</a></li>
+
+                {/* The button to open modal */}
+                <li><a href="#my-modal-2">Signup</a></li>
+                
+                <li><Link to='/login'>Login</Link></li>
+            </ul>
+            </div>
+
+
+
+<FormModal />
+
+
+          
           </div>
         </div>
-        <MobileNav open={openNav}>
-          {navList}
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Buy Now</span>
-          </Button>
-        </MobileNav>
+        
       </Navbar>
 
 
