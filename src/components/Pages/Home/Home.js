@@ -1,12 +1,12 @@
 import React from 'react';
 import Banner from './Banner/Banner';
-import SubjectWiseTeacher from '../SubjectWiseTeacher/SubjectWiseTeacher';
+import SubjectWiseTeachers from '../SubjectWiseTeacher/SubjectWiseTeachers';
 
 const Home = () => {
     return (
         <div>
             <Banner />
-            <SubjectWiseTeacher />
+            <SubjectWiseTeachers />
         </div>
     );
 };
