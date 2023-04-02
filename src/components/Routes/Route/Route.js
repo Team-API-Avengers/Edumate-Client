@@ -7,8 +7,6 @@ import About from "../../Pages/About/About";
 import Blog from "../../Pages/Blog/Blog";
 import Dashboard from "../../Layouts/Dashboard/Dashboard";
 import WelcomeDashboard from "../../Pages/WelcomeDashboard/WelcomeDashboard";
-// import TeacherSignup from "../../Pages/Authentication/TeacherSignup/TeacherSignup";
-// import StudentSignup from "../../Pages/Authentication/StudentSignup/StudentSignup";
 import Signup from "../../Pages/Authentication/Signup/Signup";
 
 const router = createBrowserRouter([
@@ -24,21 +22,12 @@ const router = createBrowserRouter([
               {
                 path: "/signup", element: <Signup />,
               },
-              // {
-              //   path: "/signup-teacher", element: <TeacherSignup />,
-              // },
-              // {
-              //   path: "/signup-student", element: <StudentSignup />,
-              // },
               {
                 path: "/about-us", element: <About />,
               },
               {
                 path: "/blog", element: <Blog />,
               },
-              // {
-              //   path: "/contact", element: <Contact />,
-              // },
             ],
           },
 
@@ -50,18 +39,6 @@ const router = createBrowserRouter([
               {
                 path: "/dashboard", element: <WelcomeDashboard />,
               },
-            //   {
-            //     path: "/dashboard/profile", element: <MyProfile />,
-            //   },
-            //   {
-            //     path: "/dashboard/add-teacher", element: <AddTeacher />,
-            //   },
-            //   {
-            //     path: "/dashboard/all-teachers", element: <AllTeachers />,
-            //   },
-            //   {
-            //     path: "/dashboard/all-students", element: <AllStudents />,
-            //   },
             ]
           },
 
