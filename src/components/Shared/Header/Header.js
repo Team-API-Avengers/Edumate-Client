@@ -44,6 +44,7 @@ const Header = () => {
       <NavLink style={navStyle} to={"/dashboard"} className="flex items-center">
         Dashboard
       </NavLink>
+      
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
       </NavLink>
@@ -115,7 +116,12 @@ const Header = () => {
             <span className="text-4xl font-bold">Edumate</span>
           </Link>
 
-          <div className="hidden lg:block">{navList}</div>
+          <div className="hidden lg:flex">
+            {navList}
+            <a href="#contact" className="flex items-center mx-5">
+        Contact
+      </a>
+          </div>
 
           <div className="dropdown dropdown-end hidden lg:block">
             <label tabIndex={0} className="cursor-pointer">

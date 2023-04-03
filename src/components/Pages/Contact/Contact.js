@@ -14,7 +14,7 @@ const Contact = () => {
 	
 	
     return (
-			<div className=' min-h-screen'>
+			<div id='contact' className=' min-h-screen'>
 			<h1 className='text-start font-serif font-bold flex justify-center pt-20 text-2xl'>For any query or information</h1>
 			<h1 className='text-start font-serif font-bold flex justify-center text-2xl'>Please contact with us</h1>
 				<div className='hero min-h-screen '>
