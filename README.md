@@ -6,13 +6,14 @@
 2. Tailwind
 3. Daisy UI
 4. React Icons
-5. react-typical --force
-6. npm i @material-tailwind/react --force
-7. npm install react-hook-form --force
-8. npm i @tanstack/react-query --force
-9. npm i react-toastify --force
-10. npm i react-countup --force
-11. npm install firebase --force
+5. react-typical 
+6. npm i @material-tailwind/react 
+7. npm install react-hook-form 
+8. npm i @tanstack/react-query 
+9. npm i react-toastify 
+10. npm i react-countup 
+11. npm install firebase 
+12. npm i @formspree/react
 
 
 

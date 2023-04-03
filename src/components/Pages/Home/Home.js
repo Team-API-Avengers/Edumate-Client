@@ -4,6 +4,7 @@ import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
 import OurBestTeachers from "./OurBestTeachers/OurBestTeachers";
 import Testimonial from "./Testimonial/Testimonial";
 import OurEnvironment from "./OurEnvironment/OurEnvironment";
+import Contact from "../Contact/Contact";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <OurEnvironment />
       <OurBestTeachers />
       <Testimonial />
+      <Contact />
     </div>
   );
 };
