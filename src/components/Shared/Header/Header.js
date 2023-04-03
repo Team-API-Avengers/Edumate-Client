@@ -123,9 +123,9 @@ const Header = () => {
 
           <div className="hidden lg:flex">
             {navList}
-            <a href="#contact" className="flex items-center mx-5">
+            <Link to="/dashboard/contact" className="flex items-center mx-5">
         Contact
-      </a>
+      </Link>
           </div>
 
           <div className="dropdown dropdown-end hidden lg:block">
