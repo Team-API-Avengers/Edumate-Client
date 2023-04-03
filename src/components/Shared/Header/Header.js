@@ -15,32 +15,20 @@ import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
 
 const Header = () => {
-
-  const {user, logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
   console.log(user);
 
-const navigate = useNavigate()
-
-
-
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
-		navigate('/login');
-		logOut()
-			.then(() => {
-				toast.error('Log Out!');
-				navigate('/login');
-			})
-			.catch((error) => console.error(error));
-	};
-
-
-
-
-
-
-
-
+    navigate("/login");
+    logOut()
+      .then(() => {
+        toast.error("Log Out!");
+        navigate("/login");
+      })
+      .catch((error) => console.error(error));
+  };
 
   const [openNav, setOpenNav] = useState(false);
   useEffect(() => {
@@ -69,20 +57,26 @@ const navigate = useNavigate()
       <NavLink style={navStyle} to={"/about-us"} className="flex items-center">
         About
       </NavLink>
+      <NavLink style={navStyle} to={"/allTeachers"}>
+        Teachers
+      </NavLink>
 
       <NavLink style={navStyle} to={"/dashboard"} className="flex items-center">
         Dashboard
       </NavLink>
-      
 
-      <NavLink style={navStyle} to={"/dashboard/contact"} className="flex items-center">
+      <NavLink
+        style={navStyle}
+        to={"/dashboard/contact"}
+        className="flex items-center"
+      >
         Contact
       </NavLink>
-      
+
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
       </NavLink>
-      <a onClick={handleLogOut}  className="flex lg:hidden items-center">
+      <a onClick={handleLogOut} className="flex lg:hidden items-center">
         Sign Out
       </a>
       <NavLink to={"/login"} className="flex lg:hidden items-center">
@@ -150,19 +144,17 @@ const navigate = useNavigate()
             <span className="text-4xl font-bold">Edumate</span>
           </Link>
 
-          <div className="hidden lg:block">
-            {navList}
-          </div>
+          <div className="hidden lg:block">{navList}</div>
 
           <div className="dropdown dropdown-end hidden lg:block">
             <label tabIndex={0} className="cursor-pointer">
               <div className="avatar online">
                 <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
-                  {user? 
-                  <img src={user?.photoURL} />
-                  :
-                  <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
-                  }
+                  {user ? (
+                    <img src={user?.photoURL} />
+                  ) : (
+                    <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
+                  )}
                 </div>
               </div>
             </label>
@@ -171,7 +163,9 @@ const navigate = useNavigate()
               className="mt-3 p-2 text-black font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/dashboard/My-Profile"  className="justify-between">{user?.displayName}</Link>
+                <Link to="/dashboard/My-Profile" className="justify-between">
+                  {user?.displayName}
+                </Link>
               </li>
               <li>
                 <Link to="/">Settings</Link>
