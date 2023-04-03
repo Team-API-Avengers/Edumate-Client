@@ -12,6 +12,7 @@ import BackgroundWiseTeacher from "../../Pages/BackgroundWiseTeacher/BackgroundW
 import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
 import MyProfile from "../../Pages/MyProfile/MyProfile";
 import Error from "../../Pages/Error/Error";
+import AboutOurs from "../../Pages/About/AboutOurs";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <About />,
+      },
+      {
+        path: "/about-ours",
+        element: <AboutOurs />,
       },
       {
         path: "/blog",
@@ -66,7 +71,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "*", element : <Error />
+    path: "*",
+    element: <Error />,
     // element: <div>Error 404 page</div>,
   },
 ]);
