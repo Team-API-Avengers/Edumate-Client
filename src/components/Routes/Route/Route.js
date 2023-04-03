@@ -13,6 +13,7 @@ import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
 import MyProfile from "../../Pages/MyProfile/MyProfile";
 import Error from "../../Pages/Error/Error";
 import AboutOurs from "../../Pages/About/AboutOurs";
+import Contact from "../../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/My-Profile",
         element: <MyProfile />,
+      },
+      {
+        path: "/dashboard/contact",
+        element: <Contact />,
       },
     ],
   },
