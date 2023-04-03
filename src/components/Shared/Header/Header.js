@@ -5,18 +5,42 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import FormModal from "../FormModal/FormModal";
 import { useState, useEffect } from "react";
 import { BiMenu } from "react-icons/bi";
 import { BsChevronUp } from "react-icons/bs";
 import { color } from "style-value-types";
 import { AuthContext } from "../../Context/AuthProvider";
+import { toast } from "react-toastify";
 
 const Header = () => {
 
-  const {user} = useContext(AuthContext)
+  const {user, logOut} = useContext(AuthContext)
   console.log(user);
+
+const navigate = useNavigate()
+
+
+
+
+  const handleLogOut = () => {
+		navigate('/login');
+		logOut()
+			.then(() => {
+				toast.error('Log Out!');
+				navigate('/login');
+			})
+			.catch((error) => console.error(error));
+	};
+
+
+
+
+
+
+
+
 
   const [openNav, setOpenNav] = useState(false);
   useEffect(() => {
@@ -50,10 +74,15 @@ const Header = () => {
         Dashboard
       </NavLink>
       
+
+      <NavLink style={navStyle} to={"/dashboard/contact"} className="flex items-center">
+        Contact
+      </NavLink>
+      
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
       </NavLink>
-      <NavLink to={"/signOut"} className="flex lg:hidden items-center">
+      <NavLink onClick={handleLogOut} to={"/signOut"} className="flex lg:hidden items-center">
         Sign Out
       </NavLink>
       <NavLink to={"/login"} className="flex lg:hidden items-center">
@@ -121,11 +150,8 @@ const Header = () => {
             <span className="text-4xl font-bold">Edumate</span>
           </Link>
 
-          <div className="hidden lg:flex">
+          <div className="hidden lg:block">
             {navList}
-            <Link to="/dashboard/contact" className="flex items-center mx-5">
-        Contact
-      </Link>
           </div>
 
           <div className="dropdown dropdown-end hidden lg:block">
