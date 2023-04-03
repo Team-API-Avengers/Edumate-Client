@@ -12,6 +12,9 @@ function App() {
      <RouterProvider router={router}></RouterProvider>
     </div>
   );
-}
+};
+
+
+// check out my client side
 
 export default App;
