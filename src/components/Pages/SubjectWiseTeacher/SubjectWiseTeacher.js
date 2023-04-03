@@ -8,16 +8,13 @@ const SubjectWiseTeacher = ({ teacher }) => {
       <section class="text-gray-600 body-font">
         <div class="container  px-5 py-1  mx-auto">
           <Link to={`/background/${background}`}>
-            <a
-              class="block rounded-lg border border-gray-500 p-4 shadow-xl hover:border-blue-500 transition transform hover:scale-90"
-              href="/accountant"
-            >
+            <div class="block rounded-lg border border-gray-500 p-4 shadow-xl hover:border-blue-500 transition transform hover:scale-90">
               <h2 class="mt-2 text-xl font-bold">{background}</h2>
 
               <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                 Lorem ipsum dolor sit amet consectetur.
               </p>
-            </a>
+            </div>
           </Link>
         </div>
       </section>
