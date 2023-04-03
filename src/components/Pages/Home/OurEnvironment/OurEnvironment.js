@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
+import { BsArrowRight, BsSearch } from 'react-icons/bs';
 
 const OurEnvironment = () => {
     return (
@@ -28,10 +28,22 @@ const OurEnvironment = () => {
                 </div> 
 
                 <p className="py-6 text-start">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+
                 <button className="btn btn-primary justify-start flex group">
                     <span>Get Started</span>
                     <BsArrowRight className='group-hover:flex hidden mx-3' />
                 </button>
+
+                <form className="flex border my-10 border-gray-400 bg-white w-80 rounded-lg">
+                <input
+                  type="text"
+                  placeholder="Search your subject"
+                  className="input w-full max-w-xs focus:outline-0 text-blue-600"
+                />
+              
+                <button className=""><BsSearch className="text-4xl mx-2 hover:text-blue-700" /></button>
+              </form>
+
                 </div>
             </div>
             </div>
