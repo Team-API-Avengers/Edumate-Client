@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Context/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
-    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    // const [createdUserEmail, setCreatedUserEmail] = useState('')
 
     const handleSignUp = (data) => {
         console.log(data);
@@ -16,7 +17,7 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast('user Created Succesfully.')
+                toast.success('user Created Succesfully.')
                 const userInfo = {
                     displayName: data.name
                 }
@@ -28,14 +29,14 @@ const Signup = () => {
             })
             .catch(error => {
                 console.error(error)
-                setSignUpError(error.message)
+                setSignUpError(error.message);
             });
 
     };
 
     const saveUser = (name, email) => {
         const user = { name, email };
-        fetch('http://localhost:4000/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,8 +45,8 @@ const Signup = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setCreatedUserEmail(email);
-
+                // setCreatedUserEmail(email);
+                console.log(data);
             })
     };
 
@@ -75,6 +76,7 @@ const Signup = () => {
                         <input type="text" {...register("email", {
                             required: "Email is required"
                         })} placeholder="Email" name="email" className="input input-bordered w-full px-4 py-3 rounded-md  dark:bg-white dark:text-black" />
+                        {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
                     </div>
                     <div className="mt-3 ms-1 text-sm">
                         <label className="flex m-2 dark:text-black ">Password</label>
@@ -83,9 +85,10 @@ const Signup = () => {
                             minLength: { value: 6, message: "password must be 6 character long" },
                             pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must be strong' }
                         })} placeholder="Password" name="password" className="input input-bordered w-full px-4 py-3 rounded-md  dark:bg-white dark:text-black" />
+                        {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                     </div>
                     <input className='btn my-5 btn-primary w-full p-3 text-center rounded-full ' value='Signup' type="submit" />
-                    {/* <button className="btn my-5 btn-primary w-full p-3 text-center rounded-full ">Sign up</button> */}
+                    {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </form>
                 <p className="text-xl text-center sm:px-6 ">Already have an account?
                     <Link to='/login' className="hover:underline mx-2">Log in</Link>

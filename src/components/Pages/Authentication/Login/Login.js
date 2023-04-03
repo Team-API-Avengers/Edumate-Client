@@ -1,24 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../../Context/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
+
 
 const Login = () => {
+	const googleProvider = new GoogleAuthProvider();
 	const { register, formState: { errors }, handleSubmit } = useForm();
+	const { signIn, signInWithGoogle } = useContext(AuthContext);
+	const [loginError, setLoginError] = useState('');
+	// const [loginUserEmail, setLoginUserEmail] = useState('');
+	const location = useLocation();
+	const navigate = useNavigate();
+	const from = location.state?.from?.pathname || '/';
+
+
 
 	const handleLogin = data => {
 		console.log(data);
-		// setLoginError('');
-		// signIn(data.email, data.password)
-		//     .then(result => {
-		//         const user = result.user;
-		//         console.log(user);
-		//         setLoginUserEmail(data.email);
+		setLoginError('');
+		signIn(data.email, data.password)
+			.then(result => {
+				const user = result.user;
+				console.log(user);
+				// form.reset();
+				navigate(from, { replace: true });
+				// setLoginUserEmail(data.email);
 
-		//     })
-		//     .catch(error => {
-		//         console.error(error.message);
-		//         setLoginError(error.message);
-		//     });
+			})
+			.catch(error => {
+				console.error(error.message);
+				setLoginError(error.message);
+			});
+	};
+
+	const handleGoogle = () => {
+		signInWithGoogle(googleProvider)
+			.then(result => {
+				const user = result.user;
+				console.log(user);
+			})
+			.catch(error => console.error(error));
 	};
 
 	return (
@@ -48,6 +71,7 @@ const Login = () => {
 							name="email"
 							className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
 						/>
+						{errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
 					</div>
 					<div className="mt-3 ms-1 text-sm ">
 						<label className="flex m-2  ">Password</label>
@@ -66,14 +90,15 @@ const Login = () => {
 							<Link to="">Forgot Password?</Link>
 						</div>
 					</div>
-					<button className="btn btn-primary w-full p-3 text-center rounded-full ">
-						Sign in
-					</button>
+					<input className='btn btn-primary w-full p-3 text-center rounded-full ' value='Login' type="submit" />
+					<div>
+						{loginError && <p className='text-red-600'>{loginError}</p>}
+					</div>
 				</form>
 
 				<div className="flex items-center pt-4 space-x-1">
 					<div className="flex-1 h-px sm:w-16 "></div>
-					<p className="btn btn-outline text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 border-none w-full px-3 text-sm  rounded-full">
+					<p onClick={handleGoogle} className="btn btn-outline text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 border-none w-full px-3 text-sm  rounded-full">
 						Login with Google
 					</p>
 					<div className="flex-1 h-px sm:w-16 "></div>
