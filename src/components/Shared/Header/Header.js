@@ -82,9 +82,9 @@ const navigate = useNavigate()
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
       </NavLink>
-      <NavLink onClick={handleLogOut} to={"/signOut"} className="flex lg:hidden items-center">
+      <a onClick={handleLogOut}  className="flex lg:hidden items-center">
         Sign Out
-      </NavLink>
+      </a>
       <NavLink to={"/login"} className="flex lg:hidden items-center">
         Sign In
       </NavLink>
@@ -143,7 +143,7 @@ const navigate = useNavigate()
             </div>
           </div>
         </div>
-      </Navbar> */}{" "}
+      </Navbar> */}
       <Navbar className="mx-auto shadow-lg max-w-screen-2xl bg-black py-6 px-4 rounded-none lg:px-8 lg:py-6">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Link to={"/"}>
@@ -177,7 +177,7 @@ const navigate = useNavigate()
                 <Link to="/">Settings</Link>
               </li>
               <li>
-                <a>Logout</a>
+                <a onClick={handleLogOut}>Logout</a>
               </li>
 
               <li>
