@@ -14,6 +14,7 @@ import MyProfile from "../../Pages/MyProfile/MyProfile";
 import Error from "../../Pages/Error/Error";
 import AboutOurs from "../../Pages/About/AboutOurs";
 import Contact from "../../Pages/Contact/Contact";
+import OurBestTeachers from "../../Pages/Home/OurBestTeachers/OurBestTeachers";
 
 const router = createBrowserRouter([
   {
@@ -44,11 +45,22 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
-      
+
+      {
+        path: "/allTeachers",
+        element: <OurBestTeachers />,
+        loader: () => {
+          return fetch(`https://edumate-server.vercel.app/api/v1/tutor`);
+        },
+      },
       {
         path: "/background/:background",
         element: <BackgroundWiseTeacher />,
-        loader: ({ params }) => fetch("teachers.json"),
+        loader: ({ params }) => {
+          return fetch(
+            `https://edumate-server.vercel.app/api/v1/tutor/${params.background}`
+          );
+        },
       },
     ],
   },
