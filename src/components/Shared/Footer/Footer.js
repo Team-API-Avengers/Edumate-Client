@@ -1,10 +1,11 @@
 import React from "react";
+import { BsBrowserEdge, BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-      <footer class="dark:bg-gray-800 dark:text-gray-50">
+      {/* <footer class="dark:bg-gray-800 dark:text-gray-50">
         <div class="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400">
           <ul class="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
             <li>Shop</li>
@@ -93,7 +94,78 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <footer className="px-4 divide-y dark:bg-gray-800 dark:text-gray-100">
+	<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+		<div className="lg:w-1/3">
+			<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
+				<div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
+					<BsBrowserEdge />
+				</div>
+				<span className="self-center text-2xl font-semibold">Edumate</span>
+			</a>
+		</div>
+		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+			<div className="space-y-3">
+				<h3 className="tracking-wide uppercase dark:text-gray-50">Product</h3>
+				<ul className="space-y-1">
+					<li>
+						<a rel="noopener noreferrer" href="#">Features</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">Integrations</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">Pricing</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">FAQ</a>
+					</li>
+				</ul>
+			</div>
+			<div className="space-y-3">
+				<h3 className="tracking-wide uppercase dark:text-gray-50">Company</h3>
+				<ul className="space-y-1">
+					<li>
+						<a rel="noopener noreferrer" href="#">Privacy</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">Terms of Service</a>
+					</li>
+				</ul>
+			</div>
+			<div className="space-y-3">
+				<h3 className="uppercase dark:text-gray-50">Developers</h3>
+				<ul className="space-y-1">
+					<li>
+						<a rel="noopener noreferrer" href="#">Public API</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">Documentation</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">Guides</a>
+					</li>
+				</ul>
+			</div>
+			<div className="space-y-3">
+				<div className="uppercase dark:text-gray-50">Social media</div>
+				<div className="flex justify-center space-x-3">
+					<a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1">
+						<BsFacebook />
+					</a>
+					<a rel="noopener noreferrer" href="#" title="Twitter" className="flex items-center p-1">
+						<BsTwitter />
+					</a>
+					<a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center p-1">
+            <BsInstagram />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div className="py-6 text-sm text-center dark:text-gray-400">© Team API Avengers - All rights reserved.</div>
+</footer>
     </div>
   );
 };
