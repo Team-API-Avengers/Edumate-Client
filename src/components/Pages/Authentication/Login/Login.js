@@ -17,7 +17,7 @@ const Login = () => {
 			</div>
 			<div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-lg  ">
 				<h1 className="text-2xl font-bold text-center">Login</h1>
-				<form>
+				<form >
 					<div className="text-sm">
 						<label className="flex m-2 ">Email</label>
 						<input
