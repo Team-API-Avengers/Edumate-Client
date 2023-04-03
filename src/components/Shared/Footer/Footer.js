@@ -164,7 +164,7 @@ const Footer = () => {
 			</div>
 		</div>
 	</div>
-	<div className="py-6 text-sm text-center dark:text-gray-400">© Team API Avengers - All rights reserved.</div>
+	<div className="py-6 text-sm text-center text-white bg-black">© Team API Avengers - All rights reserved.</div>
 </footer>
     </div>
   );
