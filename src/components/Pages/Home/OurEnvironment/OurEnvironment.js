@@ -16,7 +16,7 @@ const OurEnvironment = () => {
 
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDUZJLolJdEbyfxXZYqRsZ4ySYowpufmbTPJzgIHiJAid9y5wNlWowcSJWKmAI7hkH2C4&usqp=CAU" className="max-w-sm w-28 border-b-4 border-r-8 border-orange-600 rotate-45 h-28 absolute bottom-32 left-36 rounded-lg shadow-2xl" />
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXascVm9qN8p4OxksfLYxRUYvpZiJMFYpW09GCKTmhCWzEEblhHPYaYqsiEHsQLiLokYY&usqp=CAU" className="max-w-sm w-52 rotate-45 h-52 border-b-4 border-r-8 border-blue-700 absolute bottom-[-20px] right-12 rounded-lg shadow-2xl" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXascVm9qN8p4OxksfLYxRUYvpZiJMFYpW09GCKTmhCWzEEblhHPYaYqsiEHsQLiLokYY&usqp=CAU" className="max-w-sm w-52 rotate-45 h-52 border-b-4 border-r-8 border-blue-700 absolute bottom-[-10px] right-12 rounded-lg shadow-2xl" />
                 </div>
 
 
