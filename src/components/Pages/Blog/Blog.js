@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleBlog from "./SingleBlog";
 
-
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
 
