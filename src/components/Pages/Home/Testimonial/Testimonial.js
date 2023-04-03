@@ -5,7 +5,7 @@ import { ImQuotesLeft } from 'react-icons/im';
 const Testimonial = () => {
     return (
         <div>
-           <section className="py-6">
+           <section>
 	<div className="container flex bg-green-50 flex-col items-center justify-center p-4 mx-auto sm:p-10">
 		<p className="p-2 text-sm font-medium tracking-wider text-center uppercase">Student's Reviews</p>
 		<h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Our students share with us their feedbacks</h1>

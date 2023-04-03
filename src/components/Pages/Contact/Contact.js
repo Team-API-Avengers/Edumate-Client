@@ -15,17 +15,13 @@ const Contact = () => {
 			<h1 className='text-start font-serif font-bold flex justify-center text-2xl'>Please contact with us</h1>
 			<div className='hero min-h-screen '>
 				<div className='hero-content flex-col lg:flex-row-reverse'>
-					<div className='text-center lg:text-left'>
-						<p className='py-6'>
-							To contact with me please provide your email address.
-						</p>
-					</div>
-					<div className='card flex-shrink-0 w-full max-w-sm shadow-2xl cardBG '>
+					
+					<div className='card flex-shrink-0 w-full shadow-2xl '>
 						<form
 							onSubmit={handleSubmit}
 							className='card-body'
 						>
-							<div className='form-control'>
+							<div className='form-control w-96'>
 								<label className='label'>
 									<span className='label-text '>Full Name</span>
 								</label>
@@ -37,7 +33,7 @@ const Contact = () => {
 									required
 								/>
 							</div>
-							<div className='form-control'>
+							<div className='form-control w-96'>
 								<label className='label'>
 									<span className='label-text '>Email</span>
 								</label>
@@ -49,7 +45,7 @@ const Contact = () => {
 									required
 								/>
 							</div>
-							<div className='form-control'>
+							<div className='form-control w-96'>
 								<label className='label'>
 									<span className='label-text '>Subject</span>
 								</label>
@@ -61,7 +57,7 @@ const Contact = () => {
 									required
 								/>
 							</div>
-							<div className='form-control'>
+							<div className='form-control w-96'>
 								<label className='label'>
 									<span className='label-text '>message</span>
 								</label>
