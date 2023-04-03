@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ProfileEditModal from './ProfileEditModal';
+import { AuthContext } from '../../Context/AuthProvider';
 // import { BsFillBookmarkStarFill } from 'react-icons/bs';
 // import { AuthContext } from '../../../Context/AuthProvider';
 // import MyAccess from './MyProfileTable';
 
 const MyProfile = () => {
+	const {user} = useContext(AuthContext)
 	// const { user, logUser } = useContext(AuthContext);
 
 
@@ -16,22 +18,31 @@ const MyProfile = () => {
 		<div>
 			<div className='card lg:card-side mb-10 lg:w-full w-96 bg-base-100 shadow-xl'>
 				<div className=''>
+					{
+						user ?
+						<img
+						className='w-28 h-28 m-5 rounded-full'
+						src={user?.photoURL}
+						alt='Album'
+					/>
+					:
 					<img
 						className='w-28 h-28 m-5 rounded-full'
 						src='https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png'
 						alt='Album'
 					/>
+					}
 				</div>
 
 				<div className='card-body'>
 					<h2 className='card-title lg:flex hidden text-start '>
-						Hey <h2 className=' font-serif font-bold'>User</h2> !
+						Hey <h2 className=' font-serif font-bold'>{user?.displayName}</h2> !
 						Here's your details
 					</h2>
 
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
-							Full Name : 
+							Full Name : {user?.displayName}
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
 							<label onClick={()=> setEditName('Name')} htmlFor='profileEdit' className='cursor-pointer'>
@@ -42,7 +53,7 @@ const MyProfile = () => {
 
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
-							Email Address : 
+							Email Address : {user?.email}
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
 							<label onClick={()=> setEditEmail('Email')} htmlFor='profileEdit' className='cursor-pointer'>

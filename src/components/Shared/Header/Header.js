@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
   MobileNav,
@@ -11,8 +11,13 @@ import { useState, useEffect } from "react";
 import { BiMenu } from "react-icons/bi";
 import { BsChevronUp } from "react-icons/bs";
 import { color } from "style-value-types";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Header = () => {
+
+  const {user} = useContext(AuthContext)
+  console.log(user);
+
   const [openNav, setOpenNav] = useState(false);
   useEffect(() => {
     window.addEventListener(
@@ -127,7 +132,11 @@ const Header = () => {
             <label tabIndex={0} className="cursor-pointer">
               <div className="avatar online">
                 <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
+                  {user? 
+                  <img src={user?.photoURL} />
+                  :
                   <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
+                  }
                 </div>
               </div>
             </label>
@@ -136,7 +145,7 @@ const Header = () => {
               className="mt-3 p-2 text-black font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <a className="justify-between">Profile</a>
+                <Link to="/dashboard/My-Profile"  className="justify-between">{user?.displayName}</Link>
               </li>
               <li>
                 <Link to="/">Settings</Link>
