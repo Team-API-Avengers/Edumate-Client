@@ -11,6 +11,7 @@
 7. npm install react-hook-form --force
 8.  npm i @tanstack/react-query --force
 9. npm i react-toastify --force
+10. npm i react-countup --force
 
 
 
