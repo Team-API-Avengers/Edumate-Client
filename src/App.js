@@ -6,7 +6,7 @@ import router from './components/Routes/Route/Route';
 function App() {
   return (
     <div className="App bg-slate-100">
-     <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

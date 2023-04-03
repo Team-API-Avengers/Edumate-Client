@@ -1,7 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
+	const { register, formState: { errors }, handleSubmit } = useForm();
+
+	const handleLogin = data => {
+		console.log(data);
+		// setLoginError('');
+		// signIn(data.email, data.password)
+		//     .then(result => {
+		//         const user = result.user;
+		//         console.log(user);
+		//         setLoginUserEmail(data.email);
+
+		//     })
+		//     .catch(error => {
+		//         console.error(error.message);
+		//         setLoginError(error.message);
+		//     });
+	};
+
 	return (
 		<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
 			<div className="flex flex-col justify-between">
@@ -17,13 +36,16 @@ const Login = () => {
 			</div>
 			<div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-lg  ">
 				<h1 className="text-2xl font-bold text-center">Login</h1>
-				<form >
+				<form onSubmit={handleSubmit(handleLogin)}>
 					<div className="text-sm">
 						<label className="flex m-2 ">Email</label>
 						<input
 							type="text"
+							{...register("email", {
+								required: "Email Address is required"
+							})}
 							placeholder="Email"
-							name="Email"
+							name="email"
 							className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
 						/>
 					</div>
@@ -31,10 +53,15 @@ const Login = () => {
 						<label className="flex m-2  ">Password</label>
 						<input
 							type="text"
+							{...register("password", {
+								required: 'Password is required',
+								minLength: { value: 6, message: 'Password must be 6 characters or longer' }
+							})}
 							placeholder="Password"
 							name="password"
 							className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
 						/>
+						{errors.password && <p className='text-red-600 mb-3'>{errors.password?.message}</p>}
 						<div className="flex mt-2 mb-5 text-xs ">
 							<Link to="">Forgot Password?</Link>
 						</div>
@@ -43,14 +70,6 @@ const Login = () => {
 						Sign in
 					</button>
 				</form>
-
-				<div className="flex items-center pt-4 space-x-1">
-					<div className="flex-1 h-px sm:w-16 "></div>
-					<p className="btn btn-outline text-white bg-blue-600 hover:bg-blue-700 border-none w-full px-3 text-sm  rounded-full">
-						Login with Facebook
-					</p>
-					<div className="flex-1 h-px sm:w-16 "></div>
-				</div>
 
 				<div className="flex items-center pt-4 space-x-1">
 					<div className="flex-1 h-px sm:w-16 "></div>

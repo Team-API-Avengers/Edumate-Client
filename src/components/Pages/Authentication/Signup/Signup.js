@@ -1,15 +1,52 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const Signup = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const { createUser, updateUser } = useContext(AuthContext);
+    const [signUpError, setSignUpError] = useState('');
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
 
     const handleSignUp = (data) => {
-        console.log(data)
+        console.log(data);
+        setSignUpError('');
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast('user Created Succesfully.')
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        saveUser(data.name, data.email);
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(error => {
+                console.error(error)
+                setSignUpError(error.message)
+            });
 
+    };
 
+    const saveUser = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:4000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email);
+
+            })
     };
 
     return (
