@@ -11,6 +11,7 @@ import Signup from "../../Pages/Authentication/Signup/Signup";
 import BackgroundWiseTeacher from "../../Pages/BackgroundWiseTeacher/BackgroundWiseTeacher";
 import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
 import MyProfile from "../../Pages/MyProfile/MyProfile";
+import Error from "../../Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
@@ -65,8 +66,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "*",
-    element: <div>Error 404 page</div>,
+    path: "*", element : <Error />
+    // element: <div>Error 404 page</div>,
   },
 ]);
 

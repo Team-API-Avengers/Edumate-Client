@@ -31,8 +31,8 @@ const SubjectWiseTeachers = () => {
 
   return (
     <div>
-      <h1>Teachers by category</h1>
-      <div className="grid grid-cols-3 gap-2 max-w-screen-lg mx-auto">
+      <h1 className="text-3xl font-bold">Teachers by background</h1>
+      <div className="grid grid-cols-3 gap-2 max-w-screen-lg mt-10 mb-10 mx-auto">
         {teachers.map((teacher, i) => (
           <SubjectWiseTeacher key={i} teacher={teacher}></SubjectWiseTeacher>
         ))}

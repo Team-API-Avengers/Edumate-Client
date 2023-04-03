@@ -17,8 +17,8 @@ const MyProfile = () => {
 			<div className='card lg:card-side mb-10 lg:w-full w-96 bg-base-100 shadow-xl'>
 				<div className=''>
 					<img
-						className='w-28 h-28 rounded-full'
-						src=''
+						className='w-28 h-28 m-5 rounded-full'
+						src='https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png'
 						alt='Album'
 					/>
 				</div>
