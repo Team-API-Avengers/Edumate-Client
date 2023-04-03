@@ -52,7 +52,7 @@ const DashBoard = () => {
 				
 				<div className='drawer-side border'>
 					<label htmlFor='my-drawer-2' className='drawer-overlay'></label>
-					<ul className='menu p-4 w-80 bg-base-100 text-base-content'>
+					<ul className='menu p-4 w-60 bg-base-100 text-base-content'>
 						<Link to='/home' className='flex lg:hidden mb-10'>
 							<img
 								src='PremiCar.png'
@@ -70,6 +70,9 @@ const DashBoard = () => {
 							<>
 								<li className=''>
 									<Link to='/dashboard/add-Teacher'>Add Teacher</Link>
+								</li>
+								<li className=''>
+									<Link to='/dashboard/allTeachers'>All Teacher</Link>
 								</li>
 							</>
 						

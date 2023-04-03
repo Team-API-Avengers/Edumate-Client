@@ -12,11 +12,20 @@ const OurBestTeacher = ({ teacher, setTutor }) => {
       <div className="px-25 mx-auto py-10">
         <div className="flex flex-col">
           <a className="block relative  overflow-hidden">
-            <img
-              alt="ecommerce"
+          {image ?
+          <img
+          alt="teacher"
+          className="object-cover h-[200px] w-[750px] mx-auto object-center block"
+          src={image}
+        />
+        :
+        <img
+              alt="teacher"
               className="object-cover h-[200px] w-[750px] mx-auto object-center block"
-              src={image}
+              src='https://osoq.com/caricatures/gift-caricatures-images/teacher-school-caricature-807462.jpg'
             />
+          }
+            
           </a>
           <div className="bg-indigo-400">
             <div className="m-10 space-y-1">

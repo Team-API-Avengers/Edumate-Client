@@ -58,9 +58,7 @@ const Header = () => {
       <NavLink style={navStyle} to={"/about-us"} className="flex items-center">
         About
       </NavLink>
-      <NavLink style={navStyle} to={"/allTeachers"}>
-        Teachers
-      </NavLink>
+      
 
       <NavLink style={navStyle} to={"/dashboard"} className="flex items-center">
         Dashboard
@@ -77,15 +75,20 @@ const Header = () => {
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
       </NavLink>
+      {user ?
       <a onClick={handleLogOut} className="flex lg:hidden items-center">
         Sign Out
       </a>
+      :
+     <>
       <NavLink to={"/login"} className="flex lg:hidden items-center">
         Sign In
       </NavLink>
       <NavLink to={"/signUp"} className="flex lg:hidden  items-center">
         Sign Up
       </NavLink>
+     </>
+     }
     </ul>
   );
 
@@ -117,7 +120,9 @@ const Header = () => {
               tabIndex={0}
               className="mt-3 p-2 text-black font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
-              <li>
+              {user ?
+            <>
+            <li>
                 <Link to="/dashboard/My-Profile" className="justify-between">
                   {user?.displayName}
                 </Link>
@@ -128,13 +133,19 @@ const Header = () => {
               <li>
                 <a onClick={handleLogOut}>Logout</a>
               </li>
-
-              <li>
+            </>  
+            :
+            <>
+            <li>
                 <Link to="/login">Login</Link>
               </li>
               <li>
                 <Link to="/signup">Signup</Link>
               </li>
+            </>
+            }
+
+              
             </ul>
           </div>
 

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
 
 
 
+	 //! Email Login Form
 	const handleLogin = data => {
 		console.log(data);
 		setLoginError('');
@@ -24,25 +26,47 @@ const Login = () => {
 			.then(result => {
 				const user = result.user;
 				console.log(user);
-				// form.reset();
-				navigate(from, { replace: true });
+
+				if(result){
+					toast.success('Login successful')
+					navigate('/')
+
+					// form.reset();
+				// navigate(from, { replace: true });
 				// setLoginUserEmail(data.email);
+				}
 
 			})
 			.catch(error => {
 				console.error(error.message);
 				setLoginError(error.message);
+				toast.error('Email Failed to login')
 			});
 	};
 
+
+
+
+
+	//! Google Login Form
 	const handleGoogle = () => {
 		signInWithGoogle(googleProvider)
 			.then(result => {
 				const user = result.user;
 				console.log(user);
+				if(result){
+					toast.success('Google Login successful')
+					navigate('/')
+				}
 			})
-			.catch(error => console.error(error));
+			.catch(error => {
+				console.error(error)
+				toast.error('Failed to login')
+			});
 	};
+
+
+
 
 	return (
 		<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
