@@ -66,7 +66,7 @@ const navigate = useNavigate()
         Blog
       </NavLink>
 
-      <NavLink style={navStyle} to={"/about"} className="flex items-center">
+      <NavLink style={navStyle} to={"/about-us"} className="flex items-center">
         About
       </NavLink>
 

@@ -44,6 +44,7 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
+      
       {
         path: "/background/:background",
         element: <BackgroundWiseTeacher />,
