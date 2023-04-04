@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         element: <Instructors />,
       },
       {
-        path: "/instructor/:details",
+        path: "/instructor/:_id",
         element: <InstructorDetails />,
         loader: ({ params }) => {
           return fetch(
