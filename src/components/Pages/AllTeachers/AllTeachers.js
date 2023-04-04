@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import OurBestTeacher from "../Home/OurBestTeachers/OurBestTeacher";
-import BookTeacher from "../BookingTeacher/BookTeacher";
+
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
 
 const AllTeachers = () => {
   const { loading } = useContext(AuthContext);
-  const [tutor, setTutor] = useState(null);
+  // const [tutor, setTutor] = useState(null);
 
   const AllTeachers = useLoaderData();
 
@@ -31,14 +31,9 @@ const AllTeachers = () => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
         {AllTeachers?.data?.map((teacher, index) => (
-          <OurBestTeacher
-            setTutor={setTutor}
-            teacher={teacher}
-            key={index}
-          ></OurBestTeacher>
+          <OurBestTeacher teacher={teacher} key={index}></OurBestTeacher>
         ))}
       </div>
-      <BookTeacher setTutor={setTutor} tutor={tutor}></BookTeacher>
     </div>
   );
 };
