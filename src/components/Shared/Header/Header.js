@@ -41,25 +41,25 @@ const Header = () => {
 
   const navStyle = ({ isActive }) => {
     return {
-      color: isActive ? "blue" : "white",
+      // color: isActive ? "green" : "black",
 
       textDecoration: "none",
       padding: "5px",
-      backgroundColor: isActive ? "white" : "transparent",
+      // backgroundColor: isActive ? "white" : "transparent",
       borderRadius: "2px",
-      transition: "all 0.6s ease-in-out",
-      ":hover": {
-        color: isActive ? "white" : "blue",
-      },
+      // transition: "all 0.6s ease-in-out",
+      // ":hover": {
+      //   // color: isActive ? "white" : "blue",
+      // },
       borderBottom: isActive ? "3px solid blue" : "none",
     };
   };
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
       <NavLink
         style={navStyle}
         to={"/"}
-        className="flex  w-32 justify-center items-center"
+        className="flex  w-24 justify-center items-center"
       >
         Home
       </NavLink>
@@ -67,7 +67,7 @@ const Header = () => {
       <NavLink
         style={navStyle}
         to={"/blog"}
-        className="flex w-32 justify-center items-center"
+        className="flex w-24 justify-center items-center"
       >
         Blog
       </NavLink>
@@ -75,7 +75,7 @@ const Header = () => {
       <NavLink
         style={navStyle}
         to={"/about-us"}
-        className="flex  w-32 justify-center items-center"
+        className="flex  w-24 justify-center items-center"
       >
         About
       </NavLink>
@@ -83,7 +83,7 @@ const Header = () => {
       <NavLink
         style={navStyle}
         to={"/dashboard"}
-        className="flex  w-32 justify-center items-center"
+        className="flex  w-36 justify-center items-center"
       >
         Dashboard
       </NavLink>
@@ -91,7 +91,7 @@ const Header = () => {
       <NavLink
         style={navStyle}
         to={"/dashboard/contact"}
-        className="flex  w-32 justify-center items-center"
+        className="flex  w-24 justify-center items-center"
       >
         Contact
       </NavLink>
@@ -118,7 +118,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto shadow-lg max-w-screen-2xl bg-black py-6 px-4 rounded-none lg:px-8 lg:py-6">
+      <Navbar className="mx-auto shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-6">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
