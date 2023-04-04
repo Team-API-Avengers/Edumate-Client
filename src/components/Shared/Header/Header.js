@@ -41,33 +41,59 @@ const Header = () => {
 
   const navStyle = ({ isActive }) => {
     return {
-      color: isActive ? "red" : "white",
-      fontWeight: isActive ? "bold" : "normal",
+      color: isActive ? "blue" : "white",
+      // fontWeight: isActive ? "extrabold" : "normal",
+      textDecoration: "none",
+      padding: "5px",
+      margin: "5px",
+      backgroundColor: isActive ? "white" : "transparent",
+      borderRadius: "2px",
+      transition: "all 0.5s ease-in-out",
+      ":hover": {
+        color: isActive ? "white" : "blue",
+        // backgroundColor: isActive ? "blue" : "white",
+      },
+      borderBottom: isActive ? "3px solid blue" : "none",
     };
   };
   const navList = (
     <ul className="mb-4 font-bold mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <NavLink style={navStyle} to={"/"} className="flex items-center">
+      <NavLink
+        style={navStyle}
+        to={"/"}
+        className="flex  w-32 justify-center items-center"
+      >
         Home
       </NavLink>
 
-      <NavLink style={navStyle} to={"/blog"} className="flex items-center">
+      <NavLink
+        style={navStyle}
+        to={"/blog"}
+        className="flex w-32 justify-center items-center"
+      >
         Blog
       </NavLink>
 
-      <NavLink style={navStyle} to={"/about-us"} className="flex items-center">
+      <NavLink
+        style={navStyle}
+        to={"/about-us"}
+        className="flex  w-32 justify-center items-center"
+      >
         About
       </NavLink>
-      
 
-      <NavLink style={navStyle} to={"/dashboard"} className="flex items-center">
+      <NavLink
+        style={navStyle}
+        to={"/dashboard"}
+        className="flex  w-32 justify-center items-center"
+      >
         Dashboard
       </NavLink>
 
       <NavLink
         style={navStyle}
         to={"/dashboard/contact"}
-        className="flex items-center"
+        className="flex  w-32 justify-center items-center"
       >
         Contact
       </NavLink>
@@ -75,20 +101,20 @@ const Header = () => {
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
       </NavLink>
-      {user ?
-      <a onClick={handleLogOut} className="flex lg:hidden items-center">
-        Sign Out
-      </a>
-      :
-     <>
-      <NavLink to={"/login"} className="flex lg:hidden items-center">
-        Sign In
-      </NavLink>
-      <NavLink to={"/signUp"} className="flex lg:hidden  items-center">
-        Sign Up
-      </NavLink>
-     </>
-     }
+      {user ? (
+        <a onClick={handleLogOut} className="flex lg:hidden items-center">
+          Sign Out
+        </a>
+      ) : (
+        <>
+          <NavLink to={"/login"} className="flex lg:hidden items-center">
+            Sign In
+          </NavLink>
+          <NavLink to={"/signUp"} className="flex lg:hidden  items-center">
+            Sign Up
+          </NavLink>
+        </>
+      )}
     </ul>
   );
 
@@ -120,32 +146,33 @@ const Header = () => {
               tabIndex={0}
               className="mt-3 p-2 text-black font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
-              {user ?
-            <>
-            <li>
-                <Link to="/dashboard/My-Profile" className="justify-between">
-                  {user?.displayName}
-                </Link>
-              </li>
-              <li>
-                <Link to="/">Settings</Link>
-              </li>
-              <li>
-                <a onClick={handleLogOut}>Logout</a>
-              </li>
-            </>  
-            :
-            <>
-            <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/signup">Signup</Link>
-              </li>
-            </>
-            }
-
-              
+              {user ? (
+                <>
+                  <li>
+                    <Link
+                      to="/dashboard/My-Profile"
+                      className="justify-between"
+                    >
+                      {user?.displayName}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">Settings</Link>
+                  </li>
+                  <li>
+                    <a onClick={handleLogOut}>Logout</a>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to="/login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="/signup">Signup</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
