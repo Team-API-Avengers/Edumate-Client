@@ -42,22 +42,20 @@ const Header = () => {
   const navStyle = ({ isActive }) => {
     return {
       color: isActive ? "blue" : "white",
-      // fontWeight: isActive ? "extrabold" : "normal",
+
       textDecoration: "none",
       padding: "5px",
-      margin: "5px",
       backgroundColor: isActive ? "white" : "transparent",
       borderRadius: "2px",
-      transition: "all 0.5s ease-in-out",
+      transition: "all 0.6s ease-in-out",
       ":hover": {
         color: isActive ? "white" : "blue",
-        // backgroundColor: isActive ? "blue" : "white",
       },
       borderBottom: isActive ? "3px solid blue" : "none",
     };
   };
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mb-4 font-bold mt-2 flex flex-col  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
       <NavLink
         style={navStyle}
         to={"/"}
