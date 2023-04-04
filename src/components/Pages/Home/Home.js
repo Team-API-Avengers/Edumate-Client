@@ -7,6 +7,7 @@ import OurEnvironment from "./OurEnvironment/OurEnvironment";
 import Contact from "../Contact/Contact";
 import AboutOurs from "../About/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
+import Reviews from "../Reviews/Reviews";
 // import OurBestTeacher from "./OurBestTeachers/OurBestTeacher";
 
 const Home = () => {
@@ -16,6 +17,8 @@ const Home = () => {
       <SubjectWiseTeachers />
       <OurEnvironment />
       {/* <OurBestTeachers /> */}
+
+      <Reviews />
 
       <Testimonial />
       <AboutOurs />

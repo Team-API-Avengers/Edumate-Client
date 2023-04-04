@@ -103,7 +103,7 @@ const Signup = () => {
   const updateUserDetails = (name, photoURL) => {
     updateUser(name, photoURL)
       .then(() => {
-        // alert('Profile Updated');
+        alert('Profile Updated');
       })
       .catch((error) => {
         console.error(error);
