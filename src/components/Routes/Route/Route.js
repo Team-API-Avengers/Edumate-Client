@@ -17,6 +17,7 @@ import AboutOurs from "../../Pages/About/AboutOurs";
 import OurBestTeachers from "../../Pages/Home/OurBestTeachers/OurBestTeachers";
 import AllTeachers from "../../Pages/AllTeachers/AllTeachers";
 import ContactUs from "../../Pages/Contact/ContactUs";
+import MyTeachers from "../../Pages/MyTeachers/MyTeachers";
 
 const router = createBrowserRouter([
   {
@@ -81,9 +82,12 @@ const router = createBrowserRouter([
         path: "/dashboard/contact",
         element: <ContactUs />,
       },
-
       {
-        path: "/dashboard/allTeachers",
+        path: "/dashboard/my-Teachers",
+        element: <MyTeachers />,
+      },
+      {
+        path: "/dashboard/all-Teachers",
         element: <AllTeachers />,
         loader: () => {
           return fetch(`https://edumate-server.vercel.app/api/v1/tutor`);

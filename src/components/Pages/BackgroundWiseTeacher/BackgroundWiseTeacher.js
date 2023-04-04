@@ -6,7 +6,7 @@ import { BsHourglassSplit, BsFillPersonFill } from "react-icons/bs";
 
 const BackgroundWiseTeacher = () => {
   const Alldata = useLoaderData();
-  // console.log(Alldata);
+  console.log(Alldata);
 
   return (
     <div className="max-w-screen-xl mx-auto min-h-screen">
