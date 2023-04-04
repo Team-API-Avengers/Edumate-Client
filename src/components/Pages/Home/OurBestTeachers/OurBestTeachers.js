@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import OurBestTeacher from "./OurBestTeacher";
-import BookTeacher from "../../BookingTeacher/BookTeacher";
+
 import { useLoaderData } from "react-router-dom";
 
 const OurBestTeachers = () => {
@@ -31,7 +31,6 @@ const OurBestTeachers = () => {
           ></OurBestTeacher>
         ))}
       </div>
-      <BookTeacher setTutor={setTutor} tutor={tutor}></BookTeacher>
     </div>
   );
 };

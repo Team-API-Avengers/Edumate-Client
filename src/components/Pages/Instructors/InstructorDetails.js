@@ -11,7 +11,43 @@ import { useLoaderData } from "react-router-dom";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
-  console.log(details);
+
+  const bookTeacher = (data) => {
+    const name = data.name;
+    const email = data.email;
+    const location = data.location;
+    const phone = data.phone;
+    const image = data.image;
+    const experience = data.experience;
+    const background = data.background;
+
+    const bookingData = {
+      name,
+      email,
+      location,
+      phone,
+      image,
+      experience,
+      background,
+    };
+
+    console.log(bookingData);
+    fetch(``, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("booked");
+        }
+      });
+  };
+
   return (
     <div>
       {details?.data?.map((instructorDetail) => {
@@ -68,7 +104,10 @@ const InstructorDetails = () => {
                     </p>
 
                     <div class="flex mt-8">
-                      <button class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
+                      <button
+                        onClick={() => bookTeacher(instructorDetail)}
+                        class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+                      >
                         <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                           <BsArrowRight />
                         </span>
