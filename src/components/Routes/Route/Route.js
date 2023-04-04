@@ -13,9 +13,10 @@ import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
 import MyProfile from "../../Pages/MyProfile/MyProfile";
 import Error from "../../Pages/Error/Error";
 import AboutOurs from "../../Pages/About/AboutOurs";
-import Contact from "../../Pages/Contact/Contact";
+
 import OurBestTeachers from "../../Pages/Home/OurBestTeachers/OurBestTeachers";
 import AllTeachers from "../../Pages/AllTeachers/AllTeachers";
+import ContactUs from "../../Pages/Contact/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
         path: "/about-us",
         element: <About />,
       },
+
       {
         path: "/about-ours",
         element: <AboutOurs />,
@@ -77,9 +79,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/contact",
-        element: <Contact />,
+        element: <ContactUs />,
       },
-      
+
       {
         path: "/dashboard/allTeachers",
         element: <AllTeachers />,
