@@ -17,12 +17,15 @@ const Login = () => {
 	const navigate = useNavigate();
 	const from = location.state?.from?.pathname || '/';
 
+	const [recaptcha, setRecaptcha ] = useState()
 
 
 
 	//! react-google-recaptcha
 	function onChange(value) {
-		console.log("Captcha value:", value);
+		// console.log("Captcha value:", value);
+		setRecaptcha(value);
+
 	  }
 
 
@@ -101,52 +104,57 @@ const Login = () => {
 				sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
 			  	onChange={onChange}
 		        	/>
-					
-				<h1 className="text-2xl font-bold text-center">Login</h1>
-				<form onSubmit={handleSubmit(handleLogin)}>
-					<div className="text-sm">
-						<label className="flex m-2 ">Email</label>
-						<input
-							type="text"
-							{...register("email", {
-								required: "Email Address is required"
-							})}
-							placeholder="Email"
-							name="email"
-							className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
-						/>
-						{errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
-					</div>
-					<div className="mt-3 ms-1 text-sm ">
-						<label className="flex m-2  ">Password</label>
-						<input
-							type="text"
-							{...register("password", {
-								required: 'Password is required',
-								minLength: { value: 6, message: 'Password must be 6 characters or longer' }
-							})}
-							placeholder="Password"
-							name="password"
-							className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
-						/>
-						{errors.password && <p className='text-red-600 mb-3'>{errors.password?.message}</p>}
-						<div className="flex mt-2 mb-5 text-xs ">
-							<Link to="">Forgot Password?</Link>
-						</div>
-					</div>
-					<input className='btn btn-primary w-full p-3 text-center rounded-full ' value='Login' type="submit" />
-					<div>
-						{loginError && <p className='text-red-600'>{loginError}</p>}
-					</div>
-				</form>
 
-				<div className="flex items-center pt-4 space-x-1">
-					<div className="flex-1 h-px sm:w-16 "></div>
-					<p onClick={handleGoogle} className="btn btn-outline text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 border-none w-full px-3 text-sm  rounded-full">
-						Login with Google
-					</p>
-					<div className="flex-1 h-px sm:w-16 "></div>
+				<h1 className="text-2xl font-bold text-center">Login</h1>
+				{recaptcha &&
+				<form onSubmit={handleSubmit(handleLogin)}>
+				<div className="text-sm">
+					<label className="flex m-2 ">Email</label>
+					<input
+						type="text"
+						{...register("email", {
+							required: "Email Address is required"
+						})}
+						placeholder="Email"
+						name="email"
+						className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
+					/>
+					{errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
 				</div>
+				<div className="mt-3 ms-1 text-sm ">
+					<label className="flex m-2  ">Password</label>
+					<input
+						type="text"
+						{...register("password", {
+							required: 'Password is required',
+							minLength: { value: 6, message: 'Password must be 6 characters or longer' }
+						})}
+						placeholder="Password"
+						name="password"
+						className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
+					/>
+					{errors.password && <p className='text-red-600 mb-3'>{errors.password?.message}</p>}
+					<div className="flex mt-2 mb-5 text-xs ">
+						<Link to="">Forgot Password?</Link>
+					</div>
+				</div>
+				<input className='btn btn-primary w-full p-3 text-center rounded-full ' value='Login' type="submit" />
+				<div>
+					{loginError && <p className='text-red-600'>{loginError}</p>}
+				</div>
+			</form>
+				}
+				
+
+				{recaptcha && 
+				<div className="flex items-center pt-4 space-x-1">
+				<div className="flex-1 h-px sm:w-16 "></div>
+				<p onClick={handleGoogle} className="btn btn-outline text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 border-none w-full px-3 text-sm  rounded-full">
+					Login with Google
+				</p>
+				<div className="flex-1 h-px sm:w-16 "></div>
+			   </div>
+				}
 
 				{/* <div className="flex justify-center space-x-4">
 					<button aria-label="Log in with Google" className="p-3 rounded-sm">
