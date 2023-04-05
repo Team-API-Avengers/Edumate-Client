@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import BlogDetails from "./BlogDetails";
 
 const Blog = () => {
   const [blogs, setBlog] = useState(null);
@@ -12,7 +13,7 @@ const Blog = () => {
     <div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-2 gap-5">
         {blogs?.map((singleBlog, i) => (
-          <Link to={`blogDetails/${i}`}>
+          <Link to={"/blogDetails"}>
             <article class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
               <div class="flex items-start sm:gap-8">
                 <div>
@@ -48,6 +49,7 @@ const Blog = () => {
             </article>
           </Link>
         ))}
+        <BlogDetails value={blogs} />
       </div>
     </div>
   );

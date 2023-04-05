@@ -9,6 +9,7 @@ import AboutOurs from "./AboutOurs/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
 import BeATeacher from "./BecomeATutor/BeATeacher";
+import BlogDetails from "../Blog/BlogDetails";
 // import OurBestTeacher from "./OurBestTeachers/OurBestTeacher";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     <div>
       <Banner />
       <SubjectWiseTeachers />
+      <BlogDetails />
       <OurEnvironment />
       {/* <OurBestTeachers /> */}
 
