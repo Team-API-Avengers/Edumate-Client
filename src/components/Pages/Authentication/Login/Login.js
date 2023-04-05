@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const Login = () => {
@@ -15,6 +16,17 @@ const Login = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const from = location.state?.from?.pathname || '/';
+
+
+
+
+	//! react-google-recaptcha
+	function onChange(value) {
+		console.log("Captcha value:", value);
+	  }
+
+
+
 
 
 
@@ -69,7 +81,9 @@ const Login = () => {
 
 
 	return (
-		<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
+		<div>
+			 
+			<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
 			<div className="flex flex-col justify-between">
 				<div className="space-y-2">
 					<h2 className="text-4xl font-bold leading-tight lg:text-5xl">
@@ -82,6 +96,12 @@ const Login = () => {
 				<img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
 			</div>
 			<div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-lg  ">
+				
+			   <ReCAPTCHA
+				sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
+			  	onChange={onChange}
+		        	/>
+					
 				<h1 className="text-2xl font-bold text-center">Login</h1>
 				<form onSubmit={handleSubmit(handleLogin)}>
 					<div className="text-sm">
@@ -149,6 +169,7 @@ const Login = () => {
 					</Link>
 				</p>
 			</div>
+		</div>
 		</div>
 	);
 };

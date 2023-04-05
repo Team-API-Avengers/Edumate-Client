@@ -14,6 +14,7 @@
 10. npm i react-countup 
 11. npm install firebase 
 12. npm i @formspree/react
+13. npm install --save react-google-recaptcha
 
 
 
