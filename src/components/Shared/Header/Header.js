@@ -41,16 +41,9 @@ const Header = () => {
 
   const navStyle = ({ isActive }) => {
     return {
-      // color: isActive ? "green" : "black",
-
       textDecoration: "none",
       padding: "5px",
-      // backgroundColor: isActive ? "white" : "transparent",
       borderRadius: "2px",
-      // transition: "all 0.6s ease-in-out",
-      // ":hover": {
-      //   // color: isActive ? "white" : "blue",
-      // },
       borderBottom: isActive ? "3px solid blue" : "none",
     };
   };
@@ -90,7 +83,8 @@ const Header = () => {
 
       <NavLink
         style={navStyle}
-        to={"/dashboard/contact"}
+        // to={"/dashboard/contact"}
+        to={"/contact"}
         className="flex  w-24 justify-center items-center"
       >
         Contact

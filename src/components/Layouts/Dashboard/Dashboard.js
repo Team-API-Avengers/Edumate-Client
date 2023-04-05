@@ -68,7 +68,7 @@ const DashBoard = () => {
 
             <>
               <li className="">
-                <Link to="/dashboard/add-Teacher">Add Teacher</Link>
+                <Link to="/dashboard/add-Teacher">Be a teacher</Link>
               </li>
               <li className="">
                 <Link to="/dashboard/all-Teachers">All Teacher</Link>

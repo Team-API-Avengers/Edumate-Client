@@ -8,6 +8,7 @@ import Contact from "../Contact/Contact";
 import AboutOurs from "../About/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
+import BeATeacher from "../AddTeacher/BeATeacher";
 // import OurBestTeacher from "./OurBestTeachers/OurBestTeacher";
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
       <Testimonial />
       <AboutOurs />
       {/* <Contact /> */}
+      <BeATeacher />
       <ContactUs />
     </div>
   );
