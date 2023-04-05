@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../Assets/beateacher.jpg";
+import image from "../../../Assets/beateacher.jpg";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 
