@@ -20,6 +20,7 @@ import ContactUs from "../../Pages/Contact/ContactUs";
 import MyTeachers from "../../Pages/MyTeachers/MyTeachers";
 import Instructors from "../../Pages/Instructors/Instructors";
 import InstructorDetails from "../../Pages/Instructors/InstructorDetails";
+import SubjectWiseTeacher from "../../Pages/SubjectWiseTeacher/SubjectWiseTeacher";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,15 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/:background",
+        element: <SubjectWiseTeacher />,
+        loader: ({ params }) => {
+          return fetch(
+            `https://edumate-server.vercel.app/api/v1/tutor/${params.background}`
+          );
+        },
       },
 
       {
