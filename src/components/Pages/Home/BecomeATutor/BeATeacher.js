@@ -7,18 +7,15 @@ const BeATeacher = () => {
   return (
     <div>
       <div class="container px-6 py-16 max-w-screen-xl mx-auto">
-        <div class="items-center lg:flex">
-          <div class="w-full lg:w-1/2">
+        <div class=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
+          <div class="w-full ">
             <div class="text-start">
-              <h1 className="text-5xl  font-bold text-blue-600">
-                Become a tutor
-              </h1>
+              <h1 className="text-5xl  font-bold text-blue-600">Become a tutor</h1>
 
               <p class="mt-3 w-1/2 font-bold text-black">
-                Instructors from around the country teach hundreds of students
-                on
-                <span className="font-bold text-blue-600"> Edumate</span> .
-                Inspire Minds, Shape Futures, Join the Teaching Profession.
+                Instructors from around the country teach hundreds of students on
+                <span className="font-bold text-blue-600"> Edumate</span> . Inspire Minds, Shape Futures, Join the
+                Teaching Profession.
               </p>
 
               <Link to={"/dashboard/add-Teacher"}>
@@ -28,21 +25,15 @@ const BeATeacher = () => {
                       <BsArrowRight />
                     </span>
 
-                    <span class="text-sm font-medium transition-all group-hover:mr-4">
-                      Start Teaching
-                    </span>
+                    <span class="text-sm font-medium transition-all group-hover:mr-4">Start Teaching</span>
                   </button>
                 </div>
               </Link>
             </div>
           </div>
 
-          <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-            <img
-              class="w-full h-full lg:max-w-3xl"
-              src={image}
-              alt="Catalogue-pana.svg"
-            />
+          <div class="flex items-center justify-center w-full mt-6 lg:mt-0">
+            <img class="w-full h-full lg:max-w-3xl" src={image} alt="Catalogue-pana.svg" />
           </div>
         </div>
       </div>
