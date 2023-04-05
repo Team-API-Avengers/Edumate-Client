@@ -184,9 +184,9 @@ const Login = () => {
 			:
 			<div className="flex justify-center">
 				<ReCAPTCHA
-			sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
-			  onChange={onChange}
-			  ref={captchaRef}
+			      sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
+			      onChange={onChange}
+			      ref={captchaRef}
 				/>
 			</div>
 			}
