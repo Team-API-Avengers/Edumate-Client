@@ -70,12 +70,16 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/blogDetails/:_id",
+        path: "/blogDetails",
         element: <BlogDetails />,
-        loader: ({ params }) => {
-          fetch(``);
-        },
       },
+      // {
+      //   path: "/blogDetails/:_id",
+      //   element: <BlogDetails />,
+      //   loader: ({ params }) => {
+      //     fetch(``);
+      //   },
+      // },
       {
         path: "/:background",
         element: <SubjectWiseTeacher />,
