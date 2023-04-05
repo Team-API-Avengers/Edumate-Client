@@ -5,7 +5,7 @@ import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
 import Testimonial from "./Testimonial/Testimonial";
 import OurEnvironment from "./OurEnvironment/OurEnvironment";
 // import Contact from "../Contact/Contact";
-import AboutOurs from "../About/AboutOurs";
+import AboutOurs from "./AboutOurs/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
 import BeATeacher from "./BecomeATutor/BeATeacher";
