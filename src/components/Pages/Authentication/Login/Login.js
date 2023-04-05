@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Context/AuthProvider';
@@ -19,12 +19,16 @@ const Login = () => {
 
 	const [recaptcha, setRecaptcha ] = useState()
 
-
+	const captchaRef = useRef(null)
 
 	//! react-google-recaptcha
 	function onChange(value) {
 		// console.log("Captcha value:", value);
-		setRecaptcha(value);
+		if(value === null){
+			return toast.error('You are a root')
+		}else{
+			setRecaptcha(value);
+		}
 
 	  }
 
@@ -84,9 +88,11 @@ const Login = () => {
 
 
 	return (
-		<div>
+		<div className='min-h-screen'>
 			 
-			<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
+			{
+				recaptcha?
+				<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
 			<div className="flex flex-col justify-between">
 				<div className="space-y-2">
 					<h2 className="text-4xl font-bold leading-tight lg:text-5xl">
@@ -100,13 +106,10 @@ const Login = () => {
 			</div>
 			<div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-lg  ">
 				
-			   <ReCAPTCHA
-				sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
-			  	onChange={onChange}
-		        	/>
+			 
 
 				<h1 className="text-2xl font-bold text-center">Login</h1>
-				{recaptcha &&
+				
 				<form onSubmit={handleSubmit(handleLogin)}>
 				<div className="text-sm">
 					<label className="flex m-2 ">Email</label>
@@ -143,10 +146,10 @@ const Login = () => {
 					{loginError && <p className='text-red-600'>{loginError}</p>}
 				</div>
 			</form>
-				}
+				
 				
 
-				{recaptcha && 
+				
 				<div className="flex items-center pt-4 space-x-1">
 				<div className="flex-1 h-px sm:w-16 "></div>
 				<p onClick={handleGoogle} className="btn btn-outline text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 border-none w-full px-3 text-sm  rounded-full">
@@ -154,7 +157,7 @@ const Login = () => {
 				</p>
 				<div className="flex-1 h-px sm:w-16 "></div>
 			   </div>
-				}
+				
 
 				{/* <div className="flex justify-center space-x-4">
 					<button aria-label="Log in with Google" className="p-3 rounded-sm">
@@ -177,7 +180,16 @@ const Login = () => {
 					</Link>
 				</p>
 			</div>
-		</div>
+		    </div>
+			:
+			<div className="flex justify-center">
+				<ReCAPTCHA
+			sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
+			  onChange={onChange}
+			  ref={captchaRef}
+				/>
+			</div>
+			}
 		</div>
 	);
 };
