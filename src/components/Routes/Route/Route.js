@@ -21,6 +21,7 @@ import Instructors from "../../Pages/Instructors/Instructors";
 import InstructorDetails from "../../Pages/Instructors/InstructorDetails";
 import SubjectWiseTeacher from "../../Pages/SubjectWiseTeacher/SubjectWiseTeacher";
 import AboutOurs from "../../Pages/Home/AboutOurs/AboutOurs";
+import BlogDetails from "../../Pages/Blog/BlogDetails";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,13 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/blogDetails/:_id",
+        element: <BlogDetails />,
+        loader: ({ params }) => {
+          fetch(``);
+        },
       },
       {
         path: "/:background",
