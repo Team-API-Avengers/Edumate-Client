@@ -81,7 +81,10 @@ const router = createBrowserRouter([
       //     fetch(``);
       //   },
       // },
-
+      {
+        path: "/addBlog",
+        element: <addBlog />,
+      },
       {
         path: "/:background",
         element: <BackgroundWiseTeacher />,

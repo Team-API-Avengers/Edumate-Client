@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../Assets/beateacher.jpg";
+import image from "../../../Assets/beateacher2.jpg";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -36,16 +36,33 @@ const BeATeacher = () => {
     <div>
       <div class="container px-6 py-16 max-w-screen-xl mx-auto">
         <div class=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
-          <motion.div class="w-full " initial={{ x: -250 }} whileInView={{ x: 0 }} transition={{ duration: 1.5 }}>
-            <motion.div class="text-start" variants={containerVariants} initial="hidden" animate="visible">
-              <motion.h1 className="text-5xl  font-bold text-blue-600" variants={childVariants}>
+          <motion.div
+            class="w-full "
+            initial={{ x: -250 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            <motion.div
+              class="text-start"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1
+                className="text-5xl  font-bold text-blue-600"
+                variants={childVariants}
+              >
                 Become a tutor
               </motion.h1>
 
-              <motion.p class="mt-3 w-1/2 font-bold text-black" variants={childVariants}>
-                Instructors from around the country teach hundreds of students on
-                <span className="font-bold text-blue-600"> Edumate</span> . Inspire Minds, Shape Futures, Join the
-                Teaching Profession.
+              <motion.p
+                class="mt-3 w-1/2 font-bold text-black"
+                variants={childVariants}
+              >
+                Instructors from around the country teach hundreds of students
+                on
+                <span className="font-bold text-blue-600"> Edumate</span> .
+                Inspire Minds, Shape Futures, Join the Teaching Profession.
               </motion.p>
 
               <Link to={"/dashboard/add-Teacher"}>
@@ -60,7 +77,9 @@ const BeATeacher = () => {
                       <BsArrowRight />
                     </span>
 
-                    <span class="text-sm font-medium transition-all group-hover:mr-4">Start Teaching</span>
+                    <span class="text-sm font-medium transition-all group-hover:mr-4">
+                      Start Teaching
+                    </span>
                   </motion.button>
                 </div>
               </Link>
@@ -73,7 +92,11 @@ const BeATeacher = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 3 }}
           >
-            <img class="w-full h-full lg:max-w-3xl" src={image} alt="Catalogue-pana.svg" />
+            <img
+              class="w-full h-full lg:max-w-3xl"
+              src={image}
+              alt="Catalogue-pana.svg"
+            />
           </motion.div>
         </div>
       </div>
