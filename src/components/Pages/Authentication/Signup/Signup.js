@@ -59,22 +59,22 @@ const Signup = () => {
             const photoURL = imgData.data.url;
 
             updateUserDetails(name, photoURL);
-            saveUsers(name, email, photoURL);
+            // saveUsers(name, email, photoURL);
 
             if (imgData.success) {
-              //   console.log(imgData.data.url)
 
               const addedUser = {
                 name,
                 email,
-                password,
                 role,
-                phoneNumber,
+                phone: phoneNumber,
                 image: imgData.data.url,
               };
 
+
+
               //! Save User info to the database....
-              fetch("https://edumate-server.vercel.app/users", {
+              fetch("https://edumate-second-server.vercel.app/api/v1/user", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
@@ -83,10 +83,12 @@ const Signup = () => {
               })
                 .then((res) => res.json())
                 .then((result) => {
-                  console.log(result);
+                  if(result){
+                    // navigate("/login");
+                    toast.success("Registration successful");
+                  }
 
-                  navigate("/login");
-                  toast.success("Registration successful");
+                  
                 });
             }
           });
@@ -100,32 +102,35 @@ const Signup = () => {
       });
   };
 
+
+
+
+
+
+
+
   const updateUserDetails = (name, photoURL) => {
     updateUser(name, photoURL)
       .then(() => {
-        alert('Profile Updated');
+        toast.success('Profile Updated');
       })
       .catch((error) => {
         console.error(error);
       });
   };
 
-  const saveUsers = (name, email, photoURL) => {
-    const user = { name, email, photoURL };
-    fetch("https://edumate-server.vercel.app/users", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        navigate("/");
-        // setCreatedUserEmail(email);
-      });
-  };
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32">
