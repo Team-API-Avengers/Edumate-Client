@@ -22,35 +22,29 @@ import InstructorDetails from "../../Pages/Instructors/InstructorDetails";
 import SubjectWiseTeacher from "../../Pages/SubjectWiseTeacher/SubjectWiseTeacher";
 import AboutOurs from "../../Pages/Home/AboutOurs/AboutOurs";
 import BlogDetails from "../../Pages/Blog/BlogDetails";
+import AllStudents from "../../Pages/AllStudents/AllStudents";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Main />,
+    path: "/", element: <Main />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: "/", element: <Home />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: "/login", element: <Login />,
       },
       {
-        path: "/signup",
-        element: <Signup />,
+        path: "/signup", element: <Signup />,
       },
       {
-        path: "/about-us",
-        element: <About />,
+        path: "/about-us", element: <About />,
       },
       {
-        path: "/all-Teachers",
-        element: <Instructors />,
+        path: "/all-Teachers", element: <Instructors />,
       },
       {
-        path: "/instructor/:_id",
-        element: <InstructorDetails />,
+        path: "/instructor/:_id", element: <InstructorDetails />,
         loader: ({ params }) => {
           return fetch(
             `https://edumate-server.vercel.app/api/v1/tutor/${params._id}`
@@ -58,20 +52,17 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/about-ours",
-        element: <AboutOurs />,
+        path: "/about-ours", element: <AboutOurs />,
       },
       {
-        path: "/contact",
-        element: <ContactUs />,
+        path: "/contact", element: <ContactUs />,
       },
       {
         path: "/blog",
         element: <Blog />,
       },
       {
-        path: "/blogDetails",
-        element: <BlogDetails />,
+        path: "/blogDetails", element: <BlogDetails />,
       },
       // {
       //   path: "/blogDetails/:_id",
@@ -81,8 +72,7 @@ const router = createBrowserRouter([
       //   },
       // },
       {
-        path: "/:background",
-        element: <SubjectWiseTeacher />,
+        path: "/:background", element: <SubjectWiseTeacher />,
         loader: ({ params }) => {
           return fetch(
             `https://edumate-server.vercel.app/api/v1/tutor/${params.background}`
@@ -91,8 +81,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/background/:background",
-        element: <BackgroundWiseTeacher />,
+        path: "/background/:background", element: <BackgroundWiseTeacher />,
         loader: ({ params }) => {
           return fetch(
             `https://edumate-server.vercel.app/api/v1/tutor/${params.background}`
@@ -103,42 +92,38 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/dashboard", element: <Dashboard />,
     children: [
       {
-        path: "/dashboard",
-        element: <WelcomeDashboard />,
+        path: "/dashboard", element: <WelcomeDashboard />,
       },
       {
-        path: "/dashboard/add-Teacher",
-        element: <AddTeacher />,
+        path: "/dashboard/add-Teacher", element: <AddTeacher />,
       },
       {
-        path: "/dashboard/My-Profile",
-        element: <MyProfile />,
+        path: "/dashboard/My-Profile", element: <MyProfile />,
       },
       // {
       //   path: "/dashboard/contact",
       //   element: <ContactUs />,
       // },
       {
-        path: "/dashboard/my-Teachers",
-        element: <MyTeachers />,
+        path: "/dashboard/my-Teachers", element: <MyTeachers />,
       },
       {
-        path: "/dashboard/all-Teachers",
-        element: <AllTeachers />,
+        path: "/dashboard/all-Teachers", element: <AllTeachers />,
         loader: () => {
           return fetch(`https://edumate-server.vercel.app/api/v1/tutor`);
         },
+      },
+      {
+        path: "/dashboard/all-students", element: <AllStudents />
       },
     ],
   },
 
   {
-    path: "*",
-    element: <Error />,
+    path: "*", element: <Error />,
     // element: <div>Error 404 page</div>,
   },
 ]);
