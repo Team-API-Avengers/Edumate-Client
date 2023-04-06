@@ -15,8 +15,33 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [logUser, setLogUser] = useState();
+
+
+
+
+  
+	useEffect(() => {
+		fetch(`https://car-house-server-omega.vercel.app/users/${user?.email}`)
+			.then((res) => res.json())
+			.then((result) => {
+				console.log(result);
+				if(result != undefined){
+					setLogUser(result[0]);
+				}
+			});
+	}, [user?.email]);
+
+
+  
+
+
+
+
+
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -62,6 +87,7 @@ const AuthProvider = ({ children }) => {
     updateUser,
     loading,
     signInWithGoogle,
+    logUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
