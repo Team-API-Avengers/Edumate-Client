@@ -37,7 +37,7 @@ const ContactUs = () => {
                     <span className="label-text">Name</span>
                   </label>{" "}
                   <input
-                    class="w-full bg-sky-50  border border-gray-200 text-gray-900 mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full bg-sky-50  border border-green-400 text-gray-900 mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Name*"
                     name="name"
@@ -48,7 +48,7 @@ const ContactUs = () => {
                     <span className="label-text">About</span>
                   </label>
                   <input
-                    class="w-full bg-sky-50  border border-gray-200 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                     type="text"
                     name="about"
                     placeholder="About*"
@@ -60,7 +60,7 @@ const ContactUs = () => {
                     <span className="label-text">Email</span>
                   </label>
                   <input
-                    class="w-full bg-sky-50  border border-gray-200 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                     type="email"
                     name="email"
                     placeholder="Email*"
@@ -72,7 +72,7 @@ const ContactUs = () => {
                     <span className="label-text">Mobile number</span>
                   </label>
                   <input
-                    class="w-full bg-sky-50 border border-gray-200 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full bg-sky-50 border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Number*"
                     name="number"
@@ -87,7 +87,7 @@ const ContactUs = () => {
                   <textarea
                     name="message"
                     placeholder="Message*"
-                    class="w-full h-32 bg-sky-50  border border-gray-200 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
               </div>

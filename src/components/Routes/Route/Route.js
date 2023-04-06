@@ -23,6 +23,7 @@ import SubjectWiseTeacher from "../../Pages/SubjectWiseTeacher/SubjectWiseTeache
 import AboutOurs from "../../Pages/Home/AboutOurs/AboutOurs";
 import BlogDetails from "../../Pages/Blog/BlogDetails";
 import AllStudents from "../../Pages/AllStudents/AllStudents";
+import AddBlog from "../../Pages/AddBlog/AddBlog";
 
 const router = createBrowserRouter([
   {
@@ -81,7 +82,10 @@ const router = createBrowserRouter([
       //     fetch(``);
       //   },
       // },
-
+      {
+        path: "/addBlog",
+        element: <AddBlog />,
+      },
       {
         path: "/:background",
         element: <BackgroundWiseTeacher />,

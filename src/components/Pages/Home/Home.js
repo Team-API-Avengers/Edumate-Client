@@ -18,16 +18,14 @@ const Home = () => {
     <div>
       <Banner />
       <SubjectWiseTeachers />
-      {/* <BlogDetails /> */}
-      <AddBlog />
+
       <OurEnvironment />
-      {/* <OurBestTeachers /> */}
 
       <Reviews />
 
       <Testimonial />
       <AboutOurs />
-      {/* <Contact /> */}
+
       <BeATeacher />
       <ContactUs />
     </div>

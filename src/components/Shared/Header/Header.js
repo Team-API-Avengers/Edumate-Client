@@ -19,26 +19,20 @@ const Header = () => {
   const { user, logOut, logUser } = useContext(AuthContext);
   // const [logUser, setLogUser] = useState();
 
-  
-	// useEffect(() => {
-	// 	fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
-	// 		.then((res) => res.json())
-	// 		.then((result) => {
-	// 			console.log(result);
-	// 			if(result != undefined){
-	// 				setLogUser(result.data);
-	// 			}
-	// 		});
-	// }, [user?.email]);
-
-
+  // useEffect(() => {
+  // 	fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
+  // 		.then((res) => res.json())
+  // 		.then((result) => {
+  // 			console.log(result);
+  // 			if(result != undefined){
+  // 				setLogUser(result.data);
+  // 			}
+  // 		});
+  // }, [user?.email]);
 
   // console.log('logUser', logUser?.email);
 
-
-console.log('header logUser', logUser);
-
-
+  console.log("header logUser", logUser);
 
   const navigate = useNavigate();
 
@@ -77,14 +71,35 @@ console.log('header logUser', logUser);
       >
         Home
       </NavLink>
-
-      <NavLink
-        style={navStyle}
-        to={"/blog"}
-        className="flex w-24 justify-center items-center"
-      >
-        Blog
-      </NavLink>
+      {logUser?.role === "Teacher" && (
+        <NavLink>
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost rounded-btn">
+              Blog
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+            >
+              <li>
+                <Link to={"/blog"}>Blog</Link>
+              </li>
+              <li>
+                <Link to={"/addBlog"}>Add Blog</Link>
+              </li>
+            </ul>
+          </div>
+        </NavLink>
+      )}
+      {logUser?.role === "Student" && (
+        <NavLink
+          style={navStyle}
+          to={"/blog"}
+          className="flex w-24 justify-center items-center"
+        >
+          Blog
+        </NavLink>
+      )}
 
       <NavLink
         style={navStyle}
@@ -92,15 +107,6 @@ console.log('header logUser', logUser);
         className="flex  w-24 justify-center items-center"
       >
         About
-      </NavLink>
-     
-
-      <NavLink
-        style={navStyle}
-        to={"/addBlog"}
-        className="flex  w-24 justify-center items-center"
-      >
-        Add Blog
       </NavLink>
 
       <NavLink
@@ -181,7 +187,7 @@ console.log('header logUser', logUser);
                   <li>
                     <Link to="/">Settings</Link>
                   </li>
-                 
+
                   <li>
                     <a onClick={handleLogOut}>Logout</a>
                   </li>
