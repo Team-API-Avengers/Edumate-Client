@@ -36,7 +36,7 @@ const AddTeacher = () => {
           };
           console.log(teacherDetails);
         }
-        fetch(``, {
+        fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
