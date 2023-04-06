@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Instructors = () => {
   const [allInstructor, setInstructors] = useState({});
   useEffect(() => {
-    fetch(`https://edumate-server.vercel.app/api/v1/tutor`)
+    fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
       .then((res) => res.json())
       .then((data) => setInstructors(data));
   }, []);
