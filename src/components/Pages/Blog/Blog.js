@@ -49,7 +49,6 @@ const Blog = () => {
             </article>
           </Link>
         ))}
-        <BlogDetails value={blogs} />
       </div>
     </div>
   );
