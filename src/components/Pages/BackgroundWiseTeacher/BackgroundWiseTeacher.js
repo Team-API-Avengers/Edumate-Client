@@ -1,8 +1,12 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaBookReader } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
-import { BsHourglassSplit, BsFillPersonFill } from "react-icons/bs";
+import {
+  BsHourglassSplit,
+  BsFillPersonFill,
+  BsArrowRightShort,
+} from "react-icons/bs";
 
 const BackgroundWiseTeacher = () => {
   const Alldata = useLoaderData();
@@ -36,12 +40,11 @@ const BackgroundWiseTeacher = () => {
                     {data?.experience} years experience
                   </p>
                   <div>
-                    <label
-                      htmlFor="bookTutor"
-                      className=" hover:bg-white hover:text-black bg-green-600 text-white  px-28 py-2 rounded"
-                    >
-                      Book
-                    </label>
+                    <Link to={`/instructor/${data?._id}`}>
+                      <button className="flex px-12 py-2 text-white  border rounded bg-blue-600">
+                        Details <BsArrowRightShort className=" text-2xl" />
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

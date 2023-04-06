@@ -81,22 +81,13 @@ const router = createBrowserRouter([
       //     fetch(``);
       //   },
       // },
-      {
-        path: "/:background",
-        element: <SubjectWiseTeacher />,
-        loader: ({ params }) => {
-          return fetch(
-            `https://edumate-server.vercel.app/api/v1/tutor/${params.background}`
-          );
-        },
-      },
 
       {
-        path: "/background/:background",
+        path: "/:background",
         element: <BackgroundWiseTeacher />,
         loader: ({ params }) => {
           return fetch(
-            `https://edumate-server.vercel.app/api/v1/tutor/${params.background}`
+            `https://edumate-second-server.vercel.app/api/v1/tutor/instructor/${params.background}`
           );
         },
       },
