@@ -5,8 +5,6 @@ import { AuthContext } from '../../Context/AuthProvider';
 const Reviews = () => {
     const { register, handleSubmit } = useForm();
     const { user } = useContext(AuthContext);
-    const { email, displayName } = user;
-
 
     const handleSubmitData = (data) => {
 
@@ -48,7 +46,7 @@ const Reviews = () => {
                                 {...register("name", {
                                     required: "Name is requiresd"
                                 })
-                                } defaultValue={displayName} disabled
+                                } defaultValue={user?.displayName} disabled
                                 placeholder="Full name" className=" w-full p-3 rounded-lg border border-gray-300 " />
                         </div>
                         <div className="form-control">
@@ -60,7 +58,8 @@ const Reviews = () => {
                                     required: "Email is required"
                                 })
                                 }
-                                defaultValue={email} disabled
+                                defaultValue={user?.email}
+                                disabled
                                 placeholder='Email'
                                 className="w-full p-3 border border-gray-300 rounded-lg" />
                         </div>
