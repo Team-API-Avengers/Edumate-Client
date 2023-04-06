@@ -16,8 +16,23 @@ import { toast } from "react-toastify";
 import logo from "../../Assets/edumateLogo.png";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut, logUser } = useContext(AuthContext);
+  // const [logUser, setLogUser] = useState();
+
+  // useEffect(() => {
+  // 	fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
+  // 		.then((res) => res.json())
+  // 		.then((result) => {
+  // 			console.log(result);
+  // 			if(result != undefined){
+  // 				setLogUser(result.data);
+  // 			}
+  // 		});
+  // }, [user?.email]);
+
+  // console.log('logUser', logUser?.email);
+
+  console.log("header logUser", logUser);
 
   const navigate = useNavigate();
 
@@ -56,14 +71,35 @@ const Header = () => {
       >
         Home
       </NavLink>
-
-      <NavLink
-        style={navStyle}
-        to={"/blog"}
-        className="flex w-24 justify-center items-center"
-      >
-        Blog
-      </NavLink>
+      {logUser?.role === "Teacher" && (
+        <NavLink>
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost rounded-btn">
+              Blog
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+            >
+              <li>
+                <Link to={"/blog"}>Blog</Link>
+              </li>
+              <li>
+                <Link to={"/addBlog"}>Add Blog</Link>
+              </li>
+            </ul>
+          </div>
+        </NavLink>
+      )}
+      {logUser?.role === "Student" && (
+        <NavLink
+          style={navStyle}
+          to={"/blog"}
+          className="flex w-24 justify-center items-center"
+        >
+          Blog
+        </NavLink>
+      )}
 
       <NavLink
         style={navStyle}
@@ -150,10 +186,8 @@ const Header = () => {
                   </li>
                   <li>
                     <Link to="/">Settings</Link>
-                  </li>{" "}
-                  <li>
-                    <Link to="/addBlog">Add Blog</Link>
                   </li>
+
                   <li>
                     <a onClick={handleLogOut}>Logout</a>
                   </li>
@@ -162,9 +196,6 @@ const Header = () => {
                 <>
                   <li>
                     <Link to="/login">Login</Link>
-                  </li>
-                  <li>
-                    <Link to="/addBlog">Add Blog</Link>
                   </li>
                   <li>
                     <Link to="/signup">Signup</Link>

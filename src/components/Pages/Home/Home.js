@@ -9,6 +9,9 @@ import AboutOurs from "./AboutOurs/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
 import BeATeacher from "./BecomeATutor/BeATeacher";
+import BlogDetails from "../Blog/BlogDetails";
+import AddBlog from "../AddBlog/AddBlog";
+// import OurBestTeacher from "./OurBestTeachers/OurBestTeacher";
 
 const Home = () => {
   return (
