@@ -25,20 +25,22 @@ const AuthProvider = ({ children }) => {
 
   
 	useEffect(() => {
-		fetch(`https://car-house-server-omega.vercel.app/users/${user?.email}`)
+		fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
 				console.log(result);
 				if(result != undefined){
-					setLogUser(result[0]);
+					setLogUser(result.data);
 				}
 			});
 	}, [user?.email]);
 
 
+  // console.log('user', user);
+
   
 
-
+// console.log('logUser', logUser?.name);
 
 
 

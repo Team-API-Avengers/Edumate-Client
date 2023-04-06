@@ -16,8 +16,29 @@ import { toast } from "react-toastify";
 import logo from "../../Assets/edumateLogo.png";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut, logUser } = useContext(AuthContext);
+  // const [logUser, setLogUser] = useState();
+
+  
+	// useEffect(() => {
+	// 	fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
+	// 		.then((res) => res.json())
+	// 		.then((result) => {
+	// 			console.log(result);
+	// 			if(result != undefined){
+	// 				setLogUser(result.data);
+	// 			}
+	// 		});
+	// }, [user?.email]);
+
+
+
+  // console.log('logUser', logUser?.email);
+
+
+console.log('header logUser', logUser);
+
+
 
   const navigate = useNavigate();
 
@@ -71,6 +92,15 @@ const Header = () => {
         className="flex  w-24 justify-center items-center"
       >
         About
+      </NavLink>
+     
+
+      <NavLink
+        style={navStyle}
+        to={"/addBlog"}
+        className="flex  w-24 justify-center items-center"
+      >
+        Add Blog
       </NavLink>
 
       <NavLink
@@ -150,10 +180,8 @@ const Header = () => {
                   </li>
                   <li>
                     <Link to="/">Settings</Link>
-                  </li>{" "}
-                  <li>
-                    <Link to="/addBlog">Add Blog</Link>
                   </li>
+                 
                   <li>
                     <a onClick={handleLogOut}>Logout</a>
                   </li>
@@ -162,9 +190,6 @@ const Header = () => {
                 <>
                   <li>
                     <Link to="/login">Login</Link>
-                  </li>
-                  <li>
-                    <Link to="/addBlog">Add Blog</Link>
                   </li>
                   <li>
                     <Link to="/signup">Signup</Link>

@@ -10,7 +10,7 @@ import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
 import BeATeacher from "./BecomeATutor/BeATeacher";
 import BlogDetails from "../Blog/BlogDetails";
-import AddBlog from "../Blog/AddBlog";
+import AddBlog from "../AddBlog/AddBlog";
 // import OurBestTeacher from "./OurBestTeachers/OurBestTeacher";
 
 const Home = () => {
