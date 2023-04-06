@@ -28,6 +28,9 @@ const Login = () => {
 			return toast.error('You are a root')
 		}else{
 			setRecaptcha(value);
+			window.setTimeout(function() {// <-- remove this delay and the error goes away
+				window.grecaptcha.reset();
+			});
 		}
 
 	  }
@@ -88,19 +91,23 @@ const Login = () => {
 
 
 	return (
-		<div className='min-h-screen'>
+		<div>
 			 
-			{
-				recaptcha?
+			
 				<div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-black">
 			<div className="flex flex-col justify-between">
 				<div className="space-y-2">
 					<h2 className="text-4xl font-bold leading-tight lg:text-5xl">
-						Let's talk!
+						Please Do it!
 					</h2>
-					<div className="dark:text-gray-400">
-						Vivamus in nisl metus? Phasellus.
-					</div>
+				  <div className='hidden lg:flex justify-center'>
+				  <ReCAPTCHA
+			      sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
+			      onChange={onChange}
+			      ref={captchaRef}
+				  />
+				  </div>
+					
 				</div>
 				<img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
 			</div>
@@ -181,16 +188,9 @@ const Login = () => {
 				</p>
 			</div>
 		    </div>
-			:
-			<div className="flex justify-center">
-				<h1 className='my-52 mx-10'>Please Do it!</h1>
-				<ReCAPTCHA
-			      sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
-			      onChange={onChange}
-			      ref={captchaRef}
-				/>
-			</div>
-			}
+			
+			
+			
 		</div>
 	);
 };
