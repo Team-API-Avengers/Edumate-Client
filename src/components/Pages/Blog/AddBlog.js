@@ -1,9 +1,48 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
 const AddBlog = () => {
-  // author,authorEmail,authorProfession,authorImage,title,date,blogCategory,
+  const { register, handleSubmit } = useForm();
+
+  // const imgBBkEY = d1492118b3a4839b4618065890540ec1;
+  const addBlog = (data) => {
+    const img = data.photo[0];
+    const formData = new FormData();
+    formData.append("image", img);
+
+    const url = `https://api.imgbb.com/1/upload?&key=d1492118b3a4839b4618065890540ec1`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        if (imgData.success) {
+          const blogDetails = {
+            name: data.Name,
+            email: data.email,
+            profession: data.profession,
+            title: data.title,
+            number: data.number,
+            category: data.category,
+            details: data.details,
+            image: imgData.data.url,
+          };
+          console.log(blogDetails);
+        }
+        fetch(``, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(addBlog),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+        alert("blog successfully published");
+      });
+  };
 
   return (
     <div>
@@ -13,7 +52,7 @@ const AddBlog = () => {
         <div class="w-full lg:w-8/12 mt-10 px-4 mx-auto ">
           <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100  border-green-400 border">
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form>
+              <form onSubmit={handleSubmit(addBlog)}>
                 <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                   Blog Information
                 </h6>
@@ -24,6 +63,7 @@ const AddBlog = () => {
                         Author Name
                       </label>
                       <input
+                        {...register("Name")}
                         type="text"
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
@@ -36,6 +76,7 @@ const AddBlog = () => {
                       </label>
                       <input
                         type="email"
+                        {...register("email")}
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -46,7 +87,7 @@ const AddBlog = () => {
                         Author image
                       </label>
                       <input
-                        id="photo"
+                        {...register("photo")}
                         type="file"
                         class="block w-full cursor-pointer border border-green-400 appearance-none rounded-md  bg-white px-3 py-2 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"
                       />
@@ -59,6 +100,7 @@ const AddBlog = () => {
                       </label>
                       <input
                         type="text"
+                        {...register("profession")}
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -72,6 +114,7 @@ const AddBlog = () => {
                         Blog title
                       </label>
                       <input
+                        {...register("title")}
                         type="text"
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
@@ -84,6 +127,7 @@ const AddBlog = () => {
                       </label>
                       <input
                         type="number"
+                        {...register("number")}
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -95,6 +139,7 @@ const AddBlog = () => {
                       </label>
                       <input
                         type="text"
+                        {...register("category")}
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -106,25 +151,27 @@ const AddBlog = () => {
                       </label>
                       <textarea
                         type="text"
+                        {...register("details")}
                         class=" border-green-400 border px-3 h-32 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
                   </div>
                 </div>
 
-                <Link to={"/"}>
-                  <div class=" mt-5">
-                    <button class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-16 ml-4 py-4 text-white focus:outline-none focus:ring active:bg-blue-500">
-                      <span class="absolute right-0  translate-x-full transition-transform group-hover:-translate-x-4">
-                        <BsArrowRight className="text-2xl font-bold" />
-                      </span>
+                <div class=" mt-5">
+                  <button
+                    type="submit"
+                    class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-16 ml-4 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
+                  >
+                    <span class="absolute right-0  translate-x-full transition-transform group-hover:-translate-x-4">
+                      <BsArrowRight className="text-2xl font-bold" />
+                    </span>
 
-                      <span class="text-md font-bold transition-all group-hover:mr-4">
-                        Publish
-                      </span>
-                    </button>
-                  </div>
-                </Link>
+                    <span class="text-md font-bold transition-all group-hover:mr-4">
+                      Publish
+                    </span>
+                  </button>
+                </div>
 
                 <hr class="mt-6 border-b-1 border-blueGray-300" />
               </form>

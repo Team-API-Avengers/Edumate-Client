@@ -150,6 +150,9 @@ const Header = () => {
                   </li>
                   <li>
                     <Link to="/">Settings</Link>
+                  </li>{" "}
+                  <li>
+                    <Link to="/addBlog">Add Blog</Link>
                   </li>
                   <li>
                     <a onClick={handleLogOut}>Logout</a>
@@ -159,6 +162,9 @@ const Header = () => {
                 <>
                   <li>
                     <Link to="/login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="/addBlog">Add Blog</Link>
                   </li>
                   <li>
                     <Link to="/signup">Signup</Link>
