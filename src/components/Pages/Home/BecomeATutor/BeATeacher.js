@@ -54,8 +54,6 @@ const BeATeacher = () => {
                     class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
                     whileHover={{
                       scale: 1.2,
-                      textShadow: "0px 0px 8px rgb(0, 0, 0)",
-                      boxShadow: "0px 0px 8px rgb(0,0,0)",
                     }}
                   >
                     <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
