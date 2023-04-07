@@ -30,14 +30,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
+     
       {
         path: "/about-us",
         element: <About />,
@@ -131,6 +124,25 @@ const router = createBrowserRouter([
     element: <Error />,
     // element: <div>Error 404 page</div>,
   },
+
+
+
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+
+
+
+
+
+
+
+
 ]);
 
 export default router;

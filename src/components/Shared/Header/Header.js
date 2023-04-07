@@ -13,7 +13,7 @@ import { BsChevronUp } from "react-icons/bs";
 import { color } from "style-value-types";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
-import logo from "../../Assets/edumateLogo.png";
+import logo from "../../Assets/logo.png";
 
 const Header = () => {
   const { user, logOut, logUser } = useContext(AuthContext);
@@ -109,6 +109,7 @@ const Header = () => {
         About
       </NavLink>
 
+
       <NavLink
         style={navStyle}
         to={"/dashboard"}
@@ -152,7 +153,7 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
-              <img className="w-16" src={logo} alt="logo" />
+              <img className="w-32" src={logo} alt="logo" />
             </span>
           </Link>
 

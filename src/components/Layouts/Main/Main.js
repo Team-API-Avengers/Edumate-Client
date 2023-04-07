@@ -10,6 +10,11 @@ const Main = () => {
         <Header />
       </div>
 
+      
+
+
+
+
       <div className="mt-10 mb-10">
         <Outlet />
       </div>

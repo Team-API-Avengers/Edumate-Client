@@ -11,7 +11,13 @@ const Reviews = () => {
     const name = data.name;
     const email = data.email;
     const message = data.message;
-    const userReview = { email, name, message };
+
+    const userReview = { 
+                    email,
+                    name,
+                    message,
+                    };
+
     fetch("http://localhost:5000/userReview", {
       method: "POST",
       headers: {

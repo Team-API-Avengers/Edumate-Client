@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { toast } from "react-toastify";
+import image from '../../../Assets/login.jpg'
 
 const Signup = () => {
   const {
@@ -134,17 +135,22 @@ const Signup = () => {
 
   return (
     <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32">
-      <div className="flex flex-col justify-between">
+      <div className="flex items-center">
         <div className="space-y-2">
-          <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+          {/* <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
             Let's talk!
           </h2>
-          <div>Vivamus in nisl metus? Phasellus.</div>
+          <div>Vivamus in nisl metus? Phasellus.</div> */}
+          <img src={image} alt="" />
         </div>
         <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
       </div>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-xl ">
-        <h1 className="text-2xl font-bold text-center">Signup</h1>
+        
+      <div className="flex justify-around py-5">
+				<h3 className="text-2xl font-bold text-center  text-gray-400">Sign Up</h3>
+				<Link to='/login' className="text-2xl font-bold text-center">Login</Link>
+				</div>
 
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="text-sm">
@@ -254,7 +260,7 @@ const Signup = () => {
           />
           {signUpError && <p className="text-red-600">{signUpError}</p>}
         </form>
-        <p className="text-xl text-center sm:px-6 ">
+        <p className="text-lg text-center sm:px-6">
           Already have an account?
           <Link to="/login" className="hover:underline mx-2">
             Log in
