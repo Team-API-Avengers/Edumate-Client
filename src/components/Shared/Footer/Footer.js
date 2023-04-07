@@ -20,7 +20,7 @@ const Footer = () => {
               className="flex justify-center space-x-3 lg:justify-start"
             >
               <div className="flex items-center justify-center  rounded-full ">
-                <img className="w-20" src={logo} alt="" />
+                <img className="w-32" src={logo} alt="" />
               </div>
             </a>
           </div>
