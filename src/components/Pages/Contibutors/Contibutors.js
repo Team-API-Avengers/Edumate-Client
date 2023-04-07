@@ -10,12 +10,12 @@ const Contibutors = () => {
       <div class="w-full px-4">
         <div class="mx-auto mb-[60px] max-w-[510px] text-center">
           <span class="text-primary mb-2 block text-lg font-semibold">
-            Our Team
+            Our Awesome Team Members
           </span>
           <h2
             class="text-dark mb-4 text-3xl font-bold sm:text-4xl md:text-[40px]"
           >
-            Our Awesome Team
+             Contributors
           </h2>
           <p class="text-body-color text-base">
             There are many variations of passages of Lorem Ipsum available but
@@ -24,6 +24,7 @@ const Contibutors = () => {
         </div>
       </div>
     </div>
+
     <div class="-mx-4 flex flex-wrap justify-center">
       <div class="w-full px-4 md:w-1/2 xl:w-1/4">
         <div class="mx-auto mb-10 w-full max-w-[370px]">
@@ -213,6 +214,7 @@ const Contibutors = () => {
           </div>
         </div>
       </div>
+
       <div class="w-full px-4 md:w-1/2 xl:w-1/4">
         <div class="mx-auto mb-10 w-full max-w-[370px]">
           <div class="relative overflow-hidden rounded-lg">
@@ -403,6 +405,7 @@ const Contibutors = () => {
           </div>
         </div>
       </div>
+
       <div class="w-full px-4 md:w-1/2 xl:w-1/4">
         <div class="mx-auto mb-10 w-full max-w-[370px]">
           <div class="relative overflow-hidden rounded-lg">
@@ -593,6 +596,7 @@ const Contibutors = () => {
           </div>
         </div>
       </div>
+
       <div class="w-full px-4 md:w-1/2 xl:w-1/4">
         <div class="mx-auto mb-10 w-full max-w-[370px]">
           <div class="relative overflow-hidden rounded-lg">
@@ -783,6 +787,7 @@ const Contibutors = () => {
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>

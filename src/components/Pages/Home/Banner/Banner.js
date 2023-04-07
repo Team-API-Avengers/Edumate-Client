@@ -6,66 +6,60 @@ import { BsSearch } from 'react-icons/bs';
 const Banner = () => {
 
   return (
-    <section className="mt-10">
-      <div className="hero min-h-screen bg-transparent">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div>
-            <img
-              src="https://cdn.discordapp.com/attachments/1086689054231371817/1091073150206365696/14230944_5437683.jpg"
-              alt=""
-              className="lg:max-w-sm md:max-w-full rounded-lg shadow-2xl border-l-8 border-blue-600 border-b-8 rounded-t-3xl"
-            />
+   <div>
+     
 
-            <img
-              src="https://www.shutterstock.com/image-vector/happy-literacy-day-young-people-260nw-2012561195.jpg"
-              alt=""
-              className="lg:max-w-sm md:max-w-full rounded-lg shadow-2xl -mt-32 ms-36 border-blue-600 border-b-8 rounded-tl-3xl rounded-tr-3xl rounded-br-3xl"
-            />
-          </div>
+    <section
+  className="relative bg-[url(https://img.freepik.com/free-vector/muslim-family-traditional-clothes-reading-holy-book-quran-tiny-people-five-pillars-islam-islamic-calendar-islamic-culture-concept_335657-677.jpg?w=740&t=st=1680886535~exp=1680887135~hmac=6e3682b65a2cf237a5b6372ce0b7cae2a5a22a09581b1f89c10a9c804e836fbe)] bg-cover bg-center bg-no-repeat"
+>
+  <div
+    className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"
+  ></div>
 
-         
+  <div
+    className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+  >
+    <div className="max-w-xl text-center sm:text-left">
+      <h1 className="text-3xl font-extrabold sm:text-5xl">
+        Let's' find your
 
-         
-          <div>
-            <h1 className="text-4xl font-bold">
-              The <span className="text-blue-600">easiest Way</span> to get your new
-              <Typical steps={["Student", 2000, "Teacher", 1000]} loop={Infinity} wrapper="p" />
-            </h1>
-            <p className="py-6">
-              Edumate is the best tuition media. Thousands of parents are offering part time tuition jobs forbedumate.
-              Work tuition job and earn additional income! Call to get experienced teachers for all classes in Bengali
-              and English versions. We are providing the best teachers & tuition in the whole of Dhaka city.
-            </p>
-            <div className="flex gap-4">
-             
-              <form className="flex border border-gray-400 rounded-lg">
-                <input
-                  type="text"
-                  placeholder="Search your subject"
-                  className="input w-full max-w-xs bg-slate-100 focus:outline-0 text-blue-600"
-                />
-              
-                <button className=""><BsSearch className="text-2xl mx-2 hover:text-blue-700" /></button>
-              </form>
+        <strong className="block font-extrabold text-blue-700">
+          Home Tutor.
+        </strong>
+      </h1>
 
+      <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
+        tenetur fuga ducimus numquam ea!
+      </p>
 
+      <div className="mt-8 flex flex-wrap gap-4 text-center">
+        <a
+          href="#"
+          className="block w-full rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+        >
+          Get Started
+        </a>
 
-            </div>
-            {/* <button className="btn btn-primary">Get Started</button> */}
-            <div className="mt-10">
-              <div className="flex gap-4">
-                <p>Popular searches:</p>
-                <p>English</p>
-                <p>English</p>
-                <p>English</p>
-                <p>English</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a
+          href="#"
+          className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto"
+        >
+          Learn More
+        </a>
       </div>
+    </div>
+  </div>
     </section>
+
+   </div>
+
   );
 };
 
 export default Banner;
+
+
+
+
+

@@ -78,7 +78,7 @@ const BeATeacher = () => {
                     </span>
 
                     <span class="text-sm font-medium transition-all group-hover:mr-4">
-                      Start Teaching
+                    Get Started Your Career
                     </span>
                   </motion.button>
                 </div>
