@@ -1,24 +1,34 @@
 import React, { useContext } from "react";
-// import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { useForm } from "react-hook-form";
 
-// import { toast } from "react-toastify";
 import { BsArrowRight } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const AddTeacher = () => {
   const { register, handleSubmit } = useForm();
 
-  const { logUser } = useContext(AuthContext);
+  const { user, logUser } = useContext(AuthContext);
 
+
+
+    //! from .env.local file====>
+    const imgHostKey = process.env.REACT_APP_Imgbb_key;
+    // console.log(imgHostKey);
+
+
+
+
+  console.log(user);
   console.log(logUser);
 
   const addTeacher = (data) => {
+
     const img = data.photo[0];
     const formData = new FormData();
     formData.append("image", img);
 
-    const url = `https://api.imgbb.com/1/upload?&key=d1492118b3a4839b4618065890540ec1`;
+    const url = `https://api.imgbb.com/1/upload?key=${imgHostKey}`;
 
     fetch(url, {
       method: "POST",
@@ -28,9 +38,10 @@ const AddTeacher = () => {
       .then((imgData) => {
         // console.log(imgData.data.url);
         if (imgData.success) {
+
           const teacherDetails = {
-            name: data.name,
-            email: data.email,
+            name: user?.displayName,
+            email: user?.email,
             role: logUser?.role,
             phone: data.number,
             experience: data.experience,
@@ -40,18 +51,32 @@ const AddTeacher = () => {
             bio: data.bio,
             background: data.background,
           };
+
           console.log(teacherDetails);
-        }
+
+
+          
         fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(addTeacher),
+          body: JSON.stringify(teacherDetails),
         })
           .then((res) => res.json())
-          .then((data) => console.log(data));
-        alert("success");
+          .then((data) => {
+            console.log(data)
+            if(data.data) {
+              toast.success("success");
+            }
+          });
+        
+
+
+
+        }
+
+        
       });
   };
   return (
@@ -81,6 +106,8 @@ const AddTeacher = () => {
                       <div class="md:col-span-5">
                         <label>Full Name</label>
                         <input
+                        defaultValue={user?.displayName}
+                        readOnly
                           type="text"
                           required
                           {...register("name")}
@@ -92,7 +119,9 @@ const AddTeacher = () => {
                       <div class="md:col-span-5">
                         <label>Email Address</label>
                         <input
-                          type="text"
+                        defaultValue={user?.email}
+                          type="email"
+                          readOnly
                           required
                           {...register("email")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
