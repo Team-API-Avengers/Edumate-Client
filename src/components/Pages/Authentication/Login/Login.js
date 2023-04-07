@@ -46,8 +46,8 @@ const Login = () => {
 		setLoginError('');
 		signIn(data.email, data.password)
 			.then(result => {
-				const user = result.user;
-				console.log(user);
+				// const user = result.user;
+				// console.log(user);
 
 				if(result){
 					toast.success('Login successful')
@@ -72,14 +72,42 @@ const Login = () => {
 
 	//! Google Login Form
 	const handleGoogle = () => {
+		const role = 'Teacher';
+
 		signInWithGoogle(googleProvider)
 			.then(result => {
 				const user = result.user;
 				console.log(user);
-				if(result){
+
+				const addedUser = {
+					name:user?.displayName,
+					email:user?.email,
+					role,
+					phone: 0,
+					image: user?.photoURL,
+				  };
+
+
+              //! Save User info to the database....
+              fetch("https://edumate-second-server.vercel.app/api/v1/user", {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(addedUser),
+              })
+                .then((res) => res.json())
+                .then((result) => {
+					console.log(result.data);
+                  if(result){
 					toast.success('Google Login successful')
 					navigate('/')
-				}
+                  }
+
+                  
+                });
+				  
+				
 			})
 			.catch(error => {
 				console.error(error)
@@ -102,7 +130,7 @@ const Login = () => {
 					</h2>
 				  <div className='hidden lg:flex justify-center'>
 				  <ReCAPTCHA
-			      sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
+			      sitekey="6LfZE2glAAAAACGKH4fqAYxMk2cMqyPFihFIAo5C"
 			      onChange={onChange}
 			      ref={captchaRef}
 				  />
