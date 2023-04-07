@@ -1,19 +1,18 @@
 import React, { useContext, useState } from 'react';
 import ProfileEditModal from './ProfileEditModal';
 import { AuthContext } from '../../Context/AuthProvider';
-// import { BsFillBookmarkStarFill } from 'react-icons/bs';
-// import { AuthContext } from '../../../Context/AuthProvider';
+import { BsFillBookmarkStarFill } from 'react-icons/bs';
 // import MyAccess from './MyProfileTable';
 
 const MyProfile = () => {
-	const {user} = useContext(AuthContext)
+	const {user, logUser} = useContext(AuthContext)
 	// const { user, logUser } = useContext(AuthContext);
 
 
     const [editName, setEditName] = useState()
     const [editEmail, setEditEmail] = useState()
 
-	// console.log(logUser);
+	console.log(logUser);
 	return (
 		<div>
 			<div className='card lg:card-side mb-10 lg:w-full w-96 bg-base-100 shadow-xl'>
@@ -65,7 +64,7 @@ const MyProfile = () => {
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
 							Phone :
-							{/* {user?.number ? <span>{logUser?.number}</span> : <span>N/A</span>} */}
+							{user?.number?.length <= 2 ? <span>{logUser?.number}</span> : <span>N/A</span>}
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
 							<label htmlFor='' className='cursor-pointer text-gray-400'>
@@ -76,11 +75,11 @@ const MyProfile = () => {
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10'>
 							Password :
-							{/* {logUser?.password ? (
+							{logUser?.password ? (
 								<span>{user?.number}</span>
 							) : (
 								<span> ******</span>
-							)} */}
+							)}
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
 							<label htmlFor='' className='cursor-pointer text-gray-400'>
@@ -90,8 +89,8 @@ const MyProfile = () => {
 					</div>
 					<div className='grid grid-cols-12'>
 						<p className='text-start col-span-10 font-serif font-semibold flex'>
-							{/* Role : {logUser?.role}
-							{logUser?.role === 'Admin' && (
+							Role : {logUser?.role}
+							{/* {logUser?.role === 'Admin' && (
 								<BsFillBookmarkStarFill className='text-green-600 mt-1 ml-2'></BsFillBookmarkStarFill>
 							)} */}
 						</p>
