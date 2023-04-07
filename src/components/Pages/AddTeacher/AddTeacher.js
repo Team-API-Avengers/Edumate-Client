@@ -4,9 +4,13 @@ import { useForm } from "react-hook-form";
 
 import { toast } from "react-toastify";
 import { BsArrowRight } from "react-icons/bs";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const AddTeacher = () => {
   const { register, handleSubmit } = useForm();
+
+  const { logUser } = useContext(AuthContext);
+  console.log(logUser?.role);
 
   const addTeacher = (data) => {
     const img = data.photo[0];
