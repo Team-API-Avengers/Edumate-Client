@@ -130,7 +130,7 @@ const Login = () => {
 					</h2>
 				  <div className='hidden lg:flex justify-center'>
 				  <ReCAPTCHA
-			      sitekey="6LeLoF8lAAAAAGWC5PGImm8VqFTcdlOReCIjd3mu"
+			      sitekey="6LfZE2glAAAAACGKH4fqAYxMk2cMqyPFihFIAo5C"
 			      onChange={onChange}
 			      ref={captchaRef}
 				  />
