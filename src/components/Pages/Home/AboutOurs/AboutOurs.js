@@ -1,5 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
+import Contibutors from "../../Contibutors/Contibutors";
 
 const AboutOurs = () => {
   return (
@@ -40,6 +41,8 @@ const AboutOurs = () => {
           </div>
         </div>
       </div>
+
+      <Contibutors />
     </div>
   );
 };

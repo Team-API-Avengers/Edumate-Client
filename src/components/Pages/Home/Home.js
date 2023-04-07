@@ -14,11 +14,11 @@ import BeATeacher from "./BecomeATutor/BeATeacher";
 const Home = () => {
   return (
     <div className="relative">
-       <div className='hidden bg-slate-200 py-8 px-2 rounded-full lg:block fixed right-10 z-50'>
+       {/* <div className='hidden bg-slate-200 py-8 px-2 rounded-full lg:block fixed right-10 z-50'>
        <p className="py-2">Go Top</p>
        <a className="py-2" href="#review">Review</a>
        <p className="py-2">More</p>
-      </div>
+      </div> */}
       <Banner />
       <SubjectWiseTeachers />
 
