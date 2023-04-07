@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="App bg-slate-100">
+    <div className="App bg-slate-100 w-[98vw] overflow-hidden">
       <ToastContainer />
       <RouterProvider router={router}></RouterProvider>
     </div>
