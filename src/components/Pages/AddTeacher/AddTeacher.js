@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+// import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { BsArrowRight } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
 
@@ -10,7 +10,8 @@ const AddTeacher = () => {
   const { register, handleSubmit } = useForm();
 
   const { logUser } = useContext(AuthContext);
-  console.log(logUser?.role);
+
+  console.log(logUser);
 
   const addTeacher = (data) => {
     const img = data.photo[0];
@@ -30,6 +31,7 @@ const AddTeacher = () => {
           const teacherDetails = {
             name: data.name,
             email: data.email,
+            role: logUser?.role,
             phone: data.number,
             experience: data.experience,
             fee: data.fee,
