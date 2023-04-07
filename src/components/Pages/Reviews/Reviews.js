@@ -101,7 +101,7 @@ const Reviews = () => {
               </div>
             </div>
             <div className="form-control mt-6">
-              <input className="btn btn-outline btn-info w-full mt-4" value="Submit" type="submit" />
+              <input className="btn border-0 bg-blue-700 hover:bg-blue-800 w-full mt-4" value="Submit" type="submit" />
             </div>
           </form>
         </motion.div>
