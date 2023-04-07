@@ -12,14 +12,10 @@ import BackgroundWiseTeacher from "../../Pages/BackgroundWiseTeacher/BackgroundW
 import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
 import MyProfile from "../../Pages/MyProfile/MyProfile";
 import Error from "../../Pages/Error/Error";
-
-// import OurBestTeachers from "../../Pages/Home/OurBestTeachers/OurBestTeachers";
-import AllTeachers from "../../Pages/AllTeachers/AllTeachers";
 import ContactUs from "../../Pages/Contact/ContactUs";
 import MyTeachers from "../../Pages/MyTeachers/MyTeachers";
 import Instructors from "../../Pages/Instructors/Instructors";
 import InstructorDetails from "../../Pages/Instructors/InstructorDetails";
-import SubjectWiseTeacher from "../../Pages/SubjectWiseTeacher/SubjectWiseTeacher";
 import AboutOurs from "../../Pages/Home/AboutOurs/AboutOurs";
 import BlogDetails from "../../Pages/Blog/BlogDetails";
 import AllStudents from "../../Pages/AllStudents/AllStudents";
