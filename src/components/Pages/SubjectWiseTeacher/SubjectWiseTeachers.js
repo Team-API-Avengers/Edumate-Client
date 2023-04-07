@@ -17,7 +17,7 @@ const SubjectWiseTeachers = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold">Department</h1>
-      <p className="mt-2 ">Select which department you need a teacher for</p>
+      <p className="mt-2">Select which department you need a teacher for</p>
       {/* {backgrounds.map((category) => ( */}
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto">
         <div class="container grid grid-cols-2 gap-10 px-5 py-1  mx-auto">
