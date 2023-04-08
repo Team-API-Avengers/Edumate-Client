@@ -8,6 +8,7 @@ import {
 import { HiLocationMarker } from "react-icons/hi";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
+import Loader from "../../Shared/Loader/Loader";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
