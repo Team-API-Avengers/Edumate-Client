@@ -5,7 +5,7 @@ import science from "../../Assets/science.png";
 import commerce from "../../Assets/commerce.png";
 import humanity from "../../Assets/humanity.png";
 import all from "../../Assets/all.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const SubjectWiseTeachers = () => {
   // const [backgrounds, setBackground] = useState([]);
@@ -14,6 +14,8 @@ const SubjectWiseTeachers = () => {
   //     res.json().then((data) => setBackground(data?.data))
   //   );
   // }, []);
+
+  // const { loading } = useContext();
   return (
     <div>
       <h1 className="text-3xl font-bold">Department</h1>
