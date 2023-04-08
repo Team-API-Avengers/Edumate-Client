@@ -84,6 +84,7 @@ const Signup = () => {
               })
                 .then((res) => res.json())
                 .then((result) => {
+                  console.log(result);
                   if(result){
                     navigate("/");
                     toast.success("Registration successful");
@@ -154,7 +155,7 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="text-sm">
-            <label className="flex m-2 dark:text-black">Name</label>
+            <label className="flex m-2 dark:text-black">Full Name</label>
             <input
               type="text"
               {...register("name", {
@@ -213,7 +214,7 @@ const Signup = () => {
               {...register("phoneNumber", {
                 required: "Phone number is required",
               })}
-              placeholder="Number"
+              placeholder="1896325880"
               name="phoneNumber"
               className="input input-bordered w-full px-4 py-3 rounded-md  "
             />

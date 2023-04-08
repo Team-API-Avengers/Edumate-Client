@@ -1,10 +1,7 @@
 import React from "react";
 import Banner from "./Banner/Banner";
 import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
-// import OurBestTeachers from "./OurBestTeachers/OurBestTeachers";
 import Testimonial from "./Testimonial/Testimonial";
-import OurEnvironment from "./VideoPlayer/VideoPlayer";
-// import Contact from "../Contact/Contact";
 import AboutOurs from "./AboutOurs/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
@@ -16,6 +13,7 @@ import { BsBookmarks, BsBookmarksFill, BsFileArrowUp, BsFileArrowUpFill, BsFillT
 const Home = () => {
   return (
     <div className="relative">
+
         <div className='hidden lg:block fixed right-10 z-50'>
 
        <a className="py-2 text-blue-700 group" href="#top">
@@ -46,10 +44,10 @@ const Home = () => {
 
        
       </div> 
+
       <Banner />
       <SubjectWiseTeachers />
 
-      <OurEnvironment />
       <div id="review">
         <Reviews />
       </div>
