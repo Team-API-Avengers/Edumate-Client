@@ -81,6 +81,7 @@ const InstructorDetails = () => {
                     <BsTelephoneFill className="mt-1 mr-1" />
                     {details?.data?.phone}
                   </p>
+
                   <p className="flex ">
                     <BsHourglassSplit className="mt-1 mr-1" />
                     {details?.data?.experience} years experience
@@ -122,7 +123,7 @@ const InstructorDetails = () => {
           </div>
         </section>
       </div>
-      ;{/* // })} */}
+      {/* // })} */}
     </div>
   );
 };

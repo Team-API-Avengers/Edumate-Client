@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
 import { motion } from "framer-motion";
-
+import review from "../../Assets/reviews.jpg";
+import { BsArrowRight } from "react-icons/bs";
 const Reviews = () => {
   const { register, handleSubmit } = useForm();
   const { user } = useContext(AuthContext);
@@ -12,11 +13,11 @@ const Reviews = () => {
     const email = data.email;
     const message = data.message;
 
-    const userReview = { 
-                    email,
-                    name,
-                    message,
-                    };
+    const userReview = {
+      email,
+      name,
+      message,
+    };
 
     fetch("http://localhost:5000/userReview", {
       method: "POST",
@@ -44,21 +45,26 @@ const Reviews = () => {
             Give Your Feedback
           </motion.h1>
           <motion.p
-            className="py-6"
+            className="py-3"
             initial={{ y: 250, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
           >
-            We want to hear form you ! You can share with us what you feel about our services.
+            We want to hear form you ! You can share with us what you feel about
+            our services.
           </motion.p>
+          <img src={review} className="bg-none" alt="" />
         </div>
         <motion.div
-          className="card shadow-lg"
+          className="card "
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, type: "spring", duration: 3 }}
         >
-          <form onSubmit={handleSubmit(handleSubmitData)} className="card-body">
+          <form
+            onSubmit={handleSubmit(handleSubmitData)}
+            className=" mt-16 card-body"
+          >
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Full name</span>
@@ -66,12 +72,12 @@ const Reviews = () => {
               <input
                 type="text"
                 {...register("name", {
-                  required: "Name is requiresd",
+                  required: "Name is required",
                 })}
                 defaultValue={user?.displayName}
                 disabled
                 placeholder="Full name"
-                className=" w-full p-3 rounded-lg border border-gray-300 "
+                className=" w-full p-3 h-14 bg-sky-50 rounded border border-green-400 "
               />
             </div>
             <div className="form-control">
@@ -87,27 +93,36 @@ const Reviews = () => {
                 defaultValue={user?.email}
                 disabled
                 placeholder="Email"
-                className="w-full p-3 border border-gray-300 rounded-lg"
+                className="w-full p-3 h-14 bg-sky-50 border border-green-400 rounded"
               />
             </div>
             <div>
               <div className="form-control">
                 <label className="label">
-                  {" "}
                   <span className="label-text">Message</span>{" "}
                 </label>
-                <br />
                 <textarea
                   name="message"
                   {...register("message")}
                   rows="3"
-                  className="w-full p-3  rounded-lg "
+                  className="w-full p-3 bg-sky-50  border border-green-400 rounded "
                   placeholder="Message"
                 ></textarea>
               </div>
             </div>
-            <div className="form-control mt-6">
-              <input className="btn border-0 bg-blue-700 hover:bg-blue-800 w-full mt-4" value="Submit" type="submit" />
+            <div class="flex  mt-5">
+              <button
+                type="submit"
+                class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-12 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+              >
+                <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
+                  <BsArrowRight />
+                </span>
+
+                <span class="text-sm font-medium  transition-all group-hover:mr-4">
+                  Send
+                </span>
+              </button>
             </div>
           </form>
         </motion.div>

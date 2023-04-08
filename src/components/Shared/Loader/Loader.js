@@ -2,9 +2,24 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div>
-      <div class="fixed top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
-        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+    <div className="min-h-screen ">
+      <div className="">
+        <div id="wifi-loader ">
+          <svg class="circle-outer" viewBox="0 0 86 86">
+            <circle class="back" cx="43" cy="43" r="40"></circle>
+            <circle class="front" cx="43" cy="43" r="40"></circle>
+            <circle class="new" cx="43" cy="43" r="40"></circle>
+          </svg>
+          <svg class="circle-middle" viewBox="0 0 60 60">
+            <circle class="back" cx="30" cy="30" r="27"></circle>
+            <circle class="front" cx="30" cy="30" r="27"></circle>
+          </svg>
+          <svg class="circle-inner" viewBox="0 0 34 34">
+            <circle class="back" cx="17" cy="17" r="14"></circle>
+            <circle class="front" cx="17" cy="17" r="14"></circle>
+          </svg>
+          <div class="text" data-text="Searching"></div>
+        </div>
       </div>
     </div>
   );
