@@ -93,7 +93,7 @@ const ContactUs = () => {
                   <textarea
                     name="message"
                     placeholder="Message*"
-                    class="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full h-32  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
               </div>

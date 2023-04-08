@@ -120,14 +120,7 @@ const Footer = () => {
           © Team API Avengers - All rights reserved.
         </div>
       </footer> */}
-      <link
-        rel="stylesheet"
-        href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
-      ></link>
+
       <footer class="relative bg-black text-white max-w-screen-2xl mx-auto pt-8 pb-6">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap text-left lg:text-left">
