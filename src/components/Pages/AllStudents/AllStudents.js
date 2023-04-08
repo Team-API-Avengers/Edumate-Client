@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AllStudents = () => {
     return (
         <div className=' my-16 mx-6'>
-            <div className='grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pl-8 pb-8 pr-8 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pl-8 pb-8 pr-8 '>
 
                 <div className="card  shadow-md shadow-dark-mid shadow-black transform hover:scale-105 transition duration-300 border rounded-none">
                     <Link><figure className="px-2 pt-2">
