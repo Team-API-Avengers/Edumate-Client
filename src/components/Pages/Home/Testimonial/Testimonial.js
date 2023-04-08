@@ -31,7 +31,9 @@ const Testimonial = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 3 }}
           >
-            <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          <div className="flex flex-col justify-center  px-8 mx-6 my-12 text-center rounded-md  lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -70,7 +72,7 @@ const Testimonial = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+            <div className="flex flex-col justify-center  px-8 mx-6 my-12 text-center rounded-md  lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -108,7 +110,7 @@ const Testimonial = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+            <div className="flex flex-col justify-center  px-8 mx-6 my-12 text-center rounded-md  lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -146,7 +148,7 @@ const Testimonial = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+            <div className="flex flex-col justify-center  px-8 mx-6 my-12 text-center rounded-md  lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -184,7 +186,7 @@ const Testimonial = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+            <div className="flex flex-col justify-center  px-8 mx-6 my-12 text-center rounded-md  lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -222,7 +224,7 @@ const Testimonial = () => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+            <div className="flex flex-col justify-center  px-8 mx-6 my-12 text-center rounded-md  lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -259,7 +261,10 @@ const Testimonial = () => {
                 </a>
               </div>
             </div>
+          </div>
+
           </motion.div>
+
           <TestimonialModal />
         </div>
       </section>
