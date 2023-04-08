@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaBookReader } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
+import { AuthContext } from "../../Context/AuthProvider";
+import Loader from "../../Shared/Loader/Loader";
 import {
   BsHourglassSplit,
   BsFillPersonFill,
@@ -11,8 +13,11 @@ import {
 
 const BackgroundWiseTeacher = () => {
   const Alldata = useLoaderData();
-  console.log(Alldata);
-
+  // console.log(Alldata);
+  const { loading } = useContext(AuthContext);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className="max-w-screen-xl mx-auto min-h-screen">
       <div className="grid grid-cols-4 gap-6">
@@ -27,8 +32,8 @@ const BackgroundWiseTeacher = () => {
                 />
 
                 <div class="p-5">
-                  <h5 class="text-gray-900 font-bold text-md flex tracking-tight">
-                    <FaBookReader className="mt-1 ml-1 mr-2" />{" "}
+                  <h5 class=" font-bold text-green-600 text-md flex tracking-tight">
+                    <FaBookReader className="mt-1 text-gray-900 ml-1 mr-2" />{" "}
                     {data?.background}
                   </h5>
 

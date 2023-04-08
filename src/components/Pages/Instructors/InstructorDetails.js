@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiFillStar } from "react-icons/ai";
 import {
   BsArrowRight,
@@ -9,10 +9,13 @@ import { HiLocationMarker } from "react-icons/hi";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 import Loader from "../../Shared/Loader/Loader";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
   // console.log(details.data.name);
+
+  const { loading } = useContext(AuthContext);
 
   const bookTeacher = (data) => {
     const name = data.name;
@@ -49,6 +52,10 @@ const InstructorDetails = () => {
         }
       });
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div>
