@@ -4,239 +4,48 @@ import {
   BsFacebook,
   BsInstagram,
   BsTwitter,
+  BsWhatsapp,
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/edumateLogo.png";
+import { IoCallSharp } from "react-icons/io5";
+import Typical from "react-typical";
 
 const Footer = () => {
   return (
     <div>
-      {/* <footer className="px-4 divide-y text-white bg-black ">
-        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div className="lg:w-1/3">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex justify-center space-x-3 lg:justify-start"
-            >
-              <div className="flex items-center justify-center  rounded-full ">
-                <img className="w-32" src={logo} alt="" />
-              </div>
-            </a>
-          </div>
-          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase">Product</h3>
-              <ul className="space-y-1 text-white">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Integrations
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase ">Company</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="uppercase ">Developers</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Public API
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Guides
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <div className="uppercase ">Social media</div>
-              <div className="flex justify-center space-x-3">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  title="Facebook"
-                  className="flex items-center p-1"
-                >
-                  <BsFacebook />
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  title="Twitter"
-                  className="flex items-center p-1"
-                >
-                  <BsTwitter />
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  title="Instagram"
-                  className="flex items-center p-1"
-                >
-                  <BsInstagram />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="py-6 text-sm text-center text-white bg-black">
-          © Team API Avengers - All rights reserved.
-        </div>
-      </footer> */}
-
-      <footer class="relative bg-black text-white max-w-screen-2xl mx-auto pt-8 pb-6">
-        <div class="container mx-auto px-4">
-          <div class="flex flex-wrap text-left lg:text-left">
-            <div class="w-full lg:w-6/12 px-4">
-              <h4 class="text-3xl font-semibold text-gray-300">
-                Let's keep in touch!
-              </h4>
-              <h5 class="text-lg mt-0 mb-2 text-gray-300">
-                Find us on any of these platforms, we respond 1-2 business days.
+      <footer class=" bg-black text-white max-w-screen-2xl mx-auto pt-8 pb-6">
+        <div class="container max-w-screen-xl  mx-auto px-4">
+          <div class="flex  justify-between items-center text-left lg:text-left">
+            <div class="w-full  px-4">
+              <h4 class="text-4xl font-semibold text-gray-300">Edumate</h4>
+              <h5 class="text-lg flex gap-1 mt-2 mb-2 text-gray-300">
+                Find Your{" "}
+                <Typical
+                  steps={["Tution", 3000, "Teacher", 3000]}
+                  loop={Infinity}
+                  wrapper="p"
+                ></Typical>
               </h5>
-              <div class="mt-6 lg:mb-0 mb-6">
-                <button
-                  class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i class="fab fa-twitter"></i>
-                </button>
-                <button
-                  class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i class="fab fa-facebook-square"></i>
-                </button>
-                <button
-                  class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i class="fab fa-dribbble"></i>
-                </button>
-                <button
-                  class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i class="fab fa-github"></i>
-                </button>
+              <div class="mt-6 flex  justify-between w-[120px] lg:mb-0 mb-6">
+                <BsFacebook className="text-3xl" />
+                <BsInstagram className="text-3xl" />
+                <BsWhatsapp className="text-3xl" />
               </div>
             </div>
-            <div class="w-full lg:w-6/12 px-4">
-              <div class="flex flex-wrap items-top mb-6">
-                <div class="w-full lg:w-4/12 px-4 ml-auto">
-                  <span class="block uppercase text-gray-300 text-sm font-semibold mb-2">
-                    Useful Links
-                  </span>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation?ref=njs-profile"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com?ref=njs-profile"
-                      >
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial?ref=njs-profile"
-                      >
-                        Github
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile"
-                      >
-                        Free Products
-                      </a>
-                    </li>
-                  </ul>
+            <div class="w-full  px-4">
+              <div class="flex flex-wrap text-4xl font-bold items-top mb-1">
+                Contact
+              </div>
+              <div className="space-y-2">
+                <p className="text-xl">Moon Knights</p>
+                <div className="flex text-2xl gap-1">
+                  <IoCallSharp className="mt-1 text-blue-600 " />{" "}
+                  <p className="text-xl">01122334455</p>
                 </div>
-                <div class="w-full lg:w-4/12 px-4">
-                  <span class="block uppercase text-gray-300 text-sm font-semibold mb-2">
-                    Other Resources
-                  </span>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile"
-                      >
-                        MIT License
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/terms?ref=njs-profile"
-                      >
-                        Terms &amp; Conditions
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy?ref=njs-profile"
-                      >
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-gray-300 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=njs-profile"
-                      >
-                        Contact Us
-                      </a>
-                    </li>
-                  </ul>
+                <div className="flex text-2xl gap-1">
+                  <IoCallSharp className="mt-1 text-blue-600 " />{" "}
+                  <p className="text-xl">01122334455</p>
                 </div>
               </div>
             </div>
