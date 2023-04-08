@@ -31,11 +31,11 @@ const Instructors = () => {
       <div className="grid grid-cols-4 gap-4 max-w-screen-xl mx-auto">
         {allInstructor?.data?.map((instructor) => {
           return (
-            <div>
+            <div className="min-h-screen">
               <div className="px-25 mx-auto  py-10">
                 <div className="flex  flex-col">
                   <div class="max-w-2xl space-y-2 mx-auto">
-                    <div class=" shadow-md border text-start  border-gray-300 rounded-lg max-w-sm bg-slate-200 dark:border-gray-300">
+                    <div class=" shadow-md border text-start transition transform hover:scale-105 duration-300  border-gray-300 rounded-lg max-w-sm bg-slate-200 dark:border-gray-300">
                       <img
                         alt="teacher"
                         className="object-cover h-[201px] w-[300px] rounded-t-md mx-auto object-center block"
@@ -64,7 +64,7 @@ const Instructors = () => {
                         <div>
                           <Link to={`/instructor/${instructor?._id}`}>
                             <div class="flex mt-3">
-                              <button class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-12 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
+                              <button class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-12 py-2 text-white focus:outline-none focus:ring active:bg-blue-500">
                                 <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                                   <BsArrowRight />
                                 </span>

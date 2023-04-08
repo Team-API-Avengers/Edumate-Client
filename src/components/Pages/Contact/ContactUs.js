@@ -40,10 +40,11 @@ const ContactUs = () => {
                     <span className="label-text">Name</span>
                   </label>{" "}
                   <input
-                    class="w-full bg-sky-50  border border-green-400 text-gray-900 mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full   border border-green-400 text-gray-900 mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Name*"
                     name="name"
+                    readOnly
                     defaultValue={user?.displayName}
                   />
                 </div>
@@ -52,7 +53,7 @@ const ContactUs = () => {
                     <span className="label-text">About</span>
                   </label>
                   <input
-                    class="w-full bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full   border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                     type="text"
                     name="about"
                     placeholder="About*"
@@ -64,9 +65,10 @@ const ContactUs = () => {
                     <span className="label-text">Email</span>
                   </label>
                   <input
-                    class="w-full bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full   border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                     type="email"
                     name="email"
+                    readOnly
                     placeholder="Email*"
                     defaultValue={user?.email}
                   />
@@ -77,10 +79,11 @@ const ContactUs = () => {
                     <span className="label-text">Mobile number</span>
                   </label>
                   <input
-                    class="w-full bg-sky-50 border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Number*"
                     name="number"
+                    readOnly
                     defaultValue={logUser?.number}
                   />
                 </div>
@@ -93,7 +96,7 @@ const ContactUs = () => {
                   <textarea
                     name="message"
                     placeholder="Message*"
-                    class="w-full h-32  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                    class="w-full h-32  text-gray-900 border border-green-400  p-3 rounded focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
               </div>

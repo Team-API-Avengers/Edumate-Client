@@ -77,7 +77,7 @@ const Reviews = () => {
                 defaultValue={user?.displayName}
                 disabled
                 placeholder="Full name"
-                className=" w-full p-3 h-14 bg-sky-50 rounded border border-green-400 "
+                className=" w-full p-3 h-14  rounded border border-green-400 "
               />
             </div>
             <div className="form-control">
@@ -93,7 +93,7 @@ const Reviews = () => {
                 defaultValue={user?.email}
                 disabled
                 placeholder="Email"
-                className="w-full p-3 h-14 bg-sky-50 border border-green-400 rounded"
+                className="w-full p-3 h-14  border border-green-400 rounded"
               />
             </div>
             <div>
@@ -105,7 +105,7 @@ const Reviews = () => {
                   name="message"
                   {...register("message")}
                   rows="3"
-                  className="w-full p-3 bg-sky-50  border border-green-400 rounded "
+                  className="w-full p-3   border border-green-400 rounded "
                   placeholder="Message"
                 ></textarea>
               </div>
