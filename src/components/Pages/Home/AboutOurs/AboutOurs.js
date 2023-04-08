@@ -1,6 +1,5 @@
 import React from "react";
 import CountUp from "react-countup";
-import Contibutors from "../../Contibutors/Contibutors";
 
 const AboutOurs = () => {
   return (
@@ -20,12 +19,12 @@ const AboutOurs = () => {
           </div>
           <div class="text-center md:border-r border-b md:border-b-0 border-green-400">
             <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">
-              {" "}
+              
               <CountUp start={0} end={355} duration={10}></CountUp>
             </h6>
             <p class="text-sm font-bold tracking-widest text-green-600 uppercase lg:text-base">
               Students
-            </p>{" "}
+            </p>
             <p className="m-3">
               Building a future where every student has access to quality
               education.
@@ -33,12 +32,12 @@ const AboutOurs = () => {
           </div>
           <div class="text-center md:border-r border-b md:border-b-0 border-green-400">
             <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">
-              {" "}
+              
               <CountUp start={0} end={1000} duration={10}></CountUp>+
             </h6>
             <p class="text-sm font-bold tracking-widest text-green-600 uppercase lg:text-base">
               Users
-            </p>{" "}
+            </p>
             <p className="m-3">
               Uniting a community of learners and educators to achieve academic
               excellence.
@@ -50,7 +49,7 @@ const AboutOurs = () => {
             </h6>
             <p class="text-sm font-bold tracking-widest text-green-600 uppercase lg:text-base">
               Top rated teacher
-            </p>{" "}
+            </p>
             <p className="m-3">
               Exceptional educators, inspiring excellence in every student and
               change the face of education.
@@ -59,7 +58,7 @@ const AboutOurs = () => {
         </div>
       </div>
 
-      <Contibutors />
+      
     </div>
   );
 };

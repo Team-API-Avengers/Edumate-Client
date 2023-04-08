@@ -101,14 +101,6 @@ const Header = () => {
         </NavLink>
       )}
 
-      <NavLink
-        style={navStyle}
-        to={"/about-us"}
-        className="flex  w-24 justify-center items-center"
-      >
-        About
-      </NavLink>
-
 
       <NavLink
         style={navStyle}
@@ -126,6 +118,16 @@ const Header = () => {
       >
         Contact
       </NavLink>
+
+      
+      <NavLink
+        style={navStyle}
+        to={"/about-us"}
+        className="flex  w-24 justify-center items-center"
+      >
+        About
+      </NavLink>
+
 
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile

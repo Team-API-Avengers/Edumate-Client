@@ -21,6 +21,7 @@ import BlogDetails from "../../Pages/Blog/BlogDetails";
 import AllStudents from "../../Pages/AllStudents/AllStudents";
 import AddBlog from "../../Pages/AddBlog/AddBlog";
 import MyStudents from "../../Pages/MyStudents/MyStudents";
+import AddContributors from "../../Pages/AddContributors/AddContributors";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +89,18 @@ const router = createBrowserRouter([
     ],
   },
 
+
+
+
+
+
+
+
+
+
+
+
+
   {
     path: "/dashboard",
     element: <Dashboard />,
@@ -104,10 +117,10 @@ const router = createBrowserRouter([
         path: "/dashboard/My-Profile",
         element: <MyProfile />,
       },
-      // {
-      //   path: "/dashboard/contact",
-      //   element: <ContactUs />,
-      // },
+      {
+        path: "/dashboard/add-contributors",
+        element: <AddContributors />,
+      },
       {
         path: "/dashboard/my-Teachers",
         element: <MyTeachers />,
