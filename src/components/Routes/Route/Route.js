@@ -20,6 +20,7 @@ import AboutOurs from "../../Pages/Home/AboutOurs/AboutOurs";
 import BlogDetails from "../../Pages/Blog/BlogDetails";
 import AllStudents from "../../Pages/AllStudents/AllStudents";
 import AddBlog from "../../Pages/AddBlog/AddBlog";
+import MyStudents from "../../Pages/MyStudents/MyStudents";
 
 const router = createBrowserRouter([
   {
@@ -116,6 +117,13 @@ const router = createBrowserRouter([
         path: "/dashboard/all-students",
         element: <AllStudents />,
       },
+
+      {
+        path: "/dashboard/my-students",
+        element: <MyStudents />,
+      },
+      
+      
     ],
   },
 

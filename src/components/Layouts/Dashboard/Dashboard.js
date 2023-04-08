@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 // import { AuthContext } from '../../Context/AuthProvider';
 // import Loader from '../../Loader/Loader';
 import Header from "../../Shared/Header/Header";
+import { AuthContext } from "../../Context/AuthProvider";
 // import { useQuery } from '@tanstack/react-query';
 
 const DashBoard = () => {
-  // const { loading, user } = useContext(AuthContext);
+  const { loading, user, logUser } = useContext(AuthContext);
   // const [logUser, setLogUser] = useState();
   //! fetch for getting users data from mongodb.....
   // const { data: users } = useQuery({
@@ -65,18 +66,43 @@ const DashBoard = () => {
             <li className=" ">
               <Link to="/dashboard/My-Profile">My Profile</Link>
             </li>
-
+            
+            {/* {logUser?.role === 'Admin' && */}
             <>
-              <li className="">
-                <Link to="/dashboard/add-Teacher">Be a teacher</Link>
-              </li>
-              <li className="">
+            <li className="">
                 <Link to="/all-Teachers">All Teacher</Link>
               </li>
               <li className="">
                 <Link to="/dashboard/all-students">All Students</Link>
               </li>
+              <li className="">
+                <Link to="/dashboard/add-contributors</Link>">Add Contributors</Link>
+              </li>
             </>
+            {/* } */}
+
+           {/* {logUser?.role === 'Teacher' && */}
+            <>
+            <li className="">
+              <Link to="/dashboard/add-Teacher">Be a teacher</Link>
+            </li>
+
+            <li className="">
+              <Link to="/dashboard/my-students">My Students</Link>
+            </li>
+            
+          </>
+           {/* } */}
+
+           {/* {logUser?.role === 'Student' && */}
+            <>
+            <li className="">
+              <Link to="/dashboard/my-Teachers">My Teachers</Link>
+            </li>
+            
+          </>
+           {/* } */}
+
           </ul>
         </div>
       </div>
