@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 
 import { BsArrowRight } from "react-icons/bs";
@@ -10,20 +10,14 @@ const AddTeacher = () => {
 
   const { user, logUser } = useContext(AuthContext);
 
-
-
-    //! from .env.local file====>
-    const imgHostKey = process.env.REACT_APP_Imgbb_key;
-    // console.log(imgHostKey);
-
-
-
+  //! from .env.local file====>
+  const imgHostKey = process.env.REACT_APP_Imgbb_key;
+  console.log(imgHostKey);
 
   console.log(user);
   console.log(logUser);
 
   const addTeacher = (data) => {
-
     const img = data.photo[0];
     const formData = new FormData();
     formData.append("image", img);
@@ -38,7 +32,6 @@ const AddTeacher = () => {
       .then((imgData) => {
         // console.log(imgData.data.url);
         if (imgData.success) {
-
           const teacherDetails = {
             name: user?.displayName,
             email: user?.email,
@@ -54,29 +47,21 @@ const AddTeacher = () => {
 
           console.log(teacherDetails);
 
-
-          
-        fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(teacherDetails),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data)
-            if(data.data) {
-              toast.success("success");
-            }
-          });
-        
-
-
-
+          fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(teacherDetails),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.data) {
+                toast.success("success");
+              }
+            });
         }
-
-        
       });
   };
   return (
@@ -91,23 +76,14 @@ const AddTeacher = () => {
               </p>
 
               <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-                  <div class="text-gray-600">
-                    <p class="font-medium text-black text-2xl">
-                      Personal Details
-                    </p>
-                    <p className="text-black mt-1">
-                      Please fill out all the fields.
-                    </p>
-                  </div>
-
+                <div class=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                   <div class="lg:col-span-2">
                     <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                      <div class="md:col-span-5">
+                      {/* <div class="md:col-span-5">
                         <label>Full Name</label>
                         <input
-                        defaultValue={user?.displayName}
-                        readOnly
+                          defaultValue={user?.displayName}
+                          readOnly
                           type="text"
                           required
                           {...register("name")}
@@ -119,7 +95,34 @@ const AddTeacher = () => {
                       <div class="md:col-span-5">
                         <label>Email Address</label>
                         <input
-                        defaultValue={user?.email}
+                          defaultValue={user?.email}
+                          type="email"
+                          readOnly
+                          required
+                          {...register("email")}
+                          class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
+                          placeholder="email@domain.com"
+                        />
+                      </div> */}
+                    </div>
+                    <div className="grid grid-cols-2 mt-2 gap-2">
+                      <div class="">
+                        <label>Full Name</label>
+                        <input
+                          defaultValue={user?.displayName}
+                          readOnly
+                          type="text"
+                          required
+                          {...register("name")}
+                          class="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
+                          placeholder="Enter your name"
+                        />
+                      </div>
+
+                      <div class="">
+                        <label>Email Address</label>
+                        <input
+                          defaultValue={user?.email}
                           type="email"
                           readOnly
                           required
@@ -128,8 +131,6 @@ const AddTeacher = () => {
                           placeholder="email@domain.com"
                         />
                       </div>
-                    </div>
-                    <div className="grid grid-cols-2 mt-2 gap-2">
                       <div class="">
                         <label>Background</label>
                         <select
