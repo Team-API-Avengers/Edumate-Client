@@ -3,6 +3,8 @@ import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import Contibutors from "../Contibutors/Contibutors";
+import AboutOurs from "../Home/AboutOurs/AboutOurs";
 
 const About = () => {
   return (
@@ -19,10 +21,12 @@ const About = () => {
               <h1 className="text-5xl font-bold">About Us</h1>
 
               <p className="py-6">
-                Tuition is a fee paid by students to educational institutions for instruction or guidance in a
-                particular subject or course of study. The term can refer to either the fee itself or the act of
-                teaching or instructing. Tuition fees can vary widely depending on the type of institution, the level of
-                education, the subject matter, and the location.
+                Tuition is a fee paid by students to educational institutions
+                for instruction or guidance in a particular subject or course of
+                study. The term can refer to either the fee itself or the act of
+                teaching or instructing. Tuition fees can vary widely depending
+                on the type of institution, the level of education, the subject
+                matter, and the location.
               </p>
               <Link to="/dashboard/contact">
                 <button className="btn bg-blue-600">Contact Us</button>
@@ -49,7 +53,9 @@ const About = () => {
               {" "}
               <GoLocation className="text-3xl" /> LOCATION
             </h2>
-            <h4 className="card-title">121 Rock Sreet, 21 Avenue, New York, NY 92103-9000</h4>
+            <h4 className="card-title">
+              121 Rock Sreet, 21 Avenue, New York, NY 92103-9000
+            </h4>
           </div>
         </div>
         <div className="card w-11/12 bg-indigo-400 shadow-xl">
@@ -62,6 +68,8 @@ const About = () => {
           </div>
         </div>
       </div>
+      <AboutOurs />
+      <Contibutors />
     </section>
   );
 };
