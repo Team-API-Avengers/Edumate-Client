@@ -6,7 +6,7 @@ import Footer from "../../Shared/Footer/Footer";
 const Main = () => {
   return (
     <div className="relative">
-      <div className="sticky top-0 z-50">
+      <div id="top" className="sticky top-0 z-50">
         <Header />
       </div>
 

@@ -15,6 +15,7 @@
 11. npm install firebase 
 12. npm i @formspree/react
 13. npm install --save react-google-recaptcha
+14. npm i react-player
 
 
 
