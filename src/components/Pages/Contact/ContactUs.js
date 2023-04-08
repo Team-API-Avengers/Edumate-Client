@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "@formspree/react";
 import { toast } from "react-toastify";
 import Typical from "react-typical";
 import { motion } from "framer-motion";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const ContactUs = () => {
+  const { user, logUser } = useContext(AuthContext);
+  console.log(logUser);
   const [state, handleSubmit] = useForm("mayzpvjq");
   if (state.succeeded) {
     toast.success("Thanks for contacting with us");
@@ -41,6 +44,7 @@ const ContactUs = () => {
                     type="text"
                     placeholder="Name*"
                     name="name"
+                    defaultValue={user?.displayName}
                   />
                 </div>
                 <div>
@@ -64,6 +68,7 @@ const ContactUs = () => {
                     type="email"
                     name="email"
                     placeholder="Email*"
+                    defaultValue={user?.email}
                   />
                 </div>
 
@@ -76,6 +81,7 @@ const ContactUs = () => {
                     type="text"
                     placeholder="Number*"
                     name="number"
+                    defaultValue={logUser?.number}
                   />
                 </div>
               </div>
