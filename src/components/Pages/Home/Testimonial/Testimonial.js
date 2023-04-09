@@ -63,17 +63,45 @@ console.log('modalData', modalData?.name);
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
-                src="https://source.unsplash.com/100x100/?portrait?0"
+                src={feedback?.image}
               />
 
               <div className="flex-1 my-4">
                 <p className="text-xl font-semibold leading-snug">{feedback?.name}</p>
                 <p className="flex justify-center text-orange-400 my-2">
+                  {feedback?.rate === 1 &&
+                  <BsFillStarFill />
+                  }
+                  {feedback?.rate === 2 &&
+                  <>
+                  <BsFillStarFill />
+                  <BsFillStarFill />
+                  </>
+                  }
+                  {feedback?.rate === 3 &&
+                  <>
+                  <BsFillStarFill />
+                  <BsFillStarFill />
+                  <BsFillStarFill />
+                  </>
+                  }
+                  {feedback?.rate === 4 &&
+                  <>
+                  <BsFillStarFill />
+                  <BsFillStarFill />
+                  <BsFillStarFill />
+                  <BsFillStarFill />
+                  </>
+                  }
+                  {feedback?.rate === 5 &&
+                  <>
                   <BsFillStarFill />
                   <BsFillStarFill />
                   <BsFillStarFill />
                   <BsFillStarFill />
                   <BsFillStarFill />
+                  </>
+                  }
                 </p>
                 <p className="flex justify-center text-green-700">
                   <ImQuotesLeft />

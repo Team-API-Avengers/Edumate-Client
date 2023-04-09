@@ -19,8 +19,7 @@ const Banner = () => {
             </h1>
 
             <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-              illo tenetur fuga ducimus numquam ea!
+            Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of other academic, vocational and pastoral tuition.
             </p>
 
             <div class="mt-8 flex flex-wrap gap-4 text-center">

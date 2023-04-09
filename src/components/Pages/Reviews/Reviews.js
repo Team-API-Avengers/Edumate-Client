@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import { motion } from "framer-motion";
 import review from "../../Assets/reviews.jpg";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsFillStarFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 const Reviews = () => {
@@ -15,12 +15,14 @@ const Reviews = () => {
     const email = user?.email;
     const image = user?.photoURL;
     const message = e.target.message.value;
+    const rate = e.target.rate.value;
 
     const userReview = {
       email,
       name,
       image,
       message,
+      rate,
     };
     console.log(userReview);
 
@@ -99,6 +101,21 @@ const Reviews = () => {
                 id=""
               />
             </div>
+
+            <div className="my-2">
+              <label className="flex justify-start mb-3">Give Rate</label>
+              <input name='rate' type="range" min="1" max="5" className="range range-success" step="1" />
+              <div className="w-full flex justify-between text-xs px-2">
+                <span> <BsFillStarFill className="text-orange-400" /> </span>
+                <span> <BsFillStarFill className="text-orange-400" /> </span>
+                <span> <BsFillStarFill className="text-orange-400" /> </span>
+                <span> <BsFillStarFill className="text-orange-400" /> </span>
+                <span> <BsFillStarFill className="text-orange-400" /> </span>
+              </div>
+            </div>
+
+
+
             <div className="my-2">
               <label className="flex justify-start mb-3">Reviews</label>
               <textarea
