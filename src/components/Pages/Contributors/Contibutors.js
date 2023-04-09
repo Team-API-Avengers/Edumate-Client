@@ -602,7 +602,7 @@ const Contributors = () => {
         <div className="mx-auto mb-10 w-full max-w-[370px]">
           <div className="relative overflow-hidden rounded-lg">
             <img
-              src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-04.jpg"
+              src="https://i.ibb.co/cLR4SbW/333645415-894931498399824-4912192106769774471-n-1.png"
               alt="image"
               className="w-full h-80"
             />
@@ -984,7 +984,7 @@ const Contributors = () => {
         <div className="mx-auto mb-10 w-full max-w-[370px]">
           <div className="relative overflow-hidden rounded-lg">
             <img
-              src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-04.jpg"
+              src="https://i.ibb.co/RP3ykJv/340304702-244102374760260-335549393422060098-n.jpg"
               alt="image"
               className="w-full h-80"
             />
@@ -995,7 +995,7 @@ const Contributors = () => {
                 <h3 className="text-dark text-base font-semibold">
                   Ashikur Rahman Emon
                 </h3>
-                <p className="text-body-color text-sm">Backend developer</p>
+                <p className="text-body-color text-sm">Backend Developer</p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg

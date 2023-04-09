@@ -52,7 +52,7 @@ const SubjectWiseTeachers = () => {
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
-                </div>{" "}
+                </div>
                 <div className="mr-5">
                   <IoIosArrowForward />
                 </div>
@@ -73,7 +73,7 @@ const SubjectWiseTeachers = () => {
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
-                </div>{" "}
+                </div>
                 <div className="mr-5">
                   <IoIosArrowForward />
                 </div>
@@ -85,21 +85,21 @@ const SubjectWiseTeachers = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 2.3 }}
           >
-            <Link to={"/Humanity"}>
+            <Link to={"/Arts"}>
               <div class=" flex justify-between items-center rounded-lg  border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={humanity} alt="" />
                   <div className="ml-5">
-                    <h2 class="mt-2 text-start  text-xl font-bold">Humanity</h2>
+                    <h2 class="mt-2 text-start  text-xl font-bold">Arts</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
-                </div>{" "}
+                </div>
                 <div className="mr-5">
                   <IoIosArrowForward />
                 </div>
               </div>
-            </Link>{" "}
+            </Link>
           </motion.div>
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -107,7 +107,7 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 1.3, type: "spring", duration: 2.5 }}
           >
             <Link to={"/all-Teachers"}>
-              <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
+              <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36 hover:border-green-500 ">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={all} alt="" />
                   <div className="ml-5">
@@ -115,7 +115,7 @@ const SubjectWiseTeachers = () => {
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
-                </div>{" "}
+                </div>
                 <div className="mr-5">
                   <IoIosArrowForward />
                 </div>

@@ -85,7 +85,7 @@ const Signup = () => {
                 .then((res) => res.json())
                 .then((result) => {
                   if(result){
-                    // navigate("/");
+                    navigate("/");
                     toast.success("Registration successful");
                   }
 

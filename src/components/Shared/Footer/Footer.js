@@ -43,7 +43,7 @@ const Footer = () => {
               <div className="space-y-2">
                 <p className="flex text-2xl gap-1">
                   <BsGeoAltFill className="text-blue-600" />
-                  Moon Knights
+                  Moon Knights - API Avengers
                   </p>
                 <div className="flex text-2xl gap-1">
                   <IoCallSharp className="mt-1 text-blue-600 " />

@@ -61,7 +61,7 @@ const About = () => {
 
 
 
-              <Link to="/dashboard/contact">
+              <Link to="/contact">
                 <button className="btn bg-blue-600 hover:bg-blue-700 border-0">Contact Us</button>
               </Link>
             </div>

@@ -17,6 +17,12 @@ const AddTeacher = () => {
   console.log(user);
   console.log(logUser);
 
+
+
+
+
+
+
   const addTeacher = (data) => {
     const img = data.photo[0];
     const formData = new FormData();
@@ -32,18 +38,23 @@ const AddTeacher = () => {
       .then((imgData) => {
         // console.log(imgData.data.url);
         if (imgData.success) {
+
+
+
           const teacherDetails = {
             name: user?.displayName,
             email: user?.email,
             role: logUser?.role,
             phone: data.number,
-             experience: data.experience,
-            // // fee: data.fee,
+            experience: data.experience,
+            fee: data.fee,
             image: imgData.data.url,
             location: data.location,
             bio: data.bio,
             background: data.background,
           };
+
+
 
           console.log(teacherDetails);
 
@@ -142,7 +153,7 @@ const AddTeacher = () => {
                           </option>
                           <option>Science</option>
                           <option>Commerce</option>
-                          <option>Humanities</option>
+                          <option>Arts</option>
                         </select>
                       </div>
 
@@ -227,7 +238,7 @@ const AddTeacher = () => {
               </div>
             </div>
           </div>
-        </div>{" "}
+        </div>
       </form>
     </div>
   );

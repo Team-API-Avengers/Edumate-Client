@@ -4,14 +4,14 @@ const Loader = () => {
   return (
     <div className="min-h-screen ">
       <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center">
-        <div class="loading ">
+        <div className="loading">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div class="loader">Loading</div>
+        <div className="loader">Loading</div>
       </div>
     </div>
   );
