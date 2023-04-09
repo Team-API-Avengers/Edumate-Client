@@ -9,11 +9,11 @@ const Blog = () => {
       .then((blog) => setBlog(blog));
   }, []);
   return (
-    <div>
-      <div className="max-w-screen-xl mx-auto grid grid-cols-2 gap-5">
+    <div className="m-5">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
         {blogs?.map((singleBlog, i) => (
           <Link to={"/blogDetails"}>
-            <article class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
+            <article class="rounded-xl border border-green-100 bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
               <div class="flex items-start sm:gap-8">
                 <div>
                   <strong class="rounded border text-start text-white border-blue-500 bg-blue-500 px-3 py-1.5 text-[10px] font-medium ">
