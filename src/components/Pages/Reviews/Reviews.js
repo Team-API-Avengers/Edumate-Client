@@ -1,25 +1,34 @@
 import React, { useContext } from "react";
-import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
 import { motion } from "framer-motion";
 import review from "../../Assets/reviews.jpg";
 import { BsArrowRight } from "react-icons/bs";
+import { toast } from 'react-toastify';
+
+
+
+
 const Reviews = () => {
-  const { register, handleSubmit } = useForm();
   const { user } = useContext(AuthContext);
 
-  const handleSubmitData = (data) => {
-    const name = data.name;
-    const email = data.email;
-    const message = data.message;
+  const handleReview = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = user?.displayName;
+    const email = user?.email;
+    const image = user?.photoURL;
+    const message = e.target.message.value;
+
 
     const userReview = {
       email,
       name,
+      image,
       message,
     };
+    console.log(userReview);
 
-    fetch("http://localhost:5000/userReview", {
+    fetch("https://edumate-second-server.vercel.app/api/v1/feedback", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -27,8 +36,12 @@ const Reviews = () => {
       body: JSON.stringify(userReview),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then((result) => {
+        if(result){
+          console.log(result);
+          form.reset();
+          toast.success('Thanks for your feedback!');
+        }
       });
   };
 
@@ -61,70 +74,24 @@ const Reviews = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, type: "spring", duration: 3 }}
         >
-          <form
-            onSubmit={handleSubmit(handleSubmitData)}
-            className=" mt-16 card-body"
-          >
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Full name</span>
-              </label>
-              <input
-                type="text"
-                {...register("name", {
-                  required: "Name is required",
-                })}
-                defaultValue={user?.displayName}
-                disabled
-                placeholder="Full name"
-                className=" w-full p-3 h-14  rounded border border-green-400 "
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                name="email"
-                type="email"
-                {...register("email", {
-                  required: "Email is required",
-                })}
-                defaultValue={user?.email}
-                disabled
-                placeholder="Email"
-                className="w-full p-3 h-14  border border-green-400 rounded"
-              />
-            </div>
-            <div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Message</span>{" "}
-                </label>
-                <textarea
-                  name="message"
-                  {...register("message")}
-                  rows="3"
-                  className="w-full p-3   border border-green-400 rounded "
-                  placeholder="Message"
-                ></textarea>
-              </div>
-            </div>
-            <div class="flex  mt-5">
-              <button
-                type="submit"
-                class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-12 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
-              >
-                <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
-                  <BsArrowRight />
-                </span>
 
-                <span class="text-sm font-medium  transition-all group-hover:mr-4">
-                  Send
-                </span>
-              </button>
-            </div>
-          </form>
+
+
+         <form onSubmit={handleReview} className="card w-96 border border-blue-200 p-4 bg-blue-100">
+          <div className="my-2">
+          <label className="flex justify-start mb-3">Name</label>
+          <input className="block border border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none" readOnly defaultValue={user?.displayName} type="text" name="name" id="" />
+          </div>
+          <div className="my-2">
+          <label className="flex justify-start mb-3">Email</label>
+          <input className="block border border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none" readOnly defaultValue={user?.email} type="text" name="email" id="" />
+          </div>
+          <div className="my-2">
+          <label className="flex justify-start mb-3">Reviews</label>
+          <textarea required className="block cursor-pointer border border-gray-300 w-full px-5 rounded-md" name="message" id="" cols="30" rows="3"></textarea>
+          </div>
+          <button className="cursor-pointer bg-blue-600 hover:bg-blue-700 border-0 h-10 rounded-full text-white " type="submit">Sent</button>
+         </form>
         </motion.div>
       </div>
     </div>

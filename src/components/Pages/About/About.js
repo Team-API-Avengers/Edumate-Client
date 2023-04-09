@@ -76,11 +76,24 @@ const About = () => {
         </div>
       </div>
 
+
+
+
+
+      <AboutOurs />
+
+
+
+
+
+
+
+
       <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 ml-10 text-white">
         <div className="card  w-11/12 bg-blue-400 shadow-xl">
           <div className="card-body">
             <h2 className="card-title mb-4">
-              {" "}
+              
               <BsFillTelephoneOutboundFill className="text-3xl" /> CALL US
             </h2>
             <h4 className="card-title">1 0172758244</h4>
@@ -90,7 +103,7 @@ const About = () => {
         <div className="card w-11/12 bg-teal-400 shadow-xl">
           <div className="card-body">
             <h2 className="card-title mb-4">
-              {" "}
+              
               <GoLocation className="text-3xl" /> LOCATION
             </h2>
             <h4 className="card-title">
@@ -109,7 +122,7 @@ const About = () => {
         </div>
       </div>
 
-      <AboutOurs />
+
 
       <Contributors />
     </section>

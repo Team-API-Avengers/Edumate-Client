@@ -62,6 +62,7 @@ const Home = () => {
       </div>
 
       <Banner />
+      
       <SubjectWiseTeachers />
 
       <div id="review">

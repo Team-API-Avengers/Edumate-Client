@@ -28,11 +28,11 @@ const Signup = () => {
     const name = data.name;
     const email = data.email;
     const password = data.password;
-    const phoneNumber = data.phoneNumber;
+    const phone = data.phoneNumber;
     const role = data.role;
     const image = data.img;
 
-    console.log(phoneNumber, role, name, password, image);
+    console.log(phone, role, name, password, image);
 
     createUser(email, password)
       .then((result) => {
@@ -68,7 +68,7 @@ const Signup = () => {
                 name,
                 email,
                 role,
-                phone: phoneNumber,
+                phone,
                 image: imgData.data.url,
               };
 

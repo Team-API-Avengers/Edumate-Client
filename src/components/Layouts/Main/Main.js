@@ -15,7 +15,7 @@ const Main = () => {
 
 
 
-      <div className="mt-10 mb-10">
+      <div className="">
         <Outlet />
       </div>
 

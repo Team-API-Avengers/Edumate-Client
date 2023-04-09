@@ -37,8 +37,8 @@ const AddTeacher = () => {
             email: user?.email,
             role: logUser?.role,
             phone: data.number,
-            experience: data.experience,
-            fee: data.fee,
+             experience: data.experience,
+            // // fee: data.fee,
             image: imgData.data.url,
             location: data.location,
             bio: data.bio,
@@ -85,7 +85,7 @@ const AddTeacher = () => {
                           defaultValue={user?.displayName}
                           readOnly
                           type="text"
-                          required
+                          
                           {...register("name")}
                           class="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-green-50"
                           placeholder="Enter your name"
@@ -98,7 +98,7 @@ const AddTeacher = () => {
                           defaultValue={user?.email}
                           type="email"
                           readOnly
-                          required
+                          
                           {...register("email")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="email@domain.com"
@@ -112,7 +112,7 @@ const AddTeacher = () => {
                           defaultValue={user?.displayName}
                           readOnly
                           type="text"
-                          required
+                          
                           {...register("name")}
                           class="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
                           placeholder="Enter your name"
@@ -125,7 +125,7 @@ const AddTeacher = () => {
                           defaultValue={user?.email}
                           type="email"
                           readOnly
-                          required
+                          
                           {...register("email")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="email@domain.com"
@@ -135,14 +135,14 @@ const AddTeacher = () => {
                         <label>Background</label>
                         <select
                           {...register("background")}
-                          className="select required h-11 border border-green-400 mt-1 rounded   w-full bg-sky-50 "
+                          className="select  h-11 border border-green-400 mt-1 rounded   w-full bg-sky-50 "
                         >
                           <option disabled selected>
                             Choose your background
                           </option>
                           <option>Science</option>
                           <option>Commerce</option>
-                          <option>Humanity</option>
+                          <option>Humanities</option>
                         </select>
                       </div>
 
@@ -150,7 +150,7 @@ const AddTeacher = () => {
                         <label>Address / Street</label>
                         <input
                           type="text"
-                          required
+                          
                           {...register("location")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="Sitakunda, Chittagong"
@@ -162,7 +162,7 @@ const AddTeacher = () => {
                         <input
                           type="text"
                           {...register("fee")}
-                          required
+                          
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="Average fee"
                         />
@@ -171,7 +171,7 @@ const AddTeacher = () => {
                         <label>Experience</label>
                         <input
                           type="text"
-                          required
+                          
                           {...register("experience")}
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="2 years*"
@@ -181,7 +181,7 @@ const AddTeacher = () => {
                         <label>Mobile number</label>
                         <input
                           type="text"
-                          required
+                          
                           {...register("number")}
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="01100233534*"
@@ -202,7 +202,7 @@ const AddTeacher = () => {
                         <textarea
                           name="message"
                           {...register("bio")}
-                          required
+                          
                           placeholder="Describe yourself*"
                           class="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         ></textarea>
