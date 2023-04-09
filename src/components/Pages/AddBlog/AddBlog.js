@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { BsArrowRight } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
+import { toast } from "react-toastify";
+
 const AddBlog = () => {
   const { register, handleSubmit } = useForm();
-
+  const { user } = useContext(AuthContext);
   // const imgBBkEY = d1492118b3a4839b4618065890540ec1;
+  const navigate = useNavigate();
   const addBlog = (data) => {
     const img = data.photo[0];
     const formData = new FormData();
@@ -40,7 +44,8 @@ const AddBlog = () => {
         })
           .then((res) => res.json())
           .then((data) => console.log(data));
-        alert("blog successfully published");
+        toast.success("Successfully added your blog");
+        navigate("/blog");
       });
   };
 
@@ -65,6 +70,9 @@ const AddBlog = () => {
                       <input
                         {...register("Name")}
                         type="text"
+                        defaultValue={user?.displayName}
+                        readOnly
+                        required
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -77,10 +85,14 @@ const AddBlog = () => {
                       <input
                         type="email"
                         {...register("email")}
+                        readOnly
+                        required
+                        defaultValue={user?.email}
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
                   </div>
+
                   <div class="w-full lg:w-6/12 px-4">
                     <div class="w-full space-y-0.5">
                       <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">
@@ -89,6 +101,8 @@ const AddBlog = () => {
                       <input
                         {...register("photo")}
                         type="file"
+                        required
+                        defaultValue={user?.photoURL}
                         class="block w-full cursor-pointer border border-green-400 appearance-none rounded-md  bg-white px-3 py-2 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"
                       />
                     </div>
@@ -101,6 +115,7 @@ const AddBlog = () => {
                       <input
                         type="text"
                         {...register("profession")}
+                        required
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -116,6 +131,7 @@ const AddBlog = () => {
                       <input
                         {...register("title")}
                         type="text"
+                        required
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -128,6 +144,7 @@ const AddBlog = () => {
                       <input
                         type="number"
                         {...register("number")}
+                        required
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -140,6 +157,7 @@ const AddBlog = () => {
                       <input
                         type="text"
                         {...register("category")}
+                        required
                         class=" border-green-400 border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
@@ -152,6 +170,7 @@ const AddBlog = () => {
                       <textarea
                         type="text"
                         {...register("details")}
+                        required
                         class=" border-green-400 border px-3 h-32 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       />
                     </div>
