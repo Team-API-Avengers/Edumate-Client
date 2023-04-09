@@ -103,7 +103,7 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3">Give Rate</label>
+              <label className="flex justify-start mb-3">How was your experience?</label>
               <input name='rate' type="range" min="1" max="5" className="range range-success" step="1" />
               <div className="w-full flex justify-between text-xs px-2">
                 <span> <BsFillStarFill className="text-orange-400" /> </span>

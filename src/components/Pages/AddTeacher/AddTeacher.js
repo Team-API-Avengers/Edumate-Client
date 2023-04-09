@@ -199,7 +199,7 @@ const AddTeacher = () => {
                         />
                       </div>
                       <div class="w-full space-y-0.5">
-                        <label>Your photo</label>
+                        <label>You should add an unique image</label>
                         <input
                           {...register("photo")}
                           type="file"
