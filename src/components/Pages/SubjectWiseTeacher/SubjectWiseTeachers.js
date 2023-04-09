@@ -39,9 +39,9 @@ const SubjectWiseTeachers = () => {
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto">
         <div class="container grid grid-cols-2 gap-10 px-5 py-1  mx-auto">
           <motion.div
-            initial={{ y: -100, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1, type: "spring", duration: 2 }}
+            transition={{ delay: 0.5, type: "spring", duration: 1.5 }}
           >
             <Link to={"/Science"}>
               <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
@@ -60,9 +60,9 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1, type: "spring", duration: 2 }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, type: "spring", duration: 2 }}
           >
             <Link to={"/Commerce"}>
               <div class=" flex justify-between items-center rounded-lg border  bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
@@ -81,9 +81,9 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
           <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1, type: "spring", duration: 2 }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1, type: "spring", duration: 2.3 }}
           >
             <Link to={"/Humanity"}>
               <div class=" flex justify-between items-center rounded-lg  border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
@@ -102,9 +102,9 @@ const SubjectWiseTeachers = () => {
             </Link>{" "}
           </motion.div>
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1, type: "spring", duration: 2 }}
+            transition={{ delay: 1.3, type: "spring", duration: 2.5 }}
           >
             <Link to={"/all-Teachers"}>
               <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
