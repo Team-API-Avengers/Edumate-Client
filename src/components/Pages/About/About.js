@@ -10,20 +10,20 @@ import logo from '../../Assets/logo.png'
 const About = () => {
   return (
     <section className="mt-8">
-            <AboutOurs />
+
       <div>
         <div className="hero bg-base-200">
-          
+
           <div className="hero-content flex">
-           
+
             <div className="mx-10">
               <h1 className="text-5xl font-bold">About Us</h1>
-              
+
 
               <h1 className="text-start text-2xl font-bold">Overview :</h1>
 
               <p className="text-start">
-              <span className=" font-bold">Purposes :</span> Edumate provides students with access to qualified and experienced tutors who specialize in different subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need extra help with their studies. Edumate connects students with teachers who can help them achieve their academic goals.
+                <span className=" font-bold">Purposes :</span> Edumate provides students with access to qualified and experienced tutors who specialize in different subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need extra help with their studies. Edumate connects students with teachers who can help them achieve their academic goals.
               </p>
 
 
@@ -39,7 +39,7 @@ const About = () => {
               </p>
 
 
-              
+
 
               <p className="text-start pt-6 font-bold">Features of the  Edumate Website :</p>
               <ul className="text-start">
@@ -78,7 +78,7 @@ const About = () => {
         </div>
       </div>
 
-
+      <AboutOurs />
 
 
 
@@ -87,15 +87,11 @@ const About = () => {
 
 
 
-
-
-
-
       <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 m-10 text-white">
         <div className="card  w-11/12 bg-blue-400 shadow-xl">
           <div className="card-body">
             <h2 className="card-title mb-4">
-              
+
               <BsFillTelephoneOutboundFill className="text-3xl" /> CALL US
             </h2>
             <h4 className="card-title">1 0172758244</h4>
@@ -105,7 +101,7 @@ const About = () => {
         <div className="card w-11/12 bg-teal-400 shadow-xl">
           <div className="card-body">
             <h2 className="card-title mb-4">
-              
+
               <GoLocation className="text-3xl" /> LOCATION
             </h2>
             <h4 className="card-title">
