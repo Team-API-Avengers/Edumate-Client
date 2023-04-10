@@ -71,7 +71,7 @@ const Header = () => {
       >
         Home
       </NavLink>
-      {logUser?.role === "Teacher" && (
+      {logUser?.role === "Teacher" ? 
         <NavLink>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost rounded-btn">
@@ -90,8 +90,7 @@ const Header = () => {
             </ul>
           </div>
         </NavLink>
-      )}
-      {logUser?.role === "Student" && (
+        :
         <NavLink
           style={navStyle}
           to={"/blog"}
@@ -99,7 +98,16 @@ const Header = () => {
         >
           Blog
         </NavLink>
-      )}
+      }
+      {/* {logUser?.role === "Student" && (
+        <NavLink
+          style={navStyle}
+          to={"/blog"}
+          className="flex w-24 justify-center items-center"
+        >
+          Blog
+        </NavLink>
+      )} */}
 
       <NavLink
         style={navStyle}
