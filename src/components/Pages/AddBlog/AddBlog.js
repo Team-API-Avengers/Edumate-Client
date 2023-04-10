@@ -35,7 +35,7 @@ const AddBlog = () => {
           };
           console.log(blogDetails);
         }
-        fetch(``, {
+        fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

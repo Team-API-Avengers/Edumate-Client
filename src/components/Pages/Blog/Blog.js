@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 const Blog = () => {
   const [blogs, setBlog] = useState(null);
   useEffect(() => {
-    fetch("blogdata.json")
+    fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
       .then((res) => res.json())
-      .then((blog) => setBlog(blog));
+      .then((blog) => console.log(blog));
   }, []);
+
   return (
-    <div className="m-5">
+    <div className="m-5 min-h-screen">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
         {blogs?.map((singleBlog, i) => (
           <Link to={"/blogDetails"}>
