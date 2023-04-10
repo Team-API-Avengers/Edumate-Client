@@ -17,6 +17,7 @@ import {
   BsFillTagsFill,
 } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
+import SearchBox from "./SearchBox/SearchBox";
 
 const Home = () => {
   const { loading } = useContext(AuthContext);
@@ -63,6 +64,8 @@ const Home = () => {
 
       <Banner />
 
+      <SearchBox />
+
       <SubjectWiseTeachers />
 
       <div id="review">
@@ -70,7 +73,7 @@ const Home = () => {
       </div>
 
       <Testimonial />
-      <AboutOurs />
+      {/* <AboutOurs /> */}
       <div id="beATeacher">
         <BeATeacher />
       </div>
