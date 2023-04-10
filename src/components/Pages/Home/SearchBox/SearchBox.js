@@ -37,7 +37,7 @@ const SearchBox = () => {
         <div>
             <form onSubmit={handleSearch}>
                 <h5>Search a teacher by your location</h5>
-                <input name='search' type="text" className='input input-bordered w-96' />
+                <input placeholder='example: Dhaka' name='search' type="text" className='input input-bordered w-96' />
                 <button className='btn btn-primary'>Search</button>
             </form>
 
@@ -46,19 +46,19 @@ const SearchBox = () => {
             <div className="mt-10">
             {data && 
         
-        <div>
+            <div>
             <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-10">
             {
                 data?.map(value => 
                     <div class="max-w-2xl space-y-2 mx-auto">
                     <div class=" shadow-md border text-start border-gray-300 rounded-lg max-w-sm bg-indigo-200 dark:border-gray-300">
-                      <img
+                        <img
                         class="rounded-t-lg h-[201px] w-[300px]"
                         src={value.image}
-                        alt=""
-                      />
+                        alt="img"
+                        />
       
-                      <div class="p-5">
+                         <div class="p-5">
                         <h5 class=" font-bold text-green-600 text-md flex tracking-tight">
                           <FaBookReader className="mt-1 text-gray-900 ml-1 mr-2" />{" "}
                           {value?.background}

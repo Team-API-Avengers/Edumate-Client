@@ -70,8 +70,8 @@ const router = createBrowserRouter([
         path: "/:_id",
         element: <BlogDetails />,
         loader: ({ params }) => {
-          fetch(
-            `https://edumate-second-server.vercel.app/api/v1/blogs/${params._id}`
+         return fetch(
+            `https://edumate-second-server.vercel.app/api/v1/blogs/${params?._id}`
           );
         },
       },

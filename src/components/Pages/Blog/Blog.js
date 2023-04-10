@@ -9,6 +9,9 @@ const Blog = () => {
       .then((blog) => setBlog(blog.data));
   }, []);
 
+
+  console.log(blogs);
+
   return (
     <div className="m-5 min-h-screen">
       {" "}

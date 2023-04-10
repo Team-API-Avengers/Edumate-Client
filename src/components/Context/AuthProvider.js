@@ -28,8 +28,8 @@ const AuthProvider = ({ children }) => {
 		fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
-				console.log(result);
-				if(result != undefined){
+				// console.log(result);
+				if(result !== undefined){
 					setLogUser(result.data);
 				}
 			});

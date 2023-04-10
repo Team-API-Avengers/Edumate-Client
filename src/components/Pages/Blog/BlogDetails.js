@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
+import Loader from "../../Shared/Loader/Loader";
 
 const BlogDetails = () => {
+  const { loading } = useContext(AuthContext);
+
+
   const detailsData = useLoaderData();
+
+
+
+  if (loading) {
+    return <Loader />;
+  }
+
+
+
   console.log(detailsData);
   return (
     <div>
