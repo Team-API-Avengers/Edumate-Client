@@ -4,15 +4,20 @@ import { Link } from "react-router-dom";
 const Blog = () => {
   const [blogs, setBlog] = useState(null);
   useEffect(() => {
-    fetch("blogdata.json")
+    fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
       .then((res) => res.json())
-      .then((blog) => setBlog(blog));
+      .then((blog) => setBlog(blog.data));
   }, []);
+
   return (
-    <div className="m-5">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
+    <div className="m-5 min-h-screen">
+      {" "}
+      <h1 className="text-5xl font-bold">
+        Popular <span className="border-b-8 border-blue-600">Articles</span>
+      </h1>
+      <div className="max-w-screen-xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
         {blogs?.map((singleBlog, i) => (
-          <Link to={"/blogDetails"}>
+          <Link to={`/${singleBlog?._id}`}>
             <article class="rounded-xl border border-green-100 bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
               <div class="flex items-start sm:gap-8">
                 <div>
@@ -25,7 +30,7 @@ const Blog = () => {
                   </h3>
 
                   <p class="mt-1 text-start text-sm text-gray-700">
-                    {singleBlog?.blogDetails.slice(0, 98)}.....
+                    {singleBlog?.blogDetails?.slice(0, 98)}.....
                   </p>
 
                   <div class="mt-4 flex justify-between">

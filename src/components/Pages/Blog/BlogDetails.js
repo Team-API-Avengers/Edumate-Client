@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
-const BlogDetails = ({ blogs }) => {
+const BlogDetails = () => {
+  const detailsData = useLoaderData();
+  console.log(detailsData);
   return (
     <div>
       <h1 className="text-5xl font-bold">

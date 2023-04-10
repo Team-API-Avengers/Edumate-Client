@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-     
+
       {
         path: "/about-us",
         element: <About />,
@@ -62,17 +62,19 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
-      {
-        path: "/blogDetails",
-        element: <BlogDetails />,
-      },
       // {
-      //   path: "/blogDetails/:_id",
+      //   path: "/blogDetails",
       //   element: <BlogDetails />,
-      //   loader: ({ params }) => {
-      //     fetch(``);
-      //   },
       // },
+      {
+        path: "/:_id",
+        element: <BlogDetails />,
+        loader: ({ params }) => {
+          fetch(
+            `https://edumate-second-server.vercel.app/api/v1/blogs/${params._id}`
+          );
+        },
+      },
       {
         path: "/addBlog",
         element: <AddBlog />,
@@ -88,18 +90,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-
-
-
-
-
-
-
-
-
-
-
 
   {
     path: "/dashboard",
@@ -135,8 +125,6 @@ const router = createBrowserRouter([
         path: "/dashboard/my-students",
         element: <MyStudents />,
       },
-      
-      
     ],
   },
 
@@ -146,8 +134,6 @@ const router = createBrowserRouter([
     // element: <div>Error 404 page</div>,
   },
 
-
-
   {
     path: "/login",
     element: <Login />,
@@ -156,14 +142,6 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <Signup />,
   },
-
-
-
-
-
-
-
-
 ]);
 
 export default router;
