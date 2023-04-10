@@ -1,52 +1,12 @@
 import React, { useState } from 'react';
-import { BsArrowRightShort } from 'react-icons/bs';
+import { BsArrowRight, BsFillPersonFill, BsHourglassSplit } from 'react-icons/bs';
+import { FaBookReader } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const SearchBox = () => {
 
 
     const [data, setData] = useState()
-
-
-
-
-       //! FIXME: ----- START ------ FIXME: 
-  // By Clicking see all button display all categories data and by clicking close button hidden all categories data
-
-
-//   const [categoryData, setCategoryData] = useState([]);
-
-
-
-  const [showAll, setShowAll] = useState(false);
-
-  
-//   const getCategoryData = async () => {
-//     const response = await fetch('https://edumate-second-server.vercel.app/api/v1/feedback');
-//     const data = await response.json();
-//     setCategoryData(data);
-//   };
-
-//   console.log('all', categoryData);
-
-
-  const handleShowAllClick = () => {
-    setShowAll(true);
-    // data();
-  };
-
-
-  
-
-  const handleCloseClick = () => {
-    setShowAll(false);
-    // data([]);
-  };
-
-
-
-
-
-  // FIXME: --------END------ FIXME:
 
 
 
@@ -81,32 +41,64 @@ const SearchBox = () => {
                 <button className='btn btn-primary'>Search</button>
             </form>
 
-            {/* {
-                data?.map(value =>
-                    <div key={value?._id}>
-                        <h1>Hi</h1>
-                    </div>
-                    )
-            } */}
+            
 
             <div className="mt-10">
-            {showAll ? (
+            {data && 
         
         <div>
             <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-10">
             {
                 data?.map(value => 
-            <div key={value?._id}>
-                <h1>{value?.background}</h1>
-            </div>
+                    <div class="max-w-2xl space-y-2 mx-auto">
+                    <div class=" shadow-md border text-start border-gray-300 rounded-lg max-w-sm bg-indigo-200 dark:border-gray-300">
+                      <img
+                        class="rounded-t-lg h-[201px] w-[300px]"
+                        src={value.image}
+                        alt=""
+                      />
+      
+                      <div class="p-5">
+                        <h5 class=" font-bold text-green-600 text-md flex tracking-tight">
+                          <FaBookReader className="mt-1 text-gray-900 ml-1 mr-2" />{" "}
+                          {value?.background}
+                        </h5>
+      
+                        <p class="font-bold text-2xl flex  text-gray-800">
+                          <BsFillPersonFill className="mt-1 mr-1" />
+      
+                          {value?.name}
+                        </p>
+                        {/* <p class="font-bold text-md flex  text-gray-800">
+                          <HiLocationMarker className="mt-1 mr-2" /> {data?.location}
+                        </p> */}
+                        <p class="font-bold text-md  mb-3 flex text-gray-800">
+                          <BsHourglassSplit className="mt-1 mr-2" />{" "}
+                          {value?.experience} years experience
+                        </p>
+                        <div>
+                          <Link to={`/instructor/${value?._id}`}>
+                            <div class="flex mt-3">
+                              <button class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-12 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
+                                <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
+                                  <BsArrowRight />
+                                </span>
+      
+                                <span class="text-sm font-medium transition-all group-hover:mr-4">
+                                  Details
+                                </span>
+                              </button>
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                     ) }
             </div>
-          
-          <button className='hover:underline group text-blue-700 text-2xl flex mx-auto w-sm mt-10' title='Hide' onClick={handleCloseClick}>Close <BsArrowRightShort className='group-hover:text-blue-700 text-white mt-2' /> </button>       
+           
         </div>
-      ) : (
-        <button className='hover:underline group text-blue-700 text-2xl flex mx-auto w-sm mt-10' title='See all' onClick={handleShowAllClick}>See All Feedbacks<BsArrowRightShort className='group-hover:text-blue-700 text-white mt-2' /> </button>
-      )}
+      }
             </div>
         </div>
     );
