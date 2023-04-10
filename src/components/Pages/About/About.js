@@ -10,8 +10,10 @@ import logo from '../../Assets/logo.png'
 const About = () => {
   return (
     <section className="mt-8">
+            <AboutOurs />
       <div>
         <div className="hero bg-base-200">
+          
           <div className="hero-content flex">
            
             <div className="mx-10">
@@ -80,7 +82,8 @@ const About = () => {
 
 
 
-      <AboutOurs />
+
+      <Contributors />
 
 
 
@@ -88,8 +91,7 @@ const About = () => {
 
 
 
-
-      <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 ml-10 text-white">
+      <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 m-10 text-white">
         <div className="card  w-11/12 bg-blue-400 shadow-xl">
           <div className="card-body">
             <h2 className="card-title mb-4">
@@ -124,7 +126,7 @@ const About = () => {
 
 
 
-      <Contributors />
+
     </section>
   );
 };

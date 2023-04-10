@@ -70,7 +70,7 @@ const Home = () => {
       </div>
 
       <Testimonial />
-      <AboutOurs />
+      {/* <AboutOurs /> */}
       <div id="beATeacher">
         <BeATeacher />
       </div>

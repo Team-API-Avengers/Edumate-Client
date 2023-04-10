@@ -5,7 +5,7 @@ const Contributors = () => {
     return (
         <div>
            
-<section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+<section className="pt-20 pb-10 lg:pt-[120px] m-10 lg:pb-20">
   <div className="container mx-auto">
     <div className="-mx-4 flex flex-wrap">
       <div className="w-full px-4">
@@ -26,15 +26,15 @@ const Contributors = () => {
       </div>
     </div>
 
-    <div className="-mx-4 flex flex-wrap justify-center">
+    <div className="-mx-3 flex flex-wrap justify-center">
 
-      <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <div className="w-full px-4 md:w-1/2 xl:w-1/3">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
             <img
-              src="https://3.bp.blogspot.com/-qH8jX82iOrU/YKT6dvmm_ZI/AAAAAAAAAFk/puwSriX49QU_KTDgJf9D00Y5thBGOiwkQCK4BGAYYCw/s724/IMG_20210405_102341.jpg"
+              src="https://i.ibb.co/y4mCHG8/247348789-2981718772092667-3655152680050390712-n.jpg"
               alt="image"
-              className="w-full h-80"
+              className="w-full h-80 object-cover"
             />
             <div className="absolute bottom-5 left-0 w-full text-center">
               <div
@@ -66,7 +66,7 @@ const Contributors = () => {
                         cx="16"
                         cy="45"
                         r="45"
-                        fill="#13C296"
+                        fill="#00FFBF"
                         fill-opacity="0.11"
                       />
                     </svg>
@@ -228,9 +228,9 @@ const Contributors = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <div className="w-full px-4 md:w-1/2 xl:w-1/3">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
             <img
               src="https://lh3.googleusercontent.com/a/AGNmyxbm626_kWQxzX6OZ6vNr6PJNZw0URSP3okhfSL6tg=s96-c"
               alt="image"
@@ -268,7 +268,7 @@ const Contributors = () => {
                         cx="16"
                         cy="45"
                         r="45"
-                        fill="#13C296"
+                        fill="#00FFBF"
                         fill-opacity="0.11"
                       />
                     </svg>
@@ -430,13 +430,13 @@ const Contributors = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <div className="w-full px-4 md:w-1/2 xl:w-1/3">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-03.jpg"
               alt="image"
-              className="w-full h-80"
+              className="w-full h-80 object-cover"
             />
             <div className="absolute bottom-5 left-0 w-full text-center">
               <div
@@ -470,7 +470,7 @@ const Contributors = () => {
                         cx="16"
                         cy="45"
                         r="45"
-                        fill="#13C296"
+                        fill="#00FFBF"
                         fill-opacity="0.11"
                       />
                     </svg>
@@ -632,13 +632,13 @@ const Contributors = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <div className="w-full px-4 md:w-1/2 xl:w-1/3">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
             <img
               src="https://i.ibb.co/cLR4SbW/333645415-894931498399824-4912192106769774471-n-1.png"
               alt="image"
-              className="w-full h-80"
+              className="w-full h-80 object-cover"
             />
             <div className="absolute bottom-5 left-0 w-full text-center">
               <div
@@ -672,7 +672,7 @@ const Contributors = () => {
                         cx="16"
                         cy="45"
                         r="45"
-                        fill="#13C296"
+                        fill="#00FFBF"
                         fill-opacity="0.11"
                       />
                     </svg>
@@ -834,13 +834,13 @@ const Contributors = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <div className="w-full px-4 md:w-1/2 xl:w-1/3">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-04.jpg"
               alt="image"
-              className="w-full h-80"
+              className="w-full h-80 object-cover"
             />
             <div className="absolute bottom-5 left-0 w-full text-center">
               <div
@@ -874,7 +874,7 @@ const Contributors = () => {
                         cx="16"
                         cy="45"
                         r="45"
-                        fill="#13C296"
+                        fill="#0BDFAA"
                         fill-opacity="0.11"
                       />
                     </svg>
@@ -1036,13 +1036,13 @@ const Contributors = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:w-1/2 xl:w-1/4">
+      <div className="w-full px-4 md:w-1/2 xl:w-1/3">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
             <img
               src="https://i.ibb.co/RP3ykJv/340304702-244102374760260-335549393422060098-n.jpg"
               alt="image"
-              className="w-full h-80"
+              className="w-full h-80 object-cover"
             />
             <div className="absolute bottom-5 left-0 w-full text-center">
               <div
@@ -1076,7 +1076,7 @@ const Contributors = () => {
                         cx="16"
                         cy="45"
                         r="45"
-                        fill="#13C296"
+                        fill="#00FFBF"
                         fill-opacity="0.11"
                       />
                     </svg>
