@@ -101,7 +101,6 @@ const Header = () => {
         </NavLink>
       )}
 
-
       <NavLink
         style={navStyle}
         to={"/dashboard"}
@@ -119,7 +118,6 @@ const Header = () => {
         Contact
       </NavLink>
 
-      
       <NavLink
         style={navStyle}
         to={"/about-us"}
@@ -127,7 +125,6 @@ const Header = () => {
       >
         About
       </NavLink>
-
 
       <NavLink to={"/profile"} className="flex lg:hidden items-center">
         Profile
@@ -151,7 +148,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-6">
+      <Navbar className="mx-auto shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
