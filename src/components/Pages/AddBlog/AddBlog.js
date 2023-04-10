@@ -8,14 +8,14 @@ import { toast } from "react-toastify";
 const AddBlog = () => {
   const { register, handleSubmit } = useForm();
   const { user, logUser } = useContext(AuthContext);
-  // const imgBBkEY = d1492118b3a4839b4618065890540ec1;
+  const imgBBkEY = process.env.REACT_APP_Imgbb_key;
   const navigate = useNavigate();
   const addBlog = (data) => {
     const img = data?.photo[0];
     const formData = new FormData();
     formData.append("image", img);
 
-    const url = `https://api.imgbb.com/1/upload?&key=d1492118b3a4839b4618065890540ec1`;
+    const url = `https://api.imgbb.com/1/upload?&key=${imgBBkEY}`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -23,12 +23,11 @@ const AddBlog = () => {
       .then((res) => res.json())
       .then((imgData) => {
         if (imgData?.success) {
-
           const blogDetails = {
             authorName: user?.displayName,
             authorEmail: user?.email,
             authorRole: logUser?.role,
-            authorImage : user?.photoURL,
+            authorImage: user?.photoURL,
             title: data?.title,
             category: data?.category,
             details: data?.details,
@@ -137,7 +136,7 @@ const AddBlog = () => {
                       />
                     </div>
                   </div>
-                 
+
                   <div className="w-full lg:w-6/12 px-4">
                     <div className="relative w-full mb-3">
                       <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
