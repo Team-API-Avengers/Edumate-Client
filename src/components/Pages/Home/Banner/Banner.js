@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import Typical from "react-typical";
 import { BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -30,12 +31,11 @@ const Banner = () => {
                 Get Started
               </a>
 
-              <a
-                href="#"
+              <Link to="/about-us"
                 class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>

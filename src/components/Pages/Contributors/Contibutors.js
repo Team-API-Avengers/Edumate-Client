@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsFacebook, BsLinkedin, BsGithub } from 'react-icons/bs';
 
 const Contributors = () => {
     return (
@@ -26,10 +27,10 @@ const Contributors = () => {
     </div>
 
     <div className="-mx-4 flex flex-wrap justify-center">
+
       <div className="w-full px-4 md:w-1/2 xl:w-1/4">
-        
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
             <img
               src="https://3.bp.blogspot.com/-qH8jX82iOrU/YKT6dvmm_ZI/AAAAAAAAAFk/puwSriX49QU_KTDgJf9D00Y5thBGOiwkQCK4BGAYYCw/s724/IMG_20210405_102341.jpg"
               alt="image"
@@ -41,6 +42,17 @@ const Contributors = () => {
               >
                 <h3 className="text-dark text-base font-semibold">MD Hasan</h3>
                 <p className="text-body-color text-sm">Team Leader</p>
+                <p className='flex justify-center mt-1'>
+                  <a href="https://www.facebook.com/ornilhasan0467/">
+                  <BsFacebook className='mx-2' />
+                  </a>
+                  <a href="https://www.linkedin.com/in/md-hasan149357">
+                  <BsLinkedin className='mx-2' />
+                  </a>
+                  <a href="https://github.com/MdHasan0467">
+                  <BsGithub  className='mx-2' />
+                  </a>
+                </p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg
@@ -218,7 +230,7 @@ const Contributors = () => {
 
       <div className="w-full px-4 md:w-1/2 xl:w-1/4">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
             <img
               src="https://lh3.googleusercontent.com/a/AGNmyxbm626_kWQxzX6OZ6vNr6PJNZw0URSP3okhfSL6tg=s96-c"
               alt="image"
@@ -232,6 +244,17 @@ const Contributors = () => {
                   Yusuf Bin Imam
                 </h3>
                 <p className="text-body-color text-sm">Front End Developer</p>
+                <p className='flex justify-center mt-1'>
+                  <a href="https://www.facebook.com/profile.php?id=100032670966425">
+                  <BsFacebook className='mx-2' />
+                  </a>
+                  <a href="https://www.linkedin.com/in/yusuf-bin-imam/">
+                  <BsLinkedin className='mx-2' />
+                  </a>
+                  <a href="https://github.com/RedEye75">
+                  <BsGithub  className='mx-2' />
+                  </a>
+                </p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg
@@ -409,7 +432,7 @@ const Contributors = () => {
 
       <div className="w-full px-4 md:w-1/2 xl:w-1/4">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-03.jpg"
               alt="image"
@@ -423,6 +446,17 @@ const Contributors = () => {
                   Sarwar Jaman Tuhin
                 </h3>
                 <p className="text-body-color text-sm">UI/UX Designer</p>
+                <p className='flex justify-center mt-1'>
+                  <a href="">
+                  <BsFacebook className='mx-2' />
+                  </a>
+                  <a href="www.linkedin.com/in/tuhin902">
+                  <BsLinkedin className='mx-2' />
+                  </a>
+                  <a href="https://github.com/tuhin902">
+                  <BsGithub  className='mx-2' />
+                  </a>
+                </p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg
@@ -600,7 +634,7 @@ const Contributors = () => {
 
       <div className="w-full px-4 md:w-1/2 xl:w-1/4">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
             <img
               src="https://i.ibb.co/cLR4SbW/333645415-894931498399824-4912192106769774471-n-1.png"
               alt="image"
@@ -614,6 +648,17 @@ const Contributors = () => {
                   Atiq Hasan
                 </h3>
                 <p className="text-body-color text-sm">UI & Animation Designer</p>
+                <p className='flex justify-center mt-1'>
+                  <a href="">
+                  <BsFacebook className='mx-2' />
+                  </a>
+                  <a href="https://www.linkedin.com/in/atik94">
+                  <BsLinkedin className='mx-2' />
+                  </a>
+                  <a href="">
+                  <BsGithub  className='mx-2' />
+                  </a>
+                </p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg
@@ -791,7 +836,7 @@ const Contributors = () => {
 
       <div className="w-full px-4 md:w-1/2 xl:w-1/4">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-04.jpg"
               alt="image"
@@ -805,6 +850,17 @@ const Contributors = () => {
                   MD Siyam Al Rafi
                 </h3>
                 <p className="text-body-color text-sm">Backend Developer</p>
+                <p className='flex justify-center mt-1'>
+                  <a href="">
+                  <BsFacebook className='mx-2' />
+                  </a>
+                  <a href="https://www.linkedin.com/in/siamalrafi0/">
+                  <BsLinkedin className='mx-2' />
+                  </a>
+                  <a href="https://github.com/siamalrafi">
+                  <BsGithub  className='mx-2' />
+                  </a>
+                </p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg
@@ -982,7 +1038,7 @@ const Contributors = () => {
 
       <div className="w-full px-4 md:w-1/2 xl:w-1/4">
         <div className="mx-auto mb-10 w-full max-w-[370px]">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg hover:shadow-xl  cursor-pointer">
             <img
               src="https://i.ibb.co/RP3ykJv/340304702-244102374760260-335549393422060098-n.jpg"
               alt="image"
@@ -996,6 +1052,17 @@ const Contributors = () => {
                   Ashikur Rahman Emon
                 </h3>
                 <p className="text-body-color text-sm">Backend Developer</p>
+                <p className='flex justify-center mt-1'>
+                  <a href="">
+                  <BsFacebook className='mx-2' />
+                  </a>
+                  <a href="">
+                  <BsLinkedin className='mx-2' />
+                  </a>
+                  <a href="">
+                  <BsGithub  className='mx-2' />
+                  </a>
+                </p>
                 <div>
                   <span className="absolute left-0 bottom-0">
                     <svg

@@ -78,7 +78,7 @@ const Reviews = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, type: "spring", duration: 2 }}
         >
-          <form onSubmit={handleReview} className="card w-96 border border-blue-200 p-4 bg-blue-100">
+          <form onSubmit={handleReview} className="card  w-96 border border-blue-200 p-4 lg:p-10 bg-blue-100">
             <div className="my-2">
               <label className="flex justify-start mb-3">Name</label>
               <input
@@ -120,7 +120,7 @@ const Reviews = () => {
               <label className="flex justify-start mb-3">Reviews</label>
               <textarea
                 required
-                className="block cursor-pointer border border-gray-300 w-full px-5 rounded-md"
+                className="block cursor-pointer border border-gray-300 w-full p-5 rounded-md"
                 name="message"
                 id=""
                 cols="30"
