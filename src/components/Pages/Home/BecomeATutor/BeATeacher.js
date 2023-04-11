@@ -1,8 +1,10 @@
-import React from "react";
-import image from "../../../Assets/beateacher2.jpg";
+import React, { useContext } from "react";
+import darkImage from "../../../Assets/BeATutorImage.png";
+import image from "../../../Assets/BeATutorImage2.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const containerVariants = {
   hidden: {
@@ -32,9 +34,10 @@ const childVariants = {
 };
 
 const BeATeacher = () => {
+  const {theme} = useContext(AuthContext)
   return (
     <div>
-      <div class="container dark:bg-[#350573]  dark:text-white px-6 py-16 max-w-screen-xl mx-auto">
+      <div class="container bg-white dark:bg-[#350573] dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
         <div class=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div
             class="w-full "
@@ -92,11 +95,12 @@ const BeATeacher = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 3 }}
           >
-            <img
-              class="w-full h-full lg:max-w-3xl"
-              src={image}
-              alt="Catalogue-pana.svg"
-            />
+            {
+              theme === 'dark' ?
+            <img class="w-96 h-60 lg:max-w-3xl" src={darkImage} alt="BeATutorImg2.png" />
+            :
+            <img class="w-96 h-60 lg:max-w-3xl" src={image} alt="BeATutorImg.png" />
+            }
           </motion.div>
         </div>
       </div>

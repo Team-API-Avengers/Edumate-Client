@@ -9,7 +9,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import FormModal from "../FormModal/FormModal";
 import { useState, useEffect } from "react";
 import { BiMenu } from "react-icons/bi";
-import { BsChevronUp } from "react-icons/bs";
+import { BsChevronUp, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { color } from "style-value-types";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
@@ -63,11 +63,6 @@ const Header = () => {
   };
   const navList = (
     <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
-      <input
-        onClick={handleThemeSwitch}
-        type="checkbox"
-        className="toggle toggle-[#350573]"
-      />
 
       <NavLink
         style={navStyle}
@@ -129,6 +124,8 @@ const Header = () => {
         About
       </NavLink>
 
+      {/* Profile Items */}
+
       <NavLink
         to={"/profile"}
         className="flex lg:hidden  dark:bg-[#350573]  dark:text-white items-center"
@@ -154,7 +151,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="container mx-auto flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
@@ -182,7 +179,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 p-2 text-black dark:bg-[#350573]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="mt-3 p-2 text-black dark:bg-[#862aff]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               {user ? (
                 <>
@@ -201,6 +198,16 @@ const Header = () => {
                   <li>
                     <a onClick={handleLogOut}>Logout</a>
                   </li>
+
+
+                  
+                  <label className="swap swap-rotate my-2">
+                    <input onClick={handleThemeSwitch} type="checkbox" />
+                        <BsSunFill className="swap-on fill-current w-5 h-5" />
+                        <BsMoonFill className="swap-off fill-current w-5 h-5" />
+                  </label>
+                 
+
                 </>
               ) : (
                 <>
@@ -210,6 +217,15 @@ const Header = () => {
                   <li>
                     <Link to="/signup">Signup</Link>
                   </li>
+
+                 
+                  <label className="swap swap-rotate my-2">
+                    <input onClick={handleThemeSwitch} type="checkbox" />
+                        <BsSunFill className="swap-on fill-current w-5 h-5" />
+                        <BsMoonFill className="swap-off fill-current w-5 h-5" />
+                  </label>
+                
+
                 </>
               )}
             </ul>

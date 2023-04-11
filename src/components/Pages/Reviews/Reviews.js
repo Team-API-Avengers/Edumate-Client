@@ -82,7 +82,7 @@ const Reviews = () => {
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Name</label>
               <input
-                className="block border border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none"
+                className="block border dark:text-black border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
                 defaultValue={user?.displayName}
                 type="text"
@@ -93,7 +93,7 @@ const Reviews = () => {
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Email</label>
               <input
-                className="block border border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none"
+                className="block border dark:text-black border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
                 defaultValue={user?.email}
                 type="text"
@@ -104,13 +104,13 @@ const Reviews = () => {
 
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">How was your experience?</label>
-              <input name='rate' type="range" min="1" max="5" className="range range-success" step="1" />
+              <input name='rate' type="range" min="1" max="5" className="range range-success dark:range-secondary" step="1" />
               <div className="w-full flex justify-between text-xs px-2">
-                <span> <BsFillStarFill className="text-orange-400" /> </span>
-                <span> <BsFillStarFill className="text-orange-400" /> </span>
-                <span> <BsFillStarFill className="text-orange-400" /> </span>
-                <span> <BsFillStarFill className="text-orange-400" /> </span>
-                <span> <BsFillStarFill className="text-orange-400" /> </span>
+                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
+                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
+                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
+                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
+                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
               </div>
             </div>
 
@@ -120,7 +120,7 @@ const Reviews = () => {
               <label className="flex justify-start mb-3 dark:text-black">Reviews</label>
               <textarea
                 required
-                className="block cursor-pointer border border-gray-300 w-full p-5 rounded-md"
+                className="block dark:text-black cursor-pointer border border-gray-300 w-full p-5 rounded-md"
                 name="message"
                 id=""
                 cols="30"
