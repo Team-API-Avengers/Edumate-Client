@@ -37,7 +37,7 @@ const SubjectWiseTeachers = () => {
       </motion.p>
       {/* {backgrounds.map((category) => ( */}
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto">
-        <div class="container grid grid-cols-2 gap-10 px-5 py-1  mx-auto">
+        <div class="container grid grid-cols-2 gap-10 px-5 py-1 dark:text-[#350573]  mx-auto">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -107,7 +107,7 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 1.3, type: "spring", duration: 2.5 }}
           >
             <Link to={"/all-Teachers"}>
-              <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36 hover:border-green-500 ">
+              <div class=" flex justify-between items-center rounded-lg border bg-white dark:text-[#350573] border-gray-200 p-4 h-36 hover:border-green-500 ">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={all} alt="" />
                   <div className="ml-5">

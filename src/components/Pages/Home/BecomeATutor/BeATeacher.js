@@ -34,7 +34,7 @@ const childVariants = {
 const BeATeacher = () => {
   return (
     <div>
-      <div class="container dark:bg-black  dark:text-white px-6 py-16 max-w-screen-xl mx-auto">
+      <div class="container dark:bg-[#350573]  dark:text-white px-6 py-16 max-w-screen-xl mx-auto">
         <div class=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div
             class="w-full "
@@ -49,7 +49,7 @@ const BeATeacher = () => {
               animate="visible"
             >
               <motion.h1
-                className="text-5xl  font-bold text-blue-600"
+                className="text-5xl  font-bold text-blue-600 dark:text-white"
                 variants={childVariants}
               >
                 Become a tutor
@@ -61,7 +61,7 @@ const BeATeacher = () => {
               >
                 Instructors from around the country teach hundreds of students
                 on
-                <span className="font-bold text-blue-600"> Edumate</span> .
+                <span className="font-bold text-blue-600 dark:text-white"> Edumate</span> .
                 Inspire Minds, Shape Futures, Join the Teaching Profession.
               </motion.p>
 
@@ -78,7 +78,7 @@ const BeATeacher = () => {
                     </span>
 
                     <span class="text-sm font-medium transition-all group-hover:mr-4">
-                    Get Started Your Career
+                    Get Started
                     </span>
                   </motion.button>
                 </div>

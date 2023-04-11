@@ -25,15 +25,15 @@ const ContactUs = () => {
           // style={{
           //   backgroundImage: `url(${img})`,
           // }}
-          class="flex justify-center items-center w-screen  h-screen bg-white"
+          class="flex justify-center items-center w-screen  h-screen bg-white dark:bg-[#350573] dark:text-white"
         >
           <div class="container mx-auto my-4 px-4 lg:px-20">
-            <div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mx-auto rounded-2xl shadow-2xl">
+            <div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mx-auto rounded-2xl shadow-2xl dark:shadow-slate-100 dark:shadow-lg">
               <div class="flex">
                 <h1 class="font-bold  flex gap-2 uppercase text-4xl">
                   Lets{" "}
                   <Typical
-                    className="text-blue-600 "
+                    className="text-blue-600 dark:text-white "
                     steps={["Talk", 3000, "discuss", 3000]}
                     loop={Infinity}
                     wrapper="p"
@@ -44,10 +44,10 @@ const ContactUs = () => {
                 <div class="grid grid-cols-1 gap-3 md:grid-cols-2 mt-5">
                   <div>
                     <label className="label">
-                      <span className="label-text">Name</span>
+                      <span className="label-text dark:text-white">Name</span>
                     </label>{" "}
                     <input
-                      class="w-full   border border-green-400 text-gray-900 mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
+                      class="w-full border border-green-400 text-gray-900  mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
                       type="text"
                       placeholder="Name*"
                       name="name"
@@ -57,7 +57,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <label className="label">
-                      <span className="label-text">About</span>
+                      <span className="label-text dark:text-white">About</span>
                     </label>
                     <input
                       class="w-full   border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
@@ -69,7 +69,7 @@ const ContactUs = () => {
 
                   <div>
                     <label className="label">
-                      <span className="label-text">Email</span>
+                      <span className="label-text dark:text-white">Email</span>
                     </label>
                     <input
                       class="w-full   border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
@@ -83,7 +83,7 @@ const ContactUs = () => {
 
                   <div>
                     <label className="label">
-                      <span className="label-text">Mobile number</span>
+                      <span className="label-text dark:text-white">Mobile number</span>
                     </label>
                     <input
                       class="w-full  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
@@ -97,7 +97,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <label className="label">
-                    <span className="label-text">Message</span>
+                    <span className="label-text dark:text-white">Message</span>
                   </label>
                   <div class="">
                     <textarea

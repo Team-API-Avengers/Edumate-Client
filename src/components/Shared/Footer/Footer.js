@@ -15,7 +15,7 @@ import Typical from "react-typical";
 const Footer = () => {
   return (
     <div>
-      <footer className=" bg-black text-white dark:bg-gray-700  dark:text-white max-w-screen-2xl mx-auto pt-8 pb-6">
+      <footer className=" bg-black text-white dark:bg-[#1d0042] dark:text-white max-w-screen-2xl mx-auto pt-8 pb-6">
         <div className="container max-w-screen-xl w-full mx-auto px-4">
 
           <div className="flex  justify-center items-center ">

@@ -35,7 +35,7 @@ const SearchBox = () => {
 
     return (
         <div>
-            <form onSubmit={handleSearch} className='py-10 bg-green-100 dark:bg-black  dark:text-white'>
+            <form onSubmit={handleSearch} className='py-10 bg-green-100 dark:bg-[#350573]  dark:text-white'>
                 <h5 className='my-5'>Search teachers by your location</h5>
                 <input placeholder='for example :  Dhaka' name='search' type="text" className='input input-bordered w-96 rounded-none' />
                 <button className='btn bg-blue-500 hover:bg-blue-600 border-0 rounded-none'>Search</button>
