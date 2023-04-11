@@ -99,7 +99,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content hover:bg-none p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 mt-4"
             >
               <li>
                 <NavLink to={"/blog"}>Blog</NavLink>
