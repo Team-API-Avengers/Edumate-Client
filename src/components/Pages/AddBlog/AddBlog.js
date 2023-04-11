@@ -34,7 +34,7 @@ const AddBlog = () => {
             blogImage: imgData?.data?.url,
           };
 
-          console.log(blogDetails);
+          // console.log(blogDetails);
 
           fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`, {
             method: "POST",
@@ -98,7 +98,7 @@ const AddBlog = () => {
                   <div className="w-full lg:w-6/12 px-4">
                     <div className="w-full space-y-0.5">
                       <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
-                        Image
+                        Blog Image
                       </label>
                       <input
                         {...register("photo")}
