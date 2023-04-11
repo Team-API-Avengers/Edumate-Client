@@ -18,34 +18,20 @@ import logo from "../../Assets/logo.png";
 import darkLogo from "../../Assets/dark-Logo.png";
 
 const Header = () => {
-  const { user, logOut, logUser,theme, setTheme } = useContext(AuthContext);
+  const { user, logOut, logUser, theme, setTheme } = useContext(AuthContext);
   console.log("header logUser", logUser);
 
-
-
-
-
-
-
   useEffect(() => {
-  	if(theme === 'dark'){
-      document.documentElement.classList.add('dark');
-    }
-    else{
-      document.documentElement.classList.remove('dark');
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, [theme]);
 
-
-
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
-
-  }
-
-
-
-
+  };
 
   const navigate = useNavigate();
 
@@ -72,34 +58,36 @@ const Header = () => {
       textDecoration: "none",
       padding: "5px",
       borderRadius: "2px",
-      borderBottom: isActive ? "3px solid [#350573]" : "none",
+      borderBottom: isActive ? "3px solid blue" : "none",
     };
   };
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
-
-
-      <input onClick={handleThemeSwitch} type="checkbox" className="toggle toggle-[#350573]" />  
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+      <input
+        onClick={handleThemeSwitch}
+        type="checkbox"
+        className="toggle toggle-[#350573]"
+      />
 
       <NavLink
         style={navStyle}
         to={"/"}
-        className="flex  w-36 justify-center items-center"
+        className="flex   justify-center items-center"
       >
         Home
       </NavLink>
-      {logUser?.role === "Teacher" ? 
+      {logUser?.role === "Teacher" ? (
         <NavLink>
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
-              className=" flex  w-24 justify-center items-center rounded-btn"
+              className=" flex   justify-center items-center rounded-btn"
             >
               Blog
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black  mt-4"
             >
               <li>
                 <NavLink to={"/blog"}>Blog</NavLink>
@@ -110,21 +98,16 @@ const Header = () => {
             </ul>
           </div>
         </NavLink>
-      : 
-        <NavLink
-          style={navStyle}
-          to={"/blog"}
-          className="flex w-36  justify-center items-center"
-        >
+      ) : (
+        <NavLink to={"/blog"} className="flex  justify-center items-center">
           Blog
         </NavLink>
-      }
-      
+      )}
 
       <NavLink
         style={navStyle}
         to={"/dashboard"}
-        className="flex  w-36 justify-center items-center"
+        className="flex  justify-center items-center"
       >
         Dashboard
       </NavLink>
@@ -133,7 +116,7 @@ const Header = () => {
         style={navStyle}
         // to={"/dashboard/contact"}
         to={"/contact"}
-        className="flex  w-24 justify-center items-center"
+        className="flex justify-center items-center"
       >
         Contact
       </NavLink>
@@ -141,12 +124,15 @@ const Header = () => {
       <NavLink
         style={navStyle}
         to={"/about-us"}
-        className="flex  w-24 justify-center items-center"
+        className="flex justify-center items-center"
       >
         About
       </NavLink>
 
-      <NavLink to={"/profile"} className="flex lg:hidden  dark:bg-[#350573]  dark:text-white items-center">
+      <NavLink
+        to={"/profile"}
+        className="flex lg:hidden  dark:bg-[#350573]  dark:text-white items-center"
+      >
         Profile
       </NavLink>
       {user ? (
@@ -169,15 +155,14 @@ const Header = () => {
   return (
     <div>
       <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-3">
-        <div className="container mx-auto flex px-10 items-center justify-between text-blue-gray-900">
+        <div className="container mx-auto flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
-              {
-                theme === 'dark' ?
+              {theme === "dark" ? (
                 <img className="w-32" src={darkLogo} alt="darkLogo" />
-                :
+              ) : (
                 <img className="w-32" src={logo} alt="logo" />
-              }
+              )}
             </span>
           </Link>
 
