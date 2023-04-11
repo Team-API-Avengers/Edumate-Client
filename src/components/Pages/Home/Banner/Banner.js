@@ -25,7 +25,7 @@ const Banner = () => {
 
             <div class="mt-8 flex flex-wrap gap-4 text-center">
               <a
-                href="#"
+                href="#search"
                 class="block w-full rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
               >
                 Get Started

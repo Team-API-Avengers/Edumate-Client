@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [logUser, setLogUser] = useState();
 
-
+  const [theme, setTheme] = useState('light');
 
 
   
@@ -90,6 +90,8 @@ const AuthProvider = ({ children }) => {
     loading,
     signInWithGoogle,
     logUser,
+    theme,
+    setTheme,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

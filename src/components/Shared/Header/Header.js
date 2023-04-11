@@ -16,23 +16,34 @@ import { toast } from "react-toastify";
 import logo from "../../Assets/logo.png";
 
 const Header = () => {
-  const { user, logOut, logUser } = useContext(AuthContext);
-  // const [logUser, setLogUser] = useState();
-
-  // useEffect(() => {
-  // 	fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
-  // 		.then((res) => res.json())
-  // 		.then((result) => {
-  // 			console.log(result);
-  // 			if(result != undefined){
-  // 				setLogUser(result.data);
-  // 			}
-  // 		});
-  // }, [user?.email]);
-
-  // console.log('logUser', logUser?.email);
-
+  const { user, logOut, logUser,theme, setTheme } = useContext(AuthContext);
   console.log("header logUser", logUser);
+
+
+
+
+
+
+
+  useEffect(() => {
+  	if(theme === 'dark'){
+      document.documentElement.classList.add('dark');
+    }
+    else{
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+
+  }
+
+
+
+
 
   const navigate = useNavigate();
 
@@ -63,7 +74,7 @@ const Header = () => {
     };
   };
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
       <NavLink
         style={navStyle}
         to={"/"}
@@ -101,7 +112,8 @@ const Header = () => {
         >
           Blog
         </NavLink>
-      )}
+      }
+      <input onClick={handleThemeSwitch} type="checkbox" className="toggle" />
 
       <NavLink
         style={navStyle}
@@ -128,7 +140,7 @@ const Header = () => {
         About
       </NavLink>
 
-      <NavLink to={"/profile"} className="flex lg:hidden items-center">
+      <NavLink to={"/profile"} className="flex lg:hidden  dark:bg-black  dark:text-white items-center">
         Profile
       </NavLink>
       {user ? (
@@ -150,7 +162,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="mx-auto dark:bg-black dark:text-white shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
@@ -174,7 +186,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 p-2 text-black font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="mt-3 p-2 text-black dark:bg-black  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               {user ? (
                 <>

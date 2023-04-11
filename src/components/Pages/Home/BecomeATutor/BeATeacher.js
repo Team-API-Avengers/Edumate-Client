@@ -34,7 +34,7 @@ const childVariants = {
 const BeATeacher = () => {
   return (
     <div>
-      <div class="container px-6 py-16 max-w-screen-xl mx-auto">
+      <div class="container dark:bg-black  dark:text-white px-6 py-16 max-w-screen-xl mx-auto">
         <div class=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div
             class="w-full "
@@ -56,7 +56,7 @@ const BeATeacher = () => {
               </motion.h1>
 
               <motion.p
-                class="mt-3 w-1/2 font-bold text-black"
+                class="mt-3 w-1/2 font-bold text-black dark:text-white"
                 variants={childVariants}
               >
                 Instructors from around the country teach hundreds of students
