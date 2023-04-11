@@ -79,7 +79,7 @@ const Header = () => {
     <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2">
 
 
-      <input onClick={handleThemeSwitch} type="checkbox" className="toggle" />  
+      <input onClick={handleThemeSwitch} type="checkbox" className="toggle toggle-[#350573]" />  
 
       <NavLink
         style={navStyle}
@@ -169,7 +169,7 @@ const Header = () => {
   return (
     <div>
       <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg max-w-screen-2xl  py-6 px-4 rounded-none lg:px-8 lg:py-3">
-        <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+        <div className="container mx-auto flex px-10 items-center justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
               {

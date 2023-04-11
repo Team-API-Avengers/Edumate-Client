@@ -44,7 +44,7 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 0.5, type: "spring", duration: 1.5 }}
           >
             <Link to={"/Science"}>
-              <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
+              <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36 hover:border-green-500 dark:hover:bg-blue-100">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={science} alt="" />
                   <div className="ml-5">
@@ -65,7 +65,7 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 0.8, type: "spring", duration: 2 }}
           >
             <Link to={"/Commerce"}>
-              <div class=" flex justify-between items-center rounded-lg border  bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
+              <div class=" flex justify-between items-center rounded-lg border  bg-white border-gray-200 p-4 h-36   hover:border-green-500 dark:hover:bg-blue-100 ">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={commerce} alt="" />
                   <div className="ml-5">
@@ -86,7 +86,7 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 1, type: "spring", duration: 2.3 }}
           >
             <Link to={"/Arts"}>
-              <div class=" flex justify-between items-center rounded-lg  border bg-white border-gray-200 p-4 h-36   hover:border-green-500 ">
+              <div class=" flex justify-between items-center rounded-lg  border bg-white border-gray-200 p-4 h-36   hover:border-green-500 dark:hover:bg-blue-100 ">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={humanity} alt="" />
                   <div className="ml-5">
@@ -107,7 +107,7 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 1.3, type: "spring", duration: 2.5 }}
           >
             <Link to={"/all-Teachers"}>
-              <div class=" flex justify-between items-center rounded-lg border bg-white dark:text-[#350573] border-gray-200 p-4 h-36 hover:border-green-500 ">
+              <div class=" flex justify-between items-center rounded-lg border bg-white dark:text-[#350573] border-gray-200 p-4 h-36 hover:border-green-500 dark:hover:bg-blue-100">
                 <div className="flex">
                   <img className="w-14 mt-3 h-12" src={all} alt="" />
                   <div className="ml-5">

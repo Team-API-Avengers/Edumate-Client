@@ -11,7 +11,7 @@ const Banner = () => {
         <div class="absolute inset-0 bg-gradient-to-r bg-white/25 from-white/25 to-white/75   sm:bg-transparent dark:bg-[#350573]/25 dark:from-[#1F0047]/25 dark:to-[#0F95B6]/50"></div>
 
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-          <div class="max-w-xl text-center sm:text-left">
+          <div class="max-w-xl mx-10 text-center sm:text-left">
             <h1 class="text-3xl font-extrabold sm:text-5xl dark:text-white">
               Let's find your
               <strong class="block my-2 font-extrabold text-blue-700 dark:text-[#dee5ff]">

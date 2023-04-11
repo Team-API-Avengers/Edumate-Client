@@ -53,7 +53,7 @@ const AddBlog = () => {
 
   return (
     <div>
-      <section className=" py-1 bg-blueGray-50">
+      <section className=" py-1 bg-blueGray-50  dark:bg-[#350573]  dark:text-[#ffffff]">
         <div className="text-4xl font-extrabold">Drop your Blog</div>
         <p className="mt-3">Contribute to our community with your blog post</p>
         <div className="w-full lg:w-8/12 mt-10 px-4 mx-auto ">

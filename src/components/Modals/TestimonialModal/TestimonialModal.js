@@ -3,12 +3,12 @@ import { BsFillStarFill, BsFillXSquareFill } from 'react-icons/bs';
 
 const TestimonialModal = ({modalData}) => {
     return (
-        <div>
+        <div className=' dark:text-[#350573]'>
             <input type="checkbox" id="TestimonialModal" className="modal-toggle" />
                 <div className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">{modalData?.name}</h3>
-                    <p className="flex justify-center text-orange-400 my-2">
+                    <p className="flex justify-center text-orange-400 dark:text-[#350573] my-2">
                   {modalData?.rate === 1 &&
                   <BsFillStarFill />
                   }

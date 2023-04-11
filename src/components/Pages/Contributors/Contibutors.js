@@ -5,12 +5,12 @@ const Contributors = () => {
   return (
     <div>
 
-      <section className="pt-20 pb-10 lg:pt-[120px] m-10 lg:pb-20">
+      <section className="pt-20 pb-10 lg:pt-[120px]   dark:text-[#350573] m-10 lg:pb-20">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-blue-700 mb-2 block text-3xl font-semibold">
+                <span className="text-blue-700  dark:text-[#ffffff] mb-2 block text-3xl font-semibold">
                   Our Awesome Team Members
                 </span>
                 <h2

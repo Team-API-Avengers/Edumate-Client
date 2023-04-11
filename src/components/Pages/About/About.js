@@ -12,7 +12,7 @@ const About = () => {
     <section className="mt-8">
 
       <div>
-        <div className="hero bg-base-200">
+        <div className="hero bg-base-200  dark:bg-[#350573]  dark:text-[#fdfbff]">
 
           <div className="hero-content flex">
 

@@ -15,7 +15,7 @@ const MyProfile = () => {
 	console.log(logUser);
 	return (
 		<div>
-			<div className='card lg:card-side mb-10 lg:w-full w-96 bg-base-100 shadow-xl'>
+			<div className='card lg:card-side mb-10  dark:bg-[#350573] lg:w-full w-96 bg-base-100 shadow-xl dark:shadow-slate-300 dark:shadow-sm'>
 				<div className=''>
 					{
 						user ?
