@@ -78,34 +78,37 @@ const Header = () => {
       <NavLink
         style={navStyle}
         to={"/"}
-        className="flex  w-24 justify-center items-center"
+        className="flex  w-36 justify-center items-center"
       >
         Home
       </NavLink>
-      {logUser?.role === "Teacher" ? 
+      {logUser?.role === "Teacher" ? (
         <NavLink>
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost rounded-btn">
+            <label
+              tabIndex={0}
+              className=" flex  w-24 justify-center items-center rounded-btn"
+            >
               Blog
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+              className="menu dropdown-content hover:bg-none p-2 shadow bg-base-100 rounded-box w-52 mt-4"
             >
               <li>
-                <Link to={"/blog"}>Blog</Link>
+                <NavLink to={"/blog"}>Blog</NavLink>
               </li>
               <li>
-                <Link to={"/addBlog"}>Add Blog</Link>
+                <NavLink to={"/addBlog"}>Add Blog</NavLink>
               </li>
             </ul>
           </div>
         </NavLink>
-        :
+      ) : (
         <NavLink
           style={navStyle}
           to={"/blog"}
-          className="flex w-24 justify-center items-center"
+          className="flex w-36  justify-center items-center"
         >
           Blog
         </NavLink>
