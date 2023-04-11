@@ -28,12 +28,12 @@ const Home = () => {
   return (
     <div className="relative">
       <div className="hidden lg:block fixed right-10 z-50">
-        <a className="py-2 text-blue-700 group" href="#top">
+        <a className="py-2 text-blue-700 dark:text-white group" href="#top">
           <BsFileArrowUp className="group-hover:hidden ml-2 mb-2 flex" />
           <BsFileArrowUpFill className="group-hover:flex ml-2 mb-2 hidden" />
         </a>
 
-        <div className="bg-blue-700 text-white shadow-xl shadow-blue-400 py-8 px-2 rounded-full">
+        <div className="bg-blue-700  dark:bg-white  dark:text-black text-white shadow-xl shadow-blue-400 py-8 px-2 rounded-full">
           <a title="Give Review" className="py-2 group flex" href="#review">
             <AiOutlineEdit className="group-hover:hidden flex" />
             <AiFillEdit className="group-hover:flex hidden" />
@@ -64,7 +64,9 @@ const Home = () => {
 
       <Banner />
 
+      <div id="search">
       <SearchBox />
+      </div>
 
       <SubjectWiseTeachers />
 

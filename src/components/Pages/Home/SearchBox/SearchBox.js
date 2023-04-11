@@ -35,10 +35,10 @@ const SearchBox = () => {
 
     return (
         <div>
-            <form onSubmit={handleSearch}>
-                <h5>Search a teacher by your location</h5>
-                <input placeholder='example: Dhaka' name='search' type="text" className='input input-bordered w-96' />
-                <button className='btn btn-primary'>Search</button>
+            <form onSubmit={handleSearch} className='py-10 bg-green-100 dark:bg-black  dark:text-white'>
+                <h5 className='my-5'>Search teachers by your location</h5>
+                <input placeholder='for example :  Dhaka' name='search' type="text" className='input input-bordered w-96 rounded-none' />
+                <button className='btn bg-blue-500 hover:bg-blue-600 border-0 rounded-none'>Search</button>
             </form>
 
             

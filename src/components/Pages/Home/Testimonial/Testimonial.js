@@ -78,7 +78,7 @@ console.log('modalData', modalData?.name);
   return (
     <div>
       <section>
-        <div className="container flex bg-green-50 flex-col items-center justify-center p-4 mx-auto sm:p-10">
+        <div className="container flex bg-green-50 dark:bg-black  dark:text-white flex-col items-center justify-center p-4 mx-auto sm:p-10">
           <motion.p
             className="p-2 text-sm font-medium tracking-wider text-center uppercase mb-4"
             initial={{ x: 700 }}
@@ -105,7 +105,7 @@ console.log('modalData', modalData?.name);
 
           {
             data?.slice(0,3)?.map(feedback => 
-              <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+              <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -199,7 +199,7 @@ console.log('modalData', modalData?.name);
             <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-10">
             {
             data?.slice(3)?.map(feedback => 
-              <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 hover:shadow-2xl cursor-pointer">
+              <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-2xl cursor-pointer">
               <img
                 alt=""
                 className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
