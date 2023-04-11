@@ -35,18 +35,19 @@ const AddBlog = () => {
           };
 
           console.log(blogDetails);
+
+          fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(blogDetails),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+          toast.success("Successfully added your blog");
+          navigate("/blog");
         }
-        fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(addBlog),
-        })
-          .then((res) => res.json())
-          .then((data) => console.log(data));
-        toast.success("Successfully added your blog");
-        navigate("/blog");
       });
   };
 
