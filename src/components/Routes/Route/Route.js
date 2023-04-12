@@ -64,10 +64,7 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog />,
       },
-      // {
-      //   path: "/blogDetails",
-      //   element: <BlogDetails />,
-      // },
+
       {
         path: "/blog/:_id",
         element: <BlogDetails />,
@@ -93,9 +90,6 @@ const router = createBrowserRouter([
     ],
   },
 
-
-
-
   {
     path: "/dashboard",
     element: <Dashboard />,
@@ -119,6 +113,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/my-Teachers",
         element: <MyTeachers />,
+        loader: () => fetch(``),
       },
       {
         path: "/dashboard/all-Teachers",
@@ -137,23 +132,16 @@ const router = createBrowserRouter([
     ],
   },
 
-
-
   {
-    path: "/settings", element: <Settings />,
+    path: "/settings",
+    element: <Settings />,
     children: [
       {
         path: "/settings",
-        element: <BannerEdit />
-      }
-    ]
+        element: <BannerEdit />,
+      },
+    ],
   },
-
-
-
-
-
-
 
   {
     path: "*",
