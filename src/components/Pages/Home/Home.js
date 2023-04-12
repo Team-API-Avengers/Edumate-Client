@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Banner from "./Banner/Banner";
+// import Banner from "./Banner/Banner";
 import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
 import Testimonial from "./Testimonial/Testimonial";
 // import AboutOurs from "./AboutOurs/AboutOurs";
@@ -12,6 +12,7 @@ import Loader from "../../Shared/Loader/Loader";
 import { AuthContext } from "../../Context/AuthProvider";
 import SearchBox from "./SearchBox/SearchBox";
 import ScrollButton from "./ScrollButton/ScrollButton";
+import Hero from "./Hero/Hero";
 
 const Home = () => {
   const { loading } = useContext(AuthContext);
@@ -56,8 +57,8 @@ const Home = () => {
         </div>
       </div> */}
 
-      <Banner />
-
+      {/* <Banner /> */}
+         <Hero />
       <div id="search">
       <SearchBox />
       </div>

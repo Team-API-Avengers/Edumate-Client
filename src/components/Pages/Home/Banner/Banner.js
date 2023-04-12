@@ -1,7 +1,7 @@
 // import React from "react";
-import React, { Component } from "react";
-import Typical from "react-typical";
-import { BsSearch } from "react-icons/bs";
+import React from "react";
+// import Typical from "react-typical";
+// import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
@@ -40,6 +40,9 @@ const Banner = () => {
           </div>
         </div>
       </section>
+      <div className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500">
+      <h1>Hello Dear</h1>
+    </div>
     </div>
   );
 };
