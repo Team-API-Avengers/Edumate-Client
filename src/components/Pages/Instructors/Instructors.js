@@ -27,7 +27,7 @@ const Instructors = () => {
     return <Loader />;
   }
   return (
-    <div>
+    <div className="m-10">
       <div className="grid grid-cols-4 gap-4 max-w-screen-xl mx-auto">
         {allInstructor?.data?.map((instructor) => {
           return (
@@ -48,7 +48,7 @@ const Instructors = () => {
                           {instructor?.background}
                         </h5>
 
-                        <p class="font-bold text-2xl flex  text-gray-800">
+                        <p class="font-bold text-xl flex  text-gray-800">
                           <BsFillPersonFill className="mt-1 mr-1" />
 
                           {instructor?.name}

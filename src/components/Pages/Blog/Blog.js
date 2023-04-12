@@ -52,7 +52,8 @@ const Blog = () => {
                     </div>
                     <div class="flex items-center gap-1 text-gray-500">
                       <p class="text-md text-black  font-medium">
-                        {singleBlog?.createdAt}
+                      <span className="mx-1">{singleBlog?.createdAt?.slice(11,16)}</span>
+                        <span className="mx-1">{singleBlog?.createdAt?.slice(0,10)}</span>
                       </p>
                     </div>
                   </div>

@@ -81,7 +81,7 @@ const Home = () => {
       <div id="beATeacher">
         <BeATeacher />
       </div>
-      <div id="contact">
+      <div className="mb-5" id="contact">
         <ContactUs />
       </div>
     </div>

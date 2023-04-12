@@ -31,7 +31,10 @@ const BlogDetails = () => {
                   <p>{detailsData?.data?.authorRole}</p>
                 </div>
               </div>
-              <h5>{detailsData?.data?.createdAt}</h5>
+              <h5 className="flex">
+              <span className="mx-1">{detailsData?.data?.createdAt?.slice(11,16)}</span>
+               <span className="mx-1">{detailsData?.data?.createdAt?.slice(0,10)}</span>
+              </h5>
             </div>
           </div>
           <h1 className="text-4xl  font-bold">{detailsData?.data?.title}</h1>

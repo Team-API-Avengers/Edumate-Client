@@ -10,6 +10,8 @@ const AddBlog = () => {
   const { user, logUser } = useContext(AuthContext);
   const imgBBkEY = process.env.REACT_APP_Imgbb_key;
   const navigate = useNavigate();
+
+  
   const addBlog = (data) => {
     const img = data?.photo[0];
     const formData = new FormData();

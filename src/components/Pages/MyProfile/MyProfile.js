@@ -62,9 +62,13 @@ const MyProfile = () => {
 					</div>
 
 					<div className='grid grid-cols-12'>
+						{/* <p className='text-start col-span-10'>
+							Phone :
+							{logUser?.phone?.length === 1 ? <span>{logUser?.phone}</span> : <span>N/A</span>}
+						</p> */}
 						<p className='text-start col-span-10'>
 							Phone :
-							{user?.number?.length <= 2 ? <span>{logUser?.number}</span> : <span>N/A</span>}
+							<span className='mx-1'>0{logUser?.phone}</span> 
 						</p>
 						<p className='col-span-2 text-blue-500 hover:text-blue-600'>
 							<label htmlFor='' className='cursor-pointer text-gray-400'>

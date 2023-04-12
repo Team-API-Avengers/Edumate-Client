@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import darkLogo from "../../Assets/dark-Logo.png"
 // import { AuthContext } from '../../Context/AuthProvider';
 // import Loader from '../../Loader/Loader';
 import Header from "../../Shared/Header/Header";
@@ -38,7 +39,11 @@ const DashBoard = () => {
     <div>
       <Header />
       <div className="drawer drawer-mobile">
+
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+
+
+
         <div className="drawer-content">
           <Outlet></Outlet>
 
@@ -55,22 +60,22 @@ const DashBoard = () => {
           <ul className="menu p-4 w-60 bg-base-100 text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
               <img
-                src="PremiCar.png"
+                src={darkLogo}
                 className="mr-3 h-6 sm:h-9 rounded-lg"
-                alt="PremiCar Logo"
+                alt="darkLogo"
               />
               <span className="self-center text-xl font-semibold  ">
-                PremiCar
+                Edumate
               </span>
             </Link>
             <li className=" ">
               <Link to="/dashboard/My-Profile">My Profile</Link>
             </li>
             
-            {/* {logUser?.role === 'Admin' && */}
+            {logUser?.role === 'Admin' &&
             <>
             <li className="">
-                <Link to="/all-Teachers">All Teacher</Link>
+                <Link to="/dashboard/all-Teachers">All Teacher</Link>
               </li>
               <li className="">
                 <Link to="/dashboard/all-students">All Students</Link>
@@ -79,9 +84,9 @@ const DashBoard = () => {
                 <Link to="/dashboard/add-contributors">Add Contributors</Link>
               </li>
             </>
-            {/* } */}
+            }
 
-           {/* {logUser?.role === 'Teacher' && */}
+           {logUser?.role === 'Teacher' &&
             <>
             <li className="">
               <Link to="/dashboard/add-Teacher">Be a teacher</Link>
@@ -90,18 +95,15 @@ const DashBoard = () => {
             <li className="">
               <Link to="/dashboard/my-students">My Students</Link>
             </li>
-            
-          </>
-           {/* } */}
 
-           {/* {logUser?.role === 'Student' && */}
-            <>
             <li className="">
               <Link to="/dashboard/my-Teachers">My Teachers</Link>
             </li>
             
           </>
-           {/* } */}
+         }
+
+         
 
           </ul>
         </div>

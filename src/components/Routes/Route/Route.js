@@ -22,6 +22,8 @@ import AllStudents from "../../Pages/AllStudents/AllStudents";
 import AddBlog from "../../Pages/AddBlog/AddBlog";
 import MyStudents from "../../Pages/MyStudents/MyStudents";
 import AddContributors from "../../Pages/AddContributors/AddContributors";
+import Settings from "../../Layouts/Settings/Settings";
+import BannerEdit from "../../Pages/BannerEdit/BannerEdit";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +93,9 @@ const router = createBrowserRouter([
     ],
   },
 
+
+
+
   {
     path: "/dashboard",
     element: <Dashboard />,
@@ -115,6 +120,10 @@ const router = createBrowserRouter([
         path: "/dashboard/my-Teachers",
         element: <MyTeachers />,
       },
+      {
+        path: "/dashboard/all-Teachers",
+        element: <Instructors />,
+      },
 
       {
         path: "/dashboard/all-students",
@@ -127,6 +136,24 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+
+
+  {
+    path: "/settings", element: <Settings />,
+    children: [
+      {
+        path: "/settings",
+        element: <BannerEdit />
+      }
+    ]
+  },
+
+
+
+
+
+
 
   {
     path: "*",
