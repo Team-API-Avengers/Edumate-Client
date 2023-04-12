@@ -13,7 +13,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
-  // console.log(details.data.name);
+  console.log(details.data);
 
   const { loading } = useContext(AuthContext);
 
@@ -66,7 +66,7 @@ const InstructorDetails = () => {
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
               <img
                 alt="teacher"
-                class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
+                class="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
                 src={details?.data?.image}
               />
               <div class="lg:w-1/2 w-full space-y-2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -103,14 +103,7 @@ const InstructorDetails = () => {
                     {details?.data?.email}
                   </p>
                 </div>
-                <p class="leading-relaxed text-start">
-                  Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-                  sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-                  juiceramps cornhole raw denim forage brooklyn. Everyday carry
-                  +1 seitan poutine tumeric. Gastropub blue bottle austin
-                  listicle pour-over, neutra jean shorts keytar banjo tattooed
-                  umami cardigan.
-                </p>
+                <p class="leading-relaxed text-start">{details?.data?.bio}</p>
 
                 <div class="flex mt-8">
                   <button
