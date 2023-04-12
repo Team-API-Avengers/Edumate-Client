@@ -2,24 +2,16 @@ import React, { useContext } from "react";
 import Banner from "./Banner/Banner";
 import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
 import Testimonial from "./Testimonial/Testimonial";
-import AboutOurs from "./AboutOurs/AboutOurs";
+// import AboutOurs from "./AboutOurs/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
 import BeATeacher from "./BecomeATutor/BeATeacher";
-import { AiFillEdit, AiOutlineEdit } from "react-icons/ai";
+// import { AiFillEdit, AiOutlineEdit } from "react-icons/ai";
 import Loader from "../../Shared/Loader/Loader";
-import {
-  BsArrowUpSquare,
-  BsBookmarks,
-  BsBookmarksFill,
-  BsFileArrowUp,
-  BsFileArrowUpFill,
-  BsFillArrowUpSquareFill,
-  BsFillTagFill,
-  BsFillTagsFill,
-} from "react-icons/bs";
+// import { BsArrowUpSquare, BsBookmarks, BsBookmarksFill, BsFileArrowUp, BsFileArrowUpFill, BsFillArrowUpSquareFill, BsFillTagFill, BsFillTagsFill,} from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
 import SearchBox from "./SearchBox/SearchBox";
+import ScrollButton from "./ScrollButton/ScrollButton";
 
 const Home = () => {
   const { loading } = useContext(AuthContext);
@@ -28,15 +20,15 @@ const Home = () => {
     return <Loader />;
   }
   return (
-    <div className="relative">
-        {/* Top */}
-      <div className="hidden lg:block fixed right-10 z-50">
+    <div>
+       
+     {/* <div className="hidden lg:block fixed right-10 z-50">
         <a className="py-2 text-blue-700 dark:text-white group" href="#top">
           <BsFillArrowUpSquareFill className="group-hover:hidden ml-2 mb-2 flex" />
           <BsArrowUpSquare className="group-hover:flex ml-2 mb-2 hidden" />
         </a>
 
-        {/* Inner*/}
+       
         <div className="bg-blue-700  dark:bg-white  dark:text-black text-white shadow-xl shadow-blue-400 py-8 px-2 rounded-full">
           <a title="Give Review" className="py-2 group flex" href="#review">
             <AiOutlineEdit className="group-hover:hidden flex" />
@@ -62,7 +54,7 @@ const Home = () => {
             <BsBookmarksFill className="group-hover:flex hidden" />
           </a>
         </div>
-      </div>
+      </div> */}
 
       <Banner />
 
@@ -84,6 +76,7 @@ const Home = () => {
       <div className="mb-5" id="contact">
         <ContactUs />
       </div>
+      <ScrollButton />
     </div>
   );
 };

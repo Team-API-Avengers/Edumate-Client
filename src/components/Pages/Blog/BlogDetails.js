@@ -23,7 +23,7 @@ const BlogDetails = () => {
               <div className="flex ">
                 <div className="avatar">
                   <div className="w-12 mr-5 rounded-full ring ring-blue-600 ring-offset-base-100 ring-offset-2">
-                    <img src={detailsData?.data?.authorImage} />
+                    <img src={detailsData?.data?.authorImage} alt="" />
                   </div>
                 </div>
                 <div>
@@ -33,7 +33,7 @@ const BlogDetails = () => {
               </div>
               <h5 className="flex">
               <span className="mx-1">{detailsData?.data?.createdAt?.slice(11,16)}</span>
-               <span className="mx-1">{detailsData?.data?.createdAt?.slice(0,10)}</span>
+              <span className="mx-1">{detailsData?.data?.createdAt?.slice(0,10)}</span>
               </h5>
             </div>
           </div>

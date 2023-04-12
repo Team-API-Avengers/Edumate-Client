@@ -8,7 +8,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 // import { useQuery } from '@tanstack/react-query';
 
 const DashBoard = () => {
-  const { loading, user, logUser } = useContext(AuthContext);
+  const { logUser } = useContext(AuthContext);
   // const [logUser, setLogUser] = useState();
   //! fetch for getting users data from mongodb.....
   // const { data: users } = useQuery({
