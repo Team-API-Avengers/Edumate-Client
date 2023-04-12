@@ -8,7 +8,7 @@ const Hero = () => {
             <section>
             <div className="w-full relative pb-10 px-6 xl:px-0">
                 <img className="absolute w-full inset-0 h-full object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family"/>
-                <nav className="lg:hidden relative z-40">
+                {/* <nav className="lg:hidden relative z-40">
                     <div className="flex py-6 justify-between items-center px-4">
                         <div>
                             <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg3.svg" alt="logo" />
@@ -72,7 +72,7 @@ const Hero = () => {
                             </div>
                         </div>
                     </div>
-                </nav>
+                </nav> */}
                 <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
                     <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
                         <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/>
