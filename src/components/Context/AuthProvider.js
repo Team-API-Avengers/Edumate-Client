@@ -20,8 +20,12 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [logUser, setLogUser] = useState();
 
-  const [theme, setTheme] = useState('light');
-
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  useEffect(() => {
+    const body = document.body;
+    body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   
 	useEffect(() => {
