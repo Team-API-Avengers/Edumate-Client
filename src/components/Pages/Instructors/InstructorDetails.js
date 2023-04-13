@@ -7,7 +7,7 @@ import {
 } from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdMarkEmailUnread } from "react-icons/md";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Loader from "../../Shared/Loader/Loader";
 import { AuthContext } from "../../Context/AuthProvider";
 import { TbCurrencyTaka } from "react-icons/tb";
@@ -15,8 +15,8 @@ import { toast } from "react-toastify";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
-  console.log(details.data);
-
+  // console.log(details.data);
+  const navigate = useNavigate();
   const { loading, logUser, user } = useContext(AuthContext);
 
   const bookTeacher = (data) => {
@@ -40,7 +40,7 @@ const InstructorDetails = () => {
       studentEmail: user?.email,
       fee,
     };
-    // console.log(bookingData);
+    console.log(bookingData);
 
     const UserDetails = {
       name: user?.displayName,
@@ -57,9 +57,13 @@ const InstructorDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.acknowledged) {
+        if (data.status === "success") {
           toast.success("Successfully booked your teacher");
         }
+        if (data?.status === "error") {
+          toast.error("You already booked that teacher");
+        }
+        // navigate("/dashboard/my-Teachers");
       });
   };
 

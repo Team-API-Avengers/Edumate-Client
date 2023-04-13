@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { toast } from "react-toastify";
-import image from '../../../Assets/login.jpg'
+import image from "../../../Assets/login.jpg";
 
 const Signup = () => {
   const {
@@ -20,7 +20,7 @@ const Signup = () => {
 
   //! from .env.local file====>
   const imgHostKey = process.env.REACT_APP_Imgbb_key;
-  // console.log(imgHostKey);
+  console.log(imgHostKey);
 
   // const [createdUserEmail, setCreatedUserEmail] = useState('')
 
@@ -49,6 +49,7 @@ const Signup = () => {
         // console.log(formData)
 
         const url = `https://api.imgbb.com/1/upload?key=${imgHostKey}`;
+
         fetch(url, {
           method: "POST",
           body: formData,
@@ -57,13 +58,12 @@ const Signup = () => {
           .then((imgData) => {
             console.log(imgData);
 
-            const photoURL = imgData.data.url;
+            const photoURL = imgData?.data?.url;
 
             updateUserDetails(name, photoURL);
             // saveUsers(name, email, photoURL);
 
             if (imgData.success) {
-
               const addedUser = {
                 name,
                 email,
@@ -71,8 +71,6 @@ const Signup = () => {
                 phone,
                 image: imgData.data.url,
               };
-
-
 
               //! Save User info to the database....
               fetch("https://edumate-second-server.vercel.app/api/v1/user", {
@@ -84,12 +82,10 @@ const Signup = () => {
               })
                 .then((res) => res.json())
                 .then((result) => {
-                  if(result){
+                  if (result) {
                     navigate("/");
                     toast.success("Registration successful");
                   }
-
-                  
                 });
             }
           });
@@ -103,35 +99,15 @@ const Signup = () => {
       });
   };
 
-
-
-
-
-
-
-
   const updateUserDetails = (name, photoURL) => {
     updateUser(name, photoURL)
       .then(() => {
-        toast.success('Profile Updated');
+        toast.success("Profile Updated");
       })
       .catch((error) => {
         console.error(error);
       });
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32">
@@ -146,11 +122,14 @@ const Signup = () => {
         <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
       </div>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-xl ">
-        
-      <div className="flex justify-around py-5">
-				<h3 className="text-2xl font-bold text-center  text-gray-400">Sign Up</h3>
-				<Link to='/login' className="text-2xl font-bold text-center">Login</Link>
-				</div>
+        <div className="flex justify-around py-5">
+          <h3 className="text-2xl font-bold text-center  text-gray-400">
+            Sign Up
+          </h3>
+          <Link to="/login" className="text-2xl font-bold text-center">
+            Login
+          </Link>
+        </div>
 
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="text-sm">

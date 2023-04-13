@@ -2,12 +2,38 @@ import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
+import { useQuery } from "@tanstack/react-query";
 
 const MyTeachers = () => {
-  const { loading } = useContext(AuthContext);
+  const { loading, user } = useContext(AuthContext);
+  console.log(user);
   const teachersDetails = useLoaderData();
-  console.log(teachersDetails);
+  // console.log(teachersDetails);
 
+  const url = `https://edumate-second-server.vercel.app/api/v1/bookings?id=${user?.id}`;
+
+  const { data: users = [] } = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      const res = await fetch(
+        `https://edumate-second-server.vercel.app/api/v1/user`
+      );
+      const data = res.json();
+      return data;
+    },
+  });
+
+  const { data: bookings = [] } = useQuery({
+    queryKey: ["bookings", user?.email],
+    queryFn: async () => {
+      const res = fetch(url, {
+        headers: {},
+      });
+      const data = await res.json();
+      return data;
+    },
+  });
+  console.log(bookings);
   return (
     <div className=" dark:bg-[#350573]">
       <section class="bg-white max-w-screen">
@@ -64,7 +90,7 @@ const MyTeachers = () => {
                               </>
                             )}
                             <div className="text-start">
-                              <p>{teacher?.name}</p>
+                              <p className="font-bold">{teacher?.name}</p>
                               <p className="">{teacher?.email}</p>
                             </div>
                           </td>
@@ -75,7 +101,7 @@ const MyTeachers = () => {
                             {teacher?.location}
                           </td>
                           <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                            5000
+                            {teacher?.fee}
                           </td>
                           <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
                             <a class="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white">
