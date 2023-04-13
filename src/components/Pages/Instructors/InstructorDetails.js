@@ -37,7 +37,7 @@ const InstructorDetails = () => {
     };
 
     console.log(bookingData);
-    fetch(``, {
+    fetch(`https://edumate-second-server.vercel.app/api/v1/bookings`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

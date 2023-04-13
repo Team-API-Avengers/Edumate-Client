@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import ProfileEditModal from './ProfileEditModal';
 import { AuthContext } from '../../Context/AuthProvider';
-import { BsFillBookmarkStarFill } from 'react-icons/bs';
+// import { BsFillBookmarkStarFill } from 'react-icons/bs';
 // import MyAccess from './MyProfileTable';
 
 const MyProfile = () => {
