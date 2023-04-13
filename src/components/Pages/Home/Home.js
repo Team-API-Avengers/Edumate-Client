@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 // import Banner from "./Banner/Banner";
 import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
 import Testimonial from "./Testimonial/Testimonial";
-// import AboutOurs from "./AboutOurs/AboutOurs";
+import AboutOurs from "./AboutOurs/AboutOurs";
 import ContactUs from "../Contact/ContactUs";
 import Reviews from "../Reviews/Reviews";
 import BeATeacher from "./BecomeATutor/BeATeacher";
@@ -70,10 +70,14 @@ const Home = () => {
       </div>
 
       <Testimonial />
-      {/* <AboutOurs /> */}
+
       <div id="beATeacher">
         <BeATeacher />
       </div>
+
+     {/*  */}
+      <AboutOurs />
+
       <div className="mb-5" id="contact">
         <ContactUs />
       </div>
