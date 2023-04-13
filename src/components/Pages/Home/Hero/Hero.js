@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsFillDpadFill, BsFillExclamationSquareFill, BsFillPersonVcardFill } from 'react-icons/bs';
+import bannerPic from '../../../Assets/BannerPic.png'
 
 const Hero = () => {
     // const [menu, setMenu] = useState(false);
@@ -75,7 +76,7 @@ const Hero = () => {
                 </nav> */}
                 <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
                     <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
-                        <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/>
+                        <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src={bannerPic}  alt="people smiling"/>
                     </div>
 
 
@@ -97,17 +98,17 @@ const Hero = () => {
 
                         <div className="sm:flex items-center py-2">
 
-                            <a href="#review" className="flex items-center">
+                            <a href="#review" className="flex items-center dark:text-black">
                             <BsFillExclamationSquareFill className='mx-1' />
                             <span>Feedback</span>
                             </a>
 
-                            <a href="#beATeacher" className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0">
+                            <a href="#beATeacher" className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 dark:text-black">
                                 <BsFillDpadFill className='mx-1' />
                                 <span>Be a teacher</span>
                             </a>
 
-                            <a  href="#contact" className="flex items-center">
+                            <a  href="#contact" className="flex items-center dark:text-black">
                                 <BsFillPersonVcardFill className='mx-1' />
                                 <span>Contact</span>
                             </a>
