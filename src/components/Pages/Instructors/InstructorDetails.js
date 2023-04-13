@@ -10,21 +10,24 @@ import { MdMarkEmailUnread } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 import Loader from "../../Shared/Loader/Loader";
 import { AuthContext } from "../../Context/AuthProvider";
+import { TbCurrencyTaka } from "react-icons/tb";
+import { toast } from "react-toastify";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
   console.log(details.data);
 
-  const { loading } = useContext(AuthContext);
+  const { loading, logUser, user } = useContext(AuthContext);
 
   const bookTeacher = (data) => {
-    const name = data.name;
-    const email = data.email;
-    const location = data.location;
-    const phone = data.phone;
-    const image = data.image;
-    const experience = data.experience;
-    const background = data.background;
+    const name = data?.name;
+    const email = data?.email;
+    const location = data?.location;
+    const phone = data?.phone;
+    const image = data?.image;
+    const experience = data?.experience;
+    const background = data?.background;
+    const fee = data?.fee;
 
     const bookingData = {
       name,
@@ -34,9 +37,16 @@ const InstructorDetails = () => {
       image,
       experience,
       background,
+      studentEmail: user?.email,
+      fee,
+    };
+    // console.log(bookingData);
+
+    const UserDetails = {
+      name: user?.displayName,
+      teacherEmail: data?.email,
     };
 
-    console.log(bookingData);
     fetch(`https://edumate-second-server.vercel.app/api/v1/bookings`, {
       method: "POST",
       headers: {
@@ -48,7 +58,7 @@ const InstructorDetails = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("booked");
+          toast.success("Successfully booked your teacher");
         }
       });
   };
@@ -59,7 +69,6 @@ const InstructorDetails = () => {
 
   return (
     <div>
-      {/* {details?.data?.map((instructorDetail) => { */}
       <div>
         <section class="text-gray-700 body-font overflow-hidden bg-white">
           <div class="container px-5 py-24 mx-auto">
@@ -95,6 +104,10 @@ const InstructorDetails = () => {
                     {details?.data?.experience} years experience
                   </p>
                   <p className="flex ">
+                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" />{" "}
+                    <h1>{details?.data?.fee}</h1>
+                  </p>
+                  <p className="flex ">
                     <HiLocationMarker className="mt-1 mr-1" />
                     {details?.data?.location}
                   </p>
@@ -107,7 +120,7 @@ const InstructorDetails = () => {
 
                 <div class="flex mt-8">
                   <button
-                    // onClick={() => bookTeacher(instructorDetail)}
+                    onClick={() => bookTeacher(details.data)}
                     class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
                   >
                     <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
@@ -124,7 +137,6 @@ const InstructorDetails = () => {
           </div>
         </section>
       </div>
-      {/* // })} */}
     </div>
   );
 };

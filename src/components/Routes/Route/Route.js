@@ -113,7 +113,8 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/my-Teachers",
         element: <MyTeachers />,
-        loader: () => fetch(``),
+        loader: ({ params }) =>
+          fetch(`https://edumate-second-server.vercel.app/api/v1/bookings`),
       },
       {
         path: "/dashboard/all-Teachers",
