@@ -21,6 +21,7 @@ const AuthProvider = ({ children }) => {
   const [logUser, setLogUser] = useState();
 
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  
   useEffect(() => {
     const body = document.body;
     body.className = theme;

@@ -104,7 +104,7 @@ const Reviews = () => {
 
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">How was your experience?</label>
-              <input name='rate' type="range" min="1" max="5" className="range range-success dark:range-secondary" step="1" />
+              <input name='rate' type="range" min="1" max="5" className="range range-success dark:range-info" step="1" />
               <div className="w-full flex justify-between text-xs px-2">
                 <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
                 <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>

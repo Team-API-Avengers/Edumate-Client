@@ -19,7 +19,16 @@ import darkLogo from "../../Assets/dark-Logo.png";
 
 const Header = () => {
   const { user, logOut, logUser, theme, setTheme } = useContext(AuthContext);
-  console.log("header logUser", logUser);
+
+  console.log("header logUser role", logUser);
+
+
+
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
 
   useEffect(() => {
     if (theme === "dark") {
@@ -29,9 +38,9 @@ const Header = () => {
     }
   }, [theme]);
 
-  const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+
+
+
 
   const navigate = useNavigate();
 
@@ -52,6 +61,7 @@ const Header = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+  
 
   const navStyle = ({ isActive }) => {
     return {
@@ -61,6 +71,8 @@ const Header = () => {
       borderBottom: isActive ? "3px solid blue" : "none",
     };
   };
+
+
   const navList = (
     <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
 
