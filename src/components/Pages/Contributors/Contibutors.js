@@ -1,10 +1,9 @@
-import React from 'react';
-import { BsFacebook, BsLinkedin, BsGithub } from 'react-icons/bs';
-
+import React from "react";
+import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
+import yusuf from "../../Assets/yusuf.jpg";
 const Contributors = () => {
   return (
     <div>
-
       <section className="pt-20 pb-10 lg:pt-[120px]   dark:text-[#350573] m-10 lg:pb-20">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
@@ -13,21 +12,18 @@ const Contributors = () => {
                 <span className="text-blue-700  dark:text-[#ffffff] mb-2 block text-3xl font-semibold">
                   Our Awesome Team Members
                 </span>
-                <h2
-                  className="text-dark mb-4 text-xl font-bold"
-                >
+                <h2 className="text-dark mb-4 text-xl font-bold">
                   Project - Contributors
                 </h2>
                 <p className="text-body-color text-base">
-                  There are many variations of passages of Lorem Ipsum available but
-                  the majority have suffered alteration in some form.
+                  There are many variations of passages of Lorem Ipsum available
+                  but the majority have suffered alteration in some form.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="-mx-3 flex flex-wrap justify-center">
-
             <div className="w-full px-4 md:w-1/2 xl:w-1/3">
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
@@ -37,20 +33,20 @@ const Contributors = () => {
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
-                    <div
-                      className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
-                    >
-                      <h3 className="text-dark text-base font-semibold">MD Hasan</h3>
+                    <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
+                      <h3 className="text-dark text-base font-semibold">
+                        MD Hasan
+                      </h3>
                       <p className="text-body-color text-sm">Team Leader</p>
-                      <p className='flex justify-center mt-1'>
+                      <p className="flex justify-center mt-1">
                         <a href="https://www.facebook.com/ornilhasan0467/">
-                          <BsFacebook className='mx-2' />
+                          <BsFacebook className="mx-2" />
                         </a>
                         <a href="https://www.linkedin.com/in/md-hasan149357">
-                          <BsLinkedin className='mx-2' />
+                          <BsLinkedin className="mx-2" />
                         </a>
                         <a href="https://github.com/MdHasan0467">
-                          <BsGithub className='mx-2' />
+                          <BsGithub className="mx-2" />
                         </a>
                       </p>
                       <div>
@@ -232,27 +228,27 @@ const Contributors = () => {
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
-                    src="https://lh3.googleusercontent.com/a/AGNmyxbm626_kWQxzX6OZ6vNr6PJNZw0URSP3okhfSL6tg=s96-c"
+                    src={yusuf}
                     alt="image"
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
-                    <div
-                      className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
-                    >
+                    <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
                       <h3 className="text-dark text-base font-semibold">
                         Yusuf Bin Imam
                       </h3>
-                      <p className="text-body-color text-sm">Front End Developer</p>
-                      <p className='flex justify-center mt-1'>
+                      <p className="text-body-color text-sm">
+                        Front End Developer
+                      </p>
+                      <p className="flex justify-center mt-1">
                         <a href="https://www.facebook.com/profile.php?id=100032670966425">
-                          <BsFacebook className='mx-2' />
+                          <BsFacebook className="mx-2" />
                         </a>
                         <a href="https://www.linkedin.com/in/yusuf-bin-imam/">
-                          <BsLinkedin className='mx-2' />
+                          <BsLinkedin className="mx-2" />
                         </a>
                         <a href="https://github.com/RedEye75">
-                          <BsGithub className='mx-2' />
+                          <BsGithub className="mx-2" />
                         </a>
                       </p>
                       <div>
@@ -439,22 +435,20 @@ const Contributors = () => {
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
-                    <div
-                      className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
-                    >
+                    <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
                       <h3 className="text-dark text-base font-semibold">
                         Sarwar Jaman Tuhin
                       </h3>
                       <p className="text-body-color text-sm">UI/UX Designer</p>
-                      <p className='flex justify-center mt-1'>
+                      <p className="flex justify-center mt-1">
                         <a href="https://www.facebook.com/sarwar902tuhin/">
-                          <BsFacebook className='mx-2' />
+                          <BsFacebook className="mx-2" />
                         </a>
                         <a href="www.linkedin.com/in/tuhin902">
-                          <BsLinkedin className='mx-2' />
+                          <BsLinkedin className="mx-2" />
                         </a>
                         <a href="https://github.com/tuhin902">
-                          <BsGithub className='mx-2' />
+                          <BsGithub className="mx-2" />
                         </a>
                       </p>
                       <div>
@@ -641,22 +635,22 @@ const Contributors = () => {
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
-                    <div
-                      className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
-                    >
+                    <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
                       <h3 className="text-dark text-base font-semibold">
                         Atiq Hasan
                       </h3>
-                      <p className="text-body-color text-sm">UI & Animation Designer</p>
-                      <p className='flex justify-center mt-1'>
+                      <p className="text-body-color text-sm">
+                        UI & Animation Designer
+                      </p>
+                      <p className="flex justify-center mt-1">
                         <a href="">
-                          <BsFacebook className='mx-2' />
+                          <BsFacebook className="mx-2" />
                         </a>
                         <a href="https://www.linkedin.com/in/atik94">
-                          <BsLinkedin className='mx-2' />
+                          <BsLinkedin className="mx-2" />
                         </a>
                         <a href="">
-                          <BsGithub className='mx-2' />
+                          <BsGithub className="mx-2" />
                         </a>
                       </p>
                       <div>
@@ -843,22 +837,22 @@ const Contributors = () => {
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
-                    <div
-                      className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
-                    >
+                    <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
                       <h3 className="text-dark text-base font-semibold">
                         MD Siyam Al Rafi
                       </h3>
-                      <p className="text-body-color text-sm">Backend Developer</p>
-                      <p className='flex justify-center mt-1'>
+                      <p className="text-body-color text-sm">
+                        Backend Developer
+                      </p>
+                      <p className="flex justify-center mt-1">
                         <a href="">
-                          <BsFacebook className='mx-2' />
+                          <BsFacebook className="mx-2" />
                         </a>
                         <a href="https://www.linkedin.com/in/siamalrafi0/">
-                          <BsLinkedin className='mx-2' />
+                          <BsLinkedin className="mx-2" />
                         </a>
                         <a href="https://github.com/siamalrafi">
-                          <BsGithub className='mx-2' />
+                          <BsGithub className="mx-2" />
                         </a>
                       </p>
                       <div>
@@ -1045,22 +1039,22 @@ const Contributors = () => {
                     className="w-full h-80 object-cover"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
-                    <div
-                      className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
-                    >
+                    <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
                       <h3 className="text-dark text-base font-semibold">
                         Ashikur Rahman Emon
                       </h3>
-                      <p className="text-body-color text-sm">Backend Developer</p>
-                      <p className='flex justify-center mt-1'>
+                      <p className="text-body-color text-sm">
+                        Backend Developer
+                      </p>
+                      <p className="flex justify-center mt-1">
                         <a href="">
-                          <BsFacebook className='mx-2' />
+                          <BsFacebook className="mx-2" />
                         </a>
                         <a href="">
-                          <BsLinkedin className='mx-2' />
+                          <BsLinkedin className="mx-2" />
                         </a>
                         <a href="">
-                          <BsGithub className='mx-2' />
+                          <BsGithub className="mx-2" />
                         </a>
                       </p>
                       <div>
@@ -1237,15 +1231,9 @@ const Contributors = () => {
                 </div>
               </div>
             </div>
-
-
-
-
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };

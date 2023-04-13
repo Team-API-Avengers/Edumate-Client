@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
+import Loader from "../../Shared/Loader/Loader";
 
 const MyTeachers = () => {
+  const { loading } = useContext(AuthContext);
+  const teachersDetails = useLoaderData();
+  console.log(teachersDetails);
+
   return (
     <div className=" dark:bg-[#350573]">
-      <section class="bg-white ">
+      <section class="bg-white max-w-screen">
         <div class="container mx-auto">
-          <div class="-mx-4 flex flex-wrap">
-            <div class="w-full px-4">
+          <div class=" flex flex-wrap">
+            <div class="w-full">
               <div class="max-w-full overflow-x-auto">
                 <table class="w-full table-auto">
                   <thead>
@@ -31,33 +38,59 @@ const MyTeachers = () => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-dark border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
-                        <p> Yusuf Bin Imam</p>
-                        <p className="">yusufbinemamstk@gmail.com</p>
-                      </td>
-                      <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                        Science
-                      </td>
-                      <td class="text-dark border-b border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
-                        Sitakund
-                      </td>
-                      <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                        5000
-                      </td>
-                      <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                        <a class="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white">
-                          Pay
-                        </a>
-                      </td>
-                      <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                        <a class="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white">
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
+
+                  {teachersDetails?.data?.map((teacher) => {
+                    if (loading) {
+                      return <Loader />;
+                    }
+                    return (
+                      <tbody>
+                        <tr>
+                          <td class="text-dark flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
+                            {teacher?.image ? (
+                              <>
+                                <div className="avatar">
+                                  <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <img
+                                      alt="teacher Image"
+                                      src={teacher?.image}
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
+                              </>
+                            )}
+                            <div className="text-start">
+                              <p>{teacher?.name}</p>
+                              <p className="">{teacher?.email}</p>
+                            </div>
+                          </td>
+                          <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                            {teacher?.background}
+                          </td>
+                          <td class="text-dark border-b border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
+                            {teacher?.location}
+                          </td>
+                          <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                            5000
+                          </td>
+                          <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                            <a class="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white">
+                              Pay
+                            </a>
+                          </td>
+                          <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                            <a class="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white">
+                              Delete
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    );
+                  })}
                 </table>
               </div>
             </div>
