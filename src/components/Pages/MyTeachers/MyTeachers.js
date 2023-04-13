@@ -6,34 +6,34 @@ import { useQuery } from "@tanstack/react-query";
 
 const MyTeachers = () => {
   const { loading, user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const teachersDetails = useLoaderData();
-  // console.log(teachersDetails);
+  console.log(teachersDetails);
 
-  const url = `https://edumate-second-server.vercel.app/api/v1/bookings?id=${user?.id}`;
+  // const url = `https://edumate-second-server.vercel.app/api/v1/bookings?id=${user?.uid}`;
 
-  const { data: users = [] } = useQuery({
-    queryKey: ["user"],
-    queryFn: async () => {
-      const res = await fetch(
-        `https://edumate-second-server.vercel.app/api/v1/user`
-      );
-      const data = res.json();
-      return data;
-    },
-  });
+  // const { data: users = [] } = useQuery({
+  //   queryKey: ["user"],
+  //   queryFn: async () => {
+  //     const res = await fetch(
+  //       `https://edumate-second-server.vercel.app/api/v1/user`
+  //     );
+  //     const data = res.json();
+  //     return data;
+  //   },
+  // });
 
-  const { data: bookings = [] } = useQuery({
-    queryKey: ["bookings", user?.email],
-    queryFn: async () => {
-      const res = fetch(url, {
-        headers: {},
-      });
-      const data = await res.json();
-      return data;
-    },
-  });
-  console.log(bookings);
+  // const { data: bookings = [] } = useQuery({
+  //   queryKey: ["bookings", user?.email],
+  //   queryFn: async () => {
+  //     const res = fetch(url, {
+  //       headers: {},
+  //     });
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
+  // console.log(bookings);
   return (
     <div className=" dark:bg-[#350573]">
       <section class="bg-white max-w-screen">
