@@ -32,13 +32,13 @@ const Instructors = () => {
         {allInstructor?.data?.map((instructor) => {
           return (
             <div className="">
-              <div className="px-25 mx-auto  py-1">
+              <div className="px-25 mx-auto ">
                 <div className="flex  flex-col">
-                  <div class="max-w-2xl space-y-1 mx-auto">
-                    <div class=" shadow-md border text-start transition transform hover:scale-105 duration-300  border-gray-300 rounded-lg max-w-sm bg-slate-200 dark:border-gray-300">
+                  <div class="max-w-2xl  mx-auto">
+                    <div class=" shadow-md border text-start   border-gray-300 rounded max-w-sm dark:border-gray-300">
                       <img
                         alt="teacher"
-                        className="object-cover h-[201px] w-[300px] rounded-t-md mx-auto object-center block"
+                        className="object-cover h-[201px] w-[300px]  mx-auto object-center block"
                         src={instructor?.image}
                       />
 
@@ -53,10 +53,7 @@ const Instructors = () => {
 
                           {instructor?.name}
                         </p>
-                        {/* <p class="font-bold text-md flex  text-gray-800">
-                        <HiLocationMarker className="mt-1 text-xl mr-2" />{" "}
-                        {instructor?.location.slice(10)}
-                      </p> */}
+
                         <p class="font-bold text-md  mb-3 flex text-gray-800">
                           <BsHourglassSplit className="mt-1 text-xl mr-2" />{" "}
                           {instructor?.experience} years experience
@@ -64,7 +61,7 @@ const Instructors = () => {
                         <div>
                           <Link to={`/instructor/${instructor?._id}`}>
                             <div class="flex mt-3">
-                              <button class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-12 py-2 text-white focus:outline-none focus:ring active:bg-blue-500">
+                              <button class="group relative inline-flex items-center overflow-hidden bg-blue-600 px-12 py-2 text-white focus:outline-none focus:ring active:bg-blue-500">
                                 <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                                   <BsArrowRight />
                                 </span>

@@ -1,8 +1,5 @@
 import React, { useContext } from "react";
-import {
-  Navbar,
-  MobileNav,
-} from "@material-tailwind/react";
+import { Navbar, MobileNav } from "@material-tailwind/react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { BiMenu } from "react-icons/bi";
@@ -18,13 +15,9 @@ const Header = () => {
 
   console.log("header logUser role", logUser);
 
-
-
-
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
 
   useEffect(() => {
     if (theme === "dark") {
@@ -33,10 +26,6 @@ const Header = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
-
-
-
-
 
   const navigate = useNavigate();
 
@@ -57,7 +46,6 @@ const Header = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-  
 
   const navStyle = ({ isActive }) => {
     return {
@@ -68,10 +56,8 @@ const Header = () => {
     };
   };
 
-
   const navList = (
     <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
-
       <NavLink
         style={navStyle}
         to={"/"}
@@ -80,27 +66,27 @@ const Header = () => {
         Home
       </NavLink>
       {/* {logUser?.role === "Teacher" ? ( */}
-        <NavLink>
-          <div className="dropdown dropdown-end">
-            <label
-              tabIndex={0}
-              className=" flex   justify-center items-center rounded-btn"
-            >
-              Blog
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
-            >
-              <li>
-                <NavLink to={"/blog"}>Blog</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/addBlog"}>Add Blog</NavLink>
-              </li>
-            </ul>
-          </div>
-        </NavLink>
+      <NavLink>
+        <div className="dropdown dropdown-end">
+          <label
+            tabIndex={0}
+            className=" flex   justify-center items-center rounded-btn"
+          >
+            Blog
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
+          >
+            <li>
+              <NavLink to={"/blog"}>Blog</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/addBlog"}>Add Blog</NavLink>
+            </li>
+          </ul>
+        </div>
+      </NavLink>
       {/*) : (
         <NavLink to={"/blog"} className="flex  justify-center items-center">
           Blog
@@ -173,70 +159,64 @@ const Header = () => {
 
           <div className="hidden lg:block">{navList}</div>
 
-          <div className="dropdown dropdown-end hidden lg:block">
-            <label tabIndex={0} className="cursor-pointer">
-              <div className="avatar online">
-                <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
-                  {user ? (
-                    <img src={user?.photoURL} />
-                  ) : (
-                    <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
-                  )}
+          <div className="flex gap-5">
+            <div className="dropdown dropdown-end  hidden lg:block">
+              <label tabIndex={0} className="mr-5 cursor-pointer">
+                <div className="avatar online">
+                  <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
+                    {user ? (
+                      <img src={user?.photoURL} />
+                    ) : (
+                      <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
+                    )}
+                  </div>
                 </div>
-              </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 p-2 text-black dark:bg-[#862aff]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              >
+                {user ? (
+                  <>
+                    <li>
+                      <Link
+                        to="/dashboard/My-Profile"
+                        className="justify-between"
+                      >
+                        {user?.displayName}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/settings">Settings</Link>
+                    </li>
+
+                    <li>
+                      <a onClick={handleLogOut}>Logout</a>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <Link to="/login">Login</Link>
+                    </li>
+                    <li>
+                      <Link to="/signup">Signup</Link>
+                    </li>
+
+                    <label className="swap swap-rotate my-2">
+                      <input onClick={handleThemeSwitch} type="checkbox" />
+                      <BsSunFill className="swap-on fill-current w-5 h-5" />
+                      <BsMoonFill className="swap-off fill-current w-5 h-5" />
+                    </label>
+                  </>
+                )}
+              </ul>{" "}
+            </div>
+            <label className="swap  swap-rotate my-2">
+              <input onClick={handleThemeSwitch} type="checkbox" />
+              <BsSunFill className="swap-on fill-current -mt-2 text-white text-4xl" />
+              <BsMoonFill className="swap-off fill-current -mt-2  text-black text-4xl" />
             </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 p-2 text-black dark:bg-[#862aff]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-            >
-              {user ? (
-                <>
-                  <li>
-                    <Link
-                      to="/dashboard/My-Profile"
-                      className="justify-between"
-                    >
-                      {user?.displayName}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/settings">Settings</Link>
-                  </li>
-
-                  <li>
-                    <a onClick={handleLogOut}>Logout</a>
-                  </li>
-
-
-                  
-                  <label className="swap swap-rotate my-2">
-                    <input onClick={handleThemeSwitch} type="checkbox" />
-                        <BsSunFill className="swap-on fill-current w-5 h-5" />
-                        <BsMoonFill className="swap-off fill-current w-5 h-5" />
-                  </label>
-                 
-
-                </>
-              ) : (
-                <>
-                  <li>
-                    <Link to="/login">Login</Link>
-                  </li>
-                  <li>
-                    <Link to="/signup">Signup</Link>
-                  </li>
-
-                 
-                  <label className="swap swap-rotate my-2">
-                    <input onClick={handleThemeSwitch} type="checkbox" />
-                        <BsSunFill className="swap-on fill-current w-5 h-5" />
-                        <BsMoonFill className="swap-off fill-current w-5 h-5" />
-                  </label>
-                
-
-                </>
-              )}
-            </ul>
           </div>
 
           <button

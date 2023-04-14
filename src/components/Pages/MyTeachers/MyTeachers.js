@@ -1,56 +1,40 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
 import { useQuery } from "@tanstack/react-query";
 
 const MyTeachers = () => {
   const { loading, user } = useContext(AuthContext);
-  console.log(user?.email);
+  // console.log(user?.email);
+  const navigate = useNavigate();
 
+  const [teachers, setTeachers] = useState([]);
 
-
-  const [teachers, setTeachers] = useState([])
-
-  // const userDetails = {};
-
-  const { data: users = [] } = useQuery({
-    queryKey: ["user"],
-    queryFn: async () => {
-      const res = await fetch(
-        `https://edumate-second-server.vercel.app/api/v1/user`
-      );
-      const data = res.json();
-      return data;
-    },
-  });
-
-  //https://edumate-second-server.vercel.app/api/v1/bookings/email?email=karima8@gmail.com
-
-  // const { data: bookings } = useQuery({
-  //   queryKey: ["bookings", user?.email],
+  // const { data: users = [] } = useQuery({
+  //   queryKey: ["user"],
   //   queryFn: async () => {
-  //     const res = fetch(`https://edumate-second-server.vercel.app/api/v1/bookings/email?email=karima8@gmail.com`);
-  //     const data = await res.json({});
+  //     const res = await fetch(
+  //       `https://edumate-second-server.vercel.app/api/v1/user`
+  //     );
+  //     const data = res.json();
   //     return data;
   //   },
   // });
 
+  useEffect(() => {
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/bookings/email?email=${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result?.data);
 
-
-  useEffect(()=> {
-    fetch(`https://edumate-second-server.vercel.app/api/v1/bookings/email?email=${user?.email}`)
-    .then(res => res.json())
-    .then(result => {
-      console.log(result?.data)
-      if(result.data !== undefined){
-        setTeachers(result?.data)
-      }
-    })
-  },[user?.email])
-
-
-
+        if (result.data !== undefined) {
+          setTeachers(result?.data);
+        }
+      });
+  }, [user?.email]);
 
   // console.log(bookings);
   return (
@@ -85,33 +69,41 @@ const MyTeachers = () => {
                   </thead>
 
                   <tbody>
-                    {teachers?.map(teacher => <tr>
-                      <td class="text-dark flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
-                        <div className="avatar">
-                          <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img alt="teacher Image" src={teacher?.image} />
+                    {teachers?.map((teacher) => (
+                      <tr>
+                        <td class="text-dark flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
+                          <div className="avatar">
+                            <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                              <img alt="teacher Image" src={teacher?.image} />
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="text-start">
-                          <p className="font-bold">{teacher?.name}</p>
-                          <p className="">{teacher?.email}</p>
-                        </div>
-                      </td>
-                      <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">{teacher?.background}</td>
-                      <td class="text-dark border-b border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">{teacher?.location}</td>
-                      <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">{teacher?.fee}</td>
-                      <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                        <a class="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white">
-                          Pay
-                        </a>
-                      </td>
-                      <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                        <a class="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white">
-                          Delete
-                        </a>
-                      </td>
-                    </tr>)}
+                          <div className="text-start">
+                            <p className="font-bold">{teacher?.name}</p>
+                            <p className="">{teacher?.email}</p>
+                          </div>
+                        </td>
+                        <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                          {teacher?.background}
+                        </td>
+                        <td class="text-dark border-b border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
+                          {teacher?.location}
+                        </td>
+                        <td class="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                          {teacher?.fee}
+                        </td>
+                        <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                          <a class="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white">
+                            Pay
+                          </a>
+                        </td>
+                        <td class="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                          <a class="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white">
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
