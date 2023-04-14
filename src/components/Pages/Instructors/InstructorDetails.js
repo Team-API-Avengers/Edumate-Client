@@ -16,7 +16,10 @@ import { toast } from "react-toastify";
 const InstructorDetails = () => {
   const details = useLoaderData();
   // console.log(details.data);
+
   const navigate = useNavigate();
+
+
   const { loading, logUser, user } = useContext(AuthContext);
 
   const bookTeacher = (data) => {
@@ -29,7 +32,8 @@ const InstructorDetails = () => {
     const background = data?.background;
     const fee = data?.fee;
 
-    const bookingData = {
+
+    const myTeacherData = {
       name,
       email,
       location,
@@ -40,7 +44,9 @@ const InstructorDetails = () => {
       studentEmail: user?.email,
       fee,
     };
-    console.log(bookingData);
+
+
+    console.log(myTeacherData);
 
     // const UserDetails = {
     //   name: user?.displayName,
@@ -52,7 +58,7 @@ const InstructorDetails = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(bookingData),
+      body: JSON.stringify(myTeacherData),
     })
       .then((res) => res.json())
       .then((data) => {
