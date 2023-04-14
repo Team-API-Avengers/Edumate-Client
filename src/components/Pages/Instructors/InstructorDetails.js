@@ -65,6 +65,7 @@ const InstructorDetails = () => {
         console.log(data);
         if (data.status === "success") {
           toast.success("Successfully booked your teacher");
+          navigate('dashboard/my-Teachers')
         }
         if (data?.status === "error") {
           toast.error("You already booked that teacher");
