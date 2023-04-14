@@ -144,8 +144,8 @@ const Login = () => {
 			 
 
 				<div className="flex justify-around py-5">
-				<Link to='/signup' className="text-2xl font-bold text-center">Sign Up</Link>
-				<h3 className="text-2xl text-gray-400 font-bold text-center">Login</h3>
+				<Link to='/signup' className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 border-gray-600 p-3 font-bold text-center">Sign Up</Link>
+				<h3 className="text-2xl text-gray-400 border rounded-lg shadow-md dark:shadow-slate-50 border-gray-600 p-3 font-bold text-center">Login</h3>
 				</div>
 				
 				<form onSubmit={handleSubmit(handleLogin)}>
