@@ -5,19 +5,22 @@ import Loader from "../../Shared/Loader/Loader";
 import { motion } from "framer-motion";
 
 const Blog = () => {
-  const { loading } = useContext(AuthContext);
   const [blogs, setBlog] = useState(null);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
       .then((res) => res.json())
-      .then((blog) => setBlog(blog.data));
+      .then((blog) => setBlog(blog.data))
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
-
-  // console.log(blogs);
-
   if (loading) {
     return <Loader />;
   }
+
+  // console.log(blogs);
 
   return (
     <div className="m-4 min-h-screen dark:text-gray-700">
@@ -38,7 +41,10 @@ const Blog = () => {
           <Link to={`/blog/${singleBlog?._id}`}>
             <motion.article
               class="rounded-xl border h-72 border-green-100  bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
-              whileHover={{ background: "linear-gradient(270deg, #88F8C6 0%, #6151D3 100%)", color: "white" }}
+              whileHover={{
+                background: "linear-gradient(270deg, #88F8C6 0%, #6151D3 100%)",
+                color: "white",
+              }}
             >
               <div class="flex items-start sm:gap-8">
                 <div>
@@ -56,13 +62,21 @@ const Blog = () => {
 
                   <div class="mt-4 flex  justify-between">
                     <div>
-                      <p className="text-start font-bold">{singleBlog?.authorName}</p>
-                      <p className="text-start font-medium">{singleBlog?.authorRole}</p>
+                      <p className="text-start font-bold">
+                        {singleBlog?.authorName}
+                      </p>
+                      <p className="text-start font-medium">
+                        {singleBlog?.authorRole}
+                      </p>
                     </div>
                     <div class="flex items-center gap-1 text-gray-500">
                       <p class="text-md text-black  font-medium">
-                        <span className="mx-1">{singleBlog?.createdAt?.slice(11, 16)}</span>
-                        <span className="mx-1">{singleBlog?.createdAt?.slice(0, 10)}</span>
+                        <span className="mx-1">
+                          {singleBlog?.createdAt?.slice(11, 16)}
+                        </span>
+                        <span className="mx-1">
+                          {singleBlog?.createdAt?.slice(0, 10)}
+                        </span>
                       </p>
                     </div>
                   </div>

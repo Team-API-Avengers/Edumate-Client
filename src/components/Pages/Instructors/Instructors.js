@@ -60,7 +60,7 @@ const Instructors = () => {
                         </p>
                         <div>
                           <Link to={`/instructor/${instructor?._id}`}>
-                            <div class="flex mt-3">
+                            {/* <div class="flex mt-3">
                               <button class="group relative inline-flex items-center overflow-hidden bg-blue-600 px-12 py-2 text-white focus:outline-none focus:ring active:bg-blue-500">
                                 <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                                   <BsArrowRight />
@@ -70,7 +70,14 @@ const Instructors = () => {
                                   Details
                                 </span>
                               </button>
-                            </div>
+                            </div> */}
+
+                            <button class="learn-more">
+                              <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                              </span>
+                              <span class="button-text">Learn More</span>
+                            </button>
                           </Link>
                         </div>
                       </div>
