@@ -123,10 +123,10 @@ const Signup = () => {
       </div>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-xl ">
         <div className="flex justify-around py-5">
-          <h3 className="text-2xl font-bold text-center  text-gray-400">
+          <h3 className="text-2xl font-bold text-center border rounded-lg shadow-md dark:shadow-slate-50 p-3 text-gray-400">
             Sign Up
           </h3>
-          <Link to="/login" className="text-2xl font-bold text-center">
+          <Link to="/login" className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center">
             Login
           </Link>
         </div>
