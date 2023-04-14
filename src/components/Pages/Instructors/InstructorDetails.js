@@ -19,7 +19,6 @@ const InstructorDetails = () => {
 
   const navigate = useNavigate();
 
-
   const { loading, logUser, user } = useContext(AuthContext);
 
   const bookTeacher = (data) => {
@@ -31,7 +30,6 @@ const InstructorDetails = () => {
     const experience = data?.experience;
     const background = data?.background;
     const fee = data?.fee;
-
 
     const myTeacherData = {
       name,
@@ -45,13 +43,7 @@ const InstructorDetails = () => {
       fee,
     };
 
-
     console.log(myTeacherData);
-
-    // const UserDetails = {
-    //   name: user?.displayName,
-    //   teacherEmail: data?.email,
-    // };
 
     fetch(`https://edumate-second-server.vercel.app/api/v1/bookings`, {
       method: "POST",
@@ -65,12 +57,12 @@ const InstructorDetails = () => {
         console.log(data);
         if (data.status === "success") {
           toast.success("Successfully booked your teacher");
-          navigate('dashboard/my-Teachers')
+          navigate("dashboard/my-Teachers");
         }
         if (data?.status === "error") {
           toast.error("You already booked that teacher");
         }
-        // navigate("/dashboard/my-Teachers");
+        navigate("/dashboard/my-Teachers");
       });
   };
 
