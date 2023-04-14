@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
-  PhoneAuthProvider,
+  // PhoneAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
@@ -18,7 +18,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [logUser, setLogUser] = useState();
+  // const [logUser, setLogUser] = useState();
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
@@ -28,39 +28,45 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  useEffect(() => {
-    fetch(
-      `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        // console.log(result);
-        if (result !== undefined) {
-          setLogUser(result.data);
-        }
-      });
-  }, [user?.email]);
 
-  const {
-    data: emails = [],
-    isLoading,
-    refetch,
-  } = useQuery({
-    queryKey: ["emails"],
-    queryFn: async () => {
-      const res = await fetch(
-        `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
-      );
-      const data = await res.json();
-      if (data !== undefined) {
-        setLogUser(data);
-      }
-    },
-  });
-  console.log(emails);
+
+
+
+  // useEffect(() => {
+  //   fetch(
+  //     `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       // console.log(result);
+  //       if (result !== undefined) {
+  //         setLogUser(result.data);
+  //       }
+  //     });
+  // }, [user?.email]);
+
+	const { data: logUser = [], refetch } = useQuery({
+		queryKey: [user?.email],
+		queryFn: async () => {
+			try {
+				const res = await fetch(
+					`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+				);
+				const data = await res.json();
+				return data?.data;
+			} catch (err) {
+				console.error(err);
+			}
+		},
+	});
+
+
+
+  
+
 
   // console.log("user", user);
-  console.log("logUser", logUser?.name);
+  console.log("logUser", logUser);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -109,6 +115,7 @@ const AuthProvider = ({ children }) => {
     logUser,
     theme,
     setTheme,
+    refetch,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

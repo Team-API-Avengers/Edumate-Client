@@ -110,7 +110,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32">
+    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-white">
       <div className="flex items-center">
         <div className="space-y-2">
           {/* <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
@@ -133,7 +133,7 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="text-sm">
-            <label className="flex m-2 dark:text-black">Name</label>
+            <label className="flex m-2  dark:text-white">Name</label>
             <input
               type="text"
               {...register("name", {
@@ -141,12 +141,12 @@ const Signup = () => {
               })}
               placeholder="Name"
               name="name"
-              className="input input-bordered w-full px-4 py-3 rounded-md  "
+              className="input input-bordered text-black w-full px-4 py-3 rounded-md  "
             />
           </div>
 
           <div className="text-sm">
-            <label className="flex m-2 dark:text-black">Email</label>
+            <label className="flex m-2  dark:text-white">Email</label>
             <input
               type="text"
               {...register("email", {
@@ -154,7 +154,7 @@ const Signup = () => {
               })}
               placeholder="Email"
               name="email"
-              className="input input-bordered w-full px-4 py-3 rounded-md  "
+              className="input input-bordered w-full text-black px-4 py-3 rounded-md  "
             />
             {errors.name && (
               <p className="text-red-500">{errors.name.message}</p>
@@ -162,7 +162,7 @@ const Signup = () => {
           </div>
 
           <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2 dark:text-black ">Password</label>
+            <label className="flex m-2  dark:text-white">Password</label>
             <input
               type="text"
               {...register("password", {
@@ -178,7 +178,7 @@ const Signup = () => {
               })}
               placeholder="Password"
               name="password"
-              className="input input-bordered w-full px-4 py-3 rounded-md  "
+              className="input input-bordered text-black w-full px-4 py-3 rounded-md  "
             />
             {errors.password && (
               <p className="text-red-500">{errors.password.message}</p>
@@ -186,7 +186,7 @@ const Signup = () => {
           </div>
 
           <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2 dark:text-black ">Phone number</label>
+            <label className="flex m-2  dark:text-white">Phone number</label>
             <input
               type="text"
               {...register("phoneNumber", {
@@ -194,19 +194,19 @@ const Signup = () => {
               })}
               placeholder="Number"
               name="phoneNumber"
-              className="input input-bordered w-full px-4 py-3 rounded-md  "
+              className="input input-bordered text-black w-full px-4 py-3 rounded-md  "
             />
             {errors.phoneNumber && (
               <p className="text-red-500">{errors.phoneNumber.message}</p>
             )}
           </div>
 
-          <div className="">
-            <label className="label">
+          <div className="text-black">
+            <label className="label dark:text-white">
               <span className="label-text">Who are you ?</span>
             </label>
             <select
-              className="input input-bordered md:w-96"
+              className="input input-bordered text-black md:w-96"
               type="name"
               {...register("role", {})}
             >
@@ -220,7 +220,7 @@ const Signup = () => {
 
           <div className="">
             <label className="label">
-              <span className="label-text">Photo </span>
+              <span className="label-text dark:text-white">Photo </span>
             </label>
             <input
               type="file"
@@ -239,7 +239,7 @@ const Signup = () => {
           />
           {signUpError && <p className="text-red-600">{signUpError}</p>}
         </form>
-        <p className="text-lg text-center sm:px-6">
+        <p className="text-lg text-center sm:px-6 dark:text-white">
           Already have an account?
           <Link to="/login" className="hover:underline mx-2">
             Log in

@@ -19,8 +19,8 @@ const Contributors = () => {
                 <span className="text-blue-700  dark:text-[#ffffff] mb-2 block text-3xl font-semibold">
                   Our Awesome Team Members
                 </span>
-                <h2 className="text-dark mb-4 text-xl font-bold">Project - Contributors</h2>
-                <p className="text-body-color text-base">
+                <h2 className="text-dark mb-4 text-xl font-bold dark:text-[#ffffff]">Project - Contributors</h2>
+                <p className="text-body-color text-base dark:text-[#ffffff]">
                   There are many variations of passages of Lorem Ipsum available but the majority have suffered
                   alteration in some form.
                 </p>

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsArrowRightShort, BsFacebook, BsFillStarFill, BsInstagram, BsTwitter } from "react-icons/bs";
 import { ImQuotesLeft } from "react-icons/im";
 import TestimonialModal from "../../../Modals/TestimonialModal/TestimonialModal";
 import { motion } from "framer-motion";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Testimonial = () => {
+  const {refetch} = useContext(AuthContext)
 
 
   const [data, setData] = useState()
@@ -20,6 +22,21 @@ const Testimonial = () => {
   const [categoryData, setCategoryData] = useState([]);
 
 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const [showAll, setShowAll] = useState(false);
 
@@ -28,6 +45,8 @@ const Testimonial = () => {
     const response = await fetch('https://edumate-second-server.vercel.app/api/v1/feedback');
     const data = await response.json();
     setCategoryData(data);
+    refetch()
+    
   };
 
   console.log('all', categoryData);
@@ -36,6 +55,7 @@ const Testimonial = () => {
   const handleShowAllClick = () => {
     setShowAll(true);
     getCategoryData();
+    
   };
 
 
@@ -65,8 +85,9 @@ const Testimonial = () => {
     .then(result => {
       // console.log(result);
       setData(result.data);
+      refetch()
     })
-  },[])
+  },[refetch])
 
 
 console.log('modalData', modalData?.name);
@@ -155,7 +176,7 @@ console.log('modalData', modalData?.name);
                 <h1>
                   <p>
                     {feedback?.message.slice(0,50)}
-                     {feedback?.message.length >= 51 &&
+                    {feedback?.message.length >= 51 &&
                   <span>. . .</span> 
                   }
                   </p>
@@ -169,13 +190,13 @@ console.log('modalData', modalData?.name);
                 </h1>
               </div>
               <div className="flex items-center justify-center p-3 space-x-3 border-t-2 border-green-300  dark:border-[#350573]">
-                <a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1">
+                <a href="#" title="Facebook" className="flex items-center p-1">
                   <BsFacebook />
                 </a>
-                <a rel="noopener noreferrer" href="#" title="Twitter" className="flex items-center p-1">
+                <a href="#" title="Twitter" className="flex items-center p-1">
                   <BsTwitter />
                 </a>
-                <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center p-1">
+                <a href="#" title="Instagram" className="flex items-center p-1">
                   <BsInstagram />
                 </a>
               </div>
@@ -263,13 +284,13 @@ console.log('modalData', modalData?.name);
                 </h1>
               </div>
               <div className="flex items-center justify-center p-3 space-x-3 border-t-2 border-green-300 dark:border-[#350573]">
-                <a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1">
+                <a href="#" title="Facebook" className="flex items-center p-1">
                   <BsFacebook />
                 </a>
-                <a rel="noopener noreferrer" href="#" title="Twitter" className="flex items-center p-1">
+                <a href="#" title="Twitter" className="flex items-center p-1">
                   <BsTwitter />
                 </a>
-                <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center p-1">
+                <a href="#" title="Instagram" className="flex items-center p-1">
                   <BsInstagram />
                 </a>
               </div>

@@ -6,7 +6,7 @@ import { BsArrowRight, BsFillStarFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 const Reviews = () => {
-  const { user } = useContext(AuthContext);
+  const { user,refetch } = useContext(AuthContext);
 
   const handleReview = (e) => {
     e.preventDefault();
@@ -26,6 +26,13 @@ const Reviews = () => {
     };
     console.log(userReview);
 
+
+
+
+
+
+    
+
     fetch("https://edumate-second-server.vercel.app/api/v1/feedback", {
       method: "POST",
       headers: {
@@ -38,6 +45,7 @@ const Reviews = () => {
         if (result) {
           console.log(result);
           form.reset();
+          refetch()
           toast.success("Thanks for your feedback!");
         }
       });

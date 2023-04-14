@@ -89,21 +89,28 @@ const About = () => {
               </p>
 
               <p className="text-start pt-6 font-bold">Features of the  Edumate Website :</p>
-              <ul className="text-start mb-8">
-                <li className="font-bold">Teacher:</li>
-
-                <li>Authentication system with email and google.</li>
+              <ul>
+              <li>Authentication system with email and google.</li>
                 <li>Set individual user role (Teacher & Student).</li>
                 <li>Search functionally with area-wise and subject-wise.</li>
-
-                <li className="font-bold">Student:</li>
-
-                <li>In home page display category-wise tutor list.</li>
-                <li>Tutor select & booking.</li>
-                <li>Student review section for feedback and suggestion.</li>
                 <li>Testimonial section.</li>
                 <li>Terms and policy.</li>
                 <li>About, FAQ, Blog, Contibutors.</li>
+              </ul>
+              
+              <ul className="text-start mb-8">
+                <li className="font-bold">Teacher:</li>
+
+                <li>A teacher can see his students in his dashboard.</li>
+                
+                <li className="font-bold">Student:</li>
+
+                <li>Search functionally for finding tutors with area-wise.</li>
+                <li>In home page display subject-wise tutor list.</li>
+                <li>Tutor select & booking.</li>
+                <li>Student can give his feedback and suggestion.</li>
+                <li>Student can pay with payment system for his tutor.</li>
+                
               </ul>
 
               <Link to="/contact">
