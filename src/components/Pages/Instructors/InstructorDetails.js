@@ -42,10 +42,10 @@ const InstructorDetails = () => {
     };
     console.log(bookingData);
 
-    const UserDetails = {
-      name: user?.displayName,
-      teacherEmail: data?.email,
-    };
+    // const UserDetails = {
+    //   name: user?.displayName,
+    //   teacherEmail: data?.email,
+    // };
 
     fetch(`https://edumate-second-server.vercel.app/api/v1/bookings`, {
       method: "POST",
