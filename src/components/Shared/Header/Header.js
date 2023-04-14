@@ -2,15 +2,11 @@ import React, { useContext } from "react";
 import {
   Navbar,
   MobileNav,
-  Button,
-  IconButton,
 } from "@material-tailwind/react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import FormModal from "../FormModal/FormModal";
 import { useState, useEffect } from "react";
 import { BiMenu } from "react-icons/bi";
 import { BsChevronUp, BsMoonFill, BsSunFill } from "react-icons/bs";
-import { color } from "style-value-types";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -83,7 +79,7 @@ const Header = () => {
       >
         Home
       </NavLink>
-      {logUser?.role === "Teacher" ? (
+      {/* {logUser?.role === "Teacher" ? ( */}
         <NavLink>
           <div className="dropdown dropdown-end">
             <label
@@ -94,7 +90,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black  mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
             >
               <li>
                 <NavLink to={"/blog"}>Blog</NavLink>
@@ -105,11 +101,11 @@ const Header = () => {
             </ul>
           </div>
         </NavLink>
-      ) : (
+      {/*) : (
         <NavLink to={"/blog"} className="flex  justify-center items-center">
           Blog
         </NavLink>
-      )}
+      )} */}
 
       <NavLink
         style={navStyle}

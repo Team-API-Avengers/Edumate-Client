@@ -20,9 +20,9 @@ const Blog = () => {
   }
 
   return (
-    <div className="m-4 min-h-screen">
+    <div className="m-4 min-h-screen dark:text-gray-700">
       <motion.h1
-        className=" font-bold"
+        className=" dark:text-white font-bold"
         initial={{ scale: 0.5 }}
         whileInView={{ scale: 2.1, translateY: 20 }}
         transition={{ duration: 1.5 }}
@@ -38,19 +38,19 @@ const Blog = () => {
           <Link to={`/blog/${singleBlog?._id}`}>
             <motion.article
               class="rounded-xl border h-72 border-green-100  bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
-              whileHover={{ background: "linear-gradient(270deg, #439370 0%, #3a3276 100%)", color: "white" }}
+              whileHover={{ background: "linear-gradient(270deg, #88F8C6 0%, #6151D3 100%)", color: "white" }}
             >
               <div class="flex items-start sm:gap-8">
                 <div>
-                  <strong class="rounded border text-start text-white border-blue-500 bg-blue-500 px-3 py-1.5 text-[10px] font-medium ">
+                  <strong class="rounded border text-start text-white  border-blue-500 bg-black px-3 py-1.5 text-[20px] font-medium ">
                     {singleBlog?.category}
                   </strong>
 
-                  <h3 class="mt-4  hover:text-green-600 text-2xl hover:underline text-start font-bold ">
+                  <h3 class="mt-4  hover:text-black text-2xl hover:underline text-start font-bold ">
                     {singleBlog?.title}
                   </h3>
 
-                  <p class="mt-1 text-start text-sm text-gray-400 hover:text-base-100">
+                  <p class="mt-1 text-start text-sm hover:text-black text-base-100">
                     {singleBlog?.details?.slice(0, 98)}.....
                   </p>
 
