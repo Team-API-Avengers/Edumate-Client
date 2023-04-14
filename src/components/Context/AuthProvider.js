@@ -10,45 +10,57 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/Firebase.init";
+import { useQuery } from "@tanstack/react-query";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [logUser, setLogUser] = useState();
 
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-  
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
   useEffect(() => {
     const body = document.body;
     body.className = theme;
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
-  
-	useEffect(() => {
-		fetch(`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`)
-			.then((res) => res.json())
-			.then((result) => {
-				// console.log(result);
-				if(result !== undefined){
-					setLogUser(result.data);
-				}
-			});
-	}, [user?.email]);
+  useEffect(() => {
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        // console.log(result);
+        if (result !== undefined) {
+          setLogUser(result.data);
+        }
+      });
+  }, [user?.email]);
 
+  const {
+    data: emails = [],
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["emails"],
+    queryFn: async () => {
+      const res = await fetch(
+        `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+      );
+      const data = await res.json();
+      if (data !== undefined) {
+        setLogUser(data);
+      }
+    },
+  });
+  console.log(emails);
 
-  // console.log('user', user);
-
-  
-
-// console.log('logUser', logUser?.name);
-
-
-
+  // console.log("user", user);
+  console.log("logUser", logUser?.name);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -68,7 +80,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-  
+
   const updateUser = (name, photoURL) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
