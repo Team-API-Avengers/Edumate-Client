@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 const Contributors = () => {
   return (
     <div>
-      <section className="pt-20 pb-10 lg:pt-[120px]   dark:text-[#350573] m-10 lg:pb-20">
+      <section className=" pb-10   dark:text-[#350573] m-10 lg:pb-20">
         <div className="container mx-auto">
           <motion.div
             className="-mx-4 flex flex-wrap"
-            initial={{ opacity: 0, y: -256 }}
+            initial={{ opacity: 0, y: -150 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 10 }}
           >
