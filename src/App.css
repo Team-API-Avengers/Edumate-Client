@@ -188,13 +188,12 @@ button:hover .button-text {
 .loader {
   font-size: 2rem;
   font-family: serif;
-  font-variant: small-caps;
   font-weight: 900;
   background: conic-gradient(
     #dff2ae 0 25%,
     #ff904f 25% 50%,
     #feefe7 50% 75%,
-    #0024f0 75%
+    #4501ff 75%
   );
   background-size: 200% 200%;
   animation: animateBackground 4.5s ease-in-out infinite;
@@ -218,43 +217,5 @@ button:hover .button-text {
 
   100% {
     background-position: 0 0;
-  }
-}
-
-/* second loader */
-
-.spinner {
-  width: 56px;
-  height: 56px;
-  display: grid;
-  border: 4.5px solid #0000;
-  border-radius: 50%;
-  border-color: #dbdcef #0000;
-  animation: spinner-e04l1k 1s infinite linear;
-}
-
-.spinner::before,
-.spinner::after {
-  content: "";
-  grid-area: 1/1;
-  margin: 2.2px;
-  border: inherit;
-  border-radius: 50%;
-}
-
-.spinner::before {
-  border-color: #474bff #0000;
-  animation: inherit;
-  animation-duration: 0.5s;
-  animation-direction: reverse;
-}
-
-.spinner::after {
-  margin: 8.9px;
-}
-
-@keyframes spinner-e04l1k {
-  100% {
-    transform: rotate(1turn);
   }
 }

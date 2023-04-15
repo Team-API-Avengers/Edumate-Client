@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
-import { useQuery } from "@tanstack/react-query";
 
 const MyTeachers = () => {
   const { user } = useContext(AuthContext);
@@ -18,7 +16,7 @@ const MyTeachers = () => {
     )
       .then((res) => res.json())
       .then((result) => {
-        console.log(result?.data);
+        // console.log(result?.data);
         if (result.data !== undefined) {
           setTeachers(result?.data);
         }
