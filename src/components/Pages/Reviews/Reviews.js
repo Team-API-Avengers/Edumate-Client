@@ -6,7 +6,7 @@ import { BsArrowRight, BsFillStarFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 const Reviews = () => {
-  const { user,refetch } = useContext(AuthContext);
+  const { user, refetch } = useContext(AuthContext);
 
   const handleReview = (e) => {
     e.preventDefault();
@@ -26,13 +26,6 @@ const Reviews = () => {
     };
     console.log(userReview);
 
-
-
-
-
-
-    
-
     fetch("https://edumate-second-server.vercel.app/api/v1/feedback", {
       method: "POST",
       headers: {
@@ -45,26 +38,26 @@ const Reviews = () => {
         if (result) {
           console.log(result);
           form.reset();
-          refetch()
+          refetch();
           toast.success("Thanks for your feedback!");
         }
       });
   };
 
   return (
-    <div className="border dark:border-0 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
+    <div className="border dark:border-0 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 -mt-20 lg:mt-0">
       <div className="grid md:grid-cols-1 lg:grid-cols-2">
-        <div className="text-center lg:text-left p-12">
+        <div className="text-center lg:text-left p-12 -ml-14 lg:ml-0">
           <motion.h1
             className="font-bold"
             initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1, fontSize: "30px", color: "blue", }}
+            whileInView={{ y: 0, opacity: 1, fontSize: "30px", color: "blue" }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
           >
             Give Your Feedback
           </motion.h1>
           <motion.p
-            className="py-3"
+            className="py-3 text-2xl lg:text-base"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, type: "spring", duration: 1.5 }}
@@ -81,12 +74,15 @@ const Reviews = () => {
           </motion.div>
         </div>
         <motion.div
-          className="card mt-14"
+          className="card mt-14 -ml-8 lg:ml-0"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, type: "spring", duration: 2 }}
         >
-          <form onSubmit={handleReview} className="card  w-96 border border-blue-200 dark:border-0 p-4 lg:p-10 bg-blue-100">
+          <form
+            onSubmit={handleReview}
+            className="card  w-96 border border-blue-200 dark:border-0 p-4 lg:p-10 bg-blue-100"
+          >
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Name</label>
               <input
@@ -112,17 +108,37 @@ const Reviews = () => {
 
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">How was your experience?</label>
-              <input name='rate' type="range" min="1" max="5" className="range range-success dark:range-info" step="1" />
+              <input
+                name="rate"
+                type="range"
+                min="1"
+                max="5"
+                className="range range-success dark:range-info"
+                step="1"
+              />
               <div className="w-full flex justify-between text-xs px-2">
-                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
-                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
-                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
-                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
-                <span> <BsFillStarFill className="text-orange-400 dark:text-[#350573]" /> </span>
+                <span>
+                  {" "}
+                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />{" "}
+                </span>
+                <span>
+                  {" "}
+                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />{" "}
+                </span>
+                <span>
+                  {" "}
+                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />{" "}
+                </span>
+                <span>
+                  {" "}
+                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />{" "}
+                </span>
+                <span>
+                  {" "}
+                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />{" "}
+                </span>
               </div>
             </div>
-
-
 
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Reviews</label>
@@ -136,7 +152,7 @@ const Reviews = () => {
               ></textarea>
             </div>
             <button
-              className="cursor-pointer bg-blue-600 hover:bg-blue-700 border-0 h-10 rounded-full text-white"
+              className="cursor-pointer bg-blue-600 hover:bg-blue-700 border-0 h-10 rounded-full text-white mt-4"
               type="submit"
             >
               Sent

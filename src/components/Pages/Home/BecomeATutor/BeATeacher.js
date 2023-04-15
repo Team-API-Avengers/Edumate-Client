@@ -34,38 +34,21 @@ const childVariants = {
 };
 
 const BeATeacher = () => {
-  const {theme} = useContext(AuthContext)
+  const { theme } = useContext(AuthContext);
   return (
     <div>
       <div class="container bg-white dark:bg-[#350573] dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
         <div class=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
-          <motion.div
-            class="w-full "
-            initial={{ x: -250 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: 1.5 }}
-          >
-            <motion.div
-              class="text-start"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.h1
-                className="text-5xl  font-bold text-blue-600 dark:text-white"
-                variants={childVariants}
-              >
+          <motion.div class="w-full " initial={{ x: -250 }} whileInView={{ x: 0 }} transition={{ duration: 1.5 }}>
+            <motion.div class="text-start" variants={containerVariants} initial="hidden" animate="visible">
+              <motion.h1 className="text-5xl  font-bold text-blue-600 dark:text-white" variants={childVariants}>
                 Become a tutor
               </motion.h1>
 
-              <motion.p
-                class="mt-3 w-1/2 font-bold text-black dark:text-white"
-                variants={childVariants}
-              >
-                Instructors from around the country teach hundreds of students
-                on
-                <span className="font-bold text-blue-600 dark:text-white"> Edumate</span> .
-                Inspire Minds, Shape Futures, Join the Teaching Profession.
+              <motion.p class="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-white" variants={childVariants}>
+                Instructors from around the country teach hundreds of students on
+                <span className="font-bold text-blue-600 dark:text-white"> Edumate</span> . Inspire Minds, Shape
+                Futures, Join the Teaching Profession.
               </motion.p>
 
               <Link to={"/dashboard/add-Teacher"}>
@@ -80,9 +63,7 @@ const BeATeacher = () => {
                       <BsArrowRight />
                     </span>
 
-                    <span class="text-sm font-medium transition-all group-hover:mr-4">
-                    Get Started
-                    </span>
+                    <span class="text-sm font-medium transition-all group-hover:mr-4">Get Started</span>
                   </motion.button>
                 </div>
               </Link>
@@ -95,12 +76,11 @@ const BeATeacher = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 3 }}
           >
-            {
-              theme === 'dark' ?
-            <img class="w-96 h-60 lg:max-w-3xl" src={darkImage} alt="BeATutorImg2.png" />
-            :
-            <img class="w-96 h-60 lg:max-w-3xl" src={image} alt="BeATutorImg.png" />
-            }
+            {theme === "dark" ? (
+              <img class="w-96 h-60 lg:max-w-3xl" src={darkImage} alt="BeATutorImg2.png" />
+            ) : (
+              <img class="w-96 h-60 lg:max-w-3xl" src={image} alt="BeATutorImg.png" />
+            )}
           </motion.div>
         </div>
       </div>

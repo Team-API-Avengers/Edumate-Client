@@ -55,7 +55,7 @@ const ContactUs = () => {
                       defaultValue={user?.displayName}
                     />
                   </div>
-                  
+
                   <div>
                     <label className="label">
                       <span className="label-text dark:text-white">Email</span>
@@ -81,7 +81,6 @@ const ContactUs = () => {
                       required
                     />
                   </div>
-
 
                   <div>
                     <label className="label">
@@ -113,14 +112,13 @@ const ContactUs = () => {
                 <div className="my-2 w-1/2 lg:w-1/4">
                   <button
                     type="submit"
-                    className="uppercase text-sm font-bold tracking-wide bg-blue-600 text-gray-100 p-3 rounded w-full 
-                      focus:outline-none focus:shadow-outline"
+                    className="uppercase text-sm font-bold tracking-wide bg-blue-600 text-gray-100 p-5 lg:p-3 rounded w-full
+                      focus:outline-none focus:shadow-outline mt-6 lg:mt-0 ml-14 lg:ml-0"
                   >
                     Send Message
                   </button>
                 </div>
               </form>
-
             </div>
           </div>
         </div>
