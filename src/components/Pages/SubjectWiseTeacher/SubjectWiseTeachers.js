@@ -20,7 +20,7 @@ const SubjectWiseTeachers = () => {
   return (
     <div className="mt-8">
       <motion.h1
-        className="text-3xl font-bold"
+        className="text-3xl font-bold -mt-8 lg:mt-0"
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, type: "spring", duration: 2 }}
@@ -28,7 +28,7 @@ const SubjectWiseTeachers = () => {
         Department
       </motion.h1>
       <motion.p
-        className="mt-2"
+        className="mt-2 text-2xl lg:text-base"
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, type: "spring", duration: 2 }}
@@ -45,15 +45,15 @@ const SubjectWiseTeachers = () => {
           >
             <Link to={"/Science"}>
               <div class=" flex justify-between items-center rounded-lg border bg-white border-gray-200 p-4 h-36 hover:border-green-500 dark:hover:bg-blue-100">
-                <div className="flex">
-                  <img className="w-14 mt-3 h-12" src={science} alt="" />
+                <div className="lg:flex">
+                  <img className="w-14 mt-3 h-12 ml-6 lg:ml-0" src={science} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 text-start  text-xl font-bold">Science</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
                 </div>
-                <div className="mr-5">
+                <div className="-ml-6">
                   <IoIosArrowForward />
                 </div>
               </div>
@@ -66,15 +66,15 @@ const SubjectWiseTeachers = () => {
           >
             <Link to={"/Commerce"}>
               <div class=" flex justify-between items-center rounded-lg border  bg-white border-gray-200 p-4 h-36   hover:border-green-500 dark:hover:bg-blue-100 ">
-                <div className="flex">
-                  <img className="w-14 mt-3 h-12" src={commerce} alt="" />
+                <div className="lg:flex">
+                  <img className="w-14 mt-3 h-12 ml-6 lg:ml-0" src={commerce} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 text-start  text-xl font-bold">Commerce</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
                 </div>
-                <div className="mr-5">
+                <div className="-ml-6">
                   <IoIosArrowForward />
                 </div>
               </div>
@@ -87,15 +87,15 @@ const SubjectWiseTeachers = () => {
           >
             <Link to={"/Arts"}>
               <div class=" flex justify-between items-center rounded-lg  border bg-white border-gray-200 p-4 h-36   hover:border-green-500 dark:hover:bg-blue-100 ">
-                <div className="flex">
-                  <img className="w-14 mt-3 h-12" src={humanity} alt="" />
+                <div className="lg:flex">
+                  <img className="w-14 mt-3 h-12 ml-6 lg:ml-0" src={humanity} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 text-start  text-xl font-bold">Arts</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
                 </div>
-                <div className="mr-5">
+                <div className="-ml-6">
                   <IoIosArrowForward />
                 </div>
               </div>
@@ -108,15 +108,15 @@ const SubjectWiseTeachers = () => {
           >
             <Link to={"/all-Teachers"}>
               <div class=" flex justify-between items-center rounded-lg border bg-white dark:text-[#350573] border-gray-200 p-4 h-36 hover:border-green-500 dark:hover:bg-blue-100">
-                <div className="flex">
-                  <img className="w-14 mt-3 h-12" src={all} alt="" />
+                <div className="lg:flex">
+                  <img className="w-14 mt-3 h-12 ml-6 lg:ml-0" src={all} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 text-start  text-xl font-bold">All Department</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">10 teachers available</p>
                   </div>
                 </div>
-                <div className="mr-5">
+                <div className="-ml-6">
                   <IoIosArrowForward />
                 </div>
               </div>

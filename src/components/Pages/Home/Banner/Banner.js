@@ -14,13 +14,12 @@ const Banner = () => {
           <div class="max-w-xl mx-10 text-center sm:text-left">
             <h1 class="text-3xl font-extrabold sm:text-5xl dark:text-white">
               Let's find your
-              <strong class="block my-2 font-extrabold text-blue-700 dark:text-[#dee5ff]">
-                home teacher
-              </strong>
+              <strong class="block my-2 font-extrabold text-blue-700 dark:text-[#dee5ff]">home teacher</strong>
             </h1>
 
             <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed  dark:text-black">
-            Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of other academic, vocational and pastoral tuition.
+              Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of
+              other academic, vocational and pastoral tuition.
             </p>
 
             <div class="mt-8 flex flex-wrap gap-4 text-center">
@@ -31,7 +30,8 @@ const Banner = () => {
                 Get Started
               </a>
 
-              <Link to="/about-us"
+              <Link
+                to="/about-us"
                 class="block w-full rounded bg-white dark:text-[#350573] px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto"
               >
                 Learn More
@@ -41,8 +41,8 @@ const Banner = () => {
         </div>
       </section>
       <div className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500">
-      <h1>Hello Dear</h1>
-    </div>
+        <h1>Hello Dear</h1>
+      </div>
     </div>
   );
 };
