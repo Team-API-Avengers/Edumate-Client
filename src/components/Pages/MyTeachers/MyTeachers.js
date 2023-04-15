@@ -5,38 +5,34 @@ import Loader from "../../Shared/Loader/Loader";
 import { useQuery } from "@tanstack/react-query";
 
 const MyTeachers = () => {
-  const { loading, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   // console.log(user?.email);
-  const navigate = useNavigate();
 
   const [teachers, setTeachers] = useState([]);
-
-  // const { data: users = [] } = useQuery({
-  //   queryKey: ["user"],
-  //   queryFn: async () => {
-  //     const res = await fetch(
-  //       `https://edumate-second-server.vercel.app/api/v1/user`
-  //     );
-  //     const data = res.json();
-  //     return data;
-  //   },
-  // });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(
       `https://edumate-second-server.vercel.app/api/v1/bookings/email?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((result) => {
         console.log(result?.data);
-
         if (result.data !== undefined) {
           setTeachers(result?.data);
         }
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [user?.email]);
 
   // console.log(bookings);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className=" dark:bg-[#350573]">
       <section class="bg-white max-w-screen">

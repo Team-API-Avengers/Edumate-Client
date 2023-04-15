@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import {
   BsArrowRight,
@@ -19,7 +19,7 @@ const InstructorDetails = () => {
 
   const navigate = useNavigate();
 
-  const { loading, logUser, user } = useContext(AuthContext);
+  const { logUser, user } = useContext(AuthContext);
 
   const bookTeacher = (data) => {
     const name = data?.name;
@@ -43,8 +43,7 @@ const InstructorDetails = () => {
       fee,
     };
 
-    console.log(myTeacherData);
-
+    // console.log(myTeacherData);
     fetch(`https://edumate-second-server.vercel.app/api/v1/bookings`, {
       method: "POST",
       headers: {
@@ -54,7 +53,7 @@ const InstructorDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.status === "success") {
           toast.success("Successfully booked your teacher");
           navigate("dashboard/my-Teachers");
@@ -65,10 +64,6 @@ const InstructorDetails = () => {
         navigate("/dashboard/my-Teachers");
       });
   };
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <div>
@@ -121,10 +116,10 @@ const InstructorDetails = () => {
                 </div>
                 <p class="leading-relaxed text-start">{details?.data?.bio}</p>
 
-                <div class="flex mt-8">
+                <div class="flex ">
                   <button
                     onClick={() => bookTeacher(details.data)}
-                    class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+                    class="group relative inline-flex mt-5 items-center overflow-hidden border border-black bg-blue-600 px-8 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
                   >
                     <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                       <BsArrowRight />

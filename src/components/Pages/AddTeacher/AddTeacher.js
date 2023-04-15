@@ -17,12 +17,6 @@ const AddTeacher = () => {
   console.log(user);
   console.log(logUser);
 
-
-
-
-
-
-
   const addTeacher = (data) => {
     const img = data.photo[0];
     const formData = new FormData();
@@ -38,9 +32,6 @@ const AddTeacher = () => {
       .then((imgData) => {
         // console.log(imgData.data.url);
         if (imgData.success) {
-
-
-
           const teacherDetails = {
             name: user?.displayName,
             email: user?.email,
@@ -53,8 +44,6 @@ const AddTeacher = () => {
             bio: data.bio,
             background: data.background,
           };
-
-
 
           console.log(teacherDetails);
 
@@ -89,33 +78,7 @@ const AddTeacher = () => {
               <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
                 <div class=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                   <div class="lg:col-span-2">
-                    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                      {/* <div class="md:col-span-5">
-                        <label>Full Name</label>
-                        <input
-                          defaultValue={user?.displayName}
-                          readOnly
-                          type="text"
-                          
-                          {...register("name")}
-                          class="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-green-50"
-                          placeholder="Enter your name"
-                        />
-                      </div>
-
-                      <div class="md:col-span-5">
-                        <label>Email Address</label>
-                        <input
-                          defaultValue={user?.email}
-                          type="email"
-                          readOnly
-                          
-                          {...register("email")}
-                          class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
-                          placeholder="email@domain.com"
-                        />
-                      </div> */}
-                    </div>
+                    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>
                     <div className="grid grid-cols-2 mt-2 gap-2">
                       <div class="">
                         <label>Full Name</label>
@@ -123,7 +86,6 @@ const AddTeacher = () => {
                           defaultValue={user?.displayName}
                           readOnly
                           type="text"
-                          
                           {...register("name")}
                           class="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
                           placeholder="Enter your name"
@@ -136,7 +98,6 @@ const AddTeacher = () => {
                           defaultValue={user?.email}
                           type="email"
                           readOnly
-                          
                           {...register("email")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="email@domain.com"
@@ -161,7 +122,6 @@ const AddTeacher = () => {
                         <label>Address / Street</label>
                         <input
                           type="text"
-                          
                           {...register("location")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="Sitakunda, Chittagong"
@@ -173,7 +133,6 @@ const AddTeacher = () => {
                         <input
                           type="text"
                           {...register("fee")}
-                          
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="Average fee"
                         />
@@ -182,7 +141,6 @@ const AddTeacher = () => {
                         <label>Experience</label>
                         <input
                           type="text"
-                          
                           {...register("experience")}
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="2 years*"
@@ -192,7 +150,6 @@ const AddTeacher = () => {
                         <label>Mobile number</label>
                         <input
                           type="text"
-                          
                           {...register("number")}
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="01100233534*"
@@ -213,7 +170,6 @@ const AddTeacher = () => {
                         <textarea
                           name="message"
                           {...register("bio")}
-                          
                           placeholder="Describe yourself*"
                           class="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         ></textarea>
@@ -221,7 +177,7 @@ const AddTeacher = () => {
                       <div class="flex mt-8">
                         <button
                           type="submit"
-                          class="group relative inline-flex items-center overflow-hidden rounded bg-green-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+                          class="group relative inline-flex items-center overflow-hidden border border-black bg-green-600 px-12 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
                         >
                           <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                             <BsArrowRight />
