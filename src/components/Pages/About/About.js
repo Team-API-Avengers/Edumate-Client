@@ -62,9 +62,14 @@ const About = () => {
       </div> */}
 
       <div>
-        <div className="hero  bg-base-200 dark:bg-[#350573]  dark:text-[#fdfbff]">
+        <div className="heros  bg-base-200 dark:bg-[#350573]  dark:text-[#fdfbff]">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <motion.div initial={{ y: -256 }} whileInView={{ y: 0 }} transition={{ type: "spring", stiffness: 10 }}>
+            <motion.div
+              className="mt-32 lg:mt-0"
+              initial={{ y: -256 }}
+              whileInView={{ y: -120 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <img src={logo} className="lg:max-w-sm md:max-w-full rounded-lg shadow-2xl" alt="" />
             </motion.div>
             <motion.div
@@ -72,7 +77,7 @@ const About = () => {
               whileInView={{ opacity: 1, translateY: 30 }}
               transition={{ duration: 1 }}
             >
-              <h1 className="text-5xl font-bold  mb-8">About us</h1>
+              <h1 className="text-5xl font-bold  mb-8 -mt-24 lg:mt-0">About us</h1>
               <h1 className="text-start text-2xl font-bold">Overview :</h1>
               <p className="text-start">
                 <span className=" font-bold">Purposes :</span> Edumate provides students with access to qualified and
@@ -89,20 +94,20 @@ const About = () => {
               </p>
 
               <p className="text-start pt-6 font-bold">Features of the  Edumate Website :</p>
-              <ul>
-              <li>Authentication system with email and google.</li>
+              <ul className="text-start">
+                <li>Authentication system with email and google.</li>
                 <li>Set individual user role (Teacher & Student).</li>
                 <li>Search functionally with area-wise and subject-wise.</li>
                 <li>Testimonial section.</li>
                 <li>Terms and policy.</li>
                 <li>About, FAQ, Blog, Contibutors.</li>
               </ul>
-              
+
               <ul className="text-start mb-8">
                 <li className="font-bold">Teacher:</li>
 
                 <li>A teacher can see his students in his dashboard.</li>
-                
+
                 <li className="font-bold">Student:</li>
 
                 <li>Search functionally for finding tutors with area-wise.</li>
@@ -110,7 +115,6 @@ const About = () => {
                 <li>Tutor select & booking.</li>
                 <li>Student can give his feedback and suggestion.</li>
                 <li>Student can pay with payment system for his tutor.</li>
-                
               </ul>
 
               <Link to="/contact">
