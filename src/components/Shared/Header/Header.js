@@ -65,7 +65,7 @@ const Header = () => {
       >
         Home
       </NavLink>
-      {/* {logUser?.role === "Teacher" ? ( */}
+
       <NavLink>
         <div className="dropdown dropdown-end">
           <label
@@ -87,11 +87,6 @@ const Header = () => {
           </ul>
         </div>
       </NavLink>
-      {/*) : (
-        <NavLink to={"/blog"} className="flex  justify-center items-center">
-          Blog
-        </NavLink>
-      )} */}
 
       <NavLink
         style={navStyle}
@@ -103,7 +98,6 @@ const Header = () => {
 
       <NavLink
         style={navStyle}
-        // to={"/dashboard/contact"}
         to={"/contact"}
         className="flex justify-center items-center"
       >
@@ -122,20 +116,30 @@ const Header = () => {
 
       <NavLink
         to={"/profile"}
-        className="flex lg:hidden  dark:bg-[#350573]  dark:text-white items-center"
+        className="flex lg:hidden justify-center items-center  dark:bg-[#350573]  dark:text-white "
       >
         Profile
       </NavLink>
       {user ? (
-        <a onClick={handleLogOut} className="flex lg:hidden items-center">
+        <a
+          href="/"
+          onClick={handleLogOut}
+          className="flex lg:hidden justify-center items-center"
+        >
           Sign Out
         </a>
       ) : (
         <>
-          <NavLink to={"/login"} className="flex lg:hidden items-center">
+          <NavLink
+            to={"/login"}
+            className="flex lg:hidden justify-center mt-2  items-center"
+          >
             Sign In
           </NavLink>
-          <NavLink to={"/signUp"} className="flex lg:hidden  items-center">
+          <NavLink
+            to={"/signUp"}
+            className="flex lg:hidden justify-center mt-2   items-center"
+          >
             Sign Up
           </NavLink>
         </>
@@ -159,15 +163,18 @@ const Header = () => {
 
           <div className="hidden lg:block">{navList}</div>
 
-          <div className="flex gap-5">
+          <div className="flex justify-center gap-9 items-center">
             <div className="dropdown dropdown-end  hidden lg:block">
-              <label tabIndex={0} className="mr-5 cursor-pointer">
+              <label tabIndex={0} className=" cursor-pointer">
                 <div className="avatar online">
                   <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
                     {user ? (
-                      <img src={user?.photoURL} />
+                      <img alt="userImage" src={user?.photoURL} />
                     ) : (
-                      <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
+                      <img
+                        alt="userImage"
+                        src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png"
+                      />
                     )}
                   </div>
                 </div>
@@ -203,19 +210,19 @@ const Header = () => {
                       <Link to="/signup">Signup</Link>
                     </li>
 
-                    <label className="swap swap-rotate my-2">
+                    {/* <label className="swap swap-rotate my-2">
                       <input onClick={handleThemeSwitch} type="checkbox" />
                       <BsSunFill className="swap-on fill-current w-5 h-5" />
                       <BsMoonFill className="swap-off fill-current w-5 h-5" />
-                    </label>
+                    </label> */}
                   </>
                 )}
               </ul>{" "}
             </div>
-            <label className="swap  swap-rotate my-2">
+            <label className="swap hidden  lg:inline-flex swap-rotate mt-2">
               <input onClick={handleThemeSwitch} type="checkbox" />
-              <BsSunFill className="swap-on fill-current -mt-2 text-white text-4xl" />
-              <BsMoonFill className="swap-off fill-current -mt-2  text-black text-4xl" />
+              <BsSunFill className="swap-on fill-current  text-black text-4xl " />
+              <BsMoonFill className="swap-off fill-current -ml-7 text-yellow-500  text-4xl" />
             </label>
           </div>
 
@@ -226,19 +233,26 @@ const Header = () => {
             onClick={() => setOpenNav(!openNav)}
           >
             {openNav ? (
-              <BsChevronUp className="text-3xl " />
+              <BsChevronUp className="text-3xl text-black dark:text-white" />
             ) : (
-              <BiMenu className="text-3xl" />
+              <BiMenu className="text-3xl text-black  dark:text-white" />
             )}
           </button>
         </div>
         <MobileNav open={openNav}>
-          <div className="container mx-auto">{navList}</div>
+          <div>{navList}</div>
 
-          <div className="avatar online">
-            <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
-              <img src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png" />
-            </div>
+          <div className="flex">
+            <label className="swap swap-rotate mr-5 my-2">
+              <input onClick={handleThemeSwitch} type="checkbox" />
+              <BsSunFill className="swap-on fill-current  text-black text-4xl" />
+              <BsMoonFill className="swap-off fill-current  text-yellow-500 text-4xl" />
+            </label>
+            {/* <div className="avatar ">
+              <div className="rounded-full mt-10 h-20 ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img alt="userImage" src={user?.photoURL} />
+              </div>
+            </div> */}
           </div>
         </MobileNav>
       </Navbar>
