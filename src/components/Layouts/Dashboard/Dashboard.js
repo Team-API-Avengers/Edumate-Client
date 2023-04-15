@@ -1,62 +1,37 @@
-import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React from "react";
 import darkLogo from "../../Assets/dark-Logo.png"
-// import { AuthContext } from '../../Context/AuthProvider';
-// import Loader from '../../Loader/Loader';
 import Header from "../../Shared/Header/Header";
-import { AuthContext } from "../../Context/AuthProvider";
-// import { useQuery } from '@tanstack/react-query';
+import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
+import { Link, Outlet } from "react-router-dom";
 
 const DashBoard = () => {
-  const { logUser } = useContext(AuthContext);
-  // const [logUser, setLogUser] = useState();
-  //! fetch for getting users data from mongodb.....
-  // const { data: users } = useQuery({
-  // 	queryKey: ['users'],
-  // 	queryFn: async () => {
-  // 		try {
-  // 			const res = await fetch(`https://car-house-server-omega.vercel.app/users/${user?.email}`);
-  // 			const data = await res.json();
-  // 			return data;
-  // 		} catch (err) {
-  // 			console.error(err);
-  // 		}
-  // 	},
-  // });
-
-  // useEffect(() => {
-  // 	fetch(`https://car-house-server-omega.vercel.app/users/${user?.email}`)
-  // 		.then((res) => res.json())
-  // 		.then((result) => {
-  // 			setLogUser(result[0]);
-  // 		});
-  // }, [user?.email]);
-
-  // if (loading) {
-  // 	return <Loader></Loader>;
-  // }
+  
+  
   return (
     <div>
+      <div className="lg:block hidden">
       <Header />
+      </div>
+      <div className="block lg:hidden">
+        <DashboardHeader />
+      </div>
+
+
+
+
+       {/* Drawer Content */}
       <div className="drawer drawer-mobile">
 
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
 
 
 
         <div className="drawer-content">
           <Outlet></Outlet>
-
-          <label
-            htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button hidden"
-          >
-            Open drawer
-          </label>
         </div>
 
         <div className="drawer-side border">
-          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 w-60 bg-base-100 text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
               <img
@@ -107,7 +82,20 @@ const DashBoard = () => {
 
           </ul>
         </div>
+
+
+
+ 
+
+
+
       </div>
+
+
+
+
+
+
     </div>
   );
 };
