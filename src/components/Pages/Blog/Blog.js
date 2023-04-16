@@ -9,9 +9,10 @@ const Blog = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
+    // fetch(`blogdata.json`)
     fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
       .then((res) => res.json())
-      .then((blog) => setBlog(blog.data))
+      .then((blog) => setBlog(blog?.data))
       .finally(() => {
         setLoading(false);
       });
@@ -30,7 +31,7 @@ const Blog = () => {
         whileInView={{ scale: 2.1, translateY: 20 }}
         transition={{ duration: 1.5 }}
       >
-        Popular <span className="border-b-8 border-blue-600">Articles</span>
+        Popular <span className="border-b-4 border-blue-600">Articles</span>
       </motion.h1>
       <motion.div
         className="max-w-screen-xl mx-auto mt-36 grid grid-cols-1 lg:grid-cols-2 gap-5"
@@ -48,7 +49,7 @@ const Blog = () => {
             >
               <div class="flex items-start sm:gap-8">
                 <div>
-                  <strong class="rounded border text-start text-white  border-blue-500 bg-black px-3 py-1.5 text-[20px] font-medium ">
+                  <strong class="rounded  text-start text-blue-500  px-3 py-1 text-md font-medium ">
                     {singleBlog?.category}
                   </strong>
 
@@ -56,7 +57,7 @@ const Blog = () => {
                     {singleBlog?.title}
                   </h3>
 
-                  <p class="mt-1 text-start text-sm hover:text-black text-base-100">
+                  <p class="mt-1 text-start text-sm hover:text-white ">
                     {singleBlog?.details?.slice(0, 98)}.....
                   </p>
 
