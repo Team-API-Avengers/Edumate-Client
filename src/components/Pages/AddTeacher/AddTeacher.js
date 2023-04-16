@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 
 import { BsArrowRight } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
+import Loader from "../../Shared/Loader/Loader";
 
 const AddTeacher = () => {
   const { register, handleSubmit } = useForm();
 
+  const [submitting, setSubmitting] = useState(false);
   const { user, logUser } = useContext(AuthContext);
 
   //! from .env.local file====>
@@ -18,6 +20,7 @@ const AddTeacher = () => {
   console.log(logUser);
 
   const addTeacher = (data) => {
+    setSubmitting(true);
     const img = data.photo[0];
     const formData = new FormData();
     formData.append("image", img);
@@ -59,6 +62,7 @@ const AddTeacher = () => {
               console.log(data);
               if (data?.data) {
                 toast.success("Data inserted Successfully");
+                setSubmitting(false);
               }
             });
         }
@@ -155,12 +159,12 @@ const AddTeacher = () => {
                           placeholder="01100233534*"
                         />
                       </div>
-                      <div class="w-full space-y-0.5">
+                      <div class="w-full mt-1">
                         <label>Drop your professional image</label>
                         <input
                           {...register("photo")}
                           type="file"
-                          class="block h-12 border border-green-400 w-full cursor-pointer appearance-none rounded-md   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
+                          class="block h-12 border border-green-400 w-full cursor-pointer appearance-none rounded   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
                         />
                       </div>
                     </div>{" "}
@@ -187,6 +191,13 @@ const AddTeacher = () => {
                             Submit
                           </span>
                         </button>
+                        {submitting && (
+                          <div className="fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="text-white font-bold text-lg">
+                              Submitting data, please wait...
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
