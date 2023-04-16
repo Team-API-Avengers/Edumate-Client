@@ -40,7 +40,7 @@ const DashBoard = () => {
           </label>
         </div>
 
-        <div className="drawer-side border dark:bg-[#350573] dark:text-white shadow-lg">
+        <div className="drawer-side border dark:bg-[#350573] dark:text-white shadow-lg dark:shadow-white lg:ml-5">
           <label htmlFor="dashboard-drawer" className="drawer-overlay dark:bg-[#350573] dark:text-white shadow-lg "></label>
           <ul className="menu p-4 w-60 bg-base-100 dark:bg-[#350573] dark:text-white shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">

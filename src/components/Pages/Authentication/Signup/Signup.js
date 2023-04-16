@@ -16,6 +16,9 @@ const Signup = () => {
 
   const [signUpError, setSignUpError] = useState("");
 
+
+
+
   const navigate = useNavigate();
 
   //! from .env.local file====>
@@ -92,6 +95,7 @@ const Signup = () => {
       })
       .catch((error) => {
         console.error(error);
+        setSignUpError(error.message);
         // setPasswordError((error.message).slice(22,36));
         if (error) {
           toast.error(error.message.slice(22, 42));
@@ -126,7 +130,7 @@ const Signup = () => {
           <h3 className="text-2xl font-bold text-center border rounded-lg shadow-md dark:shadow-slate-50 p-3 text-gray-400">
             Sign Up
           </h3>
-          <Link to="/login" className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center">
+          <Link to="/authentication/login" className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center">
             Login
           </Link>
         </div>
@@ -241,7 +245,7 @@ const Signup = () => {
         </form>
         <p className="text-lg text-center sm:px-6 dark:text-white">
           Already have an account?
-          <Link to="/login" className="hover:underline mx-2">
+          <Link to="/authentication/login" className="hover:underline mx-2">
             Log in
           </Link>
         </p>
