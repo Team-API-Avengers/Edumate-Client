@@ -20,6 +20,7 @@ const InstructorDetails = () => {
   const navigate = useNavigate();
 
   const { logUser, user } = useContext(AuthContext);
+  // console.log(user);
 
   const bookTeacher = (data) => {
     const teachername = data?.name;
@@ -39,8 +40,10 @@ const InstructorDetails = () => {
       teacherimage,
       teacherexperience,
       teacherbackground,
-      email: user?.email,
       teacherfee,
+      studentEmail: user?.email,
+      studentName: user?.displayName,
+      studentImage: user?.photoURL,
     };
 
     // console.log(myTeacherData);
@@ -56,7 +59,7 @@ const InstructorDetails = () => {
         // console.log(data);
         if (data.status === "success") {
           toast.success("Successfully booked your teacher");
-          // navigate("/dashboard/my-Teachers");
+          navigate("/dashboard/my-Teachers");
         }
         if (data?.status === "error") {
           toast.error("You already booked that teacher");

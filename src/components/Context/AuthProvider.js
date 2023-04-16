@@ -1,5 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth,
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -10,7 +12,6 @@ import app from "../Firebase/Firebase.init";
 import { useQuery } from "@tanstack/react-query";
 
 export const AuthContext = createContext();
-
 
 const auth = getAuth(app);
 
@@ -27,10 +28,6 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-
-
-
-
   // useEffect(() => {
   //   fetch(
   //     `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
@@ -44,28 +41,23 @@ const AuthProvider = ({ children }) => {
   //     });
   // }, [user?.email]);
 
-	const { data: logUser = [], refetch } = useQuery({
-		queryKey: [user?.email],
-		queryFn: async () => {
-			try {
-				const res = await fetch(
-					`https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
-				);
-				const data = await res.json();
-				return data?.data;
-			} catch (err) {
-				console.error(err);
-			}
-		},
-	});
-
-
-
-  
-
+  const { data: logUser = [], refetch } = useQuery({
+    queryKey: [user?.email],
+    queryFn: async () => {
+      try {
+        const res = await fetch(
+          `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+        );
+        const data = await res.json();
+        return data?.data;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+  });
 
   // console.log("user", user);
-  console.log("logUser", logUser);
+  // console.log("logUser", logUser);
 
   const createUser = (email, password) => {
     setLoading(true);

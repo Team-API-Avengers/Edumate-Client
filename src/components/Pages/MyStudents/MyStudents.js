@@ -1,93 +1,94 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
-
 const MyStudents = () => {
-	const { user, loading } = useContext(AuthContext);
-	const [students, setStudents] = useState([{}]);
+  const { user } = useContext(AuthContext);
+  // console.log(user?.email);
 
-	useEffect(() => {
-		fetch(
-			`https://car-house-server-omega.vercel.app/mystudent?email=${user?.email}`
-		)
-			.then((data) => {
-				if (data.data !== undefined) {
-					console.log(typeof data.data);
-					console.log(data.data);
-					setStudents(data.data);
-				}
-			});
-	}, [user?.email]);
+  const [students, setStudents] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-	console.log(students);
+  useEffect(() => {
+    setLoading(true);
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/bookings/teacher/email?email=${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result?.data);
+        if (result.data !== undefined) {
+          setStudents(result?.data);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [user?.email]);
 
+  console.log(students);
 
+  if (loading) {
+    return <Loader />;
+  }
+  if (students?.length === 0) {
+    return (
+      <p className="mt-40 font-bold text-4xl">You have not any student.</p>
+    );
+  }
+  return (
+    <div className=" dark:bg-[#350573]">
+      <section class="bg-white max-w-screen">
+        <div class="container mx-auto">
+          <div class=" flex flex-wrap">
+            <div class="w-full">
+              <div class="max-w-full overflow-x-auto">
+                <table class="w-full table-auto">
+                  <thead>
+                    <tr class="bg-blue-500 text-center">
+                      <th class="w-1/6 min-w-[160px] border-l border-transparent py-4 px-3 text-lg font-semibold text-white lg:py-7 lg:px-4">
+                        Student Info
+                      </th>
 
-	if (loading) {
-		return <Loader />
-	}
+                      <th class="w-1/6 min-w-[160px] border-r border-transparent py-4 px-3 text-lg font-semibold text-white lg:py-7 lg:px-4">
+                        Delete
+                      </th>
+                    </tr>
+                  </thead>
 
+                  <tbody>
+                    {students?.map((student) => (
+                      <tr>
+                        <td class="text-dark flex  justify-center items-center gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
+                          <div className="avatar">
+                            <div className="w-12 rounded-full ">
+                              <img
+                                alt="teacherImage"
+                                src={student?.studentImage}
+                              />
+                            </div>
+                          </div>
 
-
-	return (
-		<div className=" dark:bg-[#350573]">
-			<div className='mx-12 bg-transparent'>
-				<h1 className='my-5'>My Total student : {students?.length}</h1>
-
-				{students?.map((student) => (
-					<div key={student?._id} className='card dark:shadow-lg dark:shadow-white p-2'>
-						<div className='card lg:card-side my-5 bg-base-100 shadow-xl'>
-							<img src={student?.productImg} className='lg:w-[50%]' alt='Album' />
-
-							<div className='card-body'>
-								<div className='card-body '>
-									<h2 className='card-title'>
-										<span className='text-bold text-gray-800 lg:text-lg'>
-											Name :
-										</span>
-										{student?.image}
-									</h2>
-									<p className='text-start'>
-										<span className='text-bold text-gray-800 lg:text-lg'>
-											Email :
-										</span>
-										{student?.email}
-									</p>
-									<p className='text-start'>
-										<span className='text-bold text-gray-800 lg:text-lg'>
-											Location :
-										</span>
-										{student?.sellerLocation}
-									</p>
-									<p className='text-start'>
-										<span className='text-bold text-gray-800 lg:text-lg'>
-											Number :
-										</span>
-										{student?.buyerNumber}
-									</p>
-									<div className='card-actions justify-end'>
-										{student?.resellPrice && !student?.paid && (
-											<Link to={`/dashboard/mystudent/${student?._id}`}>
-												<button className='btn bstudent-0 bg-blue-500 hover:bg-blue-600 text-white'>
-													Pay
-												</button>
-											</Link>
-										)}
-										{student?.resellPrice && student?.paid && (
-											<button className='btn bstudent-0 cursor-default bg-green-500 hover:bg-green-500 text-white'>
-												Paid
-											</button>
-										)}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-		</div>
-	);
+                          <div className="text-start">
+                            <p className="font-bold">{student?.studentName}</p>
+                            <p className="">{student?.studentEmail}</p>
+                          </div>
+                        </td>
+                        <td className="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                          <a className="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white">
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default MyStudents;
