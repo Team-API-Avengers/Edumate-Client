@@ -40,7 +40,7 @@ const SubjectWiseTeachers = () => {
         Select which department you need a teacher for
       </motion.p>
       {/* {backgrounds.map((category) => ( */}
-      <div className=" max-w-screen-lg mt-10 mb-10 mx-auto">
+      <div className=" max-w-screen-lg mt-10 mb-10 mx-auto grid grid-cols-1">
         <div class="container grid grid-cols-4 gap-10 px-5 py-1 dark:text-[#350573]  mx-auto">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -50,11 +50,7 @@ const SubjectWiseTeachers = () => {
             <Link to={"/Science"}>
               <div class=" grid grid-cols-1 hover:text-blue-500 rounded-lg border  hover:bg-white border-gray-200 p-4 h-36   hover:border-blue-500 dark:hover:bg-blue-100 ">
                 <div className="">
-                  <img
-                    className="w-14  mt-3 h-12 ml-[60px] "
-                    src={data}
-                    alt=""
-                  />
+                  <img className="w-14  mt-3 h-12 ml-[60px] " src={data} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 mr-[25px] text-xl font-bold">Science</h2>
                   </div>
@@ -73,11 +69,7 @@ const SubjectWiseTeachers = () => {
             <Link to={"/Commerce"}>
               <div class=" grid grid-cols-1 hover:text-blue-500 rounded-lg border  hover:bg-white border-gray-200 p-4 h-36   hover:border-blue-500 dark:hover:bg-blue-100 ">
                 <div className="">
-                  <img
-                    className="w-14  mt-3 h-12 ml-[60px] "
-                    src={book}
-                    alt=""
-                  />
+                  <img className="w-14  mt-3 h-12 ml-[60px] " src={book} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 mr-[25px] text-xl font-bold">Commerce</h2>
                   </div>
@@ -96,11 +88,7 @@ const SubjectWiseTeachers = () => {
             <Link to={"/Arts"}>
               <div class=" grid grid-cols-1 hover:text-blue-500 rounded-lg border  hover:bg-white border-gray-200 p-4 h-36   hover:border-blue-500 dark:hover:bg-blue-100 ">
                 <div className="">
-                  <img
-                    className="w-14  mt-3 h-12 ml-[60px] "
-                    src={help}
-                    alt=""
-                  />
+                  <img className="w-14  mt-3 h-12 ml-[60px] " src={help} alt="" />
                   <div className="ml-5">
                     <h2 class="mt-2 mr-[25px] text-xl font-bold">Arts</h2>
                   </div>
@@ -119,15 +107,9 @@ const SubjectWiseTeachers = () => {
             <Link to={"/all-Teachers"}>
               <div class=" grid grid-cols-1 hover:text-blue-500 rounded-lg border  hover:bg-white border-gray-200 p-4 h-36   hover:border-blue-500 dark:hover:bg-blue-100 ">
                 <div className="">
-                  <img
-                    className="w-14  mt-3 h-12 ml-[60px] "
-                    src={app}
-                    alt=""
-                  />
+                  <img className="w-14  mt-3 h-12 ml-[60px] " src={app} alt="" />
                   <div className="ml-5">
-                    <h2 class="mt-2 text-center -ml-5 text-xl font-bold">
-                      All Department
-                    </h2>
+                    <h2 class="mt-2 text-center -ml-5 text-xl font-bold">All Department</h2>
                   </div>
                 </div>
                 {/* <div className="-ml-6">

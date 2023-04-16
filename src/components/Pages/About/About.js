@@ -128,35 +128,6 @@ const About = () => {
       <AboutOurs></AboutOurs>
 
       <Contributors />
-
-      <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 m-10 text-white">
-        <div className="card  w-11/12 bg-blue-400 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title mb-4">
-              <BsFillTelephoneOutboundFill className="text-3xl" /> CALL US
-            </h2>
-            <h4 className="card-title">1 0172758244</h4>
-            <h4 className="card-title">1 0172758244</h4>
-          </div>
-        </div>
-        <div className="card w-11/12 bg-teal-400 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title mb-4">
-              <GoLocation className="text-3xl" /> LOCATION
-            </h2>
-            <h4 className="card-title">121 Rock Sreet, 21 Avenue, New York, NY 92103-9000</h4>
-          </div>
-        </div>
-        <div className="card w-11/12 bg-indigo-400 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title mb-4">
-              <BiTimeFive className="text-3xl" /> HOURS
-            </h2>
-            <h4 className="card-title">Mon – Fri : 11 am – 8 pm</h4>
-            <h4 className="card-title">Sat - Sun : 6 am – 8 pm</h4>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
