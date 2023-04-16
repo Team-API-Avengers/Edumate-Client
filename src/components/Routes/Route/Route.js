@@ -25,6 +25,7 @@ import AddContributors from "../../Pages/AddContributors/AddContributors";
 import Settings from "../../Layouts/Settings/Settings";
 import BannerEdit from "../../Pages/BannerEdit/BannerEdit";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Form from "../../Layouts/Form/Form";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,22 @@ const router = createBrowserRouter([
     ],
   },
 
+
+
+
+
+  {
+    path: '/authentication', element: <Form />,
+    children: [
+      {
+        path: '/authentication/login', element: <Login />,
+      },
+      {
+        path: '/authentication/signup', element: <Signup />,
+      },
+    ]
+  },
+
   {
     path: "/dashboard",
     element: <Dashboard />,
@@ -149,14 +166,7 @@ const router = createBrowserRouter([
     // element: <div>Error 404 page</div>,
   },
 
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
+  
 ]);
 
 export default router;

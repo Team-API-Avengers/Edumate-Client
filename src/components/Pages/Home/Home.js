@@ -15,7 +15,7 @@ import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
 
 const Home = () => {
-  const { loading } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
   if (loading) {
     return <Loader />;
@@ -67,9 +67,12 @@ const Home = () => {
 
     
 
-      <div id="review">
+      {
+        user?.uid &&
+        <div id="review">
         <Reviews />
       </div>
+      }
 
       <Testimonial />
 
@@ -80,10 +83,16 @@ const Home = () => {
      {/*  */}
       <AboutOurs />
 
-      <div className="mb-5" id="contact">
+      {
+        user?.uid &&
+        <div className="mb-5" id="contact">
         <ContactUs />
       </div>
+      }
+
+
       <ScrollButton />
+
     </div>
   );
 };

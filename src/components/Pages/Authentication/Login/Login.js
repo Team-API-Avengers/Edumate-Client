@@ -19,6 +19,9 @@ const Login = () => {
 
 	const [recaptcha, setRecaptcha ] = useState()
 
+
+	console.log('recaptcha', recaptcha);
+
 	const captchaRef = useRef(null)
 
 	//! react-google-recaptcha
@@ -51,10 +54,10 @@ const Login = () => {
 
 				if(result){
 					toast.success('Login successful')
-					// navigate('/')
+					navigate('/')
 
-					// form.reset();
-				navigate(from, { replace: true });
+				// navigate(from, { replace: true });
+				// navigate(`${from}`)
 				// setLoginUserEmail(data.email);
 				}
 
@@ -101,7 +104,8 @@ const Login = () => {
 					console.log(result.data);
                   if(result){
 					toast.success('Google Login successful')
-					navigate(from, { replace: true });
+					// navigate(from, { replace: true });
+					navigate(`${from}`)
                   }
 
                   
@@ -144,7 +148,7 @@ const Login = () => {
 			 
 
 				<div className="flex justify-around py-5">
-				<Link to='/signup' className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 border-gray-600 p-3 font-bold text-center">Sign Up</Link>
+				<Link to='/authentication/signup' className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 border-gray-600 p-3 font-bold text-center">Sign Up</Link>
 				<h3 className="text-2xl text-gray-400 border rounded-lg shadow-md dark:shadow-slate-50 border-gray-600 p-3 font-bold text-center">Login</h3>
 				</div>
 				
@@ -211,7 +215,7 @@ const Login = () => {
 				<p className="text-xl text-center sm:px-6 ">
 					Don't have an account?
 					<Link
-						to="/signup"
+						to="/authentication/signup"
 						className="hover:underline mx-2"
 					>
 						Sign up

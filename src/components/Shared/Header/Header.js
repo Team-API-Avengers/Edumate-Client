@@ -30,11 +30,11 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleLogOut = () => {
-    navigate("/login");
+    navigate("/authentication/login");
     logOut()
       .then(() => {
         toast.error("Log Out!");
-        navigate("/login");
+        navigate("/authentication/login");
       })
       .catch((error) => console.error(error));
   };
@@ -88,13 +88,16 @@ const Header = () => {
         </div>
       </NavLink>
 
-      <NavLink
+      {
+        user?.uid &&
+        <NavLink
         style={navStyle}
         to={"/dashboard"}
         className="flex  justify-center items-center"
       >
         Dashboard
       </NavLink>
+      }
 
       <NavLink
         style={navStyle}
@@ -131,13 +134,13 @@ const Header = () => {
       ) : (
         <>
           <NavLink
-            to={"/login"}
+            to={"/authentication/login"}
             className="flex lg:hidden justify-center mt-2  items-center"
           >
             Sign In
           </NavLink>
           <NavLink
-            to={"/signUp"}
+            to={"/authentication/signup"}
             className="flex lg:hidden justify-center mt-2   items-center"
           >
             Sign Up
@@ -166,7 +169,9 @@ const Header = () => {
 
           <div className="flex justify-center gap-9 items-center">
             <div className="dropdown dropdown-end  hidden lg:block">
-              <label tabIndex={0} className=" cursor-pointer">
+              {
+                user?.uid &&
+                <label tabIndex={0} className=" cursor-pointer">
                 <div className="avatar online">
                   <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
                     {user ? (
@@ -180,6 +185,7 @@ const Header = () => {
                   </div>
                 </div>
               </label>
+              }
               <ul
                 tabIndex={0}
                 className="mt-3 p-2 text-black dark:bg-[#862aff]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
@@ -205,10 +211,10 @@ const Header = () => {
                 ) : (
                   <>
                     <li>
-                      <Link to="/login">Login</Link>
+                      <Link to="/authentication/login">Login</Link>
                     </li>
                     <li>
-                      <Link to="/signup">Signup</Link>
+                      <Link to="/authentication/signup">Signup</Link>
                     </li>
 
                     {/* <label className="swap swap-rotate my-2">

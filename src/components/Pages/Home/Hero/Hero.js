@@ -97,24 +97,24 @@ const Hero = () => {
               <h1 tabIndex="0" className="text-indigo-700 text-4xl lg:text-6xl font-black mb-8">
                 home teacher
               </h1>
-              <p tabIndex="0" className="text-gray-800 font-regular mb-8">
+              <p tabIndex="0" className="text-gray-800 dark:text-[#2D0068] font-regular mb-8">
                 Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of
                 other academic, vocational and pastoral tuition.
               </p>
 
               <div className="bg-white lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg">
                 <div className="sm:flex items-center py-2">
-                  <a href="#review" className="flex items-center dark:text-black">
+                  <a href="#review" className="flex items-center dark:text-[#350573]">
                     <BsFillExclamationSquareFill className=" mx-1" />
                     <span>Feedback</span>
                   </a>
 
-                  <a href="#beATeacher" className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 dark:text-black">
+                  <a href="#beATeacher" className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 dark:text-[#350573]">
                     <BsFillDpadFill className="mx-1" />
                     <span>Be a teacher</span>
                   </a>
 
-                  <a href="#contact" className="flex items-center dark:text-black">
+                  <a href="#contact" className="flex items-center dark:text-[#350573]">
                     <BsFillPersonVcardFill className="mx-1" />
                     <span>Contact</span>
                   </a>
