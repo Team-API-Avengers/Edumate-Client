@@ -45,13 +45,13 @@ const AllStudents = () => {
                     />
 
                     <div class="p-5">
-                      <p class="font-bold text-xl flex    text-gray-800">
+                      <p class="font-bold text-xl flex text-gray-800">
                         <BsFillPersonFill className="mt-1 mr-3" />
 
                         {student?.name}
                       </p>
 
-                      <p class="font-bold text-md  mb-3 flex   text-gray-800">
+                      <p class="font-bold text-md   flex   text-gray-800">
                         <MdMarkEmailUnread className="mt-1 mr-3" />{" "}
                         {student?.email}
                       </p>
