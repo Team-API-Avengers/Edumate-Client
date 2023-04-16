@@ -1,8 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import {
-  // PhoneAuthProvider,
-  createUserWithEmailAndPassword,
-  getAuth,
+import { createUserWithEmailAndPassword, getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -13,6 +10,8 @@ import app from "../Firebase/Firebase.init";
 import { useQuery } from "@tanstack/react-query";
 
 export const AuthContext = createContext();
+
+
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {

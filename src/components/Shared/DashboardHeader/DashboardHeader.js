@@ -2,7 +2,7 @@ import { MobileNav, Navbar } from '@material-tailwind/react';
 import React, { useContext } from 'react';
 import { useState, useEffect } from "react";
 import { BiMenu } from 'react-icons/bi';
-import { BsChevronUp, BsFillCaretRightFill, BsMoonFill, BsSunFill } from 'react-icons/bs';
+import { BsChevronUp, BsFillCaretLeftFill, BsFillCaretRightFill, BsMoonFill, BsSunFill } from 'react-icons/bs';
 import { Link, NavLink, useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from "react-toastify";
@@ -155,12 +155,14 @@ const DashboardHeader = () => {
           <div className="container  grid grid-cols-3 items-center max-w-screen-xl  text-blue-gray-900">
 
         {/* Drawer */}
+          <div className="flex">
           <label
             htmlFor="dashboard-drawer"
             className="drawer-button col-span-1"
             >
-            <BsFillCaretRightFill className='text-[#350573] text-4xl dark:text-white' />
+            <BsFillCaretRightFill className=' text-[#350573] text-4xl dark:text-white' />
         </label>
+          </div>
 
 
           {/* Logo */}

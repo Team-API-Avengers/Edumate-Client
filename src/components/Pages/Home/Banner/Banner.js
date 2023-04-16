@@ -8,7 +8,7 @@ const Banner = () => {
   return (
     <div>
       <section className="relative  bg-[url(https://img.freepik.com/premium-photo/people-hands-holding-books-learning-studying-knowledge-education_63762-5950.jpg?w=1380)] bg-cover bg-center bg-no-repeat">
-        <div class="absolute inset-0 bg-gradient-to-r bg-white/25 from-white/25 to-white/75   sm:bg-transparent dark:bg-[#0d1425]/25 dark:from-[#1F0047]/25 dark:to-[#0F95B6]/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-r bg-white/25 from-white/25 to-white/75   sm:bg-transparent dark:bg-[#350573]/25 dark:from-[#1F0047]/25 dark:to-[#0F95B6]/50"></div>
 
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div class="max-w-xl mx-10 text-center sm:text-left">
@@ -28,7 +28,7 @@ const Banner = () => {
             <div class="mt-8 flex flex-wrap gap-4 text-center">
               <a
                 href="#search"
-                class="block w-full rounded bg-blue-600 dark:bg-[#0d1425] px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                class="block w-full rounded bg-blue-600 dark:bg-[#350573] px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
               >
                 Get Started
               </a>

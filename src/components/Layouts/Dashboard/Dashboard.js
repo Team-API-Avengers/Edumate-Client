@@ -1,12 +1,20 @@
-import React from "react";
-import darkLogo from "../../Assets/dark-Logo.png"
-import Header from "../../Shared/Header/Header";
-import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import darkLogo from "../../Assets/dark-Logo.png"
+import logo from "../../Assets/logo.png";
+import Loader from '../../Shared/Loader/Loader';
+import Header from "../../Shared/Header/Header";
+import { AuthContext } from "../../Context/AuthProvider";
+import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
+// import { useQuery } from '@tanstack/react-query';
 
 const DashBoard = () => {
+  const { theme, loading } = useContext(AuthContext);
   
-  
+
+  if (loading) {
+  	return <Loader></Loader>;
+  }
   return (
     <div>
       <div className="lg:block hidden">
@@ -15,11 +23,6 @@ const DashBoard = () => {
       <div className="block lg:hidden">
         <DashboardHeader />
       </div>
-
-
-
-
-       {/* Drawer Content */}
       <div className="drawer drawer-mobile">
 
         <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
@@ -28,20 +31,26 @@ const DashBoard = () => {
 
         <div className="drawer-content">
           <Outlet></Outlet>
+
+          <label
+            htmlFor="dashboard-drawer"
+            className="btn btn-primary drawer-button hidden"
+          >
+            Open drawer
+          </label>
         </div>
 
-        <div className="drawer-side border">
-          <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-60 bg-base-100 text-base-content">
+        <div className="drawer-side border dark:bg-[#350573] dark:text-white shadow-lg">
+          <label htmlFor="dashboard-drawer" className="drawer-overlay dark:bg-[#350573] dark:text-white shadow-lg "></label>
+          <ul className="menu p-4 w-60 bg-base-100 dark:bg-[#350573] dark:text-white shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
-              <img
-                src={darkLogo}
-                className="mr-3 h-6 sm:h-9 rounded-lg"
-                alt="darkLogo"
-              />
-              <span className="self-center text-xl font-semibold  ">
-                Edumate
-              </span>
+            <span className="text-4xl font-bold">
+              {theme === "dark" ? (
+                <img className="w-32" src={darkLogo} alt="darkLogo" />
+              ) : (
+                <img className="w-32" src={logo} alt="logo" />
+              )}
+            </span>
             </Link>
             <li className=" ">
               <Link to="/dashboard/My-Profile">My Profile</Link>
@@ -82,20 +91,7 @@ const DashBoard = () => {
 
           </ul>
         </div>
-
-
-
- 
-
-
-
       </div>
-
-
-
-
-
-
     </div>
   );
 };
