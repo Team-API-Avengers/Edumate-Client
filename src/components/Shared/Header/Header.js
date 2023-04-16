@@ -13,7 +13,7 @@ import darkLogo from "../../Assets/dark-Logo.png";
 const Header = () => {
   const { user, logOut, logUser, theme, setTheme } = useContext(AuthContext);
 
-  console.log("header logUser role", logUser);
+  // console.log("header logUser role", logUser);
 
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -150,7 +150,6 @@ const Header = () => {
   return (
     <div>
       <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
-
         <div className="container mx-auto flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={"/"}>
             <span className="text-4xl font-bold">
@@ -221,7 +220,11 @@ const Header = () => {
               </ul>{" "}
             </div>
             <label className="swap hidden  lg:inline-flex swap-rotate mt-2">
-              <input onClick={handleThemeSwitch} className="hidden" type="checkbox" />
+              <input
+                onClick={handleThemeSwitch}
+                className="hidden"
+                type="checkbox"
+              />
               <BsSunFill className="swap-on fill-current  text-white text-4xl " />
               <BsMoonFill className="swap-off fill-current -ml-7 text-yellow-500  text-4xl" />
             </label>
@@ -246,17 +249,16 @@ const Header = () => {
 
           <div className="flex">
             <label className="swap swap-rotate mr-5 my-2">
-              <input onClick={handleThemeSwitch} className="hidden" type="checkbox" />
+              <input
+                onClick={handleThemeSwitch}
+                className="hidden"
+                type="checkbox"
+              />
               <BsSunFill className="swap-on fill-current  text-white text-4xl" />
               <BsMoonFill className="swap-off fill-current  text-yellow-500 text-4xl" />
             </label>
-           
-             
           </div>
-
         </MobileNav>
-
-        
       </Navbar>
     </div>
   );

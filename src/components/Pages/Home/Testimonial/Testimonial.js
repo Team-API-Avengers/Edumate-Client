@@ -1,5 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { BsArrowRightShort, BsFacebook, BsFillStarFill, BsInstagram, BsTwitter } from "react-icons/bs";
+import {
+  BsArrowRightShort,
+  BsFacebook,
+  BsFillStarFill,
+  BsInstagram,
+  BsTwitter,
+} from "react-icons/bs";
 import { ImQuotesLeft } from "react-icons/im";
 import TestimonialModal from "../../../Modals/TestimonialModal/TestimonialModal";
 import { motion } from "framer-motion";
@@ -20,13 +26,15 @@ const Testimonial = () => {
   const [showAll, setShowAll] = useState(false);
 
   const getCategoryData = async () => {
-    const response = await fetch("https://edumate-second-server.vercel.app/api/v1/feedback");
+    const response = await fetch(
+      "https://edumate-second-server.vercel.app/api/v1/feedback"
+    );
     const data = await response.json();
     setCategoryData(data);
     refetch();
   };
 
-  console.log("all", categoryData);
+  // console.log("all", categoryData);
 
   const handleShowAllClick = () => {
     setShowAll(true);
@@ -50,7 +58,7 @@ const Testimonial = () => {
       });
   }, [refetch]);
 
-  console.log("modalData", modalData?.name);
+  // console.log("modalData", modalData?.name);
 
   return (
     <div>
@@ -87,7 +95,9 @@ const Testimonial = () => {
                 />
 
                 <div className="flex-1 my-4">
-                  <p className="text-xl font-semibold leading-snug">{feedback?.name}</p>
+                  <p className="text-xl font-semibold leading-snug">
+                    {feedback?.name}
+                  </p>
                   <p className="flex justify-center text-orange-400 dark:text-[#350573] my-2">
                     {feedback?.rate === 1 && <BsFillStarFill />}
                     {feedback?.rate === 2 && (
@@ -142,13 +152,21 @@ const Testimonial = () => {
                   </h1>
                 </div>
                 <div className="flex items-center justify-center p-3 space-x-3 border-t-2 border-green-300  dark:border-[#350573]">
-                  <a href="#" title="Facebook" className="flex items-center p-1">
+                  <a
+                    href="#"
+                    title="Facebook"
+                    className="flex items-center p-1"
+                  >
                     <BsFacebook />
                   </a>
                   <a href="#" title="Twitter" className="flex items-center p-1">
                     <BsTwitter />
                   </a>
-                  <a href="#" title="Instagram" className="flex items-center p-1">
+                  <a
+                    href="#"
+                    title="Instagram"
+                    className="flex items-center p-1"
+                  >
                     <BsInstagram />
                   </a>
                 </div>
@@ -168,7 +186,9 @@ const Testimonial = () => {
                     />
 
                     <div className="flex-1 my-4">
-                      <p className="text-xl font-semibold leading-snug">{feedback?.name}</p>
+                      <p className="text-xl font-semibold leading-snug">
+                        {feedback?.name}
+                      </p>
                       <p className="flex justify-center text-orange-400 dark:text-[#350573] my-2">
                         {feedback?.rate === 1 && <BsFillStarFill />}
                         {feedback?.rate === 2 && (
@@ -223,13 +243,25 @@ const Testimonial = () => {
                       </h1>
                     </div>
                     <div className="flex items-center justify-center p-3 space-x-3 border-t-2 border-green-300 dark:border-[#350573]">
-                      <a href="#" title="Facebook" className="flex items-center p-1">
+                      <a
+                        href="#"
+                        title="Facebook"
+                        className="flex items-center p-1"
+                      >
                         <BsFacebook />
                       </a>
-                      <a href="#" title="Twitter" className="flex items-center p-1">
+                      <a
+                        href="#"
+                        title="Twitter"
+                        className="flex items-center p-1"
+                      >
                         <BsTwitter />
                       </a>
-                      <a href="#" title="Instagram" className="flex items-center p-1">
+                      <a
+                        href="#"
+                        title="Instagram"
+                        className="flex items-center p-1"
+                      >
                         <BsInstagram />
                       </a>
                     </div>

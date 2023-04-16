@@ -7,7 +7,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 // import img from "../../Assets/contact.jpg";
 const ContactUs = () => {
   const { user, logUser } = useContext(AuthContext);
-  console.log(logUser);
+  // console.log(logUser);
   const [state, handleSubmit] = useForm("mayzpvjq");
   if (state.succeeded) {
     toast.success("Thanks for contact");
@@ -71,7 +71,9 @@ const ContactUs = () => {
 
                   <div>
                     <label className="label">
-                      <span className="label-text dark:text-white">Subject</span>
+                      <span className="label-text dark:text-white">
+                        Subject
+                      </span>
                     </label>
                     <input
                       className="w-full   border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
@@ -84,7 +86,9 @@ const ContactUs = () => {
 
                   <div>
                     <label className="label">
-                      <span className="label-text dark:text-white">Mobile number</span>
+                      <span className="label-text dark:text-white">
+                        Mobile number
+                      </span>
                     </label>
                     <input
                       className="w-full  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
