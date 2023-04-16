@@ -24,6 +24,7 @@ import MyStudents from "../../Pages/MyStudents/MyStudents";
 import AddContributors from "../../Pages/AddContributors/AddContributors";
 import Settings from "../../Layouts/Settings/Settings";
 import BannerEdit from "../../Pages/BannerEdit/BannerEdit";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -76,7 +77,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addBlog",
-        element: <AddBlog />,
+        element: <PrivateRoute><AddBlog /></PrivateRoute> ,
       },
       {
         path: "/:background",
@@ -100,7 +101,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/add-Teacher",
-        element: <AddTeacher />,
+        element: <PrivateRoute><AddTeacher /></PrivateRoute> ,
       },
       {
         path: "/dashboard/My-Profile",

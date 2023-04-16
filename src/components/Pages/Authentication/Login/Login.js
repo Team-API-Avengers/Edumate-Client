@@ -51,10 +51,10 @@ const Login = () => {
 
 				if(result){
 					toast.success('Login successful')
-					navigate('/')
+					// navigate('/')
 
 					// form.reset();
-				// navigate(from, { replace: true });
+				navigate(from, { replace: true });
 				// setLoginUserEmail(data.email);
 				}
 
@@ -101,7 +101,7 @@ const Login = () => {
 					console.log(result.data);
                   if(result){
 					toast.success('Google Login successful')
-					navigate('/')
+					navigate(from, { replace: true });
                   }
 
                   
