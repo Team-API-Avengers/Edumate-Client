@@ -16,7 +16,7 @@ const MyTeachers = () => {
     )
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result?.data);
+        console.log(result?.data);
         if (result.data !== undefined) {
           setTeachers(result?.data);
         }

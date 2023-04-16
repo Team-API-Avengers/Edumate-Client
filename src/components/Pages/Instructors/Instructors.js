@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { BsArrowRight, BsArrowRightShort, BsFillPersonFill, BsHourglassSplit } from "react-icons/bs";
+import {
+  BsArrowRight,
+  BsArrowRightShort,
+  BsFillPersonFill,
+  BsHourglassSplit,
+} from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -39,7 +44,8 @@ const Instructors = () => {
 
                       <div class="p-5">
                         <h5 class="text-green-600  dark:text-black font-bold text-md flex tracking-tight">
-                          <FaBookReader className="mt-1   text-black ml-1 mr-2" /> {instructor?.background}
+                          <FaBookReader className="mt-1   text-black ml-1 mr-2" />{" "}
+                          {instructor?.background}
                         </h5>
 
                         <p class="font-bold text-xl flex    text-gray-800">
@@ -49,7 +55,8 @@ const Instructors = () => {
                         </p>
 
                         <p class="font-bold text-md  mb-3 flex   text-gray-800">
-                          <BsHourglassSplit className="mt-1 text-xl mr-2" /> {instructor?.experience} years experience
+                          <BsHourglassSplit className="mt-1 text-xl mr-2" />{" "}
+                          {instructor?.experience} years experience
                         </p>
                         <div>
                           <Link to={`/instructor/${instructor?._id}`}>
@@ -57,7 +64,9 @@ const Instructors = () => {
                               <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                               </span>
-                              <span class="button-text dark:text-white">Learn More</span>
+                              <span class="button-text dark:text-white">
+                                Learn More
+                              </span>
                             </button>
                           </Link>
                         </div>
