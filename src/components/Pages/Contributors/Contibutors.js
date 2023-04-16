@@ -29,16 +29,14 @@ const Contributors = () => {
           </motion.div>
 
           <div className="-mx-3 flex flex-wrap justify-center">
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
+            <motion.div
+              className="w-full px-4 md:w-1/2 xl:w-1/3"
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
-                <motion.div
-                  className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer"
-                  whileHover={{
-                    border: " 5px solid",
-                    borderImage: "linear-gradient(45deg, purple, orange) 1",
-                  }}
-                  transition={{ duration: 1.5 }}
-                >
+                <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
                     src="https://i.ibb.co/y4mCHG8/247348789-2981718772092667-3655152680050390712-n.jpg"
                     alt="image"
@@ -224,11 +222,16 @@ const Contributors = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
+            <motion.div
+              className="w-full px-4 md:w-1/2 xl:w-1/3"
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img src={yusuf} alt="image" className="w-full h-80 object-cover" />
@@ -414,9 +417,14 @@ const Contributors = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
+            <motion.div
+              className="w-full px-4 md:w-1/2 xl:w-1/3"
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
@@ -606,9 +614,14 @@ const Contributors = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
+            <motion.div
+              className="w-full px-4 md:w-1/2 xl:w-1/3"
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
@@ -798,9 +811,14 @@ const Contributors = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
+            <motion.div
+              className="w-full px-4 md:w-1/2 xl:w-1/3"
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
@@ -990,9 +1008,14 @@ const Contributors = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
+            <motion.div
+              className="w-full px-4 md:w-1/2 xl:w-1/3"
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
+            >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
@@ -1182,7 +1205,7 @@ const Contributors = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
