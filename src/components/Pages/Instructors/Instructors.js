@@ -27,7 +27,7 @@ const Instructors = () => {
     return <Loader />;
   }
   return (
-    <div className="m-5">
+    <div className="m-5 ">
       <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 md:gap-6  gap-4 max-w-screen-xl mx-auto">
         {allInstructor?.data?.map((instructor) => {
           return (
