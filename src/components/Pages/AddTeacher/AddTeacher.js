@@ -57,8 +57,8 @@ const AddTeacher = () => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
-              if (data.data) {
-                toast.success("success");
+              if (data?.data) {
+                toast.success("Data inserted Successfully");
               }
             });
         }
@@ -124,7 +124,7 @@ const AddTeacher = () => {
                           type="text"
                           {...register("location")}
                           class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
-                          placeholder="Sitakunda, Chittagong"
+                          placeholder="Chittagong"
                         />
                       </div>
 
@@ -156,7 +156,7 @@ const AddTeacher = () => {
                         />
                       </div>
                       <div class="w-full space-y-0.5">
-                        <label>You should add an unique image</label>
+                        <label>Drop your professional image</label>
                         <input
                           {...register("photo")}
                           type="file"

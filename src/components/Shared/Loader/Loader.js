@@ -13,7 +13,6 @@ const Loader = () => {
         </div>
         <div className="loader">Loading</div>
       </div>
-      {/* <div class="spinner"></div> */}
     </div>
   );
 };
