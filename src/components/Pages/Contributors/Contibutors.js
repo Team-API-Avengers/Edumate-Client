@@ -244,7 +244,8 @@ const Contributors = () => {
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
-                    src=""
+                    // src="https://i.ibb.co/zJWMfbz/myphotoinlibrary.jpg"
+                    src="https://i.ibb.co/YQQyy7W/IMG-20220115-WA0002.jpg"
                     alt="image"
                     className="w-full h-80 object-cover"
                   />
@@ -451,9 +452,9 @@ const Contributors = () => {
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
                   <img
-                    src="https://drive.google.com/file/d/1c0EvVAmFgv1hQWazPwzIDzTT3IhY_LZP/view?usp=share_link"
-                    alt="image"
+                    src="https://i.ibb.co/YWNnnR1/IMG20220806224604.jpg"
                     className="w-full h-80 object-cover"
+                    alt="SarwarImage"
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
