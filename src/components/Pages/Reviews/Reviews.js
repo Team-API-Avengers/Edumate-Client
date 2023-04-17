@@ -45,8 +45,8 @@ const Reviews = () => {
   };
 
   return (
-    <div className="border dark:border-0 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 -mt-20 lg:mt-0">
-      <div className="grid md:grid-cols-1 lg:grid-cols-2">
+    <div className=" border border-blue-400 dark:border-0 px-8 py-16 mx-auto md:grid-cols-2 md:px-12 lg:px-10 lg:m-20 shadow-md ">
+      <div className="container flex flex-col lg:flex-row  justify-evenly">
         <div className="text-center lg:text-left p-12 -ml-14 lg:ml-0">
           <motion.h1
             className="font-bold"
@@ -81,12 +81,12 @@ const Reviews = () => {
         >
           <form
             onSubmit={handleReview}
-            className="card  w-96 border border-blue-200 dark:border-0 p-4 lg:p-10 bg-blue-100"
+            className="card  w-full border border-blue-200 dark:border-0 p-4 lg:p-8 bg-slate-200  shadow-md rounded-none"
           >
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Name</label>
               <input
-                className="block border dark:text-black border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none"
+                className="block border border-t-0 border-blue-400 dark:text-black w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
                 defaultValue={user?.displayName}
                 type="text"
@@ -97,7 +97,7 @@ const Reviews = () => {
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Email</label>
               <input
-                className="block border dark:text-black border-gray-300 w-full h-10 px-5 py-3 rounded-md outline-none"
+                className="block border border-t-0 border-blue-400 shadow-md dark:text-black  w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
                 defaultValue={user?.email}
                 type="text"
@@ -144,7 +144,7 @@ const Reviews = () => {
               <label className="flex justify-start mb-3 dark:text-black">Reviews</label>
               <textarea
                 required
-                className="block dark:text-black cursor-pointer border border-gray-300 w-full p-5 rounded-md"
+                className="block dark:text-black border border-t-0 border-blue-400 cursor-pointer w-full p-5 rounded-md"
                 name="message"
                 id=""
                 cols="30"
@@ -160,7 +160,7 @@ const Reviews = () => {
           </form>
         </motion.div>
       </div>
-    </div>
+    </div >
   );
 };
 
