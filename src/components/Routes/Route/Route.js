@@ -26,6 +26,7 @@ import Settings from "../../Layouts/Settings/Settings";
 import BannerEdit from "../../Pages/BannerEdit/BannerEdit";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Form from "../../Layouts/Form/Form";
+import Reviews from "../../Pages/Reviews/Reviews";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
+        path: "/feedback",
+        element: <Reviews />,
+      },
+      {
         path: "/blog",
         element: <Blog />,
       },
@@ -78,7 +83,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addBlog",
-        element: <PrivateRoute><AddBlog /></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <AddBlog />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/:background",
@@ -92,20 +101,19 @@ const router = createBrowserRouter([
     ],
   },
 
-
-
-
-
   {
-    path: '/authentication', element: <Form />,
+    path: "/authentication",
+    element: <Form />,
     children: [
       {
-        path: '/authentication/login', element: <Login />,
+        path: "/authentication/login",
+        element: <Login />,
       },
       {
-        path: '/authentication/signup', element: <Signup />,
+        path: "/authentication/signup",
+        element: <Signup />,
       },
-    ]
+    ],
   },
 
   {
@@ -118,7 +126,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/add-Teacher",
-        element: <PrivateRoute><AddTeacher /></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <AddTeacher />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/My-Profile",
@@ -165,8 +177,6 @@ const router = createBrowserRouter([
     element: <Error />,
     // element: <div>Error 404 page</div>,
   },
-
-  
 ]);
 
 export default router;
