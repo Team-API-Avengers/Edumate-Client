@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { BiMenu } from "react-icons/bi";
 import {
   BsChevronUp,
-  BsFillCaretLeftFill,
   BsFillCaretRightFill,
   BsMoonFill,
   BsSunFill,
@@ -16,7 +15,7 @@ import logo from "../../Assets/logo.png";
 import darkLogo from "../../Assets/dark-Logo.png";
 
 const DashboardHeader = () => {
-  const { user, logOut, logUser, theme, setTheme } = useContext(AuthContext);
+  const { user, logOut, theme, setTheme } = useContext(AuthContext);
 
   // console.log("header logUser role", logUser);
 
@@ -64,71 +63,73 @@ const DashboardHeader = () => {
   const navList = (
     <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
       <NavLink
-        style={navStyle}
-        to={"/"}
+        style={ navStyle }
+        to={ "/" }
         className="flex   justify-center items-center"
       >
         Home
       </NavLink>
 
       <NavLink>
-        <div className="dropdown dropdown-end">
-          <label
-            tabIndex={0}
-            className=" flex   justify-center items-center rounded-btn"
-          >
-            Blog
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
-          >
-            <li>
-              <NavLink to={"/blog"}>Blog</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/addBlog"}>Add Blog</NavLink>
-            </li>
-          </ul>
-        </div>
+        <>
+          <div className="dropdown dropdown-end">
+            <label
+              tabIndex={ 0 }
+              className=" flex   justify-center items-center rounded-btn"
+            >
+              Blog
+            </label>
+            <ul
+              tabIndex={ 0 }
+              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
+            >
+              <li>
+                <NavLink to={ "/blog" }>Blog</NavLink>
+              </li>
+              <li>
+                <NavLink to={ "/addBlog" }>Add Blog</NavLink>
+              </li>
+            </ul>
+          </div>
+        </>
       </NavLink>
 
       <NavLink
-        style={navStyle}
-        to={"/dashboard"}
+        style={ navStyle }
+        to={ "/dashboard" }
         className="flex  justify-center items-center"
       >
         Dashboard
       </NavLink>
 
       <NavLink
-        style={navStyle}
-        to={"/contact"}
+        style={ navStyle }
+        to={ "/contact" }
         className="flex justify-center items-center"
       >
         Contact
       </NavLink>
 
       <NavLink
-        style={navStyle}
-        to={"/about-us"}
+        style={ navStyle }
+        to={ "/about-us" }
         className="flex justify-center items-center"
       >
         About
       </NavLink>
 
-      {/* Profile Items */}
+      {/* Profile Items */ }
 
       <NavLink
-        to={"/profile"}
+        to={ "/profile" }
         className="flex lg:hidden justify-center items-center  dark:bg-[#350573]  dark:text-white "
       >
         Profile
       </NavLink>
-      {user ? (
+      { user ? (
         <a
           href="/"
-          onClick={handleLogOut}
+          onClick={ handleLogOut }
           className="flex lg:hidden justify-center items-center"
         >
           Sign Out
@@ -136,19 +137,19 @@ const DashboardHeader = () => {
       ) : (
         <>
           <NavLink
-            to={"/login"}
+            to={ "/login" }
             className="flex lg:hidden justify-center mt-2  items-center"
           >
             Sign In
           </NavLink>
           <NavLink
-            to={"/signUp"}
+            to={ "/signUp" }
             className="flex lg:hidden justify-center mt-2   items-center"
           >
             Sign Up
           </NavLink>
         </>
-      )}
+      ) }
     </ul>
   );
 
@@ -156,7 +157,7 @@ const DashboardHeader = () => {
     <div>
       <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="container  grid grid-cols-3 items-center max-w-screen-xl  text-blue-gray-900">
-          {/* Drawer */}
+          {/* Drawer */ }
           <div className="flex">
             <label
               htmlFor="dashboard-drawer"
@@ -166,39 +167,39 @@ const DashboardHeader = () => {
             </label>
           </div>
 
-          {/* Logo */}
-          <Link className=" col-span-1" to={"/"}>
+          {/* Logo */ }
+          <Link className=" col-span-1" to={ "/" }>
             <span className="text-4xl font-bold">
-              {theme === "dark" ? (
-                <img className="w-16 lg:w-32" src={darkLogo} alt="darkLogo" />
+              { theme === "dark" ? (
+                <img className="w-16 lg:w-32" src={ darkLogo } alt="darkLogo" />
               ) : (
-                <img className="w-16 lg:w-32" src={logo} alt="logo" />
-              )}
+                <img className="w-16 lg:w-32" src={ logo } alt="logo" />
+              ) }
             </span>
           </Link>
 
-          {/* Menu Button */}
+          {/* Menu Button */ }
           <button
             variant="text"
             className="ml-auto col-span-1 h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-            ripple={false}
-            onClick={() => setOpenNav(!openNav)}
+
+            onClick={ () => setOpenNav(!openNav) }
           >
-            {openNav ? (
+            { openNav ? (
               <BsChevronUp className="text-3xl text-black dark:text-white" />
             ) : (
               <BiMenu className="text-3xl text-black  dark:text-white" />
-            )}
+            ) }
           </button>
         </div>
 
-        <MobileNav open={openNav}>
-          <div>{navList}</div>
+        <MobileNav open={ openNav }>
+          <div>{ navList }</div>
 
           <div className="flex">
             <label className="swap swap-rotate mr-5 my-2">
               <input
-                onClick={handleThemeSwitch}
+                onClick={ handleThemeSwitch }
                 className="hidden"
                 type="checkbox"
               />

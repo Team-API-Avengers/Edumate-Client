@@ -25,7 +25,7 @@ const AddTeacher = () => {
     const formData = new FormData();
     formData.append("image", img);
 
-    const url = `https://api.imgbb.com/1/upload?key=${imgHostKey}`;
+    const url = `https://api.imgbb.com/1/upload?key=${ imgHostKey }`;
 
     fetch(url, {
       method: "POST",
@@ -70,47 +70,47 @@ const AddTeacher = () => {
   };
   return (
     <div className="bg-base-200  dark:bg-[#350573]  dark:text-[#fcf9ff]">
-      <form onSubmit={handleSubmit(addTeacher)}>
-        <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
-          <div class="container max-w-screen-lg mx-auto">
+      <form onSubmit={ handleSubmit(addTeacher) }>
+        <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
+          <div className="container max-w-screen-lg mx-auto">
             <div>
-              <h2 class="font-semibold text-5xl text-gray-900">Be a teacher</h2>
-              <p class="text-gray-800 mt-2 mb-6">
+              <h2 className="font-semibold text-5xl text-gray-900">Be a teacher</h2>
+              <p className="text-gray-800 mt-2 mb-6">
                 Empowering Generations, Start Your Teaching Journey Now
               </p>
 
-              <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-                <div class=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-                  <div class="lg:col-span-2">
-                    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>
+              <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+                <div className=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+                  <div className="lg:col-span-2">
+                    <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>
                     <div className="grid grid-cols-2 mt-2 gap-2">
-                      <div class="">
+                      <div className="">
                         <label>Full Name</label>
                         <input
-                          defaultValue={user?.displayName}
+                          defaultValue={ user?.displayName }
                           readOnly
                           type="text"
-                          {...register("name")}
-                          class="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
+                          { ...register("name") }
+                          className="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
                           placeholder="Enter your name"
                         />
                       </div>
 
-                      <div class="">
+                      <div className="">
                         <label>Email Address</label>
                         <input
-                          defaultValue={user?.email}
+                          defaultValue={ user?.email }
                           type="email"
                           readOnly
-                          {...register("email")}
-                          class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
+                          { ...register("email") }
+                          className="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="email@domain.com"
                         />
                       </div>
-                      <div class="">
+                      <div className="">
                         <label>Background</label>
                         <select
-                          {...register("background")}
+                          { ...register("background") }
                           className="select  h-11 border border-green-400 mt-1 rounded   w-full bg-sky-50 "
                         >
                           <option disabled selected>
@@ -122,73 +122,73 @@ const AddTeacher = () => {
                         </select>
                       </div>
 
-                      <div class="">
+                      <div className="">
                         <label>Address / Street</label>
                         <input
                           type="text"
-                          {...register("location")}
-                          class="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
+                          { ...register("location") }
+                          className="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="Chittagong"
                         />
                       </div>
 
-                      <div class="">
+                      <div className="">
                         <label>Average fee</label>
                         <input
                           type="text"
-                          {...register("fee")}
-                          class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          { ...register("fee") }
+                          className="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="Average fee"
                         />
                       </div>
-                      <div class="">
+                      <div className="">
                         <label>Experience</label>
                         <input
                           type="text"
-                          {...register("experience")}
-                          class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          { ...register("experience") }
+                          className="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="2 years*"
                         />
                       </div>
-                      <div class="">
+                      <div className="">
                         <label>Mobile number</label>
                         <input
                           type="text"
-                          defaultValue={logUser?.phone}
-                          {...register("number")}
-                          class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          defaultValue={ logUser?.phone }
+                          { ...register("number") }
+                          className="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="01100233534*"
                         />
                       </div>
-                      <div class="w-full mt-1">
+                      <div className="w-full mt-1">
                         <label>Drop your professional image</label>
                         <input
-                          {...register("photo")}
+                          { ...register("photo") }
                           type="file"
-                          class="block h-12 border border-green-400 w-full cursor-pointer appearance-none rounded   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
+                          className="block h-12 border border-green-400 w-full cursor-pointer appearance-none rounded   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
                         />
                       </div>
-                    </div>{" "}
+                    </div>{ " " }
                     <div className="mt-2">
                       <label>Describe yourself</label>
-                      <div class="">
+                      <div className="">
                         <textarea
                           name="message"
-                          {...register("bio")}
+                          { ...register("bio") }
                           placeholder="Describe yourself*"
-                          class="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                          className="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         ></textarea>
-                      </div>{" "}
-                      <div class="flex mt-8">
+                      </div>{ " " }
+                      <div className="flex mt-8">
                         <button
                           type="submit"
-                          class="group relative inline-flex items-center overflow-hidden border border-black bg-green-600 px-12 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
+                          className="group relative inline-flex items-center overflow-hidden border border-black bg-green-600 px-12 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
                         >
-                          <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
+                          <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                             <BsArrowRight />
                           </span>
 
-                          <span class="text-sm font-medium transition-all group-hover:mr-4">
+                          <span className="text-sm font-medium transition-all group-hover:mr-4">
                             Submit
                           </span>
                         </button>
