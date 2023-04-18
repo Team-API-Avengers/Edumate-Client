@@ -88,16 +88,15 @@ const Header = () => {
         </div>
       </NavLink>
 
-      {
-        user?.uid &&
-        <NavLink
+      {/* {user?.uid && ( */}
+      <NavLink
         style={navStyle}
         to={"/dashboard"}
         className="flex  justify-center items-center"
       >
         Dashboard
       </NavLink>
-      }
+      {/* )} */}
 
       <NavLink
         style={navStyle}
@@ -168,23 +167,23 @@ const Header = () => {
 
           <div className="flex justify-center gap-9 items-center">
             <div className="dropdown dropdown-end  hidden lg:block">
-              {
-                user?.uid &&
-                <label tabIndex={0} className=" cursor-pointer">
-                <div className="avatar online">
-                  <div className="w-12 rounded-full  ring ring-primary ring-offset-base-100 ring-offset-2">
+              {/* {user?.uid && ( */}
+              <label tabIndex={0} className=" cursor-pointer">
+                <div className="avatar mt-3 ">
+                  <div className="w-12 rounded-full ring  ">
                     {user ? (
                       <img alt="userImage" src={user?.photoURL} />
                     ) : (
                       <img
                         alt="userImage"
-                        src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png"
+                        // src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png"
+                        src="https://static.vecteezy.com/system/resources/previews/007/319/933/original/black-avatar-person-icons-user-profile-icon-vector.jpg"
                       />
                     )}
                   </div>
                 </div>
               </label>
-              }
+              {/* )} */}
               <ul
                 tabIndex={0}
                 className="mt-3 p-2 text-black dark:bg-[#862aff]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
@@ -238,7 +237,7 @@ const Header = () => {
 
           <button
             variant="text"
-            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            className="  h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
             ripple={false}
             onClick={() => setOpenNav(!openNav)}
           >
