@@ -14,9 +14,9 @@ const AddTeacher = () => {
 
   //! from .env.local file====>
   const imgHostKey = process.env.REACT_APP_Imgbb_key;
-  console.log(imgHostKey);
+  // console.log(imgHostKey);
 
-  console.log(user);
+  // console.log(user);
   console.log(logUser);
 
   const addTeacher = (data) => {
@@ -154,6 +154,7 @@ const AddTeacher = () => {
                         <label>Mobile number</label>
                         <input
                           type="text"
+                          defaultValue={logUser?.phone}
                           {...register("number")}
                           class="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="01100233534*"
@@ -191,13 +192,13 @@ const AddTeacher = () => {
                             Submit
                           </span>
                         </button>
-                        {submitting && (
+                        {/* {submitting && (
                           <div className="fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-black bg-opacity-50">
                             <div className="text-white font-bold text-lg">
                               Submitting data, please wait...
                             </div>
                           </div>
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </div>
