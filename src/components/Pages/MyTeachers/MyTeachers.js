@@ -12,7 +12,7 @@ const MyTeachers = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://edumate-second-server.vercel.app/api/v1/bookings/student/email?email=${user?.email}`
+      `https://edumate-second-server.vercel.app/api/v1/bookings/student/email?email=${ user?.email }`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -68,31 +68,31 @@ const MyTeachers = () => {
                   </thead>
 
                   <tbody>
-                    {teachers?.map((teacher) => (
-                      <tr>
+                    { teachers?.map((teacher, idx) => (
+                      <tr key={ idx }>
                         <td className="text-dark flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
                           <div className="avatar">
                             <div className="w-12 rounded-full  ">
                               <img
                                 alt="teacherImage"
-                                src={teacher?.teacherimage}
+                                src={ teacher?.teacherimage }
                               />
                             </div>
                           </div>
 
                           <div className="text-start">
-                            <p className="font-bold">{teacher?.teachername}</p>
-                            <p className="">{teacher?.teacheremail}</p>
+                            <p className="font-bold">{ teacher?.teachername }</p>
+                            <p className="">{ teacher?.teacheremail }</p>
                           </div>
                         </td>
                         <td className="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                          {teacher?.teacherbackground}
+                          { teacher?.teacherbackground }
                         </td>
                         <td className="text-dark border-b border-[#E8E8E8] bg-[#F3F6FF] py-5  text-center text-base font-medium">
-                          {teacher?.teacherlocation}
+                          { teacher?.teacherlocation }
                         </td>
                         <td className="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                          {teacher?.teacherfee}
+                          { teacher?.teacherfee }
                         </td>
                         <td className="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
                           <a
@@ -111,7 +111,7 @@ const MyTeachers = () => {
                           </a>
                         </td>
                       </tr>
-                    ))}
+                    )) }
                   </tbody>
                 </table>
               </div>
