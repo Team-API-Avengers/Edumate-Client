@@ -13,6 +13,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 import SearchBox from "./SearchBox/SearchBox";
 import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
+import Sponsors from "./Sponsors/Sponsors";
 
 const Home = () => {
   const { user, loading } = useContext(AuthContext);
@@ -82,6 +83,8 @@ const Home = () => {
 
      {/*  */}
       <AboutOurs />
+
+      <Sponsors width="100%" behavior="scroll" bgcolor="pink" />
 
       {
         user?.uid &&
