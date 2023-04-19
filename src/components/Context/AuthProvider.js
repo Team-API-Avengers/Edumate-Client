@@ -9,7 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/Firebase.init";
-// import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const AuthContext = createContext();
 
@@ -18,7 +18,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [logUser, setLogUser] = useState();
+  // const [logUser, setLogUser] = useState();
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
@@ -28,38 +28,38 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  useEffect(() => {
-    fetch(
-      `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        // console.log(result);
-        if (result !== undefined) {
-          setLogUser(result?.data);
-        }
-      });
-  }, [user?.email]);
+  // useEffect(() => {
+  //   fetch(
+  //     `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       // console.log(result);
+  //       if (result !== undefined) {
+  //         setLogUser(result?.data);
+  //       }
+  //     });
+  // }, [user?.email]);
 
 
-  console.log(logUser);
+  // console.log(logUser);
 
 
 
-  // const { data: logUser = [], refetch } = useQuery({
-  //   queryKey: [user?.email],
-  //   queryFn: async () => {
-  //     try {
-  //       const res = await fetch(
-  //         `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
-  //       );
-  //       const data = await res.json();
-  //       return data?.data;
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   },
-  // });
+  const { data: logUser = [], refetch } = useQuery({
+    queryKey: [user?.email],
+    queryFn: async () => {
+      try {
+        const res = await fetch(
+          `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
+        );
+        const data = await res.json();
+        return data?.data;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+  });
 
 
 
@@ -117,7 +117,7 @@ const AuthProvider = ({ children }) => {
     logUser,
     theme,
     setTheme,
-    // refetch,
+    refetch,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
