@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Lottie from 'lottie-react';
+import SignUpAnimation from '../../../Assets/Animation/SignUpAnimation.json';
 import { AuthContext } from "../../../Context/AuthProvider";
 import { toast } from "react-toastify";
 import image from "../../../Assets/login.jpg";
@@ -116,12 +118,10 @@ const Signup = () => {
   return (
     <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-white">
       <div className="flex items-center">
-        <div className="space-y-2">
-          {/* <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
-            Let's talk!
-          </h2>
-          <div>Vivamus in nisl metus? Phasellus.</div> */}
-          <img src={image} alt="" />
+        <div className="space-y-2 w-full">
+          <h1 className="text-5xl mb-5 font-bold">Register</h1>
+          <p className="mb-5 text-2xl text-sky-400">Lets create a better world</p>
+          <Lottie animationData={SignUpAnimation} loop={true}></Lottie>
         </div>
         <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
       </div>

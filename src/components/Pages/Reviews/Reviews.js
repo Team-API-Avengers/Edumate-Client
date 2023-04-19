@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import { motion } from "framer-motion";
+import Lottie from 'lottie-react';
+import ReviewAnimation from '../../Assets/Animation/ReviewAnimation.json';
 import review from "../../Assets/reviews.jpg";
 import { BsArrowRight, BsFillStarFill } from "react-icons/bs";
 import { toast } from "react-toastify";
@@ -45,9 +47,9 @@ const Reviews = () => {
   };
 
   return (
-    <div className=" border border-blue-400 dark:border-0 px-8 py-16 mx-auto md:grid-cols-2 md:px-12 lg:px-10 lg:m-20 shadow-md ">
-      <div className="container flex flex-col lg:flex-row  justify-evenly">
-        <div className="text-center lg:text-left p-12 -ml-14 lg:ml-0">
+    <div className="dark:border-0 px-10 py-10 mx-auto md:grid-cols-2 md:px-12 lg:px-15 lg:m-10 shadow-md ">
+      <div className="container grid grid-cols-1 ms-3 lg:grid-cols-2">
+        <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
           <motion.h1
             className="font-bold"
             initial={{ y: -20, opacity: 0 }}
@@ -64,14 +66,9 @@ const Reviews = () => {
           >
             We want to hear form you ! You can share with us what you feel about our services.
           </motion.p>
-
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.3, type: "spring", duration: 2 }}
-          >
-            <img src={review} className="bg-none" alt="" />
-          </motion.div>
+          <div>
+            <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
+          </div>
         </div>
         <motion.div
           className="card mt-14 -ml-8 lg:ml-0"
@@ -81,7 +78,7 @@ const Reviews = () => {
         >
           <form
             onSubmit={handleReview}
-            className="card  w-full border border-blue-200 dark:border-0 p-4 lg:p-8 bg-slate-200  shadow-md rounded-none"
+            className="card  w-full border border-blue-200 lg:mt-10 dark:border-0 p-4 lg:p-8 bg-slate-200  shadow-md rounded-none"
           >
             <div className="my-2">
               <label className="flex justify-start mb-3 dark:text-black">Name</label>
