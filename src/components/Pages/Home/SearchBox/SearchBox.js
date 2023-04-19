@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsArrowRight, BsFillPersonFill, BsHourglassSplit } from "react-icons/bs";
+import { BsArrowRight, BsFillGeoAltFill, BsFillPersonFill, BsHourglassSplit } from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import videoBg from "../../../Assets/video/pexels-max-fischer-5198161-3840x2160-50fps.mp4";
@@ -26,11 +26,14 @@ const SearchBox = () => {
   return (
     <div>
       <div className="main mt-12 relative flex flex-col items-center justify-center py-12 mb-12 overflow-hidden  ">
-        <div className=" z-30 p-2  text-2xl text-white bg-green-500 mb-6  bg-opacity-25 rounded-xl">
-          <h2 className=" ">Search teacher by your location</h2>
+        <div className=" z-30 p-2  text-2xl bg-white dark:text-white text-green-600 dark:bg-green-500 mb-6  bg-opacity-25 rounded-xl">
+          <h2 className="flex">
+            <span className="mx-2">Search teacher by your location</span>
+            <span className="mt-1"> <BsFillGeoAltFill /> </span> 
+          </h2>
         </div>
 
-        <div className="content flex gap-4 justify-center items-center relative z-30 p-5 text-2xl text-white bg-green-400 bg-opacity-50 rounded-xl">
+        <div className="content flex gap-4 justify-center items-center relative z-30 p-5 text-2xl text-green-600 dark:text-white bg-white dark:bg-green-400 bg-opacity-50 rounded-xl">
           <form onSubmit={handleSearch} className="flex gap-2">
             <input
               name="search"
@@ -38,7 +41,7 @@ const SearchBox = () => {
               placeholder="for example: Dhaka"
               className="input w-full max-w-xs text-slate-700"
             />
-            <button className="btn btn-primary">Search Here</button>
+            <button className="btn dark:bg-blue-500 dark:hover:bg-blue-600 text-white bg-green-600 hover:bg-green-800">Search Here</button>
           </form>
         </div>
         <video className="absolute z-10 w-auto min-w-full min-h-full max-w-none " src={videoBg} autoPlay loop muted />

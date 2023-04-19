@@ -5,8 +5,8 @@ import React, { useContext } from "react";
 // import { IoCallSharp } from "react-icons/io5";
 // import Typical from "react-typical";
 
-import logo from "../../Assets/logo.png";
-import darkLogo from "../../Assets/dark-Logo.png";
+import logo from "../../Assets/Logos/EDU_LOGO.png";
+import darkLogo from "../../Assets/Logos/EDU_Dark_Logo.png";
 import { AuthContext } from "../../Context/AuthProvider";
 import { Link } from "react-router-dom";
 
@@ -20,9 +20,9 @@ const Footer = () => {
             <div className="text-teal-600">
               <span className="text-4xl font-bold">
                 { theme === "dark" ? (
-                  <img className="w-32" src={ darkLogo } alt="darkLogo" />
+                  <img className="w-72" src={ darkLogo } alt="darkLogo" />
                 ) : (
-                  <img className="w-32" src={ logo } alt="logo" />
+                  <img className="w-72" src={ logo } alt="logo" />
                 ) }
               </span>
             </div>

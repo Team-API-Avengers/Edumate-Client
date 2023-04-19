@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 import {
-  BsArrowRight,
-  BsArrowRightShort,
+  // BsArrowRight,
+  // BsArrowRightShort,
   BsFillPersonFill,
   BsHourglassSplit,
 } from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
-import { HiLocationMarker } from "react-icons/hi";
+// import { HiLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Loader from "../../Shared/Loader/Loader";
 

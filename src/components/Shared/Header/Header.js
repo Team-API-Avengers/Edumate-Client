@@ -7,8 +7,9 @@ import { BsChevronUp, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
 
-import logo from "../../Assets/logo.png";
-import darkLogo from "../../Assets/dark-Logo.png";
+// import logo from "../../Assets/logo.png";
+// import darkLogo from "../../Assets/dark-Logo.png";
+import Logo from "../../Assets/Logos/EDU_LOGO.png";
 
 const Header = () => {
   const { user, logOut, theme, setTheme } = useContext(AuthContext);
@@ -157,15 +158,7 @@ const Header = () => {
         
         <div className="w-full container flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={ "/" }>
-            <>
-              <span className="text-4xl font-bold">
-                { theme === "dark" ? (
-                  <img className="w-32" src={ darkLogo } alt="darkLogo" />
-                ) : (
-                  <img className="w-32" src={ logo } alt="logo" />
-                ) }
-              </span>
-            </>
+            <img className="w-32" src={Logo} alt="logo" />
           </Link>
 
           <div className="hidden lg:block">{ navList }</div>

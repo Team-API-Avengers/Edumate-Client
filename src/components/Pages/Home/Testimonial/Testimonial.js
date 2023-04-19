@@ -87,7 +87,7 @@ const Testimonial = () => {
             transition={ { delay: 1, type: "spring", duration: 3 } }
           >
             { data?.slice(0, 3)?.map((feedback, idx) => (
-              <div key={ idx } className="transition transform hover:scale-105 duration-300  flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-2xl dark:shadow-slate-100 dark:hover-shadow-md cursor-pointer">
+              <div key={ idx } className="transition transform hover:scale-105 duration-300  flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-xl dark:shadow-green-300 dark:hover-shadow-md cursor-pointer">
                 <img
                   alt=""
                   className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
@@ -175,7 +175,7 @@ const Testimonial = () => {
             <div>
               <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-10">
                 { data?.slice(3)?.map((feedback, idx) => (
-                  <div key={ idx } className="transition transform hover:scale-105 duration-300 flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-2xl dark:hover-shadow-md dark:shadow-slate-100 cursor-pointer">
+                  <div key={ idx } className="transition transform hover:scale-105 duration-300 flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-xl dark:shadow-green-300 cursor-pointer">
                     <img
                       alt="img"
                       className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "

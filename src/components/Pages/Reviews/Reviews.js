@@ -8,7 +8,10 @@ import { BsFillStarFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 const Reviews = () => {
-  const { user, refetch } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+
+
+  
 
   const handleReview = (e) => {
     e.preventDefault();
@@ -28,6 +31,8 @@ const Reviews = () => {
     };
     console.log(userReview);
 
+    
+
     fetch("https://edumate-second-server.vercel.app/api/v1/feedback", {
       method: "POST",
       headers: {
@@ -40,7 +45,7 @@ const Reviews = () => {
         if (result) {
           console.log(result);
           form.reset();
-          refetch();
+          window.location.reload(true);
           toast.success("Thanks for your feedback!");
         }
       });
@@ -81,7 +86,7 @@ const Reviews = () => {
             className="card w-full lg:mt-10 p-4 lg:p-8 bg-transparent"
           >
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-black">Name</label>
+              <label className="flex justify-start mb-3 dark:text-white">Name</label>
               <input
                 className="block border border-t-0 border-blue-400 dark:text-black w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
@@ -92,7 +97,7 @@ const Reviews = () => {
               />
             </div>
             <div className="my-2">
-              <label className="flex justify-start mb-3  dark:text-black">Email</label>
+              <label className="flex justify-start mb-3  dark:text-white">Email</label>
               <input
                 className="block border border-t-0 border-blue-400 shadow-md dark:text-black  w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
@@ -104,7 +109,7 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-black">How was your experience?</label>
+              <label className="flex justify-start mb-3 dark:text-white">How was your experience?</label>
               <input
                 name="rate"
                 type="range"
@@ -116,29 +121,29 @@ const Reviews = () => {
               <div className="w-full flex justify-between text-xs px-2">
                 <span>
                   
-                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />
+                  <BsFillStarFill className="text-orange-400 dark:text-[#fceb05]" />
                 </span>
                 <span>
                   
-                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />
+                  <BsFillStarFill className="text-orange-400 dark:text-[#fceb05]" />
                 </span>
                 <span>
                   
-                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />
+                  <BsFillStarFill className="text-orange-400 dark:text-[#fceb05]" />
                 </span>
                 <span>
                   
-                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />
+                  <BsFillStarFill className="text-orange-400 dark:text-[#fceb05]" />
                 </span>
                 <span>
                   
-                  <BsFillStarFill className="text-orange-400 dark:text-[#350573]" />
+                  <BsFillStarFill className="text-orange-400 dark:text-[#fceb05]" />
                 </span>
               </div>
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-black">Reviews</label>
+              <label className="flex justify-start mb-3 dark:text-white">Reviews</label>
               <textarea
                 required
                 className="block dark:text-black border border-t-0 border-blue-400 cursor-pointer w-full p-5 rounded-md"
@@ -149,7 +154,7 @@ const Reviews = () => {
               ></textarea>
             </div>
             <button
-              className="cursor-pointer bg-blue-600 hover:bg-blue-700 border-0 h-16 rounded-full text-white mt-4"
+              className="cursor-pointer btn btn-success border-0 rounded-full text-white mt-4"
               type="submit"
             >
               Sent
