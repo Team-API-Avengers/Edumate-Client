@@ -3,6 +3,8 @@ import { useForm } from "@formspree/react";
 import { toast } from "react-toastify";
 import Typical from "react-typical";
 import { motion } from "framer-motion";
+import Lottie from 'lottie-react';
+import ContactAnimation from '../../Assets/Animation/ContacAnimation.json';
 import { AuthContext } from "../../Context/AuthProvider";
 // import img from "../../Assets/contact.jpg";
 const ContactUs = () => {
@@ -30,8 +32,8 @@ const ContactUs = () => {
         >
 
           <div className="container mx-auto my-4 px-4 ">
-            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 border border-blue-400 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:bg-[#5903ca] dark:shadow-lg">
-              <div className="flex flex-col  justify-center mt-5">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:bg-[#5903ca] dark:shadow-lg">
+              <div className="flex flex-col mt-5">
 
                 <h1 className="font-bold  flex gap-2 uppercase text-4xl">
                   Lets{" "}
@@ -42,8 +44,8 @@ const ContactUs = () => {
                     wrapper="p"
                   ></Typical>
                 </h1>
-                <div className="flex gap-2 uppercase text-xl mt-3 w-96">
-                  <h1 className="text-start">Achive your goals with the right plan,<span className="text-blue-400 font-bold">Not with a luck</span></h1>
+                <div className="">
+                  <Lottie className='w-full' animationData={ContactAnimation} loop={true}></Lottie>
                 </div>
               </div>
 
