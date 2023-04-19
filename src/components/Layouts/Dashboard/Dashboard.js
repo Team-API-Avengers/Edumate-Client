@@ -10,15 +10,16 @@ import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
 
 const DashBoard = () => {
   const { theme, loading } = useContext(AuthContext);
-  
+
 
   if (loading) {
-  	return <Loader></Loader>;
+    return <Loader></Loader>;
   }
+
   return (
     <div>
       <div className="lg:block hidden">
-      <Header />
+        <Header />
       </div>
       <div className="block lg:hidden">
         <DashboardHeader />
@@ -44,21 +45,21 @@ const DashBoard = () => {
           <label htmlFor="dashboard-drawer" className="drawer-overlay dark:bg-[#350573] dark:text-white shadow-lg "></label>
           <ul className="menu p-4 w-60 bg-base-100 dark:bg-[#350573] dark:text-white shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
-            <span className="text-4xl font-bold">
-              {theme === "dark" ? (
-                <img className="w-32" src={darkLogo} alt="darkLogo" />
-              ) : (
-                <img className="w-32" src={logo} alt="logo" />
-              )}
-            </span>
+              <span className="text-4xl font-bold">
+                { theme === "dark" ? (
+                  <img className="w-32" src={ darkLogo } alt="darkLogo" />
+                ) : (
+                  <img className="w-32" src={ logo } alt="logo" />
+                ) }
+              </span>
             </Link>
             <li className=" ">
               <Link to="/dashboard/My-Profile">My Profile</Link>
             </li>
-            
-            {/* {logUser?.role === 'Admin' && */}
+
+            {/* {logUser?.role === 'Admin' && */ }
             <>
-            <li className="">
+              <li className="">
                 <Link to="/dashboard/all-Teachers">All Teacher</Link>
               </li>
               <li className="">
@@ -68,26 +69,26 @@ const DashBoard = () => {
                 <Link to="/dashboard/add-contributors">Add Contributors</Link>
               </li>
             </>
-            {/* } */}
+            {/* } */ }
 
-           {/* {logUser?.role === 'Teacher' && */}
+            {/* {logUser?.role === 'Teacher' && */ }
             <>
-            <li className="">
-              <Link to="/dashboard/add-Teacher">Be a teacher</Link>
-            </li>
+              <li className="">
+                <Link to="/dashboard/add-Teacher">Be a teacher</Link>
+              </li>
 
-            <li className="">
-              <Link to="/dashboard/my-students">My Students</Link>
-            </li>
+              <li className="">
+                <Link to="/dashboard/my-students">My Students</Link>
+              </li>
 
-            <li className="">
-              <Link to="/dashboard/my-Teachers">My Teachers</Link>
-            </li>
-            
-          </>
-         {/* } */}
+              <li className="">
+                <Link to="/dashboard/my-Teachers">My Teachers</Link>
+              </li>
 
-         
+            </>
+            {/* } */ }
+
+
 
           </ul>
         </div>

@@ -23,19 +23,19 @@ const Home = () => {
   }
   return (
     <div>
-       
-     {/* <div className="hidden lg:block fixed right-10 z-50">
+
+      {/* <div className="hidden lg:block fixed right-10 z-50">
         <a className="py-2 text-blue-700 dark:text-white group" href="#top">
           <BsFillArrowUpSquareFill className="group-hover:hidden ml-2 mb-2 flex" />
           <BsArrowUpSquare className="group-hover:flex ml-2 mb-2 hidden" />
         </a>
 
-       
+
         <div className="bg-blue-700  dark:bg-white  dark:text-black text-white shadow-xl shadow-blue-400 py-8 px-2 rounded-full">
           <a title="Give Review" className="py-2 group flex" href="#review">
             <AiOutlineEdit className="group-hover:hidden flex" />
             <AiFillEdit className="group-hover:flex hidden" />
-           
+
           </a>
 
           <a
@@ -58,21 +58,17 @@ const Home = () => {
         </div>
       </div> */}
 
-      {/* <Banner /> */}
-         <Hero />
+      {/* <Banner /> */ }
+      <Hero />
       <div id="search">
-      <SearchBox />
+        <SearchBox />
       </div>
-
       <SubjectWiseTeachers />
-
-    
-
       {
         user?.uid &&
         <div id="review">
-        <Reviews />
-      </div>
+          <Reviews />
+        </div>
       }
 
       <Testimonial />
@@ -81,7 +77,7 @@ const Home = () => {
         <BeATeacher />
       </div>
 
-     {/*  */}
+      {/*  */ }
       <AboutOurs />
 
       <Sponsors width="100%" behavior="scroll" bgcolor="pink" />
@@ -89,13 +85,10 @@ const Home = () => {
       {
         user?.uid &&
         <div className="mb-5" id="contact">
-        <ContactUs />
-      </div>
+          <ContactUs />
+        </div>
       }
-
-
       <ScrollButton />
-
     </div>
   );
 };
