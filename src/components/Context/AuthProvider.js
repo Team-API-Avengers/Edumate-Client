@@ -36,10 +36,15 @@ const AuthProvider = ({ children }) => {
   //     .then((result) => {
   //       // console.log(result);
   //       if (result !== undefined) {
-  //         setLogUser(result.data);
+  //         setLogUser(result?.data);
   //       }
   //     });
   // }, [user?.email]);
+
+
+  // console.log(logUser);
+
+
 
   const { data: logUser = [], refetch } = useQuery({
     queryKey: [user?.email],
@@ -56,8 +61,14 @@ const AuthProvider = ({ children }) => {
     },
   });
 
+
+
   // console.log("user", user);
   // console.log("logUser", logUser);
+
+
+
+
 
   const createUser = (email, password) => {
     setLoading(true);
