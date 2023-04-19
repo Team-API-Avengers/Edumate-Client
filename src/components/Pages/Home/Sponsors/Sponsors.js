@@ -29,6 +29,7 @@ const Sponsors = () => {
                 <img className='w-20 mx-5' src={eleven} alt="logo" />
             </div>
         </marquee>
+        
         </div>
     );
 };

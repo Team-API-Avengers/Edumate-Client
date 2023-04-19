@@ -28,11 +28,12 @@ const ContactUs = () => {
           // style={{
           //   backgroundImage: `url(${img})`,
           // }}
-          className="flex justify-center items-center w-screen  h-screen rounded-none bg-white dark:bg-[#350573] dark:text-white"
+          className="flex justify-center items-center w-screen  h-screen rounded-none bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white"
         >
 
           <div className="container mx-auto my-4 px-4 ">
-            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:bg-[#5903ca] dark:shadow-lg">
+            
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl bg-transparent dark:shadow-lg">
               <div className="flex flex-col mt-5">
 
                 <h1 className="font-bold  flex gap-2 uppercase text-4xl">

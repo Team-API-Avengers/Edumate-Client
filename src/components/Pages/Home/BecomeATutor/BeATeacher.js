@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
-import darkImage from "../../../Assets/BeATutorImage.png";
-import image from "../../../Assets/BeATutorImage2.png";
+import React from "react";
+// import darkImage from "../../../Assets/BeATutorImage.png";
+// import image from "../../../Assets/BeATutorImage2.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
-import { AuthContext } from "../../../Context/AuthProvider";
+// import { AuthContext } from "../../../Context/AuthProvider";
+import ReviewAnimation from '../../../Assets/Animation/Teacher.json';
+import Lottie from 'lottie-react';
 
 const containerVariants = {
   hidden: {
@@ -34,10 +36,10 @@ const childVariants = {
 };
 
 const BeATeacher = () => {
-  const { theme } = useContext(AuthContext);
+  // const { theme } = useContext(AuthContext);
   return (
     <div>
-      <div className="container bg-white dark:bg-[#350573] dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
+      <div className="container bg-white  dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
         <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div className="w-full " initial={ { x: -250 } } whileInView={ { x: 0 } } transition={ { duration: 1.5 } }>
             <motion.div className="text-start" variants={ containerVariants } initial="hidden" animate="visible">
@@ -76,11 +78,15 @@ const BeATeacher = () => {
             whileInView={ { opacity: 1 } }
             transition={ { delay: 1, type: "spring", duration: 3 } }
           >
-            { theme === "dark" ? (
+            {/* { theme === "dark" ? (
               <img className="w-96 h-60 lg:max-w-3xl" src={ darkImage } alt="BeATutorImg2.png" />
             ) : (
               <img className="w-96 h-60 lg:max-w-3xl" src={ image } alt="BeATutorImg.png" />
-            ) }
+            ) } */}
+
+<div>
+            <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
+          </div>
           </motion.div>
         </div>
       </div>

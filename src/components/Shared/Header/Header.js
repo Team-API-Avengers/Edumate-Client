@@ -153,8 +153,9 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
-        <div className="container mx-auto flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
+      <Navbar className="w-full dark:bg-gradient-to-l from-[#05290d] via-[#1c6d39] to-[#05290d]] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+        
+        <div className="w-full container flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={ "/" }>
             <>
               <span className="text-4xl font-bold">
@@ -268,6 +269,8 @@ const Header = () => {
             </label>
           </div>
         </MobileNav>
+
+
       </Navbar>
     </div>
   );

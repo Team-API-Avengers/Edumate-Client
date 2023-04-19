@@ -26,11 +26,11 @@ const SearchBox = () => {
   return (
     <div>
       <div className="main mt-12 relative flex flex-col items-center justify-center py-12 mb-12 overflow-hidden  ">
-        <div className=" z-30 p-2  text-2xl text-white bg-purple-500 mb-6  bg-opacity-25 rounded-xl">
+        <div className=" z-30 p-2  text-2xl text-white bg-green-500 mb-6  bg-opacity-25 rounded-xl">
           <h2 className=" ">Search teacher by your location</h2>
         </div>
 
-        <div className="content flex gap-4 justify-center items-center relative z-30 p-5 text-2xl text-white bg-purple-400 bg-opacity-50 rounded-xl">
+        <div className="content flex gap-4 justify-center items-center relative z-30 p-5 text-2xl text-white bg-green-400 bg-opacity-50 rounded-xl">
           <form onSubmit={handleSearch} className="flex gap-2">
             <input
               name="search"

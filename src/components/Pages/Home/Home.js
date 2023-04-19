@@ -15,12 +15,17 @@ import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
 import Sponsors from "./Sponsors/Sponsors";
 
+
 const Home = () => {
   const { user, loading } = useContext(AuthContext);
 
   if (loading) {
     return <Loader />;
   }
+
+
+
+
   return (
     <div>
 
@@ -63,6 +68,11 @@ const Home = () => {
       <div id="search">
         <SearchBox />
       </div>
+
+
+
+
+
       <SubjectWiseTeachers />
       {
         user?.uid &&

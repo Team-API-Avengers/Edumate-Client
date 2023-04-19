@@ -1,15 +1,15 @@
-import SubjectWiseTeacher from "./SubjectWiseTeacher";
+// import SubjectWiseTeacher from "./SubjectWiseTeacher";
 import { Link } from "react-router-dom";
-import { IoIosArrowForward } from "react-icons/io";
-import science from "../../Assets/science.png";
-import commerce from "../../Assets/commerce.png";
+// import { IoIosArrowForward } from "react-icons/io";
+// import science from "../../Assets/science.png";
+// import commerce from "../../Assets/commerce.png";
 import help from "../../Assets/help.png";
 import data from "../../Assets/data.png";
 import app from "../../Assets/app.png";
 import book from "../../Assets/book.png";
-import humanity from "../../Assets/humanity.png";
-import all from "../../Assets/all.png";
-import { useContext, useEffect, useState } from "react";
+// import humanity from "../../Assets/humanity.png";
+// import all from "../../Assets/all.png";
+// import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const SubjectWiseTeachers = () => {
