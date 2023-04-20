@@ -13,7 +13,66 @@ const MyProfile = () => {
 
   // console.log(logUser);
   return (
-    <div className="card lg:card-side m-10 lg:w-full w-96 bg-transparent">
+    <div className=" border p-20 m-10 shadow-md shadow-black">
+      <div>
+        <div className="card">
+          <div className="grid grid-cols-4">
+            <div className="col-span-1 flex justify-center">
+              {user ? (
+                <img
+                  className=" w-40 h-40 m-5 rounded-full"
+                  src={user?.photoURL}
+                  alt="Album"
+                />
+              ) : (
+                <img
+                  className="img-fluid m-5 rounded-full"
+                  src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png"
+                  alt="Album"
+                />
+              )}
+            </div>
+            <div >
+              <div >
+                <p className="text-start text-small mb-2 ">
+                  User ID : <span className=" font-bold my-10">{logUser?._id}</span>
+                </p>
+              </div>
+              <div >
+                <p className="text-start mb-2 ">
+                  Name : <br /> <span className="font-bold">{user?.displayName}</span>
+                </p>
+              </div>
+
+              <div>
+                <p className="text-start mb-2">
+                  Email  : <br /> <span className="font-bold">{user?.email}</span>
+                </p>
+              </div>
+
+              <div >
+                <p className="text-start mb-2">
+                  Phone : <br /> <span className=" font-bold">0{logUser?.phone}</span>
+                </p>
+              </div>
+
+              <div className="grid grid-cols-12">
+                <p className="text-start col-span-10 font-serif font-semibold flex">
+                  Role : {logUser?.role}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MyProfile;
+
+{/* <div className="card lg:card-side m-10 lg:w-full w-96 bg-transparent">
       <div>
         <div className="card">
           <div className="flex gap-12 justify-center items-center">
@@ -71,8 +130,4 @@ const MyProfile = () => {
 
         </div>
       </div>
-    </div>
-  );
-};
-
-export default MyProfile;
+    </div> */}
