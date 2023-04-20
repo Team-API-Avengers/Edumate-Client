@@ -12,8 +12,14 @@ import { Link } from "react-router-dom";
 import Loader from "../../Shared/Loader/Loader";
 
 const Instructors = () => {
+
+  
   const [allInstructor, setInstructors] = useState({});
+
+
   const [loading, setLoading] = useState(false);
+
+
   useEffect(() => {
     setLoading(true);
     fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
@@ -23,6 +29,8 @@ const Instructors = () => {
         setLoading(false);
       });
   }, []);
+
+
   if (loading) {
     return <Loader />;
   }

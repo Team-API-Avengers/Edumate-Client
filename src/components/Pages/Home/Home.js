@@ -14,6 +14,8 @@ import SearchBox from "./SearchBox/SearchBox";
 import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
 import Sponsors from "./Sponsors/Sponsors";
+// import LocationMap from "./LocationMap/LocationMap";
+// import DisplayFewTeacher from "./DisplayFewTeacher/DisplayFewTeacher";
 
 
 const Home = () => {
@@ -78,6 +80,14 @@ const Home = () => {
 
 
       <SubjectWiseTeachers />
+
+
+   {/* <DisplayFewTeacher /> */}
+
+
+   {/* <LocationMap /> */}
+
+
       {
         user?.uid &&
         <div id="review">

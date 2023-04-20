@@ -1,17 +1,16 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
-import { BsArrowRight } from "react-icons/bs";
+// import { BsArrowRight } from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
-import { Link } from "react-router-dom";
-const OurBestTeacher = ({ teacher, setTutor }) => {
-  const { name, location, experience, image, background, email, bgColour } =
-    teacher;
+// import { Link } from "react-router-dom";
+const OurBestTeacher = ({ teacher}) => {
+  const { name, image, background } = teacher;
   // console.log(teacher);
   return (
     <div>
       <div className="px-25 mx-auto py-10">
         <div className="flex flex-col">
-          <a className="block relative  overflow-hidden">
+          <a href="#null" className="block relative  overflow-hidden">
           {image ?
           <img
           alt="teacher"
