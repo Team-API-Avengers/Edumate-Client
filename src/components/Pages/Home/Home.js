@@ -14,6 +14,7 @@ import SearchBox from "./SearchBox/SearchBox";
 import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
 import Sponsors from "./Sponsors/Sponsors";
+import GetReview from "./GetReview/GetReview";
 // import LocationMap from "./LocationMap/LocationMap";
 // import DisplayFewTeacher from "./DisplayFewTeacher/DisplayFewTeacher";
 
@@ -95,7 +96,12 @@ const Home = () => {
         </div>
       }
 
-      <Testimonial />
+      {/* <Testimonial /> */}
+
+
+      <GetReview />
+
+
 
       <div id="beATeacher">
         <BeATeacher />

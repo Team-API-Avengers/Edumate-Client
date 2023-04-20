@@ -16,6 +16,7 @@ const MyProfile = () => {
     <div className=" border p-20 m-10 shadow-md shadow-black">
       <div>
         <div className="card">
+
           <div className="grid grid-cols-4">
             <div className="col-span-1 flex justify-center">
               {user ? (
@@ -32,27 +33,29 @@ const MyProfile = () => {
                 />
               )}
             </div>
-            <div >
+
+            <div className=" col-span-3" >
               <div >
-                <p className="text-start text-small mb-2 ">
-                  User ID : <span className=" font-bold my-10">{logUser?._id}</span>
+                <p className="text-start text-small mb-2">
+                  User ID : <span className=" font-bold my-10">WBC-{logUser?._id?.slice(16, -1)}</span> 
+                  {/* Slice from 16 to last character */}
                 </p>
               </div>
               <div >
                 <p className="text-start mb-2 ">
-                  Name : <br /> <span className="font-bold">{user?.displayName}</span>
+                  Name : <span className="font-bold">{user?.displayName}</span>
                 </p>
               </div>
 
               <div>
                 <p className="text-start mb-2">
-                  Email  : <br /> <span className="font-bold">{user?.email}</span>
+                  Email  : <span className="font-bold">{user?.email}</span>
                 </p>
               </div>
 
               <div >
                 <p className="text-start mb-2">
-                  Phone : <br /> <span className=" font-bold">0{logUser?.phone}</span>
+                  Phone : <span className=" font-bold">0{logUser?.phone}</span>
                 </p>
               </div>
 
@@ -62,6 +65,7 @@ const MyProfile = () => {
                 </p>
               </div>
             </div>
+
           </div>
 
         </div>

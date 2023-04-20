@@ -54,7 +54,7 @@ const Reviews = () => {
   
 
   return (
-    <div className="dark:border-0 px-10 py-10 mx-auto md:grid-cols-2 md:px-12 lg:px-15 lg:m-10 shadow-md ">
+    <div className="dark:border-0 px-10 py-10 mx-auto md:grid-cols-2 md:px-12 lg:px-15 lg:m-10 shadow-md dark:shadow-none">
       <div className="container grid grid-cols-1 ms-3 lg:grid-cols-2">
 
         <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
