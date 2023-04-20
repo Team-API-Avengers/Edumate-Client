@@ -11,18 +11,18 @@ import { AuthContext } from "../../Context/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const { theme } = useContext(AuthContext)
+  const { theme, user } = useContext(AuthContext)
   return (
     <div>
       <footer aria-label="Site Footer" className="bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37]">
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-start lg:gap-8">
             <div className="text-teal-600">
-              <span className="text-4xl font-bold">
+              <span className="text-5xl font-bold">
                 { theme === "dark" ? (
-                  <img className="w-72" src={ darkLogo } alt="darkLogo" />
+                  <img className="w-32" src={ darkLogo } alt="darkLogo" />
                 ) : (
-                  <img className="w-72" src={ logo } alt="logo" />
+                  <img className="w-32" src={ logo } alt="logo" />
                 ) }
               </span>
             </div>
@@ -44,7 +44,17 @@ const Footer = () => {
               </div>
 
               <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-                <Link to={ '/authentication/signup' } className="btn btn-primary">Sign up</Link>
+                {
+                  user?
+                  <div className="avatar ">
+                  <div className="w-24 rounded-3xl ring  ">
+                      <img alt="userImage" src={ user?.photoURL } />
+                  </div>
+                </div>
+                  :
+                  <Link to={ '/authentication/signup' } className="btn btn-primary">Sign up</Link>
+                }
+                 
               </div>
 
               <div className="col-span-2 sm:col-span-1">
@@ -91,20 +101,20 @@ const Footer = () => {
                 <nav aria-label="Footer Navigation - Company" className="mt-6">
                   <ul className="space-y-4 text-sm dark:text-white">
                     <li>
-                      <a href="#" className="text-gray-700 dark:text-white transition hover:opacity-75">
+                      <Link to={'/about-us'} className="text-gray-700 dark:text-white transition hover:opacity-75">
                         About
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 dark:text-white transition hover:opacity-75">
+                      <Link to={'/contact'} className="text-gray-700 dark:text-white transition hover:opacity-75">
                         Meet the Team
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a href="#" className="text-gray-700 dark:text-white transition hover:opacity-75">
-                        Accounts Review
+                      <a href="#review" className="text-gray-700 dark:text-white transition hover:opacity-75">
+                        Review
                       </a>
                     </li>
                   </ul>
@@ -117,7 +127,7 @@ const Footer = () => {
                 <nav aria-label="Footer Navigation - Company" className="mt-6">
                   <ul className="space-y-4 text-sm dark:text-white">
                     <li>
-                      <a href="#" className="text-gray-700 dark:text-white transition hover:opacity-75">
+                      <a href="#contact" className="text-gray-700 dark:text-white transition hover:opacity-75">
                         Contact
                       </a>
                     </li>
@@ -125,12 +135,6 @@ const Footer = () => {
                     <li>
                       <a href="#" className="text-gray-700 dark:text-white transition hover:opacity-75">
                         FAQs
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" className="text-gray-700 dark:text-white transition hover:opacity-75">
-                        Live Chat
                       </a>
                     </li>
                   </ul>

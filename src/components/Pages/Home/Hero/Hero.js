@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsFillDpadFill, BsFillExclamationSquareFill, BsFillPersonVcardFill } from "react-icons/bs";
 import bannerPic from "../../../Assets/BannerPic.png";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const {user} = useContext(AuthContext)
   // const [menu, setMenu] = useState(false);
   return (
     <div>
@@ -37,20 +40,37 @@ const Hero = () => {
 
               <div className="bg-base-200 lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg dark:rounded-b-lg">
                 <div className="sm:flex items-center py-2">
-                  <a href="#review" className="flex items-center dark:text-[#05733c]">
+                  {
+                    user ?
+                    <a href="#review" className="flex items-center dark:text-[#05733c]">
                     <BsFillExclamationSquareFill className=" mx-1" />
                     <span>Feedback</span>
                   </a>
+                  :
+                  <Link to={'/authentication/login'}>
+                  <button className="learn-more mx-5">
+                  <span className="circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
+                  </span>
+                  <span className="button-text dark:text-white">
+                  Login
+                  </span>
+                  </button>
+                  </Link>
+                  }
 
                   <a href="#beATeacher" className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 dark:text-[#05733c]">
                     <BsFillDpadFill className="mx-1" />
                     <span>Be a teacher</span>
                   </a>
 
-                  <a href="#contact" className="flex items-center dark:text-[#05733c]">
+                  {
+                    user &&
+                    <a href="#contact" className="flex items-center dark:text-[#05733c]">
                     <BsFillPersonVcardFill className="mx-1" />
                     <span>Contact</span>
                   </a>
+                  }
                 </div>
               </div>
             </div>

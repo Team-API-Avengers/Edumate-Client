@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Navbar, MobileNav, Typography, Button, IconButton } from "@material-tailwind/react";
-import logo from "../../Assets/logo.png";
-import darkLogo from "../../Assets/dark-Logo.png";
+import logo from "../../Assets/Logos/EDU_LOGO.png";
+import darkLogo from "../../Assets/Logos/EDU_Dark_Logo.png";
 import { AuthContext } from "../../Context/AuthProvider";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -78,8 +78,8 @@ const AuthenticationHeader = () => {
   //   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl dark:bg-[#350573] dark:text-white dark:border-0 py-2 px-4 lg:px-8 lg:py-4">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900 dark:bg-[#350573] dark:text-white">
+    <Navbar className="mx-auto max-w-screen-xl dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white dark:border-0 py-2 px-4 lg:px-8 lg:py-4">
+      <div className="container mx-auto flex items-center justify-between text-blue-gray-900 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
         <Typography
           as="a"
           href="#"

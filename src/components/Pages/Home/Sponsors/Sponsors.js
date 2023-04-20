@@ -14,6 +14,8 @@ import eleven from '../../../Assets/sponsors/eleven.jpg'
 const Sponsors = () => {
     return (
         <div>
+            <h1 className='text-2xl text-start font-semibold mx-5 w-44 lg:mx-20 my-2 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white bg-white text-gray-800 p-5 rounded-r-full'>Sponsors</h1>
+            <div className='mx-5 lg:mx-20 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white'>
             <marquee>
             <div className="flex">
                 <img className='w-20 mx-5' src={one} alt="logo" />
@@ -30,6 +32,7 @@ const Sponsors = () => {
             </div>
         </marquee>
         
+        </div>
         </div>
     );
 };

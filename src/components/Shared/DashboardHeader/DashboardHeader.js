@@ -11,8 +11,8 @@ import {
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
-import logo from "../../Assets/logo.png";
-import darkLogo from "../../Assets/dark-Logo.png";
+import logo from "../../Assets/Logos/EDU_LOGO.png";
+import darkLogo from "../../Assets/Logos/EDU_Dark_Logo.png";
 
 const DashboardHeader = () => {
   const { user, logOut, theme, setTheme } = useContext(AuthContext);
@@ -61,7 +61,7 @@ const DashboardHeader = () => {
   };
 
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-black dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
       <NavLink
         style={ navStyle }
         to={ "/" }
@@ -81,7 +81,7 @@ const DashboardHeader = () => {
             </label>
             <ul
               tabIndex={ 0 }
-              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
             >
               <li>
                 <NavLink to={ "/blog" }>Blog</NavLink>
@@ -122,7 +122,7 @@ const DashboardHeader = () => {
 
       <NavLink
         to={ "/profile" }
-        className="flex lg:hidden justify-center items-center  dark:bg-[#350573]  dark:text-white "
+        className="flex lg:hidden justify-center items-center dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white"
       >
         Profile
       </NavLink>
@@ -155,7 +155,7 @@ const DashboardHeader = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto dark:bg-[#350573] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="mx-auto dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="container  grid grid-cols-3 items-center max-w-screen-xl  text-blue-gray-900">
           {/* Drawer */ }
           <div className="flex">
@@ -171,9 +171,9 @@ const DashboardHeader = () => {
           <Link className=" col-span-1" to={ "/" }>
             <span className="text-4xl font-bold">
               { theme === "dark" ? (
-                <img className="w-16 lg:w-32" src={ darkLogo } alt="darkLogo" />
+                <img className="w-28 lg:w-32" src={ darkLogo } alt="darkLogo" />
               ) : (
-                <img className="w-16 lg:w-32" src={ logo } alt="logo" />
+                <img className="w-28 lg:w-32" src={ logo } alt="logo" />
               ) }
             </span>
           </Link>

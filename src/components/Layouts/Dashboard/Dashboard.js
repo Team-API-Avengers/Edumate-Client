@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
-import darkLogo from "../../Assets/dark-Logo.png"
-import logo from "../../Assets/logo.png";
+import darkLogo from "../../Assets/Logos/EDU_Dark_Logo.png"
+import logo from "../../Assets/Logos/EDU_LOGO.png";
 import Loader from '../../Shared/Loader/Loader';
 import Header from "../../Shared/Header/Header";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -41,9 +41,9 @@ const DashBoard = () => {
           </label>
         </div>
 
-        <div className="drawer-side border dark:bg-[#350573] dark:text-white shadow-lg dark:shadow-white lg:ml-5">
-          <label htmlFor="dashboard-drawer" className="drawer-overlay dark:bg-[#350573] dark:text-white shadow-lg "></label>
-          <ul className="menu p-4 w-60 bg-base-100 dark:bg-[#350573] dark:text-white shadow-lg  text-base-content">
+        <div className="drawer-side border dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg dark:shadow-white lg:ml-5">
+          <label htmlFor="dashboard-drawer" className="drawer-overlay bg-transparent shadow-lg "></label>
+          <ul className="menu p-4 w-60 bg-base-100 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
               <span className="text-4xl font-bold">
                 { theme === "dark" ? (

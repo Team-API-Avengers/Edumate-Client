@@ -27,7 +27,7 @@ function ScrollButton() {
 
   return (
     <button
-      className={`fixed bottom-4 dark:bg-white dark:text-[#350573] right-4 p-4 bg-blue-500 text-white rounded-full transition-opacity ${
+      className={`fixed bottom-4 z-50 dark:bg-white dark:text-green-600 bg-green-600  right-4 p-4 text-white rounded-full transition-opacity ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={scrollToTop}

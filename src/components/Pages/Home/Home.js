@@ -64,7 +64,11 @@ const Home = () => {
       </div> */}
 
       {/* <Banner /> */ }
+
+      
       <Hero />
+
+
       <div id="search">
         <SearchBox />
       </div>
@@ -90,7 +94,9 @@ const Home = () => {
       {/*  */ }
       <AboutOurs />
 
+      <div className="my-5">
       <Sponsors width="100%" behavior="scroll" bgcolor="pink" />
+      </div>
 
       {
         user?.uid &&

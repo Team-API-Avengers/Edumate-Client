@@ -1,7 +1,7 @@
 import React from "react";
-import { BsFillTelephoneOutboundFill } from "react-icons/bs";
-import { GoLocation } from "react-icons/go";
-import { BiTimeFive } from "react-icons/bi";
+// import { BsFillTelephoneOutboundFill } from "react-icons/bs";
+// import { GoLocation } from "react-icons/go";
+// import { BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import AboutOurs from "../Home/AboutOurs/AboutOurs";
 import Contributors from "../Contributors/Contibutors";
@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section className="mt-8">
       <div>
-        <div className="heros  bg-base-200 dark:bg-[#350573]  dark:text-[#fdfbff]">
+        <div className="heros  bg-base-200 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <motion.div
               className="mt-32 lg:mt-0"

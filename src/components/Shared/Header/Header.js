@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 
 // import logo from "../../Assets/logo.png";
 // import darkLogo from "../../Assets/dark-Logo.png";
-import Logo from "../../Assets/Logos/EDU_LOGO.png";
+import logo from "../../Assets/Logos/EDU_LOGO.png";
+import darkLogo from "../../Assets/Logos/EDU_Dark_Logo.png";
 
 const Header = () => {
   const { user, logOut, theme, setTheme } = useContext(AuthContext);
@@ -79,7 +80,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={ 0 }
-              className="menu dropdown-content hover:bg-none dark:bg-[#350573]  dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-0  mt-4"
             >
               <li>
                 <NavLink to={ "/blog" }>Blog</NavLink>
@@ -121,7 +122,7 @@ const Header = () => {
 
       <NavLink
         to={ "/profile" }
-        className="flex lg:hidden justify-center items-center  dark:bg-[#350573]  dark:text-white "
+        className="flex lg:hidden justify-center items-center dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white "
       >
         Profile
       </NavLink>
@@ -129,7 +130,7 @@ const Header = () => {
         <a
           href="/"
           onClick={ handleLogOut }
-          className="flex lg:hidden justify-center items-center"
+          className="flex lg:hidden text-red-600 justify-center items-center"
         >
           Sign Out
         </a>
@@ -154,11 +155,15 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="w-full dark:bg-gradient-to-l from-[#05290d] via-[#1c6d39] to-[#05290d]] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="w-full dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         
         <div className="w-full container flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={ "/" }>
-            <img className="w-32" src={Logo} alt="logo" />
+          { theme === "dark" ? (
+                  <img className="w-32 lg:w-72" src={ darkLogo } alt="darkLogo" />
+                ) : (
+                  <img className="w-32 lg:w-72" src={ logo } alt="logo" />
+                ) }
           </Link>
 
           <div className="hidden lg:block">{ navList }</div>
@@ -184,7 +189,7 @@ const Header = () => {
               {/* )} */ }
               <ul
                 tabIndex={ 0 }
-                className="mt-3 p-2 text-black dark:bg-[#862aff]  dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 p-2 text-black dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 { user ? (
                   <>
@@ -201,7 +206,7 @@ const Header = () => {
                     </li>
 
                     <li>
-                      <button onClick={ handleLogOut }>Logout</button>
+                      <button className="text-red-600" onClick={ handleLogOut }>Logout</button>
                     </li>
                   </>
                 ) : (

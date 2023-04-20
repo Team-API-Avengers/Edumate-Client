@@ -69,17 +69,17 @@ const AddTeacher = () => {
       });
   };
   return (
-    <div className="bg-base-200  dark:bg-[#350573]  dark:text-[#fcf9ff]">
+    <div className="bg-base-200 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
       <form onSubmit={ handleSubmit(addTeacher) }>
-        <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
+        <div className="min-h-screen p-6 bg-gray-100 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white flex items-center justify-center">
           <div className="container max-w-screen-lg mx-auto">
             <div>
-              <h2 className="font-semibold text-5xl text-gray-900">Be a teacher</h2>
-              <p className="text-gray-800 mt-2 mb-6">
+              <h2 className="font-semibold text-5xl text-gray-900 dark:text-white">Be a teacher</h2>
+              <p className="text-gray-800 dark:text-white mt-2 mb-6">
                 Empowering Generations, Start Your Teaching Journey Now
               </p>
 
-              <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+              <div className="bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
                 <div className=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                   <div className="lg:col-span-2">
                     <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>
@@ -91,7 +91,7 @@ const AddTeacher = () => {
                           readOnly
                           type="text"
                           { ...register("name") }
-                          className="h-12 border border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
+                          className="h-12 border text-gray-800 border-green-400 mt-1 rounded px-4 w-full bg-sky-50"
                           placeholder="Enter your name"
                         />
                       </div>
@@ -103,7 +103,7 @@ const AddTeacher = () => {
                           type="email"
                           readOnly
                           { ...register("email") }
-                          className="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
+                          className="h-12 border text-gray-800 border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="email@domain.com"
                         />
                       </div>
@@ -111,7 +111,7 @@ const AddTeacher = () => {
                         <label>Background</label>
                         <select
                           { ...register("background") }
-                          className="select  h-11 border border-green-400 mt-1 rounded   w-full bg-sky-50 "
+                          className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded   w-full bg-sky-50 "
                         >
                           <option disabled selected>
                             Choose your background
@@ -127,7 +127,7 @@ const AddTeacher = () => {
                         <input
                           type="text"
                           { ...register("location") }
-                          className="h-12 border border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
+                          className="h-12 border text-gray-800 border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="Chittagong"
                         />
                       </div>
@@ -137,7 +137,7 @@ const AddTeacher = () => {
                         <input
                           type="text"
                           { ...register("fee") }
-                          className="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          className="h-12 border text-gray-800 border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="Average fee"
                         />
                       </div>
@@ -146,7 +146,7 @@ const AddTeacher = () => {
                         <input
                           type="text"
                           { ...register("experience") }
-                          className="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          className="h-12 border text-gray-800 border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="2 years*"
                         />
                       </div>
@@ -156,7 +156,7 @@ const AddTeacher = () => {
                           type="text"
                           defaultValue={ logUser?.phone }
                           { ...register("number") }
-                          className="h-12 border border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          className="h-12 border text-gray-800 border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
                           placeholder="01100233534*"
                         />
                       </div>
@@ -165,7 +165,7 @@ const AddTeacher = () => {
                         <input
                           { ...register("photo") }
                           type="file"
-                          className="block h-12 border border-green-400 w-full cursor-pointer appearance-none rounded   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
+                          className="block h-12 text-gray-800 border border-green-400 w-full cursor-pointer appearance-none rounded   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
                         />
                       </div>
                     </div>{ " " }
@@ -176,7 +176,7 @@ const AddTeacher = () => {
                           name="message"
                           { ...register("bio") }
                           placeholder="Describe yourself*"
-                          className="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                          className="w-full h-32 text-gray-800 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         ></textarea>
                       </div>{ " " }
                       <div className="flex mt-8">

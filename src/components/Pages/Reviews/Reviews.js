@@ -51,6 +51,8 @@ const Reviews = () => {
       });
   };
 
+  
+
   return (
     <div className="dark:border-0 px-10 py-10 mx-auto md:grid-cols-2 md:px-12 lg:px-15 lg:m-10 shadow-md ">
       <div className="container grid grid-cols-1 ms-3 lg:grid-cols-2">
@@ -154,7 +156,7 @@ const Reviews = () => {
               ></textarea>
             </div>
             <button
-              className="cursor-pointer btn btn-success border-0 rounded-full text-white mt-4"
+              className="cursor-pointer btn bg-green-400 hover:bg-green-600  dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white border-0 rounded-full text-white mt-4"
               type="submit"
             >
               Sent

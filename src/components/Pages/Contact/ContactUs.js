@@ -8,7 +8,7 @@ import ContactAnimation from '../../Assets/Animation/ContacAnimation.json';
 import { AuthContext } from "../../Context/AuthProvider";
 // import img from "../../Assets/contact.jpg";
 const ContactUs = () => {
-  const { user, logUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   // console.log(logUser);
   const [state, handleSubmit] = useForm("mayzpvjq");
   if (state.succeeded) {
@@ -123,11 +123,11 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div className="my-2 w-1/2 lg:w-1/4">
+                  <div className="my-2 w-full lg:w-2/4">
                     <button
                       type="submit"
                       className="uppercase text-sm font-bold tracking-wide bg-blue-600 text-gray-100 p-5 lg:p-3 rounded w-full
-                      focus:outline-none focus:shadow-outline mt-6 lg:mt-0 ml-14 lg:ml-0"
+                      focus:outline-none focus:shadow-outline mt-6 lg:mt-0 lg:ml-0"
                     >
                       Send Message
                     </button>
