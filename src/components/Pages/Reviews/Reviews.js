@@ -6,9 +6,10 @@ import ReviewAnimation from '../../Assets/Animation/ReviewAnimation.json';
 // import review from "../../Assets/reviews.jpg";
 import { BsFillStarFill } from "react-icons/bs";
 import { toast } from "react-toastify";
+import Loader from "../../Shared/Loader/Loader";
 
 const Reviews = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
 
   
@@ -51,6 +52,11 @@ const Reviews = () => {
       });
   };
 
+
+
+  if(loading){
+    return <Loader />
+  }
   
 
   return (
@@ -59,9 +65,9 @@ const Reviews = () => {
 
         <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
           <motion.h1
-            className="font-bold"
+            className="font-bold text-green-600 dark:text-white"
             initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1, fontSize: "30px", color: "blue" }}
+            whileInView={{ y: 0, opacity: 1, fontSize: "30px", }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
           >
             Give Your Feedback
@@ -156,11 +162,12 @@ const Reviews = () => {
               ></textarea>
             </div>
             <button
-              className="cursor-pointer btn bg-green-400 hover:bg-green-600  dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white border-0 rounded-full text-white mt-4"
+              className="cursor-pointer btn w-1/2 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white mt-4"
               type="submit"
             >
               Sent
             </button>
+
           </form>
         </motion.div>
       </div>

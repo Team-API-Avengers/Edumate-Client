@@ -15,6 +15,9 @@ import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
 import Sponsors from "./Sponsors/Sponsors";
 import GetReview from "./GetReview/GetReview";
+import Gallery from "./Gallery/Gallery";
+import FAQ from "../FAQ/FAQ";
+import SearchQuery from "./SearchQuery/SearchQuery";
 // import LocationMap from "./LocationMap/LocationMap";
 // import DisplayFewTeacher from "./DisplayFewTeacher/DisplayFewTeacher";
 
@@ -72,11 +75,13 @@ const Home = () => {
       <Hero />
 
 
-      <div id="search">
+      {/* <div id="search">
         <SearchBox />
-      </div>
+      </div> */}
 
-
+       <div id="search" className="my-10">
+        <SearchQuery />
+        </div>
 
 
 
@@ -107,8 +112,17 @@ const Home = () => {
         <BeATeacher />
       </div>
 
+
+
+        <Gallery />
+
+
       {/*  */ }
       <AboutOurs />
+
+      <div id="faq">
+      <FAQ />
+      </div>
 
       <div className="my-5">
       <Sponsors width="100%" behavior="scroll" bgcolor="pink" />

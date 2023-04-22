@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Navbar, MobileNav, Typography, Button, IconButton } from "@material-tailwind/react";
+import { Navbar, MobileNav, Typography, IconButton } from "@material-tailwind/react";
 import logo from "../../Assets/Logos/EDU_LOGO.png";
 import darkLogo from "../../Assets/Logos/EDU_Dark_Logo.png";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -32,74 +32,28 @@ const AuthenticationHeader = () => {
     );
   }, []);
 
-  //   const navList = (
-  //     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-  //       <Typography
-  //         as="li"
-  //         variant="small"
-  //         color="blue-gray"
-  //         className="p-1 font-normal"
-  //       >
-  //         <a href="#" className="flex items-center">
-  //           Pages
-  //         </a>
-  //       </Typography>
-  //       <Typography
-  //         as="li"
-  //         variant="small"
-  //         color="blue-gray"
-  //         className="p-1 font-normal"
-  //       >
-  //         <a href="#" className="flex items-center">
-  //           Account
-  //         </a>
-  //       </Typography>
-  //       <Typography
-  //         as="li"
-  //         variant="small"
-  //         color="blue-gray"
-  //         className="p-1 font-normal"
-  //       >
-  //         <a href="#" className="flex items-center">
-  //           Blocks
-  //         </a>
-  //       </Typography>
-  //       <Typography
-  //         as="li"
-  //         variant="small"
-  //         color="blue-gray"
-  //         className="p-1 font-normal"
-  //       >
-  //         <a href="#" className="flex items-center">
-  //           Docs
-  //         </a>
-  //       </Typography>
-  //     </ul>
-  //   );
+
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white dark:border-0 py-2 px-4 lg:px-8 lg:py-4">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
+    <Navbar className="mx-auto max-w-screen-xl dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white dark:border-0 py-2 px-4 lg:px-8 lg:py-3">
+      <div className="container mx-auto flex items-center justify-between text-blue-gray-900 bg-transparent">
         <Typography
           as="a"
           href="#"
           variant="small"
-          className="mr-4 cursor-pointer py-1.5 font-normal"
+          className="mr-4 cursor-pointer font-normal"
         >
           <Link to={ "/" }>
             <span className="text-4xl font-bold">
               { theme === "dark" ? (
-                <img className="w-16" src={ darkLogo } alt="darkLogo" />
+                <img className="w-44" src={ darkLogo } alt="darkLogo" />
               ) : (
-                <img className="w-16" src={ logo } alt="logo" />
+                <img className="w-44" src={ logo } alt="logo" />
               ) }
             </span>
           </Link>
         </Typography>
-        {/* <div className="hidden lg:block">{navList}</div> */ }
-        {/* <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <span>Buy Now</span>
-        </Button> */}
+       
         <label className="swap hidden  lg:inline-flex swap-rotate mt-2">
           <input onClick={ handleThemeSwitch } className="hidden" type="checkbox" />
           <BsSunFill className="swap-on fill-current  text-white text-4xl " />
@@ -145,10 +99,7 @@ const AuthenticationHeader = () => {
       </div>
       <MobileNav open={ openNav }>
         <div className="container mx-auto">
-          {/* {navList} */ }
-          {/* <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Buy Now</span>
-          </Button> */}
+          
           <label className="swap hidden  lg:inline-flex swap-rotate mt-2">
             <input onClick={ handleThemeSwitch } className="hidden" type="checkbox" />
             <BsSunFill className="swap-on fill-current  text-white text-4xl " />

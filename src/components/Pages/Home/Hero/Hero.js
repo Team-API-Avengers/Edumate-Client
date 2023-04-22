@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BsFillDpadFill, BsFillExclamationSquareFill, BsFillPersonVcardFill } from "react-icons/bs";
+import { FcFaq } from "react-icons/fc";
 import bannerPic from "../../../Assets/BannerPic.png";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { Link } from "react-router-dom";
@@ -28,10 +29,10 @@ const Hero = () => {
 
             <div role="contentinfo" className="w-full pt-5 bg-white dark:bg-green-900 rounded-lg lg:w-1/2 h-full">
               <p tabIndex="0" className="text-gray-800 dark:text-white uppercase text-2xl mb-4">
-                Let's find your
+                Let's find 
               </p>
-              <h1 tabIndex="0" className="text-gray-800 dark:text-white text-4xl lg:text-6xl font-black mb-8">
-                home teacher
+              <h1 tabIndex="0" className="text-gray-800 dark:text-white text-4xl lg:text-6xl font-black mb-8 uppercase">
+              your teacher
               </h1>
               <p tabIndex="0" className="text-gray-800 mx-5 dark:text-white font-regular mb-8">
                 Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of
@@ -71,6 +72,11 @@ const Hero = () => {
                     <span>Contact</span>
                   </a>
                   }
+
+                    <a href="#faq" className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 dark:text-[#05733c]">
+                    <FcFaq className="mx-1" />
+                    <span>FAQ</span>
+                  </a>
                 </div>
               </div>
             </div>

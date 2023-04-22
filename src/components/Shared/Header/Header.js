@@ -160,9 +160,9 @@ const Header = () => {
         <div className="w-full container flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
           <Link to={ "/" }>
           { theme === "dark" ? (
-                  <img className="w-32 lg:w-72" src={ darkLogo } alt="darkLogo" />
+                  <img className="w-32 lg:w-48" src={ darkLogo } alt="darkLogo" />
                 ) : (
-                  <img className="w-32 lg:w-72" src={ logo } alt="logo" />
+                  <img className="w-32 lg:w-48" src={ logo } alt="logo" />
                 ) }
           </Link>
 

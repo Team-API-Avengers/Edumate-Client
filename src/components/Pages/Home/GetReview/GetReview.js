@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BsArrowRightShort, BsFacebook, BsFillStarFill, BsInstagram, BsTwitter } from 'react-icons/bs';
-import { ImQuotesLeft } from 'react-icons/im';
+import { BsArrowRightShort, BsFillStarFill} from 'react-icons/bs';
 import TestimonialModal from '../../../Modals/TestimonialModal/TestimonialModal';
 
 const GetReview = () => {
@@ -48,23 +47,25 @@ const GetReview = () => {
          
         });
     }, []);
+
+    
     return (
         <div>
             <section>
-  <div class="mx-auto max-w-screen-xl border dark:border-0 px-4 py-8 sm:px-6 lg:px-8">
-    <h2 class="text-xl font-bold sm:text-2xl">Students Reviews</h2>
+  <div className="mx-auto max-w-screen-xl border dark:border-0 px-4 py-8 sm:px-6 lg:px-8">
+    <h2 className="text-xl font-bold sm:text-2xl">Students Reviews</h2>
 
-    <div class="mt-4 flex items-center gap-4">
-      <p class="text-3xl font-medium">
+    <div className="mt-4 flex items-center gap-4">
+      <p className="text-3xl font-medium">
         3.8
-        <span class="sr-only"> Average review score </span>
+        <span className="sr-only"> Average review score </span>
       </p>
 
       <div>
-        <div class="flex">
+        <div className="flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-yellow-400"
+            className="h-5 w-5 text-yellow-400"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -74,7 +75,7 @@ const GetReview = () => {
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-yellow-400"
+            className="h-5 w-5 text-yellow-400"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -84,7 +85,7 @@ const GetReview = () => {
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-yellow-400"
+            className="h-5 w-5 text-yellow-400"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -94,7 +95,7 @@ const GetReview = () => {
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-yellow-400"
+            className="h-5 w-5 text-yellow-400"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -104,7 +105,7 @@ const GetReview = () => {
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-gray-200"
+            className="h-5 w-5 text-gray-200"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -114,56 +115,32 @@ const GetReview = () => {
           </svg>
         </div>
 
-        <p class="mt-0.5 text-xs text-gray-500">Based on {data?.length} reviews</p>
+        <p className="mt-0.5 text-xs text-gray-500 dark:text-white">Based on {data?.length} reviews</p>
       </div>
     </div>
 
 
 
 
-    <div class="mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-3">
+    <div className="mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-3">
         {
             data?.slice(0, 3)?.map((feedback, idx) => (
-                <blockquote key={idx} className=''>
-        <header class="sm:flex sm:items-center sm:gap-4">
-          <div class="flex dark:text-yellow-400">
-          { feedback?.rate === 1 && <BsFillStarFill /> }
-                    { feedback?.rate === 2 && (
-                      <>
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                      </>
-                    ) }
-                    { feedback?.rate === 3 && (
-                      <>
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                      </>
-                    ) }
-                    { feedback?.rate === 4 && (
-                      <>
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                      </>
-                    ) }
-                    { feedback?.rate === 5 && (
-                      <>
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                        <BsFillStarFill />
-                      </>
-                    ) }
-          </div>
+                <blockquote key={idx} className='card-body'>
+        <header className="sm:flex sm:items-center sm:gap-4">
+        <img
+        alt=""
+        className="self-center mx-3 ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-12   bg-center bg-cover rounded-full "
+        src={ feedback?.image }
+        />
+          <p className='text-start'>
+          <span className="text-xs block text-gray-500 dark:text-white">{ feedback?.name }</span>
+          <span className="text-xs block text-gray-500 dark:text-white"> 12th January, 2024</span>
+          </p>
 
-          <p class="mt-2 font-medium sm:mt-0">The best thing money can buy!</p>
+          {/* <p className="mt-2 font-medium sm:mt-0">The best thing money can buy!</p> */}
         </header>
 
-        <p class="mt-2 text-gray-700 dark:text-white">
+        <p className="mt-2 text-gray-700 dark:text-white">
         { feedback?.message.slice(0, 50) }
         { feedback?.message.length >= 51 && <span>. . .</span> }
 
@@ -178,16 +155,55 @@ const GetReview = () => {
                     ) }
         </p>
 
-        <footer className="my-8 flex">
-        <img
-        alt=""
-        className="self-center mx-3 ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-12   bg-center bg-cover rounded-full "
-        src={ feedback?.image }
-        />
-          <p className='text-start'>
-          <span className="text-xs block text-gray-500 dark:text-white">{ feedback?.name }</span>
-          <span className="text-xs block text-gray-500 dark:text-white"> 12th January, 2024</span>
-          </p>
+        <footer className="my-1 flex">
+        
+          <div className="flex dark:text-yellow-400">
+                    { feedback?.rate === 1 && 
+                    <>
+                    <BsFillStarFill />
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    </>
+                    }
+                              { feedback?.rate === 2 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                </>
+                              ) }
+                              { feedback?.rate === 3 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                </>
+                              ) }
+                              { feedback?.rate === 4 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                </>
+                              ) }
+                              { feedback?.rate === 5 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                </>
+                              ) }
+                    </div>
         </footer>
                </blockquote>
             ))
@@ -201,46 +217,21 @@ const GetReview = () => {
             <div>
               <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                 { data?.slice(3)?.map((feedback, idx) => (
-                  <blockquote key={idx} className=''>
-                  <header class="sm:flex sm:items-center sm:gap-4">
-                    <div class="flex dark:text-yellow-400">
-                    { feedback?.rate === 1 && <BsFillStarFill /> }
-                              { feedback?.rate === 2 && (
-                                <>
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                </>
-                              ) }
-                              { feedback?.rate === 3 && (
-                                <>
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                </>
-                              ) }
-                              { feedback?.rate === 4 && (
-                                <>
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                </>
-                              ) }
-                              { feedback?.rate === 5 && (
-                                <>
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                  <BsFillStarFill />
-                                </>
-                              ) }
-                    </div>
-          
-                    <p class="mt-2 font-medium sm:mt-0">The best thing money can buy!</p>
+                  <blockquote key={idx} className='card-body'>
+                  <header className="sm:flex sm:items-center sm:gap-4">
+                    
+                    <img
+                alt=""
+                className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-12 h-12 mx-3 bg-center bg-cover rounded-full "
+                src={ feedback?.image }
+                />
+                <p className='text-start'>
+                <span className="text-xs block text-gray-500 dark:text-white">{ feedback?.name }</span>
+                <span className="text-xs block text-gray-500 dark:text-white"> 12th January, 2024</span>
+                </p>
                   </header>
           
-                  <p class="mt-2 text-gray-700 dark:text-white">
+                  <p className="mt-2 text-gray-700 dark:text-white">
                   { feedback?.message.slice(0, 50) }
                   { feedback?.message.length >= 51 && <span>. . .</span> }
           
@@ -255,16 +246,54 @@ const GetReview = () => {
                               ) }
                   </p>
           
-                  <footer className="my-8 flex">
-                <img
-                alt=""
-                className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-12 h-12 mx-3 bg-center bg-cover rounded-full "
-                src={ feedback?.image }
-                />
-                <p className='text-start'>
-                <span className="text-xs block text-gray-500 dark:text-white">{ feedback?.name }</span>
-                <span className="text-xs block text-gray-500 dark:text-white"> 12th January, 2024</span>
-                </p>
+                  <footer className="my-1 flex">
+                  <div className="flex dark:text-yellow-400">
+                  { feedback?.rate === 1 && 
+                    <>
+                    <BsFillStarFill />
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                    </>
+                    }
+                              { feedback?.rate === 2 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                </>
+                              ) }
+                              { feedback?.rate === 3 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                </>
+                              ) }
+                              { feedback?.rate === 4 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill  className="text-gray-300 dark:text-white "/>
+                                </>
+                              ) }
+                              { feedback?.rate === 5 && (
+                                <>
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                  <BsFillStarFill />
+                                </>
+                              ) }
+                    </div>
                 </footer>
                   </blockquote>
                 )) }

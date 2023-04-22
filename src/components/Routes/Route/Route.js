@@ -120,9 +120,13 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
     children: [
+      // {
+      //   path: "/dashboard",
+      //   element: <WelcomeDashboard />,
+      // },
       {
         path: "/dashboard",
-        element: <WelcomeDashboard />,
+        element: <MyProfile />,
       },
       {
         path: "/dashboard/add-Teacher",
@@ -132,10 +136,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/dashboard/My-Profile",
-        element: <MyProfile />,
-      },
+      
       {
         path: "/dashboard/add-contributors",
         element: <AddContributors />,
