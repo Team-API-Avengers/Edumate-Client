@@ -16,7 +16,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div>
+    <div className="mb-5">
 
       {/* <img src={img} className="w-1/2" alt="" /> */}
       <motion.div

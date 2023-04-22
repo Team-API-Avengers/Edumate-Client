@@ -16,7 +16,7 @@ console.log('allStudents', allStudents);
 
 
     const handleStudents = () => {
-        alert('students')
+        // alert('students')
         setLoading(true);
     fetch(`https://edumate-second-server.vercel.app/api/v1/user/dash/student`)
       .then((res) => res.json())
@@ -29,7 +29,7 @@ console.log('allStudents', allStudents);
 
     
     const handleTeachers = () => {
-       alert('Teachers')
+    //    alert('Teachers')
             setLoading(true);
             fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
               .then((res) => res.json())

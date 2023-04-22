@@ -9,7 +9,7 @@ import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
 // import { useQuery } from '@tanstack/react-query';
 
 const DashBoard = () => {
-  const { theme, loading } = useContext(AuthContext);
+  const { logUser, theme, loading } = useContext(AuthContext);
 
 
   if (loading) {
@@ -54,10 +54,10 @@ const DashBoard = () => {
               </span>
             </Link>
             <li className=" ">
-              <Link to="/dashboard/My-Profile">My Profile</Link>
+              <Link to="/dashboard">My Profile</Link>
             </li>
 
-            {/* {logUser?.role === 'Admin' && */ }
+            {logUser?.role === 'Admin' && 
             <>
               <li className="">
                 <Link to="/dashboard/all-Teachers">All Teacher</Link>
@@ -65,13 +65,16 @@ const DashBoard = () => {
               <li className="">
                 <Link to="/dashboard/all-students">All Students</Link>
               </li>
-              <li className="">
+              {/* <li className="">
                 <Link to="/dashboard/add-contributors">Add Contributors</Link>
+              </li> */}
+              <li className="">
+                <Link to="/dashboard/add-Teacher">Be a teacher</Link>
               </li>
             </>
-            {/* } */ }
+            }
 
-            {/* {logUser?.role === 'Teacher' && */ }
+           {logUser?.role === 'Teacher' &&
             <>
               <li className="">
                 <Link to="/dashboard/add-Teacher">Be a teacher</Link>
@@ -81,12 +84,19 @@ const DashBoard = () => {
                 <Link to="/dashboard/my-students">My Students</Link>
               </li>
 
+            </>
+             }
+
+
+           {logUser?.role === 'Student' &&
+            <>
+              
               <li className="">
                 <Link to="/dashboard/my-Teachers">My Teachers</Link>
               </li>
 
             </>
-            {/* } */ }
+             }
 
 
 

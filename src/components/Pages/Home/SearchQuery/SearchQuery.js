@@ -3,6 +3,10 @@ import Loader from '../../../Shared/Loader/Loader';
 import { BsArrowRight, BsFillPersonFill, BsHourglassSplit } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { FaBookReader } from 'react-icons/fa';
+import SearchAnimation from '../../../Assets/Animation/SearchAnimation.json';
+import Lottie from 'lottie-react';
+
+
 
 const SearchQuery = () => {
     const [data, setData] = useState([]);
@@ -41,9 +45,16 @@ console.log(filteredData);
         <div>
         
 
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:mx-10 my-10">
+          <div></div>
+        <div>
+            <Lottie className='w-32' animationData={SearchAnimation} loop={true}></Lottie>
+          </div>
         <div className="my-10">
             <h1>Search your tutor by his - Name / Location / Background</h1>
             <input placeholder='Search Your Tutor' type="text" className='text-black my-5' onChange={handleFilter} />
+        </div>
+          <div></div>
         </div>
 
 
