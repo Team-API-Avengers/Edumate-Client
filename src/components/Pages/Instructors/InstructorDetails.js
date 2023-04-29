@@ -19,7 +19,7 @@ const InstructorDetails = () => {
 
   const navigate = useNavigate();
 
-  const { logUser, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   // console.log(user);
 
   const bookTeacher = (data) => {
@@ -71,16 +71,14 @@ const InstructorDetails = () => {
   return (
     <div>
       <div>
-        <section className="text-gray-700 body-font overflow-hidden bg-white">
+        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
-              <img
-                alt="teacher"
-                className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
+              <img alt="teacher" className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
                 src={ details?.data?.image }
               />
               <div className="lg:w-1/2 w-full space-y-2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h2 className="text-md font-bold text-start text-green-700 ">
+                <h2 className="text-md font-bold text-start text-green-700 dark:text-white">
                   { details?.data?.background }
                 </h2>
                 <div className="flex justify-between">
@@ -88,10 +86,10 @@ const InstructorDetails = () => {
                     { details?.data?.name }
                   </h1>
                   <div className="flex mb-4">
-                    <AiFillStar className="w-4 h-4 text-green-700" />
-                    <AiFillStar className="w-4 h-4 text-green-700" />
-                    <AiFillStar className="w-4 h-4 text-green-700" />
-                    <AiFillStar className="w-4 h-4 text-green-700" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
                   </div>
                 </div>
                 <div className="text-start">

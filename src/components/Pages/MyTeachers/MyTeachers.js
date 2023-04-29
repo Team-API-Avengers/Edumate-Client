@@ -37,7 +37,7 @@ const MyTeachers = () => {
     );
   }
   return (
-    <div className=" dark:bg-[#350573]">
+    <div className=" dark:bg-[#350573] ">
       <section className="bg-white max-w-screen">
         <div className="container mx-auto">
           <div className=" flex flex-wrap">
@@ -70,7 +70,7 @@ const MyTeachers = () => {
                   <tbody>
                     { teachers?.map((teacher, idx) => (
                       <tr key={ idx }>
-                        <td className="text-dark flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
+                        <td className="text-black flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
                           <div className="avatar">
                             <div className="w-12 rounded-full  ">
                               <img
@@ -85,16 +85,16 @@ const MyTeachers = () => {
                             <p className="">{ teacher?.teacheremail }</p>
                           </div>
                         </td>
-                        <td className="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                        <td className="border-b border-[#E8E8E8] text-black bg-white py-5 px-2 text-center text-base font-medium">
                           { teacher?.teacherbackground }
                         </td>
-                        <td className="text-dark border-b border-[#E8E8E8] bg-[#F3F6FF] py-5  text-center text-base font-medium">
+                        <td className="border-b border-[#E8E8E8] text-black bg-[#F3F6FF] py-5  text-center text-base font-medium">
                           { teacher?.teacherlocation }
                         </td>
-                        <td className="text-dark border-b border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                        <td className="border-b border-[#E8E8E8] text-black bg-white py-5 px-2 text-center text-base font-medium">
                           { teacher?.teacherfee }
                         </td>
-                        <td className="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                        <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
                           <a
                             href="/"
                             className="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white"
@@ -102,7 +102,7 @@ const MyTeachers = () => {
                             Pay
                           </a>
                         </td>
-                        <td className="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                        <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
                           <a
                             href="/"
                             className="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white"

@@ -35,7 +35,8 @@ const SearchQuery = () => {
         });
         setFilteredData(filtered);
       }
-console.log(filteredData);
+
+     console.log(filteredData);
 
       if(loading){
         return <Loader />
@@ -45,14 +46,15 @@ console.log(filteredData);
         <div>
         
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:mx-10 my-10">
+        <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-10 lg:mx-10 my-10">
           <div></div>
-        <div className=''>
-            <Lottie className='w-52 mx-auto9' animationData={SearchAnimation} loop={true}></Lottie>
+        <div className='lg:mx-0 mx-20'>
+            <Lottie className='w-52 mx-auto' animationData={SearchAnimation} loop={true}></Lottie>
           </div>
         <div className="mt-10 col-span-2">
             <h1>Search your tutor by his - Name / Location / Background</h1>
-            <input placeholder='Search Your Tutor' type="text" className='text-black my-5' onChange={handleFilter} />
+            <input placeholder='Search Your Tutor' type="text" className='text-black my-5 h-10 p-3' onChange={handleFilter} />
+            <button className='bg-green-600 h-10 p-3 my-5'>Search</button>
         </div>
           
         </div>
@@ -60,10 +62,10 @@ console.log(filteredData);
 
 
     <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-10">
-      {filteredData?.map((value, idx) => (
-                <div key={idx} className="max-w-2xl space-y-2 mx-auto">
+            {filteredData?.map((value, idx) => (
+                <div key={idx} className="max-w-2xl group overflow-hidden space-y-2 mx-auto">
                   <div className=" shadow-md border text-start border-gray-300 rounded-lg max-w-sm bg-indigo-200 dark:border-gray-300">
-                    <img className="rounded-t-lg h-[201px] w-[300px]" src={value.image} alt="img" />
+                    <img className="rounded-t-lg h-[201px] w-[300px] overflow-hidden object-cover  aspect-square group-hover:scale-110 transition duration-300 ease-in-out" src={value.image} alt="img" />
 
                     <div className="p-5">
                       <h5 className=" font-bold text-green-600 text-md flex tracking-tight">

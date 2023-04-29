@@ -36,7 +36,7 @@ const MyStudents = () => {
     );
   }
   return (
-    <div className=" dark:bg-[#350573]">
+    <div className=" bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
       <section className="bg-white max-w-screen">
         <div className="container mx-auto">
           <div className=" flex flex-wrap">
