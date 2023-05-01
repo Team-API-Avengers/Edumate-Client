@@ -1,7 +1,5 @@
-
-
-.bgFAQ{
-  background-image: url('../public/FAQ-img.png');
+.bgFAQ {
+  background-image: url("../public/FAQ-img.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,16 +8,9 @@
   border-left: 10px solid rgb(33, 204, 33);
   backdrop-filter: blur(10px);
 }
-.blurEffect{
-  backdrop-filter: blur(10px)
+.blurEffect {
+  backdrop-filter: blur(10px);
 }
-
-
-
-
-
-
-
 
 .App {
   text-align: center;

@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-y: none;
-}
-
 body {
   background-color: aliceblue;
   margin: 0;

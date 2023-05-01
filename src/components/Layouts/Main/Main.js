@@ -5,20 +5,10 @@ import Footer from "../../Shared/Footer/Footer";
 
 const Main = () => {
   return (
-    <div className="relative">
+    <div className="">
+      <Header />
 
-        <div className='sticky top-0 z-50'>
-        <Header />
-        </div>
-
-      
-
-
-
-
-      <div className="">
-        <Outlet />
-      </div>
+      <Outlet />
 
       <Footer />
     </div>
