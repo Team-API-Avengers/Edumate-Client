@@ -3,8 +3,8 @@ import { useForm } from "@formspree/react";
 import { toast } from "react-toastify";
 import Typical from "react-typical";
 import { motion } from "framer-motion";
-import Lottie from 'lottie-react';
-import ContactAnimation from '../../Assets/Animation/ContacAnimation.json';
+import Lottie from "lottie-react";
+import ContactAnimation from "../../Assets/Animation/contact2.json";
 import { AuthContext } from "../../Context/AuthProvider";
 // import img from "../../Assets/contact.jpg";
 const ContactUs = () => {
@@ -17,7 +17,6 @@ const ContactUs = () => {
 
   return (
     <div className="mb-5">
-
       {/* <img src={img} className="w-1/2" alt="" /> */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -30,12 +29,9 @@ const ContactUs = () => {
           // }}
           className="flex justify-center items-center w-screen  h-screen rounded-none bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white"
         >
-
           <div className="container mx-auto my-4 px-4 ">
-            
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:shadow-none bg-transparent">
               <div className="flex flex-col mt-5">
-
                 <h1 className="font-bold  flex gap-2 uppercase text-4xl">
                   Lets{" "}
                   <Typical
@@ -46,7 +42,11 @@ const ContactUs = () => {
                   ></Typical>
                 </h1>
                 <div className="">
-                  <Lottie className='w-full' animationData={ContactAnimation} loop={true}></Lottie>
+                  <Lottie
+                    className="w-full"
+                    animationData={ContactAnimation}
+                    loop={true}
+                  ></Lottie>
                 </div>
               </div>
 
@@ -68,7 +68,9 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-white">Email</span>
+                        <span className="label-text dark:text-white">
+                          Email
+                        </span>
                       </label>
                       <input
                         className="w-full   border border-t-0 border-blue-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
@@ -111,7 +113,9 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <label className="label">
-                      <span className="label-text dark:text-white">Message</span>
+                      <span className="label-text dark:text-white">
+                        Message
+                      </span>
                     </label>
                     <div className="">
                       <textarea
