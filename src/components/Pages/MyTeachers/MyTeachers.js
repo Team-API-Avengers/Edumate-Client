@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
+import { Link } from "react-router-dom";
 
 const MyTeachers = () => {
   const { user } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const MyTeachers = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://edumate-second-server.vercel.app/api/v1/bookings/student/email?email=${ user?.email }`
+      `https://edumate-second-server.vercel.app/api/v1/bookings/student/email?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -68,39 +69,41 @@ const MyTeachers = () => {
                   </thead>
 
                   <tbody>
-                    { teachers?.map((teacher, idx) => (
-                      <tr key={ idx }>
+                    {teachers?.map((teacher, idx) => (
+                      <tr key={idx}>
                         <td className="text-black flex gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
                           <div className="avatar">
                             <div className="w-12 rounded-full  ">
                               <img
                                 alt="teacherImage"
-                                src={ teacher?.teacherimage }
+                                src={teacher?.teacherimage}
                               />
                             </div>
                           </div>
 
                           <div className="text-start">
-                            <p className="font-bold">{ teacher?.teachername }</p>
-                            <p className="">{ teacher?.teacheremail }</p>
+                            <p className="font-bold">{teacher?.teachername}</p>
+                            <p className="">{teacher?.teacheremail}</p>
                           </div>
                         </td>
                         <td className="border-b border-[#E8E8E8] text-black bg-white py-5 px-2 text-center text-base font-medium">
-                          { teacher?.teacherbackground }
+                          {teacher?.teacherbackground}
                         </td>
                         <td className="border-b border-[#E8E8E8] text-black bg-[#F3F6FF] py-5  text-center text-base font-medium">
-                          { teacher?.teacherlocation }
+                          {teacher?.teacherlocation}
                         </td>
                         <td className="border-b border-[#E8E8E8] text-black bg-white py-5 px-2 text-center text-base font-medium">
-                          { teacher?.teacherfee }
+                          {teacher?.teacherfee}
                         </td>
                         <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                          <a
-                            href="/"
-                            className="border-blue-600 px-10 text-primary hover:bg-green-600 inline-block rounded border py-2  hover:text-white"
+                          <Link
+                            to={
+                              "https://edumate-second-server.vercel.app/api/v1/payment/ssl-request"
+                            }
+                            className="border-blue-600 px-10  bg-blue-600 inline-block rounded border py-2  text-white"
                           >
                             Pay
-                          </a>
+                          </Link>
                         </td>
                         <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
                           <a
@@ -111,7 +114,7 @@ const MyTeachers = () => {
                           </a>
                         </td>
                       </tr>
-                    )) }
+                    ))}
                   </tbody>
                 </table>
               </div>
