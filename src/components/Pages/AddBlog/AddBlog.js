@@ -11,7 +11,6 @@ const AddBlog = () => {
   const imgBBkEY = process.env.REACT_APP_Imgbb_key;
   const navigate = useNavigate();
 
-  
   const addBlog = (data) => {
     const img = data?.photo[0];
     const formData = new FormData();
@@ -56,8 +55,12 @@ const AddBlog = () => {
   return (
     <div>
       <section className=" py-1 bg-blueGray-50  dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
-        <div className="text-4xl font-extrabold dark:text-[#ffffff]">Drop your Blog</div>
-        <p className="mt-3 dark:text-[#ffffff]">Contribute to our community with your blog post</p>
+        <div className="text-4xl font-extrabold dark:text-[#ffffff]">
+          Drop your Blog
+        </div>
+        <p className="mt-3 dark:text-[#ffffff]">
+          Contribute to our community with your blog post
+        </p>
         <div className="w-full lg:w-8/12 mt-10 px-4 mx-auto ">
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100  border-green-400 border">
             <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
@@ -66,7 +69,6 @@ const AddBlog = () => {
                   Blog Information
                 </h6>
                 <div className="flex flex-wrap">
-
                   <div className="w-full lg:w-6/12 px-4">
                     <div className="relative w-full mb-3">
                       <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2 dark:text-[#ffffff]">
@@ -82,8 +84,6 @@ const AddBlog = () => {
                       />
                     </div>
                   </div>
-
-
 
                   <div className="w-full lg:w-6/12 px-4">
                     <div className="relative w-full mb-3">
@@ -101,13 +101,8 @@ const AddBlog = () => {
                     </div>
                   </div>
 
-
-
-
-                 
-
                   <div className="w-full lg:w-6/12 px-4">
-                  <div className="relative w-full mb-3">
+                    <div className="relative w-full mb-3">
                       <label className="block dark:text-[#ffffff] uppercase text-blueGray-600 text-xs font-bold mb-2">
                         Blog category
                       </label>
@@ -119,7 +114,6 @@ const AddBlog = () => {
                       />
                     </div>
                   </div>
-
 
                   <div className="w-full lg:w-6/12 px-4">
                     <div className="relative w-full mb-3">
@@ -134,10 +128,7 @@ const AddBlog = () => {
                       />
                     </div>
                   </div>
-
                 </div>
-
-
 
                 <div className="flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4">
@@ -155,8 +146,7 @@ const AddBlog = () => {
                   </div>
 
                   <div className="w-full lg:w-6/12 px-4">
-
-                  <div className="w-full space-y-0.5">
+                    <div className="w-full space-y-0.5">
                       <label className="block dark:text-[#ffffff] uppercase text-blueGray-600 text-xs font-bold mb-2">
                         Blog Image
                       </label>
@@ -164,12 +154,10 @@ const AddBlog = () => {
                         {...register("photo")}
                         type="file"
                         // required
-                        className="block w-full cursor-pointer border border-green-400 appearance-none rounded-md dark:text-[#000000]  bg-white px-3 py-2 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"
+                        className="block w-full cursor-pointer border border-green-400 appearance-none rounded dark:text-[#000000]  bg-white px-3 py-[10px] text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"
                       />
                     </div>
-
                   </div>
-
 
                   <div className="w-full lg:w-12/12 px-4">
                     <div className="relative w-full mb-3">
@@ -200,7 +188,6 @@ const AddBlog = () => {
                     </span>
                   </button>
                 </div>
-
 
                 <hr className="mt-6 border-b-1 border-blueGray-300" />
               </form>

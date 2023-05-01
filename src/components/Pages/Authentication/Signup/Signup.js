@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import Lottie from 'lottie-react';
-import SignUpAnimation from '../../../Assets/Animation/SignUpAnimation.json';
+import Lottie from "lottie-react";
+import SignUpAnimation from "../../../Assets/Animation/SignUpAnimation.json";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { toast } from "react-toastify";
 import image from "../../../Assets/login.jpg";
@@ -17,9 +17,6 @@ const Signup = () => {
   const { createUser, updateUser } = useContext(AuthContext);
 
   const [signUpError, setSignUpError] = useState("");
-
-
-
 
   const navigate = useNavigate();
 
@@ -109,6 +106,7 @@ const Signup = () => {
     updateUser(name, photoURL)
       .then(() => {
         toast.success("Profile Updated");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -120,17 +118,22 @@ const Signup = () => {
       <div className="flex items-center">
         <div className="space-y-2 w-full">
           <h1 className="text-5xl mb-5 font-bold">Register</h1>
-          <p className="mb-5 text-2xl text-sky-400">Lets create a better world</p>
+          <p className="mb-5 text-2xl text-sky-400">
+            Lets create a better world
+          </p>
           <Lottie animationData={SignUpAnimation} loop={true}></Lottie>
         </div>
         <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
       </div>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-xl ">
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl  ">
         <div className="flex justify-around py-5">
           <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-gray-300">
             Sign Up
           </h3>
-          <Link to="/authentication/login" className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center">
+          <Link
+            to="/authentication/login"
+            className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center"
+          >
             Login
           </Link>
         </div>
@@ -207,7 +210,9 @@ const Signup = () => {
 
           <div className="text-black">
             <label className="label dark:text-white">
-              <span className="label-text">Who are you ?</span>
+              <span className="label-text mx-2 dark:text-white">
+                Who are you ?
+              </span>
             </label>
             <select
               className="input input-bordered text-black md:w-96"
@@ -224,14 +229,14 @@ const Signup = () => {
 
           <div className="">
             <label className="label">
-              <span className="label-text dark:text-white">Photo </span>
+              <span className="label-text mx-2 dark:text-white">Photo </span>
             </label>
             <input
               type="file"
               {...register("img", {
                 required: "Photo is Required",
               })}
-              className="input input-bordered md:w-96"
+              className="input input-bordered py-2 md:w-96"
             />
             {errors.img && <p className="text-red-500">{errors.img.message}</p>}
           </div>

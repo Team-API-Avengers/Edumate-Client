@@ -9,9 +9,9 @@ const Contributors = () => {
         <div className="container mx-auto">
           <motion.div
             className="-mx-4 flex flex-wrap"
-            initial={ { opacity: 0, y: -150 } }
-            whileInView={ { opacity: 1, y: 0 } }
-            transition={ { type: "spring", stiffness: 10 } }
+            initial={{ opacity: 0, y: -150 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 10 }}
           >
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
@@ -22,8 +22,7 @@ const Contributors = () => {
                   Project - Contributors
                 </h2>
                 <p className="text-body-color text-base dark:text-[#ffffff]">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
+                  Together, we build something amazing
                 </p>
               </div>
             </div>
@@ -32,9 +31,9 @@ const Contributors = () => {
           <div className="-mx-3 flex flex-wrap justify-center">
             <motion.div
               className="w-full px-4 md:w-1/2 xl:w-1/3"
-              initial={ { opacity: 0, y: 150 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              transition={ { type: "spring", stiffness: 10 } }
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
             >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
@@ -237,9 +236,9 @@ const Contributors = () => {
 
             <motion.div
               className="w-full px-4 md:w-1/2 xl:w-1/3"
-              initial={ { opacity: 0, y: 150 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              transition={ { type: "spring", stiffness: 10 } }
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
             >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
@@ -445,9 +444,9 @@ const Contributors = () => {
 
             <motion.div
               className="w-full px-4 md:w-1/2 xl:w-1/3"
-              initial={ { opacity: 0, y: 150 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              transition={ { type: "spring", stiffness: 10 } }
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
             >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
@@ -650,9 +649,9 @@ const Contributors = () => {
 
             <motion.div
               className="w-full px-4 md:w-1/2 xl:w-1/3"
-              initial={ { opacity: 0, y: 150 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              transition={ { type: "spring", stiffness: 10 } }
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
             >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
@@ -857,9 +856,9 @@ const Contributors = () => {
 
             <motion.div
               className="w-full px-4 md:w-1/2 xl:w-1/3"
-              initial={ { opacity: 0, y: 150 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              transition={ { type: "spring", stiffness: 10 } }
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
             >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
@@ -1064,9 +1063,9 @@ const Contributors = () => {
 
             <motion.div
               className="w-full px-4 md:w-1/2 xl:w-1/3"
-              initial={ { opacity: 0, y: 150 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              transition={ { type: "spring", stiffness: 10 } }
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 10 }}
             >
               <div className="mx-auto mb-10 w-full max-w-[370px]">
                 <div className="relative overflow-hidden rounded-lg  border border-green-100 hover:shadow-2xl cursor-pointer">
