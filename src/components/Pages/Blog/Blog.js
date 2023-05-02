@@ -49,21 +49,21 @@ const Blog = () => {
                   color: "white",
                 }}
               >
-                <div className="flex items-start sm:gap-8">
+                <div className="flex hover:text-orange-500 items-start sm:gap-8">
                   <div>
                     <strong className="rounded  text-start text-blue-500  px-3 py-1 text-md font-medium ">
                       {singleBlog?.category}
                     </strong>
 
-                    <h3 className="mt-4  hover:text-black text-2xl hover:underline text-start font-bold ">
+                    <h3 className="mt-4 text-2xl hover:underline text-start font-bold ">
                       {singleBlog?.title}
                     </h3>
 
-                    <p className="mt-1 text-start text-sm hover:text-white ">
+                    <p className="mt-1 text-start text-sm ">
                       {singleBlog?.details?.slice(0, 98)}.....
                     </p>
 
-                    <div className="mt-4 flex  justify-between">
+                    <div className="mt-4 flex justify-between">
                       <div>
                         <p className="text-start font-bold">
                           {singleBlog?.authorName}

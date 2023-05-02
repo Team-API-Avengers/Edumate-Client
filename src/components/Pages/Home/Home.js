@@ -29,16 +29,27 @@ const Home = () => {
     <div>
 
       <Hero />
+
        <div id="search"><SearchQuery /></div>
+
       <SubjectWiseTeachers />
+
       {user?.uid && <div id="review"><Reviews /></div>}
+
       <GetReview />
+
       <div id="beATeacher"> <BeATeacher /></div>
-        <Gallery />
+
+      <Gallery />
+
       <AboutOurs />
+
       <div id="faq"><FAQ /></div>
+
       <div className="my-5"><Sponsors /></div>
+
       { user?.uid &&<div id="contact"><ContactUs /></div>}
+      
       <ScrollButton />
 
     </div>

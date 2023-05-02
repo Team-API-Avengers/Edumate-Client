@@ -27,7 +27,7 @@ const MyProfile = () => {
                 />
               ) : (
                 <img
-                  className="img-fluid m-5 rounded-full"
+                  className=" w-40 h-40 m-5 rounded-full"
                   src="https://png.pngitem.com/pimgs/s/44-446384_north-carolina-tar-heels-duke-blue-devils.png"
                   alt="Album"
                 />
@@ -36,34 +36,49 @@ const MyProfile = () => {
 
             <div className=" col-span-3" >
               <div >
-                <p className="text-start text-small mb-2">
+                {
+                  logUser?._id &&
+                  <p className="text-start text-small mb-2">
                   User ID : <span className=" font-bold my-10">WBC-{logUser?._id?.slice(16, -1)}</span> 
                   {/* Slice from 16 to last character */}
                 </p>
+                }
+                
               </div>
               <div >
+                {
+                  user?.displayName ?
                 <p className="text-start mb-2 ">
                   Name : <span className="font-bold">{user?.displayName}</span>
                 </p>
+                :
+                <p className="text-start mb-2 ">
+                  Name : <span className="font-bold">New Guest</span>
+                </p>
+                }
               </div>
 
               <div>
+                {
+                  user?.email ?
+                <>
                 <p className="text-start mb-2">
                   Email  : <span className="font-bold">{user?.email}</span>
                 </p>
-              </div>
-
-              <div >
-                <p className="text-start mb-2">
-                  Phone : <span className=" font-bold">0{logUser?.phone}</span>
-                </p>
-              </div>
-
-              <div className="grid grid-cols-12">
+                <div className="grid grid-cols-12">
                 <p className="text-start col-span-10 font-serif font-semibold flex">
                   Role : {logUser?.role}
                 </p>
               </div>
+                </>
+                :
+                <p className="text-start mb-2">
+                  Email  : <span className="font-bold">guest@gmail.com</span>
+                </p>
+                }
+              </div>
+
+              
             </div>
 
           </div>

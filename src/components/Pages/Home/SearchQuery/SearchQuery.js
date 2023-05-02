@@ -64,7 +64,7 @@ const SearchQuery = () => {
             className="text-black my-5 h-10 p-3"
             onChange={handleFilter}
           />
-          {/* <button className="bg-green-600  h-10 p-2 -mt-[2px]">Search</button> */}
+          <button className="bg-green-600  h-10 p-2 -mt-[2px]">Search</button>
         </div>
       </div>
 
@@ -83,7 +83,7 @@ const SearchQuery = () => {
 
               <div className="p-5">
                 <h5 className=" font-bold text-green-600 text-md flex tracking-tight">
-                  <FaBookReader className="mt-1 text-gray-900 ml-1 mr-2" />{" "}
+                  <FaBookReader className="mt-1 text-gray-900 ml-1 mr-2" />
                   {value?.background}
                 </h5>
 
@@ -96,7 +96,7 @@ const SearchQuery = () => {
                           <HiLocationMarker className="mt-1 mr-2" /> {data?.location}
                         </p> */}
                 <p className="font-bold text-md  mb-3 flex text-gray-800">
-                  <BsHourglassSplit className="mt-1 mr-2" /> {value?.experience}{" "}
+                  <BsHourglassSplit className="mt-1 mr-2" /> {value?.experience}
                   years experience
                 </p>
                 <div>

@@ -1,14 +1,22 @@
 import React from 'react';
 import FAQBanner from './FAQBanner/FAQBanner';
+import Lottie from 'lottie-react';
+import ReviewAnimation from '../../Assets/Animation/FAQ_Animation.json';
 
 const FAQ = () => {
     return (
-        <div className='mx-10 lg:mx-20'>
-            <div class="space-y-4">
+        <div className='w-[100vw] grid grid-cols-1 lg:grid-cols-3'>
+
+            <div className='lg:col-span-1 lg:mt-24'>
+            <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
+          </div>
+
+
+            <div class="space-y-4 mx-5 lg:col-span-2">
                 <FAQBanner />
             <details
                 class="group border-l-8 rounded-xl border-green-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
-                open
+                // open
             >
                 <summary class="flex items-center justify-between cursor-pointer">
                 <h2 class="text-lg font-medium text-gray-900">

@@ -10,7 +10,7 @@ const FAQBanner = () => {
 							<div className='dark:text-white text-green-600 font-semibold text-start '>
 								<div className='heading-content'>
 									
-									<h2 className='text-start ml-[5%] py-2 text-4xl'>
+									<h2 className='text-start py-2 text-xl'>
 									
 									<AutoTyping
 									  active // <boolean>
