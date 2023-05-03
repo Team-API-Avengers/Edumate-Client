@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
-import { BsFillDpadFill, BsFillExclamationSquareFill, BsFillPersonVcardFill } from "react-icons/bs";
+import {
+  BsFillDpadFill,
+  BsFillExclamationSquareFill,
+  BsFillPersonVcardFill,
+} from "react-icons/bs";
 import { FcFaq } from "react-icons/fc";
 import bannerPic from "../../../Assets/BannerPic.png";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   // const [menu, setMenu] = useState(false);
   return (
     <div>
-      <section>
+      {/* <section>
         <div className="w-full relative pb-10 px-6 xl:px-0">
           <img
             className="absolute w-full inset-0 h-full object-cover object-center"
@@ -82,7 +86,17 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <div
+        className="banner h-[550px]"
+        style={{
+          backgroundImage:
+            "url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-green-education-blackboard-stereoscopic-image_20770.jpg')",
+          filter: "brightness(70%)",
+        }}
+      >
+        <h1 className="banner-title">Welcome to My Website</h1>
+      </div>
     </div>
   );
 };
