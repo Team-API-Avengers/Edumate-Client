@@ -155,7 +155,7 @@ const Header = () => {
   return (
     <div>
       <Navbar className="w-full dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
-        <div className="w-full container flex px-10 items-center max-w-screen-xl justify-between text-blue-gray-900">
+        <div className="w-full container flex px-10 items-center max-w-screen-2xl mx-auto justify-between text-blue-gray-900">
           <Link to={"/"}>
             {theme === "dark" ? (
               <img className="w-32 lg:w-48" src={darkLogo} alt="darkLogo" />
@@ -214,12 +214,6 @@ const Header = () => {
                     <li>
                       <Link to="/authentication/signup">Signup</Link>
                     </li>
-
-                    {/* <label className="swap swap-rotate my-2">
-                      <input onClick={handleThemeSwitch} type="checkbox" />
-                      <BsSunFill className="swap-on fill-current w-5 h-5" />
-                      <BsMoonFill className="swap-off fill-current w-5 h-5" />
-                    </label> */}
                   </>
                 )}
               </ul>{" "}
