@@ -54,6 +54,7 @@ const BeATeacher = () => {
               animate="visible"
             >
               <motion.h1
+                id="title"
                 className="text-5xl  font-bold  dark:text-white"
                 variants={childVariants}
               >
@@ -66,7 +67,7 @@ const BeATeacher = () => {
               >
                 Instructors from around the country teach hundreds of students
                 on
-                <span className="font-bold text-[#00813d] dark:text-white">
+                <span className="font-bold text-[#00813d]  dark:text-white">
                   {" "}
                   Edumate
                 </span>{" "}
@@ -75,18 +76,13 @@ const BeATeacher = () => {
 
               <Link to={"/dashboard/add-Teacher"}>
                 <div className="flex mt-5">
-                  <motion.button
-                    className="group relative inline-flex items-center overflow-hidden rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
-                    whileHover={{
-                      scale: 1.2,
-                    }}
-                  >
+                  <motion.button className="group relative inline-flex items-center overflow-hidden rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
                     <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                       <BsArrowRight />
                     </span>
 
                     <span className="text-sm font-medium transition-all group-hover:mr-4">
-                      Get Started
+                      Start teaching today
                     </span>
                   </motion.button>
                 </div>
