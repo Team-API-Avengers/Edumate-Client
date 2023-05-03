@@ -24,6 +24,10 @@ html {
   pointer-events: none;
 }
 
+#title {
+  font-family: "Source Serif Pro", serif;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
