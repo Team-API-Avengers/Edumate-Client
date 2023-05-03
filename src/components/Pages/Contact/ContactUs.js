@@ -58,7 +58,7 @@ const ContactUs = () => {
                         <span className="label-text dark:text-white">Name</span>
                       </label>{" "}
                       <input
-                        className="w-full border border-t-0 border-blue-400 text-gray-900  mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full border  border-[#001a41] dark:border-none  text-gray-900  mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
                         type="text"
                         name="name"
                         readOnly
@@ -73,7 +73,7 @@ const ContactUs = () => {
                         </span>
                       </label>
                       <input
-                        className="w-full   border border-t-0 border-blue-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full   border  border-[#001a41] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         type="email"
                         name="email"
                         readOnly
@@ -84,11 +84,11 @@ const ContactUs = () => {
                     <div>
                       <label className="label">
                         <span className="label-text dark:text-white">
-                          Subject
+                          Subject / Issues
                         </span>
                       </label>
                       <input
-                        className="w-full   border border-t-0 border-blue-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full   border  border-[#001a41] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         type="text"
                         name="about"
                         placeholder="Subject"
@@ -103,7 +103,7 @@ const ContactUs = () => {
                         </span>
                       </label>
                       <input
-                        className="w-full  border border-t-0 border-blue-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full  border  border-[#001a41] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         type="text"
                         name="number"
                         placeholder="Number"
@@ -122,7 +122,7 @@ const ContactUs = () => {
                         name="message"
                         placeholder="Message"
                         required
-                        className="w-full h-32 text-gray-900 border border-t-0 border-blue-400  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full h-32 text-gray-900 border dark:border-none  border-[#001a41]  p-3 rounded focus:outline-none focus:shadow-outline"
                       ></textarea>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ const ContactUs = () => {
                   <div className="my-2 w-full lg:w-2/4">
                     <button
                       type="submit"
-                      className="uppercase text-sm font-bold tracking-wide bg-blue-600 text-gray-100 p-5 lg:p-3 rounded w-full
+                      className="uppercase text-sm font-bold tracking-wide bg-[#001a41] text-gray-100 p-5 lg:p-3 rounded w-full
                       focus:outline-none focus:shadow-outline mt-6 lg:mt-0 lg:ml-0"
                     >
                       Send Message
