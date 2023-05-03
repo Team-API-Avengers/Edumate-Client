@@ -2,49 +2,70 @@ import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, sendPasswordResetEmail, } from "firebase/auth";
 import Lottie from "lottie-react";
 import LoginAnimation from "../../../Assets/Animation/LoginAnimation.json";
 import { toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
+import app from "../../../Firebase/Firebase.init";
 
+
+
+
+
+const auth = getAuth(app);
 const Login = () => {
+
+  const [userEmail, setUserEmail] = useState("");
+
   const googleProvider = new GoogleAuthProvider();
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+
+  const {   register, formState: { errors }, handleSubmit} = useForm();
+
+  const { signIn, signInWithGoogle,resetPassword } = useContext(AuthContext);
+
   const [loginError, setLoginError] = useState("");
+
+
   // const [loginUserEmail, setLoginUserEmail] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+
   const from = location.state?.from?.pathname || "/";
 
-  const [recaptcha, setRecaptcha] = useState();
+  // const [recaptcha, setRecaptcha] = useState();
 
-  console.log("recaptcha", recaptcha);
+  // console.log("recaptcha", recaptcha);
 
-  const captchaRef = useRef(null);
+  // const captchaRef = useRef(null);
 
-  //! react-google-recaptcha
-  function onChange(value) {
-    // console.log("Captcha value:", value);
-    if (value === null) {
-      return toast.error("You are a root");
-    } else {
-      setRecaptcha(value);
-      window.setTimeout(function () {
-        // <-- remove this delay and the error goes away
-        window.grecaptcha.reset();
-      });
-    }
-  }
+
+
+
+  // //! react-google-recaptcha
+  // function onChange(value) {
+  //   // console.log("Captcha value:", value);
+  //   if (value === null) {
+  //     return toast.error("You are a root");
+  //   } else {
+  //     setRecaptcha(value);
+  //     window.setTimeout(function () {
+  //       // <-- remove this delay and the error goes away
+  //       window.grecaptcha.reset();
+  //     });
+  //   }
+  // }
+
+
+
+
 
   //! Email Login Form
   const handleLogin = (data) => {
     console.log(data);
+
+
+
     setLoginError("");
     signIn(data.email, data.password)
       .then((result) => {
@@ -108,6 +129,37 @@ const Login = () => {
       });
   };
 
+
+
+
+
+  //! handle Forget Password
+
+  const handleEmailForResetPassword = e =>{
+
+    const email = e.target.value
+    setUserEmail(email)
+    
+    console.log(email);
+  }
+
+  const handleForgetPassword = () => {
+    if(!userEmail){
+      toast.error('Please enter your email address')
+    }else{
+      sendPasswordResetEmail(auth, userEmail)
+    .then(() => {
+      toast.info('password reset sent')
+    })
+    .catch (er => {
+      toast.error(er.message)
+      console.error(er)
+    })
+    }
+    
+    
+  }
+
   return (
     <div>
       <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-white">
@@ -116,13 +168,13 @@ const Login = () => {
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
               Please Do it!
             </h2>
-            <div className="hidden lg:flex justify-center">
+            {/* <div className="hidden lg:flex justify-center">
               <ReCAPTCHA
                 sitekey="6LfZE2glAAAAACGKH4fqAYxMk2cMqyPFihFIAo5C"
                 onChange={onChange}
                 ref={captchaRef}
               />
-            </div>
+            </div> */}
           </div>
           <div className="mt-10">
             <Lottie animationData={LoginAnimation} loop={true}></Lottie>
@@ -144,13 +196,16 @@ const Login = () => {
           <form onSubmit={handleSubmit(handleLogin)}>
             <div className="text-sm ">
               <label className="flex m-2 ">Email</label>
-              <input
-                type="text"
+              <input 
+                type="email"
                 {...register("email", {
                   required: "Email Address is required",
                 })}
-                placeholder="Email"
-                name="email"
+                placeholder="Email address"
+                // onBlur={(e) => {
+                //   console.log("Input field blurred", e.target.value);
+                //     }}
+                onBlur={handleEmailForResetPassword}
                 className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
               />
               {errors.email && (
@@ -176,7 +231,7 @@ const Login = () => {
                 <p className="text-red-600 mb-3">{errors.password?.message}</p>
               )}
               <div className="flex mt-2 mb-5 text-xs ">
-                <Link to="">Forgot Password?</Link>
+                <p className="cursor-pointer hover:underline" onClick={handleForgetPassword}>Forgot Password?</p>
               </div>
             </div>
             <input

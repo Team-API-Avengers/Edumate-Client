@@ -230,8 +230,8 @@ const Header = () => {
                 className="hidden"
                 type="checkbox"
               />
-              <BsSunFill className="swap-on fill-current  text-white text-4xl " />
-              <BsMoonFill className="swap-off fill-current -ml-7 text-yellow-500  text-4xl" />
+              <BsSunFill className="swap-on fill-current text-yellow-500 text-4xl " />
+              <BsMoonFill className="swap-off fill-current -ml-7 text-slate-500 text-4xl" />
             </label>
           </div>
 
@@ -258,8 +258,8 @@ const Header = () => {
                 className="hidden"
                 type="checkbox"
               />
-              <BsSunFill className="swap-on fill-current  text-white text-4xl" />
-              <BsMoonFill className="swap-off fill-current  text-yellow-500 text-4xl" />
+              <BsSunFill className="swap-on fill-current text-yellow-500 text-4xl" />
+              <BsMoonFill className="swap-off fill-current text-slate-500 text-4xl" />
             </label>
           </div>
         </MobileNav>
