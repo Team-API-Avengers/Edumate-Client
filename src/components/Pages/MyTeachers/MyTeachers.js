@@ -1,13 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import PaymentModal from "../../Modals/PaymentModal/PaymentModal";
 
 const MyTeachers = () => {
   const { user } = useContext(AuthContext);
   // console.log(user?.email);
 
   const [teachers, setTeachers] = useState([]);
+
+
+
+  const [modalData, setModalData] = useState();
+
+
+
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -37,6 +46,18 @@ const MyTeachers = () => {
       <p className="mt-40 font-bold text-4xl">You didn't booked any teacher</p>
     );
   }
+
+
+
+  const handlePaymentModalData = data => {
+    
+    setModalData(data);
+  }
+
+
+
+
+
   return (
     <div className=" dark:bg-[#350573] ">
       <section className="bg-white max-w-screen">
@@ -96,14 +117,12 @@ const MyTeachers = () => {
                           {teacher?.teacherfee}
                         </td>
                         <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                          <Link
-                            to={
-                              "https://edumate-second-server.vercel.app/api/v1/payment/ssl-request"
-                            }
+                          <label htmlFor="PaymentModal"
                             className="border-blue-600 px-10  bg-blue-600 inline-block rounded border py-2  text-white"
+                            onClick={() => handlePaymentModalData(teacher)}
                           >
                             Pay
-                          </Link>
+                          </label>
                         </td>
                         <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
                           <a
@@ -116,6 +135,12 @@ const MyTeachers = () => {
                       </tr>
                     ))}
                   </tbody>
+
+
+                  <PaymentModal modalData = {modalData} />
+
+
+
                 </table>
               </div>
             </div>

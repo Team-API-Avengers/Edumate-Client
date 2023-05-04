@@ -48,6 +48,7 @@ const Gallery = () => {
           
     }
 
+    console.log(allUser);
     console.log(allStudents);
 
 if(loading){
@@ -56,13 +57,13 @@ if(loading){
 
     return (
         <div>
-            <div className="flex">
-                <button onClick={handleStudents} className="btn mx-3">Students</button>
+            <div className="flex justify-center py-10">
                 <button onClick={handleTeachers} className="btn mx-3">Teachers</button>
+                <button onClick={handleStudents} className="btn mx-3">Students</button>
             </div>
             {
-                allUser[1] ?
-            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+            allUser?
+            <div class="container mx-auto px-5 py-2 lg:px-32">
             <div class="-m-1 flex flex-wrap md:-m-2">
 
                 <div class="flex w-1/2 flex-wrap">
@@ -116,7 +117,7 @@ if(loading){
             </div>
             </div>
             :
-            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+            <div class="container mx-auto px-5 py-2 lg:px-32">
             <div class="-m-1 flex flex-wrap md:-m-2">
 
                 <div class="flex w-1/2 flex-wrap">
@@ -125,21 +126,21 @@ if(loading){
                     <img
                     alt="g"
                     class="block border h-full w-full rounded-lg object-cover object-center"
-                    src='https://cdn-icons-png.flaticon.com/512/2154/2154466.png' />
+                    src={allStudents[1]?.image} />
                 </div>
 
                 <div class="w-1/2 p-1 md:p-2">
                     <img
                     alt="g"
                     class="block border h-full w-full rounded-lg object-cover object-center"
-                    src='https://cdn-icons-png.flaticon.com/512/2154/2154466.png' />
+                    src={allStudents[2]?.image} />
                 </div>
 
                 <div class="w-full p-1 md:p-2">
                     <img
                     alt="g"
                     class="block border h-full w-full rounded-lg object-cover object-center"
-                    src='https://cdn-icons-png.flaticon.com/512/2154/2154466.png' />
+                    src={allStudents[3]?.image} />
                 </div>
 
                 </div>
@@ -149,21 +150,21 @@ if(loading){
                     <img
                     alt="g"
                     class="block border h-full w-full rounded-lg object-cover object-center"
-                    src='https://cdn-icons-png.flaticon.com/512/2154/2154466.png' />
+                    src={allStudents[4]?.image} />
                 </div>
 
                 <div class="w-1/2 p-1 md:p-2">
                     <img
                     alt="g"
                     class="block border h-full w-full rounded-lg object-cover object-center"
-                    src='https://cdn-icons-png.flaticon.com/512/2154/2154466.png' />
+                    src={allStudents[5]?.image} />
                 </div>
 
                 <div class="w-1/2 p-1 md:p-2">
                     <img
                     alt="g"
                     class="block border h-full w-full rounded-lg object-cover object-center"
-                    src='https://cdn-icons-png.flaticon.com/512/2154/2154466.png' />
+                    src={allStudents[6]?.image} />
                 </div>
 
                 </div>
