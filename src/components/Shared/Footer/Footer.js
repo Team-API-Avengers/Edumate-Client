@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div>
       
-<footer aria-label="Site Footer" className="dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
+<footer aria-label="Site Footer" className="dark:bg-black dark:text-white">
   <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>

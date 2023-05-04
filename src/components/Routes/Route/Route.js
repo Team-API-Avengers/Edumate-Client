@@ -6,7 +6,7 @@ import Login from "../../Pages/Authentication/Login/Login";
 import About from "../../Pages/About/About";
 import Blog from "../../Pages/Blog/Blog";
 import Dashboard from "../../Layouts/Dashboard/Dashboard";
-import WelcomeDashboard from "../../Pages/WelcomeDashboard/WelcomeDashboard";
+// import WelcomeDashboard from "../../Pages/WelcomeDashboard/WelcomeDashboard";
 import Signup from "../../Pages/Authentication/Signup/Signup";
 import BackgroundWiseTeacher from "../../Pages/BackgroundWiseTeacher/BackgroundWiseTeacher";
 import AddTeacher from "../../Pages/AddTeacher/AddTeacher";
@@ -27,6 +27,7 @@ import BannerEdit from "../../Pages/BannerEdit/BannerEdit";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Form from "../../Layouts/Form/Form";
 import Reviews from "../../Pages/Reviews/Reviews";
+import TutorTest from "../../Pages/AddTeacher/TutorTest/TutorTest";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
           );
         },
       },
+      
       {
         path: "/about-ours",
         element: <AboutOurs />,
@@ -101,6 +103,11 @@ const router = createBrowserRouter([
     ],
   },
 
+
+
+
+
+
   {
     path: "/authentication",
     element: <Form />,
@@ -115,6 +122,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+
+
+
 
   {
     path: "/dashboard",
@@ -135,6 +146,10 @@ const router = createBrowserRouter([
             <AddTeacher />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/dashboard/tutor-test",
+        element: <TutorTest />
       },
       
       {

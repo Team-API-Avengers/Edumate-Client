@@ -6,7 +6,6 @@ import Loader from "../../Shared/Loader/Loader";
 import Header from "../../Shared/Header/Header";
 import { AuthContext } from "../../Context/AuthProvider";
 import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
-// import { useQuery } from '@tanstack/react-query';
 
 const DashBoard = () => {
   const { logUser, theme, loading } = useContext(AuthContext);
@@ -41,12 +40,12 @@ const DashBoard = () => {
           </label>
         </div>
 
-        <div className="drawer-side border dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg dark:shadow-white lg:ml-5">
+        <div className="drawer-side border dark:bg-black dark:text-white shadow-lg dark:shadow-white lg:ml-5">
           <label
             htmlFor="dashboard-drawer"
             className="drawer-overlay bg-transparent shadow-lg "
           ></label>
-          <ul className="menu p-4 w-60 bg-base-100 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg  text-base-content">
+          <ul className="menu p-4 w-60 bg-base-100 dark:bg-black dark:text-white shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
               <span className="text-4xl font-bold">
                 {theme === "dark" ? (
@@ -70,7 +69,7 @@ const DashBoard = () => {
                 </li>
 
                 <li className="">
-                  <Link to="/dashboard/add-Teacher">Be a teacher</Link>
+                  <Link to="/dashboard/tutor-test">Be a teacher</Link>
                 </li>
               </>
             )}

@@ -1,4 +1,10 @@
+## LIVE : https://edumate-53dfb.web.app/
 
+### Purpose: Edumate provides students with access to qualified and experienced tutors who specialize in different subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need extra help with their studies. Edumate connects students with teachers who can help them achieve their academic goals.
+
+## Client side:
+
+## Server side:
 
 
 ## Installation: 

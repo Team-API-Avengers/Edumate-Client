@@ -71,7 +71,7 @@ const InstructorDetails = () => {
   return (
     <div>
       <div>
-        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
+        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-black dark:text-white">
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <img alt="teacher" className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"

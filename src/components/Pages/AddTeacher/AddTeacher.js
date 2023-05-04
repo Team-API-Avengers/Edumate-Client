@@ -1,23 +1,27 @@
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-
 import { BsArrowRight } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader/Loader";
 
+
+
+
 const AddTeacher = () => {
+  const { user, logUser, loading } = useContext(AuthContext);
+
   const { register, handleSubmit } = useForm();
 
+ 
   const [submitting, setSubmitting] = useState(false);
-  const { user, logUser } = useContext(AuthContext);
 
   //! from .env.local file====>
   const imgHostKey = process.env.REACT_APP_Imgbb_key;
   // console.log(imgHostKey);
 
-  // console.log(user);
-  console.log(logUser);
+  console.log(submitting);
+  // console.log(logUser);
 
   const addTeacher = (data) => {
     setSubmitting(true);
@@ -68,10 +72,42 @@ const AddTeacher = () => {
         }
       });
   };
+
+
+  
+
+
+
+
+
+
+
+  // const handleOptionSelect = (option) => {
+  //   console.log(option);
+  //   setSelectedOption(option);
+  //   setIsModalOpen(true);
+
+
+  //       const filtered = data?.filter((item) => {
+  //     return (
+  //       item?.category?.includes(option)
+  //     );
+  //   });
+
+  //   console.log(filtered);
+  // };
+
+  // const handleModalClose = () => {
+  //   setIsModalOpen(false);
+  // };
+
+  if(loading){
+    return <Loader />;
+  }
   return (
-    <div className="bg-base-200 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
+    <div className="bg-base-200 dark:bg-black dark:text-white">
       <form onSubmit={ handleSubmit(addTeacher) }>
-        <div className="min-h-screen p-6 bg-gray-100 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white flex items-center justify-center">
+        <div className="min-h-screen p-6 bg-gray-100 dark:bg-black dark:text-white flex items-center justify-center">
           <div className="container max-w-screen-lg mx-auto">
             <div>
               <h2 className="font-semibold text-5xl text-gray-900 dark:text-white">Be a teacher</h2>
@@ -79,7 +115,7 @@ const AddTeacher = () => {
                 Empowering Generations, Start Your Teaching Journey Now
               </p>
 
-              <div className="bg-white dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+              <div className="bg-white dark:bg-black dark:text-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
                 <div className=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                   <div className="lg:col-span-2">
                     <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>
@@ -107,11 +143,11 @@ const AddTeacher = () => {
                           placeholder="email@domain.com"
                         />
                       </div>
-                      <div className="">
-                        <label>Background</label>
-                        <select
+                      <div>
+                        <label className="block">Background</label>
+                         <select
                           { ...register("background") }
-                          className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded   w-full bg-sky-50 "
+                          className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded w-full bg-sky-50"
                         >
                           <option disabled selected>
                             Choose your background
@@ -119,7 +155,7 @@ const AddTeacher = () => {
                           <option>Science</option>
                           <option>Commerce</option>
                           <option>Arts</option>
-                        </select>
+                        </select> 
                       </div>
 
                       <div className="">
@@ -176,7 +212,7 @@ const AddTeacher = () => {
                           name="message"
                           { ...register("bio") }
                           placeholder="Describe yourself*"
-                          className="w-full h-32 text-gray-800 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                          className="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         ></textarea>
                       </div>{ " " }
                       <div className="flex mt-8">
@@ -207,6 +243,12 @@ const AddTeacher = () => {
             </div>
           </div>
         </div>
+      {/* <QuestionModal /> */}
+      {/* {isModalOpen && (
+         <QuestionModal onClose={handleModalClose}>
+         <h2>You selected: {selectedOption}</h2>
+         </QuestionModal>
+      )} */}
       </form>
     </div>
   );

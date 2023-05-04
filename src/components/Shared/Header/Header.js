@@ -79,7 +79,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content hover:bg-none dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-0  mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-black dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-0  mt-4"
             >
               <li>
                 <NavLink to={"/blog"}>Blog</NavLink>
@@ -121,7 +121,7 @@ const Header = () => {
 
       <NavLink
         to={"/profile"}
-        className="flex lg:hidden justify-center items-center dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white "
+        className="flex lg:hidden justify-center items-center dark:bg-black dark:text-white "
       >
         Profile
       </NavLink>
@@ -154,7 +154,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="w-full dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="w-full dark:bg-black dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="w-full container flex px-10 items-center max-w-screen-2xl mx-auto justify-between text-blue-gray-900">
           <Link to={"/"}>
             {theme === "dark" ? (
@@ -187,7 +187,7 @@ const Header = () => {
               {/* )} */}
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 text-black dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 p-2 text-black dark:bg-black dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 {user ? (
                   <>

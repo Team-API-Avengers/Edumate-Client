@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section className="mt-8">
       <div>
-        <div className="heros  bg-base-200 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white">
+        <div className="heros  bg-base-200 dark:bg-black dark:text-white">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <motion.div
               className="mt-32 lg:mt-0"

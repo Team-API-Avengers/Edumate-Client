@@ -63,7 +63,7 @@ const Testimonial = () => {
   return (
     <div>
       <section>
-        <div className="container flex bg-green-50 dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white flex-col items-center justify-center p-4 mx-auto sm:p-10">
+        <div className="container flex bg-green-50 dark:bg-black dark:text-white flex-col items-center justify-center p-4 mx-auto sm:p-10">
           <motion.p
             id="title"
             className="p-2 text-4xl  text-center  mb-4"

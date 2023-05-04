@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="App bg-slate-100  mx-auto  dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white  overflow-hidden">
+    <div className="App bg-slate-50  mx-auto dark:bg-black dark:text-white  overflow-hidden">
       <ToastContainer />
       <RouterProvider router={router}></RouterProvider>
     </div>

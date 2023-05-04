@@ -14,8 +14,8 @@ const Hero = () => {
   // const [menu, setMenu] = useState(false);
   return (
     <div>
-      {/* <section>
-        <div className="w-full relative pb-10 px-6 xl:px-0">
+      <section>
+        <div className="w-full relative bg-slate-200 dark:bg-black pb-10 px-6 xl:px-0">
           <img
             className="absolute w-full inset-0 h-full object-cover object-center"
             src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png"
@@ -31,14 +31,14 @@ const Hero = () => {
               />
             </div>
 
-            <div role="contentinfo" className="w-full pt-5 bg-white dark:bg-green-900 rounded-lg lg:w-1/2 h-full">
-              <p tabIndex="0" className="text-gray-800 dark:text-white uppercase text-2xl mb-4">
+            <div role="contentinfo" className="w-full pt-5 text-black bg-transparent rounded-lg lg:w-1/2 h-full">
+              <p tabIndex="0" className="text-gray-800 uppercase text-2xl mb-4">
                 Let's find 
               </p>
-              <h1 tabIndex="0" className="text-gray-800 dark:text-white text-4xl lg:text-6xl font-black mb-8 uppercase">
+              <h1 tabIndex="0" className=" text-4xl text-blue-600 lg:text-6xl font-black mb-8 uppercase">
               your teacher
               </h1>
-              <p tabIndex="0" className="text-gray-800 mx-5 dark:text-white font-regular mb-8">
+              <p tabIndex="0" className="text-gray-800 mx-5 font-regular mb-8">
                 Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of
                 other academic, vocational and pastoral tuition.
               </p>
@@ -86,8 +86,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </section> */}
-      <div
+      </section> 
+      {/* <div
         className="banner h-[550px]"
         style={{
           backgroundImage:
@@ -96,7 +96,7 @@ const Hero = () => {
         }}
       >
         <h1 className="banner-title">Welcome to My Website</h1>
-      </div>
+      </div> */}
     </div>
   );
 };

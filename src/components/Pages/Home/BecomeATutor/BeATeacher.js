@@ -35,11 +35,12 @@ const childVariants = {
   },
 };
 
+
 const BeATeacher = () => {
   // const { theme } = useContext(AuthContext);
   return (
     <div>
-      <div className="container   dark:bg-gradient-to-r from-[#1e2f37] via-[#15803d] to-[#1e2f37] dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
+      <div className="container   dark:bg-black dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
         <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div
             className="w-full mt-7 "
