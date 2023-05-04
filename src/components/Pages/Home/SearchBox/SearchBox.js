@@ -25,8 +25,8 @@ const SearchBox = () => {
 
   return (
     <div>
-      <div className="main mt-12 relative flex flex-col items-center justify-center py-12 mb-12 overflow-hidden  ">
-        <div className=" z-30 p-2  text-2xl bg-white dark:text-white text-green-600 dark:bg-green-900 mb-6  bg-opacity-25 rounded-xl">
+      <div className="main mt-12 relative flex flex-col object-contain items-center justify-center py-20 mb-12 overflow-hidden  ">
+        <div className=" z-30 p-2 text-2xl bg-white dark:text-white text-yellow-300 dark:bg-green-900 mb-6  bg-opacity-25 rounded-xl">
           <h2 className="flex">
             <span className="mx-2">Search teacher by your location</span>
             <span className="mt-1"> <BsFillGeoAltFill /> </span> 
@@ -41,7 +41,7 @@ const SearchBox = () => {
               placeholder="for example: Dhaka"
               className="input w-full max-w-xs text-slate-700"
             />
-            <button className="btn dark:bg-blue-500 dark:hover:bg-blue-600 text-white bg-green-600 hover:bg-green-800">Search Here</button>
+            <button className="btn dark:bg-blue-500 dark:hover:bg-blue-600 text-white bg-yellow-300 hover:bg-yellow-500">Search</button>
           </form>
         </div>
         <video className="absolute z-10 w-auto min-w-full min-h-full max-w-none " src={videoBg} autoPlay loop muted />

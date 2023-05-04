@@ -28,6 +28,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Form from "../../Layouts/Form/Form";
 import Reviews from "../../Pages/Reviews/Reviews";
 import TutorTest from "../../Pages/AddTeacher/TutorTest/TutorTest";
+import Gallery from "../../Pages/Home/Gallery/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <About />,
+      },
+      {
+        path: "/gallery",
+        element: <Gallery />,
       },
       {
         path: "/all-Teachers",

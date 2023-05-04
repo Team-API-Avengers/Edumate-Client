@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Loader from '../../../Shared/Loader/Loader';
 
 const Gallery = () => {
@@ -6,7 +6,7 @@ const Gallery = () => {
       
 //   const [allInstructor, setInstructors] = useState({});
 
-//   const [allStudents, SetStudent] = useState([]);
+  const [allStudents, SetStudent] = useState([]);
 
   const [allUser, setAllUser] = useState({});
 
@@ -29,11 +29,11 @@ const Gallery = () => {
     }
 
 
-    // useEffect(() => {
-    //     fetch(`https://edumate-second-server.vercel.app/api/v1/user/dash/student`)
-    //   .then((res) => res.json())
-    //   .then((data) => setAllUser(data?.data))
-    // },[])
+    useEffect(() => {
+        fetch(`https://edumate-second-server.vercel.app/api/v1/user/dash/student`)
+      .then((res) => res.json())
+      .then((data) => SetStudent(data?.data))
+    },[])
 
     
     const handleTeachers = () => {
@@ -48,7 +48,7 @@ const Gallery = () => {
           
     }
 
-    console.log(allUser[1]?.image);
+    console.log(allStudents);
 
 if(loading){
     return <Loader />

@@ -11,7 +11,7 @@ const DashBoard = () => {
   const { logUser, theme, loading } = useContext(AuthContext);
 
   if (loading) {
-    return <Loader></Loader>;
+    return <Loader />;
   }
 
   return (
@@ -77,7 +77,7 @@ const DashBoard = () => {
             {logUser?.role === "Teacher" && (
               <>
                 <li className="">
-                  <Link to="/dashboard/add-Teacher">Be a teacher</Link>
+                  <Link to="/dashboard/tutor-test">Be a teacher</Link>
                 </li>
 
                 <li className="">

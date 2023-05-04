@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <div>
       <section>
-        <div className="w-full relative bg-slate-200 dark:bg-black pb-10 px-6 xl:px-0">
+        <div className="w-full relative bg-[#ECF2FF] dark:bg-black pb-10 px-6 xl:px-0">
           <img
             className="absolute w-full inset-0 h-full object-cover object-center"
             src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png"

@@ -197,7 +197,7 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/settings">Settings</Link>
+                      <Link to="/gallery">Gallery</Link>
                     </li>
 
                     <li>

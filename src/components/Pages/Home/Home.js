@@ -10,9 +10,9 @@ import ScrollButton from "./ScrollButton/ScrollButton";
 import Hero from "./Hero/Hero";
 import Sponsors from "./Sponsors/Sponsors";
 import GetReview from "./GetReview/GetReview";
-import Gallery from "./Gallery/Gallery";
 import FAQ from "../FAQ/FAQ";
-import SearchQuery from "./SearchQuery/SearchQuery";
+// import SearchQuery from "./SearchQuery/SearchQuery";
+import SearchBox from "./SearchBox/SearchBox";
 
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
 
       <Hero />
 
-       <div id="search"><SearchQuery /></div>
+       <div id="search"><SearchBox /></div>
 
       <SubjectWiseTeachers />
 
@@ -40,8 +40,7 @@ const Home = () => {
 
       <div id="beATeacher"> <BeATeacher /></div>
 
-      <Gallery />
-
+     
       <AboutOurs />
 
       <div id="faq"><FAQ /></div>
