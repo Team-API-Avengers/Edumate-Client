@@ -8,10 +8,7 @@ const MyTeachers = () => {
   const { user } = useContext(AuthContext);
   // console.log(user?.email);
 
-  const [teachers, setTeachers] = useState([]);
-
-
-
+  const [teachers, setTeachers] = useState([]); 
   const [modalData, setModalData] = useState();
 
 
