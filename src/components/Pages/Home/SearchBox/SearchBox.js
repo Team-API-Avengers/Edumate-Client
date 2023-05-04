@@ -1,27 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsArrowRight, BsFillGeoAltFill, BsFillPersonFill, BsHourglassSplit } from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import videoBg from "../../../Assets/video/pexels-max-fischer-5198161-3840x2160-50fps.mp4";
+import Loader from "../../../Shared/Loader/Loader";
 
 const SearchBox = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const search = e.target.search.value;
-    console.log(search);
-
-    fetch(`https://edumate-second-server.vercel.app/api/v1/tutor/location/${search}`)
+  useEffect(() => {
+    setLoading(true);
+    fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
       .then((res) => res.json())
-      .then((result) => {
-        if (result) {
-          console.log(result);
-          setData(result.data);
-          e.target.reset();
-        }
+      .then((data) => setData(data?.data))
+      .finally(() => {
+        setLoading(false);
       });
-  };
+  }, []);
+
+  function handleFilter(event) {
+    const query = event.target.value.toLowerCase();
+    console.log(query);
+    // console.log(data);
+    const filtered = data?.filter((item) => {
+      return (
+        item?.name?.toLowerCase().includes(query) ||
+        item?.location?.toLowerCase().includes(query) ||
+        item?.background?.toLowerCase().includes(query)
+      );
+    });
+    setFilteredData(filtered);
+  }
+
+  console.log(filteredData);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div>
@@ -34,15 +51,15 @@ const SearchBox = () => {
         </div>
 
         <div className="content flex gap-4 justify-center items-center relative z-30 p-5 text-2xl text-green-600 dark:text-white bg-white dark:bg-green-900 bg-opacity-50 rounded-xl">
-          <form onSubmit={handleSearch} className="flex gap-2">
+          <div className="flex gap-2">
             <input
-              name="search"
+              onChange={handleFilter}
               type="text"
               placeholder="for example: Dhaka"
               className="input w-full max-w-xs text-slate-700"
             />
             <button className="btn dark:bg-blue-500 dark:hover:bg-blue-600 text-white bg-yellow-300 hover:bg-yellow-500">Search</button>
-          </form>
+          </div>
         </div>
         <video className="absolute z-10 w-auto min-w-full min-h-full max-w-none " src={videoBg} autoPlay loop muted />
       </div>

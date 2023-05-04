@@ -18,6 +18,14 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+
+  //! Data Search Query States
+  const [filteredData, setFilteredData] = useState([]);
+
+
+
+
   // const [logUser, setLogUser] = useState();
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -125,6 +133,8 @@ const AuthProvider = ({ children }) => {
     theme,
     setTheme,
     refetch,
+    filteredData, 
+    setFilteredData,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

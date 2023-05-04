@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Loader from "../../../Shared/Loader/Loader";
 import {
   BsArrowRight,
@@ -7,37 +7,16 @@ import {
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaBookReader } from "react-icons/fa";
-import SearchAnimation from "../../../Assets/Animation/SearchAnimation.json";
-import Lottie from "lottie-react";
+// import SearchAnimation from "../../../Assets/Animation/SearchAnimation.json";
+// import Lottie from "lottie-react";
+import { AuthContext } from "../../../Context/AuthProvider";
 
-const SearchQuery = () => {
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [loading, setLoading] = useState(false);
+const SearchQuery = ({filteredData}) => {
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
-      .then((res) => res.json())
-      .then((data) => setData(data?.data))
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  const {loading} = useContext(AuthContext)
+ 
 
-  function handleFilter(event) {
-    const query = event.target.value.toLowerCase();
-    console.log(query);
-    // console.log(data);
-    const filtered = data?.filter((item) => {
-      return (
-        item?.name?.toLowerCase().includes(query) ||
-        item?.location?.toLowerCase().includes(query) ||
-        item?.background?.toLowerCase().includes(query)
-      );
-    });
-    setFilteredData(filtered);
-  }
+
 
   console.log(filteredData);
 
@@ -47,27 +26,6 @@ const SearchQuery = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-10 lg:mx-10 my-10">
-        <div></div>
-        <div className="lg:mx-0 mx-20">
-          <Lottie
-            className="w-52 mx-auto"
-            animationData={SearchAnimation}
-            loop={true}
-          ></Lottie>
-        </div>
-        <div className="mt-10 col-span-2">
-          <h1>Search your tutor by his - Name / Location / Background</h1>
-          <input
-            placeholder="Search Your Tutor"
-            type="text"
-            className="text-black my-5 h-10 p-3"
-            onChange={handleFilter}
-          />
-          <button className="bg-green-600  h-10 p-2 -mt-[2px]">Search</button>
-        </div>
-      </div>
-
       <div className="grid lg:grid-cols-4 max-w-screen-xl mx-auto  md:grid-cols-3 grid-cols-1 gap-5">
         {filteredData?.map((value, idx) => (
           <div

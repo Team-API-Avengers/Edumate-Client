@@ -11,12 +11,11 @@ import Hero from "./Hero/Hero";
 import Sponsors from "./Sponsors/Sponsors";
 import GetReview from "./GetReview/GetReview";
 import FAQ from "../FAQ/FAQ";
-// import SearchQuery from "./SearchQuery/SearchQuery";
-import SearchBox from "./SearchBox/SearchBox";
+import SearchQuery from "./SearchQuery/SearchQuery";
 
 
 const Home = () => {
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading,filteredData } = useContext(AuthContext);
 
   if (loading) {
     return <Loader />;
@@ -30,7 +29,10 @@ const Home = () => {
 
       <Hero />
 
-       <div id="search"><SearchBox /></div>
+      {
+        filteredData &&
+          <div id="search"><SearchQuery filteredData={filteredData} /></div>
+      }
 
       <SubjectWiseTeachers />
 

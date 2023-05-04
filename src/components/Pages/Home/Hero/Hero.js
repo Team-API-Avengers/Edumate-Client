@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   BsFillDpadFill,
   BsFillExclamationSquareFill,
@@ -10,25 +10,71 @@ import { AuthContext } from "../../../Context/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const { user } = useContext(AuthContext);
-  // const [menu, setMenu] = useState(false);
+  const { user, filteredData, setFilteredData } = useContext(AuthContext);
+
+
+  const [data, setData] = useState([]);
+  
+
+  useEffect(() => {
+    fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
+      .then((res) => res.json())
+      .then((data) => setData(data?.data))
+      .finally(() => {
+      });
+  }, []);
+
+
+
+  //! Data Query
+  function handleFilter(event) {
+    const query = event.target.value.toLowerCase();
+    console.log(query);
+    // console.log(data);
+    const filtered = data?.filter((item) => {
+      return (
+        item?.name?.toLowerCase().includes(query) ||
+        item?.location?.toLowerCase().includes(query) ||
+        item?.background?.toLowerCase().includes(query)
+      );
+    });
+    setFilteredData(filtered);
+  }
+
+  console.log(filteredData);
   return (
     <div>
       <section>
-        <div className="w-full relative bg-[#ECF2FF] dark:bg-black pb-10 px-6 xl:px-0">
+        <div className="w-full relative bg-[#ECF2FF] dark:bg-black pb-20 px-6 xl:px-0">
           <img
             className="absolute w-full inset-0 h-full object-cover object-center"
             src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png"
             alt="we care family"
           />
 
-          <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
+          <div className="pt-2 lg:flex items-center relative z-10 container mx-auto">
             <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
               <img
                 className="mx-auto"
                 src={bannerPic}
                 alt="img"
               />
+
+
+            <div className="my-5 mx-10">
+              <h1>Name/ Location / Department</h1>
+            <div className=" bg-base-200 px-4 flex flex-col py-5 sm:flex-row justify-start items-start sm:items-center shadow-lg dark:rounded-b-lg">
+            <input
+            placeholder="Search your tutor"
+            type="text"
+            className="text-black h-12 w-full"
+            onChange={handleFilter}
+          />
+          <button className="btn btn-primary rounded-none h-10">Search</button>
+            </div>
+            </div>
+
+
             </div>
 
             <div role="contentinfo" className="w-full pt-5 text-black bg-transparent rounded-lg lg:w-1/2 h-full">
@@ -83,6 +129,7 @@ const Hero = () => {
                   </a>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>

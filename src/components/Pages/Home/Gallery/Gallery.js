@@ -56,12 +56,48 @@ if(loading){
 }
 
     return (
-        <div>
+        <div className='mx-10'>
             <div className="flex justify-center py-10">
                 <button onClick={handleTeachers} className="btn mx-3">Teachers</button>
                 <button onClick={handleStudents} className="btn mx-3">Students</button>
             </div>
+
+
             {
+                allUser[1]?
+                <div>
+                    <h1 className='my-5 text-semibold flex justify-center'>
+                        <span className='mx-1'>{allUser?.length}</span>
+                        <span className='mx-1'>{allUser[1]?.role}'s</span>
+                        <span className='mx-1'>Available</span>
+                    </h1>
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
+                    {
+                    allUser?.map((data, idx) =>
+                    <img key={idx} className="object-cover w-full dark:bg-gray-500 aspect-square" src={data?.image} alt=''/>
+                   )}
+                </div>
+                </div>
+                :
+                <div>
+                <h1 className='my-5 text-semibold flex justify-center'>
+                   <span className='mx-1'>{allStudents?.length}</span>
+                   <span className='mx-1'>{allStudents[1]?.role}'s</span>
+                   <span className='mx-1'>Available</span>
+                </h1>
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
+            {
+               allStudents?.map((data, idx) =>
+               <img key={idx} className="object-cover w-full dark:bg-gray-500 aspect-square" src={data?.image} alt=''/>
+           )}
+                </div>
+                </div>
+            }
+
+
+
+
+            {/* {
             allUser?
             <div class="container mx-auto px-5 py-2 lg:px-32">
             <div class="-m-1 flex flex-wrap md:-m-2">
@@ -170,7 +206,7 @@ if(loading){
                 </div>
             </div>
             </div>
-            }
+            } */}
         </div>
     );
 };
