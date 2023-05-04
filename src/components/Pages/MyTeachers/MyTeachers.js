@@ -6,15 +6,13 @@ import PaymentModal from "../../Modals/PaymentModal/PaymentModal";
 
 const MyTeachers = () => {
   const { user } = useContext(AuthContext);
-  // console.log(user?.email);
-
-  const [teachers, setTeachers] = useState([]); 
+  const [teachers, setTeachers] = useState([]);
   const [modalData, setModalData] = useState();
-
-
-
-
   const [loading, setLoading] = useState(false);
+
+
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -47,7 +45,6 @@ const MyTeachers = () => {
 
 
   const handlePaymentModalData = data => {
-    
     setModalData(data);
   }
 
@@ -134,7 +131,7 @@ const MyTeachers = () => {
                   </tbody>
 
 
-                  <PaymentModal modalData = {modalData} />
+                  <PaymentModal modalData={modalData} />
 
 
 
