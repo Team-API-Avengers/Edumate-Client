@@ -57,7 +57,7 @@ const BeATeacher = () => {
             >
               <motion.h1
                 id="title"
-                className="text-5xl  font-bold  dark:text-white"
+                className="text-5xl  font-bold text-green-400 dark:text-white"
                 variants={childVariants}
               >
                 Become a tutor
