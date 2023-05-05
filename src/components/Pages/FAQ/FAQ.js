@@ -5,30 +5,30 @@ import ReviewAnimation from '../../Assets/Animation/FAQ_Animation.json';
 
 const FAQ = () => {
     return (
-        <div className='w-[100vw] grid grid-cols-1 lg:grid-cols-3'>
+        <div className='w-[100vw] grid grid-cols-1 lg:grid-cols-2 gap-5 mr-12'>
 
-            <div className='lg:col-span-1 lg:mt-24'>
+            <div>
             <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
           </div>
 
 
-            <div class="space-y-4 mx-5 lg:col-span-2">
+            <div className="lg:mt-12">
                 <FAQBanner />
             <details
-                class="group border-l-8 rounded-xl border-green-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group border-l-8  my-5 rounded-xl border-green-500 bg-gray-50 p-2 [&_summary::-webkit-details-marker]:hidden"
                 // open
             >
-                <summary class="flex items-center justify-between cursor-pointer">
-                <h2 class="text-lg font-medium text-gray-900">
+                <summary className="flex items-center justify-between cursor-pointer">
+                <h2 className="text-lg font-medium text-gray-900">
                     Lorem ipsum dolor sit amet consectetur adipisicing?
                 </h2>
 
                 <span
-                    class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                    className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                 >
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
+                    className="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     >
@@ -41,7 +41,7 @@ const FAQ = () => {
                 </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
                 molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
                 voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -51,20 +51,20 @@ const FAQ = () => {
 
             
             <details
-                class="group rounded-xl border-l-8 border-green-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group rounded-xl border-l-8  my-5 border-green-500 bg-gray-50 p-2 [&_summary::-webkit-details-marker]:hidden"
                 
             >
-                <summary class="flex items-center justify-between cursor-pointer">
-                <h2 class="text-lg font-medium text-gray-900">
+                <summary className="flex items-center justify-between cursor-pointer">
+                <h2 className="text-lg font-medium text-gray-900">
                     Lorem ipsum dolor sit amet consectetur adipisicing?
                 </h2>
 
                 <span
-                    class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                    className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                 >
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
+                    className="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     >
@@ -77,7 +77,7 @@ const FAQ = () => {
                 </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
                 molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
                 voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -87,20 +87,20 @@ const FAQ = () => {
 
             
             <details
-                class="group rounded-xl border-l-8 border-green-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group rounded-xl border-l-8  my-5 border-green-500 bg-gray-50 p-2 [&_summary::-webkit-details-marker]:hidden"
                 
             >
-                <summary class="flex items-center justify-between cursor-pointer">
-                <h2 class="text-lg font-medium text-gray-900">
+                <summary className="flex items-center justify-between cursor-pointer">
+                <h2 className="text-lg font-medium text-gray-900">
                     Lorem ipsum dolor sit amet consectetur adipisicing?
                 </h2>
 
                 <span
-                    class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                    className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                 >
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
+                    className="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     >
@@ -113,7 +113,7 @@ const FAQ = () => {
                 </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
                 molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
                 voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -123,20 +123,20 @@ const FAQ = () => {
 
             
             <details
-                class="group rounded-xl border-l-8 border-green-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group rounded-xl border-l-8  my-5 border-green-500 bg-gray-50 p-2 [&_summary::-webkit-details-marker]:hidden"
             
             >
-                <summary class="flex items-center justify-between cursor-pointer">
-                <h2 class="text-lg font-medium text-gray-900">
+                <summary className="flex items-center justify-between cursor-pointer">
+                <h2 className="text-lg font-medium text-gray-900">
                     Lorem ipsum dolor sit amet consectetur adipisicing?
                 </h2>
 
                 <span
-                    class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
+                    className="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3"
                 >
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
+                    className="flex-shrink-0 w-5 h-5 transition duration-300 group-open:-rotate-45"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     >
@@ -149,7 +149,7 @@ const FAQ = () => {
                 </span>
                 </summary>
 
-                <p class="mt-4 leading-relaxed text-gray-700">
+                <p className="mt-4 leading-relaxed text-gray-700">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
                 molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
                 voluptate dicta quo officiis explicabo consequuntur distinctio corporis

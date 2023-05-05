@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div>
       
-<footer aria-label="Site Footer" className="dark:bg-black dark:text-white">
+<footer aria-label="Site Footer" className="text-black dark:text-white">
   <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>
@@ -132,7 +132,7 @@ const Footer = () => {
               href="/"
               rel="noreferrer"
               target="_blank"
-              className="text-teal-700  dark:text-white transition hover:text-teal-700 "
+              className="text-teal-700 dark:text-white transition hover:text-teal-700 "
             >
               <span className="sr-only">Dribbble</span>
               <svg
@@ -381,7 +381,7 @@ const Footer = () => {
           {/* <span className="block sm:inline">.</span> */}
 
           <a
-            className="inline-block mx-3 text-white underline transition hover:text-teal-600/75"
+            className="inline-block mx-3 text-black dark:text-white underline transition hover:text-teal-600/75"
             href="/"
           >
             Terms & Conditions
@@ -390,7 +390,7 @@ const Footer = () => {
           <span>&middot;</span>
 
           <a
-            className="inline-block mx-3 text-white underline transition hover:text-teal-600/75"
+            className="inline-block mx-3 text-black dark:text-white underline transition hover:text-teal-600/75"
             href="/"
           >
             Privacy Policy

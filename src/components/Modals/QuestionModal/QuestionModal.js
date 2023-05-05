@@ -8,7 +8,14 @@ const QuestionModal = () => {
 
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
+
+    //! Change Style 
+    // const [style, setStyle] = useState("block");
   
+
+    // console.log(object);
+
+
     useEffect(() => {
       fetch(`https://edumate-second-server.vercel.app/api/v1/test`)
         .then((res) => res.json())
@@ -26,7 +33,13 @@ const QuestionModal = () => {
             item?.category?.toLowerCase().includes(query)
           );
         });
-        setFilteredData(filtered?.slice(0,4));
+        // setFilteredData(filtered?.slice(0,4));
+
+         //! For Display 5 question from array by randomly .. .. ..
+  const n = 3; // number of elements we want to get
+  const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
+  const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
+             setFilteredData(resultData)
       }
     
       console.log(filteredData);
@@ -44,13 +57,15 @@ const QuestionModal = () => {
       //! handle Option
           
   const handleOption = (option, data) => {
-    // alert('option',option, 'data', data);
+    console.log(data);
     const selectedAnswer = option;
     if (selectedAnswer === data.answer) {
       toast.success('Success');
     } else {
       toast.error('Wrong');
     }
+
+    // setStyle("hidden");
   };
 
 
@@ -63,7 +78,7 @@ const QuestionModal = () => {
                 <label htmlFor="QuestionModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 
                 <div>
-                        <label className="block">
+                        <label className="block text-black">
                             Select Your Department <br /> That You Want To Teach
                             </label>
 
@@ -137,8 +152,9 @@ const QuestionModal = () => {
 
                       <div>
                       {filteredData?.map((data, idx) => 
-                        <div key={idx} className='my-5'>
-                            <div className="flex">
+                        <div key={idx}>
+                            <div>
+                              <div className="flex">
                             {/* <span className='bg-yellow-200 text-start'>
                               🧿
                               </span> */}
@@ -154,6 +170,7 @@ const QuestionModal = () => {
                                 <p>{options}</p>
                                 </div>
                                 )}
+                            </div>
                             </div>
                             
                         </div>

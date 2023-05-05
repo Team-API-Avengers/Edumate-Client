@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import ReviewAnimation from "../../../Assets/Animation/Teacher.json";
 import Lottie from "lottie-react";
 import QuestionModal from "../../../Modals/QuestionModal/QuestionModal";
-import StatusModal from "../../../Modals/StatusModal/StatusModal";
 
 const containerVariants = {
   hidden: {
@@ -106,7 +105,6 @@ const BeATeacher = () => {
             </div>
           </motion.div>
         <QuestionModal />
-        <StatusModal />
         </div>
       </div>
     </div>

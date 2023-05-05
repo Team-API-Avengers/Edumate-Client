@@ -37,7 +37,10 @@ const SubjectWiseTeachers = () => {
       </motion.p>
       {/* {backgrounds.map((category) => ( */}
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto grid grid-cols-1">
-        <div className="container grid grid-cols-2 gap-10 px-5 py-1 text-green-600  mx-auto">
+
+        <div className="container grid grid-cols-4 gap-10 px-5 py-1 text-green-600  mx-auto">
+
+          {/* Science Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -77,6 +80,8 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
 
+
+          {/* Commerce Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -116,6 +121,8 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
 
+
+          {/* Arts Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -154,19 +161,21 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
 
+
+          {/* All Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, type: "spring", duration: 2 }}
           >
             <Link to={"/all-Teachers"}>
-              <a href="#g" className="group relative  block h-36">
+              <a href="#g" className="group relative block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
                 <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-orange-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-                  <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-                    {/* <img className="w-14 h-12 " src={ app } alt="" /> */}
-                    <BsBorder className="w-14 h-12 " />
+
+                  <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0">
+                    <BsBorder className="w-14 h-12" />
                     <h2 className="mt-4 text-xl font-medium sm:text-2xl">
                       All Department
                     </h2>
@@ -174,7 +183,7 @@ const SubjectWiseTeachers = () => {
 
                   <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
                     <h3 className="mt-4 flex text-xl font-medium sm:text-2xl">
-                      All Department
+                      All
                       <span className="mt-1 mx-2">
                         <BsMicrosoft />
                       </span>
@@ -187,6 +196,7 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
         </div>
+
       </div>
     </div>
   );

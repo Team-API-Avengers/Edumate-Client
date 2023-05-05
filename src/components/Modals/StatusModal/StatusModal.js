@@ -21,6 +21,7 @@ const StatusModal = () => {
 
         const status = {
             category: e.target.category?.value,
+            location: e.target.location?.value,
             authorName: user?.displayName,
             authorRole: logUser?.role,
             authorImage: user?.photoURL,
@@ -57,27 +58,51 @@ const StatusModal = () => {
         <div className="modal">
           <div className="modal-box relative bg-white text-black border-0 ">
 
+            {/* User info */}
             <button className="btn gap-2">
             {user?.displayName}
             <div className="badge badge-secondary">{logUser?.role}</div>
             </button>
 
+            {/* Close button */}
             <label htmlFor="Status-Modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+
+
+            {/* Form */}
             <form onSubmit={handleStatus} className="modal-box shadow-none bg-transparent w-full mx-auto ">
 
+
+                {/* Department Field */}
             <div className="flex justify-center my-3">
             <div className='form-control w-full max-w-xs'>
 
             <select name='category' className="select select-bordered w-full max-w-xs">
-            <option disabled selected>Tiny</option>
-            <option>Tiny Apple</option>
-            <option>Tiny Orange</option>
-            <option>Tiny Tomato</option>
+            <option disabled selected>Choose a department</option>
+            <option>Science</option>
+            <option>Commerce</option>
+            <option>Arts</option>
             </select>
 
             </div>
             </div>
 
+
+
+            {/* Location Field */}
+                <div className="flex justify-center mb-3">
+                <div className='form-control w-full max-w-xs'>
+                <input 
+                type="text"
+                name='location'
+                placeholder="Your Location"
+                className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
+              />
+                </div>
+                </div>
+
+
+
+                {/* Status Field */}
                 <div className="flex justify-center">
                 <div className='form-control w-full max-w-xs'>
                 <input
@@ -94,6 +119,8 @@ const StatusModal = () => {
 
 
 
+
+                {/* Submit Button */}
                 <button type="submit" className='w-full'>
                 <label htmlFor="Status-Modal" className="modal-action flex justify-center btn bg-indigo-600 hover:bg-indigo-700 text-white w-full mt-4"> Post</label>
 

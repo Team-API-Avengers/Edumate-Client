@@ -31,9 +31,11 @@ const ContactUs = () => {
         >
           <div className="container mx-auto my-4 px-4 ">
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:shadow-none bg-transparent">
+
               <div className="flex flex-col mt-5">
+                {/* Auto Typing Test */}
                 <h1 className="font-bold  flex gap-2 uppercase text-4xl">
-                  Lets{" "}
+                  Lets
                   <Typical
                     className="text-blue-600 dark:text-white "
                     steps={["Talk", 3000, "discuss", 3000]}
@@ -41,22 +43,30 @@ const ContactUs = () => {
                     wrapper="p"
                   ></Typical>
                 </h1>
-                <div className="">
+
+
+
+                {/* Animation */}
+                <div className="mt-10">
                   <Lottie
                     className="w-full"
                     animationData={ContactAnimation}
                     loop={true}
                   ></Lottie>
                 </div>
+
               </div>
 
+
+
+              {/* Contact Form */}
               <div>
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-5">
                     <div>
                       <label className="label">
                         <span className="label-text dark:text-white">Name</span>
-                      </label>{" "}
+                      </label>
                       <input
                         className="w-full border  border-[#001a41] dark:border-none  text-gray-900  mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
                         type="text"
@@ -138,7 +148,9 @@ const ContactUs = () => {
                   </div>
                 </form>
               </div>
+
             </div>
+
           </div>
         </div>
       </motion.div>
