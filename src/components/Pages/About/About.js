@@ -11,7 +11,67 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <section className="mt-8">
-      <div>
+      <div className="mt-28">
+        <div>
+          <motion.h1
+            className="text-4xl font-bold mb-8"
+            style={{ color: "#2CA01C" }}
+            initial={{ y: -80 }}
+            whileInView={{ y: -20 }}
+            transition={{ type: "spring", stiffness: 30 }}
+          >
+            About Us
+          </motion.h1>
+          <motion.p
+            className="w-1/2 mx-auto"
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: -20, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 30 }}
+          >
+            Tuition is a fee paid by students to educational institutions for instruction or guidance in a particular
+            subject or course of study. The term can refer to either the fee itself or the act of teaching or
+            instructing.
+          </motion.p>
+        </div>
+
+        <div className="hero mt-10">
+          <div className="hero-content flex-col lg:flex-row gap-12">
+            <motion.img
+              initial={{ x: -80, opacity: 0 }}
+              whileInView={{ x: 20, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 30 }}
+              className="w-full lg:w-1/2"
+              src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop"
+              alt=""
+            />
+            <motion.div>
+              <h3 className="text-center lg:text-start text-2xl mb-4 font-bold" style={{ color: "#2CA01C" }}>
+                Why Choose Us
+              </h3>
+              <h1 className="text-4xl font-bold text-start">Learn Something Good, Do Something Better!</h1>
+              <p className="py-6 text-start">
+                Edumate provides students with access to qualified and experienced tutors who specialize in different
+                subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need
+                extra help with their studies. Edumate connects students with teachers who can help them achieve their
+                academic goals
+              </p>
+              <div className="text-start">
+                <Link to="/">
+                  <button className="btn btn-primary mr-4 rounded-full" style={{ backgroundColor: "#2CA01C" }}>
+                    Go Home
+                  </button>
+                </Link>
+                <Link to="/contact">
+                  <button className="btn btn-primary mr-4 rounded-full" style={{ backgroundColor: "#2CA01C" }}>
+                    Contact us
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      {/* <div>
         <div className="heros  bg-base-200 dark:bg-black dark:text-white">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <motion.div
@@ -87,7 +147,7 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <AboutOurs></AboutOurs>
 
