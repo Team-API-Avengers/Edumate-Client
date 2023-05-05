@@ -57,6 +57,7 @@ const SearchQuery = ({filteredData}) => {
                   <BsHourglassSplit className="mt-1 mr-2" /> {value?.experience}
                   years experience
                 </p>
+
                 <div>
                   <Link to={`/instructor/${value?._id}`}>
                     <div className="flex mt-3">
@@ -72,6 +73,8 @@ const SearchQuery = ({filteredData}) => {
                     </div>
                   </Link>
                 </div>
+
+                
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ import { AuthContext } from "../../../Context/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const { user, filteredData, setFilteredData } = useContext(AuthContext);
+  const { user, logUser, filteredData, setFilteredData } = useContext(AuthContext);
 
 
   const [data, setData] = useState([]);
@@ -61,6 +61,10 @@ const Hero = () => {
               />
 
 
+
+            {/* Teacher Search Box For Students */}
+            {
+              logUser?.role === 'Teacher' &&
             <div className="my-5 mx-10">
               <h1>Name/ Location / Department</h1>
             <div className=" bg-base-200 px-4 flex flex-col py-5 sm:flex-row justify-start items-start sm:items-center shadow-lg dark:rounded-b-lg">
@@ -73,6 +77,25 @@ const Hero = () => {
           <button className="btn btn-primary rounded-none h-10">Search</button>
             </div>
             </div>
+            }
+
+
+            {/* Student Search Box For Teacher*/}
+            {
+              logUser?.role === 'Student' &&
+            <div className="my-5 mx-10">
+              <h1>Name/ Location / Department</h1>
+            <div className=" bg-base-200 px-4 flex flex-col py-5 sm:flex-row justify-start items-start sm:items-center shadow-lg dark:rounded-b-lg">
+            <input
+            placeholder="Search your tutor"
+            type="text"
+            className="text-black h-12 w-full"
+            onChange={handleFilter}
+          />
+          <button className="btn btn-primary rounded-none h-10">Search</button>
+            </div>
+            </div>
+            }
 
 
             </div>

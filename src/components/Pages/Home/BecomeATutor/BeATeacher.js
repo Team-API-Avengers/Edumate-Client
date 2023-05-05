@@ -1,12 +1,14 @@
 import React from "react";
 // import darkImage from "../../../Assets/BeATutorImage.png";
 // import image from "../../../Assets/BeATutorImage2.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 // import { AuthContext } from "../../../Context/AuthProvider";
 import ReviewAnimation from "../../../Assets/Animation/Teacher.json";
 import Lottie from "lottie-react";
+import QuestionModal from "../../../Modals/QuestionModal/QuestionModal";
+import StatusModal from "../../../Modals/StatusModal/StatusModal";
 
 const containerVariants = {
   hidden: {
@@ -61,6 +63,7 @@ const BeATeacher = () => {
               >
                 Become a tutor
               </motion.h1>
+              
 
               <motion.p
                 className="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-white"
@@ -75,9 +78,8 @@ const BeATeacher = () => {
                 . Inspire Minds, Shape Futures, Join the Teaching Profession.
               </motion.p>
 
-              <Link to={"/dashboard/add-Teacher"}>
-                <div className="flex mt-5">
-                  <motion.button className="group relative inline-flex items-center overflow-hidden rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
+            </motion.div>
+            <label htmlFor="QuestionModal" className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
                     <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                       <BsArrowRight />
                     </span>
@@ -85,11 +87,12 @@ const BeATeacher = () => {
                     <span className="text-sm font-medium transition-all group-hover:mr-4">
                       Start teaching today
                     </span>
-                  </motion.button>
-                </div>
-              </Link>
-            </motion.div>
+                
+            </label>
           </motion.div>
+
+
+          
 
           <motion.div
             // className="flex items-center justify-center w-full mt-6 lg:mt-0"
@@ -102,6 +105,8 @@ const BeATeacher = () => {
               <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
             </div>
           </motion.div>
+        <QuestionModal />
+        <StatusModal />
         </div>
       </div>
     </div>

@@ -23,10 +23,18 @@ const AddTeacher = () => {
   console.log(submitting);
   // console.log(logUser);
 
+
+
+  
+
   const addTeacher = (data) => {
+
     setSubmitting(true);
+
     const img = data.photo[0];
+
     const formData = new FormData();
+
     formData.append("image", img);
 
     const url = `https://api.imgbb.com/1/upload?key=${ imgHostKey }`;
@@ -76,31 +84,6 @@ const AddTeacher = () => {
 
   
 
-
-
-
-
-
-
-  // const handleOptionSelect = (option) => {
-  //   console.log(option);
-  //   setSelectedOption(option);
-  //   setIsModalOpen(true);
-
-
-  //       const filtered = data?.filter((item) => {
-  //     return (
-  //       item?.category?.includes(option)
-  //     );
-  //   });
-
-  //   console.log(filtered);
-  // };
-
-  // const handleModalClose = () => {
-  //   setIsModalOpen(false);
-  // };
-
   if(loading){
     return <Loader />;
   }
@@ -120,6 +103,7 @@ const AddTeacher = () => {
                   <div className="lg:col-span-2">
                     <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>
                     <div className="grid grid-cols-2 mt-2 gap-2">
+
                       <div className="">
                         <label>Full Name</label>
                         <input
@@ -143,6 +127,7 @@ const AddTeacher = () => {
                           placeholder="email@domain.com"
                         />
                       </div>
+
                       <div>
                         <label className="block">Background</label>
                          <select
@@ -177,6 +162,7 @@ const AddTeacher = () => {
                           placeholder="Average fee"
                         />
                       </div>
+
                       <div className="">
                         <label>Experience</label>
                         <input
@@ -186,6 +172,7 @@ const AddTeacher = () => {
                           placeholder="2 years*"
                         />
                       </div>
+
                       <div className="">
                         <label>Mobile number</label>
                         <input
@@ -196,6 +183,7 @@ const AddTeacher = () => {
                           placeholder="01100233534*"
                         />
                       </div>
+
                       <div className="w-full mt-1">
                         <label>Drop your professional image</label>
                         <input
@@ -204,7 +192,10 @@ const AddTeacher = () => {
                           className="block h-12 text-gray-800 border border-green-400 w-full cursor-pointer appearance-none rounded   bg-sky-50 px-3 py-3 text-sm transition focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:cursor-not-allowed  disabled:opacity-75"
                         />
                       </div>
-                    </div>{ " " }
+
+                    </div>
+
+
                     <div className="mt-2">
                       <label>Describe yourself</label>
                       <div className="">
@@ -214,7 +205,7 @@ const AddTeacher = () => {
                           placeholder="Describe yourself*"
                           className="w-full h-32 bg-sky-50  border border-green-400 text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
                         ></textarea>
-                      </div>{ " " }
+                      </div>
                       <div className="flex mt-8">
                         <button
                           type="submit"
@@ -237,6 +228,7 @@ const AddTeacher = () => {
                         )} */}
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>

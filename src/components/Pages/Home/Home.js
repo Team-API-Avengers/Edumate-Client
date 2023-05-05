@@ -12,6 +12,7 @@ import Sponsors from "./Sponsors/Sponsors";
 import GetReview from "./GetReview/GetReview";
 import FAQ from "../FAQ/FAQ";
 import SearchQuery from "./SearchQuery/SearchQuery";
+import StudentPostBox from "../StudentPostBox/StudentPostBox";
 
 
 const Home = () => {
@@ -33,6 +34,8 @@ const Home = () => {
         filteredData &&
           <div id="search"><SearchQuery filteredData={filteredData} /></div>
       }
+
+      {user && <StudentPostBox />}
 
       <SubjectWiseTeachers />
 

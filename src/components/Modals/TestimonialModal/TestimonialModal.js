@@ -6,8 +6,8 @@ const TestimonialModal = ({ modalData }) => {
     <div className="">
       <input type="checkbox" id="TestimonialModal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box">
-          <div className="  p-8   flex flex-col justify-center w-full text-center  border border-green-400 bg-green-100 dark:bg-white dark:text-black   cursor-pointer">
+        <div className="">
+          <div className="p-8 flex flex-col justify-center w-96 rounded-xl text-center border border-green-400 bg-white dark:text-black cursor-pointer">
             <img
               alt=""
               className="self-center ring ring-green-800 ring-offset-base-100 ring-offset-2 flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full "
