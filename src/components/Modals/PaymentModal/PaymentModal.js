@@ -2,7 +2,9 @@ import React from 'react';
 
 const PaymentModal = ({ modalData }) => {
 
-    console.log(modalData);
+
+    const id = modalData?._id;
+    console.log(id);
 
     const handlePlaceOrder = (event) => {
         event.preventDefault();
@@ -16,7 +18,9 @@ const PaymentModal = ({ modalData }) => {
         const teacherFee = form.teacherFee.value;
         const teacherLocation = form.teacherLocation.value;
 
+
         const paymentInfo = {
+            id: id,
             teacherName,
             teacherEmail,
             teacherPhone,
@@ -28,21 +32,22 @@ const PaymentModal = ({ modalData }) => {
         };
 
         console.log(paymentInfo);
-        // need to post payment information -- 
-        // fetch("http://localhost:5000/orders", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json",
-        //         authorization: `Bearer ${localStorage.getItem("genius-token")}`,
-        //     },
-        //     body: JSON.stringify(paymentInfo),
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         window.location.replace(data.url);
 
-        //     })
-        //     .catch((er) => console.error(er));
+        // need to post payment information -- 
+        fetch("http://localhost:5000/api/v1/payment/ssl-request", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(paymentInfo),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // window.location.replace(data.url);
+                
+                console.log(data);
+            })
+            .catch((er) => console.error(er));
     };
 
     return (
