@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthProvider';
 
 
@@ -33,21 +33,21 @@ const StatusModal = () => {
 
         console.log(status);
         //! Save addedStatus info to the database....
-					// fetch('https://smart-thrill-social-media-server.vercel.app/status', {
-					// 	method: 'POST',
-					// 	headers: {
-					// 		'content-type': 'application/json',
-					// 	},
-					// 	body: JSON.stringify(status),
-					// })
-					// 	.then((res) => res.json())
-					// 	.then((result) => {
-                    //         if (result.acknowledged) {
-                    //             e.target.reset()
-                    //             toast.success('Successfully posted your status')
-                    //             window.location.reload(true);
-                    //         }
-                    //     });
+					fetch('https://edumate-second-server.vercel.app/api/v1/searching-teacher', {
+						method: 'POST',
+						headers: {
+							'content-type': 'application/json',
+						},
+						body: JSON.stringify(status),
+					})
+						.then((res) => res.json())
+						.then((result) => {
+                            if (result.acknowledged) {
+                                e.target.reset()
+                                toast.success('Successfully posted your status')
+                                window.location.reload(true);
+                            }
+                        });
         
         
     }
