@@ -43,7 +43,7 @@ const StatusModal = () => {
 						.then((res) => res.json())
 						.then((result) => {
                             console.log(result);
-                            if (result.acknowledged) {
+                            if (result.status === "success") {
                                 e.target.reset()
                                 toast.success('Successfully posted your status')
                             }
