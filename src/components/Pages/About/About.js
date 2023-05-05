@@ -26,7 +26,7 @@ const About = () => {
             className="w-1/2 mx-auto"
             initial={{ y: 80, opacity: 0 }}
             whileInView={{ y: -20, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 30 }}
+            transition={{ type: "spring", stiffness: 20 }}
           >
             Tuition is a fee paid by students to educational institutions for instruction or guidance in a particular
             subject or course of study. The term can refer to either the fee itself or the act of teaching or
@@ -38,13 +38,17 @@ const About = () => {
           <div className="hero-content flex-col lg:flex-row gap-12">
             <motion.img
               initial={{ x: -80, opacity: 0 }}
-              whileInView={{ x: 20, opacity: 1 }}
-              transition={{ type: "spring", stiffness: 30 }}
+              whileInView={{ x: 5, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 20 }}
               className="w-full lg:w-1/2"
               src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop"
               alt=""
             />
-            <motion.div>
+            <motion.div
+              initial={{ x: 80, opacity: 0 }}
+              whileInView={{ x: -5, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 20 }}
+            >
               <h3 className="text-center lg:text-start text-2xl mb-4 font-bold" style={{ color: "#2CA01C" }}>
                 Why Choose Us
               </h3>
