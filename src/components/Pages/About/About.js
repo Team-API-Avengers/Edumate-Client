@@ -1,12 +1,8 @@
 import React from "react";
-// import { BsFillTelephoneOutboundFill } from "react-icons/bs";
-// import { GoLocation } from "react-icons/go";
-// import { BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import AboutOurs from "../Home/AboutOurs/AboutOurs";
 import Contributors from "../Contributors/Contibutors";
-import logo from "../../Assets/logo.png";
 import { motion } from "framer-motion";
+import AboutOurs from "./AboutOurs";
 
 const About = () => {
   return (

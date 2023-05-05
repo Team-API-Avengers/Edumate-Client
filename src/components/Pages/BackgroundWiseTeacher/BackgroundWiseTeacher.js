@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { FaBookReader } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
 import { AuthContext } from "../../Context/AuthProvider";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 import { BsHourglassSplit, BsFillPersonFill, BsArrowRightShort, BsArrowRight } from "react-icons/bs";
 
 const BackgroundWiseTeacher = () => {

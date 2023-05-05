@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-import StatusModal from '../../Modals/StatusModal/StatusModal';
+import StatusModal from '../../Modals/StatusModal';
 
 const StudentPostBox = () => {
     const {user} = useContext(AuthContext)

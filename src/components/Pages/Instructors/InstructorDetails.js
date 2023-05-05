@@ -8,7 +8,7 @@ import {
 import { HiLocationMarker } from "react-icons/hi";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 import { AuthContext } from "../../Context/AuthProvider";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { toast } from "react-toastify";

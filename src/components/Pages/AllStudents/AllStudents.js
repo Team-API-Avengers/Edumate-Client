@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 // import { AuthContext } from "../../Context/AuthProvider";
 import {
   BsFillPersonFill,

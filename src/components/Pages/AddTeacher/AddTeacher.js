@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { BsArrowRight } from "react-icons/bs";
 import { AuthContext } from "../../Context/AuthProvider";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 
 
 

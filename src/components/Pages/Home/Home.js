@@ -1,22 +1,59 @@
-import React, { useContext } from "react";
-import SubjectWiseTeachers from "../SubjectWiseTeacher/SubjectWiseTeachers";
-import AboutOurs from "./AboutOurs/AboutOurs";
-import ContactUs from "../Contact/ContactUs";
-import Reviews from "../Reviews/Reviews";
-import BeATeacher from "./BecomeATutor/BeATeacher";
-import Loader from "../../Shared/Loader/Loader";
+import React, { useContext, useEffect, useState } from "react";
+import SubjectWiseTeachers from "./SubjectWiseTeacher/SubjectWiseTeachers";
+import ContactUs from "./ContactUs";
+import Reviews from "./Reviews";
+import BeATeacher from "./BeATeacher";
+import Loader from "../../Shared/Loader";
 import { AuthContext } from "../../Context/AuthProvider";
-import ScrollButton from "./ScrollButton/ScrollButton";
-import Hero from "./Hero/Hero";
-import Sponsors from "./Sponsors/Sponsors";
-import GetReview from "./GetReview/GetReview";
-import FAQ from "../FAQ/FAQ";
-import SearchQuery from "./SearchQuery/SearchQuery";
-import StudentPostBox from "../StudentPostBox/StudentPostBox";
+import ScrollButton from "./ScrollButton";
+import Hero from "./Hero";
+import Sponsors from "./Sponsors";
+import GetReview from "./GetReview";
+import SearchQuery from "./SearchQuery";
+import Lottie from 'lottie-react';
+import SearchAnimation from '../../Assets/Animation/SearchAnimation.json';
+import FAQ from "./FAQ/FAQ";
+import AboutOurs from "../About/AboutOurs";
 
 
 const Home = () => {
-  const { user, loading,filteredData } = useContext(AuthContext);
+  const { user, loading, filteredData, setFilteredData } = useContext(AuthContext);
+
+
+
+  
+
+  const [data, setData] = useState([]);
+  
+
+  useEffect(() => {
+    fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
+      .then((res) => res.json())
+      .then((data) => setData(data?.data))
+      .finally(() => {
+      });
+  }, []);
+
+
+
+  //! Data Query
+  function handleFilter(event) {
+    const query = event.target.value.toLowerCase();
+    console.log(query);
+    // console.log(data);
+    const filtered = data?.filter((item) => {
+      return (
+        item?.name?.toLowerCase().includes(query) ||
+        item?.location?.toLowerCase().includes(query) ||
+        item?.background?.toLowerCase().includes(query)
+      );
+    });
+    setFilteredData(filtered);
+  }
+
+  console.log(filteredData);
+
+
 
   if (loading) {
     return <Loader />;
@@ -30,12 +67,33 @@ const Home = () => {
 
       <Hero />
 
+                  {/* tutor Search Field*/}
+            <div className="my-5 text-2xl font-semibold mx-10">
+              <h1>Name/ Location / Department</h1>
+            <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2">
+            <div>
+            <Lottie className="h-52" animationData={SearchAnimation} loop={true}></Lottie>
+          </div>
+
+
+            <div className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg">
+            <input
+            placeholder="Search your tutor"
+            type="text"
+            className="text-black h-12 w-1/2"
+            onChange={handleFilter}
+          />
+          <button className="btn btn-primary rounded-none h-10">Search</button>
+            </div>
+            </div>
+            </div>
+
       {
         filteredData &&
-          <div id="search"><SearchQuery filteredData={filteredData} /></div>
+        <div id="search"><SearchQuery filteredData={filteredData} /></div>
       }
 
-      {user && <StudentPostBox />}
+      {/* {user && <StudentPostBox />} */}
 
       <SubjectWiseTeachers />
 
