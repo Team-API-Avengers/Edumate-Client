@@ -6,6 +6,7 @@ import Loader from "../../Shared/Loader/Loader";
 import Header from "../../Shared/Header/Header";
 import { AuthContext } from "../../Context/AuthProvider";
 import DashboardHeader from "../../Shared/DashboardHeader/DashboardHeader";
+import QuestionModal from "../../Modals/QuestionModal/QuestionModal";
 
 const DashBoard = () => {
   const { logUser, theme, loading } = useContext(AuthContext);
@@ -69,7 +70,7 @@ const DashBoard = () => {
                 </li>
 
                 <li className="">
-                  <Link to="/dashboard/tutor-test">Be a teacher</Link>
+                  <label htmlFor="QuestionModal">Be a teacher</label>
                 </li>
               </>
             )}
@@ -77,7 +78,7 @@ const DashBoard = () => {
             {logUser?.role === "Teacher" && (
               <>
                 <li className="">
-                  <Link to="/dashboard/tutor-test">Be a teacher</Link>
+                  <label htmlFor="QuestionModal">Be a teacher</label>
                 </li>
 
                 <li className="">
@@ -95,6 +96,7 @@ const DashBoard = () => {
             )}
           </ul>
         </div>
+        <QuestionModal />
       </div>
     </div>
   );

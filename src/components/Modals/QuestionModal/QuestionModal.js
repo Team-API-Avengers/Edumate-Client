@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+// import { BsEyeFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 const QuestionModal = () => {
 
@@ -6,7 +10,7 @@ const QuestionModal = () => {
     const [filteredData, setFilteredData] = useState([]);
   
     useEffect(() => {
-      fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
+      fetch(`https://edumate-second-server.vercel.app/api/v1/test`)
         .then((res) => res.json())
         .then((data) => setData(data?.data))
         .finally(() => {});
@@ -19,16 +23,35 @@ const QuestionModal = () => {
         // console.log(data);
         const filtered = data?.filter((item) => {
           return (
-            item?.name?.toLowerCase().includes(query) ||
-            item?.location?.toLowerCase().includes(query) ||
-            item?.background?.toLowerCase().includes(query)
+            item?.category?.toLowerCase().includes(query)
           );
         });
-        setFilteredData(filtered);
+        setFilteredData(filtered?.slice(0,4));
       }
     
       console.log(filteredData);
 
+
+
+
+
+
+
+
+
+
+
+      //! handle Option
+          
+  const handleOption = (option, data) => {
+    // alert('option',option, 'data', data);
+    const selectedAnswer = option;
+    if (selectedAnswer === data.answer) {
+      toast.success('Success');
+    } else {
+      toast.error('Wrong');
+    }
+  };
 
 
 
@@ -38,9 +61,13 @@ const QuestionModal = () => {
             <div className="modal">
             <div className="modal-box relative">
                 <label htmlFor="QuestionModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
+                
                 <div>
-                        <label className="block">Background</label>
+                        <label className="block">
+                            Select Your Department <br /> That You Want To Teach
+                            </label>
+
+                            {/* Selector */}
                          <select
                           name='background'
                           className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded w-full bg-sky-50"
@@ -54,6 +81,103 @@ const QuestionModal = () => {
                           <option>Arts</option>
                         </select> 
                       </div>
+
+
+
+
+                      {/* Questions */}
+                      {/* <div>
+                        {filteredData[1] &&
+                        <button className="btn gap-2 mt-5">
+                        Department
+                        <div className="badge badge-secondary">
+                          {filteredData[1]?.category}
+                          </div>
+                      </button>
+                        }
+                        {filteredData?.map((data, idx) => 
+                        <div key={idx} className='my-5'>
+                            <div className="flex">
+                            <span className='bg-yellow-200 text-start'>
+                              🧿
+                              </span>
+                            <span className='bg-yellow-200 text-start dark:text-black'>
+                              {data?.question}
+                              </span>
+                            </div>
+
+                            <div className='grid grid-cols-2 gap-5 mt-5'>
+                                {data?.options?.map((options, idx) =>
+                                <div key={idx} className="flex dark:text-black">
+                                <input type="radio" name="radio-1" className="radio mx-2" />
+                                <p>{options}</p>
+                                </div>
+                                )}
+                            </div>
+                            
+                        </div>
+                        )}
+                        
+                        
+                        {filteredData[1] &&
+                        <label htmlFor="QuestionModal">
+                        <Link to={'/dashboard/add-Teacher'} className="btn gap-2 mt-5">
+                          Next
+                      </Link>
+                        </label>
+                        }
+                      </div> */}
+
+
+                      <div>
+                        {filteredData[1] &&
+                      <div className="w-full shadow-gray-400 shadow-lg rounded-md p-3 my-5 border-2 border-orange-500 ">
+    
+                      
+
+                      <div>
+                      {filteredData?.map((data, idx) => 
+                        <div key={idx} className='my-5'>
+                            <div className="flex">
+                            {/* <span className='bg-yellow-200 text-start'>
+                              🧿
+                              </span> */}
+                            <span className='bg-yellow-200 font-bold text-xl text-start dark:text-black'>
+                              {data?.question}
+                              </span>
+                            </div>
+
+                            <div>
+                                {data?.options?.map((options, idx) =>
+                                <div key={idx} onClick={()=>handleOption(options,data)} className="flex dark:text-black my-2">
+                                <input type="radio" name="radio-1" className="radio mx-2" />
+                                <p>{options}</p>
+                                </div>
+                                )}
+                            </div>
+                            
+                        </div>
+                        )}
+                      </div>
+                    </div>
+                        }
+
+                        {filteredData[1] &&
+                        <label htmlFor="QuestionModal">
+                        <Link to={'/dashboard/add-Teacher'} className="btn gap-2 mt-5">
+                          Next
+                      </Link>
+                        </label>
+                        }
+                      </div>
+
+
+
+
+
+
+
+
             </div>
             </div>
         </div>
