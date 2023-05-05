@@ -77,7 +77,6 @@ const StatusModal = () => {
             <div className='form-control w-full max-w-xs'>
 
             <select required name='category' className="select select-bordered w-full max-w-xs">
-            <option disabled selected>Choose a department</option>
             <option>Science</option>
             <option>Commerce</option>
             <option>Arts</option>
