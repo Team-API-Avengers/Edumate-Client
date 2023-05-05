@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 
 const BlogDetails = () => {
   const detailsData = useLoaderData();

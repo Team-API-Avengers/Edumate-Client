@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 const MyStudents = () => {
   const { user } = useContext(AuthContext);
   // console.log(user?.email);

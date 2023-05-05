@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 // import { Link } from "react-router-dom";
-import PaymentModal from "../../Modals/PaymentModal/PaymentModal";
+import PaymentModal from "../../Modals/PaymentModal";
 
 const MyTeachers = () => {
   const { user } = useContext(AuthContext);

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 import { motion } from "framer-motion";
 
 const Blog = () => {

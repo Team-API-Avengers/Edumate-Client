@@ -9,7 +9,7 @@ import {
 import { FaBookReader } from "react-icons/fa";
 // import { HiLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import Loader from "../../Shared/Loader/Loader";
+import Loader from "../../Shared/Loader";
 
 const Instructors = () => {
 
