@@ -76,7 +76,7 @@ const StatusModal = () => {
             <div className="flex justify-center my-3">
             <div className='form-control w-full max-w-xs'>
 
-            <select name='category' className="select select-bordered w-full max-w-xs">
+            <select required name='category' className="select select-bordered w-full max-w-xs">
             <option disabled selected>Choose a department</option>
             <option>Science</option>
             <option>Commerce</option>
@@ -96,6 +96,7 @@ const StatusModal = () => {
                 name='location'
                 placeholder="Your Location"
                 className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
+                required
               />
                 </div>
                 </div>
