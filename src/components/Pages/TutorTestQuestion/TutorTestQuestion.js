@@ -136,7 +136,7 @@ const TutorTestQuestion = () => {
                 
                 <div>
                         <label className="block text-black">
-                            Select Your Department <br /> That You Want To Teach
+                            Select Your Department That You Want To Teach
                             </label>
 
                             {/* Selector */}
