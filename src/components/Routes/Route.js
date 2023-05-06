@@ -185,10 +185,10 @@ const router = createBrowserRouter([
       },
 
       // this is the notification component for invoice ---
-      // {
-      //   path: "/dashboard/payment/success",
-      //   element: <PaymentNotification/>
-      // }
+      {
+        path: "/dashboard/payment/success",
+        element: <PaymentNotification/>
+      }
     ],
   },
 

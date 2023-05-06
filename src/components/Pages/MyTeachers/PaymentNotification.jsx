@@ -6,6 +6,8 @@ const PaymentNotification = () => {
     const location = useLocation();
     const query = new URLSearchParams(location.search);
 
+    // const { studentEmail, teacherBackground, teacherFee, studentName } = notification.result;
+
     const transactionId = query.get("transactionId");
 
 
@@ -22,13 +24,13 @@ const PaymentNotification = () => {
 
     console.log(notification);
 
-    // if (!notification?._id) {
-    //     return (
-    //         <div>
-    //             No order found
-    //         </div>
-    //     )
-    // }
+    if (!notification?.result?.id) {
+        return (
+            <div>
+                No order found
+            </div>
+        )
+    }
 
 
     return (
@@ -51,10 +53,10 @@ const PaymentNotification = () => {
                         <tbody>
                             <tr>
                                 <th>1</th>
-                                {/* <td>{order.serviceName}</td>
-                                <td>{order.price}</td>
-                                <td>{order.address}</td>
-                                <td>{transactionId}</td> */}
+                                <td>{notification?.result?.studentEmail}</td>
+                                <td>{notification?.result?.teacherBackground}</td>
+                                <td>{notification?.result?.teacherFee}</td>
+                                <td>{transactionId}</td>
                             </tr>
                         </tbody>
                     </table>
