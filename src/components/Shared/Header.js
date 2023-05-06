@@ -68,29 +68,9 @@ const Header = () => {
         Home
       </NavLink>
 
-      <NavLink>
-        <>
-          <div className="dropdown dropdown-end">
-            <label
-              tabIndex={0}
-              className=" flex   justify-center items-center rounded-btn"
-            >
-              Blog
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content hover:bg-none dark:bg-black dark:text-[#bb86fc] p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-0  mt-4"
-            >
-              <li>
-                <NavLink to={"/blog"}>Blog</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/addBlog"}>Add Blog</NavLink>
-              </li>
-            </ul>
-          </div>
-        </>
-      </NavLink>
+      <NavLink to={"/blog"}>Blog</NavLink>
+
+      
       {/* {user?.uid && ( */}
       <NavLink
         style={navStyle}

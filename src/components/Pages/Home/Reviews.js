@@ -66,7 +66,7 @@ const Reviews = () => {
         <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
           
           <motion.h1
-            className="font-bold text-green-600 dark:text-[#bb86fc]"
+            className="font-bold text-green-600 dark:text-[#0056F7]"
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1, fontSize: "30px", }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
@@ -101,7 +101,7 @@ const Reviews = () => {
             className="card w-full lg:mt-10 p-4 lg:p-8 bg-transparent"
           >
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#bb86fc]">Name</label>
+              <label className="flex justify-start mb-3 dark:text-[#0056F7]">Name</label>
               <input
                 className="block border border-t-0 border-blue-400 dark:text-black w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
@@ -112,7 +112,7 @@ const Reviews = () => {
               />
             </div>
             <div className="my-2">
-              <label className="flex justify-start mb-3  dark:text-[#bb86fc]">Email</label>
+              <label className="flex justify-start mb-3 dark:text-[#0056F7]">Email</label>
               <input
                 className="block border border-t-0 border-blue-400 shadow-md dark:text-black  w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
@@ -124,7 +124,7 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#bb86fc]">How was your experience?</label>
+              <label className="flex justify-start mb-3 dark:text-[#0056F7]">How was your experience?</label>
               <input
                 name="rate"
                 type="range"
@@ -158,7 +158,7 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#bb86fc]">Reviews</label>
+              <label className="flex justify-start mb-3 dark:text-[#0056F7]">Reviews</label>
               <textarea
                 required
                 className="block dark:text-black border border-t-0 border-blue-400 cursor-pointer w-full p-5 rounded-md"
@@ -169,7 +169,7 @@ const Reviews = () => {
               ></textarea>
             </div>
             <button
-              className="cursor-pointer btn w-1/2 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white mt-4"
+              className="cursor-pointer btn w-1/2 transition ease-in-out delay-150 bg-blue-500 dark:bg-[#7A0EFF]  dark:hover:bg-[#3F008D] hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white mt-4"
               type="submit"
             >
               Sent

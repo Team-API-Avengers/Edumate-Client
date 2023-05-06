@@ -27,7 +27,7 @@ const ContactUs = () => {
           // style={{
           //   backgroundImage: `url(${img})`,
           // }}
-          className="flex justify-center items-center w-screen  h-screen rounded-none bg-white dark:bg-black dark:text-[#bb86fc]"
+          className="flex justify-center items-center w-screen  h-screen rounded-none bg-white dark:bg-black dark:text-[#0056F7]"
         >
           <div className="container mx-auto my-4 px-4 ">
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:shadow-none bg-transparent">
@@ -37,7 +37,7 @@ const ContactUs = () => {
                 <h1 className="font-bold  flex gap-2 uppercase text-4xl">
                   Lets
                   <Typical
-                    className="text-blue-600 dark:text-[#bb86fc] "
+                    className="text-blue-600 dark:text-[#54C420] "
                     steps={["Talk", 3000, "discuss", 3000]}
                     loop={Infinity}
                     wrapper="p"
@@ -65,7 +65,7 @@ const ContactUs = () => {
                   <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-5">
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#bb86fc]">Name</span>
+                        <span className="label-text dark:text-[#54C420]">Name</span>
                       </label>
                       <input
                         className="w-full border  border-[#001a41] dark:border-none  text-gray-900  mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
@@ -78,7 +78,7 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#bb86fc]">
+                        <span className="label-text dark:text-[#54C420]">
                           Email
                         </span>
                       </label>
@@ -93,7 +93,7 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#bb86fc]">
+                        <span className="label-text dark:text-[#54C420]">
                           Subject / Issues
                         </span>
                       </label>
@@ -108,7 +108,7 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#bb86fc]">
+                        <span className="label-text dark:text-[#54C420]">
                           Mobile number
                         </span>
                       </label>
@@ -123,7 +123,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <label className="label">
-                      <span className="label-text dark:text-[#bb86fc]">
+                      <span className="label-text dark:text-[#54C420]">
                         Message
                       </span>
                     </label>
@@ -140,7 +140,7 @@ const ContactUs = () => {
                   <div className="my-2 w-full lg:w-2/4">
                     <button
                       type="submit"
-                      className="uppercase text-sm font-bold tracking-wide bg-[#001a41] text-gray-100 p-5 lg:p-3 rounded w-full
+                      className="uppercase text-sm font-bold tracking-wide bg-[#001a41] dark:bg-[#7A0EFF] dark:hover:bg-[#5400BB] text-gray-100 p-5 lg:p-3 rounded w-full
                       focus:outline-none focus:shadow-outline mt-6 lg:mt-0 lg:ml-0"
                     >
                       Send Message

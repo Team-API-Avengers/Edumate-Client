@@ -88,14 +88,7 @@ const router = createBrowserRouter([
           );
         },
       },
-      {
-        path: "/addBlog",
-        element: (
-          <PrivateRoute>
-            <AddBlog />
-          </PrivateRoute>
-        ),
-      },
+      
       {
         path: "/:background",
         element: <BackgroundWiseTeacher />,
@@ -183,6 +176,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/payment/fail",
         element: <PaymentFail />
+      },
+      {
+        path: "/dashboard/addBlog",
+        element: (
+          <PrivateRoute>
+            <AddBlog />
+          </PrivateRoute>
+        ),
       },
 
       // this is the notification component for invoice ---

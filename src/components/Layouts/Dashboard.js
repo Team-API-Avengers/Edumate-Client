@@ -9,7 +9,7 @@ import DashboardHeader from "../Shared/DashboardHeader";
 import QuestionModal from "../Modals/QuestionModal";
 
 const DashBoard = () => {
-  const { logUser, theme, loading } = useContext(AuthContext);
+  const { user, logUser, theme, loading } = useContext(AuthContext);
 
   if (loading) {
     return <Loader />;
@@ -59,6 +59,13 @@ const DashBoard = () => {
             <li className=" ">
               <Link to="/dashboard">My Profile</Link>
             </li>
+
+            {
+              user && 
+              <li>
+                <Link to="/dashboard/addBlog">Add Blog</Link>
+              </li>
+            }
 
             {logUser?.role === "Admin" && (
               <>

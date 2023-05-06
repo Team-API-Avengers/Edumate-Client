@@ -119,7 +119,7 @@ const GetReview = () => {
                     src={feedback?.image}
                   />
                   <p className="text-start">
-                    <span className="text-xs block text-gray-500 dark:text-[#bb86fc]">
+                    <span className="text-xs block text-gray-500 dark:text-[#F0F5FF]">
                       {feedback?.name}
                     </span>
                     <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">

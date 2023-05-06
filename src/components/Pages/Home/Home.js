@@ -55,7 +55,7 @@ const Home = () => {
       {/* tutor Search Field*/}
       <div className="my-5 text-2xl font-semibold mx-10">
         <h1>Name/ Location / Department</h1>
-        <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2">
+        <div className="bg-base-200 dark:bg-[#39373D] grid grid-cols-1 lg:grid-cols-2">
           <div>
             <Lottie className="h-52" animationData={SearchAnimation} loop={true}></Lottie>
           </div>
@@ -64,7 +64,7 @@ const Home = () => {
             <input
               placeholder="Search your tutor"
               type="text"
-              className="text-black h-12 w-1/2"
+              className="text-black h-12 w-1/2 focus:outline-none focus:border-0"
               onChange={handleFilter}
             />
             <button className="btn btn-primary rounded-none h-10">Search</button>

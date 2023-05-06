@@ -58,7 +58,7 @@ const BeATeacher = () => {
             >
               <motion.h1
                 id="title"
-                className="text-5xl  font-bold text-green-400 dark:text-[#bb86fc]"
+                className="text-5xl  font-bold text-green-400 dark:text-[#0056F7]"
                 variants={childVariants}
               >
                 Become a tutor
@@ -66,12 +66,12 @@ const BeATeacher = () => {
               
 
               <motion.p
-                className="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-[#bb86fc]"
+                className="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-[#DBDBDB]"
                 variants={childVariants}
               >
                 Instructors from around the country teach hundreds of students
                 on
-                <span className="font-bold text-[#00813d]  dark:text-[#bb86fc]">
+                <span className="font-bold text-[#00813d] dark:text-[#DBDBDB]">
                   {" "}
                   Edumate
                 </span>{" "}
@@ -79,7 +79,7 @@ const BeATeacher = () => {
               </motion.p>
 
             </motion.div>
-            <Link to={'/dashboard/tutor-test-question'} className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
+            <Link to={'/dashboard/tutor-test-question'} className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#00813d] dark:bg-[#7A0EFF] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
                     <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                       <BsArrowRight />
                     </span>
