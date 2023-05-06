@@ -27,10 +27,12 @@ import TutorTest from "../Pages/AddTeacher/TutorTest";
 import Gallery from "../Pages/Gallery/Gallery";
 import StudentPostBox from "../Pages/StudentPostBox/StudentPostBox";
 import AboutOurs from "../Pages/About/AboutOurs";
+import PaymentFail from "../Pages/MyTeachers/PaymentFail";
+import PaymentNotification from "../Pages/MyTeachers/PaymentNotification";
 
 const router = createBrowserRouter([
 
-//! Main Pages
+  //! Main Pages
   {
     path: "/",
     element: <Main />,
@@ -61,7 +63,7 @@ const router = createBrowserRouter([
           );
         },
       },
-      
+
       {
         path: "/about-ours",
         element: <AboutOurs />,
@@ -70,7 +72,7 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactUs />,
       },
-      
+
       {
         path: "/blog",
         element: <Blog />,
@@ -109,7 +111,7 @@ const router = createBrowserRouter([
 
 
 
-    //! Authentication Pages
+  //! Authentication Pages
   {
     path: "/authentication",
     element: <Form />,
@@ -128,7 +130,7 @@ const router = createBrowserRouter([
 
 
 
-    //! Dashboard Pages
+  //! Dashboard Pages
   {
     path: "/dashboard",
     element: <Dashboard />,
@@ -153,7 +155,7 @@ const router = createBrowserRouter([
         path: "/dashboard/tutor-test",
         element: <TutorTest />
       },
-      
+
       {
         path: "/dashboard/my-Teachers",
         element: <MyTeachers />,
@@ -177,6 +179,16 @@ const router = createBrowserRouter([
         path: "/dashboard/student-post-box",
         element: <StudentPostBox />,
       },
+      {
+        path: "/dashboard/payment/fail",
+        element: <PaymentFail />
+      },
+
+      // this is the notification component for invoice ---
+      // {
+      //   path: "/dashboard/payment/success",
+      //   element: <PaymentNotification/>
+      // }
     ],
   },
 
@@ -184,7 +196,7 @@ const router = createBrowserRouter([
 
 
 
-    //! Settings Page
+  //! Settings Page
   {
     path: "/settings",
     element: <Settings />,
@@ -201,7 +213,7 @@ const router = createBrowserRouter([
 
 
 
-    //! Error Page
+  //! Error Page
   {
     path: "*",
     element: <Error />,

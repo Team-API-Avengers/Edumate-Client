@@ -1,10 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const PaymentModal = ({ modalData }) => {
 
 
+
+
     const id = modalData?._id;
-    console.log(id);
 
     const handlePlaceOrder = (event) => {
         event.preventDefault();
@@ -43,20 +45,22 @@ const PaymentModal = ({ modalData }) => {
         })
             .then((res) => res.json())
             .then((data) => {
-                // window.location.replace(data.url);
-                
+                console.log(data);
+                window.location.replace(data.url);
+
                 console.log(data);
             })
             .catch((er) => console.error(er));
     };
 
     return (
+
         <div>
+
+
             <input type="checkbox" id="PaymentModal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box">
-
-
 
                     <form onSubmit={handlePlaceOrder} className="flex items-center justify-between">
 
