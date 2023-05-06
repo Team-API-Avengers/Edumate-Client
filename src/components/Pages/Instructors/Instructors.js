@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  BsFillPersonFill,
-  BsHourglassSplit,
-} from "react-icons/bs";
+import { BsFillPersonFill, BsHourglassSplit} from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Loader from "../../Shared/Loader";
@@ -39,17 +36,37 @@ const Instructors = () => {
 
 
 
-  //! Sort by their location
+
+
+
+
+
+
+  //! Sorting START ----
+  // Extract the "location" property from each object and create a new array
+const namesArray = allInstructor?.data?.map(data => data.location);
+
+// To map an array in JSX while displaying one value just one time
+const uniqueItems = [...new Set(namesArray)];
+
+
+
+
+
+
+  //! Sort by their location and department
   function handleFilter(event) {
     const query = event.target.value.toLowerCase();
     console.log(query);
     // console.log(data);
     const filtered = allInstructor?.data?.filter((item) => {
       return (
-        item?.background?.toLowerCase().includes(query)
+        item?.location?.toLowerCase().includes(query) ||
+        item?.background?.toLowerCase().includes(query) 
       );
     });
     setFilteredData(filtered);
+    console.log(filtered);
   }
 
 
@@ -57,14 +74,45 @@ const Instructors = () => {
 
 
 
-  if (loading) {
-    return <Loader />;
-  }
+
+
+      //! Loader
+      if (loading) {
+        return <Loader />;
+      }
+
   return (
     <div className="m-5">
 
 
-      {/*todo: Data Sorting */}
+
+
+           {/*FIXME: Data Sort */}
+           <div className="flex justify-between mx-10">
+
+
+       {/*todo: Data Sorting by location */}
+      <div className="flex justify-end my-2">
+          <div className="form-control w-full max-w-xs">
+
+          <label className="label">
+            <span className="label-text"></span>
+            <span className="label-text-alt">Sort by location</span>
+          </label>
+
+          <select onChange={handleFilter} name='category' className="select select-bordered w-full max-w-xs">
+            <option disabled selected>Choose one</option>
+            {
+              uniqueItems?.map((data, idx) => <option key={idx}>{data}</option>
+            )}
+            
+            </select>
+        </div>
+      </div>
+
+
+
+      {/*todo: Data Sorting by department */}
       <div className="flex justify-end my-2">
           <div className="form-control w-full max-w-xs">
 
@@ -81,6 +129,7 @@ const Instructors = () => {
             </select>
         </div>
       </div>
+           </div>
 
 
 
