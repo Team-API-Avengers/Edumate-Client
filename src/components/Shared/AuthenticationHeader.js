@@ -35,7 +35,7 @@ const AuthenticationHeader = () => {
 
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl dark:bg-black dark:text-white dark:border-0 py-2 px-4 lg:px-8 lg:py-3">
+    <Navbar className="mx-auto max-w-screen-xl dark:bg-black dark:text-[#bb86fc] dark:border-0 py-2 px-4 lg:px-8 lg:py-3">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900 bg-transparent">
         <Typography
           as="a"

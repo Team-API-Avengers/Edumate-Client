@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import SubjectWiseTeachers from "./SubjectWiseTeacher/SubjectWiseTeachers";
+import SubjectWiseTeachers from "./SubjectWiseTeachers";
 import ContactUs from "./ContactUs";
 import Reviews from "./Reviews";
 import BeATeacher from "./BeATeacher";
@@ -70,13 +70,16 @@ const Home = () => {
                   {/* tutor Search Field*/}
             <div className="my-5 text-2xl font-semibold mx-10">
               <h1>Name/ Location / Department</h1>
-            <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2">
-            <div>
-            <Lottie className="h-52" animationData={SearchAnimation} loop={true}></Lottie>
+            <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-12">
+
+
+            <div className="lg:col-span-3">
+            <Lottie className="h-72" animationData={SearchAnimation} loop={true}></Lottie>
           </div>
 
 
-            <div className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg">
+          <div className="col-span-9">
+          <div className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg">
             <input
             placeholder="Search your tutor"
             type="text"
@@ -85,13 +88,20 @@ const Home = () => {
           />
           <button className="btn btn-primary rounded-none h-10">Search</button>
             </div>
+
+          {
+        filteredData &&
+          <div className="mx-6 p-3" id="search"><SearchQuery filteredData={filteredData} /></div>
+        }
+          </div>
+
+
+
+
             </div>
             </div>
 
-      {
-        filteredData &&
-        <div id="search"><SearchQuery filteredData={filteredData} /></div>
-      }
+
 
       {/* {user && <StudentPostBox />} */}
 

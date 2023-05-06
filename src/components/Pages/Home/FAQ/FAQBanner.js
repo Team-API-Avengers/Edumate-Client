@@ -7,7 +7,7 @@ const FAQBanner = () => {
 					
 					<div className='grid grid-cols-1 md:grid-cols-2'>
 						<div className='content py-5'>
-							<div className='dark:text-white text-green-600 font-semibold text-start '>
+							<div className='dark:text-[#bb86fc] text-green-600 font-semibold text-start '>
 								<div className='heading-content'>
 									
 									<h2 className='text-start py-2 text-xl'>

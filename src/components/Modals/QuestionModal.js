@@ -36,11 +36,11 @@ const QuestionModal = () => {
         // setFilteredData(filtered?.slice(0,4));
 
          //! For Display 5 question from array by randomly .. .. ..
-  const n = 3; // number of elements we want to get
-  const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
-  const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
-             setFilteredData(resultData)
-      }
+        const n = 3; // number of elements we want to get
+        const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
+        const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
+                  setFilteredData(resultData)
+            }
     
       console.log(filteredData);
 
@@ -54,8 +54,7 @@ const QuestionModal = () => {
 
 
 
-      //! handle Option
-          
+    //! handle correct answer
   const handleOption = (option, data) => {
     console.log(data);
     const selectedAnswer = option;

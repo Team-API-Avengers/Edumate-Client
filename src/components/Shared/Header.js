@@ -59,7 +59,7 @@ const Header = () => {
   };
 
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-[#bb86fc] lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
       <NavLink
         style={navStyle}
         to={"/"}
@@ -79,7 +79,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content hover:bg-none dark:bg-black dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-0  mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-black dark:text-[#bb86fc] p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-0  mt-4"
             >
               <li>
                 <NavLink to={"/blog"}>Blog</NavLink>
@@ -121,7 +121,7 @@ const Header = () => {
 
       <NavLink
         to={"/profile"}
-        className="flex lg:hidden justify-center items-center dark:bg-black dark:text-white "
+        className="flex lg:hidden justify-center items-center dark:bg-black dark:text-[#bb86fc] "
       >
         Profile
       </NavLink>
@@ -154,7 +154,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="w-full dark:bg-black dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="w-full dark:bg-black dark:text-[#bb86fc] shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="w-full container flex px-10 items-center max-w-screen-2xl mx-auto justify-between text-blue-gray-900">
           <Link to={"/"}>
             {theme === "dark" ? (
@@ -187,7 +187,7 @@ const Header = () => {
               {/* )} */}
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 text-black dark:bg-black dark:text-white font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 p-2 text-black dark:bg-black dark:text-[#bb86fc] font-bold shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 {user ? (
                   <>
@@ -235,9 +235,9 @@ const Header = () => {
             onClick={() => setOpenNav(!openNav)}
           >
             {openNav ? (
-              <BsChevronUp className="text-3xl text-black dark:text-white" />
+              <BsChevronUp className="text-3xl text-black dark:text-[#bb86fc]" />
             ) : (
-              <BiMenu className="text-3xl text-black  dark:text-white" />
+              <BiMenu className="text-3xl text-black  dark:text-[#bb86fc]" />
             )}
           </button>
         </div>

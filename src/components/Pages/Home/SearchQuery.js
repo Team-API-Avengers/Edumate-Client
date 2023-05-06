@@ -7,8 +7,6 @@ import {
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaBookReader } from "react-icons/fa";
-// import SearchAnimation from "../../../Assets/Animation/SearchAnimation.json";
-// import Lottie from "lottie-react";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const SearchQuery = ({filteredData}) => {
@@ -26,7 +24,7 @@ const SearchQuery = ({filteredData}) => {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-4 max-w-screen-xl mx-auto  md:grid-cols-3 grid-cols-1 gap-5">
+      <div className="grid lg:grid-cols-3 max-w-screen-xl mx-auto  md:grid-cols-3 grid-cols-1 gap-5">
         {filteredData?.map((value, idx) => (
           <div
             key={idx}
@@ -45,7 +43,7 @@ const SearchQuery = ({filteredData}) => {
                   {value?.background}
                 </h5>
 
-                <p className="font-bold text-2xl flex  text-gray-800">
+                <p className="font-bold text-xl flex  text-gray-800">
                   <BsFillPersonFill className="mt-1 mr-1" />
 
                   {value?.name}
@@ -53,7 +51,7 @@ const SearchQuery = ({filteredData}) => {
                 {/* <p className="font-bold text-md flex  text-gray-800">
                           <HiLocationMarker className="mt-1 mr-2" /> {data?.location}
                         </p> */}
-                <p className="font-bold text-md  mb-3 flex text-gray-800">
+                <p className="font-bold text-xl  mb-3 flex text-gray-800">
                   <BsHourglassSplit className="mt-1 mr-2" /> {value?.experience}
                   years experience
                 </p>

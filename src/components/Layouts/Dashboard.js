@@ -41,12 +41,12 @@ const DashBoard = () => {
           </label>
         </div>
 
-        <div className="drawer-side border dark:bg-black dark:text-white shadow-lg dark:shadow-white lg:ml-5">
+        <div className="drawer-side border dark:bg-black dark:text-[#bb86fc] shadow-lg dark:shadow-white lg:ml-5">
           <label
             htmlFor="dashboard-drawer"
             className="drawer-overlay bg-transparent shadow-lg "
           ></label>
-          <ul className="menu p-4 w-60 bg-base-100 dark:bg-black dark:text-white shadow-lg  text-base-content">
+          <ul className="menu p-4 w-60 bg-base-100 dark:bg-black dark:text-[#bb86fc] shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
               <span className="text-4xl font-bold">
                 {theme === "dark" ? (

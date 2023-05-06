@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div>
       
-<footer aria-label="Site Footer" className="text-black dark:text-white">
+<footer aria-label="Site Footer" className="text-black dark:text-[#bb86fc]">
   <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>
@@ -23,19 +23,19 @@ const Footer = () => {
         </div>
 
         <p
-          className="mt-6 max-w-md text-center leading-relaxed text-gray-500  dark:text-white sm:max-w-xs sm:text-left"
+          className="mt-6 max-w-md text-center leading-relaxed text-gray-500  dark:text-[#bb86fc] sm:max-w-xs sm:text-left"
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
           consequuntur amet culpa cum itaque neque.
         </p>
 
-        <ul className="mt-8 flex justify-center dark:text-white gap-6 sm:justify-start md:gap-8">
+        <ul className="mt-8 flex justify-center dark:text-[#bb86fc] gap-6 sm:justify-start md:gap-8">
           <li>
             <a
               href="/"
               rel="noreferrer"
               target="_blank"
-              className="text-teal-700  dark:text-white transition hover:text-teal-700 "
+              className="text-teal-700  dark:text-[#bb86fc] transition hover:text-teal-700 "
             >
               <span className="sr-only">Facebook</span>
               <svg
@@ -58,7 +58,7 @@ const Footer = () => {
               href="/"
               rel="noreferrer"
               target="_blank"
-              className="text-teal-700  dark:text-white transition hover:text-teal-700 "
+              className="text-teal-700  dark:text-[#bb86fc] transition hover:text-teal-700 "
             >
               <span className="sr-only">Instagram</span>
               <svg
@@ -81,7 +81,7 @@ const Footer = () => {
               href="/"
               rel="noreferrer"
               target="_blank"
-              className="text-teal-700  dark:text-white transition hover:text-teal-700 "
+              className="text-teal-700  dark:text-[#bb86fc] transition hover:text-teal-700 "
             >
               <span className="sr-only">Twitter</span>
               <svg
@@ -102,7 +102,7 @@ const Footer = () => {
               href="/"
               rel="noreferrer"
               target="_blank"
-              className="text-teal-700  dark:text-white transition hover:text-teal-700 "
+              className="text-teal-700  dark:text-[#bb86fc] transition hover:text-teal-700 "
             >
               <span className="sr-only">GitHub</span>
               <svg
@@ -125,7 +125,7 @@ const Footer = () => {
               href="/"
               rel="noreferrer"
               target="_blank"
-              className="text-teal-700 dark:text-white transition hover:text-teal-700 "
+              className="text-teal-700 dark:text-[#bb86fc] transition hover:text-teal-700 "
             >
               <span className="sr-only">Dribbble</span>
               <svg
@@ -146,16 +146,16 @@ const Footer = () => {
       </div>
 
       <div
-        className="grid grid-cols-1 dark:text-white gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2"
+        className="grid grid-cols-1 dark:text-[#bb86fc] gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2"
       >
-        <div className="text-center sm:text-left dark:text-white">
-          <p className="text-lg font-medium text-gray-900  dark:text-white">About Us</p>
+        <div className="text-center sm:text-left dark:text-[#bb86fc]">
+          <p className="text-lg font-medium text-gray-900  dark:text-[#bb86fc]">About Us</p>
 
           <nav aria-label="Footer About Nav" className="mt-8">
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Company History
@@ -164,7 +164,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Meet the Team
@@ -173,7 +173,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Employee Handbook
@@ -182,7 +182,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Careers
@@ -193,13 +193,13 @@ const Footer = () => {
         </div>
 
         <div className="text-center sm:text-left">
-          <p className="text-lg font-medium text-gray-900  dark:text-white">Our Services</p>
+          <p className="text-lg font-medium text-gray-900  dark:text-[#bb86fc]">Our Services</p>
 
           <nav aria-label="Footer Services Nav" className="mt-8">
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Web Development
@@ -208,7 +208,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Web Design
@@ -217,7 +217,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Marketing
@@ -226,7 +226,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Google Ads
@@ -237,13 +237,13 @@ const Footer = () => {
         </div>
 
         <div className="text-center sm:text-left">
-          <p className="text-lg font-medium text-gray-900  dark:text-white">Helpful Links</p>
+          <p className="text-lg font-medium text-gray-900  dark:text-[#bb86fc]">Helpful Links</p>
 
           <nav aria-label="Footer Helpful Nav" className="mt-8">
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   FAQs
@@ -252,7 +252,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="text-gray-700  dark:text-white transition hover:text-gray-700 "
+                  className="text-gray-700  dark:text-[#bb86fc] transition hover:text-gray-700 "
                   href="/"
                 >
                   Support
@@ -265,7 +265,7 @@ const Footer = () => {
                   href="/"
                 >
                   <span
-                    className="text-gray-700  dark:text-white transition group-hover:text-gray-700 "
+                    className="text-gray-700  dark:text-[#bb86fc] transition group-hover:text-gray-700 "
                   >
                     Live Chat
                   </span>
@@ -285,7 +285,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center sm:text-left">
-          <p className="text-lg font-medium text-gray-900  dark:text-white">Contact Us</p>
+          <p className="text-lg font-medium text-gray-900  dark:text-[#bb86fc]">Contact Us</p>
 
           <ul className="mt-8 space-y-4 text-sm">
             <li>
@@ -295,7 +295,7 @@ const Footer = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 shrink-0 text-gray-900  dark:text-white"
+                  className="h-5 w-5 shrink-0 text-gray-900  dark:text-[#bb86fc]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -308,7 +308,7 @@ const Footer = () => {
                   />
                 </svg>
 
-                <span className="flex-1 text-gray-700  dark:text-white">john@doe.com</span>
+                <span className="flex-1 text-gray-700  dark:text-[#bb86fc]">john@doe.com</span>
               </a>
             </li>
 
@@ -319,7 +319,7 @@ const Footer = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 shrink-0 text-gray-900  dark:text-white"
+                  className="h-5 w-5 shrink-0 text-gray-900  dark:text-[#bb86fc]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -332,7 +332,7 @@ const Footer = () => {
                   />
                 </svg>
 
-                <span className="flex-1 text-gray-700  dark:text-white">0123456789</span>
+                <span className="flex-1 text-gray-700  dark:text-[#bb86fc]">0123456789</span>
               </a>
             </li>
 
@@ -341,7 +341,7 @@ const Footer = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 shrink-0 text-gray-900  dark:text-white"
+                className="h-5 w-5 shrink-0 text-gray-900  dark:text-[#bb86fc]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -359,7 +359,7 @@ const Footer = () => {
                 />
               </svg>
 
-              <address className="-mt-0.5 flex-1 not-italic text-gray-700  dark:text-white">
+              <address className="-mt-0.5 flex-1 not-italic text-gray-700  dark:text-[#bb86fc]">
                 213 Lane, London, United Kingdom
               </address>
             </li>
@@ -370,11 +370,11 @@ const Footer = () => {
 
     <div className="mt-12 border-t border-gray-100 pt-6">
       <div className="text-center sm:flex sm:justify-between sm:text-left">
-        <p className="text-sm text-gray-500  dark:text-white">
+        <p className="text-sm text-gray-500  dark:text-[#bb86fc]">
           {/* <span className="block sm:inline">.</span> */}
 
           <a
-            className="inline-block mx-3 text-black dark:text-white underline transition hover:text-teal-600/75"
+            className="inline-block mx-3 text-black dark:text-[#bb86fc] underline transition hover:text-teal-600/75"
             href="/"
           >
             Terms & Conditions
@@ -383,14 +383,14 @@ const Footer = () => {
           <span>&middot;</span>
 
           <a
-            className="inline-block mx-3 text-black dark:text-white underline transition hover:text-teal-600/75"
+            className="inline-block mx-3 text-black dark:text-[#bb86fc] underline transition hover:text-teal-600/75"
             href="/"
           >
             Privacy Policy
           </a>
         </p>
 
-        <p className="mt-4 text-sm text-gray-500  dark:text-white sm:order-first sm:mt-0">
+        <p className="mt-4 text-sm text-gray-500  dark:text-[#bb86fc] sm:order-first sm:mt-0">
           &copy; 2023 All rights reserved   TEAM-API-Avengers Ltd.
         </p>
       </div>

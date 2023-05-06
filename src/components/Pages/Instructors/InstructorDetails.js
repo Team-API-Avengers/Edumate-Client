@@ -71,14 +71,14 @@ const InstructorDetails = () => {
   return (
     <div>
       <div>
-        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-black dark:text-white">
+        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-black dark:text-[#bb86fc]">
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <img alt="teacher" className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
                 src={ details?.data?.image }
               />
               <div className="lg:w-1/2 w-full space-y-2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h2 className="text-md font-bold text-start text-green-700 dark:text-white">
+                <h2 className="text-md font-bold text-start text-green-700 dark:text-[#bb86fc]">
                   { details?.data?.background }
                 </h2>
                 <div className="flex justify-between">
@@ -86,10 +86,10 @@ const InstructorDetails = () => {
                     { details?.data?.name }
                   </h1>
                   <div className="flex mb-4">
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-white" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
+                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
                   </div>
                 </div>
                 <div className="text-start">

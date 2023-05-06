@@ -88,17 +88,17 @@ const AddTeacher = () => {
     return <Loader />;
   }
   return (
-    <div className="bg-base-200 dark:bg-black dark:text-white">
+    <div className="bg-base-200 dark:bg-black dark:text-[#bb86fc]">
       <form onSubmit={ handleSubmit(addTeacher) }>
-        <div className="min-h-screen p-6 bg-gray-100 dark:bg-black dark:text-white flex items-center justify-center">
+        <div className="min-h-screen p-6 bg-gray-100 dark:bg-black dark:text-[#bb86fc] flex items-center justify-center">
           <div className="container max-w-screen-lg mx-auto">
             <div>
-              <h2 className="font-semibold text-5xl text-gray-900 dark:text-white">Be a teacher</h2>
-              <p className="text-gray-800 dark:text-white mt-2 mb-6">
+              <h2 className="font-semibold text-5xl text-gray-900 dark:text-[#bb86fc]">Be a teacher</h2>
+              <p className="text-gray-800 dark:text-[#bb86fc] mt-2 mb-6">
                 Empowering Generations, Start Your Teaching Journey Now
               </p>
 
-              <div className="bg-white dark:bg-black dark:text-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+              <div className="bg-white dark:bg-black dark:text-[#bb86fc] rounded shadow-lg p-4 px-4 md:p-8 mb-6">
                 <div className=" gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                   <div className="lg:col-span-2">
                     <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"></div>

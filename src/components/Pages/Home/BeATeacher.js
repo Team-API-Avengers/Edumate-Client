@@ -41,7 +41,7 @@ const BeATeacher = () => {
   // const { theme } = useContext(AuthContext);
   return (
     <div>
-      <div className="container   dark:bg-black dark:text-white px-16 py-16 max-w-screen-xl mx-auto">
+      <div className="container   dark:bg-black dark:text-[#bb86fc] px-16 py-16 max-w-screen-xl mx-auto">
         <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div
             className="w-full mt-7 "
@@ -57,7 +57,7 @@ const BeATeacher = () => {
             >
               <motion.h1
                 id="title"
-                className="text-5xl  font-bold text-green-400 dark:text-white"
+                className="text-5xl  font-bold text-green-400 dark:text-[#bb86fc]"
                 variants={childVariants}
               >
                 Become a tutor
@@ -65,12 +65,12 @@ const BeATeacher = () => {
               
 
               <motion.p
-                className="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-white"
+                className="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-[#bb86fc]"
                 variants={childVariants}
               >
                 Instructors from around the country teach hundreds of students
                 on
-                <span className="font-bold text-[#00813d]  dark:text-white">
+                <span className="font-bold text-[#00813d]  dark:text-[#bb86fc]">
                   {" "}
                   Edumate
                 </span>{" "}

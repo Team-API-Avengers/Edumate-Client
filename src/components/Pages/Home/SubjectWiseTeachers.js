@@ -28,7 +28,7 @@ const SubjectWiseTeachers = () => {
         Department
       </motion.h1>
       <motion.p
-        className="mt-2 text-2xl lg:text-base"
+        className="mt-2 text-2xl lg:text-base dark:text-[#DBDBDB]"
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, type: "spring", duration: 2 }}

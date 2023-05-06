@@ -26,7 +26,7 @@ const Blog = () => {
   return (
     <div className="m-4 min-h-screen dark:text-gray-700">
       <motion.h1
-        className=" dark:text-white font-bold"
+        className=" dark:text-[#bb86fc] font-bold"
         initial={{ scale: 0.5 }}
         whileInView={{ scale: 2.1, translateY: 20 }}
         transition={{ duration: 1.5 }}

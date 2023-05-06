@@ -114,7 +114,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-white">
+    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-[#bb86fc]">
       <div className="flex items-center">
         <div className="space-y-2 w-full">
           <h1 className="text-5xl mb-5 font-bold">Register</h1>
@@ -140,7 +140,7 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="text-sm">
-            <label className="flex m-2  dark:text-white">Name</label>
+            <label className="flex m-2  dark:text-[#bb86fc]">Name</label>
             <input
               type="text"
               {...register("name", {
@@ -153,7 +153,7 @@ const Signup = () => {
           </div>
 
           <div className="text-sm">
-            <label className="flex m-2  dark:text-white">Email</label>
+            <label className="flex m-2  dark:text-[#bb86fc]">Email</label>
             <input
               type="text"
               {...register("email", {
@@ -169,7 +169,7 @@ const Signup = () => {
           </div>
 
           <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2  dark:text-white">Password</label>
+            <label className="flex m-2  dark:text-[#bb86fc]">Password</label>
             <input
               type="text"
               {...register("password", {
@@ -193,7 +193,7 @@ const Signup = () => {
           </div>
 
           <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2  dark:text-white">Phone number</label>
+            <label className="flex m-2  dark:text-[#bb86fc]">Phone number</label>
             <input
               type="text"
               {...register("phoneNumber", {
@@ -209,8 +209,8 @@ const Signup = () => {
           </div>
 
           <div className="text-black">
-            <label className="label dark:text-white">
-              <span className="label-text mx-2 dark:text-white">
+            <label className="label dark:text-[#bb86fc]">
+              <span className="label-text mx-2 dark:text-[#bb86fc]">
                 Who are you ?
               </span>
             </label>
@@ -229,7 +229,7 @@ const Signup = () => {
 
           <div className="">
             <label className="label">
-              <span className="label-text mx-2 dark:text-white">Photo </span>
+              <span className="label-text mx-2 dark:text-[#bb86fc]">Photo </span>
             </label>
             <input
               type="file"
@@ -248,7 +248,7 @@ const Signup = () => {
           />
           {signUpError && <p className="text-red-600">{signUpError}</p>}
         </form>
-        <p className="text-lg text-center sm:px-6 dark:text-white">
+        <p className="text-lg text-center sm:px-6 dark:text-[#bb86fc]">
           Already have an account?
           <Link to="/authentication/login" className="hover:underline mx-2">
             Log in

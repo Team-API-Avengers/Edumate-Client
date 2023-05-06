@@ -46,7 +46,7 @@ const AllStudents = () => {
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>
-          <span className="button-text dark:text-white">
+          <span className="button-text dark:text-[#bb86fc]">
           Learn More
           </span>
           </button>
@@ -91,7 +91,7 @@ const AllStudents = () => {
                   <span className="circle" aria-hidden="true">
                     <span className="icon arrow"></span>
                   </span>
-                  <span className="button-text dark:text-white">
+                  <span className="button-text dark:text-[#bb86fc]">
                   Learn More
                   </span>
                   </button>

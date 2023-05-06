@@ -103,14 +103,14 @@ const GetReview = () => {
                 </svg>
               </div>
 
-              <p className="mt-0.5 text-xs text-gray-500 dark:text-white">
+              <p className="mt-0.5 text-xs text-gray-500 dark:text-[#DBDBDB]">
                 Based on {data?.length} reviews
               </p>
             </div>
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-3">
-            {data?.slice(0, 3)?.map((feedback, idx) => (
+            {data?.slice(7, 10)?.map((feedback, idx) => (
               <blockquote key={idx} className="card-body">
                 <header className="sm:flex sm:items-center sm:gap-4">
                   <img
@@ -119,11 +119,10 @@ const GetReview = () => {
                     src={feedback?.image}
                   />
                   <p className="text-start">
-                    <span className="text-xs block text-gray-500 dark:text-white">
+                    <span className="text-xs block text-gray-500 dark:text-[#bb86fc]">
                       {feedback?.name}
                     </span>
-                    <span className="text-xs block text-gray-500 dark:text-white">
-                      {" "}
+                    <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">
                       12th January, 2024
                     </span>
                   </p>
@@ -131,7 +130,7 @@ const GetReview = () => {
                   {/* <p className="mt-2 font-medium sm:mt-0">The best thing money can buy!</p> */}
                 </header>
 
-                <p className="mt-2 text-gray-700 dark:text-white">
+                <p className="mt-2 text-gray-700 dark:text-[#DBDBDB]">
                   {feedback?.message.slice(0, 50)}
                   {feedback?.message.length >= 51 && <span>. . .</span>}
 
@@ -212,30 +211,31 @@ const GetReview = () => {
                           src={feedback?.image}
                         />
                         <p className="text-start">
-                          <span className="text-xs block text-gray-500 dark:text-white">
+                          <span className="text-xs block text-gray-500 dark:text-[#bb86fc]">
                             {feedback?.name}
                           </span>
-                          <span className="text-xs block text-gray-500 dark:text-white">
-                            {" "}
-                            12th January, 2024
-                          </span>
-                        </p>
-                      </header>
+                          <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">
+                      12th January, 2024
+                    </span>
+                  </p>
 
-                      <p className="mt-2 text-gray-700 dark:text-white">
-                        {feedback?.message.slice(0, 50)}
-                        {feedback?.message.length >= 51 && <span>. . .</span>}
+                  {/* <p className="mt-2 font-medium sm:mt-0">The best thing money can buy!</p> */}
+                </header>
 
-                        {feedback?.message.length >= 51 && (
-                          <label
-                            onClick={() => setModalData(feedback)}
-                            htmlFor="TestimonialModal"
-                            className="cursor-pointer text-gray-400"
-                          >
-                            see more
-                          </label>
-                        )}
-                      </p>
+                <p className="mt-2 text-gray-700 dark:text-[#DBDBDB]">
+                  {feedback?.message.slice(0, 50)}
+                  {feedback?.message.length >= 51 && <span>. . .</span>}
+
+                  {feedback?.message.length >= 51 && (
+                    <label
+                      onClick={() => setModalData(feedback)}
+                      htmlFor="TestimonialModal"
+                      className="cursor-pointer text-gray-400"
+                    >
+                      see more
+                    </label>
+                  )}
+                </p>
 
                       <footer className="my-1 flex">
                         <div className="flex dark:text-yellow-400">
@@ -291,7 +291,7 @@ const GetReview = () => {
                 </div>
 
                 <button
-                  className="hover:underline group text-blue-700 dark:text-white text-2xl flex mx-auto w-sm mt-10"
+                  className="hover:underline group text-blue-700 dark:text-[#bb86fc] text-2xl flex mx-auto w-sm mt-10"
                   title="Hide"
                   onClick={handleCloseClick}
                 >
@@ -301,7 +301,7 @@ const GetReview = () => {
               </div>
             ) : (
               <button
-                className="hover:underline group text-blue-700 dark:text-white text-2xl flex mx-auto w-sm mb-4 lg:mb-0"
+                className="hover:underline group text-blue-700 dark:text-[#bb86fc] text-2xl flex mx-auto w-sm mb-4 lg:mb-0"
                 title="See all"
                 onClick={handleShowAllClick}
               >

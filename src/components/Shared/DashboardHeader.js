@@ -61,7 +61,7 @@ const DashboardHeader = () => {
   };
 
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col text-black dark:bg-black dark:text-white lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-black dark:bg-black dark:text-[#bb86fc] lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
       <NavLink
         style={ navStyle }
         to={ "/" }
@@ -81,7 +81,7 @@ const DashboardHeader = () => {
             </label>
             <ul
               tabIndex={ 0 }
-              className="menu dropdown-content hover:bg-none dark:bg-black dark:text-white p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
+              className="menu dropdown-content hover:bg-none dark:bg-black dark:text-[#bb86fc] p-2 shadow bg-base-100 rounded-box w-52 border border-black dark:border-white  mt-4"
             >
               <li>
                 <NavLink to={ "/blog" }>Blog</NavLink>
@@ -122,7 +122,7 @@ const DashboardHeader = () => {
 
       <NavLink
         to={ "/profile" }
-        className="flex lg:hidden justify-center items-center dark:bg-black dark:text-white"
+        className="flex lg:hidden justify-center items-center dark:bg-black dark:text-[#bb86fc]"
       >
         Profile
       </NavLink>
@@ -155,7 +155,7 @@ const DashboardHeader = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto dark:bg-black dark:text-white shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="mx-auto dark:bg-black dark:text-[#bb86fc] shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="container  grid grid-cols-3 items-center max-w-screen-xl  text-blue-gray-900">
           {/* Drawer */ }
           <div className="flex">
@@ -163,7 +163,7 @@ const DashboardHeader = () => {
               htmlFor="dashboard-drawer"
               className="drawer-button col-span-1"
             >
-              <BsFillCaretRightFill className=" text-[#350573] text-4xl dark:text-white" />
+              <BsFillCaretRightFill className=" text-[#350573] text-4xl dark:text-[#bb86fc]" />
             </label>
           </div>
 
@@ -186,9 +186,9 @@ const DashboardHeader = () => {
             onClick={ () => setOpenNav(!openNav) }
           >
             { openNav ? (
-              <BsChevronUp className="text-3xl text-black dark:text-white" />
+              <BsChevronUp className="text-3xl text-black dark:text-[#bb86fc]" />
             ) : (
-              <BiMenu className="text-3xl text-black  dark:text-white" />
+              <BiMenu className="text-3xl text-black  dark:text-[#bb86fc]" />
             ) }
           </button>
         </div>

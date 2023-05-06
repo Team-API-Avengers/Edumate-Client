@@ -72,7 +72,7 @@ const About = () => {
         </div>
       </div>
       {/* <div>
-        <div className="heros  bg-base-200 dark:bg-black dark:text-white">
+        <div className="heros  bg-base-200 dark:bg-black dark:text-[#bb86fc]">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <motion.div
               className="mt-32 lg:mt-0"

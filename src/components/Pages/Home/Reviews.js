@@ -64,22 +64,29 @@ const Reviews = () => {
       <div className="container grid grid-cols-1 ms-3 lg:grid-cols-2">
 
         <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
+          
           <motion.h1
-            className="font-bold text-green-600 dark:text-white"
+            className="font-bold text-green-600 dark:text-[#bb86fc]"
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1, fontSize: "30px", }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
           >
             Give Your Feedback
           </motion.h1>
+
+
           <motion.p
-            className="py-3 text-2xl lg:text-base"
+            className="py-3 text-2xl lg:text-base dark:text-[#DBDBDB]"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, type: "spring", duration: 1.5 }}
           >
             We want to hear form you ! You can share with us what you feel about our services.
           </motion.p>
+
+
+
+
           <div>
             <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
           </div>
@@ -94,7 +101,7 @@ const Reviews = () => {
             className="card w-full lg:mt-10 p-4 lg:p-8 bg-transparent"
           >
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-white">Name</label>
+              <label className="flex justify-start mb-3 dark:text-[#bb86fc]">Name</label>
               <input
                 className="block border border-t-0 border-blue-400 dark:text-black w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
@@ -105,7 +112,7 @@ const Reviews = () => {
               />
             </div>
             <div className="my-2">
-              <label className="flex justify-start mb-3  dark:text-white">Email</label>
+              <label className="flex justify-start mb-3  dark:text-[#bb86fc]">Email</label>
               <input
                 className="block border border-t-0 border-blue-400 shadow-md dark:text-black  w-full h-10 px-5 py-3 rounded-md outline-none"
                 readOnly
@@ -117,7 +124,7 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-white">How was your experience?</label>
+              <label className="flex justify-start mb-3 dark:text-[#bb86fc]">How was your experience?</label>
               <input
                 name="rate"
                 type="range"
@@ -151,7 +158,7 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-white">Reviews</label>
+              <label className="flex justify-start mb-3 dark:text-[#bb86fc]">Reviews</label>
               <textarea
                 required
                 className="block dark:text-black border border-t-0 border-blue-400 cursor-pointer w-full p-5 rounded-md"

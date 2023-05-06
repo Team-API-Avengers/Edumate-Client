@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
 const SubjectWiseTeacher = () => {

@@ -63,7 +63,7 @@ const Testimonial = () => {
   return (
     <div>
       <section>
-        <div className="container flex bg-green-50 dark:bg-black dark:text-white flex-col items-center justify-center p-4 mx-auto sm:p-10">
+        <div className="container flex bg-green-50 dark:bg-black dark:text-[#bb86fc] flex-col items-center justify-center p-4 mx-auto sm:p-10">
           <motion.p
             id="title"
             className="p-2 text-4xl  text-center  mb-4"
@@ -257,7 +257,7 @@ const Testimonial = () => {
               </div>
 
               <button
-                className="hover:underline group text-blue-700 dark:text-white text-2xl flex mx-auto w-sm mt-10"
+                className="hover:underline group text-blue-700 dark:text-[#bb86fc] text-2xl flex mx-auto w-sm mt-10"
                 title="Hide"
                 onClick={handleCloseClick}
               >
@@ -267,7 +267,7 @@ const Testimonial = () => {
             </div>
           ) : (
             <button
-              className="hover:underline group text-blue-700 dark:text-white text-2xl flex mx-auto w-sm mb-4 lg:mb-0"
+              className="hover:underline group text-blue-700 dark:text-[#bb86fc] text-2xl flex mx-auto w-sm mb-4 lg:mb-0"
               title="See all"
               onClick={handleShowAllClick}
             >

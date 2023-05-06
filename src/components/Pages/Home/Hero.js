@@ -62,7 +62,7 @@ const Hero = () => {
                   <span className="circle" aria-hidden="true">
                     <span className="icon arrow"></span>
                   </span>
-                  <span className="button-text dark:text-white">
+                  <span className="button-text dark:text-[#bb86fc]">
                   Login
                   </span>
                   </button>
