@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Contributors from "../Contributors/Contibutors";
 import { motion } from "framer-motion";
 import AboutOurs from "./AboutOurs";
+import Posts from "../Home/Posts";
+import PostsForMobile from "../Home/PostsForMobile";
 
 const About = () => {
   return (
@@ -24,9 +26,10 @@ const About = () => {
             whileInView={{ y: -20, opacity: 1 }}
             transition={{ type: "spring", stiffness: 20 }}
           >
-            Tuition is a fee paid by students to educational institutions for instruction or guidance in a particular
-            subject or course of study. The term can refer to either the fee itself or the act of teaching or
-            instructing.
+            Tuition is a fee paid by students to educational institutions for
+            instruction or guidance in a particular subject or course of study.
+            The term can refer to either the fee itself or the act of teaching
+            or instructing.
           </motion.p>
         </div>
 
@@ -45,24 +48,37 @@ const About = () => {
               whileInView={{ x: -5, opacity: 1 }}
               transition={{ type: "spring", stiffness: 20 }}
             >
-              <h3 className="text-center lg:text-start text-2xl mb-4 font-bold" style={{ color: "#2CA01C" }}>
+              <h3
+                className="text-center lg:text-start text-2xl mb-4 font-bold"
+                style={{ color: "#2CA01C" }}
+              >
                 Why Choose Us
               </h3>
-              <h1 className="text-4xl font-bold text-start">Learn Something Good, Do Something Better!</h1>
+              <h1 className="text-4xl font-bold text-start">
+                Learn Something Good, Do Something Better!
+              </h1>
               <p className="py-6 text-start">
-                Edumate provides students with access to qualified and experienced tutors who specialize in different
-                subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need
-                extra help with their studies. Edumate connects students with teachers who can help them achieve their
-                academic goals
+                Edumate provides students with access to qualified and
+                experienced tutors who specialize in different subjects. The
+                purpose of Edumate is to provide a convenient and effective
+                solution for students who need extra help with their studies.
+                Edumate connects students with teachers who can help them
+                achieve their academic goals
               </p>
               <div className="text-start">
                 <Link to="/">
-                  <button className="btn btn-primary mr-4 rounded-full" style={{ backgroundColor: "#2CA01C" }}>
+                  <button
+                    className="btn btn-primary mr-4 rounded-full"
+                    style={{ backgroundColor: "#2CA01C" }}
+                  >
                     Go Home
                   </button>
                 </Link>
                 <Link to="/contact">
-                  <button className="btn btn-primary mr-4 rounded-full" style={{ backgroundColor: "#2CA01C" }}>
+                  <button
+                    className="btn btn-primary mr-4 rounded-full"
+                    style={{ backgroundColor: "#2CA01C" }}
+                  >
                     Contact us
                   </button>
                 </Link>
@@ -150,6 +166,10 @@ const About = () => {
       </div> */}
 
       <AboutOurs></AboutOurs>
+
+      <Posts />
+
+      {/* <PostsForMobile /> */}
 
       <Contributors />
     </section>
