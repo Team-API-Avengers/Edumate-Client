@@ -10,31 +10,23 @@ import Hero from "./Hero";
 import Sponsors from "./Sponsors";
 import GetReview from "./GetReview";
 import SearchQuery from "./SearchQuery";
-import Lottie from 'lottie-react';
-import SearchAnimation from '../../Assets/Animation/SearchAnimation.json';
+import Lottie from "lottie-react";
+import SearchAnimation from "../../Assets/Animation/SearchAnimation.json";
 import FAQ from "./FAQ/FAQ";
 import AboutOurs from "../About/AboutOurs";
-
+import FaqAnswer from "./FAQ/FaqAnswer";
 
 const Home = () => {
   const { user, loading, filteredData, setFilteredData } = useContext(AuthContext);
 
-
-
-  
-
   const [data, setData] = useState([]);
-  
 
   useEffect(() => {
     fetch(`https://edumate-second-server.vercel.app/api/v1/tutor`)
       .then((res) => res.json())
       .then((data) => setData(data?.data))
-      .finally(() => {
-      });
+      .finally(() => {});
   }, []);
-
-
 
   //! Data Query
   function handleFilter(event) {
@@ -53,77 +45,72 @@ const Home = () => {
 
   console.log(filteredData);
 
-
-
   if (loading) {
     return <Loader />;
   }
 
-
-
-
   return (
     <div>
-
       <Hero />
 
-                  {/* tutor Search Field*/}
-            <div className="my-5 text-2xl font-semibold mx-10">
-              <h1>Name/ Location / Department</h1>
-            <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-12">
-
-
-            <div className="lg:col-span-3">
-            <Lottie className="h-72" animationData={SearchAnimation} loop={true}></Lottie>
+      {/* tutor Search Field*/}
+      <div className="my-5 text-2xl font-semibold mx-10">
+        <h1>Name/ Location / Department</h1>
+        <div className="bg-base-200 grid grid-cols-1 lg:grid-cols-2">
+          <div>
+            <Lottie className="h-52" animationData={SearchAnimation} loop={true}></Lottie>
           </div>
 
-
-          <div className="col-span-9">
           <div className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg">
             <input
-            placeholder="Search your tutor"
-            type="text"
-            className="text-black h-12 w-1/2"
-            onChange={handleFilter}
-          />
-          <button className="btn btn-primary rounded-none h-10">Search</button>
-            </div>
-
-          {
-        filteredData &&
-          <div className="mx-6 p-3" id="search"><SearchQuery filteredData={filteredData} /></div>
-        }
+              placeholder="Search your tutor"
+              type="text"
+              className="text-black h-12 w-1/2"
+              onChange={handleFilter}
+            />
+            <button className="btn btn-primary rounded-none h-10">Search</button>
           </div>
+        </div>
+      </div>
 
-
-
-
-            </div>
-            </div>
-
-
+      {filteredData && (
+        <div id="search">
+          <SearchQuery filteredData={filteredData} />
+        </div>
+      )}
 
       {/* {user && <StudentPostBox />} */}
 
       <SubjectWiseTeachers />
 
-      {user?.uid && <div id="review"><Reviews /></div>}
+      {user?.uid && (
+        <div id="review">
+          <Reviews />
+        </div>
+      )}
 
       <GetReview />
 
-      <div id="beATeacher"> <BeATeacher /></div>
+      <div id="beATeacher">
+        {" "}
+        <BeATeacher />
+      </div>
 
-     
       <AboutOurs />
 
-      <div id="faq"><FAQ /></div>
+      <FaqAnswer></FaqAnswer>
 
-      <div className="my-5"><Sponsors /></div>
+      <div className="my-5">
+        <Sponsors />
+      </div>
 
-      { user?.uid &&<div id="contact"><ContactUs /></div>}
-      
+      {user?.uid && (
+        <div id="contact">
+          <ContactUs />
+        </div>
+      )}
+
       <ScrollButton />
-
     </div>
   );
 };
