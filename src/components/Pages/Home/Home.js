@@ -12,7 +12,6 @@ import GetReview from "./GetReview";
 import SearchQuery from "./SearchQuery";
 import Lottie from "lottie-react";
 import SearchAnimation from "../../Assets/Animation/SearchAnimation.json";
-import FAQ from "./FAQ/FAQ";
 import AboutOurs from "../About/AboutOurs";
 import FaqAnswer from "./FAQ/FaqAnswer";
 
@@ -92,13 +91,13 @@ const Home = () => {
       <GetReview />
 
       <div id="beATeacher">
-        {" "}
+        
         <BeATeacher />
       </div>
 
       <AboutOurs />
 
-      <FaqAnswer></FaqAnswer>
+      <FaqAnswer />
 
       <div className="my-5">
         <Sponsors />

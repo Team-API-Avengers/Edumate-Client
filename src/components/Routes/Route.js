@@ -29,6 +29,7 @@ import StudentPostBox from "../Pages/StudentPostBox/StudentPostBox";
 import AboutOurs from "../Pages/About/AboutOurs";
 import PaymentFail from "../Pages/MyTeachers/PaymentFail";
 import PaymentNotification from "../Pages/MyTeachers/PaymentNotification";
+import TutorTestQuestion from "../Pages/TutorTestQuestion/TutorTestQuestion";
 
 const router = createBrowserRouter([
 
@@ -135,10 +136,6 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
     children: [
-      // {
-      //   path: "/dashboard",
-      //   element: <WelcomeDashboard />,
-      // },
       {
         path: "/dashboard",
         element: <MyProfile />,
@@ -154,6 +151,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/tutor-test",
         element: <TutorTest />
+      },
+      {
+        path: "/dashboard/tutor-test-question",
+        element: <TutorTestQuestion />
       },
 
       {

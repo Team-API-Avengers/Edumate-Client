@@ -70,7 +70,7 @@ const DashBoard = () => {
                 </li>
 
                 <li className="">
-                  <label htmlFor="QuestionModal">Be a teacher</label>
+                  <Link to='/dashboard/tutor-test-question'>Be a teacher</Link>
                 </li>
               </>
             )}
@@ -78,7 +78,7 @@ const DashBoard = () => {
             {logUser?.role === "Teacher" && (
               <>
                 <li className="">
-                  <label htmlFor="QuestionModal">Be a teacher</label>
+                  <Link to='/dashboard/tutor-test-question'>Be a teacher</Link>
                 </li>
 
                 <li className="">

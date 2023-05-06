@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import ReviewAnimation from "../../Assets/Animation/Teacher.json";
 import Lottie from "lottie-react";
 import QuestionModal from "../../Modals/QuestionModal";
+import { Link } from "react-router-dom";
 
 const containerVariants = {
   hidden: {
@@ -78,7 +79,7 @@ const BeATeacher = () => {
               </motion.p>
 
             </motion.div>
-            <label htmlFor="QuestionModal" className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
+            <Link to={'/dashboard/tutor-test-question'} className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#00813d] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500">
                     <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                       <BsArrowRight />
                     </span>
@@ -87,7 +88,7 @@ const BeATeacher = () => {
                       Start teaching today
                     </span>
                 
-            </label>
+            </Link>
           </motion.div>
 
 
