@@ -48,6 +48,11 @@ const Testimonial = () => {
 
   // FIXME: --------END------ FIXME:
 
+
+
+
+
+
   useEffect(() => {
     fetch("https://edumate-second-server.vercel.app/api/v1/feedback")
       .then((res) => res.json())
@@ -60,10 +65,13 @@ const Testimonial = () => {
 
   // console.log("modalData", modalData?.name);
 
+
+
+
   return (
     <div>
       <section>
-        <div className="container flex bg-green-50 dark:bg-black dark:text-[#bb86fc] flex-col items-center justify-center p-4 mx-auto sm:p-10">
+        <div className="container flex bg-green-50 dark:bg-black animated-text dark:text-[#bb86fc] flex-col items-center justify-center p-4 mx-auto sm:p-10">
           <motion.p
             id="title"
             className="p-2 text-4xl  text-center  mb-4"
@@ -87,7 +95,7 @@ const Testimonial = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 3 }}
           >
-            {data?.slice(0, 3)?.map((feedback, idx) => (
+          {data?.slice(0, 3)?.map((feedback, idx) => (
               <div
                 key={idx}
                 className="transition transform hover:scale-105 duration-300  flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-xl dark:shadow-green-300 dark:hover-shadow-md cursor-pointer"
@@ -167,7 +175,7 @@ const Testimonial = () => {
                   </button>
                 </div>
               </div>
-            ))}
+           ))}
           </motion.div>
 
           {showAll ? (
@@ -176,7 +184,7 @@ const Testimonial = () => {
                 {data?.slice(3)?.map((feedback, idx) => (
                   <div
                     key={idx}
-                    className="transition transform hover:scale-105 duration-300 flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white  dark:text-black hover:shadow-xl dark:shadow-green-300 cursor-pointer"
+                    className="transition transform hover:scale-105 duration-300 flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 border border-green-400 bg-green-100 dark:bg-white dark:text-black hover:shadow-xl dark:shadow-green-300 cursor-pointer"
                   >
                     <img
                       alt="img"

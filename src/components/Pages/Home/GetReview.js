@@ -49,12 +49,12 @@ const GetReview = () => {
     <div>
       <section>
         <div className="mx-auto max-w-screen-xl border dark:border-0 px-4 py-8 sm:px-6 lg:px-8">
-          <h2 id="title" className="text-4xl font-bold ">
+          <h2 id="title" className="text-4xl animated-text font-bold ">
             Students Reviews
           </h2>
 
           <div className="mt-4 flex items-center gap-4">
-            <p className="text-3xl font-medium">
+            <p className="text-3xl font-medium animated-text">
               3.8
               <span className="sr-only"> Average review score </span>
             </p>

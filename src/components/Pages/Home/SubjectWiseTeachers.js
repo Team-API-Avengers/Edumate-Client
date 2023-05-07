@@ -1,19 +1,6 @@
 import { Link } from "react-router-dom";
-// import help from "../../Assets/help.png";
-// import data from "../../Assets/data.png";
-// import app from "../../Assets/app.png";
-// import book from "../../Assets/book.png";
 import { motion } from "framer-motion";
-import {
-  BsBook,
-  BsBookFill,
-  BsBorder,
-  BsFunnel,
-  BsFunnelFill,
-  BsMicrosoft,
-  BsPencil,
-  BsPencilFill,
-} from "react-icons/bs";
+import { BsBook, BsBookFill, BsBorder, BsFunnel, BsFunnelFill, BsMicrosoft, BsPencil, BsPencilFill } from "react-icons/bs";
 
 const SubjectWiseTeachers = () => {
   return (
@@ -38,7 +25,7 @@ const SubjectWiseTeachers = () => {
       {/* {backgrounds.map((category) => ( */}
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto grid grid-cols-1">
 
-        <div className="container grid grid-cols-4 gap-10 px-5 py-1 text-green-600  mx-auto">
+        <div className="container grid grid-cols-4 gap-10 px-5 py-1 text-blue-600  dark:text-green-600  mx-auto">
 
           {/* Science Department */}
           <motion.div
@@ -47,10 +34,10 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 0.8, type: "spring", duration: 2 }}
           >
             <Link to={"/Science"}>
-              <a href="#g" className="group relative  block h-36">
+              <a href="#g" className="group relative block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-orange-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-blue-600 items-end bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
                     {/* <img className="w-14 h-12 " src={ data } alt="" /> */}
                     <BsFunnel className="w-14 h-12" />
@@ -91,7 +78,7 @@ const SubjectWiseTeachers = () => {
               <a href="#g" className="group relative  block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg  border-green-600 dark:border-orange-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg  border-green-600 dark:border-blue-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
                     {/* <img className="w-14 h-12 " src={ book } alt="" /> */}
                     <BsBook className="w-14 h-12 " />
@@ -132,7 +119,7 @@ const SubjectWiseTeachers = () => {
               <a href="#g" className="group relative  block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg  border-green-600 dark:border-orange-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg  border-green-600 dark:border-blue-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
                     {/* <img className="w-14 h-12 " src={ help } alt="" /> */}
                     <BsPencil className="w-14 h-12 " />
@@ -172,7 +159,7 @@ const SubjectWiseTeachers = () => {
               <a href="#g" className="group relative block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-orange-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-blue-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
 
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0">
                     <BsBorder className="w-14 h-12" />

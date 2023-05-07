@@ -1,4 +1,3 @@
-import { LottiePlayer } from "lottie-react";
 import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import topJson from "../../Assets/Animation/gotoTop.json";
@@ -30,13 +29,13 @@ function ScrollButton() {
 
   return (
     <button
-      className={`fixed bottom-4 z-50 dark:bg-white  bg-green-200  right-4 p-4 text-white rounded-full transition-opacity ${
+      className={`fixed bottom-4 z-50 dark:bg-white bgGradient right-4 p-4 rounded-full transition-opacity ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       onClick={scrollToTop}
     >
       <Lottie
-        className="w-8 text-white"
+        className="w-8"
         loop={true}
         animationData={topJson}
       ></Lottie>

@@ -42,7 +42,7 @@ const BeATeacher = () => {
   // const { theme } = useContext(AuthContext);
   return (
     <div>
-      <div className="container   dark:bg-black dark:text-[#bb86fc] px-16 py-16 max-w-screen-xl mx-auto">
+      <div className="container dark:bg-black px-16 py-16 max-w-screen-xl mx-auto">
         <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <motion.div
             className="w-full mt-7 "
@@ -58,7 +58,7 @@ const BeATeacher = () => {
             >
               <motion.h1
                 id="title"
-                className="text-5xl  font-bold text-green-400 dark:text-[#0056F7]"
+                className="text-5xl  font-bold animated-text dark:text-[#0056F7]"
                 variants={childVariants}
               >
                 Become a tutor

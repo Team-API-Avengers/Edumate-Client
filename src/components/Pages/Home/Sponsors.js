@@ -14,8 +14,8 @@ import eleven from '../../Assets/sponsors/eleven.jpg'
 const Sponsors = () => {
     return (
         <div>
-            <h1 className='text-2xl text-start font-semibold mx-5 w-44 lg:mx-20 my-2 dark:bg-black  dark:text-[#0056F7] bg-white text-gray-800 p-5 rounded-r-full'>Sponsors</h1>
-            <div className='mx-5 lg:mx-20 dark:bg-black dark:text-[#fff]'>
+            <h1 className='text-2xl text-start font-semibold mx-5 w-44 lg:mx-20 my-2 dark:bg-black animated-text bg-white text-gray-800 p-5 rounded-r-full'>Sponsors</h1>
+            <div className='mx-5 lg:mx-20 dark:bg-black '>
             <marquee>
             <div className="flex">
                 <img className='w-20 mx-5' src={one} alt="logo" />

@@ -66,7 +66,7 @@ const Reviews = () => {
         <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
           
           <motion.h1
-            className="font-bold text-green-600 dark:text-[#0056F7]"
+            className="font-bold dark:text-[#0056F7] animated-text"
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1, fontSize: "30px", }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
