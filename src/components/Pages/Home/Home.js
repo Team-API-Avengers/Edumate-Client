@@ -69,7 +69,7 @@ const Home = () => {
           </div>
 
           <div className="lg:col-span-9 mx-5 mb-5">
-          <div className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg">
+          <div id="searchBox" className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg">
             <input
               placeholder="Search your tutor"
               type="text"
