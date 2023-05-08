@@ -30,6 +30,7 @@ import AboutOurs from "../Pages/About/AboutOurs";
 import PaymentFail from "../Pages/MyTeachers/PaymentFail";
 import PaymentNotification from "../Pages/MyTeachers/PaymentNotification";
 import TutorTestQuestion from "../Pages/TutorTestQuestion/TutorTestQuestion";
+import SkillAssessments from "../Pages/SkillAssessments/SkillAssessments";
 
 const router = createBrowserRouter([
 
@@ -162,6 +163,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/all-students",
         element: <AllStudents />,
+      },
+
+      {
+        path: "/dashboard/skill-assessments",
+        element: <SkillAssessments />,
       },
 
       {
