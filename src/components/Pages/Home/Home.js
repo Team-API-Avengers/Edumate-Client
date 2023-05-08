@@ -14,9 +14,11 @@ import Lottie from "lottie-react";
 import SearchAnimation from "../../Assets/Animation/SearchAnimation.json";
 import AboutOurs from "../About/AboutOurs";
 import FaqAnswer from "./FAQ/FaqAnswer";
+import StudentPost from "./StudentPost";
 
 const Home = () => {
-  const { user, loading, filteredData, setFilteredData } = useContext(AuthContext);
+  const { user, loading, filteredData, setFilteredData } =
+    useContext(AuthContext);
 
   const [data, setData] = useState([]);
 
@@ -57,13 +59,23 @@ const Home = () => {
 
       {/* tutor Search Field*/}
       <div className="my-5 text-2xl font-semibold mx-10">
-        <h1 className="text-[#1AA3D0] dark:text-[#00A99D]">Name/ Location / Department</h1>
+        <h1 className="text-[#1AA3D0] dark:text-[#00A99D]">
+          Name/ Location / Department
+        </h1>
         <div className=" bg-gradient-to-r from-[#1AA3D0] to-[#00A99D] ... rounded-lg mt-4 grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-3">
             {filteredData[1] ? (
-              <Lottie className="h-96" animationData={SearchAnimation} loop={true}></Lottie>
+              <Lottie
+                className="h-96"
+                animationData={SearchAnimation}
+                loop={true}
+              ></Lottie>
             ) : (
-              <Lottie className="h-24" animationData={SearchAnimation} loop={true}></Lottie>
+              <Lottie
+                className="h-24"
+                animationData={SearchAnimation}
+                loop={true}
+              ></Lottie>
             )}
           </div>
 
@@ -78,7 +90,9 @@ const Home = () => {
                 className="text-black h-12 w-1/2 focus:outline-none focus:border-0 rounded-full"
                 onChange={handleFilter}
               />
-              <button className="btn bg-[#00A99D] hover:bg-[#00A99D] rounded-none h-10 text-xl">Search</button>
+              <button className="btn bg-[#00A99D] hover:bg-[#00A99D] rounded-none h-10 text-xl">
+                Search
+              </button>
             </div>
 
             <div>
@@ -87,7 +101,9 @@ const Home = () => {
                   <SearchQuery filteredData={filteredData} />
                 </div>
               )}
-              {hasSearched && filteredData.length === 0 && <p>No results found.</p>}
+              {hasSearched && filteredData.length === 0 && (
+                <p>No results found.</p>
+              )}
             </div>
           </div>
         </div>
@@ -111,6 +127,7 @@ const Home = () => {
 
       <AboutOurs />
 
+      <StudentPost />
       <FaqAnswer />
 
       <div className="my-5">
