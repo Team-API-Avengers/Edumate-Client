@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BsFillQuestionDiamondFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+// import { Link } from 'react-router-dom';
+// import { toast } from 'react-toastify';
 
 const TutorTestQuestion = () => {
     
@@ -10,16 +10,16 @@ const TutorTestQuestion = () => {
 
     const [filteredData, setFilteredData] = useState([]);
 
-
+    const [correctValues, setCorrectValues] = useState(0);
 
 
 
 
 
     //! Change Style 
-    const [nextButtonStyle, setNextButtonStyle] = useState("hidden");
+    // const [nextButtonStyle, setNextButtonStyle] = useState("hidden");
    
-    const [formStyle, setFormStyle] = useState("block");
+    // const [formStyle, setFormStyle] = useState("block");
   
 
     // console.log(object);
@@ -95,28 +95,51 @@ const TutorTestQuestion = () => {
         const selectedFour = form.selectedFour.value;
         const selectedFive = form.selectedFive.value;
 
+        console.log('selected answer',selectedOne, selectedTwo, selectedThree, selectedFour, selectedFive);
 
-
-    
-
-
-        console.log(selectedOne, selectedTwo, selectedThree, selectedFour, selectedFive);
-
-        console.log(filteredData[0]?.answer, filteredData[1]?.answer, filteredData[2]?.answer, filteredData[3]?.answer, filteredData[4]?.answer);
+        console.log('correct answer',filteredData[0]?.answer, filteredData[1]?.answer, filteredData[2]?.answer, filteredData[3]?.answer, filteredData[4]?.answer);
 
 
 
-
-
-        //! Check Options for correct answer
-        if( selectedOne === filteredData[0]?.answer && selectedTwo === filteredData[1]?.answer && selectedThree === filteredData[2]?.answer && selectedFour === filteredData[3]?.answer && selectedFive === filteredData[4]?.answer )
-        {
-            toast.success('Awesome!')
-            setNextButtonStyle("block");
-            setFormStyle("hidden");
-        }else{
-            toast.error('Wrong!')
+        //!Todo: Check Options for correct answer
+        if(selectedOne === filteredData[0]){
+            setCorrectValues(1)
         }
+
+        if(selectedTwo === filteredData[1]){
+            if(correctValues === 1){
+                setCorrectValues(correctValues + 1)
+            }else{
+                setCorrectValues(1)
+            }
+        }
+
+        if(selectedThree === filteredData[2]){
+            if(correctValues === 1 || 2){
+                setCorrectValues(correctValues + 1)
+            }else{
+                setCorrectValues(1)
+            }
+        }
+
+        if(selectedFour === filteredData[3]){
+            if(correctValues === 1 || 2 || 3){
+                setCorrectValues(correctValues + 1)
+            }else{
+                setCorrectValues(1)
+            }
+        }
+
+
+
+        if(selectedFive === filteredData[4]){
+            if(correctValues === 1 || 2 || 3 || 4){
+                setCorrectValues(correctValues + 1)
+            }else{
+                setCorrectValues(1)
+            }
+        }
+
 
 
 
@@ -127,7 +150,7 @@ const TutorTestQuestion = () => {
     //   console.log(userSelectedData);
 
 
-
+console.log('correctValues', correctValues);
 
     return (
         <div className='m-10'>
@@ -155,7 +178,7 @@ const TutorTestQuestion = () => {
                       </div>
 
 
-                      <div className={formStyle}>
+                      <div>
                         {filteredData[1] &&
                       <div>
                         <div className="w-full shadow-gray-400 shadow-lg rounded-md p-3 my-5 border-2 border-orange-500 ">
@@ -255,11 +278,11 @@ const TutorTestQuestion = () => {
 
                       </div>
 
-                        {filteredData[1] &&
+                        {/* {filteredData[1] &&
                         <Link to={'/dashboard/add-Teacher'} className={nextButtonStyle}>
                           <button className='btn btn-success my-10 w-1/3'>Next</button>
                       </Link>
-                        }
+                        } */}
 
 
 
