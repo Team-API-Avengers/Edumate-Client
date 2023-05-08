@@ -4,6 +4,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
+import BlogAnimation from '../../Assets/Animation/BlogAnimation.json';
+import Lottie from "lottie-react";
 
 const AddBlog = () => {
   const { register, handleSubmit } = useForm();
@@ -61,11 +63,15 @@ const AddBlog = () => {
         <p className="mt-3 dark:text-[#ffffff]">
           Contribute to our community with your blog post
         </p>
-        <div className="w-full lg:w-8/12 mt-10 px-4 mx-auto ">
-          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100  border-green-400 border">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 px-4 mx-16 ">
+          <div className="flex justify-center items-center" >
+            <Lottie animationData={BlogAnimation} loop={true}></Lottie>
+          </div>
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 bg-blueGray-100  ">
+
             <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
               <form onSubmit={handleSubmit(addBlog)}>
-                <h6 className="text-blueGray-400 dark:text-[#ffffff] text-sm mt-3 mb-6 font-bold uppercase">
+                <h6 className="text-blueGray-400 dark:text-[#ffffff] text-md mt-3 mb-6 font-bold uppercase">
                   Blog Information
                 </h6>
                 <div className="flex flex-wrap">
