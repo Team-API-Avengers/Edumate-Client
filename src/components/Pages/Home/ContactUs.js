@@ -16,7 +16,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="mb-5">
+    <div className="mb-20 lg:mb-5">
       {/* <img src={img} className="w-1/2" alt="" /> */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -58,7 +58,7 @@ const ContactUs = () => {
                         <span className="label-text dark:text-[#00A99D]">Name</span>
                       </label>
                       <input
-                        className="w-full border-2  border-[#1AA3D0] dark:border-none  text-gray-900  mt-0 p-3 rounded focus:border-[#00A99D]"
+                        className="w-full border-2  border-[#1AA3D0] dark:border-none  text-gray-900  mt-0 p-3 rounded-full focus:border-[#00A99D]"
                         type="text"
                         name="name"
                         readOnly
@@ -71,7 +71,7 @@ const ContactUs = () => {
                         <span className="label-text dark:text-[#00A99D]">Email</span>
                       </label>
                       <input
-                        className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded focus:border-[#00A99#00A99D"
+                        className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded-full focus:border-[#00A99#00A99D"
                         type="email"
                         name="email"
                         readOnly
@@ -84,7 +84,7 @@ const ContactUs = () => {
                         <span className="label-text dark:text-[#00A99D]">Subject / Issues</span>
                       </label>
                       <input
-                        className="w-full   border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:border-[#00A99D]"
+                        className="w-full   border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded-full focus:outline-none focus:border-[#00A99D]"
                         type="text"
                         name="about"
                         placeholder="Subject"
@@ -97,7 +97,7 @@ const ContactUs = () => {
                         <span className="label-text dark:text-[#00A99D]">Mobile number</span>
                       </label>
                       <input
-                        className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:border-[#00A99D]"
+                        className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded-full focus:outline-none focus:border-[#00A99D]"
                         type="text"
                         name="number"
                         placeholder="Number"
@@ -119,10 +119,10 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div className="my-2 w-full lg:w-2/4">
+                  <div className="my-2 w-full ">
                     <button
                       type="submit"
-                      className="uppercase text-sm font-bold tracking-wide bg-[#1AA3D0] dark:bg-[#00A99D] dark:hover:bg-[#5400BB] text-gray-100 p-5 lg:p-3 rounded w-full
+                      className="uppercase text-sm font-bold tracking-wide bg-[#1AA3D0] dark:bg-[#00A99D] dark:hover:bg-[#1AA3D0] text-gray-100 p-5 lg:p-3 rounded-full w-full
                       focus:outline-none focus:shadow-outline mt-6 lg:mt-0 lg:ml-0"
                     >
                       Send Message
