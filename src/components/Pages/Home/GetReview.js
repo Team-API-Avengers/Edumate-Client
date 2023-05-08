@@ -15,9 +15,7 @@ const GetReview = () => {
   const [showAll, setShowAll] = useState(false);
 
   const getCategoryData = async () => {
-    const response = await fetch(
-      "https://edumate-second-server.vercel.app/api/v1/feedback"
-    );
+    const response = await fetch("https://edumate-second-server.vercel.app/api/v1/feedback");
     const data = await response.json();
     setCategoryData(data);
   };
@@ -49,7 +47,7 @@ const GetReview = () => {
     <div>
       <section>
         <div className="mx-auto max-w-screen-xl border dark:border-0 px-4 py-8 sm:px-6 lg:px-8">
-          <h2 id="title" className="text-4xl animated-text font-bold ">
+          <h2 id="title" className="text-4xl  font-bold text-[#1AA3D0] ">
             Students Reviews
           </h2>
 
@@ -103,7 +101,7 @@ const GetReview = () => {
                 </svg>
               </div>
 
-              <p className="mt-0.5 text-xs text-gray-500 dark:text-[#DBDBDB]">
+              <p className="mt-0.5 text-s font-bold text-[#00A99D] dark:text-[#00A99D]">
                 Based on {data?.length} reviews
               </p>
             </div>
@@ -119,10 +117,8 @@ const GetReview = () => {
                     src={feedback?.image}
                   />
                   <p className="text-start">
-                    <span className="text-xs block text-gray-500 dark:text-[#F0F5FF]">
-                      {feedback?.name}
-                    </span>
-                    <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">
+                    <span className="text-s block text-gray-500 dark:text-[#F0F5FF]">{feedback?.name}</span>
+                    <span className="text-s font-bold block text-[#00A99D] dark:text-[#00A99D]">
                       12th January, 2024
                     </span>
                   </p>
@@ -138,7 +134,7 @@ const GetReview = () => {
                     <label
                       onClick={() => setModalData(feedback)}
                       htmlFor="TestimonialModal"
-                      className="cursor-pointer text-gray-400"
+                      className="cursor-pointer font-bold text-[#00A99D]"
                     >
                       see more
                     </label>
@@ -211,31 +207,27 @@ const GetReview = () => {
                           src={feedback?.image}
                         />
                         <p className="text-start">
-                          <span className="text-xs block text-gray-500 dark:text-[#bb86fc]">
-                            {feedback?.name}
-                          </span>
-                          <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">
-                      12th January, 2024
-                    </span>
-                  </p>
+                          <span className="text-xs block text-gray-500 dark:text-[#bb86fc]">{feedback?.name}</span>
+                          <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">12th January, 2024</span>
+                        </p>
 
-                  {/* <p className="mt-2 font-medium sm:mt-0">The best thing money can buy!</p> */}
-                </header>
+                        {/* <p className="mt-2 font-medium sm:mt-0">The best thing money can buy!</p> */}
+                      </header>
 
-                <p className="mt-2 text-gray-700 dark:text-[#DBDBDB]">
-                  {feedback?.message.slice(0, 50)}
-                  {feedback?.message.length >= 51 && <span>. . .</span>}
+                      <p className="mt-2 text-gray-700 dark:text-[#DBDBDB]">
+                        {feedback?.message.slice(0, 50)}
+                        {feedback?.message.length >= 51 && <span>. . .</span>}
 
-                  {feedback?.message.length >= 51 && (
-                    <label
-                      onClick={() => setModalData(feedback)}
-                      htmlFor="TestimonialModal"
-                      className="cursor-pointer text-gray-400"
-                    >
-                      see more
-                    </label>
-                  )}
-                </p>
+                        {feedback?.message.length >= 51 && (
+                          <label
+                            onClick={() => setModalData(feedback)}
+                            htmlFor="TestimonialModal"
+                            className="cursor-pointer text-gray-400"
+                          >
+                            see more
+                          </label>
+                        )}
+                      </p>
 
                       <footer className="my-1 flex">
                         <div className="flex dark:text-yellow-400">
@@ -301,12 +293,12 @@ const GetReview = () => {
               </div>
             ) : (
               <button
-                className="hover:underline group text-blue-700 dark:text-[#bb86fc] text-2xl flex mx-auto w-sm mb-4 lg:mb-0"
+                className="hover:underline group text-[#1AA3D0] dark:text-[#1AA3D0] font-bold text-2xl flex mx-auto w-sm mb-4 lg:mb-0"
                 title="See all"
                 onClick={handleShowAllClick}
               >
                 See All Feedbacks
-                <BsArrowRightShort className="group-hover:text-blue-700 dark:group-hover:text-white text-white mt-2" />
+                <BsArrowRightShort className="group-hover:text-[#1AA3D0] dark:group-hover:text-[#1AA3D0] text-[#00A99D] mt-2" />
               </button>
             )}
           </div>
