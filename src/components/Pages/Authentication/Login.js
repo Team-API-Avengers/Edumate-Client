@@ -2,30 +2,28 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
-import { GoogleAuthProvider, getAuth, sendPasswordResetEmail, } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, sendPasswordResetEmail } from "firebase/auth";
 import Lottie from "lottie-react";
 import LoginAnimation from "../../Assets/Animation/LoginAnimation.json";
 import { toast } from "react-toastify";
 // import ReCAPTCHA from "react-google-recaptcha";
 import app from "../../Firebase/Firebase.init";
 
-
-
-
-
 const auth = getAuth(app);
 const Login = () => {
-
   const [userEmail, setUserEmail] = useState("");
 
   const googleProvider = new GoogleAuthProvider();
 
-  const {   register, formState: { errors }, handleSubmit} = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const { signIn, signInWithGoogle } = useContext(AuthContext);
 
   const [loginError, setLoginError] = useState("");
-
 
   // const [loginUserEmail, setLoginUserEmail] = useState('');
   const location = useLocation();
@@ -38,9 +36,6 @@ const Login = () => {
   // console.log("recaptcha", recaptcha);
 
   // const captchaRef = useRef(null);
-
-
-
 
   // //! react-google-recaptcha
   // function onChange(value) {
@@ -56,15 +51,9 @@ const Login = () => {
   //   }
   // }
 
-
-
-
-
   //! Email Login Form
   const handleLogin = (data) => {
     console.log(data);
-
-
 
     setLoginError("");
     signIn(data.email, data.password)
@@ -129,43 +118,36 @@ const Login = () => {
       });
   };
 
-
-
-
-
   //! handle Forget Password
 
-  const handleEmailForResetPassword = e =>{
+  const handleEmailForResetPassword = (e) => {
+    const email = e.target.value;
+    setUserEmail(email);
 
-    const email = e.target.value
-    setUserEmail(email)
-    
     console.log(email);
-  }
+  };
 
   const handleForgetPassword = () => {
-    if(!userEmail){
-      toast.error('Please enter your email address')
-    }else{
+    if (!userEmail) {
+      toast.error("Please enter your email address");
+    } else {
       sendPasswordResetEmail(auth, userEmail)
-    .then(() => {
-      toast.info('password reset sent')
-    })
-    .catch (er => {
-      toast.error(er.message)
-      console.error(er)
-    })
+        .then(() => {
+          toast.info("password reset sent");
+        })
+        .catch((er) => {
+          toast.error(er.message);
+          console.error(er);
+        });
     }
-    
-    
-  }
+  };
 
   return (
     <div>
-      <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-[#bb86fc]">
+      <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-20 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 text-[#1AA3D0] dark:text-[#00A99D]">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
-            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+            <h2 id="title" className="text-4xl font-bold leading-tight lg:text-5xl">
               Please Do it!
             </h2>
             {/* <div className="hidden lg:flex justify-center">
@@ -188,15 +170,15 @@ const Login = () => {
             >
               Sign Up
             </Link>
-            <h3 className="text-2xl text-gray-300 rounded-lg border-gray-600 p-3 font-bold text-center">
+            <h3 className="text-2xl text-[#1AA3D0] dark:text-[#00A99D] rounded-lg border-gray-600 p-3 font-bold text-center">
               Login
             </h3>
           </div>
 
           <form onSubmit={handleSubmit(handleLogin)}>
             <div className="text-sm ">
-              <label className="flex m-2 ">Email</label>
-              <input 
+              <label className="flex m-2 dark:text-[#00A99D]">Email</label>
+              <input
                 type="email"
                 {...register("email", {
                   required: "Email Address is required",
@@ -206,14 +188,12 @@ const Login = () => {
                 //   console.log("Input field blurred", e.target.value);
                 //     }}
                 onBlur={handleEmailForResetPassword}
-                className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
+                className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
               />
-              {errors.email && (
-                <p className="text-red-600">{errors.email?.message}</p>
-              )}
+              {errors.email && <p className="text-red-600">{errors.email?.message}</p>}
             </div>
             <div className="mt-3 ms-1 text-sm ">
-              <label className="flex m-2  ">Password</label>
+              <label className="flex m-2  dark:text-[#00A99D]">Password</label>
               <input
                 type="text"
                 {...register("password", {
@@ -225,30 +205,28 @@ const Login = () => {
                 })}
                 placeholder="Password"
                 name="password"
-                className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white "
+                className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
               />
-              {errors.password && (
-                <p className="text-red-600 mb-3">{errors.password?.message}</p>
-              )}
-              <div className="flex mt-2 mb-5 text-xs ">
-                <p className="cursor-pointer hover:underline" onClick={handleForgetPassword}>Forgot Password?</p>
+              {errors.password && <p className="text-red-600 mb-3">{errors.password?.message}</p>}
+              <div className="flex mt-2 mb-5 text-xs font-bold">
+                <p className="cursor-pointer hover:underline" onClick={handleForgetPassword}>
+                  Forgot Password?
+                </p>
               </div>
             </div>
             <input
-              className="btn btn-primary w-full p-3 text-center rounded-full "
+              className="btn btn-primary w-full p-3 text-center rounded-full bg-[#1AA3D0] dark:bg-[#00A99D] hover:bg-[#00A99D] dark:hover:bg-[#1AA3D0]"
               value="Login"
               type="submit"
             />
-            <div>
-              {loginError && <p className="text-red-600">{loginError}</p>}
-            </div>
+            <div>{loginError && <p className="text-red-600">{loginError}</p>}</div>
           </form>
 
           <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16 "></div>
             <p
               onClick={handleGoogle}
-              className="btn btn-outline text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 border-none w-full px-3 text-sm  rounded-full"
+              className="btn btn-outline text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... border-none w-full px-3 text-sm  rounded-full"
             >
               Login with Google
             </p>

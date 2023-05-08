@@ -114,7 +114,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-[#00A99D]">
+    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 text-[#1AA3D0] dark:text-[#00A99D]">
       <div className="flex items-center">
         <div className="space-y-2 w-full">
           <h1 id="title" className="text-5xl mb-5 font-bold">
@@ -127,7 +127,7 @@ const Signup = () => {
       </div>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl  ">
         <div className="flex justify-around py-5">
-          <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-gray-800 dark:text-gray-300">Sign Up</h3>
+          <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-[#1AA3D0] dark:text-[#00A99D]">Sign Up</h3>
           <Link
             to="/authentication/login"
             className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center"
@@ -137,72 +137,74 @@ const Signup = () => {
         </div>
 
         <form onSubmit={handleSubmit(handleSignUp)}>
-          <div className="text-sm">
-            <label className="flex m-2  dark:text-[#00A99D]">Name</label>
-            <input
-              type="text"
-              {...register("name", {
-                required: "Name is requires",
-              })}
-              placeholder="Name"
-              name="name"
-              className="input input-bordered text-black w-full px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]  "
-            />
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="text-sm">
+              <label className="flex m-2  dark:text-[#00A99D]">Name</label>
+              <input
+                type="text"
+                {...register("name", {
+                  required: "Name is requires",
+                })}
+                placeholder="Name"
+                name="name"
+                className="input input-bordered text-black w-full px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]  "
+              />
+            </div>
 
-          <div className="text-sm">
-            <label className="flex m-2  dark:text-[#00A99D]">Email</label>
-            <input
-              type="text"
-              {...register("email", {
-                required: "Email is required",
-              })}
-              placeholder="Email"
-              name="email"
-              className="input input-bordered w-full text-black px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
-            />
-            {errors.name && <p className="text-red-500">{errors.name.message}</p>}
-          </div>
+            <div className="text-sm">
+              <label className="flex m-2  dark:text-[#00A99D]">Email</label>
+              <input
+                type="text"
+                {...register("email", {
+                  required: "Email is required",
+                })}
+                placeholder="Email"
+                name="email"
+                className="input input-bordered w-full text-black px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
+              />
+              {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+            </div>
 
-          <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2  dark:t#00A99D]">Password</label>
-            <input
-              type="text"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "password must be 6 character long",
-                },
-                pattern: {
-                  value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/,
-                  message: "Password must be strong",
-                },
-              })}
-              placeholder="Password"
-              name="password"
-              className="input input-bordered text-black w-full px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
-            />
-            {errors.password && <p className="text-red-500">{errors.password.message}</p>}
-          </div>
+            <div className="mt-3 ms-1 text-sm">
+              <label className="flex m-2  dark:t#00A99D]">Password</label>
+              <input
+                type="text"
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "password must be 6 character long",
+                  },
+                  pattern: {
+                    value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/,
+                    message: "Password must be strong",
+                  },
+                })}
+                placeholder="Password"
+                name="password"
+                className="input input-bordered text-black w-full px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
+              />
+              {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+            </div>
 
-          <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2  dark:text-[#00A99D]">Phone number</label>
-            <input
-              type="text"
-              {...register("phoneNumber", {
-                required: "Phone number is required",
-              })}
-              placeholder="Number"
-              name="phoneNumber"
-              className="input input-bordered text-black w-full px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
-            />
-            {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber.message}</p>}
+            <div className="mt-3 ms-1 text-sm">
+              <label className="flex m-2  dark:text-[#00A99D]">Phone number</label>
+              <input
+                type="text"
+                {...register("phoneNumber", {
+                  required: "Phone number is required",
+                })}
+                placeholder="Number"
+                name="phoneNumber"
+                className="input input-bordered text-black w-full px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
+              />
+              {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber.message}</p>}
+            </div>
           </div>
 
           <div className="text-black">
             <label className="label dark:t#00A99D]">
-              <span className="label-text mx-2 dark:text-[#00A99D]">Who are you ?</span>
+              <span className="label-text mx-2 text-[#1AA3D0] dark:text-[#00A99D]">Who are you ?</span>
             </label>
             <select
               className="input input-bordered text-black md:w-96 border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
@@ -217,7 +219,7 @@ const Signup = () => {
 
           <div className="">
             <label className="label">
-              <span className="label-text mx-2 dark:text-[#00A99D]">Photo </span>
+              <span className="label-text mx-2 text-[#1AA3D0] dark:text-[#00A99D]">Photo </span>
             </label>
             <input
               type="file"
@@ -236,7 +238,7 @@ const Signup = () => {
           />
           {signUpError && <p className="text-red-600">{signUpError}</p>}
         </form>
-        <p className="text-lg text-center sm:px-6 dark:text-[#bb86fc]">
+        <p className="text-lg text-center sm:px-6 dark:text-[#00A99D]">
           Already have an account?
           <Link
             to="/authentication/login"
