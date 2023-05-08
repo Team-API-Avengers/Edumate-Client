@@ -114,22 +114,20 @@ const Signup = () => {
   };
 
   return (
-    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-[#bb86fc]">
+    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 md:my-12 lg:px-16 xl:px-32 dark:text-[#00A99D]">
       <div className="flex items-center">
         <div className="space-y-2 w-full">
-          <h1 className="text-5xl mb-5 font-bold">Register</h1>
-          <p className="mb-5 text-2xl text-sky-400">
-            Lets create a better world
-          </p>
+          <h1 id="title" className="text-5xl mb-5 font-bold">
+            Register
+          </h1>
+          <p className="mb-5 text-2xl text-[#1AA3D0] dark:text-[#00A99D]">Lets create a better world</p>
           <Lottie animationData={SignUpAnimation} loop={true}></Lottie>
         </div>
         <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
       </div>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl  ">
         <div className="flex justify-around py-5">
-          <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-gray-300">
-            Sign Up
-          </h3>
+          <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-gray-800 dark:text-gray-300">Sign Up</h3>
           <Link
             to="/authentication/login"
             className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center"
@@ -140,7 +138,7 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="text-sm">
-            <label className="flex m-2  dark:text-[#bb86fc]">Name</label>
+            <label className="flex m-2  dark:text-[#00A99D]">Name</label>
             <input
               type="text"
               {...register("name", {
@@ -148,12 +146,12 @@ const Signup = () => {
               })}
               placeholder="Name"
               name="name"
-              className="input input-bordered text-black w-full px-4 py-3 rounded-md  "
+              className="input input-bordered text-black w-full px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]  "
             />
           </div>
 
           <div className="text-sm">
-            <label className="flex m-2  dark:text-[#bb86fc]">Email</label>
+            <label className="flex m-2  dark:text-[#00A99D]">Email</label>
             <input
               type="text"
               {...register("email", {
@@ -161,15 +159,13 @@ const Signup = () => {
               })}
               placeholder="Email"
               name="email"
-              className="input input-bordered w-full text-black px-4 py-3 rounded-md  "
+              className="input input-bordered w-full text-black px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
             />
-            {errors.name && (
-              <p className="text-red-500">{errors.name.message}</p>
-            )}
+            {errors.name && <p className="text-red-500">{errors.name.message}</p>}
           </div>
 
           <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2  dark:text-[#bb86fc]">Password</label>
+            <label className="flex m-2  dark:t#00A99D]">Password</label>
             <input
               type="text"
               {...register("password", {
@@ -185,15 +181,13 @@ const Signup = () => {
               })}
               placeholder="Password"
               name="password"
-              className="input input-bordered text-black w-full px-4 py-3 rounded-md  "
+              className="input input-bordered text-black w-full px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
             />
-            {errors.password && (
-              <p className="text-red-500">{errors.password.message}</p>
-            )}
+            {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
 
           <div className="mt-3 ms-1 text-sm">
-            <label className="flex m-2  dark:text-[#bb86fc]">Phone number</label>
+            <label className="flex m-2  dark:text-[#00A99D]">Phone number</label>
             <input
               type="text"
               {...register("phoneNumber", {
@@ -201,48 +195,42 @@ const Signup = () => {
               })}
               placeholder="Number"
               name="phoneNumber"
-              className="input input-bordered text-black w-full px-4 py-3 rounded-md  "
+              className="input input-bordered text-black w-full px-4 py-3 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
             />
-            {errors.phoneNumber && (
-              <p className="text-red-500">{errors.phoneNumber.message}</p>
-            )}
+            {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber.message}</p>}
           </div>
 
           <div className="text-black">
-            <label className="label dark:text-[#bb86fc]">
-              <span className="label-text mx-2 dark:text-[#bb86fc]">
-                Who are you ?
-              </span>
+            <label className="label dark:t#00A99D]">
+              <span className="label-text mx-2 dark:text-[#00A99D]">Who are you ?</span>
             </label>
             <select
-              className="input input-bordered text-black md:w-96"
+              className="input input-bordered text-black md:w-96 border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
               type="name"
               {...register("role", {})}
             >
               <option>Student</option>
               <option>Teacher</option>
             </select>
-            {errors.phoneNumber && (
-              <p className="text-red-500">{errors.phoneNumber.message}</p>
-            )}
+            {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber.message}</p>}
           </div>
 
           <div className="">
             <label className="label">
-              <span className="label-text mx-2 dark:text-[#bb86fc]">Photo </span>
+              <span className="label-text mx-2 dark:text-[#00A99D]">Photo </span>
             </label>
             <input
               type="file"
               {...register("img", {
                 required: "Photo is Required",
               })}
-              className="input input-bordered py-2 md:w-96"
+              className="input input-bordered py-2 md:w-96 border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
             />
             {errors.img && <p className="text-red-500">{errors.img.message}</p>}
           </div>
 
           <input
-            className="btn my-5 btn-primary w-full p-3 text-center rounded-full "
+            className="btn my-5 bg-[#1AA3D0] dark:bg-[#00A99D] hover:bg-[#00A99D] dark:hover:bg-[#1AA3D0] w-full p-3 text-center rounded-full "
             value="Signup"
             type="submit"
           />
@@ -250,7 +238,10 @@ const Signup = () => {
         </form>
         <p className="text-lg text-center sm:px-6 dark:text-[#bb86fc]">
           Already have an account?
-          <Link to="/authentication/login" className="hover:underline mx-2">
+          <Link
+            to="/authentication/login"
+            className="text-2xl font-bold hover:underline mx-2 text-[#1AA3D0] dark:text[#00A99D]"
+          >
             Log in
           </Link>
         </p>
