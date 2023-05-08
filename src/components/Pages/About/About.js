@@ -12,8 +12,8 @@ const About = () => {
       <div className="mt-28">
         <div>
           <motion.h1
-            className="text-4xl font-bold mb-8"
-            style={{ color: "#2CA01C" }}
+            id="title"
+            className=" text-5xl font-bold mb-8 text-[#1AA3D0] dark:text-[#00A99D]"
             initial={{ y: -80 }}
             whileInView={{ y: -20 }}
             transition={{ type: "spring", stiffness: 30 }}
@@ -21,15 +21,14 @@ const About = () => {
             About Us
           </motion.h1>
           <motion.p
-            className="w-1/2 mx-auto"
+            className="w-1/2 mx-auto dark:text-gray-300"
             initial={{ y: 80, opacity: 0 }}
             whileInView={{ y: -20, opacity: 1 }}
             transition={{ type: "spring", stiffness: 20 }}
           >
-            Tuition is a fee paid by students to educational institutions for
-            instruction or guidance in a particular subject or course of study.
-            The term can refer to either the fee itself or the act of teaching
-            or instructing.
+            Tuition is a fee paid by students to educational institutions for instruction or guidance in a particular
+            subject or course of study. The term can refer to either the fee itself or the act of teaching or
+            instructing.
           </motion.p>
         </div>
 
@@ -39,7 +38,7 @@ const About = () => {
               initial={{ x: -80, opacity: 0 }}
               whileInView={{ x: 5, opacity: 1 }}
               transition={{ type: "spring", stiffness: 20 }}
-              className="w-full lg:w-1/2"
+              className="w-full lg:w-1/2 rounded-full"
               src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop"
               alt=""
             />
@@ -48,37 +47,24 @@ const About = () => {
               whileInView={{ x: -5, opacity: 1 }}
               transition={{ type: "spring", stiffness: 20 }}
             >
-              <h3
-                className="text-center lg:text-start text-2xl mb-4 font-bold"
-                style={{ color: "#2CA01C" }}
-              >
+              <h3 className="text-center lg:text-start text-2xl mb-4 font-bold text-[#1AA3D0] dark:text-[#00A99D]">
                 Why Choose Us
               </h3>
-              <h1 className="text-4xl font-bold text-start">
+              <h1 id="title" className="text-4xl font-bold text-start text-gray-700 dark:text-gray-300">
                 Learn Something Good, Do Something Better!
               </h1>
-              <p className="py-6 text-start">
-                Edumate provides students with access to qualified and
-                experienced tutors who specialize in different subjects. The
-                purpose of Edumate is to provide a convenient and effective
-                solution for students who need extra help with their studies.
-                Edumate connects students with teachers who can help them
-                achieve their academic goals
+              <p className="py-6 text-start dark:text-gray-300">
+                Edumate provides students with access to qualified and experienced tutors who specialize in different
+                subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need
+                extra help with their studies. Edumate connects students with teachers who can help them achieve their
+                academic goals
               </p>
               <div className="text-start">
                 <Link to="/">
-                  <button
-                    className="btn btn-primary mr-4 rounded-full"
-                    style={{ backgroundColor: "#2CA01C" }}
-                  >
-                    Go Home
-                  </button>
+                  <button className="btn btn-primary mr-4 rounded-full bg-[#1AA3D0] dark:bg-[#00A99D]">Go Home</button>
                 </Link>
                 <Link to="/contact">
-                  <button
-                    className="btn btn-primary mr-4 rounded-full"
-                    style={{ backgroundColor: "#2CA01C" }}
-                  >
+                  <button className="btn btn-primary mr-4 rounded-full bg-[#1AA3D0] dark:bg-[#00A99D]">
                     Contact us
                   </button>
                 </Link>

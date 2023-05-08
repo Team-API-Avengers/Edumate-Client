@@ -43,10 +43,7 @@ const Header = () => {
 
   const [openNav, setOpenNav] = useState(false);
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    window.addEventListener("resize", () => window.innerWidth >= 960 && setOpenNav(false));
   }, []);
 
   const navStyle = ({ isActive }) => {
@@ -59,41 +56,24 @@ const Header = () => {
   };
 
   const navList = (
-    <ul className="mb-4 font-bold mt-2 flex flex-col text-black  dark:text-[#bb86fc] lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
-      <NavLink
-        style={navStyle}
-        to={"/"}
-        className="flex   justify-center items-center"
-      >
+    <ul className="mb-4 font-bold mt-2 flex flex-col text-gray-200  dark:text-[#00A99D] lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+      <NavLink style={navStyle} to={"/"} className="flex   justify-center items-center">
         Home
       </NavLink>
 
       <NavLink to={"/blog"}>Blog</NavLink>
 
-      
       {/* {user?.uid && ( */}
-      <NavLink
-        style={navStyle}
-        to={"/dashboard"}
-        className="flex  justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/dashboard"} className="flex  justify-center items-center">
         Dashboard
       </NavLink>
       {/* )} */}
 
-      <NavLink
-        style={navStyle}
-        to={"/contact"}
-        className="flex justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/contact"} className="flex justify-center items-center">
         Contact
       </NavLink>
 
-      <NavLink
-        style={navStyle}
-        to={"/about-us"}
-        className="flex justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/about-us"} className="flex justify-center items-center">
         About
       </NavLink>
 
@@ -106,25 +86,15 @@ const Header = () => {
         Profile
       </NavLink>
       {user ? (
-        <a
-          href="/"
-          onClick={handleLogOut}
-          className="flex lg:hidden text-red-600 justify-center items-center"
-        >
+        <a href="/" onClick={handleLogOut} className="flex lg:hidden text-red-600 justify-center items-center">
           Sign Out
         </a>
       ) : (
         <>
-          <NavLink
-            to={"/authentication/login"}
-            className="flex lg:hidden justify-center mt-2  items-center"
-          >
+          <NavLink to={"/authentication/login"} className="flex lg:hidden justify-center mt-2  items-center">
             Sign In
           </NavLink>
-          <NavLink
-            to={"/authentication/signup"}
-            className="flex lg:hidden justify-center mt-2   items-center"
-          >
+          <NavLink to={"/authentication/signup"} className="flex lg:hidden justify-center mt-2   items-center">
             Sign Up
           </NavLink>
         </>
@@ -134,13 +104,13 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="w-full dark:bg-black dark:text-[#bb86fc] shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="w-full bg-[#04516B] dark:bg-black dark:text-[#bb86fc] shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="w-full container flex px-10 items-center max-w-screen-2xl mx-auto justify-between text-blue-gray-900">
           <Link to={"/"}>
             {theme === "dark" ? (
               <img className="w-32 lg:w-48" src={darkLogo} alt="darkLogo" />
             ) : (
-              <img className="w-32 lg:w-48" src={logo} alt="logo" />
+              <img className="w-32 lg:w-48" src={darkLogo} alt="logo" />
             )}
           </Link>
 
@@ -199,11 +169,7 @@ const Header = () => {
               </ul>{" "}
             </div>
             <label className="swap hidden  lg:inline-flex swap-rotate mt-2">
-              <input
-                onClick={handleThemeSwitch}
-                className="hidden"
-                type="checkbox"
-              />
+              <input onClick={handleThemeSwitch} className="hidden" type="checkbox" />
               <BsSunFill className="swap-on fill-current text-yellow-500 text-4xl " />
               <BsMoonFill className="swap-off fill-current -ml-7 text-slate-500 text-4xl" />
             </label>
@@ -227,11 +193,7 @@ const Header = () => {
 
           <div className="flex">
             <label className="swap swap-rotate mr-5 my-2">
-              <input
-                onClick={handleThemeSwitch}
-                className="hidden"
-                type="checkbox"
-              />
+              <input onClick={handleThemeSwitch} className="hidden" type="checkbox" />
               <BsSunFill className="swap-on fill-current text-yellow-500 text-4xl" />
               <BsMoonFill className="swap-off fill-current text-slate-500 text-4xl" />
             </label>

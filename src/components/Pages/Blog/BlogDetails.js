@@ -22,26 +22,28 @@ const BlogDetails = () => {
             <div className="flex justify-between items-baseline -mt-2">
               <div className="flex ">
                 <div className="avatar">
-                  <div className="w-12 mr-5 rounded-full ring ring-blue-600 ring-offset-base-100 ring-offset-2">
-                    <img src={ detailsData?.data?.authorImage } alt="" />
+                  <div className="w-12 mr-5 rounded-full ring ring-[#1AA3D0] dark:ring-[#00A99D] ring-offset-base-100 ring-offset-2">
+                    <img src={detailsData?.data?.authorImage} alt="" />
                   </div>
                 </div>
                 <div>
-                  <p className="font-bold">{ detailsData?.data?.authorName }</p>
-                  <p>{ detailsData?.data?.authorRole }</p>
+                  <p className="font-bold dark:text-gray-300">{detailsData?.data?.authorName}</p>
+                  <p className="font-bold text-[#1AA3D0] dark:text-[#00A99D]">{detailsData?.data?.authorRole}</p>
                 </div>
               </div>
-              <h5 className="flex">
-                <span className="mx-1">{ detailsData?.data?.createdAt?.slice(11, 16) }</span>
-                <span className="mx-1">{ detailsData?.data?.createdAt?.slice(0, 10) }</span>
+              <h5 className="flex font-bold text-[#1AA3D0] dark:text-[#00A99D]">
+                <span className="mx-1">{detailsData?.data?.createdAt?.slice(11, 16)}</span>
+                <span className="mx-1">{detailsData?.data?.createdAt?.slice(0, 10)}</span>
               </h5>
             </div>
           </div>
-          <h1 className="text-4xl  font-bold">{ detailsData?.data?.title }</h1>
+          <h1 id="title" className="text-4xl  font-bold dark:text-gray-300">
+            {detailsData?.data?.title}
+          </h1>
 
-          <p className="mt-5">{ detailsData?.data?.details }</p>
-          <Link to={ "/blog" }>
-            <button className="px-12  mt-10 py-3 border-black bg-blue-600 rounded text-white">
+          <p className="mt-5 dark:text-gray-50">{detailsData?.data?.details}</p>
+          <Link to={"/blog"}>
+            <button className="px-12  mt-10 py-3 border-black bg-[#1AA3D0] dark:bg-[#00A99D] rounded-full text-white">
               Go back
             </button>
           </Link>

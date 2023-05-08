@@ -9,21 +9,19 @@ const Contributors = () => {
         <div className="container mx-auto">
           <motion.div
             className="-mx-4 flex flex-wrap"
-            initial={{ opacity: 0, y: -150 }}
+            initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 10 }}
           >
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-blue-700  dark:text-[#ffffff] mb-2 block text-3xl font-semibold">
+                <span id="title" className="text-[#1AA3D0] dark:text-[#00A99D] mb-2 block text-4xl font-bold">
                   Our Awesome Team Members
                 </span>
-                <h2 className="text-dark mb-4 text-xl font-bold dark:text-[#ffffff]">
-                  Project - Contributors
+                <h2 className=" mb-4 text-xl font-bold text-dark dark:text-gray-300">
+                  Project - <span className="text-[#00A99D] dark:text-[#1AA3D0]">Contributors</span>
                 </h2>
-                <p className="text-body-color text-base dark:text-[#ffffff]">
-                  Together, we build something amazing
-                </p>
+                <p className="text-body-color text-base dark:text-gray-300">Together, we build something amazing</p>
               </div>
             </div>
           </motion.div>
@@ -44,10 +42,8 @@ const Contributors = () => {
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
-                      <h3 className="text-dark text-base font-semibold">
-                        MD Hasan
-                      </h3>
-                      <p className="text-body-color text-sm">Team Leader</p>
+                      <h3 className="text-dark text-base font-semibold">MD Hasan</h3>
+                      <p className="text-body-color font-bold text-[#1AA3D0] dark:text[#00A99D]">Team Leader</p>
                       <p className="flex justify-center mt-1">
                         <a href="https://www.facebook.com/ornilhasan0467/">
                           <BsFacebook className="mx-2" />
@@ -68,13 +64,7 @@ const Contributors = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <circle
-                              cx="16"
-                              cy="45"
-                              r="45"
-                              fill="#00FFBF"
-                              fillOpacity="0.11"
-                            />
+                            <circle cx="16" cy="45" r="45" fill="#00FFBF" fillOpacity="0.11" />
                           </svg>
                         </span>
                         <span className="absolute top-0 right-0">
@@ -250,12 +240,8 @@ const Contributors = () => {
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
-                      <h3 className="text-dark text-base font-semibold">
-                        Yusuf Bin Imam
-                      </h3>
-                      <p className="text-body-color text-sm">
-                        Front End Developer
-                      </p>
+                      <h3 className="text-dark text-base font-semibold">Yusuf Bin Imam</h3>
+                      <p className="text-body-color font-bold text-[#1AA3D0] dark:text[#00A99D]">Front End Developer</p>
                       <p className="flex justify-center mt-1">
                         <a href="https://www.facebook.com/profile.php?id=100032670966425">
                           <BsFacebook className="mx-2" />
@@ -276,13 +262,7 @@ const Contributors = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <circle
-                              cx="16"
-                              cy="45"
-                              r="45"
-                              fill="#00FFBF"
-                              fillOpacity="0.11"
-                            />
+                            <circle cx="16" cy="45" r="45" fill="#00FFBF" fillOpacity="0.11" />
                           </svg>
                         </span>
                         <span className="absolute top-0 right-0">
@@ -457,10 +437,8 @@ const Contributors = () => {
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
-                      <h3 className="text-dark text-base font-semibold">
-                        Sarwar Jaman Tuhin
-                      </h3>
-                      <p className="text-body-color text-sm">UI/UX Designer</p>
+                      <h3 className="text-dark text-base font-semibold">Sarwar Jaman Tuhin</h3>
+                      <p className="text-body-color font-bold text-[#1AA3D0] dark:text[#00A99D]">UI/UX Designer</p>
                       <p className="flex justify-center mt-1">
                         <a href="https://www.facebook.com/sarwar902tuhin/">
                           <BsFacebook className="mx-2" />
@@ -481,13 +459,7 @@ const Contributors = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <circle
-                              cx="16"
-                              cy="45"
-                              r="45"
-                              fill="#00FFBF"
-                              fillOpacity="0.11"
-                            />
+                            <circle cx="16" cy="45" r="45" fill="#00FFBF" fillOpacity="0.11" />
                           </svg>
                         </span>
                         <span className="absolute top-0 right-0">
@@ -662,10 +634,8 @@ const Contributors = () => {
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
-                      <h3 className="text-dark text-base font-semibold">
-                        Atiq Hasan
-                      </h3>
-                      <p className="text-body-color text-sm">
+                      <h3 className="text-dark text-base font-semibold">Atiq Hasan</h3>
+                      <p className="text-body-color font-bold text-[#1AA3D0] dark:text[#00A99D]">
                         UI & Animation Designer
                       </p>
                       <p className="flex justify-center mt-1">
@@ -688,13 +658,7 @@ const Contributors = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <circle
-                              cx="16"
-                              cy="45"
-                              r="45"
-                              fill="#00FFBF"
-                              fillOpacity="0.11"
-                            />
+                            <circle cx="16" cy="45" r="45" fill="#00FFBF" fillOpacity="0.11" />
                           </svg>
                         </span>
                         <span className="absolute top-0 right-0">
@@ -869,12 +833,8 @@ const Contributors = () => {
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
-                      <h3 className="text-dark text-base font-semibold">
-                        MD Siyam Al Rafi
-                      </h3>
-                      <p className="text-body-color text-sm">
-                        Backend Developer
-                      </p>
+                      <h3 className="text-dark text-base font-semibold">MD Siyam Al Rafi</h3>
+                      <p className="text-body-color font-bold text-[#1AA3D0] dark:text[#00A99D]">Backend Developer</p>
                       <p className="flex justify-center mt-1">
                         <a href="">
                           <BsFacebook className="mx-2" />
@@ -895,13 +855,7 @@ const Contributors = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <circle
-                              cx="16"
-                              cy="45"
-                              r="45"
-                              fill="#0BDFAA"
-                              fillOpacity="0.11"
-                            />
+                            <circle cx="16" cy="45" r="45" fill="#0BDFAA" fillOpacity="0.11" />
                           </svg>
                         </span>
                         <span className="absolute top-0 right-0">
@@ -1076,12 +1030,8 @@ const Contributors = () => {
                   />
                   <div className="absolute bottom-5 left-0 w-full text-center">
                     <div className="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3">
-                      <h3 className="text-dark text-base font-semibold">
-                        Ashikur Rahman Emon
-                      </h3>
-                      <p className="text-body-color text-sm">
-                        Backend Developer
-                      </p>
+                      <h3 className="text-dark text-base font-semibold">Ashikur Rahman Emon</h3>
+                      <p className="text-body-color font-bold text-[#1AA3D0] dark:text[#00A99D]">Backend Developer</p>
                       <p className="flex justify-center mt-1">
                         <a href="">
                           <BsFacebook className="mx-2" />
@@ -1102,13 +1052,7 @@ const Contributors = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <circle
-                              cx="16"
-                              cy="45"
-                              r="45"
-                              fill="#00FFBF"
-                              fillOpacity="0.11"
-                            />
+                            <circle cx="16" cy="45" r="45" fill="#00FFBF" fillOpacity="0.11" />
                           </svg>
                         </span>
                         <span className="absolute top-0 right-0">
