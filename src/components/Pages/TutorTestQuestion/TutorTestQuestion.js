@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BsFillQuestionDiamondFill } from 'react-icons/bs';
-// import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const TutorTestQuestion = () => {
     
@@ -10,16 +10,14 @@ const TutorTestQuestion = () => {
 
     const [filteredData, setFilteredData] = useState([]);
 
-    const [correctValues, setCorrectValues] = useState(0);
-
 
 
 
 
     //! Change Style 
-    // const [nextButtonStyle, setNextButtonStyle] = useState("hidden");
+    const [nextButtonStyle, setNextButtonStyle] = useState("hidden");
    
-    // const [formStyle, setFormStyle] = useState("block");
+    const [formStyle, setFormStyle] = useState("block");
   
 
     // console.log(object);
@@ -95,51 +93,155 @@ const TutorTestQuestion = () => {
         const selectedFour = form.selectedFour.value;
         const selectedFive = form.selectedFive.value;
 
+
+
+    
+
+
         console.log('selected answer',selectedOne, selectedTwo, selectedThree, selectedFour, selectedFive);
 
         console.log('correct answer',filteredData[0]?.answer, filteredData[1]?.answer, filteredData[2]?.answer, filteredData[3]?.answer, filteredData[4]?.answer);
 
 
 
+
+
+
+        // if( selectedOne === filteredData[0]?.answer && selectedTwo === filteredData[1]?.answer && selectedThree === filteredData[2]?.answer && selectedFour === filteredData[3]?.answer && selectedFive === filteredData[4]?.answer )
+        // {
+        //     toast.success('Awesome!')
+            // setNextButtonStyle("block");
+            // setFormStyle("hidden");
+        // }else{
+        //     toast.error('Wrong!')
+        // }
+
+
+
         //!Todo: Check Options for correct answer
-        if(selectedOne === filteredData[0]){
-            setCorrectValues(1)
-        }
+        if(selectedOne === filteredData[0]?.answer){
+          //! Two
+          if( selectedTwo === filteredData[1]?.answer){
+              // ! Three
+              if( selectedThree === filteredData[2]?.answer){
+                  // ! Four
+                  if( selectedFour === filteredData[3]?.answer){
+                      // ! Five 
+                      if( selectedFive === filteredData[4]?.answer){
+                        toast.success('WOW Congratulations! Your Five answers are correct')
+                        setNextButtonStyle("block");
+                        setFormStyle("hidden");
+                      }
+                      else{
+                          toast.success('Your Four answers are correct')
+                          setNextButtonStyle("block");
+                          setFormStyle("hidden");
+                      }
+                  }
+                  else{
+                      // toast.success('Your three answers are correct')
+                      setNextButtonStyle("block");
+                      setFormStyle("hidden");
+                       // ! Five 
+                       if( selectedFive === filteredData[4]?.answer){
+                        // toast.success('WOW Congratulations! Your Five answers are correct')
+                        setNextButtonStyle("block");
+                        setFormStyle("hidden");
+                      }
+                      else{
+                          // toast.success('Your Four answers are correct')
+                          setNextButtonStyle("block");
+                          setFormStyle("hidden");
+                      }
+                  }
+              }
+              else{
+                  // toast.error('Your two answers are correct!')
+                   // ! Four
+                   if( selectedFour === filteredData[3]?.answer){
+                    // ! Five 
+                    if( selectedFive === filteredData[4]?.answer){
+                      // toast.success('WOW Congratulations! Your Five answers are correct')
+                      setNextButtonStyle("block");
+                      setFormStyle("hidden");
+                    }
+                    else{
+                        toast.success('Your Four answers are correct')
+                        setNextButtonStyle("block");
+                        setFormStyle("hidden");
+                    }
+                }
+                else{
+                    toast.success('Your three answers are correct')
+                    setNextButtonStyle("block");
+                    setFormStyle("hidden");
+                }
+              }
+          }
+          else{
+              // toast.error('Your one answer is correct!')
+               // ! Three
+               if( selectedThree === filteredData[2]?.answer){
+                // ! Four
+                if( selectedFour === filteredData[3]?.answer){
+                    // ! Five 
+                    if( selectedFive === filteredData[4]?.answer){
+                      toast.success('WOW Congratulations! Your Five answers are correct')
+                      setNextButtonStyle("block");
+                      setFormStyle("hidden");
+                    }
+                    else{
+                        toast.success('Your Four answers are correct')
+                        setNextButtonStyle("block");
+                        setFormStyle("hidden");
+                    }
+                }
+                else{
+                    toast.success('Your three answers are correct')
+                    setNextButtonStyle("block");
+                    setFormStyle("hidden");
+                }
+            }
+            else{
+                toast.error('Your two answers are correct!')
+            }
+          }
 
-        if(selectedTwo === filteredData[1]){
-            if(correctValues === 1){
-                setCorrectValues(correctValues + 1)
-            }else{
-                setCorrectValues(1)
+      }
+      else{
+          //  toast.error('Your all answer are wrong!')
+           //! Two
+          if( selectedTwo === filteredData[1]?.answer){
+            // ! Three
+            if( selectedThree === filteredData[2]?.answer){
+                // ! Four
+                if( selectedFour === filteredData[3]?.answer){
+                    // ! Five 
+                    if( selectedFive === filteredData[4]?.answer){
+                      toast.success('WOW Congratulations! Your Five answers are correct')
+                      setNextButtonStyle("block");
+                      setFormStyle("hidden");
+                    }
+                    else{
+                        toast.success('Your Four answers are correct')
+                        setNextButtonStyle("block");
+                        setFormStyle("hidden");
+                    }
+                }
+                else{
+                    toast.success('Your three answers are correct')
+                    setNextButtonStyle("block");
+                    setFormStyle("hidden");
+                }
+            }
+            else{
+                toast.error('Your two answers are correct!')
             }
         }
-
-        if(selectedThree === filteredData[2]){
-            if(correctValues === 1 || 2){
-                setCorrectValues(correctValues + 1)
-            }else{
-                setCorrectValues(1)
-            }
+        else{
+            toast.error('Your one answer is correct!')
         }
-
-        if(selectedFour === filteredData[3]){
-            if(correctValues === 1 || 2 || 3){
-                setCorrectValues(correctValues + 1)
-            }else{
-                setCorrectValues(1)
-            }
-        }
-
-
-
-        if(selectedFive === filteredData[4]){
-            if(correctValues === 1 || 2 || 3 || 4){
-                setCorrectValues(correctValues + 1)
-            }else{
-                setCorrectValues(1)
-            }
-        }
-
+      }
 
 
 
@@ -150,7 +252,7 @@ const TutorTestQuestion = () => {
     //   console.log(userSelectedData);
 
 
-console.log('correctValues', correctValues);
+
 
     return (
         <div className='m-10'>
@@ -178,7 +280,7 @@ console.log('correctValues', correctValues);
                       </div>
 
 
-                      <div>
+                      <div className={formStyle}>
                         {filteredData[1] &&
                       <div>
                         <div className="w-full shadow-gray-400 shadow-lg rounded-md p-3 my-5 border-2 border-orange-500 ">
@@ -278,11 +380,11 @@ console.log('correctValues', correctValues);
 
                       </div>
 
-                        {/* {filteredData[1] &&
+                        {filteredData[1] &&
                         <Link to={'/dashboard/add-Teacher'} className={nextButtonStyle}>
                           <button className='btn btn-success my-10 w-1/3'>Next</button>
                       </Link>
-                        } */}
+                        }
 
 
 
