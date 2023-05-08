@@ -2,9 +2,9 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui"), require('@tailwindcss/forms')],
+  plugins: [require("daisyui"), require("@tailwindcss/forms")],
 };

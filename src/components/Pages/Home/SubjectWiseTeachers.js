@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BsBook, BsBookFill, BsBorder, BsFunnel, BsFunnelFill, BsMicrosoft, BsPencil, BsPencilFill } from "react-icons/bs";
+import {
+  BsBook,
+  BsBookFill,
+  BsBorder,
+  BsFunnel,
+  BsFunnelFill,
+  BsMicrosoft,
+  BsPencil,
+  BsPencilFill,
+} from "react-icons/bs";
 
 const SubjectWiseTeachers = () => {
   return (
     <div className="mt-8">
       <motion.h1
         id="title"
-        className="text-4xl font-bold -mt-8 lg:mt-0"
+        className="text-4xl font-bold -mt-8 lg:mt-0 text-[#1aa3d0] dark:text-[#1aa3d0]"
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, type: "spring", duration: 2 }}
@@ -15,7 +24,7 @@ const SubjectWiseTeachers = () => {
         Department
       </motion.h1>
       <motion.p
-        className="mt-2 text-2xl lg:text-base dark:text-[#DBDBDB]"
+        className="mt-2 text-2xl lg:text-dark dark:text-[#DBDBDB]"
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, type: "spring", duration: 2 }}
@@ -24,9 +33,7 @@ const SubjectWiseTeachers = () => {
       </motion.p>
       {/* {backgrounds.map((category) => ( */}
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto grid grid-cols-1">
-
-        <div className="container grid grid-cols-4 gap-10 px-5 py-1 text-blue-600  dark:text-green-600  mx-auto">
-
+        <div className="container grid grid-cols-4 gap-10 px-5 py-1  text-[#1aa3d0]  dark:text-[#1aa3d0] mx-auto">
           {/* Science Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -34,17 +41,15 @@ const SubjectWiseTeachers = () => {
             transition={{ delay: 0.8, type: "spring", duration: 2 }}
           >
             <Link to={"/Science"}>
-              <a href="#g" className="group relative block h-36">
+              <a href="#g" className="group relative block h-36 ">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-blue-600 items-end bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg text-white bg-[#00A99D] border-[#0f766e] dark:border-[#0f766e] items-end transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
                     {/* <img className="w-14 h-12 " src={ data } alt="" /> */}
                     <BsFunnel className="w-14 h-12" />
 
-                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">
-                      Science
-                    </h2>
+                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">Science</h2>
                   </div>
 
                   <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
@@ -67,7 +72,6 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
 
-
           {/* Commerce Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -78,14 +82,12 @@ const SubjectWiseTeachers = () => {
               <a href="#g" className="group relative  block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg  border-green-600 dark:border-blue-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg  text-white bg-[#00A99D] border-[#0f766e] dark:border-[#0f766e] items-end transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
                     {/* <img className="w-14 h-12 " src={ book } alt="" /> */}
                     <BsBook className="w-14 h-12 " />
 
-                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">
-                      Commerce
-                    </h2>
+                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">Commerce</h2>
                   </div>
 
                   <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
@@ -108,7 +110,6 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
 
-
           {/* Arts Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -119,13 +120,11 @@ const SubjectWiseTeachers = () => {
               <a href="#g" className="group relative  block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg  border-green-600 dark:border-blue-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg  text-white bg-[#00A99D] border-[#0f766e] dark:border-[#0f766e] items-end  transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
                     {/* <img className="w-14 h-12 " src={ help } alt="" /> */}
                     <BsPencil className="w-14 h-12 " />
-                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">
-                      Arts
-                    </h2>
+                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">Arts</h2>
                   </div>
 
                   <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
@@ -148,7 +147,6 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
 
-
           {/* All Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -159,13 +157,10 @@ const SubjectWiseTeachers = () => {
               <a href="#g" className="group relative block h-36">
                 <span className="absolute inset-0 border-2 border-dashed rounded-b-lg border-black dark:border-white"></span>
 
-                <div className="relative flex h-full transform border-b-8 rounded-b-lg border-green-600 dark:border-blue-600 items-end  bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-
+                <div className="relative flex h-full transform border-b-8 rounded-b-lg text-white bg-[#00A99D] border-[#0f766e] dark:border-[#0f766e] items-end transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                   <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0">
                     <BsBorder className="w-14 h-12" />
-                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">
-                      All Department
-                    </h2>
+                    <h2 className="mt-4 text-xl font-medium sm:text-2xl">All Department</h2>
                   </div>
 
                   <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
@@ -183,7 +178,6 @@ const SubjectWiseTeachers = () => {
             </Link>
           </motion.div>
         </div>
-
       </div>
     </div>
   );

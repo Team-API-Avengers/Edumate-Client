@@ -31,33 +31,23 @@ const ContactUs = () => {
         >
           <div className="container mx-auto my-4 px-4 ">
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8  md:px-5  lg:w-5/6 lg:pl-20 lg:pr-20 mx-auto shadow-2xl dark:shadow-none bg-transparent">
-
               <div className="flex flex-col mt-5">
                 {/* Auto Typing Test */}
-                <h1 className="font-bold  flex gap-2 uppercase text-4xl">
+                <h1 className="font-bold  flex gap-2 uppercase text-4xl dark:text-gray-300">
                   Lets
                   <Typical
-                    className="text-blue-600 dark:text-[#54C420] "
+                    className="text-[#1AA3D0] dark:text-[#00A99D] "
                     steps={["Talk", 3000, "discuss", 3000]}
                     loop={Infinity}
                     wrapper="p"
                   ></Typical>
                 </h1>
 
-
-
                 {/* Animation */}
                 <div className="mt-10">
-                  <Lottie
-                    className="w-full"
-                    animationData={ContactAnimation}
-                    loop={true}
-                  ></Lottie>
+                  <Lottie className="w-full" animationData={ContactAnimation} loop={true}></Lottie>
                 </div>
-
               </div>
-
-
 
               {/* Contact Form */}
               <div>
@@ -65,10 +55,10 @@ const ContactUs = () => {
                   <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-5">
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#54C420]">Name</span>
+                        <span className="label-text dark:text-[#00A99D]">Name</span>
                       </label>
                       <input
-                        className="w-full border  border-[#001a41] dark:border-none  text-gray-900  mt-0 p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full border-2  border-[#1AA3D0] dark:border-none  text-gray-900  mt-0 p-3 rounded focus:border-[#00A99D]"
                         type="text"
                         name="name"
                         readOnly
@@ -78,12 +68,10 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#54C420]">
-                          Email
-                        </span>
+                        <span className="label-text dark:text-[#00A99D]">Email</span>
                       </label>
                       <input
-                        className="w-full   border  border-[#001a41] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded focus:border-[#00A99#00A99D"
                         type="email"
                         name="email"
                         readOnly
@@ -93,12 +81,10 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#54C420]">
-                          Subject / Issues
-                        </span>
+                        <span className="label-text dark:text-[#00A99D]">Subject / Issues</span>
                       </label>
                       <input
-                        className="w-full   border  border-[#001a41] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full   border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:border-[#00A99D]"
                         type="text"
                         name="about"
                         placeholder="Subject"
@@ -108,12 +94,10 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#54C420]">
-                          Mobile number
-                        </span>
+                        <span className="label-text dark:text-[#00A99D]">Mobile number</span>
                       </label>
                       <input
-                        className="w-full  border  border-[#001a41] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded focus:outline-none focus:border-[#00A99D]"
                         type="text"
                         name="number"
                         placeholder="Number"
@@ -123,16 +107,14 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <label className="label">
-                      <span className="label-text dark:text-[#54C420]">
-                        Message
-                      </span>
+                      <span className="label-text dark:text-[#00A99D]">Message</span>
                     </label>
                     <div className="">
                       <textarea
                         name="message"
                         placeholder="Message"
                         required
-                        className="w-full h-32 text-gray-900 border dark:border-none  border-[#001a41]  p-3 rounded focus:outline-none focus:shadow-outline"
+                        className="w-full h-32 text-gray-900  dark:border-none  border-2  border-[#1AA3D0]  p-3 rounded focus:outline-none focus:border-[#00A99D]"
                       ></textarea>
                     </div>
                   </div>
@@ -140,7 +122,7 @@ const ContactUs = () => {
                   <div className="my-2 w-full lg:w-2/4">
                     <button
                       type="submit"
-                      className="uppercase text-sm font-bold tracking-wide bg-[#001a41] dark:bg-[#7A0EFF] dark:hover:bg-[#5400BB] text-gray-100 p-5 lg:p-3 rounded w-full
+                      className="uppercase text-sm font-bold tracking-wide bg-[#1AA3D0] dark:bg-[#00A99D] dark:hover:bg-[#5400BB] text-gray-100 p-5 lg:p-3 rounded w-full
                       focus:outline-none focus:shadow-outline mt-6 lg:mt-0 lg:ml-0"
                     >
                       Send Message
@@ -148,9 +130,7 @@ const ContactUs = () => {
                   </div>
                 </form>
               </div>
-
             </div>
-
           </div>
         </div>
       </motion.div>
