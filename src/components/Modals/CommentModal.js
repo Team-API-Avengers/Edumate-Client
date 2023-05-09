@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
+import { toast } from "react-toastify";
 
 const CommentModal = ({ student }) => {
   //! Time Adjustment
@@ -54,7 +55,11 @@ const CommentModal = ({ student }) => {
       body: JSON.stringify(commentInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.success) {
+          toast.success("comment successfully posted");
+        }
+      });
   };
 
   // console.log(student?.displayName);
@@ -64,20 +69,12 @@ const CommentModal = ({ student }) => {
       <input type="checkbox" id="commentModal" className="modal-toggle" />
       <div className="modal">
         <div className="w-full bg-white h-full relative">
-          <label
-            htmlFor="commentModal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
-          >
+          <label htmlFor="commentModal" className="btn btn-sm btn-circle absolute right-2 top-2">
             ✕
           </label>
-          <h3 className="text-lg font-bold">
-            Congratulations random Internet user!
-          </h3>
+          <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
           <p className="py-4">
-            <form
-              onSubmit={addComment}
-              className="bottom-0 left-0 right-0 absolute m-5"
-            >
+            <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
               <div>
                 <textarea
                   name="comment"
