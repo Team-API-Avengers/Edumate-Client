@@ -11,14 +11,25 @@ const CommentModal = ({ student }) => {
   const { user } = useContext(AuthContext);
 
   const [comments, setComment] = useState([]);
+  console.log(comments);
 
+
+
+
+  //! Get all comments for this post by student email address
   useEffect(() => {
     fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setComment(data)
+        console.log(data)
+      });
   }, []);
 
-  // function for add comment
+
+
+
+  //! Handle function for add comment
   const addComment = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -38,6 +49,9 @@ const CommentModal = ({ student }) => {
     };
     // console.log(commentInfo);
 
+
+
+    // ! Comment posting in database
     fetch(``, {
       method: "POST",
       headers: {
@@ -48,12 +62,15 @@ const CommentModal = ({ student }) => {
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
-  console.log(student?.displayName);
+
+  // console.log(student?.displayName);
+
+
   return (
     <div>
       <input type="checkbox" id="commentModal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="w-full bg-white h-full relative">
           <label
             htmlFor="commentModal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
@@ -64,16 +81,18 @@ const CommentModal = ({ student }) => {
             Congratulations random Internet user!
           </h3>
           <p className="py-4">
-            <form onSubmit={addComment}>
+            <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
+              <div>
               <textarea
                 name="comment"
-                placeholder="Bio"
-                className="textarea textarea-bordered textarea-md w-full max-w-xs"
+                placeholder="write your comment if you are a teacher"
+                className="textarea textarea-bordered textarea-md w-full"
               ></textarea>
-              <button>
-                <label htmlFor="commentModal" className="btn btn-outline">
+              </div>
+              <button className="btn btn-primary w-full">
+                {/* <label htmlFor="commentModal" className="btn btn-outline w-full"> */}
                   Add Comment
-                </label>
+                {/* </label> */}
               </button>
             </form>
           </p>

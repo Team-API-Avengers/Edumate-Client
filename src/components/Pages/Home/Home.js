@@ -14,7 +14,8 @@ import Lottie from "lottie-react";
 import SearchAnimation from "../../Assets/Animation/SearchAnimation.json";
 import AboutOurs from "../About/AboutOurs";
 import FaqAnswer from "./FAQ/FaqAnswer";
-import StudentPost from "./StudentPost";
+// import StudentPost from "./StudentPost";
+import GetStudentsPost from "./GetStudentsPost";
 
 const Home = () => {
   const { user, loading, filteredData, setFilteredData } =
@@ -87,10 +88,10 @@ const Home = () => {
               <input
                 placeholder="Search your tutor"
                 type="text"
-                className="text-black h-12 w-1/2 focus:outline-none focus:border-0 rounded-full"
+                className="text-black h-12 w-1/2 focus:outline-none focus:border-0 rounded-l-full"
                 onChange={handleFilter}
               />
-              <button className="btn bg-[#00A99D] hover:bg-[#00A99D] rounded-none h-10 text-xl">
+              <button className="btn bg-[#0B7A73] hover:bg-[#096963] rounded-r-full h-10 text-xl">
                 Search
               </button>
             </div>
@@ -113,6 +114,16 @@ const Home = () => {
 
       <SubjectWiseTeachers />
 
+      
+      {user?.uid &&
+      <div id="studentsPost">
+      <GetStudentsPost />
+      </div>
+      }
+
+
+      
+
       {user?.uid && (
         <div id="review">
           <Reviews />
@@ -127,7 +138,8 @@ const Home = () => {
 
       <AboutOurs />
 
-      <StudentPost />
+
+      {/* <StudentPost /> */}
       <FaqAnswer />
 
       <div className="my-5">

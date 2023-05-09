@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { BsFillDpadFill, BsFillExclamationSquareFill, BsFillPersonVcardFill } from "react-icons/bs";
 import { FcFaq } from "react-icons/fc";
 import bannerPic from "../../Assets/BannerPic.png";
@@ -15,7 +15,7 @@ const Hero = () => {
           <img
             className="absolute w-full inset-0 h-full object-cover object-center"
             src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png"
-            alt="we care family"
+            alt=""
           />
 
           <div className="pt-2 lg:flex items-center relative z-10 container mx-auto">
@@ -23,6 +23,9 @@ const Hero = () => {
               <img className="mx-auto" src={bannerPic} alt="img" />
             </div>
 
+
+
+           {/* TODO: Right side card */}
             <div role="contentinfo" className="w-full pt-5 text-black bg-transparent rounded-lg lg:w-1/2 h-full">
               <p tabIndex="0" className="text-gray-800 uppercase text-2xl mb-4">
                 Let's find
@@ -38,7 +41,7 @@ const Hero = () => {
               <div className="bg-base-200 lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg dark:rounded-b-lg">
                 <div className="sm:flex items-center py-2">
                   {user ? (
-                    <a href="#review" className="flex items-center dark:text-[#05733c]">
+                    <a href="#review" className="flex items-center dark:text-[#1aa3d0] ">
                       <BsFillExclamationSquareFill className=" mx-1" />
                       <span>Feedback</span>
                     </a>
@@ -55,22 +58,22 @@ const Hero = () => {
 
                   <a
                     href="#beATeacher"
-                    className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 text-[#1AA3D0] dark:text-[#1AA3D0]"
+                    className="flex items-center sm:mx-4 xl:mx-5 my-6 lg:my-0 text-[#1AA3D0] dark:text-[#05733c]"
                   >
                     <BsFillDpadFill className="mx-1" />
                     <span>Be a teacher</span>
                   </a>
 
                   {user && (
-                    <a href="#contact" className="flex items-center text-[#1AA3D0] dark:text-[#1AA3D0]">
+                    <a href="#studentsPost" className="flex items-center sm:mx-4 xl:mx-5  dark:text-[#1AA3D0]">
                       <BsFillPersonVcardFill className="mx-1" />
-                      <span>Contact</span>
+                      <span>Students post</span>
                     </a>
                   )}
 
                   <a
                     href="#faq"
-                    className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0 text-[#1AA3D0] dark:text-[#1AA3D0]"
+                    className="flex items-center sm:mx-4 xl:mx-5 my-6 lg:my-0 text-[#1AA3D0] dark:text-[#05733c]"
                   >
                     <FcFaq className="mx-1" />
                     <span>FAQ</span>

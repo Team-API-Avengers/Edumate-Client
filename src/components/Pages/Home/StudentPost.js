@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../Context/AuthProvider";
+// import Slider from "react-slick";
+// import { Link } from "react-router-dom";
+// import { useContext } from "react";
+// import { AuthContext } from "../../Context/AuthProvider";
 import CommentModal from "../../Modals/CommentModal";
 import GetComments from "./GetComments";
 
 const StudentPost = () => {
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
   //   console.log(user);
 
   const [allPost, setPost] = useState([]);
@@ -30,7 +30,6 @@ const StudentPost = () => {
   return (
     <div>
       <h2 id="title" className="text-4xl">
-        {" "}
         All Posts
       </h2>
       <p>Building a stronger education community together</p>
@@ -56,13 +55,15 @@ const StudentPost = () => {
               Department : {post?.category}
             </h4>
             <h4 class="mb-2   text-md  ">{post?.description}</h4>
+            <div className="mt-10">
             <label
               htmlFor="commentModal"
               onClick={() => handleComment(post)}
-              className="py-5 w-2/3 mt-5 border  rounded-full "
+              className="py-5 w-2/3 mt-5 border border-black rounded-full "
             >
-              <p className="px-7">Write a comment</p>
+              <span className="px-7">Write a comment</span>
             </label>
+            </div>
             <GetComments />
           </div>
         </div>
