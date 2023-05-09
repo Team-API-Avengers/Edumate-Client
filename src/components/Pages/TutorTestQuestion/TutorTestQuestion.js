@@ -199,7 +199,7 @@ const TutorTestQuestion = () => {
     <div className="m-10">
       <div className="relative">
         <div>
-          <label className="block text-black dark:text-gray-300 text-xl font-semibold" id="title">
+          <label className="block text-black dark:text-gray-300 text-xl font-semibold mb-4" id="title">
             Select Your Department That You Want To Teach
           </label>
 
@@ -224,77 +224,99 @@ const TutorTestQuestion = () => {
             <div>
               <div className="w-full shadow-gray-400 shadow-lg rounded-md p-3 my-5 border-2 border-[#1AA3D0] dark:border-[#00A99D] ">
                 <form onSubmit={handleQuestion}>
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[0]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedOne" className="select select-primary w-full max-w-xs">
-                        {filteredData[0]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
+                  <div className="dark:text-[#00A99D]">
+                    <div className="my-5">
+                      <label className="flex justify-start m-2" disabled selected>
+                        <BsFillQuestionDiamondFill className="mt-1 mr-2" />
+                        {filteredData[0]?.question}
+                      </label>
+                      <div className="text-start">
+                        <select
+                          required
+                          name="selectedOne"
+                          className="select select-primary w-full max-w-xs dark:text-gray-900 border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
+                        >
+                          {filteredData[0]?.options?.map((options, idx) => (
+                            <option key={idx}>{options}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[1]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedTwo" className="select select-primary w-full max-w-xs">
-                        {filteredData[1]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
+                    <div className="my-5">
+                      <label className="flex justify-start m-2" disabled selected>
+                        <BsFillQuestionDiamondFill className="mt-1 mr-2" />
+                        {filteredData[1]?.question}
+                      </label>
+                      <div className="text-start">
+                        <select
+                          required
+                          name="selectedTwo"
+                          className="select select-primary w-full max-w-xs dark:text-gray-900 border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
+                        >
+                          {filteredData[1]?.options?.map((options, idx) => (
+                            <option key={idx}>{options}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[2]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedThree" className="select select-primary w-full max-w-xs">
-                        {filteredData[2]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
+                    <div className="my-5">
+                      <label className="flex justify-start m-2" disabled selected>
+                        <BsFillQuestionDiamondFill className="mt-1 mr-2" />
+                        {filteredData[2]?.question}
+                      </label>
+                      <div className="text-start">
+                        <select
+                          required
+                          name="selectedThree"
+                          className="select select-primary w-full max-w-xs dark:text-gray-900 border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
+                        >
+                          {filteredData[2]?.options?.map((options, idx) => (
+                            <option key={idx}>{options}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[3]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedFour" className="select select-primary w-full max-w-xs">
-                        {filteredData[3]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
+                    <div className="my-5">
+                      <label className="flex justify-start m-2" disabled selected>
+                        <BsFillQuestionDiamondFill className="mt-1 mr-2" />
+                        {filteredData[3]?.question}
+                      </label>
+                      <div className="text-start">
+                        <select
+                          required
+                          name="selectedFour"
+                          className="select select-primary w-full max-w-xs dark:text-gray-900 border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
+                        >
+                          {filteredData[3]?.options?.map((options, idx) => (
+                            <option key={idx}>{options}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[4]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedFive" className="select select-primary w-full max-w-xs">
-                        {filteredData[4]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
+                    <div className="my-5">
+                      <label className="flex justify-start m-2" disabled selected>
+                        <BsFillQuestionDiamondFill className="mt-1 mr-2" />
+                        {filteredData[4]?.question}
+                      </label>
+                      <div className="text-start">
+                        <select
+                          required
+                          name="selectedFive"
+                          className="select select-primary w-full max-w-xs dark:text-gray-900 border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
+                        >
+                          {filteredData[4]?.options?.map((options, idx) => (
+                            <option key={idx}>{options}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  <button className="btn btn-primary w-full">Submit</button>
+                    <button className="btn bg-[#1AA3D0] dark:bg-[#00A99D] w-full">Submit</button>
+                  </div>
                 </form>
               </div>
             </div>
