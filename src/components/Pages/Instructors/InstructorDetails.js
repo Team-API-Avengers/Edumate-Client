@@ -1,10 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-import {
-  BsArrowRight,
-  BsHourglassSplit,
-  BsTelephoneFill,
-} from "react-icons/bs";
+import { BsArrowRight, BsHourglassSplit, BsTelephoneFill } from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -56,11 +52,7 @@ const InstructorDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-
-
-
         //  change by siam
-
         /*         // you should check the post another object properties . you always get a success status that's why successfully booked massage will be a toast.
                 // console.log("From check",data.status); // always success
         
@@ -72,7 +64,6 @@ const InstructorDetails = () => {
                   toast.error("You already booked that teacher");
                 }
          */
-
         // navigate("/dashboard/my-Teachers");
       });
   };
@@ -83,7 +74,9 @@ const InstructorDetails = () => {
         <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-black dark:text-[#bb86fc]">
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
-              <img alt="teacher" className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
+              <img
+                alt="teacher"
+                className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
                 src={details?.data?.image}
               />
               <div className="lg:w-1/2 w-full space-y-2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -91,9 +84,7 @@ const InstructorDetails = () => {
                   {details?.data?.background}
                 </h2>
                 <div className="flex justify-between">
-                  <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                    {details?.data?.name}
-                  </h1>
+                  <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{details?.data?.name}</h1>
                   <div className="flex mb-4">
                     <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
                     <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
@@ -112,8 +103,7 @@ const InstructorDetails = () => {
                     {details?.data?.experience} years experience
                   </p>
                   <p className="flex ">
-                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" />{" "}
-                    <h1>{details?.data?.fee}</h1>
+                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" /> <h1>{details?.data?.fee}</h1>
                   </p>
                   <p className="flex ">
                     <HiLocationMarker className="mt-1 mr-1" />
@@ -135,9 +125,7 @@ const InstructorDetails = () => {
                       <BsArrowRight />
                     </span>
 
-                    <span className="text-sm font-medium transition-all group-hover:mr-4">
-                      Book Now
-                    </span>
+                    <span className="text-sm font-medium transition-all group-hover:mr-4">Book Now</span>
                   </button>
                 </div>
               </div>
