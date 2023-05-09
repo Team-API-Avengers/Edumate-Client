@@ -70,7 +70,7 @@ const CommentModal = ({ student }) => {
   // console.log(student?.displayName);
 
   return (
-    <div className="">
+    <div className="bg-red-500">
       <input type="checkbox" id="commentModal" className="modal-toggle" />
       <div className="modal max-w-screen-md mx-auto">
         <div className="w-full border border-black dark:bg-gray-900 bg-white h-[600px] rounded-lg relative">
@@ -81,7 +81,7 @@ const CommentModal = ({ student }) => {
             ✕
           </label>
           <h3 className="text-lg text-black dark:text-white mt-5 font-bold">
-            {student?.authorName} posted this
+            {student?.authorName}'s post
           </h3>
 
           <div
@@ -124,11 +124,6 @@ const CommentModal = ({ student }) => {
                   <MdSend className="text-black mt-10 -ml-10 text-xl" />
                 </button>
               </div>
-              {/* <button className="btn btn-primary w-1/3">
-                {/* <label htmlFor="commentModal" className="btn btn-outline w-full"> */}
-              Add Comment
-              {/* </label> */}
-              {/* </button> */} *
             </form>
           </p>
         </div>
