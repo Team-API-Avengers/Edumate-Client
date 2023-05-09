@@ -17,18 +17,15 @@ const CommentModal = ({ student }) => {
 
   //! Get all comments for this post by student post ID
   useEffect(() => {
-    fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`)
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setComment(data?.data);
         console.log(data?.data);
       });
   }, [student?._id]);
-
-
-
-
-
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -63,8 +60,8 @@ const CommentModal = ({ student }) => {
       .then((data) => {
         if (data) {
           toast.success("comment successfully posted");
-          console.log('comment post',data);
-          form.reset()
+          console.log("comment post", data);
+          form.reset();
         }
       });
   };
@@ -72,44 +69,54 @@ const CommentModal = ({ student }) => {
   // console.log(student?.displayName);
 
   return (
-    <div>
+    <div className="">
       <input type="checkbox" id="commentModal" className="modal-toggle" />
-      <div className="modal">
-        <div className="w-full bg-white h-full relative">
-          <label htmlFor="commentModal" className="btn btn-sm btn-circle absolute right-2 top-2">
+      <div className="modal max-w-screen-lg mx-auto">
+        <div className="w-full bg-gray-900 dark:bg-white h-[600px] rounded relative">
+          <label
+            htmlFor="commentModal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
             ✕
           </label>
-          <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
-         
-            {
-              comments.reverse()?.map((comment, idx) => 
-              <div className="flex">
+          <h3 className="text-lg font-bold">
+            Congratulations random Internet user!
+          </h3>
 
+          <div className="max-w-screen-lg  overflow-y-auto mx-auto">
+            {comments.reverse()?.map((comment, idx) => (
+              <div className="flex p-5 gap-5">
                 <div className="avatar">
-                <div className="w-8 h-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img src={comment?.authorImage} alt="" />
+                  <div className="w-12 h-12 rounded-full  ">
+                    <img src={comment?.authorImage} alt="CommenterImage" />
+                  </div>
+                </div>
+
+                <div className="text-start px-3 border w-96  py-5 rounded-lg bg-gray-200">
+                  <p className="text-black dark:text-white">
+                    {comment?.authorName}
+                  </p>
+                  <small className="text-black dark:text-white">
+                    {comment?.comment}
+                  </small>
                 </div>
               </div>
+            ))}
+          </div>
 
-
-                <div>
-                <p>{comment?.authorEmail}</p>
-                <small>{comment?.comment}</small>
-                </div>
-              </div>
-              )
-            }
-          
           <p className="py-4">
-            <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
+            <form
+              onSubmit={addComment}
+              className="bottom-0 left-0 right-0 absolute m-5"
+            >
               <div>
                 <textarea
                   name="comment"
-                  placeholder="write your comment if you are a teacher"
+                  placeholder="Write your comment"
                   className="textarea textarea-bordered textarea-md w-full"
                 ></textarea>
               </div>
-              <button className="btn btn-primary w-full">
+              <button className="btn btn-primary w-1/3">
                 {/* <label htmlFor="commentModal" className="btn btn-outline w-full"> */}
                 Add Comment
                 {/* </label> */}

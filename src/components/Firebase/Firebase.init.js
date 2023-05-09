@@ -1,17 +1,16 @@
 // Import the functions you need from the SDKs you need
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDljQabwXd8acg4_022NYQSxdaglHGCogk",
-  authDomain: "edumate-53dfb.firebaseapp.com",
-  projectId: "edumate-53dfb",
-  storageBucket: "edumate-53dfb.appspot.com",
-  messagingSenderId: "73505704580",
-  appId: "1:73505704580:web:0f45f8c929d2d30e8890d1"
+  apiKey: "AIzaSyCfGuWqHzhpUSpwBgDkmiaB3_dwDamfLl0",
+  authDomain: "edumate-6007c.firebaseapp.com",
+  projectId: "edumate-6007c",
+  storageBucket: "edumate-6007c.appspot.com",
+  messagingSenderId: "981192894710",
+  appId: "1:981192894710:web:4121654d190a9a5aabe4d7",
 };
 
 // Initialize Firebase
