@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader";
-// import { Link } from "react-router-dom";
+import {  toast } from 'react-toastify';
 import PaymentModal from "../../Modals/PaymentModal";
 
 const MyTeachers = () => {
@@ -28,6 +28,33 @@ const MyTeachers = () => {
   }, [user?.email]);
 
   // console.log(bookings);
+
+  
+
+
+
+
+  // ! Delete Student 
+  const handleDelete = (data) => {
+    console.log(data);
+    fetch(`/${data?._id}`, {
+			method: 'DELETE',
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				// console.log(data);
+				if (data.deletedCount > 0) {
+					toast.success(`delete successfully!!`);
+          window.location.reload(true);
+				}
+			});
+  }
+
+
+
+
+
+
 
   if (loading) {
     return <Loader />;
@@ -109,13 +136,12 @@ const MyTeachers = () => {
                             Pay
                           </label>
                         </td>
-                        <td className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                          <a
-                            href="/"
+                        <td onClick={() => handleDelete(teacher)} className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                          <p
                             className="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white"
                           >
                             Delete
-                          </a>
+                          </p>
                         </td>
                       </tr>
                     ))}
