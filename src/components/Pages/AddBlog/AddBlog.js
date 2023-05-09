@@ -66,7 +66,7 @@ const AddBlog = () => {
         <p className="mt-3 dark:text-[#ffffff]">
           Contribute to our community with your blog post
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 px-4 mx-16 ">
+        <div className="grid grid-cols-1 mt-10 px-4 mx-16 border shadow-lg shadow-[#1AA3D0] rounded-md ">
           <div className="flex justify-center items-center">
             <Lottie animationData={BlogAnimation} loop={true}></Lottie>
           </div>
@@ -76,8 +76,8 @@ const AddBlog = () => {
                 <h6 className="text-[#1AA3D0] dark:text-[#00A99D] text-lg  mt-3 mb-6 font-bold uppercase">
                   Blog Information
                 </h6>
-                <div className="w-full  ">
-                  <div className="relative w-full mb-3">
+                <div className="flex justify-between  ">
+                  <div className=" w-full mb-3 me-4">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2 dark:text-[#00A99D]">
                       Author Name
                     </label>
@@ -90,69 +90,74 @@ const AddBlog = () => {
                       className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
                     />
                   </div>
+
+                  <div className="w-full">
+                    <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      {...register("email")}
+                      readOnly
+                      required
+                      defaultValue={user?.email}
+                      className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
+                    />
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap">
-                  <div className="flex gap-3">
-                    <div className="w-full lg:w-6/12 ">
-                      <div className="relative w-full mb-3">
-                        <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
-                          Email address
-                        </label>
-                        <input
-                          type="email"
-                          {...register("email")}
-                          readOnly
-                          required
-                          defaultValue={user?.email}
-                          className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
-                        />
-                      </div>
-                    </div>
 
-                    <div className="w-full lg:w-6/12 ">
-                      <div className="relative w-full mb-3">
-                        <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
-                          Blog category
-                        </label>
-                        <input
-                          type="text"
-                          {...register("category")}
-                          required
-                          className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
-                        />
-                      </div>
+                <div className="flex justify-between items-center mb-3">
+                  <div className="w-full">
+                    <div >
+                      <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2 ">
+                        Blog category
+                      </label>
+                      <input
+                        type="text"
+                        {...register("category")}
+                        required
+                        className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
+                      />
                     </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-full lg:w-6/12 ">
-                      <div className="relative w-full mb-3">
-                        <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
-                          Author Profession
-                        </label>
-                        <input
-                          type="text"
-                          {...register("profession")}
-                          required
-                          className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
-                        />
-                      </div>
-                    </div>
-                    <div className="w-full lg:w-6/12 ">
-                      <div className="w-full ">
-                        <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
-                          Blog Image
-                        </label>
-                        <input
-                          {...register("photo")}
-                          type="file"
-                          // required
-                          className="input input-bordered w-full px-4 py-2 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
-                        />
-                      </div>
+
+                  {/* Author profession */}
+                  <div className="w-full ms-3 ">
+                    <div className="relative w-full ">
+                      <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
+                        Author Profession
+                      </label>
+                      <input
+                        type="text"
+                        {...register("profession")}
+                        required
+                        className="input input-bordered w-full px-4 py-3 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
+                      />
                     </div>
                   </div>
                 </div>
+
+
+                {/* Blog image input */}
+
+                <div className="flex gap-3 mb-3">
+                  <div className="w-full  ">
+                    <div className="w-full ">
+                      <label className="block dark:text-[#00A99D] uppercase text-blueGray-600 text-xs font-bold mb-2">
+                        Blog Image
+                      </label>
+                      <input
+                        {...register("photo")}
+                        type="file"
+                        // required
+                        className="input input-bordered w-full px-4 py-2 rounded-md dark:bg-white border-2   border-[#1AA3D0]  focus:outline-none focus:border-[#00A99D]"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Blog title input */}
 
                 <div className="flex flex-wrap">
                   <div className="w-full ">
