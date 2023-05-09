@@ -71,25 +71,27 @@ const InstructorDetails = () => {
   return (
     <div>
       <div>
-        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-black dark:text-[#bb86fc]">
+        <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-black dark:text-gray-300">
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <img
                 alt="teacher"
-                className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
+                className="lg:w-1/2 w-full object-cover  object-center rounded-full "
                 src={details?.data?.image}
               />
               <div className="lg:w-1/2 w-full space-y-2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h2 className="text-md font-bold text-start text-green-700 dark:text-[#bb86fc]">
+                <h2 className="text-md font-bold text-start text-[#1AA3D0] dark:text-[#00A99D]">
                   {details?.data?.background}
                 </h2>
                 <div className="flex justify-between">
-                  <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{details?.data?.name}</h1>
+                  <h1 className="text-gray-900 dark:text-gray-300 text-3xl title-font font-medium mb-1">
+                    {details?.data?.name}
+                  </h1>
                   <div className="flex mb-4">
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
-                    <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
+                    <AiFillStar className="w-4 h-4 text-yellow-400 " />
+                    <AiFillStar className="w-4 h-4 text-yellow-400 " />
+                    <AiFillStar className="w-4 h-4 text-yellow-400 " />
+                    <AiFillStar className="w-4 h-4 text-yellow-400 " />
                   </div>
                 </div>
                 <div className="text-start">
@@ -119,7 +121,7 @@ const InstructorDetails = () => {
                 <div className="flex ">
                   <button
                     onClick={() => bookTeacher(details.data)}
-                    className="group relative inline-flex mt-5 items-center overflow-hidden border border-black bg-blue-600 px-8 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
+                    className="group relative inline-flex mt-5 items-center overflow-hidden border border-black bg-[#1AA3D0] dark:bg-[#00A99D] px-8 py-4 text-white focus:outline-none focus:ring active:bg-blue-500 rounded-full"
                   >
                     <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                       <BsArrowRight />
