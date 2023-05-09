@@ -207,8 +207,10 @@ const GetReview = () => {
                           src={feedback?.image}
                         />
                         <p className="text-start">
-                          <span className="text-xs block text-gray-500 dark:text-[#bb86fc]">{feedback?.name}</span>
-                          <span className="text-xs block text-gray-500 dark:text-[#DBDBDB]">12th January, 2024</span>
+                          <span className="text-xs block text-gray-500 dark:text-gray-200">{feedback?.name}</span>
+                          <span className="text-s font-bold block text-[#00A99D] dark:text-[#00A99D]">
+                            12th January, 2024
+                          </span>
                         </p>
 
                         {/* <p className="mt-2 font-medium sm:mt-0">The best thing money can buy!</p> */}
@@ -222,7 +224,7 @@ const GetReview = () => {
                           <label
                             onClick={() => setModalData(feedback)}
                             htmlFor="TestimonialModal"
-                            className="cursor-pointer text-gray-400"
+                            className="cursor-pointer text-[#00A99D] dark:text-[#00A99D] font-bold"
                           >
                             see more
                           </label>
@@ -283,12 +285,12 @@ const GetReview = () => {
                 </div>
 
                 <button
-                  className="hover:underline group text-blue-700 dark:text-[#bb86fc] text-2xl flex mx-auto w-sm mt-10"
+                  className="hover:underline group text-[#00A99D] dark:text-[#00A99D] text-2xl flex mx-auto w-sm mt-10"
                   title="Hide"
                   onClick={handleCloseClick}
                 >
                   Close
-                  <BsArrowRightShort className="group-hover:text-blue-700 dark:group-hover:text-white text-white mt-2" />
+                  <BsArrowRightShort className="group-hover:text-[#1AA3D0] dark:group-hover:text-white text-white mt-2" />
                 </button>
               </div>
             ) : (

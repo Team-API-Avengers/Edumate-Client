@@ -232,7 +232,7 @@ const Signup = () => {
           </div>
 
           <input
-            className="btn my-5 bg-[#1AA3D0] dark:bg-[#00A99D] hover:bg-[#00A99D] dark:hover:bg-[#1AA3D0] w-full p-3 text-center rounded-full "
+            className="btn my-5 bg-[#1AA3D0] dark:bg-[#00A99D] hover:bg-[#00A99D] dark:hover:bg-[#1AA3D0] w-full p-3 text-center rounded-full border-0"
             value="Signup"
             type="submit"
           />
