@@ -15,15 +15,20 @@ const CommentModal = ({ student }) => {
   const [comments, setComment] = useState([]);
   console.log(comments);
 
-  //! Get all comments for this post by student email address
+  //! Get all comments for this post by student post ID
   useEffect(() => {
-    fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
+    fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`)
       .then((res) => res.json())
       .then((data) => {
-        setComment(data);
-        console.log(data);
+        setComment(data?.data);
+        console.log(data?.data);
       });
-  }, []);
+  }, [student?._id]);
+
+
+
+
+
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -56,8 +61,10 @@ const CommentModal = ({ student }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data) {
           toast.success("comment successfully posted");
+          console.log('comment post',data);
+          form.reset()
         }
       });
   };
@@ -73,6 +80,26 @@ const CommentModal = ({ student }) => {
             ✕
           </label>
           <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
+         
+            {
+              comments.reverse()?.map((comment, idx) => 
+              <div className="flex">
+
+                <div className="avatar">
+                <div className="w-8 h-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={comment?.authorImage} alt="" />
+                </div>
+              </div>
+
+
+                <div>
+                <p>{comment?.authorEmail}</p>
+                <small>{comment?.comment}</small>
+                </div>
+              </div>
+              )
+            }
+          
           <p className="py-4">
             <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
               <div>
