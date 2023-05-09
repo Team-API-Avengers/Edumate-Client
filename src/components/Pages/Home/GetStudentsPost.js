@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CommentModal from "../../Modals/CommentModal";
+import { TfiCommentAlt } from "react-icons/tfi";
 
 const GetStudentsPost = () => {
   const [allPost, setPost] = useState([]);
@@ -32,12 +33,16 @@ const GetStudentsPost = () => {
       {allPost?.map((post, idx) => (
         <article
           key={idx}
-          className="rounded-xl my-3 hover:shadow-md shadow-slate-500 border-2 border-gray-100 bg-white"
+          className="rounded-xl max-w-screen-xl mx-auto my-3 hover:shadow-md shadow-slate-500 border-2 border-gray-100 bg-white"
         >
           {/*TODO: Card Body */}
           <div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
             {post?.authorImage ? (
-              <img alt="img/author" src={post?.authorImage} className="h-14 w-14 rounded-lg object-cover" />
+              <img
+                alt="img/author"
+                src={post?.authorImage}
+                className="h-14 w-14 rounded-lg object-cover"
+              />
             ) : (
               <img
                 alt="img/author"
@@ -47,9 +52,13 @@ const GetStudentsPost = () => {
             )}
 
             <div>
-              <h3 className="font-medium text-start sm:text-lg">{post?.category}</h3>
+              <h3 className="font-medium text-start sm:text-lg">
+                {post?.category}
+              </h3>
 
-              <p className="line-clamp-2 text-start text-sm text-gray-700">{post?.description}</p>
+              <p className="line-clamp-2 text-start text-sm text-gray-700">
+                {post?.description}
+              </p>
 
               {/*TODO: Bottom Comment author name */}
               <div className="mt-2 sm:flex sm:items-center sm:gap-2">
@@ -82,7 +91,10 @@ const GetStudentsPost = () => {
 
                 <p className="hidden sm:block sm:text-xs sm:text-gray-500">
                   Posted by
-                  <a href="#a" className="font-medium mx-2 underline hover:text-gray-700">
+                  <a
+                    href="#a"
+                    className="font-medium mx-2 underline hover:text-gray-700"
+                  >
                     {post?.authorName}
                   </a>
                 </p>
@@ -91,8 +103,21 @@ const GetStudentsPost = () => {
           </div>
 
           {/*TODO: Bottom right style */}
-          <div className="flex justify-end">
-            <strong className="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-green-600 px-3 py-1.5 text-white">
+
+          <div className="flex gap-10 justify-end">
+            <div>
+              <label
+                htmlFor="commentModal"
+                onClick={() => handleComment(post)}
+                className="flex items-center gap-1 text-gray-500 cursor-pointer  border-r-0  rounded-r-none rounded-ee-xl rounded-ss-xl border-b-0 rounded bg-blue-100 border py-3 px-10  hover:text-gray-700"
+              >
+                <p className="text-xl flex mt-1 gap-2">
+                  <TfiCommentAlt className="" />
+                  <span className="text-xl -mt-1">Comment</span>
+                </p>
+              </label>
+            </div>
+            {/* <strong className="-mb-[2px] -me-[2px] inline-flex items-center gap-1 rounded-ee-xl rounded-ss-xl bg-green-600 px-3 py-1.5 text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
@@ -108,8 +133,10 @@ const GetStudentsPost = () => {
                 />
               </svg>
 
-              <span className="text-[10px] font-medium sm:text-xs">Edumate special service</span>
-            </strong>
+              <span className="text-[10px] font-medium sm:text-xs">
+                Edumate special service
+              </span>
+            </strong> */}
           </div>
         </article>
       ))}

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCMT-fOl-uuy5tWl1BExOXbYvTxweGGxTY",
-  authDomain: "edumate-2b8af.firebaseapp.com",
-  projectId: "edumate-2b8af",
-  storageBucket: "edumate-2b8af.appspot.com",
-  messagingSenderId: "1052290856161",
-  appId: "1:1052290856161:web:e13c901a0785b16567b3a0"
+  apiKey: "AIzaSyCfGuWqHzhpUSpwBgDkmiaB3_dwDamfLl0",
+  authDomain: "edumate-6007c.firebaseapp.com",
+  projectId: "edumate-6007c",
+  storageBucket: "edumate-6007c.appspot.com",
+  messagingSenderId: "981192894710",
+  appId: "1:981192894710:web:4121654d190a9a5aabe4d7",
 };
 
 // Initialize Firebase
