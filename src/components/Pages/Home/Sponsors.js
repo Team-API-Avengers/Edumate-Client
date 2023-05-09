@@ -29,7 +29,7 @@ const Sponsors = () => {
   };
 
   return (
-    <div>
+    <div className="py-10">
       
       <Slider {...settings}>
         <div>

@@ -19,6 +19,18 @@ const AllTeacherSlider = () => {
         const settings = {
           dots: true,
           infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 2000,
+          duration: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear"
+        };
+
+        const mobile = {
+          dots: true,
+          infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
           autoplay: true,
@@ -28,7 +40,11 @@ const AllTeacherSlider = () => {
           cssEase: "linear"
         };
     return (
-        <div className='w-96 mx-auto'>
+        <div>
+            {/* Large */}
+            
+            <div className="hidden lg:block">
+            <div className='mx-5 lg:mx-10'>
             <Slider {...settings}>
              {
                 allTeachers?.map((teacher, idx) => 
@@ -42,19 +58,19 @@ const AllTeacherSlider = () => {
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
                     <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                    Developer
+                    {teacher?.background}
                     </p>
 
-                    <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
+                    <p className="text-xl font-bold text-white sm:text-2xl">
+                    {teacher?.name}
+                    </p>
 
                     <div className="mt-32 sm:mt-48 lg:mt-64">
                     <div
                         className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
                     >
                         <p className="text-sm text-white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
-                        perferendis hic asperiores quibusdam quidem voluptates doloremque
-                        reiciendis nostrum harum. Repudiandae?
+                        {teacher?.location}
                         </p>
                     </div>
                     </div>
@@ -64,6 +80,55 @@ const AllTeacherSlider = () => {
                 )
              }
         </Slider> 
+        </div>
+            </div>
+
+
+
+
+
+
+            
+            {/* Mobile */}
+            <div className="lg:hidden block">
+            <div className='w-96 mx-auto'>
+            <Slider {...mobile}>
+             {
+                allTeachers?.map((teacher, idx) => 
+                <div key={idx}>
+                    <a href="#f" className="group relative block bg-black">
+                <img
+                    alt="Developer"
+                    src={teacher?.image}
+                    className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div className="relative p-4 sm:p-6 lg:p-8">
+                    <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                    {teacher?.background}
+                    </p>
+
+                    <p className="text-xl font-bold text-white sm:text-2xl">
+                    {teacher?.name}
+                    </p>
+
+                    <div className="mt-32 sm:mt-48 lg:mt-64">
+                    <div
+                        className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                        <p className="text-sm text-white">
+                        {teacher?.location}
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </a>
+                </div>
+                )
+             }
+        </Slider> 
+        </div>
+            </div>
         </div>
     );
 };

@@ -44,7 +44,7 @@ const GetReview = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mx-5 lg:mx-10">
       <section>
         <div className="mx-auto max-w-screen-xl border dark:border-0 px-4 py-8 sm:px-6 lg:px-8">
           <h2 id="title" className="text-4xl  font-bold text-[#1AA3D0] ">

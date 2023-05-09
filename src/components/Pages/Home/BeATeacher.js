@@ -66,10 +66,12 @@ const BeATeacher = () => {
                 <span className="font-bold text-[#00A99D] dark:text-[#00A99D]"> Edumate</span> . Inspire Minds, Shape
                 Futures, Join the Teaching Profession.
               </motion.p>
+
+              {/* Button */}
             </motion.div>
             <Link
               to={"/dashboard/tutor-test-question"}
-              className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#1AA3D0] dark:bg-[#1AA3D0] px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+              className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#1AA3D0] dark:bg-[#1AA3D0] px-8 mt-5 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
             >
               <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                 <BsArrowRight />
@@ -79,9 +81,13 @@ const BeATeacher = () => {
             </Link>
           </motion.div>
 
+
+
+
+           {/* Animation */}
           <motion.div
             // className="flex items-center justify-center w-full mt-6 lg:mt-0"
-            className="-mt-16"
+            className="lg:-mt-16 mt-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, type: "spring", duration: 3 }}
@@ -90,6 +96,8 @@ const BeATeacher = () => {
               <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
             </div>
           </motion.div>
+
+          {/* Modal */}
           <QuestionModal />
         </div>
       </div>
