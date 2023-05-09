@@ -30,7 +30,7 @@ const Sponsors = () => {
 
   return (
     <div>
-      <h2>slider</h2>
+      
       <Slider {...settings}>
         <div>
           <img className="w-20 mx-5 rounded-full" src={one} alt="logo" />

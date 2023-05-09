@@ -16,6 +16,7 @@ import AboutOurs from "../About/AboutOurs";
 import FaqAnswer from "./FAQ/FaqAnswer";
 // import StudentPost from "./StudentPost";
 import GetStudentsPost from "./GetStudentsPost";
+import AllTeacherSlider from "./AllTeacherSlider";
 
 const Home = () => {
   const { user, loading, filteredData, setFilteredData } =
@@ -49,6 +50,9 @@ const Home = () => {
   }
 
   console.log(filteredData);
+
+
+
 
   if (loading) {
     return <Loader />;
@@ -109,6 +113,13 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
+
+
+      <AllTeacherSlider />
+
+
 
       {/* {user && <StudentPostBox />} */}
 
