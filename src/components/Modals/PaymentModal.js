@@ -36,7 +36,7 @@ const PaymentModal = ({ modalData }) => {
         console.log(paymentInfo);
 
         // need to post payment information -- 
-        fetch("http://localhost:5000/api/v1/payment/ssl-request", {
+        fetch("https://edumate-second-server.vercel.app/api/v1/payment/ssl-request", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
