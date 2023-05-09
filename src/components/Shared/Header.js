@@ -14,7 +14,7 @@ import darkLogo from "../Assets/Logos/EDU_Dark_Logo.png";
 
 const Header = () => {
   const { user, logOut, theme, setTheme } = useContext(AuthContext);
-
+  console.log(user);
   // console.log("header logUser role", logUser);
 
   const handleThemeSwitch = () => {
@@ -133,7 +133,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar className="w-full  bg-[#04516B] dark:bg-black dark:text-[#bb86fc] shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
+      <Navbar className="w-full border-none  bg-[#04516B] dark:bg-black dark:text-[#bb86fc] shadow-lg dark:border-0 max-w-screen-2xl py-6 px-4 rounded-none lg:px-8 lg:py-3">
         <div className="w-full container flex px-10 items-center max-w-screen-2xl mx-auto justify-between text-blue-gray-900">
           <Link to={"/"}>
             {theme === "dark" ? (
