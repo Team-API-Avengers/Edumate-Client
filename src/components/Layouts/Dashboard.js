@@ -7,6 +7,14 @@ import Header from "../Shared/Header";
 import { AuthContext } from "../Context/AuthProvider";
 import DashboardHeader from "../Shared/DashboardHeader";
 import QuestionModal from "../Modals/QuestionModal";
+import {
+  FaBlogger,
+  FaChalkboardTeacher,
+  FaHouseUser,
+  FaUsers,
+} from "react-icons/fa";
+import { GiTeacher } from "react-icons/gi";
+import { BsFillPostcardFill } from "react-icons/bs";
 
 const DashBoard = () => {
   const { user, logUser, theme, loading } = useContext(AuthContext);
@@ -57,27 +65,41 @@ const DashBoard = () => {
               </span>
             </Link>
             <li className=" ">
-              <Link to="/dashboard">My Profile</Link>
+              <Link to="/dashboard">
+                <FaHouseUser />
+                My Profile
+              </Link>
             </li>
 
-            {
-              user && 
+            {user && (
               <li>
-                <Link to="/dashboard/addBlog">Add Blog</Link>
+                <Link to="/dashboard/addBlog">
+                  <FaBlogger />
+                  Add Blog
+                </Link>
               </li>
-            }
+            )}
 
             {logUser?.role === "Admin" && (
               <>
                 <li className="">
-                  <Link to="/dashboard/all-Teachers">All Teacher</Link>
+                  <Link to="/dashboard/all-Teachers">
+                    <GiTeacher />
+                    All Teacher
+                  </Link>
                 </li>
                 <li className="">
-                  <Link to="/dashboard/all-students">All Students</Link>
+                  <Link to="/dashboard/all-students">
+                    <FaUsers />
+                    All Students
+                  </Link>
                 </li>
 
                 <li className="">
-                  <Link to='/dashboard/tutor-test-question'>Be a teacher</Link>
+                  <Link to="/dashboard/tutor-test-question">
+                    <FaChalkboardTeacher />
+                    Be a teacher
+                  </Link>
                 </li>
               </>
             )}
@@ -85,11 +107,17 @@ const DashBoard = () => {
             {logUser?.role === "Teacher" && (
               <>
                 <li className="">
-                  <Link to='/dashboard/tutor-test-question'>Be a teacher</Link>
+                  <Link to="/dashboard/tutor-test-question">
+                    <FaChalkboardTeacher />
+                    Be a teacher
+                  </Link>
                 </li>
 
                 <li className="">
-                  <Link to="/dashboard/my-students">My Students</Link>
+                  <Link to="/dashboard/my-students">
+                    <FaUsers />
+                    My Students
+                  </Link>
                 </li>
               </>
             )}
@@ -97,8 +125,14 @@ const DashBoard = () => {
             {logUser?.role === "Student" && (
               <>
                 <li className="">
-                  <Link to="/dashboard/my-Teachers">My Teachers</Link>
-                  <Link to="/dashboard/student-post-box">Post Field</Link>
+                  <GiTeacher />
+                  <Link to="/dashboard/my-Teachers">
+                    <GiTeacher />
+                    My Teachers
+                  </Link>
+                  <Link to="/dashboard/student-post-box">
+                    <BsFillPostcardFill /> Post Field
+                  </Link>
                 </li>
               </>
             )}
