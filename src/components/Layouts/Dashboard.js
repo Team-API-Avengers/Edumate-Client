@@ -125,7 +125,6 @@ const DashBoard = () => {
             {logUser?.role === "Student" && (
               <>
                 <li className="">
-                  <GiTeacher />
                   <Link to="/dashboard/my-Teachers">
                     <GiTeacher />
                     My Teachers
