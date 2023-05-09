@@ -215,7 +215,7 @@ const Login = () => {
               </div>
             </div>
             <input
-              className="btn btn-primary w-full p-3 text-center rounded-full bg-[#1AA3D0] dark:bg-[#00A99D] hover:bg-[#00A99D] dark:hover:bg-[#1AA3D0]"
+              className="btn btn-primary w-full p-3 text-center rounded-full bg-[#1AA3D0] dark:bg-[#00A99D] hover:bg-[#00A99D] dark:hover:bg-[#1AA3D0] border-0"
               value="Login"
               type="submit"
             />
@@ -226,7 +226,7 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 "></div>
             <p
               onClick={handleGoogle}
-              className="btn btn-outline text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... border-none w-full px-3 text-sm  rounded-full"
+              className="btn btn-outline text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... border-none w-full px-3 text-sm  rounded-full border-0"
             >
               Login with Google
             </p>

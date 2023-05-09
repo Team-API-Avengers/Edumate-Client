@@ -13,7 +13,7 @@ const FaqAnswer = () => {
         transition={{ type: "spring", stiffness: 15 }}
       >
         <div className="">
-          <div className="mb-8 h-[50vw]">
+          <div className="mb-8 h-[38vw] w-4/5">
             <Lottie animationData={FaqAnimation} loop={true}></Lottie>
           </div>
 
@@ -24,10 +24,8 @@ const FaqAnswer = () => {
         </div>
 
         <div className="">
-          <h2 className="text-start mb-8 text-4xl font-bold mt-8">
-            Frequently asked questions
-          </h2>
-          
+          <h2 className="text-start mb-8 text-4xl font-bold mt-8">Frequently asked questions</h2>
+
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box mb-5 ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
               How do I access a Edumate?
@@ -40,7 +38,6 @@ const FaqAnswer = () => {
             </div>
           </div>
 
-
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box mb-5 ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
               Who uses Edumate?
@@ -51,7 +48,6 @@ const FaqAnswer = () => {
               </p>
             </div>
           </div>
-
 
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box mb-5 ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
@@ -64,7 +60,6 @@ const FaqAnswer = () => {
             </div>
           </div>
 
-
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box mb-5 ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
               How can it help you?
@@ -74,7 +69,6 @@ const FaqAnswer = () => {
             </div>
           </div>
 
-
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box mb-5 ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
               How do you contact with us?
@@ -83,7 +77,6 @@ const FaqAnswer = () => {
               <p className="text-start">You can contact with us by your email.</p>
             </div>
           </div>
-
 
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box mb-5 ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
@@ -97,7 +90,6 @@ const FaqAnswer = () => {
             </div>
           </div>
 
-
           <div tabIndex={0} className="collapse collapse-arrow border border-base-300  rounded-box ">
             <div className="collapse-title text-xl font-medium bg-gradient-to-r from-green-400 to-teal-500 hover:from-pink-500 hover:to-yellow-500 ...">
               Who can get our certificate?
@@ -109,8 +101,6 @@ const FaqAnswer = () => {
               </p>
             </div>
           </div>
-
-
         </div>
       </motion.div>
     </section>
