@@ -31,6 +31,7 @@ import PaymentFail from "../Pages/MyTeachers/PaymentFail";
 import PaymentNotification from "../Pages/MyTeachers/PaymentNotification";
 import TutorTestQuestion from "../Pages/TutorTestQuestion/TutorTestQuestion";
 import SkillAssessments from "../Pages/SkillAssessments/SkillAssessments";
+// import Quiz from "../Pages/Quiz/Quiz";
 
 const router = createBrowserRouter([
   //! Main Pages
@@ -132,6 +133,10 @@ const router = createBrowserRouter([
         path: "/dashboard/tutor-test",
         element: <TutorTest />,
       },
+      // {
+      //   path: "/dashboard/tutor-quiz-test",
+      //   element: <Quiz />,
+      // },
       {
         path: "/dashboard/tutor-test-question",
         element: <TutorTestQuestion />,

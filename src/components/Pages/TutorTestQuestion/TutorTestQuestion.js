@@ -1,313 +1,179 @@
 import React, { useEffect, useState } from "react";
-import { BsFillQuestionDiamondFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+// import { BsFillQuestionDiamondFill } from "react-icons/bs";
+// import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const TutorTestQuestion = () => {
+
+  const [questions, setQuestions] = useState([])
   const [data, setData] = useState([]);
 
-  const [filteredData, setFilteredData] = useState([]);
+//   const [questions, setQuestions] = useState( [
+//     {
+//       id: 1,
+//       question: "What is the capital of France?",
+//       options: ["Paris", "London", "Berlin", "Madrid"],
+//       answer: "Paris",
+//       disabled: false
+//     },
+//     {
+//       id: 2,
+//       question: "What is the highest mountain in the world?",
+//       options: ["Kilimanjaro", "Everest", "Denali", "Aconcagua"],
+//       answer: "Everest",
+//       disabled: false
+//     },
+//     {
+//       id: 3,
+//       question: "Who wrote the Harry Potter series?",
+//       options: ["J.K. Rowling", "Stephenie Meyer", "Suzanne Collins", "George R.R. Martin"],
+//       answer: "J.K. Rowling",
+//       disabled: false
+//     } 
+//     ]);
 
-  //! Change Style
-  const [nextButtonStyle, setNextButtonStyle] = useState("hidden");
 
-  const [formStyle, setFormStyle] = useState("block");
 
-  // console.log(object);
+  // ! Get Data from database
 
   useEffect(() => {
-    fetch(`https://edumate-second-server.vercel.app/api/v1/test`)
-      .then((res) => res.json())
-      .then((data) => setData(data?.data))
-      .finally(() => {});
-  }, []);
+      fetch(`https://edumate-second-server.vercel.app/api/v1/test`)
+        .then((res) => res.json())
+        .then((data) => setData(data?.data))
+        .finally(() => {});
+    }, []);
 
-  function handleFilter(event) {
-    const query = event.target.value.toLowerCase();
-    console.log(query);
-    // console.log(data);
-    const filtered = data?.filter((item) => {
-      return item?.category?.toLowerCase().includes(query);
-    });
-    // setFilteredData(filtered?.slice(0,4));
+      
+ 
 
-    //! For Display 5 question from array by randomly .. .. ..
-    const n = 3; // number of elements we want to get
-    const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
-    const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
-    setFilteredData(resultData);
-  }
+  // ! filtering data by category which is sorting
+function handleFilter(event) {
+  const query = event.target.value.toLowerCase();
+  console.log(query);
+  // console.log(data);
+  const filtered = data?.filter((item) => {
+    return item?.category?.toLowerCase().includes(query);
+  });
+  // setFilteredData(filtered?.slice(0,4));
 
-  console.log(filteredData);
+  //! For Display 5 question from array by randomly .. .. ..
+  const n = 3; // number of elements we want to get
+  const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
+  const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
+  setQuestions(resultData);
+}
 
-  //! handle correct answer
-  //   const handleOption = (option, data) => {
-  //     console.log(data);
-  //     const selectedAnswer = option;
-  //     if (selectedAnswer === data.answer) {
-  //       toast.success('Success');
-  //     } else {
-  //       toast.error('Wrong');
-  //     }
+console.log(questions);
 
-  //
-  //   };
 
-  //! handle Question
-  const handleQuestion = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const selectedOne = form.selectedOne.value;
-    const selectedTwo = form.selectedTwo.value;
-    const selectedThree = form.selectedThree.value;
-    const selectedFour = form.selectedFour.value;
-    const selectedFive = form.selectedFive.value;
 
-    console.log("selected answer", selectedOne, selectedTwo, selectedThree, selectedFour, selectedFive);
 
-    console.log(
-      "correct answer",
-      filteredData[0]?.answer,
-      filteredData[1]?.answer,
-      filteredData[2]?.answer,
-      filteredData[3]?.answer,
-      filteredData[4]?.answer
-    );
 
-    // if( selectedOne === filteredData[0]?.answer && selectedTwo === filteredData[1]?.answer && selectedThree === filteredData[2]?.answer && selectedFour === filteredData[3]?.answer && selectedFive === filteredData[4]?.answer )
-    // {
-    //     toast.success('Awesome!')
-    // setNextButtonStyle("block");
-    // setFormStyle("hidden");
-    // }else{
-    //     toast.error('Wrong!')
-    // }
 
-    //!Todo: Check Options for correct answer
-    if (selectedOne === filteredData[0]?.answer) {
-      //! Two
-      if (selectedTwo === filteredData[1]?.answer) {
-        // ! Three
-        if (selectedThree === filteredData[2]?.answer) {
-          // ! Four
-          if (selectedFour === filteredData[3]?.answer) {
-            // ! Five
-            if (selectedFive === filteredData[4]?.answer) {
-              toast.success("WOW Congratulations! Your Five answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            } else {
-              toast.success("Your Four answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            }
-          } else {
-            // toast.success('Your three answers are correct')
-            setNextButtonStyle("block");
-            setFormStyle("hidden");
-            // ! Five
-            if (selectedFive === filteredData[4]?.answer) {
-              // toast.success('WOW Congratulations! Your Five answers are correct')
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            } else {
-              // toast.success('Your Four answers are correct')
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            }
-          }
-        } else {
-          // toast.error('Your two answers are correct!')
-          // ! Four
-          if (selectedFour === filteredData[3]?.answer) {
-            // ! Five
-            if (selectedFive === filteredData[4]?.answer) {
-              // toast.success('WOW Congratulations! Your Five answers are correct')
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            } else {
-              toast.success("Your Four answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            }
-          } else {
-            toast.success("Your three answers are correct");
-            setNextButtonStyle("block");
-            setFormStyle("hidden");
-          }
-        }
-      } else {
-        // toast.error('Your one answer is correct!')
-        // ! Three
-        if (selectedThree === filteredData[2]?.answer) {
-          // ! Four
-          if (selectedFour === filteredData[3]?.answer) {
-            // ! Five
-            if (selectedFive === filteredData[4]?.answer) {
-              toast.success("WOW Congratulations! Your Five answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            } else {
-              toast.success("Your Four answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            }
-          } else {
-            toast.success("Your three answers are correct");
-            setNextButtonStyle("block");
-            setFormStyle("hidden");
-          }
-        } else {
-          toast.error("Your two answers are correct!");
-        }
-      }
-    } else {
-      //  toast.error('Your all answer are wrong!')
-      //! Two
-      if (selectedTwo === filteredData[1]?.answer) {
-        // ! Three
-        if (selectedThree === filteredData[2]?.answer) {
-          // ! Four
-          if (selectedFour === filteredData[3]?.answer) {
-            // ! Five
-            if (selectedFive === filteredData[4]?.answer) {
-              toast.success("WOW Congratulations! Your Five answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            } else {
-              toast.success("Your Four answers are correct");
-              setNextButtonStyle("block");
-              setFormStyle("hidden");
-            }
-          } else {
-            toast.success("Your three answers are correct");
-            setNextButtonStyle("block");
-            setFormStyle("hidden");
-          }
-        } else {
-          toast.error("Your two answers are correct!");
-        }
-      } else {
-        toast.error("Your one answer is correct!");
-      }
+
+
+// ! Check and count the number of correct answers for each question in the array 
+
+const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
+// Set scores
+const [score, setScore] = useState();
+
+function handleAnswerSelect(questionIndex, selectedOption) {
+  const newAnswers = [...userAnswers];
+  newAnswers[questionIndex] = selectedOption;
+  setUserAnswers(newAnswers);
+
+  const updatedQuestions = [...questions];
+  updatedQuestions[questionIndex].disabled = true;
+  setQuestions(updatedQuestions);
+}
+
+function calculateScore() {
+  let newScore = 0;
+  questions.forEach((question, index) => {
+    if (userAnswers[index] === question.answer) {
+      newScore++;
     }
-  };
+  });
+  setScore(newScore);
+}
 
-  //   console.log(userSelectedData);
+
+if(score === 3 || score > 3){
+  toast.success(`Your score is ${score}`)
+}
+if(score === 0){
+  toast.error(`Your score is ${score}`)
+}
+  
+
+
 
   return (
-    <div className="m-10">
-      <div className="relative">
-        <div>
-          <label className="block text-black dark:text-gray-300 text-xl font-semibold" id="title">
-            Select Your Department That You Want To Teach
-          </label>
+    <div className="mx-5 lg:mx-10">
+    {/* TODO: Selector */}
+    <div className="my">
+    <div>
+       <label className="block text-black dark:text-gray-300 text-xl font-semibold" id="title">
+         Select Your Department That You Want To Teach
+       </label>
 
-          {/* Selector */}
-          <select
-            name="background"
-            // className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded w-full bg-sky-50"
-            className="select  h-11 text-gray-800  mt-1 rounded w-full bg-sky-50 border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
-            onChange={handleFilter}
-          >
-            <option disabled selected>
-              Choose your background
-            </option>
-            <option>Science</option>
-            <option>Commerce</option>
-            <option>Arts</option>
-          </select>
-        </div>
-
-        <div className={formStyle}>
-          {filteredData[1] && (
-            <div>
-              <div className="w-full shadow-gray-400 shadow-lg rounded-md p-3 my-5 border-2 border-[#1AA3D0] dark:border-[#00A99D] ">
-                <form onSubmit={handleQuestion}>
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[0]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedOne" className="select select-primary w-full max-w-xs">
-                        {filteredData[0]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[1]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedTwo" className="select select-primary w-full max-w-xs">
-                        {filteredData[1]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[2]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedThree" className="select select-primary w-full max-w-xs">
-                        {filteredData[2]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[3]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedFour" className="select select-primary w-full max-w-xs">
-                        {filteredData[3]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="my-5">
-                    <label className="flex justify-start m-2" disabled selected>
-                      <BsFillQuestionDiamondFill className="mt-1 mr-2" />
-                      {filteredData[4]?.question}
-                    </label>
-                    <div className="text-start">
-                      <select required name="selectedFive" className="select select-primary w-full max-w-xs">
-                        {filteredData[4]?.options?.map((options, idx) => (
-                          <option key={idx}>{options}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <button className="btn btn-primary w-full">Submit</button>
-                </form>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {filteredData[1] && (
-          <Link to={"/dashboard/add-Teacher"} className={nextButtonStyle}>
-            <button className="btn btn-success my-10 w-1/3">Next</button>
-          </Link>
-        )}
-      </div>
+       {/* Selector */}
+       <select
+         name="background"
+         // className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded w-full bg-sky-50"
+         className="select  h-11 text-gray-800  mt-1 rounded w-full bg-sky-50 border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
+         onChange={handleFilter}
+       >
+         <option disabled selected>
+           Choose your background
+         </option>
+         <option>Science</option>
+         <option>Commerce</option>
+         <option>Arts</option>
+       </select>
+     </div>
     </div>
+
+
+
+
+    {/* TODO: Display the questions */}
+{
+  questions[1] &&
+   <div>
+    {questions.map((question, index) => (
+     <div className="my-3" key={question.id}>
+       <p className="text-start bg-yellow-300">{question.question}</p>
+       {question.options.map((option, optionIndex) => (
+         <div className="text-start" key={optionIndex}>
+           <input
+             type="radio"
+             name={`question-${index}`}
+             value={option}
+             checked={userAnswers[index] === option}
+             disabled={question.disabled && userAnswers[index] !== option}
+             onChange={() => handleAnswerSelect(index, option)}
+           />
+           <label>{option}</label>
+         </div>
+       ))}
+     </div>
+   ))}
+
+
+
+   <button className="btn btn-primary my-10" onClick={calculateScore}>Submit</button>
+   </div>
+}
+
+
+
+
+   {/* {score &&
+   <p>Your score: {score}</p>
+   } */}
+ </div>
   );
 };
 

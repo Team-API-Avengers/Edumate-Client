@@ -74,7 +74,7 @@ const TutorTest = () => {
                         {
                             filteredData?.map((data, idx) => 
                             <>
-                            <h1>d{data?.question}</h1>
+                            <h1>{data?.question}</h1>
                             </>)
                         }
 
