@@ -33,7 +33,7 @@ const SubjectWiseTeachers = () => {
       </motion.p>
       {/* {backgrounds.map((category) => ( */}
       <div className=" max-w-screen-lg mt-10 mb-10 mx-auto grid grid-cols-1">
-        <div className="container grid grid-cols-4 gap-10 px-5 py-1  text-[#1aa3d0]  dark:text-[#1aa3d0] mx-auto">
+        <div className="container grid grid-cols-1 lg:grid-cols-4 gap-10 px-5 py-1  text-[#1aa3d0]  dark:text-[#1aa3d0] mx-auto">
           {/* Science Department */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}

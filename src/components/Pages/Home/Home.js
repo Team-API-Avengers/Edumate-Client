@@ -153,7 +153,7 @@ const Home = () => {
       {/* <StudentPost /> */}
       <FaqAnswer />
 
-      <div className="my-5">
+      <div className="py-10">
         <Sponsors />
       </div>
 
