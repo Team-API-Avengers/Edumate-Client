@@ -56,14 +56,23 @@ const InstructorDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        if (data.status === "success") {
-          toast.success("Successfully booked your teacher");
-          navigate("/dashboard/my-Teachers");
-        }
-        if (data?.status === "error") {
-          toast.error("You already booked that teacher");
-        }
+
+
+
+        //  change by siam
+
+        /*         // you should check the post another object properties . you always get a success status that's why successfully booked massage will be a toast.
+                // console.log("From check",data.status); // always success
+        
+                if (data.status === "success") {
+                  toast.success("Successfully booked your teacher");
+                  navigate("/dashboard/my-Teachers");
+                }
+                if (data?.status === "error") {
+                  toast.error("You already booked that teacher");
+                }
+         */
+
         // navigate("/dashboard/my-Teachers");
       });
   };
@@ -75,15 +84,15 @@ const InstructorDetails = () => {
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <img alt="teacher" className="lg:w-1/2 w-full object-cover  object-center rounded border border-gray-200"
-                src={ details?.data?.image }
+                src={details?.data?.image}
               />
               <div className="lg:w-1/2 w-full space-y-2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <h2 className="text-md font-bold text-start text-green-700 dark:text-[#bb86fc]">
-                  { details?.data?.background }
+                  {details?.data?.background}
                 </h2>
                 <div className="flex justify-between">
                   <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                    { details?.data?.name }
+                    {details?.data?.name}
                   </h1>
                   <div className="flex mb-4">
                     <AiFillStar className="w-4 h-4 text-green-700 dark:text-[#bb86fc]" />
@@ -95,31 +104,31 @@ const InstructorDetails = () => {
                 <div className="text-start">
                   <p className="flex ">
                     <BsTelephoneFill className="mt-1 mr-1" />
-                    { details?.data?.phone }
+                    {details?.data?.phone}
                   </p>
 
                   <p className="flex ">
                     <BsHourglassSplit className="mt-1 mr-1" />
-                    { details?.data?.experience } years experience
+                    {details?.data?.experience} years experience
                   </p>
                   <p className="flex ">
-                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" />{ " " }
-                    <h1>{ details?.data?.fee }</h1>
+                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" />{" "}
+                    <h1>{details?.data?.fee}</h1>
                   </p>
                   <p className="flex ">
                     <HiLocationMarker className="mt-1 mr-1" />
-                    { details?.data?.location }
+                    {details?.data?.location}
                   </p>
                   <p className="flex ">
                     <MdMarkEmailUnread className="mt-1 mr-1" />
-                    { details?.data?.email }
+                    {details?.data?.email}
                   </p>
                 </div>
-                <p className="leading-relaxed text-start">{ details?.data?.bio }</p>
+                <p className="leading-relaxed text-start">{details?.data?.bio}</p>
 
                 <div className="flex ">
                   <button
-                    onClick={ () => bookTeacher(details.data) }
+                    onClick={() => bookTeacher(details.data)}
                     className="group relative inline-flex mt-5 items-center overflow-hidden border border-black bg-blue-600 px-8 py-4 text-white focus:outline-none focus:ring active:bg-blue-500"
                   >
                     <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
