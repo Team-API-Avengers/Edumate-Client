@@ -7,7 +7,7 @@ const CommentModal = ({ student }) => {
   //! Time Adjustment
   const time = String(new Date().toLocaleTimeString());
   const day = String(new Date());
-  console.log(student._id);
+  console.log(student?._id);
 
   const { user } = useContext(AuthContext);
 
@@ -64,12 +64,20 @@ const CommentModal = ({ student }) => {
       <input type="checkbox" id="commentModal" className="modal-toggle" />
       <div className="modal">
         <div className="w-full bg-white h-full relative">
-          <label htmlFor="commentModal" className="btn btn-sm btn-circle absolute right-2 top-2">
+          <label
+            htmlFor="commentModal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
             ✕
           </label>
-          <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
+          <h3 className="text-lg font-bold">
+            Congratulations random Internet user!
+          </h3>
           <p className="py-4">
-            <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
+            <form
+              onSubmit={addComment}
+              className="bottom-0 left-0 right-0 absolute m-5"
+            >
               <div>
                 <textarea
                   name="comment"
