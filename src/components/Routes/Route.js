@@ -33,7 +33,6 @@ import TutorTestQuestion from "../Pages/TutorTestQuestion/TutorTestQuestion";
 import SkillAssessments from "../Pages/SkillAssessments/SkillAssessments";
 
 const router = createBrowserRouter([
-
   //! Main Pages
   {
     path: "/",
@@ -60,9 +59,7 @@ const router = createBrowserRouter([
         path: "/instructor/:_id",
         element: <InstructorDetails />,
         loader: ({ params }) => {
-          return fetch(
-            `https://edumate-second-server.vercel.app/api/v1/tutor/${params._id}`
-          );
+          return fetch(`https://edumate-second-server.vercel.app/api/v1/tutor/${params._id}`);
         },
       },
 
@@ -84,27 +81,19 @@ const router = createBrowserRouter([
         path: "/blog/:_id",
         element: <BlogDetails />,
         loader: ({ params }) => {
-          return fetch(
-            `https://edumate-second-server.vercel.app/api/v1/blogs/${params?._id}`
-          );
+          return fetch(`https://edumate-second-server.vercel.app/api/v1/blogs/${params?._id}`);
         },
       },
-      
+
       {
         path: "/:background",
         element: <BackgroundWiseTeacher />,
         loader: ({ params }) => {
-          return fetch(
-            `https://edumate-second-server.vercel.app/api/v1/tutor/instructor/${params.background}`
-          );
+          return fetch(`https://edumate-second-server.vercel.app/api/v1/tutor/instructor/${params.background}`);
         },
       },
     ],
   },
-
-
-
-
 
   //! Authentication Pages
   {
@@ -121,9 +110,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-
-
 
   //! Dashboard Pages
   {
@@ -144,11 +130,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/tutor-test",
-        element: <TutorTest />
+        element: <TutorTest />,
       },
       {
         path: "/dashboard/tutor-test-question",
-        element: <TutorTestQuestion />
+        element: <TutorTestQuestion />,
       },
 
       {
@@ -181,7 +167,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/payment/fail",
-        element: <PaymentFail />
+        element: <PaymentFail />,
       },
       {
         path: "/dashboard/addBlog",
@@ -195,14 +181,10 @@ const router = createBrowserRouter([
       // this is the notification component for invoice ---
       {
         path: "/dashboard/payment/success",
-        element: <PaymentNotification/>
-      }
+        element: <PaymentNotification />,
+      },
     ],
   },
-
-
-
-
 
   //! Settings Page
   {
@@ -215,11 +197,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-
-
-
-
 
   //! Error Page
   {
