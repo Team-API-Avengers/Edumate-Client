@@ -80,12 +80,13 @@ const DashBoard = () => {
                   </Link>
                 </li>
 
-                <li className="">
+                <li>
                   <Link to="/dashboard/tutor-test-question">
                     <FaChalkboardTeacher />
                     Be a teacher
                   </Link>
                 </li>
+
               </>
             )}
 
@@ -102,6 +103,12 @@ const DashBoard = () => {
                   <Link to="/dashboard/my-students">
                     <FaUsers />
                     My Students
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/my-achievement-certificate">
+                    <FaChalkboardTeacher />
+                    my Achievement
                   </Link>
                 </li>
               </>

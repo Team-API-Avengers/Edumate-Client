@@ -31,6 +31,7 @@ import PaymentFail from "../Pages/MyTeachers/PaymentFail";
 import PaymentNotification from "../Pages/MyTeachers/PaymentNotification";
 import TutorTestQuestion from "../Pages/TutorTestQuestion/TutorTestQuestion";
 import SkillAssessments from "../Pages/SkillAssessments/SkillAssessments";
+import TeacherCertificate from "../Pages/TeacherCertificate/TeacherCertificate";
 // import Quiz from "../Pages/Quiz/Quiz";
 
 const router = createBrowserRouter([
@@ -159,6 +160,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/skill-assessments",
         element: <SkillAssessments />,
+      },
+
+      {
+        path: "/dashboard/my-achievement-certificate",
+        element: <TeacherCertificate />,
       },
 
       {
