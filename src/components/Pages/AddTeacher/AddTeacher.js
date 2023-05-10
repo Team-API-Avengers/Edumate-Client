@@ -52,7 +52,9 @@ const AddTeacher = () => {
             email: user?.email,
             role: logUser?.role,
             phone: data.number,
+            qualification: data.qualification,
             experience: data.experience,
+            gender: data.gender,
             fee: data.fee,
             image: imgData.data.url,
             location: data.location,
@@ -150,6 +152,26 @@ const AddTeacher = () => {
                           { ...register("location") }
                           className="h-12 border text-gray-800 border-green-400 mt-1 rounded px-4  w-full bg-sky-50"
                           placeholder="Chittagong"
+                        />
+                      </div>
+
+                      <div className="">
+                        <label>Qualification</label>
+                        <input
+                          type="text"
+                          { ...register("qualification") }
+                          className="h-12 border text-gray-800 border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          placeholder="Average fee"
+                        />
+                      </div>
+                      
+                      <div className="">
+                        <label>Gender</label>
+                        <input
+                          type="text"
+                          { ...register("gender") }
+                          className="h-12 border text-gray-800 border-green-400 mt-1  px-4 rounded   w-full bg-sky-50"
+                          placeholder="Average fee"
                         />
                       </div>
 
