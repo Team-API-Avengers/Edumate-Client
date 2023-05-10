@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader";
-import {
-  BsFillPersonFill,
-  // BsHourglassSplit,
-  BsTelephoneFill,
-} from "react-icons/bs";
+import { BsFillPersonFill, BsTelephoneFill } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AllStudents = () => {
+  const { logUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [students, SetStudent] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -22,12 +24,27 @@ const AllStudents = () => {
       });
   }, []);
 
+  // delete student
+  const deleteStudent = (data) => {
+    console.log(data);
+    fetch(`https://edumate-second-server.vercel.app/api/v1/user/${data?._id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.data.deletedCount > 0) {
+          toast.success("Student removed 🤞");
+          navigate("/");
+        }
+      });
+  };
   if (loading) {
     return <Loader />;
   }
 
   // console.log(students);
-
+  console.log(logUser);
   return (
     <div>
       <div className="hidden lg:block">
@@ -40,10 +57,21 @@ const AllStudents = () => {
                 alt=""
               />
               <div className="card-body">
-                <h2 className="card-title">{student?.name}</h2>
+                <div className="flex justify-between">
+                  <h2 className="card-title text-start">{student?.name}</h2>
+                  {logUser?.role === "Admin" && (
+                    <>
+                      <button
+                        onClick={() => deleteStudent(student)}
+                        className=" text-white font-bold   rounded-full border py-2 px-3 bg-red-700"
+                      >
+                        <AiOutlineDelete className="mt-1" />
+                      </button>
+                    </>
+                  )}
+                </div>
                 <p className="text-start">{student?.email}</p>
                 <p className="text-start">{student?.phone}</p>
-                {}
               </div>
             </div>
           </div>
@@ -78,15 +106,6 @@ const AllStudents = () => {
                       {student?.phone}
                     </p>
                   </div>
-
-                  <button className="learn-more mx-5">
-                    <span className="circle" aria-hidden="true">
-                      <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text dark:text-[#bb86fc]">
-                      Learn More
-                    </span>
-                  </button>
                 </div>
               </div>
             </div>

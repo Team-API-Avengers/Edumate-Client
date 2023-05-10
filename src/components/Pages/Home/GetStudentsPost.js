@@ -23,10 +23,12 @@ const GetStudentsPost = () => {
     <div className="lg:mx-10 mx-5">
       {/*TODO: Top Text Content */}
       <div className="my-3">
-        <h2 id="title" className="text-4xl">
+        <h2 id="title" className="text-4xl dark:text-gray-200">
           Student's Post
         </h2>
-        <p>Building a stronger education community together</p>
+        <p className="text-[#1AA3D0] dark:text-[#00A99D] font-semibold mb-4">
+          Building a stronger education community together
+        </p>
       </div>
 
       {/*TODO: Show All Post's Card */}
@@ -38,11 +40,7 @@ const GetStudentsPost = () => {
           {/*TODO: Card Body */}
           <div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
             {post?.authorImage ? (
-              <img
-                alt="img/author"
-                src={post?.authorImage}
-                className="h-14 w-14 rounded-lg object-cover"
-              />
+              <img alt="img/author" src={post?.authorImage} className="h-14 w-14 rounded-lg object-cover" />
             ) : (
               <img
                 alt="img/author"
@@ -52,13 +50,9 @@ const GetStudentsPost = () => {
             )}
 
             <div>
-              <h3 className="font-medium text-start sm:text-lg">
-                {post?.category}
-              </h3>
+              <h3 className="font-lg text-start sm:text-lg text-[#1AA3D0] dark:text-[#00A99D]">{post?.category}</h3>
 
-              <p className="line-clamp-2 text-start text-sm text-gray-700">
-                {post?.description}
-              </p>
+              <p className="line-clamp-2 text-start text-sm text-gray-700">{post?.description}</p>
 
               {/*TODO: Bottom Comment author name */}
               <div className="mt-2 sm:flex sm:items-center sm:gap-2">
@@ -82,19 +76,16 @@ const GetStudentsPost = () => {
                     />
                   </svg>
 
-                  <p className="text-xs">14 comments</p>
+                  <p className="text-xs"> Comments</p>
                 </label>
 
                 <span className="hidden sm:block" aria-hidden="true">
                   &middot;
                 </span>
 
-                <p className="hidden sm:block sm:text-xs sm:text-gray-500">
+                <p className="hidden sm:block sm:text-xs font-bold text-[#1AA3D0] dark:text-[#00A99D]">
                   Posted by
-                  <a
-                    href="#a"
-                    className="font-medium mx-2 underline hover:text-gray-700"
-                  >
+                  <a href="#a" className="font-medium mx-2 underline hover:text-gray-700">
                     {post?.authorName}
                   </a>
                 </p>
@@ -113,7 +104,7 @@ const GetStudentsPost = () => {
               >
                 <p className="text-xl flex mt-1 gap-2">
                   <TfiCommentAlt className="" />
-                  <span className="text-xl -mt-1">Comment</span>
+                  <span className="text-xl -mt-1 font-bold text-[#1AA3D0] dark:text-[#00A99D]">Comment</span>
                 </p>
               </label>
             </div>
