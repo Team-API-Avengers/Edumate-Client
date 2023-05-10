@@ -54,9 +54,9 @@ const GetStudentsPost = () => {
             )}
 
             <div>
-              <h3 className="font-medium text-start sm:text-lg">
-                {post?.category}
-              </h3>
+
+              <h3 className="font-lg text-start sm:text-lg text-[#1AA3D0] dark:text-[#00A99D]">{post?.category}</h3>
+
 
               <p className="line-clamp-2 text-start text-sm text-gray-700">
                 {post?.description}
@@ -84,7 +84,7 @@ const GetStudentsPost = () => {
                     />
                   </svg>
 
-                  <p className="text-xs">14 comments</p>
+                  <p className="text-xs"> Comments</p>
                 </label>
 
                 <span className="hidden sm:block" aria-hidden="true">
@@ -115,7 +115,7 @@ const GetStudentsPost = () => {
               >
                 <p className="text-xl flex mt-1 gap-2">
                   <TfiCommentAlt className="" />
-                  <span className="text-xl -mt-1">Comment</span>
+                  <span className="text-xl -mt-1 font-bold text-[#1AA3D0] dark:text-[#00A99D]">Comment</span>
                 </p>
               </label>
             </div>

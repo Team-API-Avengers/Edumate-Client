@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 // import { Link, useNavigate } from "react-router-dom";
 // import { BsFillQuestionDiamondFill } from "react-icons/bs";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const TutorTestQuestion = () => {
+        
+  const {user} = useContext(AuthContext)
+
+	//! Time Adjustment
+	const time = String(new Date().toLocaleTimeString());
+	const day = String(new Date());
+
   const navigate = useNavigate();
 
   //! Change Style
@@ -15,38 +23,18 @@ const TutorTestQuestion = () => {
   const [questions, setQuestions] = useState([]);
   const [data, setData] = useState([]);
 
-  //   const [questions, setQuestions] = useState( [
-  //     {
-  //       id: 1,
-  //       question: "What is the capital of France?",
-  //       options: ["Paris", "London", "Berlin", "Madrid"],
-  //       answer: "Paris",
-  //       disabled: false
-  //     },
-  //     {
-  //       id: 2,
-  //       question: "What is the highest mountain in the world?",
-  //       options: ["Kilimanjaro", "Everest", "Denali", "Aconcagua"],
-  //       answer: "Everest",
-  //       disabled: false
-  //     },
-  //     {
-  //       id: 3,
-  //       question: "Who wrote the Harry Potter series?",
-  //       options: ["J.K. Rowling", "Stephenie Meyer", "Suzanne Collins", "George R.R. Martin"],
-  //       answer: "J.K. Rowling",
-  //       disabled: false
-  //     }
-  //     ]);
+  
 
-  // ! Get Data from database
-
+// ! Get Questions and options from database by user selected department
   useEffect(() => {
     fetch(`https://edumate-second-server.vercel.app/api/v1/test`)
       .then((res) => res.json())
       .then((data) => setData(data?.data))
       .finally(() => {});
   }, []);
+
+
+
 
   // ! filtering data by category which is sorting
   function handleFilter(event) {
@@ -58,20 +46,29 @@ const TutorTestQuestion = () => {
     });
     // setFilteredData(filtered?.slice(0,4));
 
+
+
+
     //! For Display 5 question from array by randomly .. .. ..
-    const n = 8; // number of elements we want to get
+    const n = 4; // number of elements we want to get
     const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
     const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
     setQuestions(resultData);
   }
 
-  console.log(questions);
+
+
+  // console.log(questions);
 
   // ! Check and count the number of correct answers for each question in the array
 
   const [userAnswers, setUserAnswers] = useState(
     Array(questions.length).fill(null)
   );
+
+
+
+
   // Set scores
   const [score, setScore] = useState();
 
@@ -85,6 +82,10 @@ const TutorTestQuestion = () => {
     setQuestions(updatedQuestions);
   }
 
+
+
+
+  // !
   function calculateScore() {
     let newScore = 0;
     questions.forEach((question, index) => {
@@ -99,15 +100,52 @@ const TutorTestQuestion = () => {
   //   setFormStyle("hidden");
   // }
 
-  if (score === 7 || score > 7) {
+  if (score === 4 || score > 4) {
     toast.success(`Your score is ${score}`);
     // setNextButtonStyle("block");
-    navigate("/dashboard/add-Teacher");
+    // setNextButtonStyle("block");
   }
-  if (score <= 6) {
-    toast.error(`Your score is ${score} but the passing marks is 3`);
+  if (score <= 3) {
+    toast.error(`Your score is ${score} but the passing marks is 4`);
     navigate("/");
   }
+
+
+
+// ! Post score and user data to the mongoDB 
+  const handlePostScore = data => {
+    
+    const postQuestionScore = {
+      tutorName : user?.displayName,
+      tutorEmail : user?.email,
+      tutorImage : user?.photoURL,
+      score : data,
+      day : day,
+      time : time,
+    }
+   
+
+
+    //! Save addedStatus info to the database....
+            fetch('https://edumate-second-server.vercel.app/api/v1/tutortest', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify(postQuestionScore),
+            })
+              .then((res) => res.json())
+              .then((result) => {
+                   console.log(result);
+                 if (result.status === "success") {
+                        toast.success('Successfully posted your status')
+                     }
+                });
+
+  }
+
+
+
 
   return (
     <div className="mx-5 lg:mx-10">
@@ -147,7 +185,7 @@ const TutorTestQuestion = () => {
           {questions.map((question, index) => (
             <div className="my-3" key={question.id}>
               <p className="text-start p-1 rounded-lg pl-2 mt-8 lg:mt-4 mb-6 lg:mb-2 dark:text-gray-900 font-bold bg-yellow-300 w-2/3 mx-auto">
-                {question.question}
+                <span className="mx-2">{index + 1} </span> {question.question}
               </p>
               {question.options.map((option, optionIndex) => (
                 <div
@@ -179,9 +217,13 @@ const TutorTestQuestion = () => {
         </div>
       )}
 
-      {/* <Link to={'/dashboard/add-Teacher'}>
+
+      {
+        score >= 4 &&
+      <Link onClick={() => handlePostScore(score)} to={'/dashboard/add-Teacher'}>
        <button className='btn btn-success my-10 w-1/3'>Next</button>
-   </Link> */}
+   </Link>
+      }
     </div>
   );
 };
