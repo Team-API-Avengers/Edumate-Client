@@ -3,8 +3,12 @@ import { BsFillPersonFill, BsHourglassSplit } from "react-icons/bs";
 import { FaBookReader } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Loader from "../../Shared/Loader";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const Instructors = () => {
+  const { logUser } = useContext(AuthContext);
   const [allInstructor, setInstructors] = useState({});
 
   const [filteredData, setFilteredData] = useState({});
@@ -36,7 +40,10 @@ const Instructors = () => {
     console.log(query);
     // console.log(data);
     const filtered = allInstructor?.data?.filter((item) => {
-      return item?.location?.toLowerCase().includes(query) || item?.background?.toLowerCase().includes(query);
+      return (
+        item?.location?.toLowerCase().includes(query) ||
+        item?.background?.toLowerCase().includes(query)
+      );
     });
     setFilteredData(filtered);
     console.log(filtered);
@@ -56,7 +63,9 @@ const Instructors = () => {
           <div className="form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text"></span>
-              <span className="label-text-alt dark:text-gray-200 font-bold">Sort by location</span>
+              <span className="label-text-alt dark:text-gray-200 font-bold">
+                Sort by location
+              </span>
             </label>
 
             <select
@@ -79,7 +88,9 @@ const Instructors = () => {
           <div className="form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text"></span>
-              <span className="label-text-alt dark:text-gray-200 font-bold">Sort by department</span>
+              <span className="label-text-alt dark:text-gray-200 font-bold">
+                Sort by department
+              </span>
             </label>
 
             <select
@@ -117,7 +128,8 @@ const Instructors = () => {
 
                           <div className="p-5">
                             <h5 className="text-[#1AA3D0] dark:text-[#00A99D] font-bold text-md flex tracking-tight">
-                              <FaBookReader className="mt-1   text-black ml-1 mr-2" /> {instructor?.background}
+                              <FaBookReader className="mt-1   text-black ml-1 mr-2" />{" "}
+                              {instructor?.background}
                             </h5>
 
                             <p className="font-bold text-xl flex    text-gray-800">
@@ -127,16 +139,21 @@ const Instructors = () => {
                             </p>
 
                             <p className="font-bold text-md  mb-3 flex   text-gray-800">
-                              <BsHourglassSplit className="mt-1 text-xl mr-2" /> {instructor?.experience} years
-                              experience
+                              <BsHourglassSplit className="mt-1 text-xl mr-2" />{" "}
+                              {instructor?.experience} years experience
                             </p>
-                            <div>
+                            <div className="">
                               <Link to={`/instructor/${instructor?._id}`}>
                                 <button className="learn-more ">
-                                  <span className="circle bg-[#1AA3D0] dark:bg-[#00A99D]" aria-hidden="true">
+                                  <span
+                                    className="circle bg-[#1AA3D0] dark:bg-[#00A99D]"
+                                    aria-hidden="true"
+                                  >
                                     <span className="icon arrow"></span>
                                   </span>
-                                  <span className="button-text text-[#1AA3D0] dark:text-[#00A99D]">Learn More</span>
+                                  <span className="button-text text-[#1AA3D0] dark:text-[#00A99D]">
+                                    Learn More
+                                  </span>
                                 </button>
                               </Link>
                             </div>
@@ -166,7 +183,8 @@ const Instructors = () => {
 
                           <div className="p-5">
                             <h5 className="text-[#1AA3D0] dark:text-[#00A99D]  font-bold text-md flex tracking-tight">
-                              <FaBookReader className="mt-1   text-black ml-1 mr-2" /> {instructor?.background}
+                              <FaBookReader className="mt-1   text-black ml-1 mr-2" />{" "}
+                              {instructor?.background}
                             </h5>
 
                             <p className="font-bold text-xl flex    text-gray-800">
@@ -176,16 +194,21 @@ const Instructors = () => {
                             </p>
 
                             <p className="font-bold text-md  mb-3 flex   text-gray-800">
-                              <BsHourglassSplit className="mt-1 text-xl mr-2" /> {instructor?.experience} years
-                              experience
+                              <BsHourglassSplit className="mt-1 text-xl mr-2" />{" "}
+                              {instructor?.experience} years experience
                             </p>
                             <div>
                               <Link to={`/instructor/${instructor?._id}`}>
                                 <button className="learn-more ">
-                                  <span className="circle bg-[#1AA3D0] dark:bg-[#00A99D]" aria-hidden="true">
+                                  <span
+                                    className="circle bg-[#1AA3D0] dark:bg-[#00A99D]"
+                                    aria-hidden="true"
+                                  >
                                     <span className="icon arrow"></span>
                                   </span>
-                                  <span className="button-text text-[#1AA3D0] dark:text-[#00A99D]">Learn More</span>
+                                  <span className="button-text text-[#1AA3D0] dark:text-[#00A99D]">
+                                    Learn More
+                                  </span>
                                 </button>
                               </Link>
                             </div>

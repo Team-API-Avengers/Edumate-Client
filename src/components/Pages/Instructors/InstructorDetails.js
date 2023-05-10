@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineDelete } from "react-icons/ai";
 import {
   BsArrowRight,
   BsHourglassSplit,
@@ -19,7 +19,7 @@ const InstructorDetails = () => {
 
   const navigate = useNavigate();
 
-  const { user } = useContext(AuthContext);
+  const { user, logUser } = useContext(AuthContext);
   // console.log(user);
 
   const bookTeacher = (data) => {
@@ -67,6 +67,18 @@ const InstructorDetails = () => {
       });
   };
 
+  // delete teacher
+  const deleteTeacher = (data) => {
+    console.log(data);
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/tutor/${data?._id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => navigate("/"));
+  };
   return (
     <div>
       <div>
@@ -120,7 +132,7 @@ const InstructorDetails = () => {
                   {details?.data?.bio}
                 </p>
 
-                <div className="flex ">
+                <div className="flex justify-between">
                   <button
                     onClick={() => bookTeacher(details.data)}
                     className="group relative inline-flex mt-5 items-center overflow-hidden border border-black bg-[#1AA3D0] dark:bg-[#00A99D] px-8 py-4 text-white focus:outline-none focus:ring active:bg-blue-500 rounded-full"
@@ -129,10 +141,22 @@ const InstructorDetails = () => {
                       <BsArrowRight />
                     </span>
 
-                    <span className="text-sm font-medium transition-all group-hover:mr-4">
+                    <span className="text-sm font-bold  transition-all group-hover:mr-4">
                       Book Now
                     </span>
                   </button>
+                  <div>
+                    {logUser?.role === "Admin" && (
+                      <>
+                        <button
+                          onClick={() => deleteTeacher(details?.data)}
+                          className=" text-white font-bold flex gap-2 mt-5  rounded-full border py-4 px-8 bg-red-700"
+                        >
+                          Delete <AiOutlineDelete className=" text-xl" />
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
