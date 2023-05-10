@@ -12,17 +12,13 @@ const MyProfile = () => {
 
   console.log(logUser);
   return (
-    <div className=" border bg-green-100 p-20 m-10 ">
+    <div className=" border text-gray-200 bg-gradient-to-r from-[#1AA3D0] to-[#00A99D] ... p-20 m-10 w-3/4 mx-auto rounded-3xl border-none">
       <div>
         <div className="card">
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-1 md:grid-cols-4">
             <div className="col-span-1 flex justify-center">
               {user ? (
-                <img
-                  className=" w-40 h-40 m-5 rounded-full"
-                  src={user?.photoURL}
-                  alt="Album"
-                />
+                <img className=" w-40 h-40 m-5 rounded-full" src={user?.photoURL} alt="Album" />
               ) : (
                 <img
                   className=" w-40 h-40 m-5 rounded-full"
@@ -37,18 +33,14 @@ const MyProfile = () => {
                 <div>
                   {logUser?._id && (
                     <p className="text-start font-bold text-small mb-2">
-                      ID :
-                      <span className="  my-10">
-                        WBC-{logUser?._id?.slice(16, -1)}
-                      </span>
+                      ID : <span className="  my-10"> WBC-{logUser?._id?.slice(16, -1)}</span>
                       {/* Slice from 16 to last character */}
                     </p>
                   )}
                   <div>
                     {user?.displayName ? (
                       <p className="text-start font-bold mb-2 ">
-                        Name :{" "}
-                        <span className="font-bold">{user?.displayName}</span>
+                        Name : <span className="font-bold">{user?.displayName}</span>
                       </p>
                     ) : (
                       <p className="text-start font-bold mb-2 ">
@@ -84,9 +76,7 @@ const MyProfile = () => {
                     </p>
                     <div className="grid grid-cols-12">
                       {logUser?.role && (
-                        <p className="text-start col-span-10 font-serif font-semibold flex">
-                          Role : {logUser?.role}
-                        </p>
+                        <p className="text-start col-span-10 font-serif font-semibold flex">Role : {logUser?.role}</p>
                       )}
                     </div>
                   </>
