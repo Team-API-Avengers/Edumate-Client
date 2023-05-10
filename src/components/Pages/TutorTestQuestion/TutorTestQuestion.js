@@ -59,7 +59,7 @@ const TutorTestQuestion = () => {
     // setFilteredData(filtered?.slice(0,4));
 
     //! For Display 5 question from array by randomly .. .. ..
-    const n = 3; // number of elements we want to get
+    const n = 8; // number of elements we want to get
     const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
     const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
     setQuestions(resultData);
@@ -69,7 +69,9 @@ const TutorTestQuestion = () => {
 
   // ! Check and count the number of correct answers for each question in the array
 
-  const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
+  const [userAnswers, setUserAnswers] = useState(
+    Array(questions.length).fill(null)
+  );
   // Set scores
   const [score, setScore] = useState();
 
@@ -104,7 +106,7 @@ const TutorTestQuestion = () => {
   }
   if (score <= 2) {
     toast.error(`Your score is ${score} but the passing marks is 3`);
-    // navigate('/')
+    navigate("/");
   }
 
   return (
@@ -112,10 +114,15 @@ const TutorTestQuestion = () => {
       {/* TODO: Selector */}
       <div className="my ">
         <div>
-          <label className="block text-black dark:text-gray-300 text-xl font-semibold mt-6" id="title">
+          <label
+            className="block text-black dark:text-gray-300 text-xl font-semibold mt-6"
+            id="title"
+          >
             Select Your Department That You Want To Teach
           </label>
-          <p className="text-[#1AA3D0] dark:text[#00A99D] font-bold">Passing marks: 3</p>
+          <p className="text-[#1AA3D0] dark:text[#00A99D] font-bold">
+            your marks: {score}
+          </p>
 
           {/* Selector */}
           <select
@@ -143,13 +150,18 @@ const TutorTestQuestion = () => {
                 {question.question}
               </p>
               {question.options.map((option, optionIndex) => (
-                <div className="text-start dark:text-gray-200 w-2/3 mx-auto" key={optionIndex}>
+                <div
+                  className="text-start dark:text-gray-200 w-2/3 mx-auto"
+                  key={optionIndex}
+                >
                   <input
                     type="radio"
                     name={`question-${index}`}
                     value={option}
                     checked={userAnswers[index] === option}
-                    disabled={question.disabled && userAnswers[index] !== option}
+                    disabled={
+                      question.disabled && userAnswers[index] !== option
+                    }
                     onChange={() => handleAnswerSelect(index, option)}
                   />
                   <label>{option}</label>

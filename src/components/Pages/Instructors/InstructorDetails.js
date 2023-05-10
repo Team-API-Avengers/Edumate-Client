@@ -1,6 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { BsArrowRight, BsHourglassSplit, BsTelephoneFill } from "react-icons/bs";
+import {
+  BsArrowRight,
+  BsHourglassSplit,
+  BsTelephoneFill,
+} from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -52,19 +56,14 @@ const InstructorDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        //  change by siam
-        /*         // you should check the post another object properties . you always get a success status that's why successfully booked massage will be a toast.
-                // console.log("From check",data.status); // always success
-        
-                if (data.status === "success") {
-                  toast.success("Successfully booked your teacher");
-                  navigate("/dashboard/my-Teachers");
-                }
-                if (data?.status === "error") {
-                  toast.error("You already booked that teacher");
-                }
-         */
-        // navigate("/dashboard/my-Teachers");
+        if (data.data === "already booked") {
+          toast.error("You already booked that teacher");
+        } else {
+          toast.success("Successfully booked your teacher");
+          navigate("/dashboard/my-Teachers");
+        }
+        console.log(data);
+        navigate("/dashboard/my-Teachers");
       });
   };
 
@@ -105,7 +104,8 @@ const InstructorDetails = () => {
                     {details?.data?.experience} years experience
                   </p>
                   <p className="flex ">
-                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" /> <h1>{details?.data?.fee}</h1>
+                    <TbCurrencyTaka className="mt-1 mr-1 -ml-1 text-xl" />{" "}
+                    <h1>{details?.data?.fee}</h1>
                   </p>
                   <p className="flex ">
                     <HiLocationMarker className="mt-1 mr-1" />
@@ -116,7 +116,9 @@ const InstructorDetails = () => {
                     {details?.data?.email}
                   </p>
                 </div>
-                <p className="leading-relaxed text-start">{details?.data?.bio}</p>
+                <p className="leading-relaxed text-start">
+                  {details?.data?.bio}
+                </p>
 
                 <div className="flex ">
                   <button
@@ -127,7 +129,9 @@ const InstructorDetails = () => {
                       <BsArrowRight />
                     </span>
 
-                    <span className="text-sm font-medium transition-all group-hover:mr-4">Book Now</span>
+                    <span className="text-sm font-medium transition-all group-hover:mr-4">
+                      Book Now
+                    </span>
                   </button>
                 </div>
               </div>
