@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import Loader from "../../Shared/Loader";
-// import { AuthContext } from "../../Context/AuthProvider";
 import {
   BsFillPersonFill,
   // BsHourglassSplit,
@@ -35,19 +34,16 @@ const AllStudents = () => {
         {students?.map((student, idx) => (
           <div key={idx}>
             <div className="card lg:card-side rounded-full bg-gradient-to-b from-[#1AA3D0] to-[#00A99D] ... h-52 text-gray-100 dark:text-gray-100 shadow-xl m-8">
-              <img className="w-60 h-full rounded-full object-cover" src={student?.image} alt="" />
+              <img
+                className="w-60 h-full rounded-full object-cover"
+                src={student?.image}
+                alt=""
+              />
               <div className="card-body">
                 <h2 className="card-title">{student?.name}</h2>
                 <p className="text-start">{student?.email}</p>
                 <p className="text-start">{student?.phone}</p>
-                <div className="card-actions justify-end">
-                  <button className="learn-more ">
-                    <span className="circle" aria-hidden="true">
-                      <span className="icon arrow"></span>
-                    </span>
-                    <span className="button-text dark:text-gray-100">Learn More</span>
-                  </button>
-                </div>
+                {}
               </div>
             </div>
           </div>
@@ -74,7 +70,8 @@ const AllStudents = () => {
                     </p>
 
                     <p className="font-bold text-md   flex   text-gray-800">
-                      <MdMarkEmailUnread className="mt-1 mr-3" /> {student?.email}
+                      <MdMarkEmailUnread className="mt-1 mr-3" />{" "}
+                      {student?.email}
                     </p>
                     <p className="font-bold text-md  mb-3 flex   text-gray-800">
                       <BsTelephoneFill className="mt-1 mr-3" />
@@ -86,7 +83,9 @@ const AllStudents = () => {
                     <span className="circle" aria-hidden="true">
                       <span className="icon arrow"></span>
                     </span>
-                    <span className="button-text dark:text-[#bb86fc]">Learn More</span>
+                    <span className="button-text dark:text-[#bb86fc]">
+                      Learn More
+                    </span>
                   </button>
                 </div>
               </div>
