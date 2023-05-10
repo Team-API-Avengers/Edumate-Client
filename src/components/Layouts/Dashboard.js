@@ -6,7 +6,6 @@ import Loader from "../Shared/Loader";
 import Header from "../Shared/Header";
 import { AuthContext } from "../Context/AuthProvider";
 import DashboardHeader from "../Shared/DashboardHeader";
-import QuestionModal from "../Modals/QuestionModal";
 import { FaBlogger, FaChalkboardTeacher, FaHouseUser, FaUsers } from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
 import { BsFillPostcardFill } from "react-icons/bs";
@@ -129,7 +128,7 @@ const DashBoard = () => {
             )}
           </ul>
         </div>
-        <QuestionModal />
+        
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const TutorTestQuestion = () => {
 
   
 
-
+// ! Get Questions and options from database by user selected department
   useEffect(() => {
     fetch(`https://edumate-second-server.vercel.app/api/v1/test`)
       .then((res) => res.json())
@@ -50,7 +50,7 @@ const TutorTestQuestion = () => {
 
 
     //! For Display 5 question from array by randomly .. .. ..
-    const n = 8; // number of elements we want to get
+    const n = 4; // number of elements we want to get
     const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
     const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
     setQuestions(resultData);
@@ -65,6 +65,10 @@ const TutorTestQuestion = () => {
   const [userAnswers, setUserAnswers] = useState(
     Array(questions.length).fill(null)
   );
+
+
+
+
   // Set scores
   const [score, setScore] = useState();
 
@@ -78,6 +82,10 @@ const TutorTestQuestion = () => {
     setQuestions(updatedQuestions);
   }
 
+
+
+
+  // !
   function calculateScore() {
     let newScore = 0;
     questions.forEach((question, index) => {
@@ -86,26 +94,25 @@ const TutorTestQuestion = () => {
       }
     });
     setScore(newScore);
-    console.log(`${score}`)
   }
 
   // if(questions[1]){
   //   setFormStyle("hidden");
   // }
 
-  if (score === 7 || score > 7) {
+  if (score === 4 || score > 4) {
     toast.success(`Your score is ${score}`);
     // setNextButtonStyle("block");
     // setNextButtonStyle("block");
   }
-  if (score <= 6) {
-    toast.error(`Your score is ${score} but the passing marks is 3`);
+  if (score <= 3) {
+    toast.error(`Your score is ${score} but the passing marks is 4`);
     navigate("/");
   }
 
 
 
-
+// ! Post score and user data to the mongoDB 
   const handlePostScore = data => {
     
     const postQuestionScore = {
@@ -119,8 +126,8 @@ const TutorTestQuestion = () => {
    
 
 
-            //! Save addedStatus info to the database....
-            fetch('https://edumate-second-server.vercel.app/api/v1/searching-teacher', {
+    //! Save addedStatus info to the database....
+            fetch('https://edumate-second-server.vercel.app/api/v1/tutortest', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json',
@@ -129,13 +136,11 @@ const TutorTestQuestion = () => {
             })
               .then((res) => res.json())
               .then((result) => {
-                              console.log(result);
-                              if (result.status === "success") {
-                                  toast.success('Successfully posted your status')
-                              }
-                          });
-
-
+                   console.log(result);
+                 if (result.status === "success") {
+                        toast.success('Successfully posted your status')
+                     }
+                });
 
   }
 
@@ -180,7 +185,7 @@ const TutorTestQuestion = () => {
           {questions.map((question, index) => (
             <div className="my-3" key={question.id}>
               <p className="text-start p-1 rounded-lg pl-2 mt-8 lg:mt-4 mb-6 lg:mb-2 dark:text-gray-900 font-bold bg-yellow-300 w-2/3 mx-auto">
-                {question.question}
+                <span className="mx-2">{index + 1} </span> {question.question}
               </p>
               {question.options.map((option, optionIndex) => (
                 <div
@@ -214,7 +219,7 @@ const TutorTestQuestion = () => {
 
 
       {
-        score >= 8 &&
+        score >= 4 &&
       <Link onClick={() => handlePostScore(score)} to={'/dashboard/add-Teacher'}>
        <button className='btn btn-success my-10 w-1/3'>Next</button>
    </Link>

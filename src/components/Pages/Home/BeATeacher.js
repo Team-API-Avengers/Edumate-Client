@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 // import { AuthContext } from "../../../Context/AuthProvider";
 import ReviewAnimation from "../../Assets/Animation/Teacher.json";
 import Lottie from "lottie-react";
-import QuestionModal from "../../Modals/QuestionModal";
 import { Link } from "react-router-dom";
 
 const containerVariants = {
@@ -97,8 +96,7 @@ const BeATeacher = () => {
             </div>
           </motion.div>
 
-          {/* Modal */}
-          <QuestionModal />
+          
         </div>
       </div>
     </div>

@@ -180,7 +180,7 @@ const SkillAssessments = () => {
           {questions.map((question, index) => (
             <div className="my-3" key={question.id}>
               <p className="text-start p-1 rounded-lg pl-2 mt-8 lg:mt-4 mb-6 lg:mb-2 dark:text-gray-900 font-bold bg-yellow-300 w-2/3 mx-auto">
-                {question.question}
+               <span className="mx-2">{index + 1} </span> {question.question}
               </p>
               {question.options.map((option, optionIndex) => (
                 <div
