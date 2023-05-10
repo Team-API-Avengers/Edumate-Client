@@ -30,30 +30,27 @@ const CommentModal = ({ student }) => {
   //     });
   // }, [student?._id]);
 
-
-
-  const { isLoading, error, data: comments, refetch } = useQuery({
-    queryKey: ['comments'],
+  const {
+    isLoading,
+    error,
+    data: comments,
+    refetch,
+  } = useQuery({
+    queryKey: ["comments"],
     queryFn: async () => {
-  try {
-    const res = await fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`);
-            const data = await res.json();
-                return data?.data;
-             } 
-             catch (err) {
-              console.error(err);
-            }
-          },
-          })
+      try {
+        const res = await fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`);
+        const data = await res.json();
+        return data?.data;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+  });
 
-console.log(error);
+  console.log(error);
 
-
-console.log(comments);
-
-
-
-  
+  console.log(comments);
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -90,38 +87,28 @@ console.log(comments);
           toast.success("comment successfully posted");
           console.log("comment post", data);
           form.reset();
-          refetch()
+          refetch();
         }
       });
   };
 
   // console.log(student?.displayName);
 
-
-
-  if(isLoading) {
-    return <Loader />
+  if (isLoading) {
+    return <Loader />;
   }
 
   return (
-    <div className="">
+    <div>
       <input type="checkbox" id="commentModal" className="modal-toggle" />
       <div className="modal max-w-screen-md mx-auto bg-opacity-0">
         <div className="w-full border shadow-2xl dark:bg-gray-900 bg-white h-[600px] rounded-lg relative">
-          <label
-            htmlFor="commentModal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
-          >
+          <label htmlFor="commentModal" className="btn btn-sm btn-circle absolute right-2 top-2">
             ✕
           </label>
-          <h3 className="text-lg text-black dark:text-white mt-5 font-bold">
-            {student?.authorName}'s post
-          </h3>
+          <h3 className="text-lg text-[#1AA3D0] dark:text-[#00A99D] mt-5 font-bold">{student?.authorName}'s post</h3>
 
-          <div
-            className="max-w-screen-xl mx-auto overflow-y-auto"
-            style={{ maxHeight: "400px" }}
-          >
+          <div className="max-w-screen-xl mx-auto overflow-y-auto" style={{ maxHeight: "400px" }}>
             {comments.reverse()?.map((comment, idx) => (
               <div key={idx} className="flex justify-center p-5 gap-5">
                 <div className="avatar">
@@ -130,23 +117,16 @@ console.log(comments);
                   </div>
                 </div>
 
-                <div className="text-start px-3 border w-[600px] py-5 rounded-lg bg-gray-200">
-                  <p className="text-black dark:text-white">
-                    {comment?.authorName}
-                  </p>
-                  <small className="text-black dark:text-white">
-                    {comment?.comment}
-                  </small>
+                <div className="text-start px-3 border w-[600px] py-5 rounded-lg bg-gray-200 dark:text-gray-900">
+                  <p className="text-black ">{comment?.authorName}</p>
+                  <small className="text-black">{comment?.comment}</small>
                 </div>
               </div>
             ))}
           </div>
 
           <p className="py-4">
-            <form
-              onSubmit={addComment}
-              className="bottom-0 left-0 right-0 absolute m-5"
-            >
+            <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
               <div className="flex">
                 <textarea
                   name="comment"
@@ -154,7 +134,7 @@ console.log(comments);
                   className="textarea textarea-bordered textarea-md w-full"
                 ></textarea>
                 <button>
-                  <MdSend className="text-black mt-8 -ml-10 text-xl" />
+                  <MdSend className="text-[#1AA3D0] dark:text-[#00A99D] mt-8 -ml-10 text-4xl" />
                 </button>
               </div>
             </form>
