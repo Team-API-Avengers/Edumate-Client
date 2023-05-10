@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 import darkLogo from "../Assets/Logos/EDU_Dark_Logo.png";
 
 const Header = () => {
-  const { user, logOut, theme, setTheme } = useContext(AuthContext);
+  const { user, logUser, logOut, theme, setTheme } = useContext(AuthContext);
   console.log(user);
   // console.log("header logUser role", logUser);
 
@@ -43,10 +43,7 @@ const Header = () => {
 
   const [openNav, setOpenNav] = useState(false);
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    window.addEventListener("resize", () => window.innerWidth >= 960 && setOpenNav(false));
   }, []);
 
   const navStyle = ({ isActive }) => {
@@ -54,54 +51,48 @@ const Header = () => {
       textDecoration: "none",
       padding: "5px",
       borderRadius: "2px",
-      borderBottom: isActive ? "3px solid blue" : "none",
+      borderBottom: isActive ? "3px solid #00A99D" : "none",
     };
   };
 
   const navList = (
     <ul className="mb-4 font-bold mt-2 flex flex-col text-gray-200  dark:text-[#00A99D] lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
-      <NavLink
-        style={navStyle}
-        to={"/"}
-        className="flex   justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/"} className="flex   justify-center items-center">
         Home
       </NavLink>
 
-      <NavLink to={"/blog"}>Blog</NavLink>
+      <NavLink style={navStyle} to={"/blog"} className="flex justify-center items-center">
+        Blog
+      </NavLink>
 
       {/* {user?.uid && ( */}
-      <NavLink
-        style={navStyle}
-        to={"/dashboard"}
-        className="flex  justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/dashboard"} className="flex  justify-center items-center">
         Dashboard
       </NavLink>
       {/* )} */}
 
-      <NavLink
-        style={navStyle}
-        to={"/contact"}
-        className="flex justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/contact"} className="flex justify-center items-center">
         Contact
       </NavLink>
+      <NavLink style={navStyle} to={"/gallery"} className="flex justify-center items-center">
+        Gallery
+      </NavLink>
 
-      <NavLink
-        style={navStyle}
-        to={"/about-us"}
-        className="flex justify-center items-center"
-      >
+      <NavLink style={navStyle} to={"/about-us"} className="flex justify-center items-center">
         About
       </NavLink>
-      <NavLink
-        style={navStyle}
-        to={"/dashboard/skill-assessments"}
-        className="flex justify-center items-center"
-      >
-        Assessment Test
-      </NavLink>
+
+      {logUser?.role === "Teacher" && (
+        <NavLink style={navStyle} to={"/dashboard/skill-assessments"} className="flex justify-center items-center">
+          Assessment Test
+        </NavLink>
+      )}
+
+      {logUser?.role === "Student" && (
+        <NavLink style={navStyle} to={"/dashboard/student-post-box"} className="flex justify-center items-center">
+          Post
+        </NavLink>
+      )}
 
       {/* Profile Items */}
 
@@ -112,25 +103,15 @@ const Header = () => {
         Profile
       </NavLink>
       {user ? (
-        <a
-          href="/"
-          onClick={handleLogOut}
-          className="flex lg:hidden text-red-600 justify-center items-center"
-        >
+        <a href="/" onClick={handleLogOut} className="flex lg:hidden text-red-600 justify-center items-center">
           Sign Out
         </a>
       ) : (
         <>
-          <NavLink
-            to={"/authentication/login"}
-            className="flex lg:hidden justify-center mt-2  items-center"
-          >
+          <NavLink to={"/authentication/login"} className="flex lg:hidden justify-center mt-2  items-center">
             Sign In
           </NavLink>
-          <NavLink
-            to={"/authentication/signup"}
-            className="flex lg:hidden justify-center mt-2   items-center"
-          >
+          <NavLink to={"/authentication/signup"} className="flex lg:hidden justify-center mt-2   items-center">
             Sign Up
           </NavLink>
         </>
@@ -182,9 +163,6 @@ const Header = () => {
                         {user?.displayName}
                       </Link>
                     </li>
-                    <li>
-                      <Link to="/gallery">Gallery</Link>
-                    </li>
 
                     <li>
                       <button className="text-red-600" onClick={handleLogOut}>
@@ -205,11 +183,7 @@ const Header = () => {
               </ul>{" "}
             </div>
             <label className="swap hidden  lg:inline-flex swap-rotate mt-2">
-              <input
-                onClick={handleThemeSwitch}
-                className="hidden"
-                type="checkbox"
-              />
+              <input onClick={handleThemeSwitch} className="hidden" type="checkbox" />
               <BsSunFill className="swap-on fill-current text-yellow-500 text-4xl " />
               <BsMoonFill className="swap-off fill-current -ml-7 text-slate-500 text-4xl" />
             </label>
@@ -233,11 +207,7 @@ const Header = () => {
 
           <div className="flex">
             <label className="swap swap-rotate mr-5 my-2">
-              <input
-                onClick={handleThemeSwitch}
-                className="hidden"
-                type="checkbox"
-              />
+              <input onClick={handleThemeSwitch} className="hidden" type="checkbox" />
               <BsSunFill className="swap-on fill-current text-yellow-500 text-4xl" />
               <BsMoonFill className="swap-off fill-current text-slate-500 text-4xl" />
             </label>
