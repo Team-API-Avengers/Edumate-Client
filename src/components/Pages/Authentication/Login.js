@@ -226,7 +226,7 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 "></div>
             <p
               onClick={handleGoogle}
-              className="btn btn-outline text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... border-none w-full px-3 text-sm  rounded-full border-0"
+              className="btn btn-outline text-white bg-gradient-to-r from-green-400 to-blue-500 ... border-none w-full px-3 text-sm  rounded-full border-0"
             >
               Login with Google
             </p>
