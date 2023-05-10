@@ -58,7 +58,7 @@ const TutorTestQuestion = () => {
 
 
 
-  console.log(questions);
+  // console.log(questions);
 
   // ! Check and count the number of correct answers for each question in the array
 

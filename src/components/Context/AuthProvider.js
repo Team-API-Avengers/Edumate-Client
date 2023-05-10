@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // useEffect(() => {
+
   //   fetch(
   //     `https://edumate-second-server.vercel.app/api/v1/user/useremail/${user?.email}`
   //   )
@@ -64,15 +64,14 @@ const AuthProvider = ({ children }) => {
         const data = await res.json();
         return data?.data;
       } catch (err) {
-        console.error(err);
+        // console.error(err);
       }
     },
   });
 
 
 
-  // console.log("user", user);
-  // console.log("logUser", logUser);
+
 
 
 
@@ -103,6 +102,10 @@ const AuthProvider = ({ children }) => {
       photoURL: photoURL,
     });
   };
+
+
+
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
