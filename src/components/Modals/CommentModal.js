@@ -80,8 +80,8 @@ const CommentModal = ({ student }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          toast.success("comment successfully posted");
-          console.log("comment post", data);
+          toast.success("Comment added");
+          // console.log("comment post", data);
           form.reset();
           // refetch();
         }

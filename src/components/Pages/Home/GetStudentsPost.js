@@ -26,7 +26,7 @@ const GetStudentsPost = () => {
         <h2 id="title" className="text-4xl dark:text-gray-200">
           Student's Post
         </h2>
-        <p className="text-[#1AA3D0] dark:text-[#00A99D] font-semibold mb-4">
+        <p className=" dark:text-[#00A99D] font-semibold mb-4">
           Building a stronger education community together
         </p>
       </div>
@@ -40,7 +40,11 @@ const GetStudentsPost = () => {
           {/*TODO: Card Body */}
           <div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
             {post?.authorImage ? (
-              <img alt="img/author" src={post?.authorImage} className="h-14 w-14 rounded-lg object-cover" />
+              <img
+                alt="img/author"
+                src={post?.authorImage}
+                className="h-14 w-14 rounded-lg object-cover"
+              />
             ) : (
               <img
                 alt="img/author"
@@ -50,9 +54,13 @@ const GetStudentsPost = () => {
             )}
 
             <div>
-              <h3 className="font-medium text-start sm:text-lg">{post?.category}</h3>
+              <h3 className="font-medium text-start sm:text-lg">
+                {post?.category}
+              </h3>
 
-              <p className="line-clamp-2 text-start text-sm text-gray-700">{post?.description}</p>
+              <p className="line-clamp-2 text-start text-sm text-gray-700">
+                {post?.description}
+              </p>
 
               {/*TODO: Bottom Comment author name */}
               <div className="mt-2 sm:flex sm:items-center sm:gap-2">
@@ -85,7 +93,10 @@ const GetStudentsPost = () => {
 
                 <p className="hidden sm:block sm:text-xs font-bold text-[#1AA3D0] dark:text-[#00A99D]">
                   Posted by
-                  <a href="#a" className="font-medium mx-2 underline hover:text-gray-700">
+                  <a
+                    href="#a"
+                    className="font-medium mx-2 underline hover:text-gray-700"
+                  >
                     {post?.authorName}
                   </a>
                 </p>
