@@ -56,13 +56,13 @@ const StudentPost = () => {
             </h4>
             <h4 class="mb-2   text-md  ">{post?.description}</h4>
             <div className="mt-10">
-            <label
-              htmlFor="commentModal"
-              onClick={() => handleComment(post)}
-              className="py-5 w-2/3 mt-5 border border-black rounded-full "
-            >
-              <span className="px-7">Write a comment</span>
-            </label>
+              <label
+                htmlFor="commentModal"
+                onClick={() => handleComment(post)}
+                className="py-5 w-2/3 mt-5 border border-black rounded-full "
+              >
+                <span className="px-7">Write a comment</span>
+              </label>
             </div>
             <GetComments />
           </div>

@@ -18,20 +18,18 @@ const CommentModal = ({ student }) => {
 
   // //! Get all comments for this post by student post ID
 
-   useEffect(() => {
-     fetch(
-       `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
-     )
-       .then((res) => res.json())
-       .then((data) => {
-         setComment(data?.data);
-         console.log(data?.data);
-       });
-   }, [student?._id]);
+  useEffect(() => {
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setComment(data?.data);
+        console.log(data?.data);
+      });
+  }, [student?._id]);
 
-  
   console.log(comments);
-
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -68,7 +66,6 @@ const CommentModal = ({ student }) => {
           toast.success("Comment added");
           // console.log("comment post", data);
           form.reset();
-
         }
       });
   };
@@ -78,28 +75,37 @@ const CommentModal = ({ student }) => {
   //   return <Loader />;
   // }
 
-
   return (
     <div>
       <input type="checkbox" id="commentModal" className="modal-toggle" />
       <div className="modal max-w-screen-md mx-auto bg-opacity-0">
         <div className="w-full border shadow-2xl dark:bg-gray-900 bg-white h-[600px] rounded-lg relative">
-          <label htmlFor="commentModal" className="btn btn-sm btn-circle absolute right-2 top-2">
+          <label
+            htmlFor="commentModal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
             ✕
           </label>
-          <h3 className="text-lg text-[#1AA3D0] dark:text-[#00A99D] mt-5 font-bold">{student?.authorName}'s post</h3>
+          <h3 className="text-xl text-[#1AA3D0] dark:text-[#00A99D] mt-5 font-bold">
+            {student?.authorName}'s post
+          </h3>
 
-          <div className="max-w-screen-xl mx-auto overflow-y-auto" style={{ maxHeight: "400px" }}>
+          <div
+            className="max-w-screen-xl mx-auto overflow-y-auto"
+            style={{ maxHeight: "400px" }}
+          >
+            <p className="mt-2 font-semibold ">{comments?.length} Comments</p>
             {comments.reverse()?.map((comment, idx) => (
               <div key={idx} className="flex justify-center p-5 gap-5">
                 <div className="avatar">
-                  <div className="w-12 h-12 rounded-full">
+                  <div className="w-16 h-16 rounded-full">
                     <img src={comment?.authorImage} alt="CommenterImage" />
                   </div>
                 </div>
 
-                <div className="text-start px-3 border w-[600px] py-5 rounded-lg bg-gray-200 dark:text-gray-900">
-                  <p className="text-black ">{comment?.authorName}</p>
+                <div className="text-start px-3 border w-[600px] py-5 rounded-xl bg-gray-200 dark:text-gray-900">
+                  <p className="text-black font-bold ">{comment?.authorName}</p>
+
                   <small className="text-black">{comment?.comment}</small>
                 </div>
               </div>
@@ -107,7 +113,10 @@ const CommentModal = ({ student }) => {
           </div>
 
           <p className="py-4">
-            <form onSubmit={addComment} className="bottom-0 left-0 right-0 absolute m-5">
+            <form
+              onSubmit={addComment}
+              className="bottom-0 left-0 right-0 absolute m-5"
+            >
               <div className="flex">
                 <textarea
                   name="comment"
@@ -115,7 +124,7 @@ const CommentModal = ({ student }) => {
                   className="textarea textarea-bordered textarea-md w-full"
                 ></textarea>
                 <button>
-                  <MdSend className="text-[#1AA3D0] dark:text-[#00A99D] mt-8 -ml-10 text-4xl" />
+                  <MdSend className="text-[#1AA3D0] dark:text-[#00A99D] mt-8 -ml-10 text-3xl" />
                 </button>
               </div>
             </form>
