@@ -34,12 +34,11 @@ const AllStudents = () => {
       .then((data) => {
         console.log(data);
         if (data.data.deletedCount > 0) {
-          toast.success("Student removed successfully");
-          setLoading(true);
+          toast.success("Student removed 🤞");
+          navigate("/");
         }
       });
   };
-
   if (loading) {
     return <Loader />;
   }
