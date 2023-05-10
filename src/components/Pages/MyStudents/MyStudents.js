@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader";
-import {  toast } from 'react-toastify';
-
-
-
+import { toast } from "react-toastify";
 
 const MyStudents = () => {
   const { user } = useContext(AuthContext);
@@ -16,7 +13,7 @@ const MyStudents = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://edumate-second-server.vercel.app/api/v1/bookings/teacher/email?email=${ user?.email }`
+      `https://edumate-second-server.vercel.app/api/v1/bookings/teacher/email?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -32,36 +29,36 @@ const MyStudents = () => {
 
   console.log(students);
 
-
-
-
-
-  // ! Delete Student 
+  // ! Delete Student
   const handleDelete = (data) => {
     console.log(data);
     fetch(`/${data?._id}`, {
-			method: 'DELETE',
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				// console.log(data);
-				if (data.deletedCount > 0) {
-					toast.success(`delete successfully!!`);
-                    window.location.reload(true);
-				}
-			});
-  }
-
-
-
-
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.deletedCount > 0) {
+          toast.success(`delete successfully!!`);
+          window.location.reload(true);
+        }
+      });
+  };
 
   if (loading) {
     return <Loader />;
   }
   if (students?.length === 0) {
     return (
-      <p className="mt-40 font-bold text-4xl">You have not any student.</p>
+      <div className="space-y-2">
+        <p className="mt-40 font-bold text-red-700 text-4xl">
+          Opps..! No one has booked you yet
+        </p>
+        <h1 className="font-bold ">
+          Please goto student post section and express your interest.
+        </h1>
+        <h1 className="font-bold ">For any types of help, contact with us</h1>
+      </div>
     );
   }
   return (
@@ -85,30 +82,33 @@ const MyStudents = () => {
                   </thead>
 
                   <tbody>
-                    { students?.map((student, idx) => (
-                      <tr key={ idx }>
+                    {students?.map((student, idx) => (
+                      <tr key={idx}>
                         <td className="text-dark flex  justify-center items-center gap-5 border-b border-l border-[#E8E8E8] bg-[#F3F6FF] py-5 px-2 text-center text-base font-medium">
                           <div className="avatar">
                             <div className="w-12 rounded-full ">
                               <img
                                 alt="teacherImage"
-                                src={ student?.studentImage }
+                                src={student?.studentImage}
                               />
                             </div>
                           </div>
 
                           <div className="text-start">
-                            <p className="font-bold">{ student?.studentName }</p>
-                            <p className="">{ student?.studentEmail }</p>
+                            <p className="font-bold">{student?.studentName}</p>
+                            <p className="">{student?.studentEmail}</p>
                           </div>
                         </td>
-                        <td onClick={() => handleDelete(student)} className="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
+                        <td
+                          onClick={() => handleDelete(student)}
+                          className="text-dark border-b border-r border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium"
+                        >
                           <p className="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white">
                             Delete
                           </p>
                         </td>
                       </tr>
-                    )) }
+                    ))}
                   </tbody>
                 </table>
               </div>
