@@ -56,7 +56,8 @@ const Reviews = () => {
       <div className="container grid grid-cols-1 ms-3 lg:grid-cols-2">
         <div className="text-center lg:text-left p-10 -ml-14 lg:ml-0">
           <motion.h1
-            className="font-bold dark:text-[#0056F7] animated-text"
+            id="title"
+            className="font-bold text-[#1AA3D0] dark:text-[#00A99D]"
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1, fontSize: "30px" }}
             transition={{ delay: 0.3, type: "spring", duration: 1.5 }}
@@ -70,8 +71,7 @@ const Reviews = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, type: "spring", duration: 1.5 }}
           >
-            We want to hear form you ! You can share with us what you feel about
-            our services.
+            We want to hear form you ! You can share with us what you feel about our services.
           </motion.p>
 
           <div>
@@ -84,16 +84,11 @@ const Reviews = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, type: "spring", duration: 2 }}
         >
-          <form
-            onSubmit={handleReview}
-            className="card w-full lg:mt-10 p-4 lg:p-8 bg-transparent"
-          >
+          <form onSubmit={handleReview} className="card w-full lg:mt-10 p-4 lg:p-8 bg-transparent">
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#0056F7]">
-                Name
-              </label>
+              <label className="flex justify-start mb-3 dark:text-[#00A99D]">Name</label>
               <input
-                className="block border  border-blue-400 dark:text-black w-full  px-5 py-3 rounded-md outline-none"
+                className="block dark:text-black w-full  px-5 py-3 rounded-md outline-none border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
                 readOnly
                 defaultValue={user?.displayName}
                 type="text"
@@ -102,11 +97,9 @@ const Reviews = () => {
               />
             </div>
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#0056F7]">
-                Email
-              </label>
+              <label className="flex justify-start mb-3 dark:text-[#00A99D]">Email</label>
               <input
-                className="block border px-5 py-3 border-blue-400 shadow-md dark:text-black  w-full  rounded-md outline-none"
+                className="block px-5 py-3 shadow-md dark:text-black  w-full  rounded-md outline-none border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
                 readOnly
                 defaultValue={user?.email}
                 type="text"
@@ -116,17 +109,8 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#0056F7]">
-                How was your experience?
-              </label>
-              <input
-                name="rate"
-                type="range"
-                min="1"
-                max="5"
-                className="range range-success"
-                step="1"
-              />
+              <label className="flex justify-start mb-3 dark:text-[#00A99D]">How was your experience?</label>
+              <input name="rate" type="range" min="1" max="5" className="range range-success" step="1" />
               <div className="w-full flex justify-between text-xs px-2">
                 <span>
                   <BsFillStarFill className="text-orange-400 dark:text-[#fceb05]" />
@@ -147,12 +131,10 @@ const Reviews = () => {
             </div>
 
             <div className="my-2">
-              <label className="flex justify-start mb-3 dark:text-[#0056F7]">
-                Share your feedback
-              </label>
+              <label className="flex justify-start mb-3 dark:text-[#00A99D]">Share your feedback</label>
               <textarea
                 required
-                className="block dark:text-black border  border-blue-400 cursor-pointer w-full p-5 rounded-md"
+                className="block dark:text-black cursor-pointer w-full p-5 rounded-md border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
                 name="message"
                 id=""
                 cols="30"
@@ -160,7 +142,7 @@ const Reviews = () => {
               ></textarea>
             </div>
             <button
-              className="cursor-pointer btn w-1/2 transition ease-in-out delay-150 bg-blue-500 dark:bg-[#7A0EFF]  dark:hover:bg-[#3F008D] hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white mt-4"
+              className="cursor-pointer btn w-full border-none transition ease-in-out delay-150 bg-[#1AA3D0] dark:bg-[#00A99D]  dark:hover:bg-[#3F008D] hover:-translate-y-1 hover:scale-110 hover:bg-[#1AA3D0] hover:dark:bg-[#00A99D] duration-300 text-white mt-4"
               type="submit"
             >
               Send Feedback
