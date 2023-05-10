@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { toast } from "react-toastify";
@@ -15,20 +15,21 @@ const CommentModal = ({ student }) => {
 
   const { user } = useContext(AuthContext);
 
-  // const [comments, setComment] = useState([]);
-  // console.log(comments);
+  const [comments, setComment] = useState([]);
+  console.log(comments);
 
   // //! Get all comments for this post by student post ID
-  // useEffect(() => {
-  //   fetch(
-  //     `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setComment(data?.data);
-  //       console.log(data?.data);
-  //     });
-  // }, [student?._id]);
+
+   useEffect(() => {
+     fetch(
+       `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
+     )
+       .then((res) => res.json())
+       .then((data) => {
+         setComment(data?.data);
+         console.log(data?.data);
+       });
+   }, [student?._id]);
 
   const {
     isLoading,
@@ -51,6 +52,7 @@ const CommentModal = ({ student }) => {
   console.log(error);
 
   console.log(comments);
+
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -84,19 +86,19 @@ const CommentModal = ({ student }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          toast.success("comment successfully posted");
-          console.log("comment post", data);
+          toast.success("Comment added");
+          // console.log("comment post", data);
           form.reset();
-          refetch();
+
         }
       });
   };
 
   // console.log(student?.displayName);
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <div>
