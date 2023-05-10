@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader";
-import {  toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import PaymentModal from "../../Modals/PaymentModal";
 
 const MyTeachers = () => {
@@ -29,32 +29,24 @@ const MyTeachers = () => {
 
   // console.log(bookings);
 
-  
-
-
-
-
-  // ! Delete Student 
+  // ! Delete Student
   const handleDelete = (data) => {
-    console.log(data);
-    fetch(`/${data?._id}`, {
-			method: 'DELETE',
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				// console.log(data);
-				if (data.deletedCount > 0) {
-					toast.success(`delete successfully!!`);
+    // console.log(data);
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/bookings/${data?._id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.deletedCount > 0) {
+          toast.success("delete successfully!!");
           window.location.reload(true);
-				}
-			});
-  }
-
-
-
-
-
-
+        }
+      });
+  };
 
   if (loading) {
     return <Loader />;
@@ -136,10 +128,11 @@ const MyTeachers = () => {
                             Pay
                           </label>
                         </td>
-                        <td onClick={() => handleDelete(teacher)} className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium">
-                          <p
-                            className="border-blue-600 text-primary hover:bg-green-600 inline-block rounded border py-2 px-6 hover:text-white"
-                          >
+                        <td
+                          onClick={() => handleDelete(teacher)}
+                          className="border-b border-r text-black border-[#E8E8E8] bg-white py-5 px-2 text-center text-base font-medium"
+                        >
+                          <p className=" text-white  inline-block rounded border py-2 px-6 bg-red-700">
                             Delete
                           </p>
                         </td>
