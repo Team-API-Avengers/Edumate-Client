@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 // import { BsFillQuestionDiamondFill } from "react-icons/bs";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const TutorTestQuestion = () => {
+
+
+  const navigate = useNavigate()
+  
+    //! Change Style 
+    // const [nextButtonStyle, setNextButtonStyle] = useState("hidden");
+    // const [formStyle, setFormStyle] = useState("block");
+
+
 
   const [questions, setQuestions] = useState([])
   const [data, setData] = useState([]);
@@ -99,11 +110,26 @@ function calculateScore() {
 }
 
 
+
+
+  // if(questions[1]){
+  //   setFormStyle("hidden");
+  // }
+
+
+
+
+
+
+
 if(score === 3 || score > 3){
   toast.success(`Your score is ${score}`)
+  // setNextButtonStyle("block");
+  navigate('/dashboard/add-Teacher')
 }
-if(score === 0){
-  toast.error(`Your score is ${score}`)
+if(score <= 2){
+  toast.error(`Your score is ${score} but the passing marks is 3`)
+  // navigate('/')
 }
   
 
@@ -112,11 +138,12 @@ if(score === 0){
   return (
     <div className="mx-5 lg:mx-10">
     {/* TODO: Selector */}
-    <div className="my">
+    <div className="my ">
     <div>
        <label className="block text-black dark:text-gray-300 text-xl font-semibold" id="title">
          Select Your Department That You Want To Teach
        </label>
+       <p>Passing marks: 3</p>
 
        {/* Selector */}
        <select
@@ -170,9 +197,9 @@ if(score === 0){
 
 
 
-   {/* {score &&
-   <p>Your score: {score}</p>
-   } */}
+   {/* <Link to={'/dashboard/add-Teacher'}>
+       <button className='btn btn-success my-10 w-1/3'>Next</button>
+   </Link> */}
  </div>
   );
 };

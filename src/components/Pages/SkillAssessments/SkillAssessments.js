@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BsFillQuestionDiamondFill } from 'react-icons/bs';
+// import { BsFillQuestionDiamondFill } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
@@ -10,6 +10,10 @@ const SkillAssessments = () => {
 
     const navigate = useNavigate()
     
+    //! Change Style 
+    // const [formStyle, setFormStyle] = useState("block");
+
+
 
     const [questions, setQuestions] = useState([])
     const [data, setData] = useState([]);
@@ -36,7 +40,7 @@ const SkillAssessments = () => {
     // setFilteredData(filtered?.slice(0,4));
   
     //! For Display 5 question from array by randomly .. .. ..
-    const n = 3; // number of elements we want to get
+    const n = 10; // number of elements we want to get
     const shuffledArray = filtered.sort(() => 0.5 - Math.random()); // shuffles array
     const resultData = shuffledArray.slice(0, n + 2); // gets first n elements after shuffle
     setQuestions(resultData);
@@ -77,14 +81,31 @@ const SkillAssessments = () => {
     setScore(newScore);
   }
   
+
+
+
+
+  // if(questions[1]){
+  //   setFormStyle("hidden");
+  // }
+
+
+
+
+
+
+
+if(score === 3 || score > 3){
+  toast.success(`Your score is ${score}`)
+  navigate('/dashboard')
+}
+if(score === 0){
+  toast.error(`Your score is ${score}`)
+}
   
-  if(score === 3 || score > 3){
-    toast.success(`Your score is ${score}`)
-  }
-  if(score === 0){
-    toast.error(`Your score is ${score}`)
-  }
-    
+
+
+
   
   
   
@@ -100,6 +121,7 @@ const SkillAssessments = () => {
            </label>
     
            {/* Selector */}
+           <div>
            <select
              name="background"
              // className="select  h-11 text-gray-800 border border-green-400 mt-1 rounded w-full bg-sky-50"
@@ -113,6 +135,7 @@ const SkillAssessments = () => {
              <option>Commerce</option>
              <option>Arts</option>
            </select>
+           </div>
          </div>
         </div>
     
@@ -150,10 +173,7 @@ const SkillAssessments = () => {
     
     
     
-    
-       {/* {score &&
-       <p>Your score: {score}</p>
-       } */}
+       
      </div>
     );
 };
