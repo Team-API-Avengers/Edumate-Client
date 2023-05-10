@@ -3,16 +3,16 @@ import CommentModal from "../../Modals/CommentModal";
 import { TfiCommentAlt } from "react-icons/tfi";
 
 const GetStudentsPost = () => {
+  const [student, setStudent] = useState();
   const [allPost, setPost] = useState([]);
   //   console.log(allPost);
+  const [comments, setComment] = useState([]);
 
   useEffect(() => {
     fetch(`https://edumate-second-server.vercel.app/api/v1/searching-teacher`)
       .then((res) => res.json())
       .then((data) => setPost(data?.data));
   }, []);
-
-  const [student, setStudent] = useState();
 
   const handleComment = (data) => {
     setStudent(data);
@@ -38,7 +38,7 @@ const GetStudentsPost = () => {
           className="rounded-xl max-w-screen-xl mx-auto my-3 hover:shadow-md shadow-slate-500 border-2 border-gray-100 bg-white"
         >
           {/*TODO: Card Body */}
-          <div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
+          <div className="flex items-start  gap-4 p-4 sm:p-6 lg:p-8">
             {post?.authorImage ? (
               <img
                 alt="img/author"
@@ -54,53 +54,18 @@ const GetStudentsPost = () => {
             )}
 
             <div>
-
-              <h3 className="font-lg text-start sm:text-lg text-[#1AA3D0] dark:text-[#00A99D]">{post?.category}</h3>
-
-
+              <h3 className="text-xs text-start  text-[#1AA3D0] dark:text-[#00A99D]">
+                {post?.category}
+              </h3>
+              <p className="font-bold text-start sm:text-lg text-[#1AA3D0] dark:text-[#00A99D]">
+                {post?.authorName}
+              </p>
               <p className="line-clamp-2 text-start text-sm text-gray-700">
                 {post?.description}
               </p>
 
               {/*TODO: Bottom Comment author name */}
-              <div className="mt-2 sm:flex sm:items-center sm:gap-2">
-                <label
-                  htmlFor="commentModal"
-                  onClick={() => handleComment(post)}
-                  className="flex items-center gap-1 text-gray-500 cursor-pointer underline hover:text-gray-700"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-                    />
-                  </svg>
-
-                  <p className="text-xs"> Comments</p>
-                </label>
-
-                <span className="hidden sm:block" aria-hidden="true">
-                  &middot;
-                </span>
-
-                <p className="hidden sm:block sm:text-xs font-bold text-[#1AA3D0] dark:text-[#00A99D]">
-                  Posted by
-                  <a
-                    href="#a"
-                    className="font-medium mx-2 underline hover:text-gray-700"
-                  >
-                    {post?.authorName}
-                  </a>
-                </p>
-              </div>
+              <div className="mt-2 sm:flex sm:items-center sm:gap-2"></div>
             </div>
           </div>
 
@@ -115,7 +80,9 @@ const GetStudentsPost = () => {
               >
                 <p className="text-xl flex mt-1 gap-2">
                   <TfiCommentAlt className="" />
-                  <span className="text-xl -mt-1 font-bold text-[#1AA3D0] dark:text-[#00A99D]">Comment</span>
+                  <span className="text-xl -mt-1 font-bold text-[#1AA3D0] dark:text-[#00A99D]">
+                    Comment
+                  </span>
                 </p>
               </label>
             </div>

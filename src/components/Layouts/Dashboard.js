@@ -6,10 +6,15 @@ import Loader from "../Shared/Loader";
 import Header from "../Shared/Header";
 import { AuthContext } from "../Context/AuthProvider";
 import DashboardHeader from "../Shared/DashboardHeader";
-import { FaBlogger, FaChalkboardTeacher, FaHouseUser, FaUsers } from "react-icons/fa";
+import {
+  FaBlogger,
+  FaChalkboardTeacher,
+  FaHouseUser,
+  FaUsers,
+} from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
 import { BsFillPostcardFill } from "react-icons/bs";
-
+import { TbGiftCard } from "react-icons/tb";
 const DashBoard = () => {
   const { user, logUser, theme, loading } = useContext(AuthContext);
 
@@ -26,18 +31,28 @@ const DashBoard = () => {
         <DashboardHeader />
       </div>
       <div className="drawer drawer-mobile">
-        <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
+        <input
+          id="dashboard-drawer"
+          type="checkbox"
+          className="drawer-toggle"
+        />
 
         <div className="drawer-content">
           <Outlet></Outlet>
 
-          <label htmlFor="dashboard-drawer" className="btn btn-primary drawer-button hidden">
+          <label
+            htmlFor="dashboard-drawer"
+            className="btn btn-primary drawer-button hidden"
+          >
             Open drawer
           </label>
         </div>
 
         <div className="drawer-side border dark:bg-black dark:text-[#bb86fc] shadow-lg dark:shadow-white lg:ml-5">
-          <label htmlFor="dashboard-drawer" className="drawer-overlay bg-transparent shadow-lg "></label>
+          <label
+            htmlFor="dashboard-drawer"
+            className="drawer-overlay bg-transparent shadow-lg "
+          ></label>
           <ul className="menu p-4 w-60 bg-base-100 dark:bg-black dark:text-gray-100 shadow-lg  text-base-content">
             <Link to="/home" className="flex lg:hidden mb-10">
               <span className="text-4xl font-bold">
@@ -85,7 +100,6 @@ const DashBoard = () => {
                     Be a teacher
                   </Link>
                 </li>
-
               </>
             )}
 
@@ -106,7 +120,7 @@ const DashBoard = () => {
                 </li>
                 <li>
                   <Link to="/dashboard/my-achievement-certificate">
-                    <FaChalkboardTeacher />
+                    <TbGiftCard />
                     my Achievement
                   </Link>
                 </li>
@@ -128,7 +142,6 @@ const DashBoard = () => {
             )}
           </ul>
         </div>
-        
       </div>
     </div>
   );
