@@ -69,7 +69,7 @@ const InstructorDetails = () => {
 
   // delete teacher
   const deleteTeacher = (data) => {
-    console.log(data);
+    // console.log(data);
     fetch(
       `https://edumate-second-server.vercel.app/api/v1/tutor/${data?._id}`,
       {
@@ -77,7 +77,12 @@ const InstructorDetails = () => {
       }
     )
       .then((res) => res.json())
-      .then((data) => navigate("/"));
+      .then((data) => {
+        if (data.data.deletedCount > 0) {
+          toast.success("Teacher removed 🤞");
+        }
+        navigate("/dashboard/all-Teachers");
+      });
   };
   return (
     <div>
@@ -152,7 +157,7 @@ const InstructorDetails = () => {
                           onClick={() => deleteTeacher(details?.data)}
                           className=" text-white font-bold flex gap-2 mt-5  rounded-full border py-4 px-8 bg-red-700"
                         >
-                          Delete <AiOutlineDelete className=" text-xl" />
+                          Remove <AiOutlineDelete className=" text-xl" />
                         </button>
                       </>
                     )}

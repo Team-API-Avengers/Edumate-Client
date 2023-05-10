@@ -5,10 +5,12 @@ import Loader from "../../Shared/Loader";
 import { BsFillPersonFill, BsTelephoneFill } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AllStudents = () => {
   const { logUser } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const [students, SetStudent] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -25,13 +27,18 @@ const AllStudents = () => {
   // delete student
   const deleteStudent = (data) => {
     console.log(data);
-    fetch(``, {
+    fetch(`https://edumate-second-server.vercel.app/api/v1/user/${data?._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.data.deletedCount > 0) {
+          toast.success("Student removed 🤞");
+          navigate("/");
+        }
+      });
   };
-
   if (loading) {
     return <Loader />;
   }
