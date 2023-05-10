@@ -1,32 +1,59 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { toast } from "react-toastify";
 import { MdSend } from "react-icons/md";
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../Shared/Loader";
 
 const CommentModal = ({ student }) => {
   //! Time Adjustment
   const time = String(new Date().toLocaleTimeString());
   const day = String(new Date());
+
   console.log(student?._id);
 
   const { user } = useContext(AuthContext);
 
-  const [comments, setComment] = useState([]);
-  console.log(comments);
+  // const [comments, setComment] = useState([]);
+  // console.log(comments);
 
-  //! Get all comments for this post by student post ID
-  useEffect(() => {
-    fetch(
-      `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setComment(data?.data);
-        console.log(data?.data);
-      });
-  }, [student?._id]);
+  // //! Get all comments for this post by student post ID
+  // useEffect(() => {
+  //   fetch(
+  //     `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setComment(data?.data);
+  //       console.log(data?.data);
+  //     });
+  // }, [student?._id]);
+
+
+
+  const { isLoading, error, data: comments, refetch } = useQuery({
+    queryKey: ['comments'],
+    queryFn: async () => {
+  try {
+    const res = await fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`);
+            const data = await res.json();
+                return data?.data;
+             } 
+             catch (err) {
+              console.error(err);
+            }
+          },
+          })
+
+console.log(error);
+
+
+console.log(comments);
+
+
+
+  
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -63,11 +90,18 @@ const CommentModal = ({ student }) => {
           toast.success("comment successfully posted");
           console.log("comment post", data);
           form.reset();
+          refetch()
         }
       });
   };
 
   // console.log(student?.displayName);
+
+
+
+  if(isLoading) {
+    return <Loader />
+  }
 
   return (
     <div className="">
@@ -89,7 +123,7 @@ const CommentModal = ({ student }) => {
             style={{ maxHeight: "400px" }}
           >
             {comments.reverse()?.map((comment, idx) => (
-              <div className="flex justify-center p-5 gap-5">
+              <div key={idx} className="flex justify-center p-5 gap-5">
                 <div className="avatar">
                   <div className="w-12 h-12 rounded-full">
                     <img src={comment?.authorImage} alt="CommenterImage" />
@@ -120,7 +154,6 @@ const CommentModal = ({ student }) => {
                   className="textarea textarea-bordered textarea-md w-full"
                 ></textarea>
                 <button>
-                  {" "}
                   <MdSend className="text-black mt-8 -ml-10 text-xl" />
                 </button>
               </div>

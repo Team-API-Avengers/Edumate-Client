@@ -99,12 +99,12 @@ const TutorTestQuestion = () => {
   //   setFormStyle("hidden");
   // }
 
-  if (score === 3 || score > 3) {
+  if (score === 7 || score > 7) {
     toast.success(`Your score is ${score}`);
     // setNextButtonStyle("block");
     navigate("/dashboard/add-Teacher");
   }
-  if (score <= 2) {
+  if (score <= 6) {
     toast.error(`Your score is ${score} but the passing marks is 3`);
     navigate("/");
   }

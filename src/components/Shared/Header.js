@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 // import logo from "../../Assets/logo.png";
 // import darkLogo from "../../Assets/dark-Logo.png";
-import logo from "../Assets/Logos/EDU_LOGO.png";
+// import logo from "../Assets/Logos/EDU_LOGO.png";
 import darkLogo from "../Assets/Logos/EDU_Dark_Logo.png";
 
 const Header = () => {
@@ -94,6 +94,13 @@ const Header = () => {
         className="flex justify-center items-center"
       >
         About
+      </NavLink>
+      <NavLink
+        style={navStyle}
+        to={"/dashboard/skill-assessments"}
+        className="flex justify-center items-center"
+      >
+        Assessment Test
       </NavLink>
 
       {/* Profile Items */}
