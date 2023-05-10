@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
+// import { AuthContext } from "../../Context/AuthProvider";
 import Loader from "../../Shared/Loader";
 import { motion } from "framer-motion";
 
@@ -12,7 +12,10 @@ const Blog = () => {
     // fetch(`blogdata.json`)
     fetch(`https://edumate-second-server.vercel.app/api/v1/blogs`)
       .then((res) => res.json())
-      .then((blog) => setBlog(blog?.data))
+      .then((blog) => {
+        setBlog(blog?.data)
+        // console.log(blog);
+      })
       .finally(() => {
         setLoading(false);
       });
@@ -40,7 +43,7 @@ const Blog = () => {
         transition={{ duration: 2 }}
       >
         {blogs &&
-          blogs.map((singleBlog, i) => (
+          blogs?.reverse()?.map((singleBlog, i) => (
             <Link key={i} to={`/blog/${singleBlog?._id}`}>
               <motion.article
                 className="rounded-xl border h-72 border-green-100  bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
