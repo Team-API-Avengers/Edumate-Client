@@ -4,7 +4,7 @@ import Loader from "../../Shared/Loader";
 import { toast } from "react-toastify";
 
 const MyStudents = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logUser } = useContext(AuthContext);
   // console.log(user?.email);
 
   const [students, setStudents] = useState([]);
@@ -40,7 +40,7 @@ const MyStudents = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.deletedCount > 0) {
           toast.success(`delete successfully!!`);
           window.location.reload(true);
