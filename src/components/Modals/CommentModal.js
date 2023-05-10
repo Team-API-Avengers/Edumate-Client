@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { toast } from "react-toastify";
@@ -15,45 +15,38 @@ const CommentModal = ({ student }) => {
 
   const { user } = useContext(AuthContext);
 
-  // const [comments, setComment] = useState([]);
-  // console.log(comments);
+  const [comments, setComment] = useState([]);
+  console.log(comments);
 
   // //! Get all comments for this post by student post ID
-  // useEffect(() => {
-  //   fetch(
-  //     `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setComment(data?.data);
-  //       console.log(data?.data);
-  //     });
-  // }, [student?._id]);
+  useEffect(() => {
+    fetch(
+      `https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setComment(data?.data);
+        console.log(data?.data);
+      });
+  }, [student?._id]);
 
+  //   const { isLoading, error, data: comments, refetch } = useQuery({
+  //     queryKey: ['comments'],
+  //     queryFn: async () => {
+  //   try {
+  //     const res = await fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`);
+  //             const data = await res.json();
+  //                 return data?.data;
+  //              }
+  //              catch (err) {
+  //               console.error(err);
+  //             }
+  //           },
+  //           })
 
+  // console.log(error);
 
-  const { isLoading, error, data: comments, refetch } = useQuery({
-    queryKey: ['comments'],
-    queryFn: async () => {
-  try {
-    const res = await fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`);
-            const data = await res.json();
-                return data?.data;
-             } 
-             catch (err) {
-              console.error(err);
-            }
-          },
-          })
-
-console.log(error);
-
-
-console.log(comments);
-
-
-
-  
+  // console.log(comments);
 
   //! Handle function for add comment
   const addComment = (e) => {
@@ -90,18 +83,16 @@ console.log(comments);
           toast.success("comment successfully posted");
           console.log("comment post", data);
           form.reset();
-          refetch()
+          // refetch();
         }
       });
   };
 
   // console.log(student?.displayName);
 
-
-
-  if(isLoading) {
-    return <Loader />
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <div className="">
