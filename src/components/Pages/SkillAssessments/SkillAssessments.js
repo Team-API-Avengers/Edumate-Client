@@ -120,7 +120,7 @@ const SkillAssessments = () => {
 
 
             //! Save addedStatus info to the database....
-            fetch('https://edumate-second-server.vercel.app/api/v1/searching-teacher', {
+            fetch('https://edumate-second-server.vercel.app/api/v1/assesment', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json',
