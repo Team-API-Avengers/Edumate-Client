@@ -3,8 +3,6 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { toast } from "react-toastify";
 import { MdSend } from "react-icons/md";
-import { useQuery } from "@tanstack/react-query";
-import Loader from "../Shared/Loader";
 
 const CommentModal = ({ student }) => {
   //! Time Adjustment
@@ -31,26 +29,7 @@ const CommentModal = ({ student }) => {
        });
    }, [student?._id]);
 
-  const {
-    isLoading,
-    error,
-    data: comments,
-    refetch,
-  } = useQuery({
-    queryKey: ["comments"],
-    queryFn: async () => {
-      try {
-        const res = await fetch(`https://edumate-second-server.vercel.app/api/v1/comment/${student?._id}`);
-        const data = await res.json();
-        return data?.data;
-      } catch (err) {
-        console.error(err);
-      }
-    },
-  });
-
-  console.log(error);
-
+  
   console.log(comments);
 
 
