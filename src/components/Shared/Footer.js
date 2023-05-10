@@ -20,8 +20,7 @@ const Footer = () => {
               </div>
 
               <p className="mt-6 max-w-md text-center leading-relaxed text-white  dark:text-[#fff] sm:max-w-xs sm:text-left">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque
-                neque.
+                Building a community of educators to share knowledge and support.
               </p>
 
               <ul className="mt-8 flex justify-center dark:text-[#bb86fc] gap-6 sm:justify-start md:gap-8">
@@ -120,26 +119,20 @@ const Footer = () => {
                 <nav aria-label="Footer About Nav" className="mt-8">
                   <ul className="space-y-4 text-sm">
                     <li>
-                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Company History
+                      <a href="/about-us" className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 ">
+                        About ours team
                       </a>
                     </li>
 
                     <li>
-                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Meet the Team
+                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/about-us">
+                        Team members
                       </a>
                     </li>
 
                     <li>
-                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Employee Handbook
-                      </a>
-                    </li>
-
-                    <li>
-                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Careers
+                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/contact">
+                        Contact ours team
                       </a>
                     </li>
                   </ul>
@@ -153,25 +146,19 @@ const Footer = () => {
                   <ul className="space-y-4 text-sm">
                     <li>
                       <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Web Development
+                        Tution for students
                       </a>
                     </li>
 
                     <li>
                       <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Web Design
+                        Tution for teachers
                       </a>
                     </li>
 
                     <li>
                       <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Marketing
-                      </a>
-                    </li>
-
-                    <li>
-                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Google Ads
+                        Searching option are available
                       </a>
                     </li>
                   </ul>
@@ -179,32 +166,24 @@ const Footer = () => {
               </div>
 
               <div className="text-center sm:text-left">
-                <p className="text-lg font-medium text-gray-200  dark:text-gray-200">Helpful Links</p>
+                <p className="text-lg font-medium text-gray-200  dark:text-gray-200">Others Links</p>
 
                 <nav aria-label="Footer Helpful Nav" className="mt-8">
                   <ul className="space-y-4 text-sm">
                     <li>
                       <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        FAQs
+                        Home page
                       </a>
                     </li>
 
                     <li>
-                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/">
-                        Support
+                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/contact">
+                        Contact us
                       </a>
                     </li>
-
                     <li>
-                      <a className="group flex justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end" href="/">
-                        <span className="text-gray-200  dark:text-gray-200 transition group-hover:text-gray-200 ">
-                          Live Chat
-                        </span>
-
-                        <span className="relative flex h-2 w-2">
-                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
-                        </span>
+                      <a className="text-gray-200  dark:text-gray-200 transition hover:text-gray-200 " href="/gallery">
+                        Gallery
                       </a>
                     </li>
                   </ul>
@@ -235,7 +214,7 @@ const Footer = () => {
                         />
                       </svg>
 
-                      <span className="flex-1 text-gray-200  dark:text-gray-200">john@doe.com</span>
+                      <span className="flex-1 text-gray-200  dark:text-gray-200">apiavengers@gmail.com</span>
                     </a>
                   </li>
 
@@ -281,7 +260,7 @@ const Footer = () => {
                     </svg>
 
                     <address className="-mt-0.5 flex-1 not-italic text-gray-200  dark:text-gray-200">
-                      213 Lane, London, United Kingdom
+                      213 Uttara, Dhaka, Bangladesh
                     </address>
                   </li>
                 </ul>

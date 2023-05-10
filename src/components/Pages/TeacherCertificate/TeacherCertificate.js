@@ -4,35 +4,47 @@ import premeumLogo from '../../Assets/Images/premeium-award.png'
 
 
 const TeacherCertificate = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     return (
         <div >
-            <h1>My Achievement</h1>
-            <div className='border m-3 grid grid-cols-11 certificate'>
+            <h1 className='text-2xl font-extrabold mt-5'>Certification</h1>
 
-                <div className='border w-full col-span-9 flex items-center justify-center overflow-visible h-[370px] mt-3 border-black bg-red-100'>
-                    <div className="content">
-                    <h1>API Avengers </h1>
-                    <h2>Certificate of Completion</h2>
-                    <h1>Name: {user?.displayName} </h1>
-                    <h1>Email: {user?.email}</h1>
-                    </div>
-                </div>
+            <div className='flex justify-center items-center mt-10'>
+                <div className='w-4/5 certificate shadow-xl'>
 
-
-
-                <div className='border w-96 col-span-2 overflow-visible border-black h-[400px] bg-red-100'>
-                    <div className='border w-96 overflow-visible h-[400px] rounded-l-3xl bg-blue-100'>
-
-                    <div className="avatar mt-36 ml-[-380px]">
-                    <div className="w-40 rounded-full ring-offset-base-100 ring-offset-2">
-                        <img src={premeumLogo} alt='' />
-                    </div>
-                    </div>
+                    <div className=' border-8 border-blue-600 rounded-md p-6 w-full flex justify-center items-center   h-[370px] mt-3  '>
+                        <div className="avatar">
+                            <div className="w-40 rounded-full ring-offset-2">
+                                <img src={premeumLogo} alt='' />
+                            </div>
+                        </div>
+                        <div className="content">
+                            <h1 className='text-xl font-bold'>API Avengers </h1>
+                            <h2>Certificate of Completion</h2>
+                            <hr />
+                            <h1 className='mt-3'>Name: {user?.displayName} </h1>
+                            <h1>Email: {user?.email}</h1>
+                        </div>
 
                     </div>
+
+
+
+                    {/* <div className='border w-96 col-span-2 overflow-visible border-black h-[400px] bg-red-100'>
+    <div className='border w-96 overflow-visible h-[400px] rounded-l-3xl bg-blue-100'>
+
+        <div className="avatar mt-36 ml-[-380px]">
+            <div className="w-40 rounded-full ring-offset-base-100 ring-offset-2">
+                <img src={premeumLogo} alt='' />
+            </div>
+        </div>
+
+    </div>
+</div> */}
                 </div>
             </div>
+
+
         </div>
     );
 };
