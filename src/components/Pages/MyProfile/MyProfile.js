@@ -15,7 +15,7 @@ const MyProfile = () => {
 
   
   useEffect(() => {
-    fetch(`https://edumate-second-server.vercel.app/api/v1/tutortest/email?email=${user?.email}`)
+    fetch(`https://edumate-second-server.vercel.app/api/v1/assesment/email?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setData(data?.data))
       .finally(() => {});
@@ -23,7 +23,7 @@ const MyProfile = () => {
 
   // const [editEmail, setEditEmail] = useState();
 
-  // console.log(logUser);
+  console.log(data);
   return (
     <div className=" border text-gray-200 bg-gradient-to-r from-[#1AA3D0] to-[#00A99D] ... lg:p-20 m-10 w-3/4 mx-auto rounded-3xl border-none">
       <div>
@@ -33,9 +33,9 @@ const MyProfile = () => {
           <div className="flex justify-between lg:mb-[-55px] lg:mt-[-55px]">
             <div></div>
             <div>
-              {data && 
-              <img className="w-24 rounded-full" src ={DynamicLogo} alt="" />
-              }
+              {data?.map((scoreData, idx) => 
+              <img key={idx} className="w-24 rounded-full" src ={DynamicLogo} alt="" />
+              )}
             </div>
           </div>
 
