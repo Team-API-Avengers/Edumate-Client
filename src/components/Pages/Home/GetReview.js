@@ -15,7 +15,9 @@ const GetReview = () => {
   const [showAll, setShowAll] = useState(false);
 
   const getCategoryData = async () => {
-    const response = await fetch("https://edumate-second-server.vercel.app/api/v1/feedback");
+    const response = await fetch(
+      "https://edumate-second-server.vercel.app/api/v1/feedback"
+    );
     const data = await response.json();
     setCategoryData(data);
   };
@@ -50,7 +52,10 @@ const GetReview = () => {
           <h2 id="title" className="text-4xl  font-bold text-[#1AA3D0] ">
             Students Reviews
           </h2>
-
+          <p className="font-bold">
+            Real opinions, real influence. Explore user reviews and make
+            informed decisions.
+          </p>
           <div className="mt-4 flex items-center gap-4">
             <p className="text-3xl font-medium animated-text">
               3.8
@@ -117,7 +122,9 @@ const GetReview = () => {
                     src={feedback?.image}
                   />
                   <p className="text-start">
-                    <span className="text-s block text-gray-500 dark:text-[#F0F5FF]">{feedback?.name}</span>
+                    <span className="text-s block text-gray-500 dark:text-[#F0F5FF]">
+                      {feedback?.name}
+                    </span>
                     <span className="text-s font-bold block text-[#00A99D] dark:text-[#00A99D]">
                       12th January, 2024
                     </span>
@@ -207,7 +214,9 @@ const GetReview = () => {
                           src={feedback?.image}
                         />
                         <p className="text-start">
-                          <span className="text-xs block text-gray-500 dark:text-gray-200">{feedback?.name}</span>
+                          <span className="text-xs block text-gray-500 dark:text-gray-200">
+                            {feedback?.name}
+                          </span>
                           <span className="text-s font-bold block text-[#00A99D] dark:text-[#00A99D]">
                             12th January, 2024
                           </span>
