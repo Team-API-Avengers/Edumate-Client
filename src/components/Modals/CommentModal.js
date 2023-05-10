@@ -70,10 +70,10 @@ const CommentModal = ({ student }) => {
   // console.log(student?.displayName);
 
   return (
-    <div className="bg-red-500">
+    <div className="">
       <input type="checkbox" id="commentModal" className="modal-toggle" />
-      <div className="modal max-w-screen-md mx-auto">
-        <div className="w-full border border-black dark:bg-gray-900 bg-white h-[600px] rounded-lg relative">
+      <div className="modal max-w-screen-md mx-auto bg-opacity-0">
+        <div className="w-full border shadow-2xl dark:bg-gray-900 bg-white h-[600px] rounded-lg relative">
           <label
             htmlFor="commentModal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
@@ -121,7 +121,7 @@ const CommentModal = ({ student }) => {
                 ></textarea>
                 <button>
                   {" "}
-                  <MdSend className="text-black mt-10 -ml-10 text-xl" />
+                  <MdSend className="text-black mt-8 -ml-10 text-xl" />
                 </button>
               </div>
             </form>
