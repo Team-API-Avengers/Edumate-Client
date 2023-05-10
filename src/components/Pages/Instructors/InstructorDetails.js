@@ -79,7 +79,7 @@ const InstructorDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.data.deletedCount > 0) {
-          toast.success("Teacher removed successfully");
+          toast.success("Teacher removed 🤞");
         }
         navigate("/dashboard/all-Teachers");
       });
