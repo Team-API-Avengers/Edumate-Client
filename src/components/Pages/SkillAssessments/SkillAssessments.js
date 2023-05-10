@@ -1,12 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 // import { BsFillQuestionDiamondFill } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const SkillAssessments = () => {
 
     const {user} = useContext(AuthContext)
+
+	//! Time Adjustment
+	const time = String(new Date().toLocaleTimeString());
+	const day = String(new Date());
+
+
 
     const navigate = useNavigate()
     
@@ -16,6 +22,9 @@ const SkillAssessments = () => {
 
 
     const [questions, setQuestions] = useState([])
+
+
+    // Store Get Questions
     const [data, setData] = useState([]);
   
 
@@ -56,10 +65,13 @@ const SkillAssessments = () => {
   
   
   // ! Check and count the number of correct answers for each question in the array 
-  
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
-  // Set scores
+
+
+  //! Store score
   const [score, setScore] = useState();
+
+
   
   function handleAnswerSelect(questionIndex, selectedOption) {
     const newAnswers = [...userAnswers];
@@ -85,9 +97,6 @@ const SkillAssessments = () => {
 
 
 
-  // if(questions[1]){
-  //   setFormStyle("hidden");
-  // }
 
 
 
@@ -106,6 +115,41 @@ if(score === 0){
 
 
 
+
+
+// ! Score posting in database
+const handlePostScore = data => {
+    
+  const postQuestionScore = {
+    tutorName : user?.displayName,
+    tutorEmail : user?.email,
+    tutorImage : user?.photoURL,
+    score : data,
+    day : day,
+    time : time,
+  }
+ 
+
+
+          //! Save addedStatus info to the database....
+          fetch('', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(postQuestionScore),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+               console.log(result);
+               if (result.status === "success") {
+                     toast.success('Successfully posted your status')
+                   }
+              });
+
+
+
+}
   
   
   
@@ -168,6 +212,21 @@ if(score === 0){
     
     
        <button className="btn btn-primary my-10" onClick={calculateScore}>Submit</button>
+
+
+
+
+
+
+       {
+        score >= 8 &&
+      <Link onClick={() => handlePostScore(score)} to={'/dashboard/add-Teacher'}>
+       <button className='btn btn-success my-10 w-1/3'>Generate Certificate</button>
+   </Link>
+      }
+
+
+
        </div>
     }
     

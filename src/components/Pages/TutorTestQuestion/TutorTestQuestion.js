@@ -131,7 +131,6 @@ const TutorTestQuestion = () => {
               .then((result) => {
                               console.log(result);
                               if (result.status === "success") {
-                                  e.target.reset()
                                   toast.success('Successfully posted your status')
                               }
                           });
