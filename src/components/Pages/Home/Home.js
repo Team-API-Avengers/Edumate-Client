@@ -51,22 +51,20 @@ const Home = () => {
 
   console.log(filteredData);
 
-
-
-
   if (loading) {
     return <Loader />;
   }
 
   return (
-    <div>
+    <div className="space-y-20">
       <Hero />
 
       {/* tutor Search Field*/}
       <div className="my-5 text-2xl font-semibold mx-10">
-        <h1 className="text-[#1AA3D0] dark:text-[#00A99D]">
-          Name/ Location / Department
+        <h1 id="title" className="text-[#1AA3D0] dark:text-[#00A99D] text-4xl">
+          Search Teacher
         </h1>
+        <p className="w-full text-md">Find your teacher by name / location</p>
         <div className=" bg-gradient-to-r from-[#1AA3D0] to-[#00A99D] ... rounded-lg mt-4 grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-3">
             {filteredData[1] ? (
@@ -84,10 +82,10 @@ const Home = () => {
             )}
           </div>
 
-          <div className="lg:col-span-9 mx-5 mb-5">
+          <div className="lg:col-span-9 mx-5 ">
             <div
               id="searchBox"
-              className="px-4 flex flex-col py-5 sm:flex-row justify-center items-start sm:items-center dark:rounded-b-lg"
+              className="flex mt-6 justify-center items-center mb-5"
             >
               <input
                 placeholder="Search your tutor"
@@ -114,26 +112,17 @@ const Home = () => {
         </div>
       </div>
 
-
-
-
       <AllTeacherSlider />
-
-
 
       {/* {user && <StudentPostBox />} */}
 
       <SubjectWiseTeachers />
 
-      
-      {user?.uid &&
-      <div id="studentsPost">
-      <GetStudentsPost />
-      </div>
-      }
-
-
-      
+      {user?.uid && (
+        <div id="studentsPost">
+          <GetStudentsPost />
+        </div>
+      )}
 
       {user?.uid && (
         <div id="review">
@@ -148,7 +137,6 @@ const Home = () => {
       </div>
 
       <AboutOurs />
-
 
       {/* <StudentPost /> */}
       <FaqAnswer />

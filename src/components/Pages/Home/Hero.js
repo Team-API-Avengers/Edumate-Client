@@ -1,5 +1,9 @@
 import React, { useContext } from "react";
-import { BsFillDpadFill, BsFillExclamationSquareFill, BsFillPersonVcardFill } from "react-icons/bs";
+import {
+  BsFillDpadFill,
+  BsFillExclamationSquareFill,
+  BsFillPersonVcardFill,
+} from "react-icons/bs";
 import { FcFaq } from "react-icons/fc";
 import bannerPic from "../../Assets/BannerPic.png";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -23,25 +27,33 @@ const Hero = () => {
               <img className="mx-auto" src={bannerPic} alt="img" />
             </div>
 
-
-
-           {/* TODO: Right side card */}
-            <div role="contentinfo" className="w-full pt-5 text-black bg-transparent rounded-lg lg:w-1/2 h-full">
+            {/* TODO: Right side card */}
+            <div
+              role="contentinfo"
+              className="w-full pt-5 text-black bg-transparent rounded-lg lg:w-1/2 h-full"
+            >
               <p tabIndex="0" className="text-gray-800 uppercase text-2xl mb-4">
                 Let's find
               </p>
-              <h1 tabIndex="0" className=" text-4xl text-[#1aa3d0] lg:text-6xl font-black mb-8 uppercase">
+              <h1
+                tabIndex="0"
+                className=" text-4xl text-[#1aa3d0] lg:text-6xl font-black mb-8 uppercase"
+              >
                 your teacher
               </h1>
-              <p tabIndex="0" className="text-gray-800 mx-5 font-regular mb-8">
-                Online tutors, trusted, vetted and instantly bookable to support maths, english, science and a host of
-                other academic, vocational and pastoral tuition.
+              <p tabIndex="0" className="text-gray-800 font-bold mx-5  mb-8">
+                Online tutors, trusted, vetted and instantly bookable to support
+                maths, english, science and a host of other academic, vocational
+                and pastoral tuition.
               </p>
 
               <div className="bg-base-200 lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg dark:rounded-b-lg">
                 <div className="sm:flex items-center py-2">
                   {user ? (
-                    <a href="#review" className="flex items-center dark:text-[#1aa3d0] ">
+                    <a
+                      href="#review"
+                      className="flex items-center dark:text-[#1aa3d0] "
+                    >
                       <BsFillExclamationSquareFill className=" mx-1" />
                       <span>Feedback</span>
                     </a>
@@ -51,7 +63,9 @@ const Hero = () => {
                         <span className="circle" aria-hidden="true">
                           <span className="icon arrow"></span>
                         </span>
-                        <span className="button-text dark:text-[#bb86fc]">Login</span>
+                        <span className="button-text dark:text-[#bb86fc]">
+                          Login
+                        </span>
                       </button>
                     </Link>
                   )}
@@ -65,7 +79,10 @@ const Hero = () => {
                   </a>
 
                   {user && (
-                    <a href="#studentsPost" className="flex items-center sm:mx-4 xl:mx-5  dark:text-[#1AA3D0]">
+                    <a
+                      href="#studentsPost"
+                      className="flex items-center sm:mx-4 xl:mx-5  dark:text-[#1AA3D0]"
+                    >
                       <BsFillPersonVcardFill className="mx-1" />
                       <span>Students post</span>
                     </a>

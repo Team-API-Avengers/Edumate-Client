@@ -48,7 +48,12 @@ const BeATeacher = () => {
             whileInView={{ x: 0 }}
             transition={{ duration: 1 }}
           >
-            <motion.div className="text-start" variants={containerVariants} initial="hidden" animate="visible">
+            <motion.div
+              className="text-start"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <motion.h1
                 id="title"
                 className="text-5xl  font-bold text-[#1AA3D0] dark:text-[#1AA3D0]"
@@ -61,29 +66,32 @@ const BeATeacher = () => {
                 className="mt-3 w-full lg:w-1/2 font-bold text-black dark:text-[#DBDBDB]"
                 variants={childVariants}
               >
-                Instructors from around the country teach hundreds of students on
-                <span className="font-bold text-[#00A99D] dark:text-[#00A99D]"> Edumate</span> . Inspire Minds, Shape
-                Futures, Join the Teaching Profession.
+                Instructors from around the country teach hundreds of students
+                on
+                <span className="font-bold text-[#00A99D] dark:text-[#00A99D]">
+                  {" "}
+                  Edumate
+                </span>{" "}
+                . Inspire Minds, Shape Futures, Join the Teaching Profession.
               </motion.p>
 
               {/* Button */}
             </motion.div>
             <Link
               to={"/dashboard/tutor-test-question"}
-              className="group relative inline-flex items-center overflow-hidden justify-start rounded bg-[#1AA3D0] dark:bg-[#1AA3D0] px-8 mt-5 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+              className="group relative flex w-2/3 items-start overflow-hidden justify-start rounded-full bg-[#1AA3D0] dark:bg-[#1AA3D0] px-8 mt-5 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
             >
               <span className="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
                 <BsArrowRight />
               </span>
 
-              <span className="text-sm font-bold transition-all group-hover:mr-4">Start teaching today</span>
+              <span className="text-sm font-bold transition-all w-full mx-auto group-hover:mr-4">
+                Start teaching today
+              </span>
             </Link>
           </motion.div>
 
-
-
-
-           {/* Animation */}
+          {/* Animation */}
           <motion.div
             // className="flex items-center justify-center w-full mt-6 lg:mt-0"
             className="lg:-mt-16 mt-10"
@@ -95,8 +103,6 @@ const BeATeacher = () => {
               <Lottie animationData={ReviewAnimation} loop={true}></Lottie>
             </div>
           </motion.div>
-
-          
         </div>
       </div>
     </div>
