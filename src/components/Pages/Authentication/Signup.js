@@ -58,9 +58,8 @@ const Signup = () => {
         })
           .then((res) => res.json())
           .then((imgData) => {
-            console.log(imgData);
-
             const photoURL = imgData?.data?.url;
+            console.log(imgData?.data?.url);
 
             updateUserDetails(name, photoURL);
             // saveUsers(name, email, photoURL);
@@ -120,14 +119,18 @@ const Signup = () => {
           <h1 id="title" className="text-5xl mb-5 font-bold">
             Register
           </h1>
-          <p className="mb-5 text-2xl text-[#1AA3D0] dark:text-[#00A99D]">Lets create a better world</p>
+          <p className="mb-5 text-2xl text-[#1AA3D0] dark:text-[#00A99D]">
+            Lets create a better world
+          </p>
           <Lottie animationData={SignUpAnimation} loop={true}></Lottie>
         </div>
         <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
       </div>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl  ">
         <div className="flex justify-around py-5">
-          <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-[#1AA3D0] dark:text-[#00A99D]">Sign Up</h3>
+          <h3 className="text-2xl font-bold text-center rounded-lg p-3 text-[#1AA3D0] dark:text-[#00A99D]">
+            Sign Up
+          </h3>
           <Link
             to="/authentication/login"
             className="text-2xl border rounded-lg shadow-md dark:shadow-slate-50 p-3 font-bold text-center"
@@ -162,7 +165,9 @@ const Signup = () => {
                 name="email"
                 className="input input-bordered w-full text-black px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
               />
-              {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-red-500">{errors.name.message}</p>
+              )}
             </div>
 
             <div className="mt-3 ms-1 text-sm">
@@ -184,11 +189,15 @@ const Signup = () => {
                 name="password"
                 className="input input-bordered text-black w-full px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
               />
-              {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+              {errors.password && (
+                <p className="text-red-500">{errors.password.message}</p>
+              )}
             </div>
 
             <div className="mt-3 ms-1 text-sm">
-              <label className="flex m-2  dark:text-[#00A99D]">Phone number</label>
+              <label className="flex m-2  dark:text-[#00A99D]">
+                Phone number
+              </label>
               <input
                 type="text"
                 {...register("phoneNumber", {
@@ -198,13 +207,17 @@ const Signup = () => {
                 name="phoneNumber"
                 className="input input-bordered text-black w-full px-4 py-3 rounded-full border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D] "
               />
-              {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber.message}</p>}
+              {errors.phoneNumber && (
+                <p className="text-red-500">{errors.phoneNumber.message}</p>
+              )}
             </div>
           </div>
 
           <div className="text-black">
             <label className="label dark:t#00A99D]">
-              <span className="label-text mx-2 text-[#1AA3D0] dark:text-[#00A99D]">Who are you ?</span>
+              <span className="label-text mx-2 text-[#1AA3D0] dark:text-[#00A99D]">
+                Who are you ?
+              </span>
             </label>
             <select
               className="input input-bordered text-black md:w-96 border-2  border-[#1AA3D0] dark:border-none focus:outline-none focus:border-[#00A99D]"
@@ -214,12 +227,16 @@ const Signup = () => {
               <option>Student</option>
               <option>Teacher</option>
             </select>
-            {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber.message}</p>}
+            {errors.phoneNumber && (
+              <p className="text-red-500">{errors.phoneNumber.message}</p>
+            )}
           </div>
 
           <div className="">
             <label className="label">
-              <span className="label-text mx-2 text-[#1AA3D0] dark:text-[#00A99D]">Photo </span>
+              <span className="label-text mx-2 text-[#1AA3D0] dark:text-[#00A99D]">
+                Photo{" "}
+              </span>
             </label>
             <input
               type="file"

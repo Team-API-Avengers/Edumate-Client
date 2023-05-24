@@ -26,9 +26,10 @@ const About = () => {
             whileInView={{ y: -20, opacity: 1 }}
             transition={{ type: "spring", stiffness: 20 }}
           >
-            Tuition is a fee paid by students to educational institutions for instruction or guidance in a particular
-            subject or course of study. The term can refer to either the fee itself or the act of teaching or
-            instructing.
+            Tuition is a fee paid by students to educational institutions for
+            instruction or guidance in a particular subject or course of study.
+            The term can refer to either the fee itself or the act of teaching
+            or instructing.
           </motion.p>
         </div>
 
@@ -50,18 +51,25 @@ const About = () => {
               <h3 className="text-center lg:text-start text-2xl mb-4 font-bold text-[#1AA3D0] dark:text-[#00A99D]">
                 Why Choose Us
               </h3>
-              <h1 id="title" className="text-4xl font-bold text-start text-gray-700 dark:text-gray-300">
+              <h1
+                id="title"
+                className="text-4xl font-bold text-start text-gray-700 dark:text-gray-300"
+              >
                 Learn Something Good, Do Something Better!
               </h1>
               <p className="py-6 text-start dark:text-gray-300">
-                Edumate provides students with access to qualified and experienced tutors who specialize in different
-                subjects. The purpose of Edumate is to provide a convenient and effective solution for students who need
-                extra help with their studies. Edumate connects students with teachers who can help them achieve their
-                academic goals
+                Edumate provides students with access to qualified and
+                experienced tutors who specialize in different subjects. The
+                purpose of Edumate is to provide a convenient and effective
+                solution for students who need extra help with their studies.
+                Edumate connects students with teachers who can help them
+                achieve their academic goals
               </p>
               <div className="text-start">
                 <Link to="/">
-                  <button className="btn btn-primary mr-4 rounded-full bg-[#1AA3D0] dark:bg-[#00A99D]">Go Home</button>
+                  <button className="btn btn-primary mr-4 rounded-full bg-[#1AA3D0] dark:bg-[#00A99D]">
+                    Go Home
+                  </button>
                 </Link>
                 <Link to="/contact">
                   <button className="btn btn-primary mr-4 rounded-full bg-[#1AA3D0] dark:bg-[#00A99D]">
@@ -153,7 +161,7 @@ const About = () => {
 
       <AboutOurs></AboutOurs>
 
-      <Posts />
+      {/* <Posts /> */}
 
       {/* <PostsForMobile /> */}
 

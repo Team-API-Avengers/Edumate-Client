@@ -44,18 +44,28 @@ const ContactUs = () => {
                 </h1>
 
                 {/* Animation */}
-                <div className="mt-10">
-                  <Lottie className="w-full" animationData={ContactAnimation} loop={true}></Lottie>
+                <div>
+                  {/* <Lottie className="w-full" animationData={ContactAnimation} loop={true}></Lottie> */}
+                  <lottie-player
+                    src="https://assets1.lottiefiles.com/packages/lf20_eroqjb7w.json"
+                    background="transparent"
+                    speed="1"
+                    loop
+                    // controls
+                    autoplay
+                  ></lottie-player>
                 </div>
               </div>
 
               {/* Contact Form */}
               <div>
                 <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-5">
+                  <div className="grid grid-cols-1 gap-3 mt-5 md:grid-cols-2">
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#00A99D]">Name</span>
+                        <span className="label-text dark:text-[#00A99D]">
+                          Name
+                        </span>
                       </label>
                       <input
                         className="w-full border-2  border-[#1AA3D0] dark:border-none  text-gray-900  mt-0 p-3 rounded-full focus:border-[#00A99D]"
@@ -68,7 +78,9 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#00A99D]">Email</span>
+                        <span className="label-text dark:text-[#00A99D]">
+                          Email
+                        </span>
                       </label>
                       <input
                         className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded-full focus:border-[#00A99#00A99D"
@@ -81,7 +93,9 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#00A99D]">Subject / Issues</span>
+                        <span className="label-text dark:text-[#00A99D]">
+                          Subject / Issues
+                        </span>
                       </label>
                       <input
                         className="w-full   border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded-full focus:outline-none focus:border-[#00A99D]"
@@ -94,7 +108,9 @@ const ContactUs = () => {
 
                     <div>
                       <label className="label">
-                        <span className="label-text dark:text-[#00A99D]">Mobile number</span>
+                        <span className="label-text dark:text-[#00A99D]">
+                          Mobile number
+                        </span>
                       </label>
                       <input
                         className="w-full  border-2  border-[#1AA3D0] dark:border-none  text-gray-900  p-3 rounded-full focus:outline-none focus:border-[#00A99D]"
@@ -107,7 +123,9 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <label className="label">
-                      <span className="label-text dark:text-[#00A99D]">Message</span>
+                      <span className="label-text dark:text-[#00A99D]">
+                        Message
+                      </span>
                     </label>
                     <div className="">
                       <textarea

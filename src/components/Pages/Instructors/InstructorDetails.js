@@ -6,7 +6,7 @@ import {
   BsTelephoneFill,
 } from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
-import { MdMarkEmailUnread } from "react-icons/md";
+import { MdMarkEmailUnread, MdPerson2 } from "react-icons/md";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Loader from "../../Shared/Loader";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 
 const InstructorDetails = () => {
   const details = useLoaderData();
-  // console.log(details.data);
+  console.log(details.data);
 
   const navigate = useNavigate();
 
@@ -127,6 +127,10 @@ const InstructorDetails = () => {
                   <p className="flex ">
                     <HiLocationMarker className="mt-1 mr-1" />
                     {details?.data?.location}
+                  </p>
+                  <p className="flex ">
+                    <MdPerson2 className="mt-1 mr-1" />
+                    {details?.data?.gender}
                   </p>
                   <p className="flex ">
                     <MdMarkEmailUnread className="mt-1 mr-1" />
